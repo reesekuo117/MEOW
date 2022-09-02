@@ -1,0 +1,183 @@
+* {
+    /* outline: 1px solid #000000; */
+    font-family: gensen;
+}
+@font-face {
+    font-family: gensen;
+    src: url('./gensen-font-master/ttc/GenSenRounded-H.ttc');
+    src: url('./gensen-font-master/ttc/GenSenRounded-B.ttc');
+    src: url('./gensen-font-master/ttc/GenSenRounded-M.ttc');
+    src: url('./gensen-font-master/ttc/GenSenRounded-R.ttc');
+}
+/* :root {
+    --font-base-size: 16px;
+    font-size: calc(var(--font-base-size) * 1);
+} */
+:root {
+    --font-h1-40: 40px;
+    --font-h2-32: 32px;
+    --font-h3-28: 28px;
+    --font-h4-24: 24px;
+    --font-h5-20: 20px;
+    --font-h6-18: 18px;
+    --font-p-16: 16px;
+    --font-s-14: 14px;
+    }
+:root {
+	--color-orange: #CD562F;
+    --color-yellow: #E5A62A;
+    --color-blue: #243B5B;
+    --color-green: #336145;
+    --color-lightbrown: #F5DFC2;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-red: #963C38;
+    --color-brown: #AE5D29;
+    --color-creamy: #F3E3D4;
+    --color-lightcreamy: #FFF6E9;
+    --color-ivory: #FFFCF7;
+    --color-brown-dark: #432A0F;
+    --color-text100: rgb(67, 42, 15, 1);
+    --color-text87: rgba(67, 42, 15, 0.87);
+    --color-text60: rgba(67, 42, 15, 0.6);
+    --color-text38: rgba(67, 42, 15, 0.38);
+}
+/* header-md */
+header .navbar {
+    background-color: var(--color-orange);
+    width: 100%;
+    height: 100px;
+    padding: 0 80px;
+}
+.logo-md {
+    padding: 0 32px 0 0;
+}
+.nav-menu>a {
+    font-size: var(--font-h5-20) ;
+    color: var(--color-white);
+    line-height: 50px;
+    padding: 0 20px 0 0;
+
+}
+/* header-xs  */
+.header-xs {
+    background-color: var(--color-orange);
+    height: 72px;
+    padding: 0 20px;
+    z-index: 999;
+}
+.logo-xs {
+    padding-top: 12px;
+}
+/* 漢堡選單 */
+#menuToggle{
+    display: block;
+    position: relative;
+    padding: 24px 10px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#menuToggle a{
+    text-decoration: none;
+    color: var(--color-white);
+    transition: color 0.3s ease;
+}
+#menuToggle input{
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: 24px;
+    left: 4px;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+#menuToggle span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 4px;
+    position: relative;
+    background: var(--color-white);
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+}
+#menuToggle span:first-child{
+    transform-origin: 0% 0%;
+}
+#menuToggle span:nth-last-child(2){
+    transform-origin: 0% 100%;
+}
+#menuToggle input:checked ~ span{
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: var(--color-white);
+}
+#menuToggle input:checked ~ span:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ span:nth-last-child(2){
+    transform: rotate(-45deg) translate(0px, 2px);
+}
+#menu{
+    position: absolute;
+    width: 375px;
+    /* height: 100vh; */
+    margin: 25px 0 0 -30px;
+    padding: 20px;
+    background: var(--color-lightbrown);
+    list-style-type: none;
+    transform: translate(-200%, 0);
+    transition: transform 1s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu li{
+    padding: 10px 0;
+    font-weight: 600;
+}
+#menu>li>a {
+    font-size: var(--font-p-16);
+    color: var(--color-text100);
+}
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+
+/* footer */
+footer {
+    background-color: var(--color-orange);
+}
+.footer-md {
+    height: 34px;
+    margin-bottom: 0px;
+}
+.back-button{
+    position: fixed;
+    right: 10px;
+    bottom: 45px;
+    animation: back-button-transform 3s ease-in-out infinite;
+}
+
+.footer-xs {
+    height: 72px;
+}
+.footer-xs>ul {
+    padding: 0 32px;
+    margin: 0px;
+}
+.footer-xs>ul>li {
+    list-style: none;
+    margin: 18px 13px 18px 13px;
+}
+.back-button-xs{
+    position: fixed;
+    right: 10px;
+    bottom: 82px;
+    animation: back-button-transform 3s ease-in-out infinite;
+}
