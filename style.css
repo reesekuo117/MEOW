@@ -9,10 +9,10 @@
     src: url('./gensen-font-master/ttc/GenSenRounded-M.ttc');
     src: url('./gensen-font-master/ttc/GenSenRounded-R.ttc');
 }
-/* :root {
+:root {
     --font-base-size: 16px;
     font-size: calc(var(--font-base-size) * 1);
-} */
+}
 :root {
     --font-h1-40: 40px;
     --font-h2-32: 32px;
@@ -142,7 +142,7 @@ header .navbar {
     font-weight: 600;
 }
 #menu>li>a {
-    font-size: var(--font-p-16);
+    /* font-size: var(--font-p-16); */
     color: var(--color-text100);
 }
 #menuToggle input:checked ~ ul {
