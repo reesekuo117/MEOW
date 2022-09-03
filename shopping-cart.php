@@ -78,6 +78,25 @@ $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就�
     outline:1px solid #E5A62A;
     border: 1px solid  #E5A62A;
 }
+
+
+/* 數量增加按鈕 */
+.qty {
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    border: 0;
+
+}
+input.qtyplus {
+    width: 25px;
+    height: 35px;
+
+}
+input.qtyminus {
+    width: 25px;
+    height: 35px;
+}
 </style>
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <?php include __DIR__. '/parts/navbar.php'; ?>
@@ -116,13 +135,12 @@ $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就�
 
         <!-- 獨家商品 旅遊行程分頁標籤 -->
         <div class=" pagination-yu btn-group " >
-        <a href="#"  class="px-0 m-auto btn" role="button" >獨家商品</a>
-            <a href="#" class=" px-0 m-auto btn" role="button">旅遊行程</a>
+            <a href="#unique" data-toggle="tab"  class="px-0 m-auto btn" role="button" >獨家商品</a>
+            <a href="#" data-toggle="tab" class=" px-0 m-auto btn" role="button">旅遊行程</a>
         </div>
     </div>
     <div class="container">
-
-        <div class="row">
+        <div class="row" id="unique">
             <div class="col">
                 <table class="table ">
                     <thead>
@@ -157,9 +175,9 @@ $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就�
                                 </p>
                             </td>
                             <td>
-                                <div class="btn-group">
+                                <div class=" type-yu  btn-group btn-danger">
                                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Small button
+                                        規格
                                     </button>
                                     <ul class="dropdown-menu">
                                         ...
@@ -206,7 +224,6 @@ $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就�
                 </table>
             </div>
         </div>
-
     </div>
 </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>
@@ -280,4 +297,44 @@ function removeItem(event) {
 
 
 </script> -->
+
+<script>
+    //數量增加按鈕
+    $(function() {
+  // This button will increment the value
+    $('.qtyplus').click(function(e) {
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // If is not undefined
+    if (!isNaN(currentVal)) {
+      // Increment
+        $('input[name=' + fieldName + ']').val(currentVal + 1);
+    } else {
+      // Otherwise put a 0 there
+        $('input[name=' + fieldName + ']').val(0);
+    }
+    });
+  // This button will decrement the value till 0
+    $(".qtyminus").click(function(e) {
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // If it isn't undefined or its greater than 0
+    if (!isNaN(currentVal) && currentVal > 0) {
+      // Decrement one
+        $('input[name=' + fieldName + ']').val(currentVal - 1);
+    } else {
+      // Otherwise put a 0 there
+        $('input[name=' + fieldName + ']').val(0);
+    }
+    });
+});
+</script>
 <?php include __DIR__. '/parts/html-foot.php'; ?>

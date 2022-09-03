@@ -64,6 +64,10 @@
     color: rgba(67, 42, 15, 0.38);
 }
 
+/* 規格 */
+.type-yu{
+    
+} 
 
 /* 數量增加按鈕 */
 .qty {
@@ -82,3 +86,5 @@ input.qtyminus {
     width: 25px;
     height: 35px;
 }
+
+/*  */
