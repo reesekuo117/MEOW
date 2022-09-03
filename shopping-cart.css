@@ -1,0 +1,55 @@
+ /*購物車進度條  */
+.progress-bar-yu{
+    margin-top: 88px;
+    margin-bottom: 40px;
+}
+.circle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #E5A62A;
+    border-radius: 50%;
+}
+.circle h5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.page p{
+    /* border: 1px solid #000; */
+    line-height: 20px;
+    padding: 10px;
+    text-align: center;
+    
+}
+/* .pageline{
+    width: 144px;
+    height: 1px;
+    background-color:#432A0F ;
+    vertical-align: middle;
+} */
+
+
+/* 獨家商品 旅遊行程分頁標籤 */
+.pagination-yu{
+    width: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.pagination-yu .btn {
+    color:#432A0F;
+    font-size: 20px;
+    outline:1px solid #E5A62A;
+}
+.pagination-yu .btn:focus  {
+    box-shadow:none;
+    background-color: #E5A62A;
+    color: #fff;
+}
+.pagination-yu .btn:active{
+    border-color:#E5A62A;
+    background-color: #E5A62A;
+    color:  rgba(67, 42, 15, 0.38);
+}

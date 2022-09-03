@@ -12,46 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./gensen-font-master/ttc/">
-    <style>
-        /*購物車進度條  */
-        .progress-bar-yu{
-            margin-top: 88px;
-            margin-bottom: 40px;
-        }
-        .circle{
-            position: relative;
-            width: 40px;
-            height: 40px;
-            background-color: #E5A62A;
-            border-radius: 50%;
-        }
-        .circle h5{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .page p{
-            /* border: 1px solid #000; */
-            line-height: 20px;
-            padding: 10px;
-            text-align: center;
-        }
-        /* .pageline{
-            width: 144px;
-            height: 1px;
-            background-color:#432A0F ;
-        } */
 
-
-        /* 獨家商品 旅遊行程分頁標籤 */
-        .pagination-yu{
-            width: 65%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
+    <link rel="stylesheet" href="./shopping-cart.css">
 </head>
 <body>
     <!-- 123 -->
@@ -125,7 +87,7 @@
         </div>
     </div
 
-    <!-- 購物車進度條 -->
+    
     <div class="container-fluid p-0">
         <div class="progress-bar-yu" >
             <div class=" d-flex justify-content-around ">
@@ -161,9 +123,11 @@
             </div>
         </div>
         <!-- 獨家商品 旅遊行程分頁標籤 -->
-        <div class=" pagination-yu btn-group btn-outline-warning" role="group" aria-label="Basic example">
-            <button class="btn btn-outline-warning " type="button" class="btn btn-primary">獨家商品</button>
-            <button class="btn btn-outline-warning " type="button" class="btn btn-primary">旅遊行程</button>
+        <div class=" pagination-yu btn-group " >
+            <a href="#" class=" px m-auto btn" role="button">獨家商品</a>
+            <a href="#" class=" m-auto btn" role="button">旅遊行程</a>
+            <!-- <button class="btn btn-outline-warning " type="button" class="btn btn-primary">旅遊行程</button> -->
+        
         </div>
     </div>
     
