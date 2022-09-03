@@ -9,7 +9,11 @@ $pageName ='home'; //頁面名稱
     <h2>
         Hello
     </h2>
+<<<<<<< HEAD
     
+=======
+    <!-- test -->
+>>>>>>> d18038aaa8746244674726faef9e3a3d2532fa11
 </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>
 <?php include __DIR__. '/parts/html-foot.php'; ?>
