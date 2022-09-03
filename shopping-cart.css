@@ -2,6 +2,7 @@
 .progress-bar-yu{
     margin-top: 88px;
     margin-bottom: 40px;
+    font-size: var(--font-h5-20)
 }
 .circle{
     position: relative;
@@ -10,18 +11,25 @@
     background-color: #E5A62A;
     border-radius: 50%;
 }
+.circle .page-one-number{
+    color: #fff;
+}
 .circle h5{
+    color: rgba(67, 42, 15, 0.38);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.page p{
+.page h5{
     /* border: 1px solid #000; */
     line-height: 20px;
     padding: 10px;
     text-align: center;
-    
+    color: rgba(67, 42, 15, 0.38);
+}
+.page .page-one{
+    color: #432A0F;
 }
 /* .pageline{
     width: 144px;
@@ -33,23 +41,44 @@
 
 /* 獨家商品 旅遊行程分頁標籤 */
 .pagination-yu{
+    font-size: var(--font-h5-20);
     width: 75%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .pagination-yu .btn {
-    color:#432A0F;
-    font-size: 20px;
+    color: rgba(67, 42, 15, 0.38);
     outline:1px solid #E5A62A;
 }
 .pagination-yu .btn:focus  {
     box-shadow:none;
     background-color: #E5A62A;
     color: #fff;
+    outline:1px solid #E5A62A;
 }
 .pagination-yu .btn:active{
+    outline:1px solid #E5A62A;
     border-color:#E5A62A;
     background-color: #E5A62A;
-    color:  rgba(67, 42, 15, 0.38);
+    color: rgba(67, 42, 15, 0.38);
+}
+
+
+/* 數量增加按鈕 */
+.qty {
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    border: 0;
+
+}
+input.qtyplus {
+    width: 25px;
+    height: 35px;
+
+}
+input.qtyminus {
+    width: 25px;
+    height: 35px;
 }

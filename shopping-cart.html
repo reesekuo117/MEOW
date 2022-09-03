@@ -93,22 +93,23 @@
             <div class=" d-flex justify-content-around ">
                 <span class="row ">
                     <div class="circle ">
-                        <h5>1</h5>
+                        <h5 class="page-one-number">1</h5>
                     </div>
                     <div class="page ">
-                        <p class="pl-2" >購物車訂單</p>
+                        <h5 class="pl-2 page-one" >購物車訂單</h5>
                     </div>
                     <div class=" pageline "></div>
                 </span>
 
                 <!-- <span class="pageline"></span> -->
 
+                
                 <span class="row">
                     <div class="circle">
                         <h5>2</h5>
                     </div>
                     <div class="page ">
-                        <p class="pl-2" >填寫資料</p>
+                        <h5 class="pl-2 page-two " >填寫資料</h5>
                     </div>
                 </span>
                 
@@ -117,22 +118,106 @@
                         <h5>3</h5>
                     </div>
                     <div class="page ">
-                        <p class="pl-2" >完成訂單</p>
+                        <h5 class="pl-2 page-three" >完成訂單</h5>
                     </div>
                 </span>
             </div>
         </div>
         <!-- 獨家商品 旅遊行程分頁標籤 -->
         <div class=" pagination-yu btn-group " >
-            <a href="#" class=" px m-auto btn" role="button">獨家商品</a>
-            <a href="#" class=" m-auto btn" role="button">旅遊行程</a>
-            <!-- <button class="btn btn-outline-warning " type="button" class="btn btn-primary">旅遊行程</button> -->
-        
+            <a href="#unique"  class="px-0 m-auto  btn" role="button" >獨家商品</a>
+            <a href="#" class=" px-0 m-auto btn" role="button">旅遊行程</a>
+        </div>
+    </div>
+    <!--  購物車商品清單 -->
+    <div class="container">
+        <div class="">
+            <div id="unique">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                        <th scope="col">
+                            <div class="input">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                全選
+                            </div>
+                        </th>
+                            <th scope="col" src="imgs/small/<?= $v['product_id'] ?>.jpg" alt="<?= $v['productname'] ?>">商品照片</th>
+                            <th scope="col">商品名稱</th>
+                            <th scope="col">規格</th>
+                            <th scope="col">單價</th>
+                            <th scope="col">數量</th>
+                            <th scope="col" class="sub-total">小計</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <th scope="row">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </th>
+                            <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>
+                                <p class="m-0">
+                                    台北霞海城隍廟獨家聯名
+                                    <br>
+                                    -七夕月老供品組-甜作之盒
+                                </p>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Small button
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        ...
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+                                <form id='myform' method='POST' action='#'>
+                                    <label for=""> </label>
+                                    <input type='button' value='-' class='qtyminus' field='quantity' />
+                                    <input type='text' name='quantity' value='0' class='qty' />
+                                    <input type='button' value='+' class='qtyplus' field='quantity' />
+                                </form>
+                            </td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     
     </header>
-
 
 
     <!-- header-xs ----------------------------------->
@@ -273,6 +358,48 @@
         $('.back-button').click(function(){
             $('html, body').animate({scrollTop:0},10)
         })
+    </script>
+
+
+
+    <script>
+        //數量增加按鈕
+        $(function() {
+  // This button will increment the value
+    $('.qtyplus').click(function(e) {
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // If is not undefined
+    if (!isNaN(currentVal)) {
+      // Increment
+        $('input[name=' + fieldName + ']').val(currentVal + 1);
+    } else {
+      // Otherwise put a 0 there
+        $('input[name=' + fieldName + ']').val(0);
+    }
+    });
+  // This button will decrement the value till 0
+    $(".qtyminus").click(function(e) {
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // If it isn't undefined or its greater than 0
+    if (!isNaN(currentVal) && currentVal > 0) {
+      // Decrement one
+        $('input[name=' + fieldName + ']').val(currentVal - 1);
+    } else {
+      // Otherwise put a 0 there
+        $('input[name=' + fieldName + ']').val(0);
+    }
+    });
+});
     </script>
 </body>
 </html>
