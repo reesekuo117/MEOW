@@ -9,6 +9,7 @@ $pageName ='home'; //頁面名稱
     <h2>
         Hello
     </h2>
+    <!-- test -->
 </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>
 <?php include __DIR__. '/parts/html-foot.php'; ?>
