@@ -1,3 +1,10 @@
+body{
+    background: url(./imgs/index/IMG_0705_2.png);
+    background-color: #FFF6E9;
+    box-sizing: border-box;
+    margin: 0;
+}
+
 /* .product_head{
     background: url(./imgs/product/P19_2.jpg) center center / cover;
     width: 100%;
@@ -32,9 +39,93 @@
     /* text-align: center; */
 }
 .midicon{
-    /* text-align: center; */
+    text-align: center;
+    
 }
 
 .midimg{
     width: 80px;
+    margin: 8px auto;
+    
+}
+/* ----------------------中間選單結束--------------------- */
+.product_brand{
+    position: relative;
+    margin: 100px 0 ;
+}
+.brand_2{
+    width: 350px;
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    transition: 1s;
+
+}
+.brand_3{
+    width: 250px;
+    position: absolute;
+    right: 300px;
+    bottom: -130px;
+    transition: 1s;
+
+}
+.pb_sec{
+    margin: 50px 0;
+
+}
+.pb_title h2,.pb_title h6,.pb_title button{
+    margin: 1rem;
+}
+/* ----------------------品牌聯名結束--------------------- */
+.product_young{
+    margin: 300px auto 100px;
+    position: relative;
+}
+.young_1{
+    width: 600px;
+    position: absolute;
+    top: -50px;
+    z-index: 1;
+    transition: 1s;
+}
+.young_2{
+    width: 400px;
+    position: absolute;
+    bottom: -350px;
+    left: 300px;
+    z-index: 2;
+    transition: 1s;
+
+}
+.young_3{
+    width: 250px;
+    position: absolute;
+    bottom: -500px;
+    z-index: 3;
+    transition: 1s;
+
+}
+.py_title{
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    background-color: #F5DFC2;
+    display: flex;
+    align-items: center;
+
+}
+.py_title h2{
+    
+}
+
+.product_sweet{
+    margin: 600px auto 100px;
+}
+.ps_img{
+    width: 1000px;
+}
+.ps_title{
+    display: flex;
+
+    align-items: center;
 }

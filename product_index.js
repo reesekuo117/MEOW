@@ -1,31 +1,92 @@
-// DESIGN輪播牆
-let nowPage = 0;
-
-$('#next').click(function () {
-    if (nowPage < 3) {
-        nowPage = nowPage + 1;
+//  品牌聯名浮動
+$(window).scroll(function () {
+    // console.log('second offsetTop:', $('.second-test > .second').offset().top);
+    // console.log('first scrollTop:', $('.second').scrollTop());
+    if ($(window).scrollTop() >= ($('.brand_2').offset().top - $(window).height() * 2 / 3)) {
+        $('.brand_2').css({
+            transform: 'translateY(0px)',
+            opacity: 1,
+        })
 
     }
     else {
-        // 其餘比4大的
-        nowPage = 0
+        $('.brand_2').css({
+            transform: 'translateY(100px)',
+            opacity: 0,
+        })
     }
-    console.log('nowPage:', nowPage);
 
-    // $('ul.train').css('transform', `translateX(${moveX}px)`);
-    moveX(nowPage);
 })
+$(window).scroll(function () {
+    // console.log('second offsetTop:', $('.second-test > .second').offset().top);
+    // console.log('first scrollTop:', $('.second').scrollTop());
+    if ($(window).scrollTop() >= ($('.brand_3').offset().top - $(window).height() * 1 / 2)) {
+        $('.brand_3').css({
+            transform: 'translateY(0px)',
+            opacity: 1,
+        })
 
-$('#prev').click(function () {
-    if (nowPage > 0) {
-        nowPage = nowPage - 1;
     }
-    // $('ul.train').css('transform', `translateX(${moveX}px)`);
-    moveX(nowPage);
+    else {
+        $('.brand_3').css({
+            transform: 'translateY(100px)',
+            opacity: 0,
+        })
+    }
+
 })
-function moveX(nowPage) {
-    console.log($('.d-img-wrap').width());
-    // const movement = (nowPage - $('.d-img-wrap').width());
-    const movement = (0 - nowPage * $('.d-img-wrap').width());
-    $('ul.train').css('transform', `translateX(${movement}px)`);
-}
+//  文創商品浮動
+$(window).scroll(function () {
+    // console.log('second offsetTop:', $('.second-test > .second').offset().top);
+    // console.log('first scrollTop:', $('.second').scrollTop());
+    if ($(window).scrollTop() >= ($('.young_1').offset().top - $(window).height() * 2 / 5)) {
+        $('.young_1').css({
+            transform: 'translateY(0px)',
+            opacity: 1,
+        })
+
+    }
+    else {
+        $('.young_1').css({
+            transform: 'translateY(100px)',
+            opacity: 0,
+        })
+    }
+
+})
+$(window).scroll(function () {
+    // console.log('second offsetTop:', $('.second-test > .second').offset().top);
+    // console.log('first scrollTop:', $('.second').scrollTop());
+    if ($(window).scrollTop() >= ($('.young_2').offset().top - $(window).height() * 4 / 5)) {
+        $('.young_2').css({
+            transform: 'translateY(0px)',
+            opacity: 1,
+        })
+
+    }
+    else {
+        $('.young_2').css({
+            transform: 'translateY(100px)',
+            opacity: 0,
+        })
+    }
+
+})
+$(window).scroll(function () {
+    // console.log('second offsetTop:', $('.second-test > .second').offset().top);
+    // console.log('first scrollTop:', $('.second').scrollTop());
+    if ($(window).scrollTop() >= ($('.young_3').offset().top - $(window).height() * 3 / 5)) {
+        $('.young_3').css({
+            transform: 'translateY(0px)',
+            opacity: 1,
+        })
+
+    }
+    else {
+        $('.young_3').css({
+            transform: 'translateY(100px)',
+            opacity: 0,
+        })
+    }
+
+})
