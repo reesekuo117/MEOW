@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./gensen-font-master/ttc/">
 
-    <link rel="stylesheet" href="./shopping-cart.css">
+    <link rel="stylesheet" href="./shopping-cart-index.css">
 </head>
 <body>
     <!-- 123 -->
@@ -85,14 +85,14 @@
                 </div>
             </div>
         </div>
-    </div
-
+    </div>
     
+    <!-- progress-bar -->
     <div class="container-fluid p-0">
         <div class="progress-bar-yu" >
             <div class=" d-flex justify-content-around ">
                 <span class="row ">
-                    <div class="circle ">
+                    <div class="circle-light">
                         <h5 class="page-one-number">1</h5>
                     </div>
                     <div class="page ">
@@ -123,96 +123,476 @@
                 </span>
             </div>
         </div>
+
         <!-- 獨家商品 旅遊行程分頁標籤 -->
-        <div class=" pagination-yu btn-group " >
-            <a href="#unique"  class="px-0 m-auto  btn" role="button" >獨家商品</a>
-            <a href="#" class=" px-0 m-auto btn" role="button">旅遊行程</a>
+        <!-- href="#uniqui-yu" data-toggle="tab" -->
+        <!-- href="#travel-yu" data-toggle="tab" role="button -->
+        <div  class=" pagination-yu btn-group myTab nav nav-tabs" >
+            <a href="#uniqui-yu" data-toggle="tab" class="px-0 m-auto btn active"  role="button">獨家商品</a>
+            <a href="#travel-yu" data-toggle="tab" class=" px-0 m-auto btn"  role="button">旅遊行程</a>
         </div>
     </div>
-    <!--  購物車商品清單 -->
-    <div class="container">
-        <div class="">
-            <div id="unique">
-                <table class="table ">
-                    <thead>
-                        <tr>
-                        <th scope="col">
-                            <div class="input">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
-                                全選
-                            </div>
-                        </th>
-                            <th scope="col" src="imgs/small/<?= $v['product_id'] ?>.jpg" alt="<?= $v['productname'] ?>">商品照片</th>
-                            <th scope="col">商品名稱</th>
-                            <th scope="col">規格</th>
-                            <th scope="col">單價</th>
-                            <th scope="col">數量</th>
-                            <th scope="col" class="sub-total">小計</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="">
-                            <th scope="row">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
-                            </th>
-                            <td>
-                                <img src="" alt="">
-                            </td>
-                            <td>
-                                <p class="m-0">
-                                    台北霞海城隍廟獨家聯名
-                                    <br>
-                                    -七夕月老供品組-甜作之盒
-                                </p>
-                            </td>
-                            <td>
-                                <div class="btn-group">
-                                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Small button
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        ...
-                                    </ul>
-                                </div>
-                            </td>
-                            <td>
 
-                            </td>
-                            <td>
-                                <form id='myform' method='POST' action='#'>
-                                    <label for=""> </label>
-                                    <input type='button' value='-' class='qtyminus' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='qty' />
-                                    <input type='button' value='+' class='qtyplus' field='quantity' />
-                                </form>
-                            </td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
+    <!--  購物車商品清單 -->
+    <div id="myTabContent-yu" class=" tab-content container">
+        <!-- 獨家商品 -->
+        <div class="tab-pane in active " id="uniqui-yu" >
+            <div class=" col-auto justify-content-around text-center">
+                <div id="unique">
+                    <table class="table ">
+                        <thead class="" >
+                            <tr>
+                            <th scope=" ">
+                                <div class="row m-auto p-1 ">
+                                    <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    <h6 class="mb-0">
+                                        全選
+                                    </h6>
+                                </div>
                             </th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                <th scope="col" src="imgs/small/<?= $v['product_id'] ?>.jpg" alt="<?= $v['productname'] ?>">
+                                    <h6>商品照片</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6>商品名稱</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6>規格</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6>單價</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6>數量</h6>
+                                </th>
+                                <th scope="col" class="sub-total">
+                                    <h6>小計</h6>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class=" tbody-yu">
+                            <tr class="">
+                                <th scope=" ">
+                                    <div class="row m-auto p-1 ">
+                                        <input class="checkboox-yu mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    </div>
+                                </th>
+                                <!-- 商品照片 -->
+                                <td>
+                                    <img src="imgs/購物車-商品(測試用).png" alt="">
+                                </td>
+                                <!-- 商品名稱 -->
+                                <td>
+                                    <h6 class="m-0">
+                                        台北霞海城隍廟獨家聯名
+                                        <br>
+                                        -七夕月老供品組-甜作之盒
+                                    </h6>
+                                </td>
+                                <!-- 商品規格 -->
+                                <td>
+                                    <!-- <div class="btn-group">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Small button
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            ...
+                                        </ul>
+                                    </div> -->
+                                    <div class="">
+                                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
+                                        <select class="form-select" id="autoSizingSelect">
+                                            <option selected>規格</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <!-- 單價 -->
+                                <td>
+                                    $707
+                                </td>
+                                <!-- 數量 -->
+                                <td>
+                                    <form id='myform' method='POST' action='#'>
+                                        <label for=""> </label>
+                                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                                    </form>
+                                </td>
+                                <!-- 小計 -->
+                                <td>
+                                    $707
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope=" ">
+                                    <div class="row m-auto p-1 ">
+                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    </div>
+                                </th>
+                                <!-- 商品照片 -->
+                                <td>
+                                    <img src="imgs/購物車-商品(測試用).png" alt="">
+                                </td>
+                                <!-- 商品名稱 -->
+                                <td>
+                                    <h6 class="m-0">
+                                        台北霞海城隍廟獨家聯名
+                                        <br>
+                                        -七夕月老供品組-甜作之盒
+                                    </h6>
+                                </td>
+                                <!-- 商品規格 -->
+                                <td>
+                                    <!-- <div class="btn-group">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Small button
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            ...
+                                        </ul>
+                                    </div> -->
+                                    <div class="">
+                                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
+                                        <select class="form-select" id="autoSizingSelect">
+                                            <option selected>規格</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <!-- 單價 -->
+                                <td>
+                                    $707
+                                </td>
+                                <!-- 數量 -->
+                                <td>
+                                    <form id='myform' method='POST' action='#'>
+                                        <label for=""> </label>
+                                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                                    </form>
+                                </td>
+                                <!-- 小計 -->
+                                <td>
+                                    $707
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope=" ">
+                                    <div class="row m-auto p-1 ">
+                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    </div>
+                                </th>
+                                <!-- 商品照片 -->
+                                <td>
+                                    <img src="imgs/購物車-商品(測試用).png" alt="">
+                                </td>
+                                <!-- 商品名稱 -->
+                                <td>
+                                    <h6 class="m-0">
+                                        台北霞海城隍廟獨家聯名
+                                        <br>
+                                        -七夕月老供品組-甜作之盒
+                                    </h6>
+                                </td>
+                                <!-- 商品規格 -->
+                                <td>
+                                    <!-- <div class="btn-group">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Small button
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            ...
+                                        </ul>
+                                    </div> -->
+                                    <div class="">
+                                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
+                                        <select class="form-select" id="autoSizingSelect">
+                                            <option selected>規格</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <!-- 單價 -->
+                                <td>
+                                    $707
+                                </td>
+                                <!-- 數量 -->
+                                <td>
+                                    <form id='myform' method='POST' action='#'>
+                                        <label for=""> </label>
+                                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                                    </form>
+                                </td>
+                                <!-- 小計 -->
+                                <td>
+                                    $707
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope=" ">
+                                    <div class="row m-auto p-1 ">
+                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    </div>
+                                </th>
+                                <!-- 商品照片 -->
+                                <td>
+                                    <img src="imgs/購物車-商品(測試用).png" alt="">
+                                </td>
+                                <!-- 商品名稱 -->
+                                <td>
+                                    <h6 class="m-0">
+                                        台北霞海城隍廟獨家聯名
+                                        <br>
+                                        -七夕月老供品組-甜作之盒
+                                    </h6>
+                                </td>
+                                <!-- 商品規格 -->
+                                <td>
+                                    <!-- <div class="btn-group">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Small button
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            ...
+                                        </ul>
+                                    </div> -->
+                                    <div class="">
+                                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
+                                        <select class="form-select" id="autoSizingSelect">
+                                            <option selected>規格</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <!-- 單價 -->
+                                <td>
+                                    $707
+                                </td>
+                                <!-- 數量 -->
+                                <td>
+                                    <form id='myform' method='POST' action='#'>
+                                        <label for=""> </label>
+                                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                                    </form>
+                                </td>
+                                <!-- 小計 -->
+                                <td>
+                                    $707
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope=" ">
+                                    <div class="row m-auto p-1 ">
+                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    </div>
+                                </th>
+                                <!-- 商品照片 -->
+                                <td>
+                                    <img src="imgs/購物車-商品(測試用).png" alt="">
+                                </td>
+                                <!-- 商品名稱 -->
+                                <td>
+                                    <h6 class="m-0">
+                                        台北霞海城隍廟獨家聯名
+                                        <br>
+                                        -七夕月老供品組-甜作之盒
+                                    </h6>
+                                </td>
+                                <!-- 商品規格 -->
+                                <td>
+                                    <!-- <div class="btn-group">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Small button
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            ...
+                                        </ul>
+                                    </div> -->
+                                    <div class="">
+                                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
+                                        <select class="form-select" id="autoSizingSelect">
+                                            <option selected>規格</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <!-- 單價 -->
+                                <td>
+                                    $707
+                                </td>
+                                <!-- 數量 -->
+                                <td>
+                                    <form id='myform' method='POST' action='#'>
+                                        <label for=""> </label>
+                                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                                    </form>
+                                </td>
+                                <!-- 小計 -->
+                                <td>
+                                    $707
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope=" ">
+                                    <div class="row m-auto p-1 ">
+                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    </div>
+                                </th>
+                                <!-- 商品照片 -->
+                                <td>
+                                    <img src="imgs/購物車-商品(測試用).png" alt="">
+                                </td>
+                                <!-- 商品名稱 -->
+                                <td>
+                                    <h6 class="m-0">
+                                        台北霞海城隍廟獨家聯名
+                                        <br>
+                                        -七夕月老供品組-甜作之盒
+                                    </h6>
+                                </td>
+                                <!-- 商品規格 -->
+                                <td>
+                                    <!-- <div class="btn-group">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Small button
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            ...
+                                        </ul>
+                                    </div> -->
+                                    <div class="">
+                                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
+                                        <select class="form-select" id="autoSizingSelect">
+                                            <option selected>規格</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <!-- 單價 -->
+                                <td>
+                                    $707
+                                </td>
+                                <!-- 數量 -->
+                                <td>
+                                    <form id='myform' method='POST' action='#'>
+                                        <label for=""> </label>
+                                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                                    </form>
+                                </td>
+                                <!-- 小計 -->
+                                <td>
+                                    $707
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- <a href="#" data-toggle="tab" class="px-0 m-auto btn active"  role="button"> -->
+                <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="#" class="nextbutton-yu">
+                        <button class=" btn me-md-2" type="button">
+                            <p class="m-0 text-center">
+                                下一步
+                            </p>
+                        </button>
+                    </a>
+                </div>
+            </a>
+        </div>
+        <!-- 旅遊行程 -->
+        <div class="tab-pane fade" id="travel-yu">
+            <div class=" col-auto justify-content-around text-center">
+                <div id="unique">
+                    <table class="table ">
+                        <thead class="" >
+                            <tr>
+                            <th scope=" ">
+                                <div class="row m-auto p-1 ">
+                                    <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    <h6 class="mb-0">
+                                        全選
+                                    </h6>
+                                </div>
                             </th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+                                <th scope="col" src="imgs/small/<?= $v['product_id'] ?>.jpg" alt="<?= $v['productname'] ?>">
+                                    <h6>行程照片</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6>行程名稱</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6>單價</h6>
+                                </th>
+                                <th scope="col">
+                                    <h6>數量</h6>
+                                </th>
+                                <th scope="col" class="sub-total">
+                                    <h6>小計</h6>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class=" tbody-yu">
+                            <tr class="">
+                                <th scope=" ">
+                                    <div class="row m-auto p-1 ">
+                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    </div>
+                                </th>
+                                <!-- 行程照片 -->
+                                <td>
+                                    <img src="imgs/購物車-行程(測試用).png" alt="">
+                                </td>
+                                <!-- 行程名稱 -->
+                                <td>
+                                    <h6 class="m-0">
+                                        大稻埕霞海城廟深度漫步文化之旅
+                                    </h6>
+                                </td>
+                                <!-- 單價 -->
+                                <td>
+                                    $1500
+                                </td>
+                                <!-- 數量 -->
+                                <td>
+                                    <form id='myform' method='POST' action='#'>
+                                        <label for=""> </label>
+                                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                                    </form>
+                                </td>
+                                <!-- 小計 -->
+                                <td>
+                                    $1500
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -276,13 +656,6 @@
             </div>
         </div>    
     </header>
-
-
-
-
-
-
-
 
     <!-- footer-md ----------------------------------->
     <footer class="footer-md d-none d-md-block ">
@@ -361,11 +734,10 @@
     </script>
 
 
-
     <script>
-        //數量增加按鈕
-        $(function() {
-  // This button will increment the value
+    //數量增加按鈕
+    $(function() {
+    // This button will increment the value
     $('.qtyplus').click(function(e) {
     // Stop acting like a button
     e.preventDefault();
@@ -382,6 +754,7 @@
         $('input[name=' + fieldName + ']').val(0);
     }
     });
+
   // This button will decrement the value till 0
     $(".qtyminus").click(function(e) {
     // Stop acting like a button
@@ -400,6 +773,17 @@
     }
     });
 });
+
+
+
+    // $(function () {
+    //         $('#myTab li:eq(1) a').tab('show');
+    //     });
+
+
     </script>
+
+    <!-- 表格分頁 -->
+    
 </body>
 </html>
