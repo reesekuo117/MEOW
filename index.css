@@ -6,7 +6,8 @@
     height: 200vh;
     background:
         url(./imgs/index/grain2.png)center -500px / 160% no-repeat,
-        url(./imgs/index/bg0.png) center center / cover no-repeat;
+        url(./imgs/index/bg0.png) center center / cover no-repeat, var(--color-orange);
+    /* background-color: var(--color-orange); */
 }
 
 .bg1_ba {
@@ -14,7 +15,7 @@
     height: 100vh;
     border: 250px transparent solid;
     border-image: url(./imgs/index/flower-border.png) 300 stretch;
-    background: url(./imgs/index/bg2.png) center -320px / cover no-repeat;
+    background: url(./imgs/index/bg2.png) center -350px / cover no-repeat;
 }
 
 .left {
@@ -22,11 +23,13 @@
     top: -200px;
     width: 60%;
     height: 100vh;
+    /* border: #ff5b00 1px solid; */
 }
 
 .cloud-left {
     left: 20%;
-    top: 15%;
+    top: 13%;
+    transform: scale(0.9);
 }
 
 .cloud-left-animation {
@@ -65,9 +68,9 @@
 
 .flower-left {
     /* z-index: -1; */
-    top: 43%;
+    top: 40%;
     left: 20%;
-    transform: scale(0.9);
+    transform: scale(0.8);
 }
 
 .right {
@@ -80,7 +83,9 @@
 
 .cloud-right {
     right: 20%;
-    top: 15%;
+    top: 13%;
+    transform: scale(0.9);
+
 }
 
 .cloud-right-animation {
@@ -106,21 +111,28 @@
 }
 
 .flower-right {
-    top: 43%;
+    top: 40%;
     right: 20%;
-    transform: scale(0.9);
+    transform: scale(0.8);
 }
 
 .js-type-writer {
-    /* font-size: 48px;
-    font-family: sans-serif; */
-    color: white;
-    /* text-transform: uppercase; */
+    color: var(--color-text100);
     text-align: center;
 }
 
 .js-type-writer>span {
-    border-right: .05em solid;
+    border-right: .05em solid white;
+    animation: caret 1s steps(1) infinite;
+}
+
+.js-type-writer2 {
+    color: var(--color-text100);
+    text-align: center;
+}
+
+.js-type-writer2>span {
+    border-right: .05em solid white;
     animation: caret 1s steps(1) infinite;
 }
 
@@ -130,28 +142,69 @@
     }
 }
 
-h1 {
-    /* -webkit-text-stroke: 5px black;
-    paint-order: stroke fill; */
-
+.outline-white {
+    z-index: 5;
     text-shadow:
-        -5px -5px 0 var(--color-text100),
-        0 5px 0 var(--color-text100),
-        5px -5px 0 var(--color-text100),
-        5px 0 0 var(--color-text100),
-        5px 5px 0 var(--color-text100),
-        0 -5px 0 var(--color-text100),
-        -5px 5px 0 var(--color-text100),
-        -5px 0 0 var(--color-text100);
+        -3px -3px 0 white,
+        0 3px 0 white,
+        3px -3px 0 white,
+        3px 0 0 white,
+        3px 3px 0 white,
+        0 -3px 0 white,
+        -3px 3px 0 white,
+        -3px 0 0 white;
 }
 
-/* @mixin stroke($color: var(--color-text100), $size: 1px) {
-    text-shadow: -#{$size} -#{$size} 0 $color,
-    0 -#{$size} 0 $color,
-    #{$size} -#{$size} 0 $color,
-    #{$size} 0 0 $color,
-    #{$size} #{$size} 0 $color,
-    0 #{$size} 0 $color,
-    -#{$size} #{$size} 0 $color,
-    -#{$size} 0 0 $color;
-} */
+.moonOldSay {
+    top: 13%;
+    left: 20%;
+}
+
+.meowSay {
+    bottom: 20%;
+    left: 68%;
+}
+
+.slide-down-r {
+    bottom: 10%;
+    right: 32%;
+    animation: slide-down 1s infinite ease-in;
+}
+
+.slide-down-l {
+    bottom: 10%;
+    left: 32%;
+    animation: slide-down 1s infinite ease-in;
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+}
+
+/* ----------------------------- 崩潰 section1 結束 ------------------------------- */
+
+.bg2_ba {
+    width: 100%;
+    height: 300vh;
+    background: url(./imgs/index/bg3.png) center top / 100% no-repeat;
+    /* background-blend-mode: multiply; */
+    mix-blend-mode: hard-light;
+    /* background-blend-mode: hard-light; */
+}
+
+.meowTemple {
+    background: url(./imgs/index/meow-temple.png);
+}
