@@ -1,0 +1,250 @@
+* {
+  font-family: "gensen-M";
+}
+
+.body_lb {
+  background-color: var(--color-lightcreamy);
+}
+.key-vision_lb {
+  width: 100%;
+  height: 100vh;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 73%, 0 80%);
+  -webkit-clip-path: polygon(
+    0 0,
+    70% 0%,
+    100% 0,
+    100% 85%,
+    50% 70%,
+    0 85%,
+    0% 30%
+  );
+  background: url(./imgs/culture/台中樂成宮.jpeg) no-repeat;
+  background-size: cover;
+}
+.title_lb {
+  color: var(--color-text100);
+  position: absolute;
+  bottom: 30px;
+  left:640px;
+}
+.left-pic_lb {
+  /* border: 1px solid red; */
+  width: 695px;
+  height: 662px;
+  top: -100px;
+  /* position: absolute;
+    left: 109px; *
+  /* top: 1087px; */
+}
+.section1-cat1_lb{
+    width: 150px;
+    bottom: 280px;
+    left: 150px;
+}
+.cloud_left_lb{
+    width: 350px;
+    bottom: 250px;
+}
+
+.sidebar-sticky_lb {
+  position: sticky;
+  top: 20px;
+  font-size: 16px;
+  color: var(--color-text38);
+}
+
+
+.top-content_lb {
+  color: var(--color-text87);
+  right: -80px;
+  /* border: 1px solid red; */
+}
+.about_lb {
+  color: var(--color-orange);
+}
+.bottom-content_lb {
+  top: -200px;
+  color: var(--color-text87);
+  /* border: 1px solid red; */
+}
+.right-pic_lb {
+  top: -400px;
+  right: -150px;
+  /* border: 1px solid red */
+}
+.cloud_right_lb {
+width: 300px;
+  right: 0px;
+  bottom: -800px;
+
+}
+.section1-cat2_lb {
+  width: 150px;
+  right: 200px;
+  bottom: -800px;
+
+}
+.section1-temple_lb{
+    width: 600px;
+    right: 200px;
+    bottom: 10px;
+}
+
+.section1-templcolor2{
+  width: 700px;
+  left: 300px;
+  bottom: -50px;
+
+}
+.section1-templcolor{
+  width: 300px;
+  right: -10px;
+  bottom: 100px;
+
+}
+.pic-group_lb{
+  /* background: url(./imgs/culture/section1-temple.png);
+  background: fixed; */
+  margin: 300px 0 ;
+}
+
+.group1_lb{
+  width: 300px;
+  left: 350px;
+  bottom: 450px;
+}
+.group2_lb{
+
+width: 400px;
+left: 100px;
+bottom: 140px;
+}
+.group3_lb{
+  width: 300px;
+  left: 350px;
+  bottom: -90px;
+}
+
+/* 參拜流程 */
+.section2_lb{
+  margin-top: 500px;
+}
+.section2_lb>h1{
+  color: var(--color-text100);
+}
+.worship-card>h3{
+  color: var(--color-text100);
+}
+.worship-card>p{
+  color: var(--color-text87);
+}
+.worship-card{
+  margin: 50px 0;
+}
+
+.img-wrap_lb{
+  width: 300px;
+}
+.heart-animation_lb{
+  opacity: 0;
+  width: 100px;
+  margin:0px auto;
+  animation: animationheart 4s 1s;
+}
+@keyframes animationheart {
+  0% {
+    opacity: 0;
+ 
+}
+100% {
+  opacity: 1;
+} 
+}
+
+.left-cat-animation_lb{
+  width: 150px;
+  animation: animationleft 3s ;
+  translate: .5s;
+
+}
+.right-cat-animation_lb{
+  width: 200px;
+  animation: animationright 3s;
+  translate: .5s;
+
+}
+@keyframes animationleft {
+  0% {
+    transform: translateX(-100px);
+ 
+}
+100% {
+  transform: translateX(400px);
+} 
+}
+
+@keyframes animationright {
+  0% {
+    transform: translateX(1000px);
+ 
+}
+100% {
+  transform: translateX(450px);
+} 
+}
+
+
+/* 禁忌 */
+.section3_lb{
+  margin-top: 100px;
+
+}
+.section3_lb>h1{
+color: var(--color-text100);
+}
+.ban-card>h4{
+  -webkit-text-stroke: 1px rgb(67, 42, 15, 1);
+  color: white;
+}
+.ban-card>p{
+  color:var(--color-text87);
+}
+/* 還願 */
+.section4_lb{
+  margin: 100px auto;
+}
+.devotion-title{
+  width: 500px;
+  margin: 0 auto;
+  left: 300px;
+  top: -80px;
+}
+.devotion-bg{
+  margin: 0 auto;
+}
+.devo-content{
+  color: var(--color-text87);
+  bottom: 300px;
+  left: 250px;
+}
+.cp-cat{
+  width: 400px;
+  right: -20px;
+  bottom: -30px;
+  
+}
+
+
+.mapsvg_lb {
+  height: 100vh;
+}
+.mappath{
+  stroke: white;
+  fill: transparent;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.mappath:hover {
+  fill: var(--color-orange);
+  transform: translate(-5px, -5px);
+}
