@@ -2,80 +2,6 @@
   outline: 1px solid red;
 }
 
-/* :root {
-  --color-orange: #CD562F;
-  --color-yellow: #E5A62A;
-  --color-blue: #243B5B;
-  --color-green: #336145;
-  --color-lightbrown: #F5DFC2;
-  --color-white: #fff;
-  --color-black: #000;
-  --color-red: #963C38;
-  --color-brown: #AE5D29;
-  --color-creamy: #F3E3D4;
-  --color-lightcreamy: #FFF6E9;
-  --color-ivory: #FFFCF7;
-  --color-brown-dark: #432A0F;
-  --color-text100: rgb(67, 42, 15, 1);
-  --color-text87: rgba(67, 42, 15, 0.87);
-  --color-text60: rgba(67, 42, 15, 0.6);
-  --color-text38: rgba(67, 42, 15, 0.38);
-} */
-
-/* h1 {
-  font-family: 'gensen-H';
-  font-size: 40px;
-  line-height: 125%;
-}
-
-h2 {
-  font-family: 'gensen-B';
-  font-size: 32px;
-  line-height: 125%;
-}
-
-h3 {
-  font-family: 'gensen-M';
-  font-size: 28px;
-  line-height: 125%;
-}
-
-h4 {
-  font-family: 'gensen-M';
-  font-size: 24px;
-  line-height: 140%;
-}
-
-h5 {
-  font-family: 'gensen-M';
-  font-size: 20px;
-  line-height: 140%;
-}
-
-h6 {
-  font-family: 'gensen-M';
-  font-size: 20px;
-  line-height: 140%;
-}
-
-s {
-  font-family: 'gensen-R';
-  font-size: 14px;
-  line-height: 140%;
-}
-
-.xs {
-  font-family: 'gensen-R';
-  font-size: 12px;
-  line-height: 140%;
-}
-
-p {
-  font-family: 'gensen-R';
-  font-size: 16px;
-  line-height: 140%;
-} */
-
 .body_lb {
   /* background-color: var(--color-lightcreamy); */
   background-image: url(./imgs/culture/RV-Culture-desktop-3.jpg);
@@ -106,15 +32,26 @@ p {
     bottom: -20px;
 }
 
-.sidebar-sticky_lb {
-  position: sticky;
-  top: 20px;
+.sidebar_lb {
+  z-index: 99;
+  position: fixed;
+  top: 100px;
+  right: 50px;
   font-size: 16px;
-  color: var(--color-text38);
+
+  /* color: var(--color-text38); */
 }
 
-.sidebar-sticky_lb a{
+.sidebar_lb a{
   text-decoration: none;
+  color: var(--color-text60);
+}
+#moonold{
+  opacity: 0;
+}
+
+.sidebar_lb a:hover{
+  color: var(--color-orange);
 
 }
 
@@ -122,9 +59,9 @@ p {
   color: var(--color-text87);
   margin: auto 0;
 }
-.about_lb {
+/* .about_lb {
   color: var(--color-orange);
-}
+} */
 .bottom-content_lb {
   color: var(--color-text87);
   margin: auto 0;
