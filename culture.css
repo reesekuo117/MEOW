@@ -248,3 +248,40 @@ color: var(--color-text100);
   fill: var(--color-orange);
   transform: translate(-5px, -5px);
 }
+
+
+
+
+
+
+
+
+
+
+
+/* 魚的進度條 */
+/* html的部分 */
+
+/*
+<div class="scroll">
+            <div class="scroll-box"></div>
+        </div> 
+ */
+
+ /* css的部分 */
+
+/* 
+.scroll{
+            width: 100%;
+            height: 5px;
+            background-color: #9f6d3354;
+            position: fixed;
+            top:0;
+            z-index: 999999999;
+        }
+        .scroll-box{
+            width: 0%;
+            height: 100%;
+            background-color: #C7802D;
+        }
+ */
