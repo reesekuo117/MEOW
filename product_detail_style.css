@@ -1,0 +1,7 @@
+.detail_title .row{
+    flex-direction: column;
+}
+.evaluation{
+    display: flex;
+    
+}

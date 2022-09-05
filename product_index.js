@@ -20,7 +20,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     // console.log('second offsetTop:', $('.second-test > .second').offset().top);
     // console.log('first scrollTop:', $('.second').scrollTop());
-    if ($(window).scrollTop() >= ($('.brand_3').offset().top - $(window).height() * 1 / 2)) {
+    if ($(window).scrollTop() >= ($('.brand_3').offset().top - $(window).height() * 2 / 3)) {
         $('.brand_3').css({
             transform: 'translateY(0px)',
             opacity: 1,
