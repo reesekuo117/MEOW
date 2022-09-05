@@ -80,11 +80,11 @@
     color: #fff;
     outline:1px solid #E5A62A;
 }
-.pagination-yu .btn:active{
+.pagination-yu .active{
     outline:1px solid #E5A62A;
     border-color:#E5A62A;
     background-color: #E5A62A;
-    color: rgba(67, 42, 15, 0.38);
+    color: #fff;
     border: 1px solid  #E5A62A;
 }
 

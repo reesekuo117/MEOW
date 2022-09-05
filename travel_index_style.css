@@ -1,0 +1,32 @@
+.cloud1-yu svg{
+    transform: translate(4rem, 40rem);
+    position: absolute;
+    z-index: 999999;
+}
+.cloud2-yu{
+    transform: translate(100rem, 4rem);
+    position: absolute;
+    z-index: 999999;
+}
+.travel-frame1-yu{
+    position: absolute;
+    transform: translate(76rem, 13rem);
+}
+.friend-btn-yu{
+    margin: 36px;
+}
+.morebutton-yu .btn{
+    background-color: #E5A62A;
+    outline:1px solid #E5A62A;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 125%;
+}
+.morebutton-yu .btn:focus {
+    background-color: #E5A62A;
+    outline:1px solid #E5A62A;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 125%;
+    box-shadow:none;
+}
