@@ -23,15 +23,14 @@
 }
 .title_lb {
   color: var(--color-text100);
-  position: absolute;
-  bottom: 30px;
-  left:640px;
+  margin: -200px 0 50px 0;
+  
 }
 .left-pic_lb {
   /* border: 1px solid red; */
   width: 695px;
   height: 662px;
-  top: -100px;
+  /* top: -100px; */
   /* position: absolute;
     left: 109px; *
   /* top: 1087px; */
@@ -203,6 +202,7 @@ bottom: 140px;
 color: var(--color-text100);
 }
 .ban-card>h4{
+  font-size: 30px;
   -webkit-text-stroke: 1px rgb(67, 42, 15, 1);
   color: white;
 }
