@@ -90,3 +90,42 @@ $(window).scroll(function () {
     }
 
 })
+// 喵獨家浮動
+$(window).scroll(function () {
+    // console.log('second offsetTop:', $('.second-test > .second').offset().top);
+    // console.log('first scrollTop:', $('.second').scrollTop());
+    if ($(window).scrollTop() >= ($('.meow_1').offset().top - $(window).height() * 2 / 3)) {
+        $('.meow_1').css({
+            transform: 'translateY(0px)',
+            opacity: 1,
+        })
+
+    }
+    else {
+        $('.meow_1').css({
+            transform: 'translateY(100px)',
+            opacity: 0,
+        })
+    }
+
+})
+$(window).scroll(function () {
+    // console.log('second offsetTop:', $('.second-test > .second').offset().top);
+    // console.log('first scrollTop:', $('.second').scrollTop());
+    if ($(window).scrollTop() >= ($('.meow_2').offset().top - $(window).height() * 3 / 5)) {
+        $('.meow_2').css({
+            transform: 'translateY(0px)',
+            opacity: 1,
+        })
+
+    }
+    else {
+        $('.meow_2').css({
+            transform: 'translateY(100px)',
+            opacity: 0,
+        })
+    }
+
+})
+// 喵獨家結束
+
