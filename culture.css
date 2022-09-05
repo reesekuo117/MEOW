@@ -1,48 +1,109 @@
 * {
-  font-family: "gensen-M";
+  outline: 1px solid red;
 }
 
-.body_lb {
-  background-color: var(--color-lightcreamy);
+/* :root {
+  --color-orange: #CD562F;
+  --color-yellow: #E5A62A;
+  --color-blue: #243B5B;
+  --color-green: #336145;
+  --color-lightbrown: #F5DFC2;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-red: #963C38;
+  --color-brown: #AE5D29;
+  --color-creamy: #F3E3D4;
+  --color-lightcreamy: #FFF6E9;
+  --color-ivory: #FFFCF7;
+  --color-brown-dark: #432A0F;
+  --color-text100: rgb(67, 42, 15, 1);
+  --color-text87: rgba(67, 42, 15, 0.87);
+  --color-text60: rgba(67, 42, 15, 0.6);
+  --color-text38: rgba(67, 42, 15, 0.38);
+} */
+
+/* h1 {
+  font-family: 'gensen-H';
+  font-size: 40px;
+  line-height: 125%;
 }
-.key-vision_lb {
-  width: 100%;
-  height: 100vh;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 73%, 0 80%);
-  -webkit-clip-path: polygon(
-    0 0,
-    70% 0%,
-    100% 0,
-    100% 85%,
-    50% 70%,
-    0 85%,
-    0% 30%
-  );
-  background: url(./imgs/culture/台中樂成宮.jpeg) no-repeat;
+
+h2 {
+  font-family: 'gensen-B';
+  font-size: 32px;
+  line-height: 125%;
+}
+
+h3 {
+  font-family: 'gensen-M';
+  font-size: 28px;
+  line-height: 125%;
+}
+
+h4 {
+  font-family: 'gensen-M';
+  font-size: 24px;
+  line-height: 140%;
+}
+
+h5 {
+  font-family: 'gensen-M';
+  font-size: 20px;
+  line-height: 140%;
+}
+
+h6 {
+  font-family: 'gensen-M';
+  font-size: 20px;
+  line-height: 140%;
+}
+
+s {
+  font-family: 'gensen-R';
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.xs {
+  font-family: 'gensen-R';
+  font-size: 12px;
+  line-height: 140%;
+}
+
+p {
+  font-family: 'gensen-R';
+  font-size: 16px;
+  line-height: 140%;
+} */
+
+.body_lb {
+  /* background-color: var(--color-lightcreamy); */
+  background-image: url(./imgs/culture/RV-Culture-desktop-3.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.section1_lb{
+  margin-top: 700px;
+}
+.section1-content_lb{
+  margin-top: 200px
+}
+.section1-content2_lb{
+  margin-top: 157px;
 }
 .title_lb {
   color: var(--color-text100);
-  margin: -200px 0 50px 0;
   
 }
-.left-pic_lb {
-  /* border: 1px solid red; */
-  width: 695px;
-  height: 662px;
-  /* top: -100px; */
-  /* position: absolute;
-    left: 109px; *
-  /* top: 1087px; */
-}
+
 .section1-cat1_lb{
     width: 150px;
-    bottom: 280px;
+    bottom: 5px;
     left: 150px;
 }
 .cloud_left_lb{
-    width: 350px;
-    bottom: 250px;
+    bottom: -20px;
 }
 
 .sidebar-sticky_lb {
@@ -52,166 +113,108 @@
   color: var(--color-text38);
 }
 
+.sidebar-sticky_lb a{
+  text-decoration: none;
+
+}
 
 .top-content_lb {
   color: var(--color-text87);
-  right: -80px;
-  /* border: 1px solid red; */
+  margin: auto 0;
 }
 .about_lb {
   color: var(--color-orange);
 }
 .bottom-content_lb {
-  top: -200px;
   color: var(--color-text87);
-  /* border: 1px solid red; */
+  margin: auto 0;
 }
-.right-pic_lb {
-  top: -400px;
-  right: -150px;
-  /* border: 1px solid red */
-}
+
 .cloud_right_lb {
 width: 300px;
   right: 0px;
-  bottom: -800px;
-
+  bottom: 50px;
 }
 .section1-cat2_lb {
   width: 150px;
-  right: 200px;
-  bottom: -800px;
+  right: 300px;
+  bottom:-20px;
 
 }
-.section1-temple_lb{
-    width: 600px;
-    right: 200px;
-    bottom: 10px;
-}
 
-.section1-templcolor2{
-  width: 700px;
-  left: 300px;
-  bottom: -50px;
-
-}
-.section1-templcolor{
-  width: 300px;
-  right: -10px;
-  bottom: 100px;
-
-}
-.pic-group_lb{
-  /* background: url(./imgs/culture/section1-temple.png);
-  background: fixed; */
-  margin: 300px 0 ;
-}
-
-.group1_lb{
-  width: 300px;
-  left: 350px;
-  bottom: 450px;
-}
-.group2_lb{
-
-width: 400px;
-left: 100px;
-bottom: 140px;
-}
-.group3_lb{
-  width: 300px;
-  left: 350px;
-  bottom: -90px;
-}
 
 /* 參拜流程 */
 .section2_lb{
-  margin-top: 500px;
+  margin-top: 112px;
 }
-.section2_lb>h1{
+.s2-leftcloud_lb{
+  width: 700px;
+  left: -400px;
+  top: 600px;
+}
+.s2-rightcloud_lb{
+  width: 600px;
+  left: 800px;
+  bottom: 1300px;
+}
+
+.section2_lb h1{
   color: var(--color-text100);
 }
-.worship-card>h3{
+.worship-card h3{
   color: var(--color-text100);
+  color:  rgb(67, 42, 15, 1);
 }
-.worship-card>p{
+.worship-card p{
   color: var(--color-text87);
 }
 .worship-card{
-  margin: 50px 0;
+  margin: 166px 0;
 }
 
 .img-wrap_lb{
   width: 300px;
+  margin: 0 auto;
 }
 .heart-animation_lb{
-  opacity: 0;
+  /* opacity: 0; */
   width: 100px;
   margin:0px auto;
-  animation: animationheart 4s 1s;
+  transition: 1s;
+  /* animation: animationheart 4s 1s; */
 }
-@keyframes animationheart {
-  0% {
-    opacity: 0;
- 
-}
-100% {
-  opacity: 1;
-} 
-}
+
 
 .left-cat-animation_lb{
   width: 150px;
-  animation: animationleft 3s ;
-  translate: .5s;
-
+  transition: 2s;
+  /* height: 300px; */
 }
 .right-cat-animation_lb{
   width: 200px;
-  animation: animationright 3s;
-  translate: .5s;
-
-}
-@keyframes animationleft {
-  0% {
-    transform: translateX(-100px);
- 
-}
-100% {
-  transform: translateX(400px);
-} 
+  /* height: 300px; */
+  transition: 2s;
 }
 
-@keyframes animationright {
-  0% {
-    transform: translateX(1000px);
- 
-}
-100% {
-  transform: translateX(450px);
-} 
-}
 
 
 /* 禁忌 */
 .section3_lb{
-  margin-top: 100px;
+  margin-top: 124px;
 
 }
 .section3_lb>h1{
 color: var(--color-text100);
 }
 .ban-card>h4{
-  font-size: 30px;
-  -webkit-text-stroke: 1px rgb(67, 42, 15, 1);
-  color: white;
+  color: var(--color-text100);
 }
 .ban-card>p{
   color:var(--color-text87);
 }
 /* 還願 */
 .section4_lb{
-  margin: 100px auto;
+  margin: 200px auto;
 }
 .devotion-title{
   width: 500px;
@@ -247,4 +250,7 @@ color: var(--color-text100);
 .mappath:hover {
   fill: var(--color-orange);
   transform: translate(-5px, -5px);
+}
+.map-wrap{
+  padding-left:100px ;
 }
