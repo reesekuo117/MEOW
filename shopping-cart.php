@@ -38,7 +38,7 @@ $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就�
 .page .page-one{
     color: #432A0F;
 }
-.progress-yu .pageline::after{
+/* .progress-yu .pageline::after{
     width: 50%;
     height: 1px;
     background-color:#432A0F ;
@@ -49,7 +49,7 @@ $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就�
     height: 1px;
     background-color:#432A0F ;
     vertical-align: middle;
-}
+} */
 
 /* 獨家商品 旅遊行程分頁標籤 */
 .pagination-yu{
@@ -159,7 +159,7 @@ input.qtyminus {
                             <th scope="col" class="sub-total">小計</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="">
                         <tr class="">
                             <th scope="row">
                                 <input type="checkbox" aria-label="Checkbox for following text input">
@@ -167,6 +167,7 @@ input.qtyminus {
                             <td>
                                 <img src="" alt="">
                             </td>
+                            <!-- 商品名稱 -->
                             <td>
                                 <p class="m-0">
                                     台北霞海城隍廟獨家聯名
@@ -174,6 +175,7 @@ input.qtyminus {
                                     -七夕月老供品組-甜作之盒
                                 </p>
                             </td>
+                            <!-- 規格 -->
                             <td>
                                 <div class=" type-yu  btn-group btn-danger">
                                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -185,8 +187,9 @@ input.qtyminus {
                                 </div>
                             </td>
                             <td>
-
+                                $707
                             </td>
+                            <!--  數量 -->
                             <td>
                                 <form id='myform' method='POST' action='#'>
                                     <label for=""> </label>
