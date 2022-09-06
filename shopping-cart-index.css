@@ -1,9 +1,37 @@
- /*購物車進度條  */
-.progress-bar-yu{
-    margin-top: 88px;
-    margin-bottom: 40px;
-    font-size: var(--font-h5-20)
+ /*購物車訂單的進度條  */
+ /* *{
+    border: 1px solid #432A0F;
+ } */
+
+.line-box-yu{
+    /* margin-top: 88px auto 0 auto; */
+    margin: 0 auto;
+    padding-top: 88px;
+    border-bottom:1px solid #432A0F ;
+    width: 1200px;
 }
+.progress-bar-yu{
+    margin-top: -24px;
+    margin-bottom: 88px;
+    font-size: var(--font-h5-20)
+    
+}
+.circle-1-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-2-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-3-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+
 .circle-light{
     position: relative;
     width: 40px;
@@ -35,14 +63,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.page h5{
+.page-yu h5{
     /* border: 1px solid #000; */
     line-height: 20px;
     padding: 10px;
     text-align: center;
     color: rgba(67, 42, 15, 0.38);
 }
-.page .page-one{
+.page-yu .page-yu-one{
     color: #432A0F;
 }
 /* .pageline{
@@ -67,7 +95,6 @@
 .pagination-yu .btn {
     color: rgba(67, 42, 15, 0.38);
     outline:1px solid #E5A62A;
-    outline:1px solid #E5A62A;
 }
 .pagination-yu a.btn:hover{
     /* color: rgba(67, 42, 15, 0.38); */
@@ -88,22 +115,74 @@
     border: 1px solid  #E5A62A;
 }
 
-/* checkboox-yu */
+/* --------checkboox-yu---------*/
+.checkbox-yu input[type="checkbox"] {
+    accent-color: red;
+}
+
 .table h6{
     margin-bottom: 0%;
 }
-/*  表格 */
-.table td{
+/* -------- 獨家商品表格外觀設定--------- */
+#uniqui-yu .thead{
+    background-color: var(--color-creamy);
+}
+#uniqui-yu .table td{
     vertical-align: middle;
 }
-
+#uniqui-yu .table{
+    margin-top:20px;
+}
+#uniqui-yu .table> thead > tr > th{
+    border: none;
+}
+#uniqui-yu .table > tbody > tr > td{
+    border: none;
+}
+#uniqui-yu .thead th{
+    border: none;
+}
+#uniqui-yu .tbody th{
+    border: none;
+}
+#uniqui-yu .tbody td{
+    padding: 3rem;
+}
+/* -------- 旅遊行程表格外觀設定--------- */
+#travel-yu .thead{
+    background-color: var(--color-creamy);
+    border: none;
+}
+#travel-yu .table td{
+    vertical-align: middle;
+    border: none;
+}
+#travel-yu .table{
+    margin-top:20px;
+    border: none;
+}
+#travel-yu .table> thead > tr > th{
+    border: none;
+}
+#travel-yu .table > tbody > tr > td{
+    border: none;
+}
+#travel-yu .thead th{
+    border: none;
+}
+#utravel-yu .tbody th{
+    border: none;
+}
+#travel-yu .tbody td{
+    padding: 3rem;
+}
 /* 規格 */
-.tbody-yu th{
+.tbody th{
     vertical-align: middle;
 } 
 
 /* 數量增加按鈕 */
-.qty {
+.qty-yu {
     width: 40px;
     height: 35px;
     text-align: center;
@@ -132,32 +211,33 @@ input.qtyminus {
 
 
 /* 下一步按鈕 */
-.nextbutton-yu .btn{
+.unique-nextbutton-yu{
+    /* outline: 1px solid  #432A0F; */
+}
+.unique-nextbutton-yu .unique-btn-yu{
+    /* border: 1px solid #432A0F; */
     margin: 40px;
     background-color: #E5A62A;
     font-family: 'gensen-M';
     font-size: 14px;
     line-height: 125%;
     width: 275px;
-    outline: 2px solid  #432A0F;
+    height: 41px;
     border-radius: 8px;
+    box-shadow:none;
 }
-.nextbutton-yu .btn:hover{
-    outline: 2px solid  #432A0F;
+.unique-nextbutton-yu .unique-btn-yu:hover{
+    outline: none;
     box-shadow: 4px 4px 0px 0px #432A0F;
-
 }
-.nextbutton-yu .btn:focus {
-    background-color: #E5A62A;
-    outline: 2px solid  #432A0F;
+.unique-btn-yu:active {
+    /* background-color: #E5A62A;
     font-family: 'gensen-M';
     font-size: 14px;
-    line-height: 125%;
+    line-height: 125%; */
     box-shadow:none;
 }
-/* .pagination-yu .btn:focus  {
+.unique-btn-yu:focus  {
     box-shadow:none;
     background-color: #E5A62A;
-    color: #fff;
-    outline:1px solid #E5A62A;
-} */
+}

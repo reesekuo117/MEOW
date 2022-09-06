@@ -87,38 +87,40 @@
         </div>
     </div>
     
-    <!-- progress-bar -->
+    <!-- 購物車訂單的進度條progress-bar -->
     <div class="container-fluid p-0">
+        <div class="line-box-yu"></div>
         <div class="progress-bar-yu" >
             <div class=" d-flex justify-content-around ">
-                <span class="row ">
+
+                <span class="row circle-1-yu ">
                     <div class="circle-light">
                         <h5 class="page-one-number">1</h5>
                     </div>
-                    <div class="page ">
-                        <h5 class="pl-2 page-one" >購物車訂單</h5>
+                    <div class="page-yu ">
+                        <h5 class=" m-0 page-yu-one" >購物車訂單</h5>
                     </div>
-                    <div class=" pageline "></div>
+                    <div class=" pageline-yu "></div>
                 </span>
 
                 <!-- <span class="pageline"></span> -->
 
                 
-                <span class="row">
+                <span class="row circle-2-yu">
                     <div class="circle">
                         <h5>2</h5>
                     </div>
-                    <div class="page ">
-                        <h5 class="pl-2 page-two " >填寫資料</h5>
+                    <div class="page-yu ">
+                        <h5 class="m-0 page-yu-two " >填寫資料</h5>
                     </div>
                 </span>
                 
-                <span class="row">
+                <span class="row circle-3-yu">
                     <div class="circle">
                         <h5>3</h5>
                     </div>
-                    <div class="page ">
-                        <h5 class="pl-2 page-three" >完成訂單</h5>
+                    <div class="page-yu ">
+                        <h5 class="m-0 page-yu-three" >完成訂單</h5>
                     </div>
                 </span>
             </div>
@@ -134,22 +136,22 @@
     </div>
 
     <!--  購物車商品清單 -->
-    <div id="myTabContent-yu" class=" tab-content container">
+    <div id="myTabContent-yu" class=" px-1 tab-content container">
         <!-- 獨家商品 -->
         <div class="tab-pane in active " id="uniqui-yu" >
-            <div class=" col-auto justify-content-around text-center">
-                <div id="unique">
+            <div class=" px-0 col-auto justify-content-around text-center">
+                <div id="unique-form-yu">
                     <table class="table ">
-                        <thead class="" >
+                        <thead class=" thead" >
                             <tr>
-                            <th scope=" ">
-                                <div class="row m-auto p-1 ">
-                                    <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
-                                    <h6 class="mb-0">
-                                        全選
-                                    </h6>
-                                </div>
-                            </th>
+                                <th scope=" ">
+                                    <div class="row m-auto ">
+                                        <input class="mx-3 checkbox-yu" type="checkbox" id="select-all" aria-label="Checkbox for following text input">
+                                        <h6 class="mb-0 ">
+                                            全選
+                                        </h6>
+                                    </div>
+                                </th>
                                 <th scope="col" src="imgs/small/<?= $v['product_id'] ?>.jpg" alt="<?= $v['productname'] ?>">
                                     <h6>商品照片</h6>
                                 </th>
@@ -170,11 +172,11 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class=" tbody-yu">
+                        <tbody class=" tbody">
                             <tr class="">
                                 <th scope=" ">
-                                    <div class="row m-auto p-1 ">
-                                        <input class="checkboox-yu mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    <div class="row m-auto p-1 checkbox-yu">
+                                        <input class=" mx-2" type="checkbox" name="vehicle" aria-label="Checkbox for following text input">
                                     </div>
                                 </th>
                                 <!-- 商品照片 -->
@@ -218,7 +220,7 @@
                                     <form id='myform' method='POST' action='#'>
                                         <label for=""> </label>
                                         <input type='button' value='-' class='qtyminus' field='quantity' />
-                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='text' name='quantity' value='0' class='qty-yu' />
                                         <input type='button' value='+' class='qtyplus' field='quantity' />
                                     </form>
                                 </td>
@@ -229,8 +231,8 @@
                             </tr>
                             <tr>
                                 <th scope=" ">
-                                    <div class="row m-auto p-1 ">
-                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    <div class="row m-auto p-1 checkbox-yu">
+                                        <input class=" mx-2" type="checkbox" name="vehicle" aria-label="Checkbox for following text input">
                                     </div>
                                 </th>
                                 <!-- 商品照片 -->
@@ -274,7 +276,7 @@
                                     <form id='myform' method='POST' action='#'>
                                         <label for=""> </label>
                                         <input type='button' value='-' class='qtyminus' field='quantity' />
-                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='text' name='quantity' value='0' class='qty-yu' />
                                         <input type='button' value='+' class='qtyplus' field='quantity' />
                                     </form>
                                 </td>
@@ -285,8 +287,8 @@
                             </tr>
                             <tr>
                                 <th scope=" ">
-                                    <div class="row m-auto p-1 ">
-                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
+                                    <div class="row m-auto p-1 checkbox-yu">
+                                        <input class=" mx-2" type="checkbox" name="vehicle" aria-label="Checkbox for following text input">
                                     </div>
                                 </th>
                                 <!-- 商品照片 -->
@@ -330,175 +332,7 @@
                                     <form id='myform' method='POST' action='#'>
                                         <label for=""> </label>
                                         <input type='button' value='-' class='qtyminus' field='quantity' />
-                                        <input type='text' name='quantity' value='0' class='qty' />
-                                        <input type='button' value='+' class='qtyplus' field='quantity' />
-                                    </form>
-                                </td>
-                                <!-- 小計 -->
-                                <td>
-                                    $707
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope=" ">
-                                    <div class="row m-auto p-1 ">
-                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
-                                    </div>
-                                </th>
-                                <!-- 商品照片 -->
-                                <td>
-                                    <img src="imgs/購物車-商品(測試用).png" alt="">
-                                </td>
-                                <!-- 商品名稱 -->
-                                <td>
-                                    <h6 class="m-0">
-                                        台北霞海城隍廟獨家聯名
-                                        <br>
-                                        -七夕月老供品組-甜作之盒
-                                    </h6>
-                                </td>
-                                <!-- 商品規格 -->
-                                <td>
-                                    <!-- <div class="btn-group">
-                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Small button
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            ...
-                                        </ul>
-                                    </div> -->
-                                    <div class="">
-                                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
-                                        <select class="form-select" id="autoSizingSelect">
-                                            <option selected>規格</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </td>
-                                <!-- 單價 -->
-                                <td>
-                                    $707
-                                </td>
-                                <!-- 數量 -->
-                                <td>
-                                    <form id='myform' method='POST' action='#'>
-                                        <label for=""> </label>
-                                        <input type='button' value='-' class='qtyminus' field='quantity' />
-                                        <input type='text' name='quantity' value='0' class='qty' />
-                                        <input type='button' value='+' class='qtyplus' field='quantity' />
-                                    </form>
-                                </td>
-                                <!-- 小計 -->
-                                <td>
-                                    $707
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope=" ">
-                                    <div class="row m-auto p-1 ">
-                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
-                                    </div>
-                                </th>
-                                <!-- 商品照片 -->
-                                <td>
-                                    <img src="imgs/購物車-商品(測試用).png" alt="">
-                                </td>
-                                <!-- 商品名稱 -->
-                                <td>
-                                    <h6 class="m-0">
-                                        台北霞海城隍廟獨家聯名
-                                        <br>
-                                        -七夕月老供品組-甜作之盒
-                                    </h6>
-                                </td>
-                                <!-- 商品規格 -->
-                                <td>
-                                    <!-- <div class="btn-group">
-                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Small button
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            ...
-                                        </ul>
-                                    </div> -->
-                                    <div class="">
-                                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
-                                        <select class="form-select" id="autoSizingSelect">
-                                            <option selected>規格</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </td>
-                                <!-- 單價 -->
-                                <td>
-                                    $707
-                                </td>
-                                <!-- 數量 -->
-                                <td>
-                                    <form id='myform' method='POST' action='#'>
-                                        <label for=""> </label>
-                                        <input type='button' value='-' class='qtyminus' field='quantity' />
-                                        <input type='text' name='quantity' value='0' class='qty' />
-                                        <input type='button' value='+' class='qtyplus' field='quantity' />
-                                    </form>
-                                </td>
-                                <!-- 小計 -->
-                                <td>
-                                    $707
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope=" ">
-                                    <div class="row m-auto p-1 ">
-                                        <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
-                                    </div>
-                                </th>
-                                <!-- 商品照片 -->
-                                <td>
-                                    <img src="imgs/購物車-商品(測試用).png" alt="">
-                                </td>
-                                <!-- 商品名稱 -->
-                                <td>
-                                    <h6 class="m-0">
-                                        台北霞海城隍廟獨家聯名
-                                        <br>
-                                        -七夕月老供品組-甜作之盒
-                                    </h6>
-                                </td>
-                                <!-- 商品規格 -->
-                                <td>
-                                    <!-- <div class="btn-group">
-                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Small button
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            ...
-                                        </ul>
-                                    </div> -->
-                                    <div class="">
-                                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
-                                        <select class="form-select" id="autoSizingSelect">
-                                            <option selected>規格</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </td>
-                                <!-- 單價 -->
-                                <td>
-                                    $707
-                                </td>
-                                <!-- 數量 -->
-                                <td>
-                                    <form id='myform' method='POST' action='#'>
-                                        <label for=""> </label>
-                                        <input type='button' value='-' class='qtyminus' field='quantity' />
-                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='text' name='quantity' value='0' class='qty-yu' />
                                         <input type='button' value='+' class='qtyplus' field='quantity' />
                                     </form>
                                 </td>
@@ -511,10 +345,10 @@
                     </table>
                 </div>
             </div>
-            <!-- <a href="#" data-toggle="tab" class="px-0 m-auto btn active"  role="button"> -->
-                <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="#" class="nextbutton-yu">
-                        <button class=" btn me-md-2" type="button">
+            <!-- <a href="#" data-toggle="tab" class="px-0 m-auto btn active"  role="button" d-grid gap-2 > -->
+                <div class=" d-md-flex justify-content-md-end">
+                    <a href="#" class="unique-nextbutton-yu">
+                        <button class=" unique-btn-yu  me-md-2" type="button">
                             <p class="m-0 text-center">
                                 下一步
                             </p>
@@ -526,18 +360,18 @@
         <!-- 旅遊行程 -->
         <div class="tab-pane fade" id="travel-yu">
             <div class=" col-auto justify-content-around text-center">
-                <div id="unique">
-                    <table class="table ">
-                        <thead class="" >
+                <div id="travel-form-yu">
+                    <table class="table">
+                        <thead class="thead" >
                             <tr>
-                            <th scope=" ">
-                                <div class="row m-auto p-1 ">
-                                    <input class=" mx-2" type="checkbox" aria-label="Checkbox for following text input">
-                                    <h6 class="mb-0">
-                                        全選
-                                    </h6>
-                                </div>
-                            </th>
+                                <th scope=" ">
+                                    <div class="row m-auto">
+                                        <input class="mx-3" type="checkbox" aria-label="Checkbox for following text input">
+                                        <h6 class="">
+                                            全選
+                                        </h6>
+                                    </div>
+                                </th>
                                 <th scope="col" src="imgs/small/<?= $v['product_id'] ?>.jpg" alt="<?= $v['productname'] ?>">
                                     <h6>行程照片</h6>
                                 </th>
@@ -555,7 +389,7 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class=" tbody-yu">
+                        <tbody class=" tbody">
                             <tr class="">
                                 <th scope=" ">
                                     <div class="row m-auto p-1 ">
@@ -581,7 +415,7 @@
                                     <form id='myform' method='POST' action='#'>
                                         <label for=""> </label>
                                         <input type='button' value='-' class='qtyminus' field='quantity' />
-                                        <input type='text' name='quantity' value='0' class='qty' />
+                                        <input type='text' name='quantity' value='0' class='qty-yu' />
                                         <input type='button' value='+' class='qtyplus' field='quantity' />
                                     </form>
                                 </td>
@@ -597,6 +431,9 @@
         </div>
     </div>
     
+
+
+    <!-- 獨家商品訂單下一步之後的填寫資料 -->
     </header>
 
 
@@ -774,7 +611,26 @@
     });
 });
 
+        // function CheckAll() {
+        // var ck = document.form.elements["c1[]"]; 
+        // var ckAll = document.form.allbox; 
+        // if (!ck) { //當沒有checkbox時 
+        // ckAll.checked = false; 
+        //  } else if (!ck.length) { //當只有一個checkbox時 
+        // ck.checked = ckAll.checked; 
+        //   } else { //當有兩個以上的checkbox時 
+        // for (var i=0;i<ck.length;i++) 
+        // ck[i].checked = ckAll.checked; 
+        // }
+        // }
 
+
+        document.getElementById('select-all').onclick = function() {
+    var checkboxes = document.getElementsByName('vehicle');
+    for (var checkbox of checkboxes) {
+        checkbox.checked = this.checked;
+    }
+}
 
     // $(function () {
     //         $('#myTab li:eq(1) a').tab('show');
