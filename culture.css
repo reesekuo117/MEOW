@@ -153,6 +153,7 @@ color: var(--color-text100);
   
 }
 
+/* 月老廟地圖 */
 
 .mapsvg_lb {
   height: 100vh;
@@ -178,12 +179,85 @@ color: var(--color-text100);
   transform: translate(-5px, -5px);
 }
 .map-wrap{
-  padding-left:100px ;
+  /* padding-left:100px ; */
+  /* margin: 0 auto; */
+}
+
+.select_lb{
+  width: 140px;
+  height: 48px;
+  outline: none;
+  border-radius: 8px;
+  border: 2px solid var(--color-brown-dark);
+}
+.select_lb:focus{
+  box-shadow: 4px 4px #432A0F;
+}
+
+.templetag_lb{
+  color: var(--color-orange);
+}
+.templename_lb{
+  color: var(--color-text87);
+}
+.detail-info_lb{
+ padding-top: 80px;
+  color: var(--color-text87);
 }
 
 
+.detail-info_lb span{
+  display: inline-block;
+  position: relative;
+}
+.detail-info_lb span:before{
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -10px;
+  background: var(--color-orange);
+  width: 5px;
+  height: 17px;
+}
 
-/* sidebar樣式 */
+.tem-wrap_lb{
+  border-radius: 8px;
+  width: 300px;
+  height: 170px;
+}
+
+.cardhead_lb{
+  padding-bottom: 50px;
+  border-bottom: 3px solid var(--color-text38) ;
+}
+
+.step_lb , .temnotice_lb{
+  color: var(--color-text87);
+  border: 1px solid var(--color-orange);
+  border-radius: 50px;
+  display: inline-block;
+
+}
+.steptext_lb, .temnoticetext_lb{
+  color: var(--color-text87);
+}
+
+/* sidebar */
+
+.sidebar_lb span{
+  display: inline-block;
+  position: relative;
+}
+.sidebar_lb span::before{
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: -28px;
+  background: var(--color-text38);
+  width: 20px;
+  height: 4px;
+}
+
 .sidebar_lb {
   position: fixed;
   top: 100px;
