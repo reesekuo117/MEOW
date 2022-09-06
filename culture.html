@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./gensen-font-master/ttc/">
     <link rel="stylesheet" href="./culture.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-sidebar/3.3.1/sticky-sidebar.min.js"></script> -->
 </head>
 <body class="body_lb">
     <header class="d-none d-md-block">
@@ -141,7 +142,7 @@
         </div>    
     </header>
 
-<div class="container-fluid section1_lb">
+<div class="container-fluid section1_lb targetScrollSection" id="moonold_lb">
     <h1 class="title_lb text-center">關於月老</h1>
     <div class="row  section1-content_lb position-relative">
         <div class="col-1"></div>
@@ -166,26 +167,6 @@
             </h5>
         </div>
         <div class="col-1"></div>
-        
-        <div class=" col-2 sidebar_lb">
-            <ul>
-                    <li class="pb-1 list-unstyled">
-                        <a id="moonold_lb" href="#">關於月老</a>
-                    </li >
-                    <li class="pb-1 list-unstyled">
-                        <a id="byebye_lb" href="#">參拜流程</a>
-                    </li>
-                    <li class="pb-1 list-unstyled">
-                        <a id="notice_lb" href="#">參拜月老禁忌</a>
-                    </li>
-                    <li class="pb-1 list-unstyled">
-                        <a id="givebk_lb" href="#">如何還願</a>
-                    </li>
-                    <li class="pb-1 list-unstyled">
-                        <a id="selected-temple_lb" href="#">全台精選月老廟</a>
-                    </li>
-                </ul>
-        </div>
     </div>
    
     <div class="row section1-content2_lb position-relative">
@@ -239,7 +220,7 @@
 
 <!--------  參拜流程 --------->
 
-<div class="container section2_lb position-relative">
+<div class="container section2_lb position-relative targetScrollSection " id="byebye_lb">
     <h1 class="text-center mt-5">參拜流程</h1>
 <!-- 準備供品 -->
     <div class="worship-card row d-flex justify-content-center align-items-center">
@@ -362,7 +343,7 @@
 </div>
 
 <!-- 參拜月老禁忌 -->
-<div class="container section3_lb">
+<div class="container section3_lb targetScrollSection " id="notice_lb">
     <h1 class="text-center">參拜月老禁忌</h1>
     <div class="row d-flex justify-content-center mt-5">
         <div class="col-3">
@@ -432,7 +413,7 @@
 
 
 <!-- 如何還願 -->
-<div class="container section4_lb position-relative">
+<div class="container section4_lb position-relative targetScrollSection" id="givebk_lb">
     
     <div class="devotion-title position-absolute">
         <img class="w-100" src="./imgs/culture/Devotion title.png" alt="">
@@ -456,7 +437,7 @@
 
 <!------- 全台精選月老廟 ------->
 
-<div class="container-fluid">
+<div class="container-fluid targetScrollSection" id="selected-temple_lb">
     <div class="row d-flex ">
         <div class="col-4 map-wrap">
             <?xml version="1.0" encoding="utf-8"?>
@@ -762,11 +743,50 @@
             </svg>
         </div>
         <div class="col-8">
-
         </div>
     </div>
-
 </div>
+
+<!-- <div class=" col-2 sidebar_lb">
+    <ul>
+            <li class="pb-1 list-unstyled">
+                <a href="#moonold_lb">關於月老</a>
+            </li >
+            <li class="pb-1 list-unstyled">
+                <a href="#byebye_lb">參拜流程</a>
+            </li>
+            <li class="pb-1 list-unstyled">
+                <a href="#notice_lb">參拜月老禁忌</a>
+            </li>
+            <li class="pb-1 list-unstyled">
+                <a href="#givebk_lb">如何還願</a>
+            </li>
+            <li class="pb-1 list-unstyled">
+                <a href="#selected-temple_lb">全台精選月老廟</a>
+            </li>
+    </ul>
+</div> -->
+
+<div class="col-2 sidebar_lb">
+    <ul>
+        <li class="list-unstyled">
+            <a class="active_lb" href="#moonold_lb">關於月老</a>
+        </li >
+        <li class="list-unstyled" >
+            <a href="#byebye_lb">參拜流程</a>
+        </li>
+        <li class="list-unstyled" >
+            <a href="#notice_lb">參拜月老禁忌</a>
+        </li>
+        <li class="list-unstyled" >
+            <a href="#givebk_lb">如何還願</a>
+        </li>
+        <li class="list-unstyled">
+            <a href="#selected-temple_lb">全台精選月老廟</a>
+        </li>
+    </ul>
+</div>
+
 
 
 
@@ -825,30 +845,46 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
     
-
 <script>
-    //側邊欄滾到關於月老才出現fixed
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= ($('.section1-content_lb').offset().top - $(window).height() * 1 / 3)) {
-        $('#moonold_lb').css({
-          transform: 'translateY(0px)',
-          opacity: 1,
-          color:'#cd562f',
-        });
-        
-      }
-      else {
-        $('#moonold_lb').css({
-          transform: 'translateY(50px)',
-          opacity: 0,
-          color:'none',
-        });
-      }
-    })
-   
+//TODO:側邊欄FIXED
 
+//側邊欄滾到該區域會變色
+    const scrollLink = document.querySelectorAll(
+        '.sidebar_lb a[href^="#"]'
+      );
+      const section = document.querySelectorAll(".targetScrollSection");
+      const sections = {};
+      let identCounter = 0;
 
+      scrollLink.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          let targetBlock = document.querySelector(e.target.hash);
+          e.preventDefault();
+          window.scrollTo({
+            top: targetBlock.offsetTop,
+            behavior: "smooth",
+          });
+        });
+      });
+
+      Array.prototype.forEach.call(section, (e) => {
+        sections[e.id] = e.offsetTop;
+      });
+
+      window.onscroll = () => {
+        let scrollPosition =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        for (identCounter in sections) {
+          if (sections[identCounter] <= scrollPosition) {
+            document.querySelector(".active_lb").setAttribute("class", " ");
+            document
+              .querySelector("a[href*=" + identCounter + "]")
+              .setAttribute("class", "active_lb");
+          }
+        }
+      };
 
 
     // cp貓相遇
@@ -881,7 +917,6 @@
         $('.heart-animation_lb').css({
             opacity:0,
         })
-
       }
     })
 
