@@ -178,7 +178,7 @@ color: var(--color-text100);
   position: fixed;
   top: 100px;
   right: 50px;
-  z-index: 999;
+  /* z-index: 999; */
 }
 .sidebar_lb a {
   color: rgba(67, 42, 15, 0.6);
