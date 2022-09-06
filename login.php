@@ -21,7 +21,7 @@ ul li {
     height: calc(100vh - 134px);
 }
 .loginwarp-re {
-    padding-top: 150px;
+    padding-top: 100px;
 }
 
 .logincardtitle-re {
@@ -31,7 +31,7 @@ ul li {
 /* right --------------------------------------*/
 .logincard-re {
     width: 500px;
-    padding: 80px 85px 0px 85px;
+    padding: 85px 85px 0px 85px;
     background-color: #F5DFC2;
 }
 .logincard-re button {
