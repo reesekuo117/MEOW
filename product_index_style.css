@@ -38,8 +38,9 @@ body {
     outline: 1px solid #E5A62A;
     font-family: 'gensen-M';
     font-size: 14px;
-    line-height: 125%;
+    line-height: 200%;
     width: 280px;
+    height: 40px;
     border-radius: 8px;
     outline: 2px solid #432A0F;
     margin: 0 auto;
@@ -94,6 +95,11 @@ body {
 
 .pb_title {
     flex-direction: column;
+    color: var(--color-text87);
+}
+
+.brand_1 {
+    width: 80%;
 }
 
 .brand_2 {
@@ -163,7 +169,7 @@ body {
     width: 800px;
     height: 400px;
     background-color: #F5DFC2;
-
+    color: var(--color-text87);
 }
 
 .py_btn .col {
@@ -189,8 +195,8 @@ body {
 }
 
 .ps_title {
+    color: var(--color-text87);
     display: flex;
-
     align-items: center;
 }
 
@@ -215,6 +221,7 @@ body {
     margin: -200px 0 0;
     flex-direction: column;
     justify-content: center;
+    color: var(--color-text87);
 }
 
 .meow_1 {
@@ -256,6 +263,8 @@ body {
 .card_title {
     margin: 30px auto;
     text-align: center;
+    color: var(--color-text87);
+
 }
 
 .product_card .card {
@@ -263,6 +272,8 @@ body {
 }
 
 /* ---------------------------卡片輪播---------------------------- */
+
+
 
 .visuallyhidden {
     position: absolute;
@@ -272,7 +283,7 @@ body {
 
 }
 
-.ccarousel_test{
+.carousel_test{
     overflow: hidden;
     padding: 20px;
     margin-top: 2em;
@@ -313,10 +324,8 @@ body {
     height: var(--card-height);
     position: absolute;
     margin: 0 auto;
-
     transition: inherit;
-
-    border-radius: 1em;
+    border-radius: 8px;
     filter: brightness(.9);
     display: flex;
     flex-direction: column;
@@ -330,32 +339,32 @@ body {
 
 
 .card:nth-of-type(1) .image-container {
-    background-image: url("https://static.addtoany.com/images/dracaena-cinnabari.jpg");
+    background-image: url("./imgs/product/P20_4.jpg");
 }
 
 .card:nth-of-type(2) .image-container {
-    background-image: url("https://www.w3schools.com/w3css/img_lights.jpg")
+    background-image: url("./imgs/product/P19_1.jpg")
 }
 
 .card:nth-of-type(3) .image-container {
-    background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+    background-image: url("./imgs/product/P24_2.jpg")
 }
 
 .card:nth-of-type(4) .image-container {
-    background-image: url("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+    background-image: url("./imgs/product/P30_1.jpg")
 }
 
 .card:nth-of-type(5) .image-container {
-    background-image: url("https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg")
+    background-image: url("./imgs/product/P60_1.jpg")
 }
 
 .image-container {
-    width: 8em;
-    height: 8em;
+    width: 100%;
+    height: 100%;
     position: relative;
     background-size: cover;
     margin-bottom: 2em;
-    border-radius: 100%;
+    border-radius: 8px;
     padding: 1em;
 
 
@@ -365,7 +374,6 @@ body {
     display: block;
     width: 120%;
     height: 120%;
-
     border-radius: 100%;
     position: absolute;
     top: calc(-10% - 3px);
