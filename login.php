@@ -31,7 +31,7 @@ ul li {
 /* right --------------------------------------*/
 .logincard-re {
     width: 500px;
-    padding: 85px 85px 0px 85px;
+    padding: 80px 85px 0px 85px;
     background-color: #F5DFC2;
 }
 .logincard-re button {
@@ -42,7 +42,7 @@ ul li {
 .btntitle-re {
     /* box-shadow:none; */
     /* outline-style: none; */
-    width: 163px;
+    width: 165px;
     height: 41px;
     background-color: #F5DFC2;
     border: 2px solid #432A0F;
@@ -146,8 +146,7 @@ ul li {
         <div class="logincard-re">
             <div class="logincardtitle-re d-flax mb-3">
                 <ul class="buttonbox-re tab-title d-flax p-0 m-0">
-                    <li class="signinBtn-re btntitle-re border-0 d-inline-block text-center pt-1 active-re"><a href="#tab01">登入</a></li>
-                    <li class="signoutBtn-re btntitle-re border-0 d-inline-block text-center pt-1"><a href="#tab02">註冊</a></li>
+                    <li class="signinBtn-re btntitle-re border-0 d-inline-block text-center pt-1 active-re"><a href="#tab01">登入</a></li><li class="signoutBtn-re btntitle-re border-0 d-inline-block text-center pt-1"><a href="#tab02">註冊</a></li>
                 </ul>
                 <!-- <div class="buttonbox-re tab-title">
                     <button class="signinBtn btntitle-re border-0"><a href="#tab01">登入</a></button>
