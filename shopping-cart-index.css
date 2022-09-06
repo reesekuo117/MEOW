@@ -117,8 +117,11 @@
 
 /* --------checkboox-yu---------*/
 .checkbox-yu input[type="checkbox"] {
-    accent-color: red;
+    accent-color: #E5A62A;
 }
+.checkbox-yu input.custom {
+    accent-color: rgb(255, 255, 255);
+  }
 
 .table h6{
     margin-bottom: 0%;
@@ -240,4 +243,14 @@ input.qtyminus {
 .unique-btn-yu:focus  {
     box-shadow:none;
     background-color: #E5A62A;
+}
+
+/* --------------獨家商品 總計價錢-------------- */
+.totalprice-uniqui-yu{
+    border-top:1px solid #432A0F;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
 }
