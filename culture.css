@@ -157,13 +157,23 @@ color: var(--color-text100);
 .mapsvg_lb {
   height: 100vh;
 }
-.mappath{
-  stroke: white;
-  fill: transparent;
+
+.path_lb{
+  fill: var(--color-yellow);
+  /* stroke: rgb(255, 255, 255); */
+  /* fill: transparent; */
   transition: 0.5s;
   cursor: pointer;
 }
-.mappath:hover {
+.north:hover {
+  fill: var(--color-orange);
+  transform: translate(-5px, -5px);
+}
+.middle:hover {
+  fill: var(--color-orange);
+  transform: translate(-5px, -5px);
+}
+.south:hover {
   fill: var(--color-orange);
   transform: translate(-5px, -5px);
 }
