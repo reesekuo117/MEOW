@@ -133,15 +133,23 @@ input.qtyminus {
 
 /* 下一步按鈕 */
 .nextbutton-yu .btn{
+    margin: 40px;
     background-color: #E5A62A;
-    outline:1px solid #E5A62A;
     font-family: 'gensen-M';
     font-size: 14px;
     line-height: 125%;
+    width: 275px;
+    outline: 2px solid  #432A0F;
+    border-radius: 8px;
+}
+.nextbutton-yu .btn:hover{
+    outline: 2px solid  #432A0F;
+    box-shadow: 4px 4px 0px 0px #432A0F;
+
 }
 .nextbutton-yu .btn:focus {
     background-color: #E5A62A;
-    outline:1px solid #E5A62A;
+    outline: 2px solid  #432A0F;
     font-family: 'gensen-M';
     font-size: 14px;
     line-height: 125%;

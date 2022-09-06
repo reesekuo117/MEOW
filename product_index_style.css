@@ -24,7 +24,7 @@ body{
 
 }
 .product_title h1{
-    text-align: center;
+    /* text-align: center; */
     color: white;
     text-shadow: 5px 5px 10px #444;
     padding-bottom: 36px;
@@ -52,6 +52,9 @@ body{
 .product_brand{
     position: relative;
     margin: 100px 0 ;
+}
+.pb_title button{
+    text-align: center;
 }
 .brand_2{
     width: 350px;

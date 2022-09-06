@@ -2,12 +2,78 @@
     transform: translate(4rem, 40rem);
     position: absolute;
     z-index: 999999;
+    animation: c-1move 4s infinite ease-in-out;
 }
+
+@keyframes c-1move {
+    0% {
+        transform: translate(4rem, 40rem);
+        
+    }
+    50%{
+        transform: translate(1rem, 40rem);
+    }
+    100% {
+        transform:translate(4rem, 40rem);
+        
+    }
+    
+}
+
 .cloud2-yu{
     transform: translate(100rem, 4rem);
     position: absolute;
     z-index: 999999;
+    animation: c-2move 3s infinite ease-in-out;
 }
+
+@keyframes c-2move {
+    0%{
+        transform: translate(100rem, 4rem);
+    }
+    50%{
+        transform:translate(96rem, 4rem);
+    }
+    100%{
+        transform:translate(100rem, 4rem);
+    }
+}
+
+.cloud3-yu{
+    transform: translate(95rem, 40rem);
+    position: absolute;
+    z-index: 999999;
+    animation: c-3move 3s infinite ease-in-out;
+}
+@keyframes c-3move {
+    0%{
+        transform: translate(95rem, 40rem);
+    }
+    50%{
+        transform:translate(91rem, 40rem);
+    }
+    100%{
+        transform:translate(95rem, 40rem);
+    }
+}
+.cloud4-yu{
+    transform: translate(60rem, 23rem);
+    position: absolute;
+    z-index: 999999;
+    animation: c-4move 3s infinite ease-in-out;
+}
+@keyframes c-4move {
+    0%{
+        transform: translate(60rem, 23rem);
+    }
+    50%{
+        transform:translate(63rem, 23rem);
+    }
+    100%{
+        transform:translate(60rem, 23rem);
+    }
+}
+
 .travel-frame1-yu{
     position: absolute;
     transform: translate(76rem, 13rem);
@@ -15,18 +81,115 @@
 .friend-btn-yu{
     margin: 36px;
 }
+.morebutton-yu .btn:hover{
+    outline: 2px solid  #432A0F;
+    box-shadow: 4px 4px 0px 0px #432A0F;
+}
 .morebutton-yu .btn{
     background-color: #E5A62A;
     outline:1px solid #E5A62A;
     font-family: 'gensen-M';
     font-size: 14px;
     line-height: 125%;
+    width: 280px;
+    border-radius: 8px;
+    outline: 2px solid  #432A0F;
 }
 .morebutton-yu .btn:focus {
     background-color: #E5A62A;
-    outline:1px solid #E5A62A;
+    outline: 2px solid  #432A0F;
+    color: #fff;
     font-family: 'gensen-M';
     font-size: 14px;
     line-height: 125%;
     box-shadow:none;
+}
+.travel-frame2-yu{
+    position: absolute;
+    transform: translate(20rem, 16rem);
+}
+.cloud5-yu{
+    transform: translate(-8rem, 43rem);
+    position: absolute;
+    animation: c-5move 4s infinite ease-in-out;
+}
+@keyframes c-5move {
+    0%{
+        transform: translate(-8rem, 43rem);
+    }
+    50%{
+        transform: translate(-4rem, 43rem);
+    }
+    100%{
+        transform: translate(-8rem, 43rem);
+    }
+}
+.cloud6-yu{
+    transform: translate(75rem, 4rem);
+    position: absolute;
+    animation: c-6move 4s infinite ease-in-out;
+}
+@keyframes c-6move {
+    0%{
+        transform: translate(75rem, 4rem);
+    }
+    50%{
+        transform: translate(77rem, 4rem);
+    }
+    100%{
+        transform: translate(75rem, 4rem);
+    }
+}
+/* .cloud7-yu{
+    transform: translate(80rem, 45rem);
+    position: absolute;
+    animation: c-7move 4s infinite ease-in-out;
+}
+@keyframes c-7move {
+    0%{
+        transform: translate(80rem, 40rem);
+    }
+    50%{
+        transform: translate(82rem, 40rem);
+    }
+    100%{
+        transform: translate(80rem, 40rem);
+    }
+} */
+.cloud8-yu{
+    transform: translate(7rem, 12rem);
+    position: absolute;
+    animation: c-8move 4s infinite ease-in-out;
+}
+@keyframes c-8move {
+    0%{
+        transform: translate(7rem, 12rem);
+    }
+    50%{
+        transform: translate(2rem, 12rem);
+    }
+    100%{
+        transform: translate(7rem, 12rem);
+    }
+}
+
+.cloud9-yu{
+    transform: translate(100rem, 45rem);
+    position: absolute;
+    animation: c-9move 4s infinite ease-in-out;
+}
+@keyframes c-9move {
+    0%{
+        transform: translate(100rem, 40rem);
+    }
+    50%{
+        transform: translate(95rem, 40rem);
+    }
+    100%{
+        transform: translate(100rem, 40rem);
+    }
+}
+.cat-photo-yu{
+    transform: translate(75rem, 28rem);
+    position: absolute;
 }

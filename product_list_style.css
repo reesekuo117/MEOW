@@ -1,0 +1,93 @@
+.product_search{
+    width: 100%;
+    height: 530px;
+    background: url(./imgs/product/search_main.png) center center / cover ;
+}
+
+.search_bar{
+    
+    padding: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.search_bar h3{
+    color: white;
+}
+/* input{
+    border-radius: 8px;
+    margin: 0 0 8px;
+} */
+.container-1{
+    width: 250px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+.container-1 input#search{
+    width: 250px;
+    height: 40px;
+    background: white;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #432A0F;
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 8px;
+  }
+
+ .container-1 .icon{
+    position: absolute;
+    top: 50%;
+    margin-left: 20px;
+    margin-top: 17px;
+    z-index: 1;
+    color: #432A0F;
+  }
+
+.btn{
+    color: white;
+}
+.search_btn button{
+    border-radius: 30px;
+    border: 1px solid #432A0F;
+    background-color: #E5A62A;
+    padding: 4px 16px;
+}
+/* 搜尋結束 */
+
+.product_section{
+    margin: 100px;
+    position: fixed;
+    bottom: 30%;
+}
+.sort{
+    margin: 30px;
+}
+
+.product_sort a{
+    /* padding: 8px; */
+    margin: 8px;
+}
+.p_list .card{
+    border-radius: 8px;
+}
+.p_img {
+    position: relative;
+}
+.p_icon{
+    position: absolute;
+    right: 30px;
+    bottom: 150px;
+    color: white;
+    font-size: 30px;
+}
+
+.pl_row{
+    margin: 36px auto;
+}
+
