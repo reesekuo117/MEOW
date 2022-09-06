@@ -1,5 +1,5 @@
-body{
-    background: url(./imgs/index/IMG_0705_2.png);
+body {
+    background: url(./imgs/index/IMG_0705_2.png) center center / cover;
     background-color: #FFF6E9;
     box-sizing: border-box;
     margin: 0;
@@ -10,11 +10,12 @@ body{
     width: 100%;
     height: 760px;
 } */
-.product_head carousel-item{
+.product_head carousel-item {
     width: 100%;
     position: relative;
 }
-.product_title{
+
+.product_title {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -23,75 +24,128 @@ body{
     left: 100px;
 
 }
-.product_title h1{
+
+.product_title h1 {
     /* text-align: center; */
     color: white;
     text-shadow: 5px 5px 10px #444;
     padding-bottom: 36px;
 
 }
-.product_title button{
 
+.btn {
+    background-color: #E5A62A;
+    outline: 1px solid #E5A62A;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 200%;
+    width: 280px;
+    height: 40px;
+    border-radius: 8px;
+    outline: 2px solid #432A0F;
+    margin: 0 auto;
 }
+
+.btn:hover {
+    outline: 2px solid #432A0F;
+    box-shadow: 4px 4px 0px 0px #432A0F;
+}
+
+.btn:focus {
+    background-color: #E5A62A;
+    outline: 2px solid #432A0F;
+    color: #fff;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 125%;
+    box-shadow: none;
+}
+
 /* ----------------------輪播牆結束--------------------- */
-.product_midcontrol{
+.product_midcontrol {
     margin: 40px auto;
     /* text-align: center; */
 }
-.midicon{
+
+.midicon {
     text-align: center;
-    
+    height: 160px;
 }
 
-.midimg{
-    width: 80px;
+.midimg {
+    height: 80px;
     margin: 8px auto;
-    
+
 }
+
+.paw {
+    height: 75px;
+}
+
+.midicon a {
+    text-decoration: none;
+    color: var(--color-orange);
+}
+
 /* ----------------------中間選單結束--------------------- */
-.product_brand{
+.product_brand {
     position: relative;
-    margin: 100px 0 ;
+    margin: 100px 0;
 }
-.pb_title button{
-    text-align: center;
+
+.pb_title {
+    flex-direction: column;
+    color: var(--color-text87);
 }
-.brand_2{
+
+.brand_1 {
+    width: 80%;
+}
+
+.brand_2 {
     width: 350px;
     position: absolute;
     bottom: 100px;
-    right: 50px;
+    right: 150px;
     transition: 1s;
 
 }
-.brand_3{
+
+.brand_3 {
     width: 250px;
     position: absolute;
-    right: 300px;
+    right: 400px;
     bottom: -130px;
     transition: 1s;
 
 }
-.pb_sec{
+
+.pb_sec {
     margin: 50px 0;
 
 }
-.pb_title h2,.pb_title h6,.pb_title button{
+
+.pb_title h2,
+.pb_title h6,
+.pb_title button {
     margin: 1rem;
 }
+
 /* ----------------------品牌聯名結束--------------------- */
-.product_young{
+.product_young {
     margin: 300px auto 100px;
     position: relative;
 }
-.young_1{
+
+.young_1 {
     width: 600px;
     position: absolute;
     top: -50px;
     z-index: 1;
     transition: 1s;
 }
-.young_2{
+
+.young_2 {
     width: 400px;
     position: absolute;
     bottom: -350px;
@@ -100,7 +154,8 @@ body{
     transition: 1s;
 
 }
-.young_3{
+
+.young_3 {
     width: 250px;
     position: absolute;
     bottom: -500px;
@@ -108,78 +163,219 @@ body{
     transition: 1s;
 
 }
-.py_title{
-    margin: 0 auto;
+
+.py_title {
+    /* margin: 0 auto; */
     width: 800px;
     height: 400px;
     background-color: #F5DFC2;
-    display: flex;
-    align-items: center;
+    color: var(--color-text87);
+}
+
+.py_btn .col {
+    flex-direction: column;
+    justify-content: center;
 
 }
-.py_title h2{
-    
-}
-.py_title h2,.py_title h6,.py_title button{
+
+.py_title h2,
+.py_title h6,
+.py_title button {
     margin: 1rem;
 }
+
 /* ----------------------文創結束--------------------- */
 
-.product_sweet{
+.product_sweet {
     margin: 600px auto 100px;
 }
-.ps_img{
-    width: 1000px;
-}
-.ps_title{
-    display: flex;
 
+.ps_img {
+    width: 100%;
+}
+
+.ps_title {
+    color: var(--color-text87);
+    display: flex;
     align-items: center;
 }
-.ps_title h2,.ps_title h6,.ps_title button{
+
+.ps_title h2,
+.ps_title h6,
+.ps_title button {
     margin: 1rem;
 }
+
+.ps_title .col {
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* ----------------------供品結束--------------------- */
-.product_meow{
+.product_meow {
     position: relative;
     margin: 100px;
 }
-.pm_title{
+
+.pm_title {
     margin: -200px 0 0;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--color-text87);
 }
-.meow_1{
+
+.meow_1 {
     position: absolute;
     right: 450px;
     bottom: 100px;
     transition: 1s;
 }
-.meow_2{
-    
+
+.meow_2 {
+
     position: absolute;
     right: 80px;
     bottom: 200px;
     transition: 1s;
 
 }
-.meow_3{
+
+.meow_3 {
     width: 350px;
     position: absolute;
     right: 10px;
     bottom: -150px;
 }
-.pm_title h2,.pm_title h6,.pm_title button{
+
+.pm_title h2,
+.pm_title h6,
+.pm_title button {
     margin: 1rem;
 }
+
 /* ----------------------喵獨家結束--------------------- */
 
-.product_card{
+.product_card {
     margin: 100px auto 100;
     padding: 100px 0 100px;
 }
-.card_title{
+
+.card_title {
     margin: 30px auto;
     text-align: center;
+    color: var(--color-text87);
+
 }
-.product_card .card{
+
+.product_card .card {
     border-radius: 8px;
+}
+
+/* ---------------------------卡片輪播---------------------------- */
+
+
+
+.visuallyhidden {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    opacity: 0;
+
+}
+
+.carousel_test{
+    overflow: hidden;
+    padding: 20px;
+    margin-top: 2em;
+
+}
+
+.card-carousel {
+    --card-width: 80%;
+    --card-max-width: 280px;
+    --card-height: 350px;
+    --carousel-min-width: 600px;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: var(--card-height);
+    min-width: var(--carousel-min-width);
+    transition: filter .3s ease;
+}
+
+@media screen and (max-width: 640px) {
+    .card-carousel {
+        margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+    }
+}
+
+.card-carousel.smooth-return {
+    transition: all .2s ease;
+}
+
+.card-carousel .card {
+    background: whitesmoke;
+    width: var(--card-width);
+    max-width: var(--card-max-width);
+    text-align: center;
+    padding: 1em;
+    min-width: 250px;
+    height: var(--card-height);
+    position: absolute;
+    margin: 0 auto;
+    transition: inherit;
+    border-radius: 8px;
+    filter: brightness(.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card.highlight {
+    filter: brightness(1)
+}
+
+
+.card:nth-of-type(1) .image-container {
+    background-image: url("./imgs/product/P20_4.jpg");
+}
+
+.card:nth-of-type(2) .image-container {
+    background-image: url("./imgs/product/P19_1.jpg")
+}
+
+.card:nth-of-type(3) .image-container {
+    background-image: url("./imgs/product/P24_2.jpg")
+}
+
+.card:nth-of-type(4) .image-container {
+    background-image: url("./imgs/product/P30_1.jpg")
+}
+
+.card:nth-of-type(5) .image-container {
+    background-image: url("./imgs/product/P60_1.jpg")
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    padding: 1em;
+
+
+}
+.image-container::after {
+    content: "";
+    display: block;
+    width: 120%;
+    height: 120%;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(-10% - 3px);
+    left: calc(-10% - 3px);
 }
