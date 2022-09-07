@@ -2,9 +2,11 @@ body {
     background: url(./imgs/index/IMG_0705_2.png) center center / cover;
     background-color: #FFF6E9;
     box-sizing: border-box;
+    
+}
+.row{
     margin: 0;
 }
-
 /* .product_head{
     background: url(./imgs/product/P19_2.jpg) center center / cover;
     width: 100%;
