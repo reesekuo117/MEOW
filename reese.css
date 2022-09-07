@@ -5,7 +5,10 @@ header .navbar {
     background-color: transparent!important;
 }
 body {
-    background: url(./imgs/member/background.png)  center center / cover no-repeat;4
+    /* background: url(./imgs/member/background.png)  center center / cover no-repeat; */
+    background: url(./imgs/member/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: calc(100% - 134px);
 }
 .noline-re {
@@ -306,20 +309,26 @@ p {
 /* QQ */
 
 /* -------------------------------------------------------------------- */
-.likecard-re {
-    
-}
+
 /* -------------------------------------------------------------------- */
+.orderbtn-re {
+    box-shadow: none;
+}
 .orderlist-title-re th {
-    padding: 20px 0;
+    padding: 10px 0;
 }
 .orderlist-re td {
     padding: 15px 0;
 }
 .orderlist-re:hover {
-    background-color: var(--color-lightcreamy);
-    opacity: 0.8;
+    /* background-color: var(--color-lightcreamy); */
+    background-color: rgba(229, 167, 42, 0.7);
+
 }
-.tablehover-re {
+/* ------------- */
+.price-re::before{
+    content: "NT$ ";
+}
+.slide-re {
     background-color: var(--color-lightcreamy);
 }
