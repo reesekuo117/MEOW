@@ -1,6 +1,6 @@
-*{
+/* *{
     outline: 1px solid #432A0F;
-}
+} */
 .row {
     margin: 0;
     box-sizing: border-box;
@@ -240,27 +240,32 @@
 
 /* ---------------------------------------------------------------- */
 
-.p_list .card {
+.card {
     border-radius: 8px;
 }
 
-.p_img {
+.p_img:after{
+    content: "";
     position: relative;
+    background-color: #888;
+    /* 一定要用background才能蓋陰影嗎嗚嗚嗚 */
+    
 }
-
+.card:hover img{
+    background-color: #888;
+    opacity: 1;
+}
 .p_icon {
     position: absolute;
     right: 30px;
     bottom: 150px;
-    color: white;
+    color: red;
     font-size: 30px;
 }
 
 .pl_row {
     margin: 36px auto;
 }
-
-
 .product_list{
     display: flex;
     flex-wrap: wrap;
@@ -268,3 +273,27 @@
     align-items: center;
     margin: 0 auto;
 }
+.product_list a{
+    text-decoration: none;
+    color: var(--color-text87);
+}
+
+.card-body{
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 0 auto;
+}
+.card-body .row{
+    /* margin: 0; */
+    padding: 4px;
+}
+.card_under{
+    align-items: center;
+}
+small{
+    padding: 4px;
+}
+.row .price::before{
+    content:"NT$ ";
+}
+
