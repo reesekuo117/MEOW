@@ -82,6 +82,9 @@
 .listinfo-yu{
     background-color: #FFFCF7;
 }
+.section-2-title-yu{
+    background-color: var(--color-creamy);
+}
 .listinfo-title-yu{
     background-color: var(--color-creamy);
     padding: 24px 12px;
@@ -162,4 +165,105 @@
 /* ----訂購人資料section----- */
 .section-1-yu{
     background-color: #FFFCF7;
+}
+/* ------訂購人填寫資料------ */
+.order-list-yu input , .form-group select{
+    border-radius: 8px;
+    border: 2px solid #432A0F;
+    height: 48px;
+}
+.order-list-yu input.ordername-yu , input.orderphone-yu{
+    width: 330px;
+    height: 48px;
+}
+.order-list-yu .orderaddress1-yu {
+    width: 110px;
+    height: 48px;
+    margin:0 12px 0 0;
+    text-align: center;
+}
+.order-list-yu .orderaddress2-yu{
+    width: 110px;
+    height: 48px;
+    margin:0 12px 0 0px;
+    text-align: center;
+}
+.order-list-yu .orderaddress3-yu{
+    width: 466px;
+    height: 48px;
+    margin:0 12px 0 0px;
+}
+.order-email-yu input{
+    width: 520px;
+}
+
+/* ----收件人資料section----- */
+.section-2-yu{
+    background-color: #FFFCF7;
+}
+/* ------收件人填寫資料------ */
+.receiver-list-yu input , .form-group select{
+    border-radius: 8px;
+    border: 2px solid #432A0F;
+    height: 48px;
+}
+.receiver-list-yu input.receivername-yu , input.receiverphone-yu{
+    width: 330px;
+    height: 48px;
+}
+.receiver-deliverbtn1-yu , .receiver-deliverbtn2-yu {
+    margin:0 12px 0 0px;
+    border-radius: 8px;
+    color: #432A0F;
+    border:  2px solid #432A0F;
+    height: 52px;
+    width: 104px;
+    outline: none;
+    box-shadow: none;
+}
+.receiver-deliverbtn1-yu:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: #E5A62A;
+    color: #fff;
+}
+.receiver-deliverbtn1-yu:hover{
+    background-color: #E5A62A;
+    color: #fff;
+}
+.receiver-deliverbtn2-yu:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: #E5A62A;
+    color: #fff;
+}
+.receiver-deliverbtn2-yu:hover{
+    background-color: #E5A62A;
+    color: #fff;
+}
+
+
+.unique-nextbutton-yu .unique-btn-yu:hover{
+    outline: none;
+    box-shadow: 4px 4px 0px 0px #432A0F;
+}
+.receiver-email-yu input{
+    width: 520px;
+}
+.receiver-list-yu .receiveraddress1-yu {
+    width: 110px;
+    height: 48px;
+    margin:0 12px 0 0;
+    text-align: center;
+}
+.receiver-list-yu .receiveraddress2-yu{
+    width: 110px;
+    height: 48px;
+    margin:0 12px 0 0px;
+    text-align: center;
+}
+.section-2-yu .receiver-address-yu .receiveraddress3-yu{
+    width: 466px;
+    height: 48px;
+    margin:0 12px 0 0px;
 }

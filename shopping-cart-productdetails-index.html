@@ -317,12 +317,177 @@
                     訂購人資料
                 </h3>
             </div>
-            <div>
-
+            <!-- 訂購人填寫資料 -->
+            <div class="order-list-yu">
+                <div class="order-name-yu p-3">
+                    <label for="name" class="">
+                        姓名
+                        <span style="color:#963C38">*</span>
+                    </label>
+                    <br>
+                    <input class="ordername-yu" type="text" placeholder=" 請輸入姓名" class="" id="name" name="name" required>
+                </div>
+                <div class="order-phone-yu p-3">
+                    <label for="mobile" class="">
+                        聯絡電話
+                        <span style="color:#963C38">*</span>
+                    </label>
+                    <br>
+                    <input class="orderphone-yu" type="text" placeholder=" 請輸入聯絡電話" class="" id="mobile" name="mobile" required>
+                </div>
+                <div class="order-address-yu p-3">
+                    <label for="address" class="">
+                        地址
+                        <span style="color:#963C38">*</span>
+                    </label>
+                        <br>
+                    <div class="d-flex align-items-center">
+                        <div class="form-group m-0 ">
+                            <select class="orderaddress1-yu" name="city" id="city"  required>
+                                <option class="" value="0">臺北市</option>
+                                <option value="1">新北市</option>
+                                <option value="2">基隆市</option>
+                                <option value="3">宜蘭縣</option>
+                                <option value="4">桃園市</option>
+                                <option value="5">新竹市</option>
+                                <option value="6">新竹縣</option>
+                                <option value="7">苗栗縣</option>
+                                <option value="8">彰化縣</option>
+                                <option value="9">臺中市</option>
+                                <option value="10">南投縣</option>
+                                <option value="11">雲林縣</option>
+                                <option value="12">嘉義市</option>
+                                <option value="13">嘉義縣</option>
+                                <option value="14">臺南市</option>
+                                <option value="15">高雄市</option>
+                                <option value="16">屏東縣</option>
+                                <option value="17">花蓮縣</option>
+                                <option value="18">臺東縣</option>
+                            </select>
+                        </div>
+                        <div class="form-group m-0">
+                            <select class="orderaddress2-yu" name="district" id="district">
+                                <option class="" value="0">中正區</option>
+                                <option value="1">板橋區</option>
+                                <option value="2">仁愛區</option>
+                            </select>
+                        </div>
+                        <input class="orderaddress3-yu" type="text" placeholder=" 請輸入詳細地址" class="" id="address" name="address">
+                    </div>
+                </div>
+                <div class="order-email-yu mb-3 p-3">
+                    <label for="email" class="">Email<span style="color:#963C38">*</span></label><br>
+                    <input class="" type="text" class="" id="email" name="email">
+                </div>
+            </div>
+        </section>
+        <!-- 收件人資料 -->
+        <section class="section-2-yu">
+            <div class="section-2-title-yu">
+                <h3 class="listinfo-title-yu m-0 ">
+                    收件人資料
+                </h3>
+                <div class="d-flex justify-content-end">
+                    <input type="radio" name="listinfo-title-radio-yu" id="">
+                    <label for="name" class=" m-0">
+                        同訂購人
+                    </label>
+                </div>
+            </div>
+            <!-- 收件人填寫資料 -->
+            <div class="receiver-list-yu">
+                <div class="receiver-name-yu p-3">
+                    <label for="name" class="">
+                        姓名
+                        <span style="color:#963C38">*</span>
+                    </label>
+                    <br>
+                    <input class="receivername-yu" type="text" placeholder=" 請輸入姓名" class="" id="name" name="name" required>
+                </div>
+                <div class="receiver-phone-yu p-3">
+                    <label for="mobile" class="">
+                        聯絡電話
+                        <span style="color:#963C38">*</span>
+                    </label>
+                    <br>
+                    <input class="receiverphone-yu" type="text" placeholder=" 請輸入聯絡電話" class="" id="mobile" name="mobile" required>
+                </div>
+                <div class="receiver-deliver-yu p-3">
+                    <label for="mobile" class="">
+                        配送方式
+                        <span style="color:#963C38">*</span>
+                    </label>
+                    <br>
+                    <button type="button" class="btn receiver-deliverbtn1-yu h6 ">宅配</button>
+                    <button type="button" class="btn receiver-deliverbtn2-yu h6">超商取貨</button>
+                </div>
+                <div class="receiver-email-yu p-3">
+                    <label for="email" class="">Email<span style="color:#963C38">*</span></label><br>
+                    <input class="" type="text" class="" id="email" name="email">
+                </div>
+                <div class="receiver-address-yu p-3">
+                    <label for="address" class="">
+                        地址
+                        <span style="color:#963C38">*</span>
+                    </label>
+                        <br>
+                    <div class="d-flex align-items-center">
+                        <div class="form-group m-0 ">
+                            <select class="receiveraddress1-yu" name="city" id="city"  required>
+                                <option class="" value="0">臺北市</option>
+                                <option value="1">新北市</option>
+                                <option value="2">基隆市</option>
+                                <option value="3">宜蘭縣</option>
+                                <option value="4">桃園市</option>
+                                <option value="5">新竹市</option>
+                                <option value="6">新竹縣</option>
+                                <option value="7">苗栗縣</option>
+                                <option value="8">彰化縣</option>
+                                <option value="9">臺中市</option>
+                                <option value="10">南投縣</option>
+                                <option value="11">雲林縣</option>
+                                <option value="12">嘉義市</option>
+                                <option value="13">嘉義縣</option>
+                                <option value="14">臺南市</option>
+                                <option value="15">高雄市</option>
+                                <option value="16">屏東縣</option>
+                                <option value="17">花蓮縣</option>
+                                <option value="18">臺東縣</option>
+                            </select>
+                        </div>
+                        <div class="form-group m-0">
+                            <select class="receiveraddress2-yu" name="district" id="district">
+                                <option class="" value="0">中正區</option>
+                                <option value="1">板橋區</option>
+                                <option value="2">仁愛區</option>
+                            </select>
+                        </div>
+                        <input class="receiveraddress3-yu" type="text" placeholder=" 請輸入詳細地址"  id="address" name="address">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 付款方式 -->
+        <section class="section-3-yu">
+            <div class="section-3-title-yu">
+                <h3 class="listinfo-title-yu m-0">
+                    付款方式
+                </h3>
+            </div>
+            <div class="d-flex">
+                <input type="radio" name="listinfo-title-radio-yu" id="">
+                <label for="name" class=" m-0">
+                    信用卡
+                </label>
+            </div>
+            <div class="">
+                <input type="radio" name="listinfo-title-radio-yu" id="">
+                <label for="name" class=" m-0">
+                    ATM轉帳
+                </label>
             </div>
         </section>
     </div>
-
     </section>
 
     <!-- footer-md ----------------------------------->
