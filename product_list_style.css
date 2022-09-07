@@ -1,31 +1,46 @@
-.product_search{
-    width: 100%;
-    height: 530px;
-    background: url(./imgs/product/search_main.png) center center / cover ;
+.row {
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.search_bar{
-    
-    padding: 32px;
+.product_search {
+    width: 100%;
+    height: 530px;
+    background: url(./imgs/product/search_main.png) center center / cover;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
-.search_bar h3{
-    color: white;
+
+.search_bar {
+
+    padding: 32px;
+
 }
+
+.search_bar h3 {
+    color: white;
+    text-align: center;
+}
+
+.search_btn {
+    margin: 0 auto;
+    text-align: right;
+}
+
 /* input{
     border-radius: 8px;
     margin: 0 0 8px;
 } */
-.container-1{
+.container-1 {
     width: 250px;
     vertical-align: middle;
     white-space: nowrap;
     position: relative;
 }
-.container-1 input#search{
+
+.container-1 input#search {
     width: 250px;
     height: 40px;
     background: white;
@@ -38,48 +53,188 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
     margin: 8px;
-  }
+}
 
- .container-1 .icon{
+.container-1 .icon {
     position: absolute;
     top: 50%;
     margin-left: 20px;
     margin-top: 17px;
     z-index: 1;
     color: #432A0F;
-  }
+}
 
-.btn{
+.btn {
     color: white;
 }
-.search_btn button{
+
+.search_btn button {
     border-radius: 30px;
     border: 1px solid #432A0F;
     background-color: #E5A62A;
     padding: 4px 16px;
 }
-/* 搜尋結束 */
 
-.product_section{
-    margin: 100px;
-    position: fixed;
-    bottom: 30%;
+/* -----------------------------搜尋結束-------------------------------- */
+
+.product_section {
+    display: flex;
+    
 }
-.sort{
+.cate_filter{
+    /* position: sticky;
+    top: 500px; */
+}
+.product_cate a {
+    text-decoration: none;
+    color: var(--color-text87);
+}
+
+.product_cate:hover a {
+    color: var(--color-orange);
+}
+
+/* -----------------------------價格篩選----------------------------- */
+.filter-content__element {
+    width: 100%;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* background: #fff; */
+    padding: 60px 0 0;
+    /* border: 3px solid #b63c2c; */
+    /* border-radius: 20px; */
+}
+
+.filter-content__element h5 {
+    font-size: 20px;
+    color: var(--color-text87);
+}
+
+.filter-element-content .filter-range-values {
+    width: 100%;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--color-red);
+}
+
+.filter-element-content .filter-range-values .range-1-value,
+.filter-element-content .filter-range-values .range-2-value {
+    position: absolute;
+    top: 0;
+}
+
+.filter-element-content .filter-range-values .range-1-value {
+    left: 0;
+}
+
+.filter-element-content .filter-range-values .range-2-value {
+    right: 0;
+}
+
+.filter-element-content .filter-range-content {
+    position: relative;
+    width: 100%;
+}
+
+.filter-element-content .filter-range-content input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.filter-element-content .filter-range-content .filter-range-1 {
+    left: -2px;
+}
+
+.filter-element-content .filter-range-content .filter-range-track {
+    width: 100%;
+    height: 1px;
+    background: var(--color-orange);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 1px;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-moz-range-track {
+    -moz-appearance: none;
+    height: 1px;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-ms-track {
+    appearance: none;
+    height: 1px;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border: 2px solid var(--color-orange);
+    background: var(--color-orange);
+    border-radius: 50%;
+    pointer-events: auto;
+    margin-top: -7.5px;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: var(--color-orange);
+    pointer-events: auto;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-ms-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: var(--color-orange);
+    pointer-events: auto;
+}
+
+/* ---------------------------------------------------------------- */
+.sort {
     margin: 30px;
 }
 
-.product_sort a{
+.product_sort a {
     /* padding: 8px; */
     margin: 8px;
 }
-.p_list .card{
+
+.p_list .card {
     border-radius: 8px;
 }
+
 .p_img {
     position: relative;
 }
-.p_icon{
+
+.p_icon {
     position: absolute;
     right: 30px;
     bottom: 150px;
@@ -87,7 +242,17 @@
     font-size: 30px;
 }
 
-.pl_row{
+.pl_row {
     margin: 36px auto;
 }
 
+.aside{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 500px;
+}
+.product_list{
+    display: flex;
+
+}
