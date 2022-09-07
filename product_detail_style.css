@@ -3,5 +3,9 @@
 }
 .evaluation{
     display: flex;
+
+}
+.price h2::before{
+    content: "NT$ ";
     
 }
