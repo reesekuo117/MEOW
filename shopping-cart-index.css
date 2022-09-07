@@ -1,4 +1,4 @@
- /*購物車訂單的進度條  */
+ /*-----------------購物車訂單的進度條 ----------------- */
  /* *{
     border: 1px solid #432A0F;
  } */
@@ -46,7 +46,7 @@
     background-color: rgba(229, 167, 42, 0.3);
     border-radius: 50%;
 }
-.circle-light .page-one-number{
+.circle-light .page-light-number{
     color: #fff;
 }
 .circle-light h5{
@@ -73,15 +73,8 @@
 .page-yu .page-yu-one{
     color: #432A0F;
 }
-/* .pageline{
-    width: 144px;
-    height: 1px;
-    background-color:#432A0F ;
-    vertical-align: middle;
-} */
 
-
-/* 獨家商品 旅遊行程分頁標籤 */
+/* ---------------------獨家商品 旅遊行程分頁標籤 -------------------*/
 #myTabContent-yu{
     max-width: 1450px;
 }
@@ -115,23 +108,40 @@
     border: 1px solid  #E5A62A;
 }
 
-/* --------checkboox-yu---------*/
+/* --------checkboox-yu (改大小)---------*/
 .checkbox-yu input[type="checkbox"] {
     accent-color: #E5A62A;
 }
+.checkbox-yu input{
+    width: 12px;
+    height: 12px;
+    border: 2px solid #432A0F;
+}
 .checkbox-yu input.custom {
     accent-color: rgb(255, 255, 255);
-  }
+}
+.checkboox-yu {
+    width: 100px; 
+    height: 100px;
+}
 
-.table h6{
-    margin-bottom: 0%;
+/* -----清單內字體顏色----------------- */
+.table , .thead  , .tbody h6{
+    margin-bottom: 0px;
+    color: #432A0F;
 }
 /* -------- 獨家商品表格外觀設定--------- */
+.tbody th{
+    vertical-align: middle;
+} 
 #uniqui-yu .thead{
     background-color: var(--color-creamy);
+    border: none;
+    height: 60px;
 }
 #uniqui-yu .table td{
     vertical-align: middle;
+    
 }
 #uniqui-yu .table{
     margin-top:20px;
@@ -149,12 +159,13 @@
     border: none;
 }
 #uniqui-yu .tbody td{
-    padding: 3rem;
+    padding: 2rem;
 }
 /* -------- 旅遊行程表格外觀設定--------- */
 #travel-yu .thead{
     background-color: var(--color-creamy);
     border: none;
+    height: 60px;
 }
 #travel-yu .table td{
     vertical-align: middle;
@@ -162,7 +173,6 @@
 }
 #travel-yu .table{
     margin-top:20px;
-    border: none;
 }
 #travel-yu .table> thead > tr > th{
     border: none;
@@ -173,18 +183,31 @@
 #travel-yu .thead th{
     border: none;
 }
-#utravel-yu .tbody th{
+#travel-yu .tbody th{
     border: none;
 }
 #travel-yu .tbody td{
-    padding: 3rem;
+    padding: 2rem;
 }
-/* 規格 */
-.tbody th{
-    vertical-align: middle;
-} 
+/* ---------規格下拉選單外觀 ---------------*/
+.form-select{
+    text-align: center;
+    border: 2px solid #432A0F ;
+    color: #432A0F;
+    border-radius: 8px;
+    width: 100%;
+    height: 36px;
+    font-family: 'gensen-M';
+    font-size: 16px;
+    line-height: 140%;;
+}
+.form-select:focus{
+    border: 2px solid #E5A62A ;
+    border-color: #E5A62A;
+}
 
-/* 數量增加按鈕 */
+
+/* -------------數量增加按鈕------------- */
 .qty-yu {
     width: 40px;
     height: 35px;
@@ -201,8 +224,6 @@ input.qtyminus {
     width: 25px;
     height: 35px;
 }
-
-
 /* .qtyminus{
     width: 100px;
     height: 25px;
@@ -211,9 +232,15 @@ input.qtyminus {
     border-radius: 100%;
 } */
 
+/* ------刪除icon-------- */
+.form-delete-yu{
+    color: #432A0F;
+}
+.form-delete-yu:hover{
+    color: #E5A62A;
+}
 
-
-/* 下一步按鈕 */
+/*------------ 下一步按鈕 -------------*/
 .unique-nextbutton-yu{
     /* outline: 1px solid  #432A0F; */
 }
@@ -253,4 +280,7 @@ input.qtyminus {
     flex-direction: column;
     justify-content: end;
     align-items: flex-end;
+}
+.price-uniqui-yu{
+    color: var(--color-red);
 }

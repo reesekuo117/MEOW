@@ -1,0 +1,110 @@
+/*-----------------購物車訂單的進度條 ----------------- */
+ /* *{
+    border: 1px solid #432A0F;
+ } */
+
+ .line-box-yu{
+    /* margin-top: 88px auto 0 auto; */
+    margin: 0 auto;
+    padding-top: 88px;
+    border-bottom:1px solid #432A0F ;
+    width: 1200px;
+}
+.progress-bar-yu{
+    margin-top: -24px;
+    margin-bottom: 88px;
+    font-size: var(--font-h5-20)
+    
+}
+.circle-1-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-2-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-3-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+
+.circle-light{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #E5A62A;
+    border-radius: 50%;
+}
+.circle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(229, 167, 42, 0.3);
+    border-radius: 50%;
+}
+.circle-light .page-light-number{
+    color: #fff;
+}
+.circle-light h5{
+    color: rgba(67, 42, 15, 0.38);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.circle h5{
+    color: rgba(67, 42, 15, 0.38);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.page-yu h5{
+    /* border: 1px solid #000; */
+    line-height: 20px;
+    padding: 10px;
+    text-align: center;
+    color: rgba(67, 42, 15, 0.38);
+}
+.page-yu .page-yu-two{
+    color: #432A0F;
+}
+
+
+#myTabContent-yu {
+    max-width: 1450px;
+}
+/* ----------------訂單明細 ------------------*/
+.listinfo-title-yu{
+    background-color: var(--color-creamy);
+    padding: 12px;
+    color: #432A0F;
+}
+
+/* --------訂單明細-------- */
+.details-list-title-yu{
+    color: #432A0F;
+    padding: 12px;
+}
+.panel-body-yu{
+    padding: 12px;
+}
+.listinfo-number-yu{
+    color: #432A0F;
+    padding: 12px;
+    margin: 0;
+}
+.listinfo-number-yu span {
+    font-family: 'gensen-R';
+    font-size: 20px;
+    line-height: 140%;
+    color: var(--color-red);
+}
+.listinfo-yu label {
+    margin: 0;
+    padding: 12px;
+}
