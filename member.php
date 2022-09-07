@@ -113,7 +113,7 @@ $pageName ='member'; //頁面名稱
             <div id="like-page-re" class="item_re">
                 <div>
                     <ul class="tab-title-re liketitle-all-re d-flax p-0">
-                        <li class="col-3 text-20-re d-inline-block liketitle-re text-center active-re"><a href="#tab01-re">旅遊行程</a></li><li class="col-3 text-20-re d-inline-block liketitle-re text-center "><a href="#tab02-re">獨家商品</a></li><li class="col-3 text-20-re d-inline-block liketitle-re text-center "><a href="#tab03-re">收藏詩籤</a></li><li class="col-3 text-20-re d-inline-block liketitle-re text-center "><a href="#tab04-re">每日運勢</a></li>
+                        <li class="col-3 text-20-re d-inline-block liketitle-re text-center active-re"><a href="#tab01-re">獨家商品</a></li><li class="col-3 text-20-re d-inline-block liketitle-re text-center "><a href="#tab02-re">旅遊行程</a></li><li class="col-3 text-20-re d-inline-block liketitle-re text-center "><a href="#tab03-re">收藏詩籤</a></li><li class="col-3 text-20-re d-inline-block liketitle-re text-center "><a href="#tab04-re">每日運勢</a></li>
                     </ul>
                 </div>
     <!-- p3-T------------------------------------------------------------------ -->
@@ -121,7 +121,7 @@ $pageName ='member'; //頁面名稱
                     <div class="row my-3">
                         <div class="col-4">
                             <div class="card">
-                                <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
+                                <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Card title</h5>
                                     <p>NT$ 520</p>
@@ -131,7 +131,7 @@ $pageName ='member'; //頁面名稱
                         </div>
                         <div class="col-4">
                             <div class="card">
-                                <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
+                                <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Card title</h5>
                                     <p>NT$ 520</p>
@@ -141,7 +141,7 @@ $pageName ='member'; //頁面名稱
                         </div>
                         <div class="col-4">
                             <div class="card">
-                                <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
+                                <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Card title</h5>
                                     <p>NT$ 520</p>
@@ -153,7 +153,7 @@ $pageName ='member'; //頁面名稱
                     <div class="row my-3">
                         <div class="col-4">
                             <div class="card">
-                                <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
+                                <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Card title</h5>
                                     <p>NT$ 520</p>
@@ -163,7 +163,7 @@ $pageName ='member'; //頁面名稱
                         </div>
                         <div class="col-4">
                             <div class="card">
-                                <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
+                                <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Card title</h5>
                                     <p>NT$ 520</p>
@@ -173,7 +173,7 @@ $pageName ='member'; //頁面名稱
                         </div>
                         <div class="col-4">
                             <div class="card">
-                                <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
+                                <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Card title</h5>
                                     <p>NT$ 520</p>
@@ -239,30 +239,30 @@ $pageName ='member'; //頁面名稱
 <!-- p4-orderlist-------------------------------------------------------------------------------------------------------- -->
             <div id="orderlist-page-re" class="item_re">
                 <ul class="ordertab-title-re liketitle-all-re d-flax p-0">
-                    <li class="col-6 text-20-re d-inline-block liketitle-re text-center active-re"><a href="#tab05-re">旅遊行程</a></li><li class="col-6 text-20-re d-inline-block liketitle-re text-center "><a href="#tab06-re">獨家商品</a></li>
+                    <li class="col-6 d-inline-block liketitle-re text-center active-re"><a class="active activetext-re" href="#tab05-re">獨家商品</a></li><li class="col-6 d-inline-block liketitle-re text-center "><a href="#tab06-re">旅遊行程</a></li>
                 </ul>
     <!-- p4-T------------------------------------------------------------------ -->
                 <div id="tab05-re" class="ordertab-inner-re">
-                    <table class="tablehover-re text-center" >
-                        <thead>
-                            <tr class="orderlist">
-                                <th class="col-3 text-20-re" >訂單日期</th>
+                    <table class="tablehover text-center w-100" >
+                        <thead class="">
+                            <tr class="orderlist-title-re">
+                                <th class="col-2 text-20-re" >訂單日期</th>
                                 <th class="col-3 text-20-re" scope="col">訂單編號</th>
                                 <th class="col-2 text-20-re" scope="col">訂單金額</th>
                                 <th class="col-2 text-20-re" scope="col">訂單狀態</th>
-                                <th class="col-2 text-20-re" scope="col"></th>
+                                <th class="col-2 text-20-re" scope="col">備註</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <th scope="row">2022/09/07</th>
+                            <tr class="orderlist-re">
+                                <td>2022/09/07</td>
                                 <td>OR202209071200</td>
                                 <td>520</td>
                                 <td>訂單完成</td>
                                 <td>查詢訂單</td>
                             </tr>
-                            <tr>
-                            <th scope="row">2022/09/06</th>
+                            <tr class="orderlist-re">
+                                <td>2022/09/06</td>
                                 <td>OR202209062030</td>
                                 <td>520</td>
                                 <td>訂單逾時</td>

@@ -84,7 +84,7 @@ ul li {
 .btn-re:hover {
     background-color: #FFFCF7;
     border-radius: 8px;
-    box-shadow: 2px 2px 2px var(--color-brown-dark);
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
 .btn-re:active-re {
     outline-style: none;
@@ -103,7 +103,7 @@ ul li {
     color: #432A0F;
 }
 .input-re[type=email]:hover, .input-re[type=password]:hover {
-    box-shadow: 2px 2px 2px var(--color-brown-dark);
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
 .input-re[type=email]:focus, .input-re[type=password]:focus {
     /* border: 4px solid var(--color-brown-dark); */
