@@ -74,7 +74,7 @@
     color: #432A0F;
 }
 
-/* ---------------------獨家商品 旅遊行程分頁標籤 -------------------*/
+/* ---------獨家商品 旅遊行程分頁標籤 ------------*/
 #myTabContent-yu{
     max-width: 1450px;
 }
@@ -126,14 +126,17 @@
 }
 
 /* -----清單內字體顏色----------------- */
-.table , .thead  , .tbody h6{
+#myTabContent-yu .table , .thead , .tbody h6{
     margin-bottom: 0px;
     color: #432A0F;
 }
 /* -------- 獨家商品表格外觀設定--------- */
-.tbody th{
+#myTabContent-yu .tbody th{
     vertical-align: middle;
 } 
+#uniqui-yu.table .thead th{
+    vertical-align: middle;
+}
 #uniqui-yu .thead{
     background-color: var(--color-creamy);
     border: none;
@@ -162,6 +165,9 @@
     padding: 2rem;
 }
 /* -------- 旅遊行程表格外觀設定--------- */
+#travel-yu .table .thead th{
+    vertical-align: middle;
+}
 #travel-yu .thead{
     background-color: var(--color-creamy);
     border: none;
@@ -183,14 +189,12 @@
 #travel-yu .thead th{
     border: none;
 }
-#travel-yu .tbody th{
+#travel-yu .tbody th , .tbody td{
     border: none;
-}
-#travel-yu .tbody td{
     padding: 2rem;
 }
 /* ---------規格下拉選單外觀 ---------------*/
-.form-select{
+.form-select-yu{
     text-align: center;
     border: 2px solid #432A0F ;
     color: #432A0F;
@@ -200,13 +204,11 @@
     font-family: 'gensen-M';
     font-size: 16px;
     line-height: 140%;;
+    outline: none;
 }
-.form-select:focus{
-    border: 2px solid #E5A62A ;
-    border-color: #E5A62A;
+.form-select-yu:focus{
+    box-shadow: 4px 4px #432A0F;
 }
-
-
 /* -------------數量增加按鈕------------- */
 .qty-yu {
     width: 40px;

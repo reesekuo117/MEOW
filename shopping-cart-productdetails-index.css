@@ -106,5 +106,19 @@
 }
 .listinfo-yu label {
     margin: 0;
-    padding: 12px;
+    padding: 0  12px 12px 12px;
+}
+/* ----------下拉詳細訂單明細---------- */
+.listinfo-delete-title-yu{
+    width: 100%;
+}
+.listinfo-delete-title-yu svg{
+    padding-bottom: 4px;
+}
+#listinfo-delete-yu .table td{
+    vertical-align: middle;
+    
+}
+#listinfo-delete-yu .thead tr th{
+    border: none;
 }

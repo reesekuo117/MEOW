@@ -138,6 +138,7 @@
     </div>
 
     <!--  購物車商品清單 -->
+    <!-- 已給 #myTabContent-yu{max-width: 1450px;} -->
     <div id="myTabContent-yu" class=" px-1 tab-content container">
         <!-- 獨家商品 -->
         <div class="tab-pane in active " id="uniqui-yu" >
@@ -208,11 +209,10 @@
                                     <div class="">
                                         <!-- <td><?= $v["uniquiname"] ?></td>
                                         <td class="price" data-val="<?= $v["price"] ?>"></td> -->
-                                        <select class="form-select" id="autoSizingSelect">
-                                            <option selected>規格</option>
-                                            <option value="1">甜作之盒</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                        <select class="form-select-yu" id="autosizing-yu"  >
+                                                <option value="0">甜作之盒單入組</option>
+                                                <option value="1">甜作之盒&棉布御守單入組</option>
+                                                <option value="2">棉布御守</option>
                                         </select>
                                     </div>
                                 </td>
@@ -268,12 +268,11 @@
                                     </div> -->
                                     <div class="">
                                         <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
-                                        <select class="form-select" id="autoSizingSelect">
-                                            <option selected>規格</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                        <select class="form-select-yu" id="autosizing-yu"  >
+                                            <option value="0">甜作之盒單入組</option>
+                                            <option value="1">甜作之盒&棉布御守單入組</option>
+                                            <option value="2">棉布御守</option>
+                                    </select>
                                     </div>
                                 </td>
                                 <!-- 單價 -->
@@ -328,12 +327,11 @@
                                     </div> -->
                                     <div class="">
                                         <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
-                                        <select class="form-select" id="autoSizingSelect">
-                                            <option selected>規格</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                        <select class="form-select-yu" id="autosizing-yu"  >
+                                            <option value="0">甜作之盒單入組</option>
+                                            <option value="1">甜作之盒&棉布御守單入組</option>
+                                            <option value="2">棉布御守</option>
+                                    </select>
                                     </div>
                                 </td>
                                 <!-- 單價 -->
@@ -395,13 +393,13 @@
                     <table class="table">
                         <thead class="thead" >
                             <tr>
-                                <th scope="col">
-                                    <div class="row m-auto checkbox-yu">
-                                        <input id="select-all-2-yu" class="mx-3 " type="checkbox" aria-label="Checkbox for following text input">
-                                        <h6 class="mb-0 ">
-                                            全選
-                                        </h6>
-                                    </div>
+                                <th scope="col" class="m-auto checkbox-yu">
+                                    <input id="select-all-2-yu" class="mx-1 " type="checkbox" aria-label="Checkbox for following text input">
+                                        <label class="mb-0" for="">
+                                            <h6 class="mb-0 ">
+                                                全選
+                                            </h6>
+                                        </label>
                                 </th>
                                 <th scope="col" src="imgs/small/<?= $v['product_id'] ?>.jpg" alt="<?= $v['productname'] ?>">
                                     <h6 class="mb-0 ">行程照片</h6>
