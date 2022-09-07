@@ -1,9 +1,9 @@
 /*-----------------購物車訂單的進度條 ----------------- */
  /* *{
     border: 1px solid #432A0F;
- } */
+} */
 
- .line-box-yu{
+.line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
     padding-top: 88px;
@@ -74,28 +74,29 @@
     color: #432A0F;
 }
 
-
+/* ---------表單的寬度------(每一個表單都要用) */
 #myTabContent-yu {
     max-width: 1450px;
 }
-/* ----------------訂單明細 ------------------*/
+/* ----------------訂單明細 --------------*/
+.listinfo-yu{
+    background-color: #FFFCF7;
+}
 .listinfo-title-yu{
     background-color: var(--color-creamy);
-    padding: 12px;
+    padding: 24px 12px;
     color: #432A0F;
 }
-
-/* --------訂單明細-------- */
 .details-list-title-yu{
     color: #432A0F;
-    padding: 12px;
+    padding: 24px 12px;
 }
 .panel-body-yu{
-    padding: 12px;
+    padding: 24px 12px;
 }
 .listinfo-number-yu{
     color: #432A0F;
-    padding: 12px;
+    padding: 24px 12px;
     margin: 0;
 }
 .listinfo-number-yu span {
@@ -109,16 +110,56 @@
     padding: 0  12px 12px 12px;
 }
 /* ----------下拉詳細訂單明細---------- */
-.listinfo-delete-title-yu{
+.panel-title-yu{
+    padding: 0 12px;
+}
+.panel-title-yu a{
+    text-decoration: none;
+    color: #432A0F;
+}
+.listinfo-detalis-title-yu{
     width: 100%;
 }
-.listinfo-delete-title-yu svg{
+.listinfo-detalis-title-yu svg{
     padding-bottom: 4px;
 }
-#listinfo-delete-yu .table td{
+/* ---------下拉詳細訂單表格樣式---------- */
+.panel-body-yu{
+    padding: 0;
+}
+#listinfo-details-yu{
+    margin: 28px 0;
+}
+#listinfo-details-yu tbody td{
+    padding: 2rem;
+}
+#listinfo-detalis-yu .table td{
     vertical-align: middle;
     
 }
-#listinfo-delete-yu .thead tr th{
+#listinfo-details-yu .thead th{
     border: none;
+}
+#listinfo-details-yu .thead{
+    background-color: var(--color-lightcreamy);
+}
+#listinfo-details-yu .tbody td {
+    border: none;
+    vertical-align: middle;
+}
+#listinfo-details-yu .tbody{
+    border: none;
+
+}
+/* ----- 下拉詳細訂單表格總價---------*/
+.listinfo-details-totalprice-yu{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+/* ----訂購人資料section----- */
+.section-1-yu{
+    background-color: #FFFCF7;
 }

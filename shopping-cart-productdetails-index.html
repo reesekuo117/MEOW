@@ -182,6 +182,7 @@
     </div>
     <!-- 訂單明細 -->
     <div id="myTabContent-yu" class="container">
+        <!-- 訂單明細 -->
         <div class="listinfo-yu">
             <main>
                 <h3 class="listinfo-title-yu m-0 ">
@@ -190,83 +191,136 @@
                 <h6 class="listinfo-number-yu">
                     訂單編號: <span >M20221234567</span>
                 </h6>
-                <label class=" listinfo-delete-title-yu" for="toggle">
-                    <h6>
-                        訂單明細
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9" stroke="#432A0F" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    </h6>
-                    
-                        
-                </label>
-                <section>
-                    <div class="tab-pane in active " id="listinfo-delete-yu" >
-                        <div class=" px-0 col-auto justify-content-around text-center">
-                            <div id="">
-                                <table class="table ">
-                                    <thead class=" thead" >
-                                        <tr class="" >
-                                            <th scope="col" src="imgs/small/<?= $v['product_id'] ?>.jpg" alt="<?= $v['productname'] ?>">
-                                                <h6 class="mb-0 ">商品照片</h6>
-                                            </th>
-                                            <th scope="col">
-                                                <h6 class="mb-0 ">商品名稱</h6>
-                                            </th>
-                                            <th scope="col">
-                                                <h6 class="mb-0 ">規格</h6>
-                                            </th>
-                                            <th scope="col">
-                                                <h6 class="mb-0 ">單價</h6>
-                                            </th>
-                                            <th scope="col">
-                                                <h6 class="mb-0 ">數量</h6>
-                                            </th>
-                                            <th scope="col" class="sub-total">
-                                                <h6 class="mb-0 ">小計</h6>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class=" tbody">
-                                        <tr class="">
-                                            <!-- 商品照片 -->
-                                            <td>
-                                                <img src="imgs/購物車-商品(測試用).png" alt="">
-                                            </td>
-                                            <!-- 商品名稱 -->
-                                            <td>
-                                                <h6 class="m-0">
-                                                    台北霞海城隍廟獨家聯名
-                                                    <br>
-                                                    -七夕月老供品組-甜作之盒
-                                                </h6>
-                                            </td>
-                                            <!-- 商品規格 -->
-                                            <td>
-                                                規格
-                                            </td>
-                                            <!-- 單價 -->
-                                            <td>
-                                                $707
-                                            </td>
-                                            <!-- 數量 -->
-                                            <td>
-                                                1
-                                            </td>
-                                            <!-- 小計 -->
-                                            <td>
-                                                $707
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                <div class="panel-group-yu" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h6 class="panel-title-yu">
+                                    <a class="panel-title-a-yu" role="button" data-toggle="collapse" data-parent="#accordion" href="#listinfo-details-yu" aria-expanded="true" aria-controls="collapseOne">
+                                        訂單明細
+                                        <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9" stroke="#432A0F" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                    </a>
+                                </h6>
                             </div>
-                        </div>
+                            <div id="listinfo-details-yu" class="panel-collapse collapse-yu in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body-yu">
+                                    <div class=" px-0 col-auto justify-content-around text-center">
+                                        <table class="table ">
+                                            <thead class=" thead" >
+                                                <tr>
+                                                    <th scope="col" src="" alt="">
+                                                        <h6 class="mb-0 ">商品照片</h6>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <h6 class="mb-0 ">商品名稱</h6>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <h6 class="mb-0 ">規格</h6>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <h6 class="mb-0 ">單價</h6>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <h6 class="mb-0 ">數量</h6>
+                                                    </th>
+                                                    <th scope="col" class="sub-total">
+                                                        <h6 class="mb-0 ">小計</h6>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class=" tbody">
+                                                <tr class="">
+                                                    <!-- 商品照片 -->
+                                                    <td>
+                                                        <img src="imgs/購物車-商品(測試用).png" alt="">
+                                                    </td>
+                                                    <!-- 商品名稱 -->
+                                                    <td>
+                                                        <h6 class="m-0">
+                                                            台北霞海城隍廟獨家聯名
+                                                            <br>
+                                                            -七夕月老供品組-甜作之盒
+                                                        </h6>
+                                                    </td>
+                                                    <!-- 商品規格 -->
+                                                    <td>
+                                                        規格
+                                                    </td>
+                                                    <!-- 單價 -->
+                                                    <td>
+                                                        $707
+                                                    </td>
+                                                    <!-- 數量 -->
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <!-- 小計 -->
+                                                    <td>
+                                                        $707
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tbody class=" tbody">
+                                                <tr class="">
+                                                    <!-- 商品照片 -->
+                                                    <td>
+                                                        <img src="imgs/購物車-商品(測試用).png" alt="">
+                                                    </td>
+                                                    <!-- 商品名稱 -->
+                                                    <td>
+                                                        <h6 class="m-0">
+                                                            台北霞海城隍廟獨家聯名
+                                                            <br>
+                                                            -七夕月老供品組-甜作之盒
+                                                        </h6>
+                                                    </td>
+                                                    <!-- 商品規格 -->
+                                                    <td>
+                                                        規格
+                                                    </td>
+                                                    <!-- 單價 -->
+                                                    <td>
+                                                        $707
+                                                    </td>
+                                                    <!-- 數量 -->
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <!-- 小計 -->
+                                                    <td>
+                                                        $707
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                </div>
+                            </div>
+                            
                     </div>
-                </section>
+                </div>
             </main>
+            <div class="h6 alert alert-succes listinfo-details-totalprice-yu "  role="alert">
+                <h6>訂單金額:  NT$1000</h6>
+                <h6>運費金額:  NT$60</h6>
+                <h6 id="total-price-yu" class="price-uniqui-yu">總金額: </h6>
+                <h6 id="total-price" ></h6>
+                元
+            </div>
         </div>
-    </div><!-- container -->
+        <!-- 訂購人資料 -->
+        <section class="section-1-yu">
+            <div class="section-1-title-yu">
+                <h3 class="listinfo-title-yu m-0">
+                    訂購人資料
+                </h3>
+            </div>
+            <div>
+                
+            </div>
+        </section>
+    </div>
 
     </section>
 
@@ -344,6 +398,22 @@
         $('.back-button').click(function(){
             $('html, body').animate({scrollTop:0},10)
         })
+
+
+        $(document).click(function(e) {
+        if (!$(e.target).is('.collapse-yu ')) {
+            $('.panel-body-yu').collapse('hide');	    
+        }
+    });
+        
+        // // 購物車商品詳細清單下拉
+        // $('.panel-collapse').on('show.bs.collapse', function () {
+        //     $(this).siblings('.panel-heading').addClass('active');
+        // });
+
+        // $('.panel-collapse').on('hide.bs.collapse', function () {
+        //     $(this).siblings('.panel-heading').removeClass('active');
+        // });
     </script>
 </body>
 </html>
