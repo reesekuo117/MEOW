@@ -1,5 +1,5 @@
 * {
-  outline: 1px solid red;
+  outline: 1px solid black;
 }
 
 .body_lb {
@@ -168,7 +168,7 @@ color: var(--color-text100);
 }
 .north:hover {
   fill: var(--color-orange);
-  transform: translate(-5px, -5px);
+  /* transform: translate(-5px, -5px); */
 }
 .middle:hover {
   fill: var(--color-orange);
@@ -184,6 +184,7 @@ color: var(--color-text100);
 }
 
 .select_lb{
+  color: var(--color-brown-dark);
   width: 140px;
   height: 48px;
   outline: none;
@@ -191,7 +192,7 @@ color: var(--color-text100);
   border: 2px solid var(--color-brown-dark);
 }
 .select_lb:focus{
-  box-shadow: 4px 4px #432A0F;
+  box-shadow: 2px 2px #432A0F;
 }
 
 .templetag_lb{
@@ -201,7 +202,7 @@ color: var(--color-text100);
   color: var(--color-text87);
 }
 .detail-info_lb{
- padding-top: 80px;
+ padding-top: 40px;
   color: var(--color-text87);
 }
 
@@ -224,10 +225,11 @@ color: var(--color-text100);
   border-radius: 8px;
   width: 300px;
   height: 170px;
+  overflow: hidden;
 }
 
 .cardhead_lb{
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   border-bottom: 3px solid var(--color-text38) ;
 }
 
@@ -243,7 +245,6 @@ color: var(--color-text100);
 }
 
 /* sidebar */
-
 .sidebar_lb span{
   display: inline-block;
   position: relative;
@@ -271,15 +272,86 @@ color: var(--color-text100);
 .sidebar_lb a.active_lb {
 color: #CD562F;
 }
-/* .targetScrollSection {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
-  font-weight: 700;
-}
- */
 
+/* 地圖地標 */
+.landmark_lb{
+  border-radius:8px;
+  width: 120px;
+  overflow: hidden;
+}
+.loation_lb{
+  color: var(--color-white);
+  background-color: var(--color-orange);
+}
+.temname_lb{
+  color:var(--color-orange);
+  background-color: var(--color-creamy);
+}
+/* 霞海城隍廟 */
+.C01 {
+  top: 10px;
+  left: 360px;
+}
+/* 龍山寺 */
+.C06 {
+  top: 100px;
+  left: 320px;
+}
+/* 指南宮 */
+.C07 {
+  top: 130px;
+  left: 580px;
+}
+/* 兔兒神廟*/
+.C10{
+  top: 5px;
+  left: 600px;
+}
+/* 樂成宮 */
+.C03{
+  top: 230px;
+  left: 260px;
+}
+/* 鹿港天后宮 */
+.C04{
+  top: 330px;
+  left: 210px;
+}
+/* 月下老人 */
+.C08{
+  top: 360px;
+  left: 460px;
+}
+/* 祀典武廟 */
+.C02{
+  top: 580px;
+  left: 100px;
+}
+/* 大天后宮 */
+.C05{
+  top: 480px;
+  left: 120px;
+}
+/* 重慶寺 */
+.C09{
+  top: 570px;
+  left: 300px;
+}
+/* 大觀音亭 */
+.C11{
+  top: 470px;
+  left: 290px;
+
+}
+/* 關帝廟 */
+.C12{
+    top: 680px;
+    left: 160px;
+  }
+
+
+
+/* #north-group_lb{
+  visibility: hidden;
+} */
 

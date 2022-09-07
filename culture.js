@@ -15,7 +15,7 @@ $(window).scroll(function () {
     })
 
 
-//側邊欄滾到該區域會變色  太晚變色惹qq~~~~~
+//側邊欄滾到該區域會變色
     const scrollLink = document.querySelectorAll(
         '.sidebar_lb a[href^="#"]'
       );
@@ -25,9 +25,14 @@ $(window).scroll(function () {
 
       scrollLink.forEach((item) => {
         item.addEventListener("click", (e) => {
-          let targetBlock = document.querySelector(e.target.hash);
-          console.log(targetBlock);
+          const hash = e.currentTarget.hash;
+          console.log({hash})
+
+
+          let targetBlock = document.querySelector(e.currentTarget.hash);
+          console.log({targetBlock, top: targetBlock.offsetTop});
           e.preventDefault();
+          console.log(targetBlock.offsetTop);
           window.scrollTo({
             top: targetBlock.offsetTop,
             behavior: "smooth",
@@ -35,20 +40,40 @@ $(window).scroll(function () {
         });
       });
 
-      Array.prototype.forEach.call(section, (e) => {
-        sections[e.id] = e.offsetTop;
-      });
+      $(function(){
+        for(let i =0; i<section.length; i++){
+          sections[section[i].id] = section[i].offsetTop;
+          console.log(section[i].id, section[i].offsetTop);
+        }
+      })
+
+
+      // Array.prototype.forEach.call(section, (e) => {
+      //   sections[e.id] = e.offsetTop;
+      // });
+      $(window).resize( ()=>{
+        // Array.prototype.forEach.call(section, (e) => {
+        //   sections[e.id] = e.offsetTop;
+        // });
+        /*
+        for(let i =0; i<section.length; i++){
+          sections[section[i].id] = section[i].offsetTop;
+        }
+        */
+      })
 
       window.onscroll = () => {
-        let scrollPosition =
-          document.documentElement.scrollTop || document.body.scrollTop;
+        // let scrollPosition =
+        //   document.documentElement.scrollTop || document.body.scrollTop;
+        let scrollPosition = window.pageYOffset;
           for (identCounter in sections) {
           if (sections[identCounter] <= scrollPosition) {
-            console.log(sections[identCounter],scrollPosition);
+            console.log(identCounter, sections[identCounter], scrollPosition);
             document.querySelector(".active_lb").removeAttribute("class");
             document
               .querySelector("a[href*=" + identCounter + "]")
               .setAttribute("class", "active_lb");
+              // break;
           }
         }
       };
@@ -109,4 +134,37 @@ $(window).scroll(function () {
     
    
 
+
+//當點擊哪一區地圖會變色加位移
+$('.path_lb').on({
+  click: function (){
+    $('.path_lb').removeAttr('style');
+    $(this).css({
+      "fill":"#E5A62A",
+       "-webkit-transform":"translate(-5px,-5px)",
+    });
     
+    }
+
+
+}); 
+
+//點擊出現地標卡片  
+$('.north').click(function(){
+  $('#north-group_lb').removeClass('d-none');
+  $('#middle-group_lb').addClass('d-none');
+  $('#south-group_lb').addClass('d-none');
+})
+  
+$('.middle').click(function(){
+  $('#north-group_lb').addClass('d-none');
+  $('#middle-group_lb').removeClass('d-none');
+  $('#south-group_lb').addClass('d-none');
+})
+  
+$('.south').click(function(){
+  $('#north-group_lb').addClass('d-none');
+  $('#middle-group_lb').addClass('d-none');
+  $('#south-group_lb').removeClass('d-none');
+})
+  
