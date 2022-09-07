@@ -12,7 +12,8 @@ function slideOne() {
     if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
         sliderOne.value = parseInt(sliderTwo.value) - minGap;
     }
-    SliderValOne.textContent = `NT$${a}`
+    // let a = parseInt(sliderOne.value)*10
+    SliderValOne.textContent = `NT$${sliderOne.value}`
 
 
     // this is only if the price range doesn't start at 0 like in this case, in the project I was working on. Otherwise the logic would be far simpler 
