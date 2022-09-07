@@ -1,3 +1,6 @@
+*{
+    outline: 1px solid #432A0F;
+}
 .row {
     margin: 0;
     box-sizing: border-box;
@@ -76,15 +79,28 @@
 }
 
 /* -----------------------------搜尋結束-------------------------------- */
+.sort {
+    margin: 30px;
+}
+
+.product_sort a {
+    /* padding: 8px; */
+    margin: 8px;
+    text-decoration: none;
+    color: var(--color-text60);
+}
+.product_sort a:hover {
+    color: var(--color-text87);
+}
+.product_sort a:focus {
+    color: var(--color-text87);
+}
 
 .product_section {
     display: flex;
     
 }
-.cate_filter{
-    /* position: sticky;
-    top: 500px; */
-}
+
 .product_cate a {
     text-decoration: none;
     color: var(--color-text87);
@@ -93,7 +109,13 @@
 .product_cate:hover a {
     color: var(--color-orange);
 }
-
+.aside .col{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 10%;
+}
 /* -----------------------------價格篩選----------------------------- */
 .filter-content__element {
     width: 100%;
@@ -217,14 +239,6 @@
 }
 
 /* ---------------------------------------------------------------- */
-.sort {
-    margin: 30px;
-}
-
-.product_sort a {
-    /* padding: 8px; */
-    margin: 8px;
-}
 
 .p_list .card {
     border-radius: 8px;
@@ -246,13 +260,11 @@
     margin: 36px auto;
 }
 
-.aside{
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: 500px;
-}
+
 .product_list{
     display: flex;
-
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
