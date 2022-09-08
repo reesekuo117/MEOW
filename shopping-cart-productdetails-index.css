@@ -2,7 +2,10 @@
  /* *{
     border: 1px solid #432A0F;
 } */
-
+*{
+    margin: 0;
+    padding: 0;
+  }
 .line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
@@ -85,9 +88,12 @@
 .section-2-title-yu{
     background-color: var(--color-creamy);
 }
+.section-2-title-yu label{
+    padding: 16px 0 0 0 ;
+}
 .listinfo-title-yu{
     background-color: var(--color-creamy);
-    padding: 24px 12px;
+    padding: 12px 12px;
     color: #432A0F;
 }
 .details-list-title-yu{
@@ -114,7 +120,7 @@
 }
 /* ----------下拉詳細訂單明細---------- */
 .panel-title-yu{
-    padding: 0 12px;
+    padding: 0 0 12px 12px;
 }
 .panel-title-yu a{
     text-decoration: none;
@@ -130,11 +136,11 @@
 .panel-body-yu{
     padding: 0;
 }
-#listinfo-details-yu{
-    margin: 28px 0;
-}
+/* #listinfo-details-yu{
+    padding: 28px 0;
+} */
 #listinfo-details-yu tbody td{
-    padding: 2rem;
+    padding: 2rem 2rem 0rem 2rem;
 }
 #listinfo-detalis-yu .table td{
     vertical-align: middle;
@@ -156,6 +162,7 @@
 }
 /* ----- 下拉詳細訂單表格總價---------*/
 .listinfo-details-totalprice-yu{
+    padding-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: end;

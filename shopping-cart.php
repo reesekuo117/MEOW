@@ -1,5 +1,5 @@
 <?php
-require __DIR__. '/parts/meow_db.php';  // /開頭
+//require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName ='購物車'; //頁面名稱
 
 

@@ -246,6 +246,9 @@ input.qtyminus {
 .unique-nextbutton-yu{
     /* outline: 1px solid  #432A0F; */
 }
+.unique-btn-yu{
+    cursor: pointer;
+}
 .unique-nextbutton-yu .unique-btn-yu{
     /* border: 1px solid #432A0F; */
     margin: 40px;

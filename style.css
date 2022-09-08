@@ -48,8 +48,8 @@
 }
 
 :root {
-    --color-orange: #CD562F;
-    --color-yellow: #E5A62A;
+    --color-orange: #cd562f;
+    --color-yellow: #e5a62a;
     --color-blue: #243B5B;
     --color-green: #336145;
     --color-lightbrown: #F5DFC2;
@@ -60,7 +60,7 @@
     --color-creamy: #F3E3D4;
     --color-lightcreamy: #FFF6E9;
     --color-ivory: #FFFCF7;
-    --color-brown-dark: #432A0F;
+    --color-brown-dark: rgb(67, 42, 15);
     --color-text100: rgb(67, 42, 15, 1);
     --color-text87: rgba(67, 42, 15, 0.87);
     --color-text60: rgba(67, 42, 15, 0.6);
