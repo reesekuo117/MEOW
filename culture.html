@@ -149,13 +149,13 @@
         <div class="position-absolute cloud_left_lb">
             <img class="w-100" src="./imgs/culture/cloud_left.png" alt="">
         </div>
-        <div class="col-3 left-pic_lb">
-            <img  src="./imgs/culture/section1-1.png" alt="">
+        <div class="col-4 left-pic_lb">
+            <img class="w-100" src="./imgs/culture/section1-1.png" alt="">
         </div>
         <div class="position-absolute section1-cat1_lb">
             <img class="w-100" src="./imgs/culture/section1-cat1.png" alt="">
         </div>
-        <div class="col-2"></div>
+        <div class="col-1"></div>
         <div class="col-4 top-content_lb">
             <h5>
                 月下老人，簡稱月老，是道教的神祇之一，為掌管男女姻緣之神。形象常被塑造成白鬍長鬚，臉泛紅光的慈祥老者；左持姻緣簿，右拄拐杖。
@@ -433,7 +433,7 @@
 <!------- 全台精選月老廟 ------->
 <div class="container-fluid targetScrollSection selected-temple_lb position-relative" id="selected-temple_lb">
     <div id="north-group_lb" class="d-none" >
-        <div class="C01 landmark_lb d-inline-block text-center position-absolute">
+        <div class="C01 landmark_lb d-inline-block text-center position-absolute" id="C01" >
             <div class="loation_lb py-2 ">台北市</div>
             <div class="temname_lb px-2 py-2">霞海城隍廟</div>
         </div>
@@ -805,7 +805,7 @@
                 </div>
             </div>
 
-            <div class="info-card_lb mt-5">
+            <div class="info-card_lb d-none mt-5" id="c01-info-card_lb">
                 <div class="row ">
                     <div class="col-4">
                         <div class="title-box_lb">
@@ -813,14 +813,13 @@
                             <h2 class="templename_lb">台北霞海城隍廟</h2>
                             <p class="detail-info_lb mb-0">
                                 <span class="ml-3">地址</span>：台北市大同區迪化街一段61號<br>
-                                <span class="ml-3">開放時間</span>：上午 6:17 - 下午 7:47
+                                <span class="ml-3">開放時間</span>： 06:17 - 07:47
                             </p>
                         </div>
                     </div>
-                    <div class="col-4 p-0 tem-wrap_lb">
-                        <img class="w-100" src="./imgs/culture/C01_1.jpeg" alt="">
+                    <div class="col-4 p-0 c01-tem-wrap_lb">
+                        <!-- <img class="w-100" src="./imgs/culture/temple/C01_1.jpeg" alt=""> -->
                     </div>
-                   
                 </div>
                 <div class="row">
                     <div class="col-8 cardhead_lb">
@@ -858,9 +857,60 @@
 
                 </div>
             </div>
+            <div id="c06-info-card_lb" class="mt-5 d-none info-card_lb">
+                <div class="row ">
+                    <div class="col-4">
+                        <div class="title-box_lb">
+                            <h5 class="templetag_lb">＃全台最靈驗</h5>
+                            <h2 class="templename_lb">龍山寺</h2>
+                            <p class="detail-info_lb mb-0">
+                                <span class="ml-3">地址</span>：台北市萬華區廣州街211號<br>
+                                <span class="ml-3">開放時間</span>：07:00 - 21:30
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4 p-0 c06-tem-wrap_lb">
+                        <!-- <img class="w-100" src="./imgs/culture/temple/C01_6.jpeg" alt=""> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8 cardhead_lb">
+                    </div>
+                    <div class="col-8">
+                        <div class="mt-4">
+                            <h6 class="step_lb my-auto px-3 py-1">參拜步驟</h6>
+                            <p class="mt-3 steptext_lb ">
+                                1.前殿:釋迦牟尼佛、藥師佛與阿彌陀佛
+                                <br>
+                                2.正殿:先向外拜天公，再向內拜觀世音菩薩、文殊菩薩、普賢菩薩
+                                <br>
+                                3.後殿中央:天上聖母
+                                <br>
+                                4.後殿右方:水仙尊王、城隍爺、龍爺、福德正神
+                                <br>
+                                5. 後殿左方:註生娘娘、池頭夫人、十二婆者
+                                <br>
+                                6. 後殿右側:文昌帝君、大魁星君、紫陽夫子、華陀仙師
+                                <br>
+                                7. 後殿左側:關聖帝君、三官大帝、地藏王菩薩、月老神君
+                                <br>
+                                8. 向月老稟明生辰八字、姓名、住址、理想對象類型及條件，擲三次聖筊後可索取一條紅線，並在月老香爐上過火
+                            </h5>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="temnotice_lb my-auto px-3 py-1"> 注意事項</h6>
+                            <p class="mt-3 temnoticetext_lb">
+                                1. 需先向主神觀世音菩薩說明來意後，再依序參拜
+                                <br>
+                                2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
-   
 </div>
 
 <div class="container">
@@ -873,31 +923,31 @@
 
 
 <!-- 側邊欄 -->
-<div class="col-2 sidebar_lb">
+<div class="sidebar_lb">
     <ul>
-        <li class="pb-1 list-unstyled">
+        <li class="pb-1 list-unstyled sideBtn1_lb">
             <a class="active_lb" href="#moonold_lb">
              <span>－ 關於月老</span> 
             </a>
         </li >
         <li class="pb-1 list-unstyled" >
             <a href="#byebye_lb">
-            <span>參拜流程</span>    
+            <span>－ 參拜流程</span>    
             </a>
         </li>
         <li class="pb-1 list-unstyled" >
             <a href="#notice_lb">
-               <span>參拜月老禁忌</span> 
+               <span>－ 參拜月老禁忌</span> 
             </a>
         </li>
         <li class="pb-1 list-unstyled" >
             <a href="#givebk_lb">
-            <span>如何還願</span>    
+            <span>－ 如何還願</span>    
             </a>
         </li>
         <li class="pb-1 list-unstyled">
             <a href="#selected-temple_lb">
-                <span>全台精選月老廟</span>
+                <span>－ 全台精選月老廟</span>
             </a>
         </li>
     </ul>

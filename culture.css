@@ -10,19 +10,20 @@
 }
 
 .section1_lb{
-  margin-top: 700px;
+  margin-top: 800px;
 }
 .section1-content_lb{
-  margin-top: 200px
+  margin-top: 150px
 }
 .section1-content2_lb{
-  margin-top: 157px;
+  margin-top: 1px;
+}
+.right-pic_lb{
+  width: 200px;
 }
 .title_lb {
   color: var(--color-text100);
-  
 }
-
 .section1-cat1_lb{
     width: 150px;
     bottom: 5px;
@@ -31,7 +32,6 @@
 .cloud_left_lb{
     bottom: -20px;
 }
-
 
 
 .top-content_lb {
@@ -46,16 +46,26 @@
   margin: auto 0;
 }
 
-.cloud_right_lb {
-width: 300px;
+.cloud_right_lb{
+  width: 300px;
   right: 0px;
   bottom: 50px;
+  animation: cloudmove_lb infinite ease-in-out;;
+  transition: .5s;
 }
+@keyframes cloudmove_lb {
+  0%,100%{
+    transform: translateX(-30px);
+  }
+50%{
+    transform: translateX(0px);
+  }
+}
+
 .section1-cat2_lb {
   width: 150px;
   right: 300px;
   bottom:-20px;
-
 }
 
 
@@ -221,11 +231,20 @@ color: var(--color-text100);
   height: 17px;
 }
 
-.tem-wrap_lb{
+.c06-tem-wrap_lb{
   border-radius: 8px;
+  background: url(./imgs/culture/temple/C01_6.jpeg);
+  background-size: cover;
   width: 300px;
   height: 170px;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+.c01-tem-wrap_lb{
+  border-radius: 8px;
+  background: url(./imgs/culture/temple/C01_1.jpeg);
+  background-size: cover;
+  width: 300px;
+  height: 170px;
 }
 
 .cardhead_lb{
@@ -245,7 +264,7 @@ color: var(--color-text100);
 }
 
 /* sidebar */
-.sidebar_lb span{
+/* .sidebar_lb span{
   display: inline-block;
   position: relative;
 }
@@ -257,13 +276,13 @@ color: var(--color-text100);
   background: var(--color-text38);
   width: 20px;
   height: 4px;
-}
+} */
 
 .sidebar_lb {
   position: fixed;
   top: 100px;
-  right: 50px;
-  /* z-index: 999; */
+  right: 3%;
+  z-index: 90;
 }
 .sidebar_lb a {
   color: rgba(67, 42, 15, 0.6);
@@ -349,9 +368,9 @@ color: #CD562F;
     left: 160px;
   }
 
-
-
 /* #north-group_lb{
   visibility: hidden;
 } */
+
+
 

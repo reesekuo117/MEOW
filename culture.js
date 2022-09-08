@@ -51,21 +51,21 @@ $(window).scroll(function () {
       // Array.prototype.forEach.call(section, (e) => {
       //   sections[e.id] = e.offsetTop;
       // });
-      $(window).resize( ()=>{
-        // Array.prototype.forEach.call(section, (e) => {
-        //   sections[e.id] = e.offsetTop;
-        // });
-        /*
-        for(let i =0; i<section.length; i++){
-          sections[section[i].id] = section[i].offsetTop;
-        }
-        */
-      })
+      // $(window).resize( ()=>{
+      //   // Array.prototype.forEach.call(section, (e) => {
+      //   //   sections[e.id] = e.offsetTop;
+      //   // });
+      //   /*
+      //   for(let i =0; i<section.length; i++){
+      //     sections[section[i].id] = section[i].offsetTop;
+      //   }
+      //   */
+      // })
 
       window.onscroll = () => {
-        // let scrollPosition =
-        //   document.documentElement.scrollTop || document.body.scrollTop;
-        let scrollPosition = window.pageYOffset;
+        let scrollPosition =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        // let scrollPosition = window.pageYOffset;
           for (identCounter in sections) {
           if (sections[identCounter] <= scrollPosition) {
             console.log(identCounter, sections[identCounter], scrollPosition);
@@ -73,7 +73,6 @@ $(window).scroll(function () {
             document
               .querySelector("a[href*=" + identCounter + "]")
               .setAttribute("class", "active_lb");
-              // break;
           }
         }
       };
@@ -168,3 +167,14 @@ $('.south').click(function(){
   $('#south-group_lb').removeClass('d-none');
 })
   
+$('.C01').click(function () {
+  $('#c01-info-card_lb').removeClass('d-none');
+  $('#c06-info-card_lb').addClass('d-none');
+  
+})
+  
+$('.C06').click(function () {
+  $('#c06-info-card_lb').removeClass('d-none');
+  $('#c01-info-card_lb').addClass('d-none');
+  
+})
