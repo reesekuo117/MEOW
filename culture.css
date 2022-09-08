@@ -1,12 +1,32 @@
 /* * {
   outline: 1px solid black;
 } */
+.temp_bg{
+  position: relative;
+  overflow: hidden;
+}
+.temp_bg::after{
+  content: '';
+  display: block;
+  width: 200%;
+  /* height: 300px; */
+  aspect-ratio: 1/1;
+  background-color: rgba(0, 0, 0, 0.33);
+  border-radius: 50%;
+  position: absolute;
+  left: -50%;
+  bottom: -230%;
+  /* background-color: #000;
+  border-radius: 50% 50% 0 0 / 100% 100% 0  0; */
+  /* background: radial-gradient(circle at 50% 400%, #000 50%, transparent 50%); */
+}
 
 .body_lb {
   /* background-color: var(--color-lightcreamy); */
   background-image: url(./imgs/culture/REVISED_BG_PC-2.jpg);
   background-size:cover;
   background-repeat: no-repeat;
+  /* overflow: hidden; */
 }
 
 .section1_lb{
@@ -45,6 +65,7 @@
 }
 .pic-group_lb{
   margin-top: 110px;
+  overflow: hidden;
 }
 .tmp-pic1_lb{
   transition: .5S;
@@ -82,6 +103,7 @@
 /* 參拜流程 */
 .section2_lb{
   margin-top: 112px;
+  overflow: hidden;
 }
 .s2-leftcloud_lb{
   width: 700px;
@@ -151,13 +173,14 @@ color: var(--color-text100);
 }
 /* 還願 */
 .section4_lb{
-  margin: 200px auto;
+  padding-top: 150px;
+  margin: 150px auto;
 }
 .devotion-title{
   width: 500px;
   margin: 0 auto;
   left: 300px;
-  top: -80px;
+  top: 80px;
 }
 .devotion-bg{
   margin: 0 auto;
@@ -394,6 +417,4 @@ color: #CD562F;
 /* #north-group_lb{
   visibility: hidden;
 } */
-
-
 

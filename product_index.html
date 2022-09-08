@@ -142,8 +142,9 @@
         </div>    
     </header>
 
-    <div class="product_head">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <!-- 輪播牆在手機版爆版，換按鈕，hover和點擊時箭頭或點點換顏色 -->
+    <div class="product_head" id="product_head">
+        <div id="carouselExampleControls" class="carousel slide d-none d-md-block" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active w-100">
                     <img src="./imgs/product/P26_3_big.png" class="d-block w-100" alt="...">
@@ -167,25 +168,35 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="product_title d-flex ">
-                        <h1 class="d-none d-md-flex">
+                    <div class="product_title pc_title d-flex ">
+                        <h1 class="d-none d-md-flex ">
                             好想談戀愛？ <br>
                             好想擺脫噁男搭訕？ <br>
                             好想和另一半長長久久？ <br>
                             你的心願我們都聽到了！<br>
                         </h1>
-                        <h6 class="d-block d-md-none">
-                            <!-- 手機版消失了耐庵捏 -->
+                        <h6 class="mb_title d-flex d-md-none">
+
                             好想談戀愛？ <br>
                             好想擺脫噁男搭訕？ <br>
                             好想和另一半長長久久？ <br>
                             你的心願我們都聽到了！<br>
                         </h6>
-                        <div class="btn">看更多熱門商品！</div>
+                        <div class="pc_btn btn">看更多熱門商品！</div>
 
+                    </div>
+                    <div class="product_title mb_title d-flex d-md-none">
+                        <h6 class="mb_title d-flex d-md-none">
+
+                            好想談戀愛？ <br>
+                            好想擺脫噁男搭訕？ <br>
+                            好想和另一半長長久久？ <br>
+                            你的心願我們都聽到了！<br>
+                        </h6>
+                        <div class="mb_btn btn">看更多熱門商品！</div>
                     </div>
                 </div>
             </div>
@@ -223,7 +234,7 @@
                 </div>
                 <div class="col">
                     <div class="midicon">
-                        <a href="#">
+                        <a href="#product_sweet">
                             <div class="midimg">
                                 <img class="h-100" src="./imgs/product/cate3.png" alt="">
                             </div>
@@ -235,7 +246,7 @@
                 </div>
                 <div class="col">
                     <div class="midicon">
-                        <a href="#">
+                        <a href="#product_meow">
                             <div class="midimg paw">
                                 <img class="h-100" src="./imgs/product/cate4.png" alt="">
                             </div>
@@ -256,7 +267,7 @@
             <img class="w-100" src="./imgs/product/P20_big.png" alt="">
         </div>
         <div class="brand_2">
-            <img class="w-100" src="./imgs/product/P24_1.jpg" alt="">
+            <img class="w-100 d-none d-md-block" src="./imgs/product/P24_1.jpg" alt="">
         </div>
         <div class="brand_3">
             <img class="w-100" src="./imgs/product/P18_1_small.jpg" alt="">
@@ -306,8 +317,8 @@
                 </div>
 
                 <div class="py_title d-flex">
-                    <div class="col"></div>
-                    <div class="py_btn">
+                    <!-- <div class="col"></div> -->
+                    <div class="py_btn offset-5">
                         <div class="col d-flex">
                             <h2>
                                 可愛又精緻的結緣小物， <br>
@@ -328,7 +339,7 @@
         </div>
     </div>
 
-    <div class="product_sweet">
+    <div class="product_sweet" id="product_sweet">
         <div class="row">
             <div class="col-8">
                 <div class="ps_img">
@@ -357,7 +368,7 @@
 
     </div>
 
-    <div class="product_meow">
+    <div class="product_meow" id="product_meow">
         <div class="meow_test">
             <div class="col">
                 <div class="meow_img">
@@ -491,11 +502,13 @@
                 <p class="mb-0"><span class="font-weight-light"> © </span><small>2022 MoonOldMeow</small></p>
             </div>
     </footer>
-    <!-- <div class="back-button d-none d-md-block">
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M26 45.5C36.7696 45.5 45.5 36.7696 45.5 26C45.5 15.2304 36.7696 6.5 26 6.5C15.2304 6.5 6.5 15.2304 6.5 26C6.5 36.7696 15.2304 45.5 26 45.5ZM33.4521 31.4129C34.0484 32.0837 35.0755 32.1441 35.7463 31.5479C36.417 30.9516 36.4774 29.9245 35.8812 29.2537L28.4291 20.8701C27.1363 19.4157 24.8637 19.4157 23.5709 20.8701L16.1188 29.2537C15.5226 29.9245 15.583 30.9516 16.2537 31.5479C16.9245 32.1441 17.9516 32.0837 18.5479 31.4129L26 23.0293L33.4521 31.4129Z" fill="#AE5D29"/>
-            </svg>
-    </div> -->
+    <div class="back-button d-none d-md-block">
+            <a href="#product_head">
+                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M26 45.5C36.7696 45.5 45.5 36.7696 45.5 26C45.5 15.2304 36.7696 6.5 26 6.5C15.2304 6.5 6.5 15.2304 6.5 26C6.5 36.7696 15.2304 45.5 26 45.5ZM33.4521 31.4129C34.0484 32.0837 35.0755 32.1441 35.7463 31.5479C36.417 30.9516 36.4774 29.9245 35.8812 29.2537L28.4291 20.8701C27.1363 19.4157 24.8637 19.4157 23.5709 20.8701L16.1188 29.2537C15.5226 29.9245 15.583 30.9516 16.2537 31.5479C16.9245 32.1441 17.9516 32.0837 18.5479 31.4129L26 23.0293L33.4521 31.4129Z" fill="#AE5D29"/>
+                </svg>
+            </a>
+    </div>
 <!-- footer-xs ----------------------------------->
     <footer class="footer-xs d-md-none ">
             <ul class="d-flex">

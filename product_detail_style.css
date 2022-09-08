@@ -1,3 +1,16 @@
+.pb_head{
+    margin: 80px;
+}
+/* 大換小 */
+.product_carousel .row{
+    flex-direction: column;
+}
+.img-demo > img{
+    width: 100%;
+}
+.img-wrap > img{
+    width: 100%;
+}
 .detail_title .row{
     flex-direction: column;
 }

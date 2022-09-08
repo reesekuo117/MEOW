@@ -177,17 +177,22 @@ $(window).scroll(function () {
     $('#area_lb').change(function() {
         const areaLbNumber = $(this).val();
         const itemLbData = itemLbArray [areaLbNumber];
-        
+          console.log('hi',document.querySelector('.middle'));
+          // $('#north-group_lb').addClass('d-none');
+          // $('#middle-group_lb').removeClass('d-none');
+          // $('#south-group_lb').addClass('d-none');
+
+          // $('.middle').css({
+          //   "fill":"#E5A62A",
+          //    "-webkit-transform":"translate(-5px,-5px)",
+          // });
+
         $('#item_lb').empty();
-        
         $(itemLbData).each(function(index,item){
             $('#item_lb').append(`<option value="${index}">${item}</option>`);
         });
-
-
 });
-    
-   
+
 
 
 //當點擊哪一區地圖會變色加位移
@@ -198,7 +203,6 @@ $('.path_lb').on({
       "fill":"#E5A62A",
        "-webkit-transform":"translate(-5px,-5px)",
     });
-    
     }
 }); 
 //預設北部
@@ -212,6 +216,7 @@ $('.north').click(function(){
   $('#north-group_lb').removeClass('d-none');
   $('#middle-group_lb').addClass('d-none');
   $('#south-group_lb').addClass('d-none');
+  $('#area_lb').val('0')
 })
 
   
@@ -219,12 +224,14 @@ $('.middle').click(function(){
   $('#north-group_lb').addClass('d-none');
   $('#middle-group_lb').removeClass('d-none');
   $('#south-group_lb').addClass('d-none');
+  $('#area_lb').val('1')
 })
   
 $('.south').click(function(){
   $('#north-group_lb').addClass('d-none');
   $('#middle-group_lb').addClass('d-none');
   $('#south-group_lb').removeClass('d-none');
+  $('#area_lb').val('2')
 })
   
 $('.C01').click(function () {
@@ -303,3 +310,6 @@ window.onscroll = () => {
     }
   }
 };
+
+
+
