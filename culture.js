@@ -14,68 +14,123 @@ $(window).scroll(function () {
       }
     })
 
+//廟照片滑動
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.pic-group_lb').offset().top - $(window).height() * 2 / 3)) {
+    $('.tmp-pic1_lb').css({
+      transform: 'translateX(100px)',
+      opacity: 1,
+    })
+  }
+  else {
+    $('.tmp-pic1_lb').css({
+      transform: 'translateX(0px)',
+      opacity: 0,
+    })
+  }
+})
 
-//側邊欄滾到該區域會變色
-    const scrollLink = document.querySelectorAll(
-        '.sidebar_lb a[href^="#"]'
-      );
-      const section = document.querySelectorAll(".targetScrollSection");
-      const sections = {};
-      let identCounter = 0;
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.tmp-pic2_lb').offset().top - $(window).height() * 2 / 3)) {
+    $('.tmp-pic2_lb').css({
+      transform: 'translateX(100px)',
+      opacity: 1,
+    })
+  }
+  else {
+    $('.tmp-pic2_lb').css({
+      transform: 'translateX(0px)',
+      opacity: 0,
+    })
+  }
+})
 
-      scrollLink.forEach((item) => {
-        item.addEventListener("click", (e) => {
-          const hash = e.currentTarget.hash;
-          console.log({hash})
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.tmp-pic2_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('.tmp-pic3_lb').css({
+      transform: 'translateX(100px)',
+      opacity: 1,
+    })
+  }
+  else {
+    $('.tmp-pic3_lb').css({
+      transform: 'translateX(0px)',
+      opacity: 0,
+    })
+  }
+})
 
-
-          let targetBlock = document.querySelector(e.currentTarget.hash);
-          console.log({targetBlock, top: targetBlock.offsetTop});
-          e.preventDefault();
-          console.log(targetBlock.offsetTop);
-          window.scrollTo({
-            top: targetBlock.offsetTop,
-            behavior: "smooth",
-          });
-        });
-      });
-
-      $(function(){
-        for(let i =0; i<section.length; i++){
-          sections[section[i].id] = section[i].offsetTop;
-          console.log(section[i].id, section[i].offsetTop);
-        }
-      })
-
-
-      // Array.prototype.forEach.call(section, (e) => {
-      //   sections[e.id] = e.offsetTop;
-      // });
-      // $(window).resize( ()=>{
-      //   // Array.prototype.forEach.call(section, (e) => {
-      //   //   sections[e.id] = e.offsetTop;
-      //   // });
-      //   /*
-      //   for(let i =0; i<section.length; i++){
-      //     sections[section[i].id] = section[i].offsetTop;
-      //   }
-      //   */
-      // })
-
-      window.onscroll = () => {
-        let scrollPosition =
-          document.documentElement.scrollTop || document.body.scrollTop;
-        // let scrollPosition = window.pageYOffset;
-          for (identCounter in sections) {
-          if (sections[identCounter] <= scrollPosition) {
-            console.log(identCounter, sections[identCounter], scrollPosition);
-            document.querySelector(".active_lb").removeAttribute("class");
-            document
-              .querySelector("a[href*=" + identCounter + "]")
-              .setAttribute("class", "active_lb");
-          }
-        }
-      };
+// 參拜流程
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.section2_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('.step1_lb').css({
+      transform: 'translateX(100px)',
+      opacity: 1,
+    })
+  }
+  else {
+    $('.step1_lb').css({
+      transform: 'translateX(0px)',
+      opacity: 0,
+    })
+  }
+})
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.step1_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('.step2_lb').css({
+      transform: 'translateX(0px)',
+      opacity: 1,
+    })
+  }
+  else {
+    $('.step2_lb').css({
+      transform: 'translateX(100px)',
+      opacity: 0,
+    })
+  }
+})
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.step2_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('.step3_lb').css({
+      transform: 'translateX(100px)',
+      opacity: 1,
+    })
+  }
+  else {
+    $('.step3_lb').css({
+      transform: 'translateX(0px)',
+      opacity: 0,
+    })
+  }
+})
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.step3_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('.step4_lb').css({
+      transform: 'translateX(0px)',
+      opacity: 1,
+    })
+  }
+  else {
+    $('.step4_lb').css({
+      transform: 'translateX(100px)',
+      opacity: 0,
+    })
+  }
+})
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.step4_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('.step5_lb').css({
+      transform: 'translateX(100px)',
+      opacity: 1,
+    })
+  }
+  else {
+    $('.step5_lb').css({
+      transform: 'translateX(0px)',
+      opacity: 0,
+    })
+  }
+})
 
 
     // cp貓相遇
@@ -113,7 +168,6 @@ $(window).scroll(function () {
 
 
     //全台月老廟篩選
-
     let itemLbArray = [
         ['祈求姻緣','斬桃花、小三'],
         ['祈求姻緣'],
@@ -129,6 +183,8 @@ $(window).scroll(function () {
         $(itemLbData).each(function(index,item){
             $('#item_lb').append(`<option value="${index}">${item}</option>`);
         });
+
+
 });
     
    
@@ -144,9 +200,12 @@ $('.path_lb').on({
     });
     
     }
-
-
 }); 
+//預設北部
+$('.path_lb').eq(0).css({
+  "fill":"#E5A62A",
+   "-webkit-transform":"translate(-5px,-5px)",
+});
 
 //點擊出現地標卡片  
 $('.north').click(function(){
@@ -154,6 +213,7 @@ $('.north').click(function(){
   $('#middle-group_lb').addClass('d-none');
   $('#south-group_lb').addClass('d-none');
 })
+
   
 $('.middle').click(function(){
   $('#north-group_lb').addClass('d-none');
@@ -178,3 +238,68 @@ $('.C06').click(function () {
   $('#c01-info-card_lb').addClass('d-none');
   
 })
+
+
+
+
+//側邊欄滾到該區域會變色
+const scrollLink = document.querySelectorAll(
+  '.sidebar_lb a[href^="#"]'
+);
+const section = document.querySelectorAll(".targetScrollSection");
+const sections = {};
+let identCounter = 0;
+
+scrollLink.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    const hash = e.currentTarget.hash;
+    console.log({hash})
+
+
+    let targetBlock = document.querySelector(e.currentTarget.hash);
+    console.log({targetBlock, top: targetBlock.offsetTop});
+    e.preventDefault();
+    console.log(targetBlock.offsetTop);
+    window.scrollTo({
+      top: targetBlock.offsetTop,
+      behavior: "smooth",
+    });
+  });
+});
+
+$(function(){
+  for(let i =0; i<section.length; i++){
+    sections[section[i].id] = section[i].offsetTop;
+    console.log(section[i].id, section[i].offsetTop);
+  }
+})
+
+
+// Array.prototype.forEach.call(section, (e) => {
+//   sections[e.id] = e.offsetTop;
+// });
+// $(window).resize( ()=>{
+//   // Array.prototype.forEach.call(section, (e) => {
+//   //   sections[e.id] = e.offsetTop;
+//   // });
+//   /*
+//   for(let i =0; i<section.length; i++){
+//     sections[section[i].id] = section[i].offsetTop;
+//   }
+//   */
+// })
+
+window.onscroll = () => {
+  let scrollPosition =
+    document.documentElement.scrollTop || document.body.scrollTop;
+  // let scrollPosition = window.pageYOffset;
+    for (identCounter in sections) {
+    if (sections[identCounter] <= scrollPosition) {
+      console.log(identCounter, sections[identCounter], scrollPosition);
+      document.querySelector(".active_lb").removeAttribute("class");
+      document
+        .querySelector("a[href*=" + identCounter + "]")
+        .setAttribute("class", "active_lb");
+    }
+  }
+};
