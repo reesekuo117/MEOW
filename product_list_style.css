@@ -243,10 +243,8 @@
 .card {
     border-radius: 8px;
 }
-
 .p_img:after{
     content: "";
-    position: relative;
     background-color: #888;
     /* 一定要用background才能蓋陰影嗎嗚嗚嗚 */
     
@@ -255,12 +253,32 @@
     background-color: #888;
     opacity: 1;
 }
-.p_icon {
+.card-body{
+    position: relative;
+}
+.icon_heart_fill{
+    opacity: 0;
+}
+input.favorite{
+    /* position: absolute;
+    right: 10px;
+    bottom: 100px; */
+    height: 0;
+    width: 0;
+    
+}
+.favorite:checked + .icon_heart_fill{
+    opacity: 1;
+}
+
+.icon_heart_fill, .icon_heart_line{
     position: absolute;
-    right: 30px;
-    bottom: 150px;
-    color: red;
-    font-size: 30px;
+    right: 10px;
+    bottom: 140px;
+    cursor: pointer;
+}
+.icon{
+    user-select: none;
 }
 
 .pl_row {

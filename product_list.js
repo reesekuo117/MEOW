@@ -4,7 +4,7 @@ let sliderTwo = document.querySelector('.filter-range-2')
 let SliderValOne = document.querySelector('.range-1-value')
 let SliderValTwo = document.querySelector('.range-2-value')
 
-// 怎麼控制篩選範圍
+// 篩選範圍怎麼跟資料庫連結
 
 let minGap = 100;
 
