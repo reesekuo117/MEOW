@@ -1,3 +1,4 @@
+// 價格篩選
 let sliderOne = document.querySelector('.filter-range-1')
 let sliderTwo = document.querySelector('.filter-range-2')
 
@@ -20,8 +21,9 @@ function slideOne() {
     let sliderOnePercentage = sliderOne.attributes.min.nodeValue;
     // console.log(sliderOnePercentage);
     let sliderMovementOne = sliderOne.value - sliderOnePercentage;
-    // console.log(sliderMovementOne);
-    SliderValOne.style.left = `${sliderMovementOne * 0.01}%`;
+    console.log(sliderMovementOne);
+    console.log(sliderMovementOne /2900  * 5.862);
+    SliderValOne.style.left = `${sliderMovementOne /2900 * 70}px`;
 }
 
 function slideTwo() {
@@ -32,8 +34,16 @@ function slideTwo() {
 
     let sliderTwoPercentage = sliderTwo.attributes.max.nodeValue;
     let sliderMovementTwo = Math.abs(sliderTwo.value - sliderTwoPercentage);
-    SliderValTwo.style.right = `${sliderMovementTwo * 0.01}%`;
+    SliderValTwo.style.right = `${sliderMovementTwo /2900 * 40 }%`;
 }
 
 sliderOne.addEventListener('input', slideOne)
 sliderTwo.addEventListener('input', slideTwo)
+
+// 愛心
+
+$('.icon_heart').click(function(){
+    $('.heart_line').toggleClass('color')
+});
+
+// 按收藏後真的進入收藏頁面&沒登入會跳出提示窗

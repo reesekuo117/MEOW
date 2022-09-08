@@ -184,7 +184,7 @@
 
 .filter-element-content .filter-range-content .filter-range-track {
     width: 100%;
-    height: 1px;
+    height: 2px;
     background: var(--color-orange);
     position: absolute;
     top: 0;
@@ -242,10 +242,19 @@
 
 .card {
     border-radius: 8px;
+    
 }
-.p_img:after{
+.p_img{
+    position: relative;
+}
+.p_img:hover::after{
     content: "";
-    background-color: #888;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(136, 136, 136, 0.344);
+    position: absolute;
+    bottom: 0;
     /* 一定要用background才能蓋陰影嗎嗚嗚嗚 */
     
 }
@@ -255,30 +264,20 @@
 }
 .card-body{
     position: relative;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 0 auto;
 }
-.icon_heart_fill{
-    opacity: 0;
-}
-input.favorite{
-    /* position: absolute;
-    right: 10px;
-    bottom: 100px; */
-    height: 0;
-    width: 0;
-    
-}
-.favorite:checked + .icon_heart_fill{
-    opacity: 1;
-}
-
-.icon_heart_fill, .icon_heart_line{
+.icon_heart{
     position: absolute;
     right: 10px;
-    bottom: 140px;
+    bottom: 105px;
     cursor: pointer;
 }
-.icon{
-    user-select: none;
+
+.color{
+    stroke: #432A0F;
+    fill: #CD562F;
 }
 
 .pl_row {
@@ -296,22 +295,26 @@ input.favorite{
     color: var(--color-text87);
 }
 
-.card-body{
-    box-sizing: border-box;
-    padding: 8px;
-    margin: 0 auto;
-}
 .card-body .row{
     /* margin: 0; */
-    padding: 4px;
+    padding: 4px 0;
 }
+
 .card_under{
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: center;
 }
-small{
-    padding: 4px;
-}
+
 .row .price::before{
     content:"NT$ ";
+}
+.icon_star{
+    width: 20px;
+    margin: 0;
+}
+.icon_fire{
+    width: 18px;
+    margin: 0;
 }
 

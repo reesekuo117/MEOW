@@ -267,8 +267,8 @@
     <div class="sort">
         <div class="container">
             <div class="product_sort d-flex">
-                <div class="col"></div>
-                <div class="col">
+                <!-- <div class="col"></div> -->
+                <div class="col offset-1">
                     <a href="#">
                         <p>排序方式</p>
                     </a>
@@ -357,8 +357,7 @@
             <div class="product_list col">
                 <div class="row">
                     <div class="col-4">
-                        
-                            <div class="card" style="width: 300px;">
+                        <div class="card" style="width: 300px;">
                                 <a href="#">
                                     <div class="p_img">
                                         <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
@@ -372,26 +371,20 @@
                                             </h6>
                                         </div>
                                     </a>
-                                    <label for="">
-                                        <!-- https://ithelp.ithome.com.tw/articles/10278484 -->
                                         <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        <input type="checkbox" class="favorite">
-                                            <div class="icon_heart_line">
-                                                <svg class="icon" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        
+                                            <div class="icon_heart">
+                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                        stroke="#fff" stroke-width="2.66667" />
+                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
+                                                        stroke-width="2.66667" />
                                                 </svg>
                                             </div>
-                                            <div class="icon_heart_fill">
-                                                <svg class="icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M15.2855 9.222C12.9704 6.90692 9.21692 6.90692 6.90184 9.222C4.58676 11.5371 4.58676 15.2906 6.90184 17.6057L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6057C27.66 15.2906 27.66 11.5371 25.3449 9.222C23.0298 6.90692 19.2763 6.90692 16.9612 9.222L16.1234 10.0599L15.2855 9.222Z" fill="#CD562F" stroke="#432A0F" stroke-width="2.66667"/>
-                                                </svg>
-                                            </div>
+                                            
                                     </label>
                                     <div class="row card_under">
-                                        <small class="card-text">
+                                        <small class="card-text d-flex">
                                             <div class="icon_star">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -401,7 +394,7 @@
                                                 </svg>
                                             </div> 4.7(50)
                                         </small>
-                                        <small class="card-text">
+                                        <small class="card-text d-flex">
                                             <div class="icon_fire">
                                                 <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                     <rect width="18" height="17" fill="url(#pattern0-946095)"/>
@@ -413,17 +406,15 @@
                                                     </defs>
                                                 </svg>
                                             </div>
-                                            3K + 個已訂購
+                                            3K個已訂購
                                         </small>
-                                        <h4 class="card-text price pl-1">
+                                        <h4 class="card-text price">
                                             2280
                                         </h4>
                                     </div>
                                 </div>
-                            </div>
+                        </div>
                     </div>
-                    
-                    
                 </div>
                 <div class="col-4">
                     <div class="list_card">
@@ -799,519 +790,7 @@
     </div>
 
     </div>
-    <!-- <div class="product_list">
-            
-                <div class="row">
-                    <div class="col">
-                        <div class="list_card">
-                            <a href="#">
-                                <div class="card" style="width: 300px;">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h5 class="card-text">
-                                                    霞海城隍廟 X 扣式真皮中夾禮盒
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <small class="card-text">
-                                                    <i class="fa-solid fa-star"></i>4.7(50)
-                                                </small>
-                                            </div>
-                                            <div class="col">
-                                                <small class="card-text">
-                                                    <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                                </small>
-                                            </div>
-                                            <div class="col">
-                                                <h4 class="card-text">
-                                                    NT$ 2280
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="#">
-                            <div class="p_icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#">
-                            <div class="card" style="width: 300px;">
-                                <div class="p_img">
-                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-star"></i>4.7(50)
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <h4 class="card-text">
-                                                NT$ 2280
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="p_icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#">
-                            <div class="card" style="width: 300px;">
-                                <div class="p_img">
-                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-star"></i>4.7(50)
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <h4 class="card-text">
-                                                NT$ 2280
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="p_icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
     
-                <div class="row">
-                    <div class="col">
-                        <div class="list_card">
-                            <a href="#">
-                                <div class="card" style="width: 300px;">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h5 class="card-text">
-                                                    霞海城隍廟 X 扣式真皮中夾禮盒
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <small class="card-text">
-                                                    <i class="fa-solid fa-star"></i>4.7(50)
-                                                </small>
-                                            </div>
-                                            <div class="col">
-                                                <small class="card-text">
-                                                    <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                                </small>
-                                            </div>
-                                            <div class="col">
-                                                <h4 class="card-text">
-                                                    NT$ 2280
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="#">
-                            <div class="p_icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#">
-                            <div class="card" style="width: 300px;">
-                                <div class="p_img">
-                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-star"></i>4.7(50)
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <h4 class="card-text">
-                                                NT$ 2280
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="p_icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#">
-                            <div class="card" style="width: 300px;">
-                                <div class="p_img">
-                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                </div>
-        
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-star"></i>4.7(50)
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <h4 class="card-text">
-                                                NT$ 2280
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="p_icon">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </a>
-                    </div>
-        
-                </div>
-            
-        </div> -->
-
-    </div>
-
-    <!-- <div class="product_list">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="list_card">
-                        <a href="#">
-                            <div class="card" style="width: 300px;">
-                                <div class="p_img">
-                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-star"></i>4.7(50)
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <h4 class="card-text">
-                                                NT$ 2280
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <a href="#">
-                        <div class="p_icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <div class="card" style="width: 300px;">
-                            <div class="p_img">
-                                <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-text">
-                                            霞海城隍廟 X 扣式真皮中夾禮盒
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <small class="card-text">
-                                            <i class="fa-solid fa-star"></i>4.7(50)
-                                        </small>
-                                    </div>
-                                    <div class="col">
-                                        <small class="card-text">
-                                            <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                        </small>
-                                    </div>
-                                    <div class="col">
-                                        <h4 class="card-text">
-                                            NT$ 2280
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="p_icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <div class="card" style="width: 300px;">
-                            <div class="p_img">
-                                <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-text">
-                                            霞海城隍廟 X 扣式真皮中夾禮盒
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <small class="card-text">
-                                            <i class="fa-solid fa-star"></i>4.7(50)
-                                        </small>
-                                    </div>
-                                    <div class="col">
-                                        <small class="card-text">
-                                            <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                        </small>
-                                    </div>
-                                    <div class="col">
-                                        <h4 class="card-text">
-                                            NT$ 2280
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="p_icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <div class="list_card">
-                        <a href="#">
-                            <div class="card" style="width: 300px;">
-                                <div class="p_img">
-                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-star"></i>4.7(50)
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <small class="card-text">
-                                                <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                            </small>
-                                        </div>
-                                        <div class="col">
-                                            <h4 class="card-text">
-                                                NT$ 2280
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <a href="#">
-                        <div class="p_icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <div class="card" style="width: 300px;">
-                            <div class="p_img">
-                                <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-text">
-                                            霞海城隍廟 X 扣式真皮中夾禮盒
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <small class="card-text">
-                                            <i class="fa-solid fa-star"></i>4.7(50)
-                                        </small>
-                                    </div>
-                                    <div class="col">
-                                        <small class="card-text">
-                                            <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                        </small>
-                                    </div>
-                                    <div class="col">
-                                        <h4 class="card-text">
-                                            NT$ 2280
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="p_icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <div class="card" style="width: 300px;">
-                            <div class="p_img">
-                                <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                            </div>
-    
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-text">
-                                            霞海城隍廟 X 扣式真皮中夾禮盒
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <small class="card-text">
-                                            <i class="fa-solid fa-star"></i>4.7(50)
-                                        </small>
-                                    </div>
-                                    <div class="col">
-                                        <small class="card-text">
-                                            <i class="fa-solid fa-fire"></i>3K + 個已訂購
-                                        </small>
-                                    </div>
-                                    <div class="col">
-                                        <h4 class="card-text">
-                                            NT$ 2280
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="p_icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </a>
-                </div>
-    
-            </div>
-        </div>
-    </div> -->
 
 
     <!-- footer-md ----------------------------------->
