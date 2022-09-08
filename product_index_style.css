@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     background: url(./imgs/index/IMG_0705_2.png) center center / cover;
     background-color: #FFF6E9;
@@ -14,18 +17,24 @@ body {
 } */
 .product_head carousel-item {
     width: 100%;
-    position: relative;
-}
 
-.product_title {
+}
+.control-prev:hover{
+    color: var(--color-orange);
+}
+.product_title{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: -400px;
-    left: 100px;
 
 }
+.pc_title {
+    
+    position: absolute;
+    top: -400px;
+    left: -180px;
+}
+
 
 .product_title h1 {
     /* text-align: center; */
@@ -33,6 +42,10 @@ body {
     text-shadow: 5px 5px 10px #444;
     padding-bottom: 36px;
 
+}
+.mb_title{
+    color: white;
+    text-shadow: 5px 5px 10px #444;
 }
 
 .btn {
