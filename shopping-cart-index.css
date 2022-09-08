@@ -243,9 +243,7 @@ input.qtyminus {
 }
 
 /*------------ 下一步按鈕 -------------*/
-.unique-nextbutton-yu{
-    /* outline: 1px solid  #432A0F; */
-}
+
 .unique-btn-yu{
     cursor: pointer;
 }

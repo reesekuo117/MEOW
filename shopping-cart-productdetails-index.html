@@ -325,444 +325,408 @@
 
         <!-- 購物車訂單的進度條progress-bar -->
         <section>
-        <div class="container-fluid p-0">
-            <div class="line-box-yu"></div>
-            <div class="progress-bar-yu">
-            <div class="d-flex justify-content-around">
-                <span class="row circle-1-yu">
-                <div class="circle">
-                    <h5 class="page-light-number">1</h5>
-                </div>
-                <div class="page-yu">
-                    <h5 class="m-0 page-yu-one">購物車訂單</h5>
-                </div>
-                <div class="pageline-yu"></div>
-                </span>
+            <div class="container-fluid p-0">
+                <div class="line-box-yu"></div>
+                <div class="progress-bar-yu">
+                    <div class="d-flex justify-content-around">
+                        <span class="row circle-1-yu">
+                            <div class="circle">
+                                <h5 class="page-light-number">
+                                    1
+                                </h5>
+                            </div>
+                            <div class="page-yu">
+                                <h5 class="m-0 page-yu-one">
+                                    購物車訂單
+                                </h5>
+                            </div>
+                            <div class="pageline-yu"></div>
+                        </span>
 
-                <span class="row circle-2-yu">
-                <div class="circle-light">
-                    <h5 class="page-light-number">2</h5>
-                </div>
-                <div class="page-yu">
-                    <h5 class="m-0 page-yu-two">填寫資料</h5>
-                </div>
-                </span>
+                        <span class="row circle-2-yu">
+                            <div class="circle-light">
+                                <h5 class="page-light-number">
+                                    2
+                                </h5>
+                            </div>
+                            <div class="page-yu">
+                                <h5 class="m-0 page-yu-two">
+                                    填寫資料
+                                </h5>
+                            </div>
+                        </span>
 
-                <span class="row circle-3-yu">
-                <div class="circle">
-                    <h5>3</h5>
-                </div>
-                <div class="page-yu">
-                    <h5 class="m-0 page-yu-three">完成訂單</h5>
-                </div>
-                </span>
-            </div>
-            </div>
-        </div>
-        <!-- 訂單明細 -->
-        <div id="myTabContent-yu" class="container">
-            <!-- 訂單明細 -->
-            <div class="listinfo-yu">
-            <main class="section-0-yu">
-                <h3 class="listinfo-title-yu m-0">訂單明細</h3>
-                <h6 class="listinfo-number-yu">
-                訂單編號: <span>M20221234567</span>
-                </h6>
-                
-                <div class="panel-group-yu" id="accordion" role="tablist"aria-multiselectable="true">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                    <h6 class="panel-title-yu">
-                        <a
-                        class="panel-title-a-yu"
-                        data-toggle="collapse"
-                        href="#listinfo-details-yu"
-                        role="button"
-                        >
-                        訂單明細
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                            d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9"
-                            stroke="#432A0F"
-                            stroke-opacity="0.6"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            />
-                        </svg>
-                        </a>
-                    </h6>
+                        <span class="row circle-3-yu">
+                            <div class="circle">
+                                <h5>3</h5>
+                            </div>
+                            <div class="page-yu">
+                                <h5 class="m-0 page-yu-three">
+                                    完成訂單
+                                </h5>
+                            </div>
+                        </span>
                     </div>
-                    <div
-                    id="listinfo-details-yu"
-                    class="collapse show panel-collapse collapse-yu"
-                    >
-                    <div class="panel-body-yu">
-                        <div
-                        class="px-0 col-auto justify-content-around text-center"
-                        >
-                        <table class="table">
-                            <thead class="thead">
-                            <tr>
-                                <th scope="col" src="" alt="">
-                                <h6 class="mb-0">商品照片</h6>
-                                </th>
-                                <th scope="col">
-                                <h6 class="mb-0">商品名稱</h6>
-                                </th>
-                                <th scope="col">
-                                <h6 class="mb-0">規格</h6>
-                                </th>
-                                <th scope="col">
-                                <h6 class="mb-0">單價</h6>
-                                </th>
-                                <th scope="col">
-                                <h6 class="mb-0">數量</h6>
-                                </th>
-                                <th scope="col" class="sub-total">
-                                <h6 class="mb-0">小計</h6>
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody class="tbody">
-                            <tr class="">
-                                <!-- 商品照片 -->
-                                <td>
-                                <img src="imgs/購物車-商品(測試用).png" alt="" />
-                                </td>
-                                <!-- 商品名稱 -->
-                                <td>
-                                <h6 class="m-0">
-                                    台北霞海城隍廟獨家聯名
-                                    <br />
-                                    -七夕月老供品組-甜作之盒
-                                </h6>
-                                </td>
-                                <!-- 商品規格 -->
-                                <td>規格</td>
-                                <!-- 單價 -->
-                                <td>$707</td>
-                                <!-- 數量 -->
-                                <td>1</td>
-                                <!-- 小計 -->
-                                <td>$707</td>
-                            </tr>
-                            </tbody>
-                            <tbody class="tbody">
-                            <tr class="">
-                                <!-- 商品照片 -->
-                                <td>
-                                <img src="imgs/購物車-商品(測試用).png" alt="" />
-                                </td>
-                                <!-- 商品名稱 -->
-                                <td>
-                                <h6 class="m-0">
-                                    台北霞海城隍廟獨家聯名
-                                    <br />
-                                    -七夕月老供品組-甜作之盒
-                                </h6>
-                                </td>
-                                <!-- 商品規格 -->
-                                <td>規格</td>
-                                <!-- 單價 -->
-                                <td>$707</td>
-                                <!-- 數量 -->
-                                <td>1</td>
-                                <!-- 小計 -->
-                                <td>$707</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                </div>
+            </div>
+        <!-- 訂單明細 -->
+            <div id="myTabContent-yu" class="container">
+                <!-- 訂單明細 -->
+                <div class="listinfo-yu">
+                    <main class="section-0-yu">
+                        <h3 class="listinfo-title-yu m-0">
+                            訂單明細
+                        </h3>
+                        <h6 class="listinfo-number-yu">
+                        訂單編號: <span>M20221234567</span>
+                        </h6>
+                        
+                        <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h6 class="panel-title-yu">
+                                        <aclass="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
+                                        訂單明細
+                                            <svg width="24" height="24" viewBox="0 0 24 24"fill="none"xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9"stroke="#432A0F"stroke-opacity="0.6"stroke-width="2"stroke-linecap="round"/>
+                                            </svg>
+                                        </aclass=>
+                                    </h6>
+                                </div>
+                                <div id="listinfo-details-yu" class="collapse show panel-collapse collapse-yu">
+                                    <div class="panel-body-yu">
+                                        <div class="px-0 col-auto justify-content-around text-center">
+                                            <table class="table">
+                                                <thead class="thead">
+                                                    <tr>
+                                                        <th scope="col" src="" alt="">
+                                                            <h6 class="mb-0">
+                                                                商品照片
+                                                            </h6>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <h6 class="mb-0">
+                                                                商品名稱
+                                                            </h6>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <h6 class="mb-0">
+                                                                規格
+                                                            </h6>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <h6 class="mb-0">
+                                                                單價
+                                                            </h6>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <h6 class="mb-0">
+                                                                數量
+                                                            </h6>
+                                                        </th>
+                                                        <th scope="col" class="sub-total">
+                                                            <h6 class="mb-0">
+                                                                小計
+                                                            </h6>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="tbody">
+                                                    <tr class="">
+                                                        <!-- 商品照片 -->
+                                                        <td>
+                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
+                                                        </td>
+                                                        <!-- 商品名稱 -->
+                                                        <td>
+                                                            <h6 class="m-0">
+                                                                台北霞海城隍廟獨家聯名
+                                                                <br />
+                                                                -七夕月老供品組-甜作之盒
+                                                            </h6>
+                                                        </td>
+                                                        <!-- 商品規格 -->
+                                                        <td>規格</td>
+                                                        <!-- 單價 -->
+                                                        <td>$707</td>
+                                                        <!-- 數量 -->
+                                                        <td>1</td>
+                                                        <!-- 小計 -->
+                                                        <td>$707</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody class="tbody">
+                                                    <tr class="">
+                                                        <!-- 商品照片 -->
+                                                        <td>
+                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
+                                                        </td>
+                                                        <!-- 商品名稱 -->
+                                                        <td>
+                                                            <h6 class="m-0">
+                                                                台北霞海城隍廟獨家聯名
+                                                                <br />
+                                                                -七夕月老供品組-甜作之盒
+                                                            </h6>
+                                                        </td>
+                                                        <!-- 商品規格 -->
+                                                        <td>規格</td>
+                                                        <!-- 單價 -->
+                                                        <td>$707</td>
+                                                        <!-- 數量 -->
+                                                        <td>1</td>
+                                                        <!-- 小計 -->
+                                                        <td>$707</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
+                        <h6>
+                            訂單金額: NT$1000
+                        </h6>
+                        <h6>
+                            運費金額: NT$60
+                        </h6>
+                        <h6 id="total-price-yu" class="price-uniqui-yu">
+                            總金額:
+                        </h6>
+                        <h6 id="total-price"></h6>
+                            元
+                    </div>
+                </div>
+                <!-- 訂購人資料 -->
+                <section class="section-1-yu">
+                    <div class="section-1-title-yu">
+                        <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
+                    </div>
+                    <!-- 訂購人填寫資料 -->
+                    <div class="order-list-yu">
+                        <div class="order-name-yu p-3">
+                            <label for="name" class="">
+                                姓名
+                                <span style="color: #963c38">*</span>
+                            </label>
+                            <br/>
+                            <input class="ordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="nameYU"required/>
+                        </div>
+                        <div class="order-phone-yu p-3">
+                            <label for="mobile" class="">
+                                聯絡電話
+                                <span style="color: #963c38">*</span>
+                            </label>
+                            <br/>
+                            <input class="orderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"required/>
+                        </div>
+                        <div class="order-address-yu p-3">
+                            <label for="address" class="">
+                                地址
+                                <span style="color: #963c38">*</span>
+                            </label>
+                            <br />
+                            <div class="d-flex align-items-center">
+                                <div class="form-group m-0">
+                                    <select class="orderaddress1-yu"name="city"id="city-yu"required>
+                                        <option class="" value="0">臺北市</option>
+                                        <option value="1">新北市</option>
+                                        <option value="2">基隆市</option>
+                                        <option value="3">宜蘭縣</option>
+                                        <option value="4">桃園市</option>
+                                        <option value="5">新竹市</option>
+                                        <option value="6">新竹縣</option>
+                                        <option value="7">苗栗縣</option>
+                                        <option value="8">彰化縣</option>
+                                        <option value="9">臺中市</option>
+                                        <option value="10">南投縣</option>
+                                        <option value="11">雲林縣</option>
+                                        <option value="12">嘉義市</option>
+                                        <option value="13">嘉義縣</option>
+                                        <option value="14">臺南市</option>
+                                        <option value="15">高雄市</option>
+                                        <option value="16">屏東縣</option>
+                                        <option value="17">花蓮縣</option>
+                                        <option value="18">臺東縣</option>
+                                    </select>
+                                </div>
+                                <div class="form-group m-0">
+                                    <select class="orderaddress2-yu"name="district"id="district">
+                                        <option class="" value="0">中正區</option>
+                                        <option value="1">板橋區</option>
+                                        <option value="2">仁愛區</option>
+                                    </select>
+                                </div>
+                                <input class="orderaddress3-yu" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="address"/>
+                            </div>
+                        </div>
+                        <div class="order-email-yu p-3">
+                            <label for="email" class=""
+                                >Email<span style="color: #963c38">*</span>
+                            </label>
+                            <br />
+                            <input class="" type="text" class="" id="email-yu" name="email" />
                         </div>
                     </div>
-                    </div>
-                </div>
-                </div>
-            </main>
-            <div
-                class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"
-                role="alert"
-            >
-                <h6>訂單金額: NT$1000</h6>
-                <h6>運費金額: NT$60</h6>
-                <h6 id="total-price-yu" class="price-uniqui-yu">總金額:</h6>
-                <h6 id="total-price"></h6>
-                元
-            </div>
-            </div>
-            <!-- 訂購人資料 -->
-            <section class="section-1-yu">
-            <div class="section-1-title-yu">
-                <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
-            </div>
-            <!-- 訂購人填寫資料 -->
-            <div class="order-list-yu">
-                <div class="order-name-yu p-3">
-                <label for="name" class="">
-                    姓名
-                    <span style="color: #963c38">*</span>
-                </label>
-                <br />
-                <input
-                    class="ordername-yu"
-                    type="text"
-                    placeholder=" 請輸入姓名"
-                    class=""
-                    id="name-yu"
-                    name="name"
-                    required
-                />
-                </div>
-                <div class="order-phone-yu p-3">
-                <label for="mobile" class="">
-                    聯絡電話
-                    <span style="color: #963c38">*</span>
-                </label>
-                <br />
-                <input
-                    class="orderphone-yu"
-                    type="text"
-                    placeholder=" 請輸入聯絡電話"
-                    class=""
-                    id="mobile"
-                    name="mobile"
-                    required
-                />
-                </div>
-                <div class="order-address-yu p-3">
-                <label for="address" class="">
-                    地址
-                    <span style="color: #963c38">*</span>
-                </label>
-                <br />
-                <div class="d-flex align-items-center">
-                    <div class="form-group m-0">
-                    <select
-                        class="orderaddress1-yu"
-                        name="city"
-                        id="city"
-                        required
-                    >
-                        <option class="" value="0">臺北市</option>
-                        <option value="1">新北市</option>
-                        <option value="2">基隆市</option>
-                        <option value="3">宜蘭縣</option>
-                        <option value="4">桃園市</option>
-                        <option value="5">新竹市</option>
-                        <option value="6">新竹縣</option>
-                        <option value="7">苗栗縣</option>
-                        <option value="8">彰化縣</option>
-                        <option value="9">臺中市</option>
-                        <option value="10">南投縣</option>
-                        <option value="11">雲林縣</option>
-                        <option value="12">嘉義市</option>
-                        <option value="13">嘉義縣</option>
-                        <option value="14">臺南市</option>
-                        <option value="15">高雄市</option>
-                        <option value="16">屏東縣</option>
-                        <option value="17">花蓮縣</option>
-                        <option value="18">臺東縣</option>
-                    </select>
-                    </div>
-                    <div class="form-group m-0">
-                    <select
-                        class="orderaddress2-yu"
-                        name="district"
-                        id="district"
-                    >
-                        <option class="" value="0">中正區</option>
-                        <option value="1">板橋區</option>
-                        <option value="2">仁愛區</option>
-                    </select>
-                    </div>
-                    <input
-                    class="orderaddress3-yu"
-                    type="text"
-                    placeholder=" 請輸入詳細地址"
-                    class=""
-                    id="address"
-                    name="address"
-                    />
-                </div>
-                </div>
-                <div class="order-email-yu p-3">
-                <label for="email" class=""
-                    >Email<span style="color: #963c38">*</span></label
-                ><br />
-                <input class="" type="text" class="" id="email" name="email" />
-                </div>
-            </div>
-            </section>
-            <!-- 收件人資料 -->
-            <section class="section-2-yu">
-            <div class="section-2-title-yu d-flex justify-content-between">
-                <h3 class="listinfo-title-yu m-0">收件人資料</h3>
-                <label for="name" class="m-0">
-                <input
-                    type="checkbox"
-                    name="listinfo-title-radio-yu"
-                    id="btnAutoInput-yu"
-                />
-                同訂購人
-                </label>
-            </div>
-            <!-- 收件人填寫資料 -->
-            <div class="receiver-list-yu">
-                <div class="receiver-name-yu p-3">
-                <label for="name" class="">
-                    姓名
-                    <span style="color: #963c38">*</span>
-                </label>
-                <br />
-                <input
-                    class="receivername-yu"
-                    type="text"
-                    placeholder=" 請輸入姓名"
-                    class=""
-                    id="username-yu"
-                    name="name"
-                    required
-                />
-                </div>
-                <div class="receiver-phone-yu p-3">
-                <label for="mobile" class="">
-                    聯絡電話
-                    <span style="color: #963c38">*</span>
-                </label>
-                <br />
-                <input
-                    class="receiverphone-yu"
-                    type="text"
-                    placeholder=" 請輸入聯絡電話"
-                    class=""
-                    id="mobile-yu"
-                    name="mobile"
-                    required
-                />
-                </div>
-                <div class="receiver-deliver-yu p-3">
-                <label for="" class="">
-                    配送方式
-                    <span style="color: #963c38">*</span>
-                </label>
-                <br />
-                <button type="button" class="btn receiver-deliverbtn1-yu h6">
-                    宅配
-                </button>
-                <button type="button" class="btn receiver-deliverbtn2-yu h6">
-                    超商取貨
-                </button>
-                </div>
-                <div class="receiver-email-yu p-3">
-                <label for="email" class=""
-                    >Email<span style="color: #963c38">*</span></label
-                ><br />
-                <input class="" type="text" class="" id="email-yu" name="email" />
-                </div>
-                <div class="receiver-address-yu p-3">
-                <label for="address" class="">
-                    地址
-                    <span style="color: #963c38">*</span>
-                </label>
-                <br />
-                <div class="d-flex align-items-center">
-                    <div class="form-group m-0">
-                    <select
-                        class="receiveraddress1-yu"
-                        name="city"
-                        id="city"
-                        required
-                    >
-                        <option class="" value="0">臺北市</option>
-                        <option value="1">新北市</option>
-                        <option value="2">基隆市</option>
-                        <option value="3">宜蘭縣</option>
-                        <option value="4">桃園市</option>
-                        <option value="5">新竹市</option>
-                        <option value="6">新竹縣</option>
-                        <option value="7">苗栗縣</option>
-                        <option value="8">彰化縣</option>
-                        <option value="9">臺中市</option>
-                        <option value="10">南投縣</option>
-                        <option value="11">雲林縣</option>
-                        <option value="12">嘉義市</option>
-                        <option value="13">嘉義縣</option>
-                        <option value="14">臺南市</option>
-                        <option value="15">高雄市</option>
-                        <option value="16">屏東縣</option>
-                        <option value="17">花蓮縣</option>
-                        <option value="18">臺東縣</option>
-                    </select>
-                    </div>
-                    <div class="form-group m-0">
-                    <select
-                        class="receiveraddress2-yu"
-                        name="district"
-                        id="district"
-                    >
-                        <option class="" value="0">中正區</option>
-                        <option value="1">板橋區</option>
-                        <option value="2">仁愛區</option>
-                    </select>
-                    </div>
-                    <input
-                    class="receiveraddress3-yu"
-                    type="text"
-                    placeholder=" 請輸入詳細地址"
-                    id="address"
-                    name="address"
-                    />
-                </div>
-                </div>
-            </div>
-            </section>
-            <!-- 付款方式 -->
-            <section class="section-3-yu">
-            <div class="section-3-title-yu">
-                <h3 class="listinfo-title-yu m-0">付款方式</h3>
-            </div>
-            <div class="p-3">
-                <input type="radio" name="listinfo-title-radio-yu" id="" />
-                <label for="name" class="m-0"> 信用卡 </label>
-                <section class="col">
-                    <div class="row">
-                        <img src="" alt="">
-                    </div>
-                    <div class="receiver-name-yu p-3">
-                        <label for="name" class="">
-                            信用卡卡號
+                </section>
+                <!-- 收件人資料 -->
+                <section class="section-2-yu">
+                    <div class="section-2-title-yu d-flex justify-content-between">
+                        <h3 class="listinfo-title-yu m-0">
+                            收件人資料
+                        </h3>
+                        <label for="name" class="m-0">
+                            <input type="checkbox"name="listinfo-title-radio-yu"id="btnAutoInput-yu"/>
+                            同訂購人
                         </label>
-                        <input class="" type="text" placeholder=" " id="" name="" required/>
-                        <input class="" type="text" placeholder=" " id="" name="" required/>
-                        <input class="" type="text" placeholder=" " id="" name="" required/>
-                        <input class="" type="text" placeholder=" " id="" name="" required/>
                     </div>
-                    <div class="receiver-name-yu p-3">
-                        <label for="name" class="">
-                            有效 / 年月
-                        </label>
-                        <input class="" type="text" placeholder=" " id="" name="" required/>
-                        <input class="" type="text" placeholder=" " id="" name="" required/>
-                    </div>
-                    <div class="receiver-name-yu p-3">
-                        <label for="name" class="">
-                            驗證碼
-                        </label>
-                        <input class="" type="text" placeholder=" " id="" name="" required/>
+                    <!-- 收件人填寫資料 -->
+                    <div class="receiver-list-yu">
+                        <div class="receiver-name-yu p-3">
+                            <label for="name" class="">
+                                姓名
+                                <span style="color: #963c38">*</span>
+                            </label>
+                            <br />
+                            <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="name"required/>
+                        </div>
+                        <div class="receiver-phone-yu p-3">
+                            <label for="mobile" class="">
+                                聯絡電話
+                                <span style="color: #963c38">*</span>
+                            </label>
+                            <br />
+                            <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"class=""id="usermobile-yu"name="mobile"required/>
+                        </div>
+                        <div class="receiver-deliver-yu p-3">
+                            <label for="" class="">
+                                配送方式
+                                <span style="color: #963c38">*</span>
+                            </label>
+                            <br />
+                            <button type="button" class="btn receiver-deliverbtn1-yu h6">
+                                宅配
+                            </button>
+                            <button type="button" class="btn receiver-deliverbtn2-yu h6">
+                                超商取貨
+                            </button>
+                        </div>
+                        <div class="receiver-email-yu p-3">
+                            <label for="email" class="">
+                                Email
+                                <span style="color: #963c38">*</span>
+                            </label>
+                            <br/>
+                            <input class="" type="text" class="" id="useremail-yu" name="email" />
+                        </div>
+                        <div class="receiver-address-yu p-3">
+                            <label for="address" class="">
+                                地址
+                                <span style="color: #963c38">*</span>
+                            </label>
+                            <br/>
+                            <div class="d-flex align-items-center">
+                                <div class="form-group m-0">
+                                    <select class="receiveraddress1-yu"name="city"id="usercity-yu"required>
+                                        <option class="" value="0">臺北市</option>
+                                        <option value="1">新北市</option>
+                                        <option value="2">基隆市</option>
+                                        <option value="3">宜蘭縣</option>
+                                        <option value="4">桃園市</option>
+                                        <option value="5">新竹市</option>
+                                        <option value="6">新竹縣</option>
+                                        <option value="7">苗栗縣</option>
+                                        <option value="8">彰化縣</option>
+                                        <option value="9">臺中市</option>
+                                        <option value="10">南投縣</option>
+                                        <option value="11">雲林縣</option>
+                                        <option value="12">嘉義市</option>
+                                        <option value="13">嘉義縣</option>
+                                        <option value="14">臺南市</option>
+                                        <option value="15">高雄市</option>
+                                        <option value="16">屏東縣</option>
+                                        <option value="17">花蓮縣</option>
+                                        <option value="18">臺東縣</option>
+                                        </select>
+                                </div>
+                                <div class="form-group m-0">
+                                    <select class="receiveraddress2-yu"name="district"id="district">
+                                        <option class="" value="0">中正區</option>
+                                        <option value="1">板橋區</option>
+                                        <option value="2">仁愛區</option>
+                                    </select>
+                                </div>
+                                <input class="receiveraddress3-yu"type="text"placeholder=" 請輸入詳細地址"id="useraddress-yu"name="address"/>
+                            </div>
+                        </div>
                     </div>
                 </section>
+                <!-- 付款方式 -->
+                <section class="section-3-yu">
+                    <div class="section-3-title-yu">
+                        <h3 class="listinfo-title-yu m-0">付款方式</h3>
+                    </div>
+                    <div class="p-3">
+                        <input type="radio" name="listinfo-title-radio-yu" id="" />
+                        <label for="name" class="m-0"> 
+                            信用卡 
+                        </label>
+                        <div class="gridContainer">
+                            <div class="viacreditCard" id="viacreditCardyu">
+                              <div class="visaLogo">
+                                <svg class="visa" enable-background="new 0 0 291.764 291.764" version="1.1" viewbox="5 70 290 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                  <path class="svgcolor" d="m119.26 100.23l-14.643 91.122h23.405l14.634-91.122h-23.396zm70.598 37.118c-8.179-4.039-13.193-6.765-13.193-10.896 0.1-3.756 4.24-7.604 13.485-7.604 7.604-0.191 13.193 1.596 17.433 3.374l2.124 0.948 3.182-19.065c-4.623-1.787-11.953-3.756-21.007-3.756-23.113 0-39.388 12.017-39.489 29.204-0.191 12.683 11.652 19.721 20.515 23.943 9.054 4.331 12.136 7.139 12.136 10.987-0.1 5.908-7.321 8.634-14.059 8.634-9.336 0-14.351-1.404-21.964-4.696l-3.082-1.404-3.273 19.813c5.498 2.444 15.609 4.595 26.104 4.705 24.563 0 40.546-11.835 40.747-30.152 0.08-10.048-6.165-17.744-19.659-24.035zm83.034-36.836h-18.108c-5.58 0-9.82 1.605-12.236 7.331l-34.766 83.509h24.563l6.765-18.08h27.481l3.51 18.153h21.664l-18.873-90.913zm-26.97 54.514c0.474 0.046 9.428-29.514 9.428-29.514l7.13 29.514h-16.558zm-160.86-54.796l-22.931 61.909-2.498-12.209c-4.24-14.087-17.533-29.395-32.368-36.999l20.998 78.33h24.764l36.799-91.021h-24.764v-0.01z" fill="#e5a62a"></path>
+                                  <path class="svgtipcolor" d="m51.916 111.98c-1.787-6.948-7.486-11.634-15.226-11.734h-36.316l-0.374 1.686c28.329 6.984 52.107 28.474 59.821 48.688l-7.905-38.64z" fill="#FFF6E9"></path>
+                                </svg>
+                              </div>
+                              <div class="chipLogo">
+                                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 230 384.4 300.4" width="38" height="70">
+                                              <path d="M377.2 266.8c0 27.2-22.4 49.6-49.6 49.6H56.4c-27.2 0-49.6-22.4-49.6-49.6V107.6C6.8 80.4 29.2 58 56.4 58H328c27.2 0 49.6 22.4 49.6 49.6v159.2h-.4z" data-original="#FFD66E" data-old_color="#00FF0C" fill="#FFF6E9"/>
+                                              <path d="M327.6 51.2H56.4C25.2 51.2 0 76.8 0 107.6v158.8c0 31.2 25.2 56.8 56.4 56.8H328c31.2 0 56.4-25.2 56.4-56.4V107.6c-.4-30.8-25.6-56.4-56.8-56.4zm-104 86.8c.4 1.2.4 2 .8 2.4 0 0 0 .4.4.4.4.8.8 1.2 1.6 1.6 14 10.8 22.4 27.2 22.4 44.8s-8 34-22.4 44.8l-.4.4-1.2 1.2c0 .4-.4.4-.4.8-.4.4-.4.8-.8 1.6v74h-62.8v-73.2-.8c0-.8-.4-1.2-.4-1.6 0 0 0-.4-.4-.4-.4-.8-.8-1.2-1.6-1.6-14-10.8-22.4-27.2-22.4-44.8s8-34 22.4-44.8l1.6-1.6s0-.4.4-.4c.4-.4.4-1.2.4-1.6V64.8h62.8v72.4c-.4 0 0 .4 0 .8zm147.2 77.6H255.6c4-8.8 6-18.4 6-28.4 0-9.6-2-18.8-5.6-27.2h114.4v55.6h.4zM13.2 160H128c-3.6 8.4-5.6 17.6-5.6 27.2 0 10 2 19.6 6 28.4H13.2V160zm43.2-95.2h90.8V134c-4.4 4-8.4 8-12 12.8h-122V108c0-24 19.2-43.2 43.2-43.2zm-43.2 202v-37.6H136c3.2 4 6.8 8 10.8 11.6V310H56.4c-24-.4-43.2-19.6-43.2-43.2zm314.4 42.8h-90.8v-69.2c4-3.6 7.6-7.2 10.8-11.6h122.8v37.6c.4 24-18.8 43.2-42.8 43.2zm43.2-162.8h-122c-3.2-4.8-7.2-8.8-12-12.8V64.8h90.8c23.6 0 42.8 19.2 42.8 42.8v39.2h.4z" data-original="rgb(67, 42, 15)" class="active-path" data-old_color="rgb(67, 42, 15)" fill="rgb(67, 42, 15, 0.6)"/>
+                                        </svg>
+                              </div>
+                              <ul class="ccList">
+                                <li> </li>
+                              </ul>
+                              <h4 class="viacreditCardnameyu"> </h4>
+                              <h4 class="viacreditCardyearyu">   </h4>
+                            </div>
+                            <form action="#" id="paymentForm">
+                              <div class="inputCon" id="paymentFormname" data-top="Name on Card">
+                                <input type="text" placeholder="Arjun Kunwar"/>
+                              </div>
+                              <div class="inputCon" id="paymentFormcardNum" data-top="Card Number" title = "type in the card number without spaces">
+                                <input type="text" placeholder="4567 3456 3456 3456"/>
+                              </div>
+                              <div class="inputCon" id="paymentFormvalidYear" data-top="Valid Through">
+                                <input type="text" placeholder="09/20"/>
+                              </div>
+                              <div class="inputCon" id="paymentFormcvv" data-top="CVV">
+                                <input type="text" placeholder="444"/>
+                              </div>
+                        
+                            </form>
+                          </div>
+                    </div>
+                    <div class="p-3">
+                        <input type="radio" name="listinfo-title-radio-yu" id="" />
+                        <label for="name" class="m-0"> ATM轉帳 </label>
+                    </div>
+                </section>
+                <div class=" d-md-flex justify-content-md-end">
+                    <!-- a href="#buy1.php" -->
+                    <a href="shopping-cart-productdetails-index.html" class="btn unique-nextbutton-yu">
+                        <button class=" unique-btn-yu  me-md-2 que-btn-yu" type="button">
+                            <p class="m-0 text-center">
+                                前往付款
+                            </p>
+                        </button>
+                    </a>
+                </div>
             </div>
-            <div class="p-3">
-                <input type="radio" name="listinfo-title-radio-yu" id="" />
-                <label for="name" class="m-0"> ATM轉帳 </label>
-            </div>
-            </section>
-        </div>
         </section>
 
         <!-- footer-md ----------------------------------->
@@ -953,14 +917,40 @@
             $("html, body").animate({ scrollTop: 0 }, 10);
         });
 
-        //     //一進來會跳一下~~~~為~~~神~~~麼~~~~~~
-        //     $(document).click(function(e) {
-        //     if (!$(e.target).is('.collapse-yu ')) {
-        //         $('.panel-body-yu').collapse('hide');
-        //     }
-        // });
 
-        //input:radio 能取消點選
+
+
+        //-------------------------訂購人地址------------------------------------------
+        let districtArray = [
+        ['中正區', '大同區', '中山區', '萬華區', '信義區', '松山區', '大安區', '南港區', '北投區', '內湖區', '士林區', '文山區'],
+        ['板橋區', '新莊區', '泰山區', '林口區', '淡水區', '金山區', '八里區', '萬里區', '石門區', '三芝區', '瑞芳區', '汐止區', '平溪區', '貢寮區', '雙溪區', '深坑區', '石碇區', '新店區', '坪林區', '烏來區', '中和區', '永和區', '土城區', '三峽區', '樹林區', '鶯歌區', '三重區', '蘆洲區', '五股區'],
+        ['仁愛區', '中正區', '信義區', '中山區', '安樂區', '暖暖區', '七堵區'],
+    ];
+    $('#city-yu').change(function () {
+        const cityNumber = $(this).val();
+        const districtData = districtArray[cityNumber];
+        // 用迴圈會更方便
+        // $('#district option').eq(0).text(districtData[0])
+        // $('#district option').eq(1).text(districtData[1])
+        // $('#district option').eq(2).text(districtData[2])
+
+        // 迴圈 一直要做重複的動作，裡面的索引值可能會改變
+        // 1.自己寫規則，for 迴圈，次數自己決定
+        // 2.用陣列的方法來寫迴圈，次數就是陣列的資料數量
+
+        console.log('districtData:', districtData.length);
+        $('#district').empty();
+        $(districtData).each(function (index, item) {
+        console.log('JQ item:', item);
+        console.log('JQ index:', index);
+        $('#district').append(`<option value="${index}">${item}</option>`)
+        })
+    });
+
+
+
+
+        //-----------------------------input:radio 能取消點選------------------------------------------
         $(document).ready(function () {
             $("#btnAutoInput-yu").click(function () {
             $(
@@ -969,18 +959,202 @@
             });
         });
 
-        //同訂購人
-        const orderyu = $("").val;
-        $("input[id=name]");
-
-
- 
+        //--------------------------------同訂購人 取值------------------------------------------
         $("#username-yu").val("")
-
-    
-    $("#btnAutoInput-yu").click(function () {
+        //姓名
+        $("#btnAutoInput-yu").click(function () {
         $("#username-yu").val ($("#name-yu").val()) ;
         });
+        //電話
+        $("#btnAutoInput-yu").click(function () {
+        $("#usermobile-yu").val ($("#mobile-yu").val()) ;
+        });
+        //email
+        $("#btnAutoInput-yu").click(function () {
+        $("#useremail-yu").val ($("#email-yu").val()) ;
+        });
+        //地址(有問題)
+        $("#btnAutoInput-yu").click(function () {
+        $("#city-yu").val ($("#usercity-yu").val()) ;
+        });
+        $("#btnAutoInput-yu").click(function () {
+        $(".orderaddress2-yu").val ($(".receiveraddress2-yu").val()) ;
+        });
+        $("#btnAutoInput-yu").click(function () {
+        $("#address-yu").val ($("#useraddress-yu").val()) ;
+        });
+    
+
+
+        //--------------------------------信用卡------------------------------------------
+         //INSPIRATION 
+//------------> https://dribbble.com/shots/3331288-Daily-UI-002-Credit-Card-Checkout
+// loading after resources and depenednet resources have been loaded
+window.addEventListener("load", () => {
+    // forms
+    let inputs = document.querySelectorAll("input");
+    let ccList = document.querySelectorAll(".ccList li");
+    let name = document.querySelector(".viacreditCardnameyu");
+    let year = document.querySelector(".viacreditCardyearyu");
+    let inputCon = document.querySelectorAll(".inputCon");
+    let btn = document.querySelector('button');
+    //credit card
+    let cName = document.querySelector(".viacreditCardnameyu");
+    let cList = document.querySelector(".viacreditCard ul li");
+	let cYear = document.querySelector(".viacreditCard .viacreditCardyearyu");
+    let length = inputs.length;
+    let regExp =[/^[A-Za-z\'\s\.\,]+$/,/^4[0-9]{12}(?:[0-9]{3})?$/,/^[0-9]{3,4}$/];
+    //focusing the text->function
+    let fieldColor = (i) => {
+        for (j=0; j<inputCon.length; j++){
+            if( i == j) {
+                inputCon[i].style.color = "rgb(64,146,181)";
+            }
+            else {
+                inputCon[j].style.color = "rgb(193,193,193)";
+            }
+        }
+    }
+   let checkInput = (i) => {
+       // Name
+       if( i == 0) {
+            if (inputs[0].value.match(regExp[0])) {
+                cName.innerText = inputs[0].value;
+                inputCon[0].style.color = "rgb(64,146,181)";
+                inputs[0].style.borderBottomColor = "rgb(64,146,181)";
+            }
+            else if (inputs[0].value == "" || !inputs[0].value.match(regExp[0] )) {
+                cName.innerText = "";
+                inputs[0].style.borderBottomColor = "";//red
+            }
+       }
+
+       //CCard NUmber
+       if ( i == 1) {
+            if(inputs[1].value == "") {
+                inputs[1].style.borderBottomColor = "red";
+							  cList.innerText = " ";
+            }
+            else{
+                let cNumber = inputs[1].value;
+                    cNumber = cNumber.replace(/\s/g, "");
+                    if(Number(cNumber)) {
+                        cNumber = cNumber.match(/.{1,4}/g);
+                        cNumber = cNumber.join(" ");
+                        inputs[1].value = cNumber;
+                        if(cNumber.length <= 0 ) {
+                            cList.innerText = "";
+                        }
+                        else if (cNumber.length > 19) {
+                            cList.innerText = cNumber.substring(0,20);
+						    inputs[1].style.borderBottomColor = "red";
+                            
+                        }
+                        else {
+                            cList.innerText = cNumber;
+						    inputs[1].style.borderBottomColor = "rgb(64,146,181)";
+                        }
+                    }
+                    else  {
+                 	    inputs[1].style.borderBottomColor = "";//red
+                    }
+            }
+       }
+       // card Date
+       else if ( i == 2) {
+           let dateValue = inputs[2].value;
+				   let d = dateValue.replace(/\s/g, "");
+           // making sure its a number 
+           if(Number(dateValue)) {
+               d = dateValue.split("").map((i) => {
+                return parseInt(i, 10);
+                }   
+               );
+               let date = new Date();
+               let twoDigitYear = parseInt(date.getFullYear().toString().substr(2), 10);
+						 //the first two digit in the month field
+						if(d.length == 2 ) {
+							 //checking for first
+							 if((d[0] == 0 && (d[1] !== 0 || d[1] <= 9))  || d[0] == 1 && (d[1] <= 2)) {
+								 		inputs[2].style.borderBottomColor = "rgb(64,146,181)";
+										cYear.innerText = dateValue + "/";
+									}
+							else {
+								inputs[2].style.borderBottomColor = "";//red
+							
+							}
+						 }//End of Month
+							else if(d.length == 4) {
+							 let twoDigitYearN = parseInt(d[2].toString().concat(d[3].toString()),10);
+							 if(twoDigitYearN > twoDigitYear) {
+								 let stringDigit = twoDigitYearN.toString();
+								 cYear.innerText +=  stringDigit;
+								 inputs[2].value = cYear.innerText;
+								 inputs[2].style.borderBottomColor = "rgb(64,146,181)";
+							 	}
+								else {
+									inputs[2].style.borderBottomColor = "";//red
+								}
+							}//End of date + full date
+           }//END of IF for [i = 2]
+        	else {
+						    cYear.innerText = "";
+								inputs[2].style.borderBottomColor = "";//red
+					}
+       }
+		 
+		 if(i == 3) {
+			 let cV = inputs[i].value;
+			 if(Number(cV) && cV.match(regExp[2])) {
+				 inputs[i].style.borderBottomColor = "rgb(64,146,181)";
+			 }
+			 else{
+				 inputs[3].style.borderBottomColor = "";//red
+			 }
+		 }
+    }
+    //setting value initially in the card to that of placeholder
+    cName.innerText = inputs[0].getAttribute('placeholder');
+    cList.innerText = inputs[1].getAttribute('placeholder');
+    cYear.innerText = inputs[2].getAttribute('placeholder') //Adding Event Listeners
+    for (i = 0; i < inputCon.length; i++){
+        inputs[i].addEventListener('click', fieldColor.bind(this, i));
+        inputs[i].addEventListener('input', checkInput.bind(this,i));
+    }
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        for(i=0; i < length; i++){
+            if(inputs[i].value == "") {
+                inputs[i].style.borderBottomColor = "";//red
+            }
+        }
+        if(cList.innerText.length < 16) {
+            inputs[1].style.borderBottomColor = "";//red
+        }
+    })
+});
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

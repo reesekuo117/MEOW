@@ -1,11 +1,3 @@
-/*-----------------購物車訂單的進度條 ----------------- */
- /* *{
-    border: 1px solid #432A0F;
-} */
-*{
-    margin: 0;
-    padding: 0;
-  }
 .line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
@@ -287,7 +279,6 @@
     margin-bottom: 60px;
 }
 
-
 /* 信用卡樣式 */
 .gridContainer {
     height: 17rem;
@@ -409,9 +400,9 @@ form input {
 }
 
 
-form input:focus + h6 {
+/* form input:focus + h6 {
   color: red;
-}
+} */
 
 h6 {
   grid-area: fheading;
