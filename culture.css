@@ -1,23 +1,23 @@
-* {
+/* * {
   outline: 1px solid black;
-}
+} */
 
 .body_lb {
   /* background-color: var(--color-lightcreamy); */
-  background-image: url(./imgs/culture/RV-Culture-desktop-3.jpg);
-  background-size: cover;
+  background-image: url(./imgs/culture/REVISED_BG_PC-2.jpg);
+  background-size:cover;
   background-repeat: no-repeat;
 }
 
 .section1_lb{
-  margin-top: 800px;
+  margin-top: 700px;
 }
 .section1-content_lb{
-  margin-top: 150px
+  margin-top: 50px
 }
-.section1-content2_lb{
-  margin-top: 1px;
-}
+/* .section1-content2_lb{
+  margin-top: 10px;
+} */
 .right-pic_lb{
   width: 200px;
 }
@@ -32,20 +32,30 @@
 .cloud_left_lb{
     bottom: -20px;
 }
-
-
 .top-content_lb {
   color: var(--color-text87);
   margin: auto 0;
 }
-/* .about_lb {
-  color: var(--color-orange);
-} */
 .bottom-content_lb {
   color: var(--color-text87);
   margin: auto 0;
 }
-
+.s-title_lb{
+  color: var(--color-brown-dark);
+}
+.pic-group_lb{
+  margin-top: 110px;
+}
+.tmp-pic1_lb{
+  transition: .5S;
+}
+.tmp-pic2_lb{
+  transition: .5S;
+}
+.tmp-pic3_lb{
+  transition: .5S;
+}
+/* 雲怎麼不會動??? */
 .cloud_right_lb{
   width: 300px;
   right: 0px;
@@ -55,7 +65,7 @@
 }
 @keyframes cloudmove_lb {
   0%,100%{
-    transform: translateX(-30px);
+    transform: translateX(-100px);
   }
 50%{
     transform: translateX(0px);
@@ -97,7 +107,9 @@
 .worship-card{
   margin: 166px 0;
 }
-
+.step1_lb,.step2_lb,.step3_lb,.step4_lb,.step5_lb{
+  transition: 1s;
+}
 .img-wrap_lb{
   width: 300px;
   margin: 0 auto;
@@ -109,7 +121,6 @@
   transition: 1s;
   /* animation: animationheart 4s 1s; */
 }
-
 
 .left-cat-animation_lb{
   width: 150px;
@@ -310,62 +321,74 @@ color: #CD562F;
 .C01 {
   top: 10px;
   left: 360px;
+  cursor: pointer;
 }
 /* 龍山寺 */
 .C06 {
   top: 100px;
   left: 320px;
+  cursor: pointer;
 }
 /* 指南宮 */
 .C07 {
   top: 130px;
   left: 580px;
+  cursor: pointer;
 }
 /* 兔兒神廟*/
 .C10{
   top: 5px;
   left: 600px;
+  cursor: pointer;
 }
 /* 樂成宮 */
 .C03{
   top: 230px;
   left: 260px;
+  cursor: pointer;
 }
 /* 鹿港天后宮 */
 .C04{
   top: 330px;
   left: 210px;
+  cursor: pointer;
 }
 /* 月下老人 */
 .C08{
   top: 360px;
   left: 460px;
+  cursor: pointer;
 }
 /* 祀典武廟 */
 .C02{
   top: 580px;
   left: 100px;
+  cursor: pointer;
 }
 /* 大天后宮 */
 .C05{
   top: 480px;
   left: 120px;
+  cursor: pointer;
 }
 /* 重慶寺 */
 .C09{
   top: 570px;
   left: 300px;
+  cursor: pointer;
 }
 /* 大觀音亭 */
 .C11{
   top: 470px;
   left: 290px;
+  cursor: pointer;
 
 }
 /* 關帝廟 */
 .C12{
     top: 680px;
     left: 160px;
+    cursor: pointer;
   }
 
 /* #north-group_lb{
