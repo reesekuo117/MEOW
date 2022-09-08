@@ -163,8 +163,13 @@
 }
 
 /* ----訂購人資料section----- */
+.listinfo-yu{
+    margin-bottom: 60px;
+}
+
 .section-1-yu{
     background-color: #FFFCF7;
+    margin-bottom: 60px;
 }
 /* ------訂購人填寫資料------ */
 .order-list-yu input , .form-group select{
@@ -200,6 +205,7 @@
 /* ----收件人資料section----- */
 .section-2-yu{
     background-color: #FFFCF7;
+    margin-bottom: 60px;
 }
 /* ------收件人填寫資料------ */
 .receiver-list-yu input , .form-group select{
@@ -266,4 +272,10 @@
     width: 466px;
     height: 48px;
     margin:0 12px 0 0px;
+}
+
+.section-3-yu{
+    background-color: #FFFCF7;
+    height: 12rem;
+    margin-bottom: 60px;
 }

@@ -184,7 +184,7 @@
     <div id="myTabContent-yu" class="container">
         <!-- 訂單明細 -->
         <div class="listinfo-yu">
-            <main>
+            <main class="section-0-yu">
                 <h3 class="listinfo-title-yu m-0 ">
                     訂單明細
                 </h3>
@@ -302,7 +302,7 @@
                     </div>
                 </div>
             </main>
-            <div class="h6 alert alert-succes listinfo-details-totalprice-yu "  role="alert">
+            <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"  role="alert">
                 <h6>訂單金額:  NT$1000</h6>
                 <h6>運費金額:  NT$60</h6>
                 <h6 id="total-price-yu" class="price-uniqui-yu">總金額: </h6>
@@ -325,7 +325,7 @@
                         <span style="color:#963C38">*</span>
                     </label>
                     <br>
-                    <input class="ordername-yu" type="text" placeholder=" 請輸入姓名" class="" id="name" name="name" required>
+                    <input class="ordername-yu" type='text' placeholder=" 請輸入姓名" class="" id="name"  name="name" required>
                 </div>
                 <div class="order-phone-yu p-3">
                     <label for="mobile" class="">
@@ -333,7 +333,7 @@
                         <span style="color:#963C38">*</span>
                     </label>
                     <br>
-                    <input class="orderphone-yu" type="text" placeholder=" 請輸入聯絡電話" class="" id="mobile" name="mobile" required>
+                    <input class="orderphone-yu" type='text' placeholder=" 請輸入聯絡電話" class="" id="mobile" name="mobile" required>
                 </div>
                 <div class="order-address-yu p-3">
                     <label for="address" class="">
@@ -372,23 +372,23 @@
                                 <option value="2">仁愛區</option>
                             </select>
                         </div>
-                        <input class="orderaddress3-yu" type="text" placeholder=" 請輸入詳細地址" class="" id="address" name="address">
+                        <input class="orderaddress3-yu" type='text' placeholder=" 請輸入詳細地址" class="" id="address" name="address">
                     </div>
                 </div>
-                <div class="order-email-yu mb-3 p-3">
+                <div class="order-email-yu p-3">
                     <label for="email" class="">Email<span style="color:#963C38">*</span></label><br>
-                    <input class="" type="text" class="" id="email" name="email">
+                    <input class="" type='text' class="" id="email" name="email">
                 </div>
             </div>
         </section>
         <!-- 收件人資料 -->
-        <section class="section-2-yu">
+        <section class="section-2-yu ">
             <div class="section-2-title-yu">
                 <h3 class="listinfo-title-yu m-0 ">
                     收件人資料
                 </h3>
                 <div class="d-flex justify-content-end">
-                    <input type="radio" name="listinfo-title-radio-yu" id="">
+                    <input type="checkbox" name="listinfo-title-radio-yu" id="btnAutoInput-yu">
                     <label for="name" class=" m-0">
                         同訂購人
                     </label>
@@ -397,12 +397,12 @@
             <!-- 收件人填寫資料 -->
             <div class="receiver-list-yu">
                 <div class="receiver-name-yu p-3">
-                    <label for="name" class="">
+                    <label for="name" class="" >
                         姓名
                         <span style="color:#963C38">*</span>
                     </label>
                     <br>
-                    <input class="receivername-yu" type="text" placeholder=" 請輸入姓名" class="" id="name" name="name" required>
+                    <input class="receivername-yu" type='text' placeholder=" 請輸入姓名" class="" id="username-yu" name="name" required>
                 </div>
                 <div class="receiver-phone-yu p-3">
                     <label for="mobile" class="">
@@ -410,10 +410,10 @@
                         <span style="color:#963C38">*</span>
                     </label>
                     <br>
-                    <input class="receiverphone-yu" type="text" placeholder=" 請輸入聯絡電話" class="" id="mobile" name="mobile" required>
+                    <input  class="receiverphone-yu" type='text' placeholder=" 請輸入聯絡電話" class="" id="mobile-yu" name="mobile" required>
                 </div>
                 <div class="receiver-deliver-yu p-3">
-                    <label for="mobile" class="">
+                    <label for="" class="">
                         配送方式
                         <span style="color:#963C38">*</span>
                     </label>
@@ -423,7 +423,7 @@
                 </div>
                 <div class="receiver-email-yu p-3">
                     <label for="email" class="">Email<span style="color:#963C38">*</span></label><br>
-                    <input class="" type="text" class="" id="email" name="email">
+                    <input class="" type='text' class="" id="email-yu" name="email">
                 </div>
                 <div class="receiver-address-yu p-3">
                     <label for="address" class="">
@@ -462,25 +462,25 @@
                                 <option value="2">仁愛區</option>
                             </select>
                         </div>
-                        <input class="receiveraddress3-yu" type="text" placeholder=" 請輸入詳細地址"  id="address" name="address">
+                        <input class="receiveraddress3-yu" type='text' placeholder=" 請輸入詳細地址"  id="address" name="address">
                     </div>
                 </div>
             </div>
         </section>
         <!-- 付款方式 -->
-        <section class="section-3-yu">
+        <section class="section-3-yu ">
             <div class="section-3-title-yu">
                 <h3 class="listinfo-title-yu m-0">
                     付款方式
                 </h3>
             </div>
-            <div class="d-flex">
+            <div class="p-3">
                 <input type="radio" name="listinfo-title-radio-yu" id="">
                 <label for="name" class=" m-0">
                     信用卡
                 </label>
             </div>
-            <div class="">
+            <div class="p-3">
                 <input type="radio" name="listinfo-title-radio-yu" id="">
                 <label for="name" class=" m-0">
                     ATM轉帳
@@ -573,6 +573,31 @@
         }
     });
         
+
+    //input:radio 能取消點選
+    $(document).ready(function() {
+    $('#btnAutoInput-yu').click(function() {
+        $("input:text[name=listinfo-title-radio-yu]:checked")[0].checked = false;
+    });
+    });
+
+
+    //同訂購人
+    const orderyu = $(this).val
+
+
+    var result = "";
+        $("input[type=radio]:checked").each(function () {
+        result = $(this).val() ;
+        });
+
+        $('#btnAutoInput-yu').click(function(){
+            $('#username-yu').val('elena')
+            $('#email-yu').val('elena@gmail.com')
+            $('#mobile-yu').val('0921113265')
+        })
+
+
         // // 購物車商品詳細清單下拉
         // $('.panel-collapse').on('show.bs.collapse', function () {
         //     $(this).siblings('.panel-heading').addClass('active');
