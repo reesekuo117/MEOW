@@ -331,4 +331,5 @@ p {
 }
 .slide-re {
     background-color: var(--color-lightcreamy);
+    display: none;
 }

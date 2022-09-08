@@ -123,8 +123,8 @@ $pageName ='member'; //頁面名稱
                             <div class="card">
                                 <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="price-re">520</p>
+                                    <h5 class="card-title text-20-re">Card title</h5>
+                                    <p class="text-18-re price-re">520</p>
                                     <button class="btn-re btn200-re"  onclick="addToCartRe(event)">加入購物車</button>
                                 </div>
                             </div>
@@ -133,8 +133,8 @@ $pageName ='member'; //頁面名稱
                             <div class="card">
                                 <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="price-re">520</p>
+                                    <h5 class="card-title text-20-re">Card title</h5>
+                                    <p class="text-18-re price-re">520</p>
                                     <button class="btn-re btn200-re"  onclick="addToCartRe(event)">加入購物車</button>
                                 </div>
                             </div>
@@ -143,8 +143,8 @@ $pageName ='member'; //頁面名稱
                             <div class="card">
                                 <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="price-re">520</p>
+                                    <h5 class="card-title text-20-re">Card title</h5>
+                                    <p class="text-18-re price-re">520</p>
                                     <button class="btn-re btn200-re"  onclick="addToCartRe(event)">加入購物車</button>
                                 </div>
                             </div>
@@ -153,8 +153,8 @@ $pageName ='member'; //頁面名稱
                             <div class="card">
                                 <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="price-re">520</p>
+                                    <h5 class="card-title text-20-re">Card title</h5>
+                                    <p class="text-18-re price-re">520</p>
                                     <button class="btn-re btn200-re"  onclick="addToCartRe(event)">加入購物車</button>
                                 </div>
                             </div>
@@ -200,8 +200,8 @@ $pageName ='member'; //頁面名稱
                             <div class="card">
                                 <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="price-re">520</p>
+                                    <h5 class="card-title text-20-re">Card title</h5>
+                                    <p class="text-18-re price-re">520</p>
                                     <button class="btn-re btn200-re"  onclick="addToCartRe(event)">加入購物車</button>
                                 </div>
                             </div>
@@ -210,8 +210,8 @@ $pageName ='member'; //頁面名稱
                             <div class="card">
                                 <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="price-re">520</p>
+                                    <h5 class="card-title text-20-re">Card title</h5>
+                                    <p class="text-18-re price-re">520</p>
                                     <button class="btn-re btn200-re"  onclick="addToCartRe(event)">加入購物車</button>
                                 </div>
                             </div>
@@ -220,8 +220,8 @@ $pageName ='member'; //頁面名稱
                             <div class="card">
                                 <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="price-re">520</p>
+                                    <h5 class="card-title text-20-re">Card title</h5>
+                                    <p class="text-18-re price-re">520</p>
                                     <button class="btn-re btn200-re"  onclick="addToCartRe(event)">加入購物車</button>
                                 </div>
                             </div>
@@ -230,8 +230,8 @@ $pageName ='member'; //頁面名稱
                             <div class="card">
                                 <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="price-re">520</p>
+                                    <h5 class="card-title text-20-re">Card title</h5>
+                                    <p class="text-18-re price-re">520</p>
                                     <button class="btn-re btn200-re"  onclick="addToCartRe(event)">加入購物車</button>
                                 </div>
                             </div>
@@ -290,27 +290,41 @@ $pageName ='member'; //頁面名稱
                         <table class="tablehover text-center w-100" >
                             <thead class="">
                                 <tr class="orderlist-title-re">
-                                    <th class="col-2 text-20-re">商品圖片</th>
-                                    <th class="col-2 text-20-re">商品名稱</th>
-                                    <th class="col-1 text-20-re">規格</th>
-                                    <th class="col-1 text-20-re">單價</th>
-                                    <th class="col-1 text-20-re">數量</th>
-                                    <th class="col-1 text-20-re">小計</th>
-                                    <th class="col-1 text-20-re"></th>
+                                    <th class="col-2 text-18-re">商品圖片</th>
+                                    <th class="col-2 text-18-re">商品名稱</th>
+                                    <th class="col-1 text-18-re">規格</th>
+                                    <th class="col-1 text-18-re">單價</th>
+                                    <th class="col-1 text-18-re">數量</th>
+                                    <th class="col-1 text-18-re">小計</th>
+                                    <th class="col-1 text-18-re"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="orderlist-re">
                                     <td>圖</td>
-                                    <td>台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</td>
-                                    <td>紅</td>
-                                    <td class="price-re">520</td>
-                                    <td>1</td>
-                                    <td class="price-re">520</td>
-                                    <td><button class="btn-re">給予評價</button></td>
+                                    <td class="text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</td>
+                                    <td class="text-16-re">紅</td>
+                                    <td class="ext-16-re price-re">520</td>
+                                    <td class="text-16-re">1</td>
+                                    <td class="ext-16-re price-re">520</td>
+                                    <td><button class="btn-re ext-16-re">給予評價</button></td>
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="d-flex">
+                            <div class="col-6">
+                                <p>收件人資訊</p>
+                                <p>收件人姓名</p>
+                                <p>收件人電話</p>
+                                <p>收件人地址</p>
+                            </div>
+                            <div class="col-6">
+                                <p>物流及付款資訊</p>
+                                <p>收件方式</p>
+                                <p>付款方式</p>
+                                <p></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
     <!-- p4-P------------------------------------------------------------------ -->
@@ -356,6 +370,12 @@ $pageName ='member'; //頁面名稱
             $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
         });
     });
+    // 查詢訂單
+        $('.orderbtn-re').click(function(){
+        $('.slide-re').slideToggle('normal');
+    })
+    // 
+
     // 加入購物車
     // function addToCartRe(event) {
     //     const btn = $(event.currentTarget);
@@ -374,10 +394,7 @@ $pageName ='member'; //頁面名稱
     //         }, 
     //         'json');
     // }
-    // 查詢訂單
-    $('.orderbtn-re').click(function(){
-        $('.slide-re').slideToggle('normal');
-    })
+
     // 
     let districtArray = [
         ['中正區', '大同區', '中山區', '萬華區', '信義區', '松山區', '大安區', '南港區', '北投區', '內湖區', '士林區', '文山區'],
