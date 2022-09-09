@@ -44,13 +44,16 @@ border:1px solid red;
 .right-pic_lb{
   width: 200px;
 }
+
 .title_lb {
   color: var(--color-text100);
+  
+}
+.about_title_lb{
   position: absolute;
   left: 50%;
   top: -200px;
   transform: translateX(-50%);
-
 }
 .section1-cat1_lb{
     width: 150px;
