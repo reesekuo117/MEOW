@@ -1,8 +1,8 @@
- /*-----------------購物車訂單的進度條 ----------------- */
- /* *{
+/* *{
     border: 1px solid #432A0F;
  } */
 
+/*-----------------購物車訂單的進度條 ----------------- */
 .line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
@@ -10,12 +10,27 @@
     border-bottom:1px solid #432A0F ;
     width: 1200px;
 }
+
+
 .progress-bar-yu{
     margin-top: -24px;
     margin-bottom: 88px;
     font-size: var(--font-h5-20)
     
 }
+
+/* 手機progress-bar-yu */
+.mdprogress-bar-yu{
+    margin-top: 12px;
+    margin-bottom: 40px;
+    font-size: var(--font-h5-20)
+}
+.mdjustify-yu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* 購物車訂單桌機的進度條circle */
 .circle-1-yu{
     padding:0 24px;
     align-items: center;
@@ -32,6 +47,14 @@
     background-color: #fff;
 }
 
+/* 手機 circlemd-1 2 3-yu */
+.mdcircle-1-yu , .mdcircle-2-yu , .mdcircle-3-yu{
+    margin: auto 0;
+}  
+
+
+
+/* 購物車訂單桌機的進度條circle */
 .circle-light{
     position: relative;
     width: 40px;
@@ -74,7 +97,7 @@
     color: #432A0F;
 }
 
-/* ---------獨家商品 旅遊行程分頁標籤 ------------*/
+/* ---------桌機獨家商品 旅遊行程分頁標籤 ------------*/
 #myTabContent-yu{
     max-width: 1450px;
 }
@@ -85,6 +108,41 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+/* --------手機返回健icon -------------*/
+.mdicon-back-yu{
+    margin: 12px;
+}
+
+
+/* ---手機獨家商品 旅遊行程分頁標籤 ----*/
+.mdpagination-yu{
+    font-size: var(--font-h5-20);
+    width: 85%;
+    margin: 28px auto;
+}
+.mdpagination-yu .btn {
+    color: rgba(67, 42, 15, 0.38);
+    outline:1px solid #E5A62A;
+}
+.mdpagination-yu .btn:focus  {
+    box-shadow:none;
+    background-color: #E5A62A;
+    color: #fff;
+    outline:1px solid #E5A62A;
+}
+.mdpagination-yu .active{
+    outline:1px solid #E5A62A;
+    border-color:#E5A62A;
+    background-color: #E5A62A;
+    color: #fff;
+    border: 1px solid  #E5A62A;
+}
+
+
+
+/* 桌機 pagination-yu */
 .pagination-yu .btn {
     color: rgba(67, 42, 15, 0.38);
     outline:1px solid #E5A62A;
@@ -286,4 +344,13 @@ input.qtyminus {
 }
 .price-uniqui-yu{
     color: var(--color-red);
+}
+
+
+
+
+/*----手機購物車商品清單卡片-----  */
+.card-yu input{
+    width: 20px;
+    height: 20px;
 }
