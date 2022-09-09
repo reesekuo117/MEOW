@@ -1,39 +1,42 @@
-/* * {
+* {
   outline: 1px solid black;
-} */
+}
 .temp_bg{
+border:1px solid red;
   position: relative;
   overflow: hidden;
+  background:url(./imgs/culture/台中樂成宮.jpeg)center center/ cover no-repeat;
+  height: 966px;
 }
 .temp_bg::after{
   content: '';
   display: block;
-  width: 200%;
+  width: 320%;
   /* height: 300px; */
   aspect-ratio: 1/1;
-  background-color: rgba(0, 0, 0, 0.33);
+  /* background-color: rgba(0, 0, 0, 0.33); */
+  background-color: var(--color-lightcreamy);
   border-radius: 50%;
   position: absolute;
-  left: -50%;
-  bottom: -230%;
-  /* background-color: #000;
-  border-radius: 50% 50% 0 0 / 100% 100% 0  0; */
-  /* background: radial-gradient(circle at 50% 400%, #000 50%, transparent 50%); */
+  left: -2105px;
+  bottom: -5860px;
+  border: 1px solid red;
+
 }
 
 .body_lb {
-  /* background-color: var(--color-lightcreamy); */
-  background-image: url(./imgs/culture/REVISED_BG_PC-2.jpg);
+  background-color: var(--color-lightcreamy);
+  /* background-image: url(./imgs/culture/REVISED_BG_PC-2.jpg); */
   background-size:cover;
   background-repeat: no-repeat;
   /* overflow: hidden; */
 }
 
 .section1_lb{
-  margin-top: 700px;
+ margin-top: -40px;
 }
 .section1-content_lb{
-  margin-top: 50px
+  margin-top: 0px
 }
 /* .section1-content2_lb{
   margin-top: 10px;
@@ -43,6 +46,11 @@
 }
 .title_lb {
   color: var(--color-text100);
+  position: absolute;
+  left: 50%;
+  top: -200px;
+  transform: translateX(-50%);
+
 }
 .section1-cat1_lb{
     width: 150px;
@@ -76,15 +84,45 @@
 .tmp-pic3_lb{
   transition: .5S;
 }
+.s1-bg{
+  width: 800px;
+  right: 80px;
+  bottom: 300px;
+}
+/* 為什麼我的animation不會動！！！！！！ */
+.s1-circleBg{
+  width: 300px;
+  left: 500px;
+  bottom: 150px;
+  animation: circle infinite ease-in-out;
+  /* transition: .5s; */
+}
+
+@keyframes circle {
+  0%{
+    transform: translateX(-200px);
+  }
+  100%{
+    transform: translateX(100px);
+  }
+}
+
+.s1-circleBg2{
+  width: 400px;
+  right: -50px;
+  top: 50px;
+
+}
+
 /* 雲怎麼不會動??? */
 .cloud_right_lb{
   width: 300px;
   right: 0px;
   bottom: 50px;
-  animation: cloudmove_lb infinite ease-in-out;;
+  animation: cloudMove_lb infinite ease-in-out;
   transition: .5s;
 }
-@keyframes cloudmove_lb {
+@keyframes cloudMove_lb {
   0%,100%{
     transform: translateX(-100px);
   }
@@ -101,6 +139,37 @@
 
 
 /* 參拜流程 */
+.rdLine-1{
+  position: absolute;
+  right: 5px;
+  top: 30px;
+}
+.rdLine-2{
+  position: absolute;
+  right: 700px;
+  top: 500px;
+}
+.rdLine-3{
+  position: absolute;
+  right: 800px;
+  top: 1000px;
+}
+.rdLine-4{
+  position: absolute;
+  right: 700px;
+  top: 1400px;
+}
+.rdLine-5{
+  position: absolute;
+  right: 700px;
+  bottom: 1200px;
+}
+.rdLine-6{
+  position: absolute;
+  right: 600px;
+  bottom: 500px;
+}
+
 .section2_lb{
   margin-top: 112px;
   overflow: hidden;
@@ -112,8 +181,31 @@
 }
 .s2-rightcloud_lb{
   width: 600px;
-  left: 800px;
-  bottom: 1300px;
+  right: -200px;
+  bottom: 1400px;
+  animation: cloud-move 3s infinite ease-in-out;
+}
+
+@keyframes cloud-move {
+
+  0%,
+  100% {
+      transform: translateX(0);
+  }
+
+  50% {
+      transform: translateX(-50px);
+  }
+}
+.s2-leftBg{
+  top: 1100px;
+  left: 50px;
+
+}
+.s2-rightBg{
+  transform: scale(0.8);
+  bottom: 230px;
+  right: -100px;
 }
 
 .section2_lb h1{
@@ -137,22 +229,21 @@
   margin: 0 auto;
 }
 .heart-animation_lb{
-  /* opacity: 0; */
   width: 100px;
   margin:0px auto;
   transition: 1s;
-  /* animation: animationheart 4s 1s; */
 }
 
 .left-cat-animation_lb{
   width: 150px;
   transition: 2s;
-  /* height: 300px; */
 }
 .right-cat-animation_lb{
   width: 200px;
-  /* height: 300px; */
   transition: 2s;
+}
+.cp-cat-move{
+  margin-top: 500px;
 }
 
 
@@ -193,9 +284,9 @@ color: var(--color-text100);
 .cp-cat{
   width: 400px;
   right: -20px;
-  bottom: -30px;
-  
+  bottom: -30px; 
 }
+
 
 /* 月老廟地圖 */
 
