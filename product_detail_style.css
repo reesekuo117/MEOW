@@ -22,3 +22,55 @@
     content: "NT$ ";
     
 }
+.number{
+    margin-top: 16px;
+}
+.fire p{
+    line-height: 24px;
+}
+select{
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid var(--color-text87);
+}
+.quantity{
+    padding: 0 8px;
+}
+
+.buy{
+    width: 400px;
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-yellow);
+    border: 2px solid var(--color-text87);
+    margin-bottom: 16px;
+}
+.cart{
+    width: 400px;
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-lightcreamy);
+    border: 2px solid var(--color-text87);
+}
+
+
+
+.links{
+    flex-direction: column;
+    position: sticky;
+    top: 300px;
+}
+.links a{
+    padding: 4px 0;
+    text-decoration: none;
+    color: var(--color-text87);
+}
+.intro_bg {
+    margin: 24px auto;
+    background-color: var(--color-lightcreamy);
+    padding: 24px;
+}

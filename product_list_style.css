@@ -31,6 +31,12 @@
     margin: 0 auto;
     text-align: right;
 }
+.search_btn button{
+    color: #fff;
+}
+.search_btn button:hover{
+    color: var(--color-text87);
+}
 
 /* input{
     border-radius: 8px;
@@ -246,10 +252,10 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-color: rgba(136, 136, 136, 0.344);
+    background-color: rgba(45, 45, 45, 0.176);
     position: absolute;
     bottom: 0;
-    /* 一定要用background才能蓋陰影嗎嗚嗚嗚 */
+    /* 直接在div下陰影 */
     
 }
 .card:hover img{
@@ -311,4 +317,46 @@
     width: 18px;
     margin: 0;
 }
+.pages{
+    margin: 3rem;
+}
 
+.pages .row{
+    justify-content: center;
+}
+.pages .row .btn{
+    padding: 4px 16px;
+    margin: 4px;
+    background-color: #fff;
+    border: 1px solid var(--color-text38);
+
+}
+.btn a{
+    text-decoration: none;
+    color: var(--color-text38);
+}
+.btn a:focus, .btn a:hover{
+    color: var(--color-text87);
+}
+.btn:focus, .btn:hover{
+    border: 1px solid var(--color-text87);
+}
+.notlogin{
+    margin: 0 auto;
+}
+.alert{
+    position: relative;
+    
+}
+.alert .btn_ok{
+    position: absolute;
+    left: 300px;
+    bottom: 100px;
+    
+}
+.alert .btn_ok button{
+    color: var(--color-text87);
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var(--color-yellow);
+}
