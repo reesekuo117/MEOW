@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./gensen-font-master/ttc/">
-    <link rel="stylesheet" href="./shopping-cart-checkout-product.css">
+    <link rel="stylesheet" href="./shopping-cart-creditcard-travel.css">
 </head>
 <body>
     
@@ -172,7 +172,7 @@
                     
                     <span class="row circle-3-yu">
                         <div class="circle-light">
-                            <h5>3</h5>
+                            <h5 class="page-light-number">3</h5>
                         </div>
                         <div class="page-yu ">
                             <h5 class="m-0 page-yu-three page-light-number" >完成訂單</h5>
@@ -181,7 +181,8 @@
                 </div>
             </div>
             <div class="checkout-yu">
-                <div class="d-flex justify-content-center">
+                <!-- 圖片 -->
+                <div class=" checkoutsvg-yu d-flex justify-content-center">
                     <svg class="" width="233" height="173" viewBox="0 0 233 173" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="233" height="173" fill="url(#pattern0)"/>
                         <defs>
@@ -192,9 +193,13 @@
                         </defs>
                     </svg>
                 </div>
+                <h6 class="text-center">
+                    感謝您的訂購，月老喵愛您
+                </h6>
                 <div class=" d-md-flex justify-content-center">
+                    
                     <a href="#" class="btn unique-nextbutton-yu">
-                        <button class=" unique-btn-yu  me-md-2" type="button">
+                        <button class=" unique-btn-yu que-btn-yu me-md-2" type="button">
                             <p class="m-0 text-center">
                                 查詢訂單
                             </p>
@@ -216,27 +221,27 @@
                         <h3 class="listinfo-title-yu m-0">
                             訂單明細
                         </h3>
-                        <div class="d-flex">
-                            <div class="col">
+                        <div class=" checkoutlist-yu ">
+                            <div class=" col-4">
                                 <div class="title">
-                                    收件人資訊
+                                    訂購人資訊
                                 </div>
-                                <div class="row">
-                                    <ul>
+                                <div class="row liststylenone-yu">
+                                    <ul class="">
                                         <li>
-                                            收件人姓名:
+                                            訂購人姓名:
                                             <th>
                                                 皮卡丘
                                             </th>
                                         </li>
                                         <li>
-                                            收件人電話:
+                                            訂購人電話:
                                             <th>
                                                 0987654321
                                             </th>
                                         </li>
                                         <li>
-                                            收件人地址:
+                                            訂購人地址:
                                             <th>
                                                 台北市大安區和平東路二段106號3樓
                                             </th>
@@ -244,18 +249,12 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-4">
                                 <div class="title">
-                                    物流及付款資訊
+                                    付款資訊
                                 </div>
                                 <div class="row">
-                                    <ul>
-                                        <li>
-                                            收件方式:
-                                            <th>
-                                                宅配
-                                            </th>
-                                        </li>
+                                    <ul class="liststylenone-yu">
                                         <li>
                                             付款方式:
                                             <th>
@@ -275,6 +274,9 @@
                         <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
+                                    <h6 class="listinfo-number-yu">
+                                        訂單編號: <span>M20221234567</span>
+                                    </h6>
                                     <h6 class="panel-title-yu">
                                         <aclass="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
                                         訂單明細
@@ -292,17 +294,12 @@
                                                     <tr>
                                                         <th scope="col" src="" alt="">
                                                             <h6 class="mb-0">
-                                                                商品照片
+                                                                行程照片
                                                             </h6>
                                                         </th>
                                                         <th scope="col">
                                                             <h6 class="mb-0">
-                                                                商品名稱
-                                                            </h6>
-                                                        </th>
-                                                        <th scope="col">
-                                                            <h6 class="mb-0">
-                                                                規格
+                                                                行程名稱
                                                             </h6>
                                                         </th>
                                                         <th scope="col">
@@ -326,48 +323,20 @@
                                                     <tr class="">
                                                         <!-- 商品照片 -->
                                                         <td>
-                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
+                                                            <img src="imgs/購物車-行程(測試用).png" alt="" />
                                                         </td>
                                                         <!-- 商品名稱 -->
                                                         <td>
                                                             <h6 class="m-0">
-                                                                台北霞海城隍廟獨家聯名
-                                                                <br />
-                                                                -七夕月老供品組-甜作之盒
+                                                                大稻埕霞海城廟深度漫步文化之旅
                                                             </h6>
                                                         </td>
-                                                        <!-- 商品規格 -->
-                                                        <td>規格</td>
                                                         <!-- 單價 -->
-                                                        <td>$707</td>
+                                                        <td>$1500</td>
                                                         <!-- 數量 -->
                                                         <td>1</td>
                                                         <!-- 小計 -->
-                                                        <td>$707</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tbody class="tbody">
-                                                    <tr class="">
-                                                        <!-- 商品照片 -->
-                                                        <td>
-                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
-                                                        </td>
-                                                        <!-- 商品名稱 -->
-                                                        <td>
-                                                            <h6 class="m-0">
-                                                                台北霞海城隍廟獨家聯名
-                                                                <br />
-                                                                -七夕月老供品組-甜作之盒
-                                                            </h6>
-                                                        </td>
-                                                        <!-- 商品規格 -->
-                                                        <td>規格</td>
-                                                        <!-- 單價 -->
-                                                        <td>$707</td>
-                                                        <!-- 數量 -->
-                                                        <td>1</td>
-                                                        <!-- 小計 -->
-                                                        <td>$707</td>
+                                                        <td>$1500</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -379,10 +348,7 @@
                     </main>
                     <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
                         <h6>
-                            訂單金額: NT$1000
-                        </h6>
-                        <h6>
-                            運費金額: NT$60
+                            訂單金額: NT$1500
                         </h6>
                         <h6 id="total-price-yu" class="price-uniqui-yu">
                             總金額:
@@ -393,14 +359,6 @@
                 </div>
             </div>
     </section>
-
-
-
-
-
-
-
-
 
 
 

@@ -111,8 +111,21 @@
     padding: 0  12px 12px 12px;
 }
 /* ----------下拉詳細訂單明細---------- */
+
 .panel-title-yu{
+    cursor: pointer;
     padding: 0 0 12px 12px;
+}
+.panel-title-yu:hover{
+    color: #E5A62A;
+}
+.panel-title-yu:hover  svg path{
+    stroke: #E5A62A;
+    transform: rotateX(0deg);
+}
+.panel-title-yu svg path{
+    transition: all 0.5s ease 0s;
+    transform: rotateX(-40deg);
 }
 .panel-title-yu a{
     text-decoration: none;
@@ -446,7 +459,7 @@ h6 {
 
 
 /*------------ 前往付款按鈕 -------------*/
-.que-btn-yu{
+.unique-btn-yu{
     cursor: pointer;
 }
 .unique-nextbutton-yu .unique-btn-yu{

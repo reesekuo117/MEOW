@@ -1,3 +1,6 @@
+/* *{
+    border: 1px solid #000;
+} */
 .line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
@@ -65,11 +68,47 @@
     text-align: center;
     color: rgba(67, 42, 15, 0.38);
 }
-.page-yu .page-yu-two{
+.page-yu .page-yu-three{
     color: #432A0F;
 }
 
+/* ---完成結帳svg------- */
+.checkoutsvg-yu svg{
+    transform:scale(1.4);
+    transition: 2s;
+    animation: checkoutsvg-yumove 2s 1 alternate;
+}
+@keyframes checkoutsvg-yumove {
+    0% {
+        transform:scale(0) ;
+        
+    }
+
+    100% {
+        transform:scale(1.4)  ;
+        
+    }
+}
 /*------------ 查詢訂單 繼續購物按鈕 -------------*/
+.checkout-yu h6{
+    transform:scale(1);
+    transition: 2s;
+    animation: checkouth6-yumove 2s 1 alternate;
+}
+@keyframes checkouth6-yumove {
+    0% {
+        transform:scale(0.1) ;
+        
+    }
+
+    100% {
+        transform:scale(1)  ;
+        
+    }
+}
+.checkout-yu h6{
+    padding-top: 4rem;
+}
 .que-btn-yu{
     cursor: pointer;
 }
@@ -107,36 +146,27 @@
 }
 /* ----------------訂單明細 --------------*/
 .listinfo-yu{
+    margin-bottom: 40px;
     background-color: #FFFCF7;
 }
-.section-2-title-yu{
-    background-color: var(--color-creamy);
+.note-section1-yu{
+    background-color: #FFFCF7;
 }
-.section-2-title-yu label{
-    padding: 16px 0 0 0 ;
+.note-yu{
+    padding: 3rem 0;
+    color: #432A0F;
+}
+.noteinfo-red-yu{
+    color: #963C38;
+    font-size: 12px;
 }
 .listinfo-title-yu{
     background-color: var(--color-creamy);
     padding: 12px 12px;
     color: #432A0F;
 }
-.details-list-title-yu{
-    color: #432A0F;
-    padding: 24px 12px;
-}
 .panel-body-yu{
     padding: 24px 12px;
-}
-.listinfo-number-yu{
-    color: #432A0F;
-    padding: 24px 12px;
-    margin: 0;
-}
-.listinfo-number-yu span {
-    font-family: 'gensen-R';
-    font-size: 20px;
-    line-height: 140%;
-    color: var(--color-red);
 }
 .listinfo-yu label {
     margin: 0;
@@ -144,7 +174,19 @@
 }
 /* ----------下拉詳細訂單明細---------- */
 .panel-title-yu{
+    cursor: pointer;
     padding: 0 0 12px 12px;
+}
+.panel-title-yu:hover{
+    color: #E5A62A;
+}
+.panel-title-yu:hover  svg path{
+    stroke: #E5A62A;
+    transform: rotateX(0deg);
+}
+.panel-title-yu svg path{
+    transition: all 0.5s ease 0s;
+    transform: rotateX(-40deg);
 }
 .panel-title-yu a{
     text-decoration: none;
@@ -184,6 +226,32 @@
     border: none;
 
 }
+
+/*---------訂單明細-------- */
+.checkoutlist-yu{
+    display: flex;
+    justify-content: space-around;
+}
+.liststylenone-yu{
+    padding-top: 12px;
+}
+.liststylenone-yu li{
+    list-style: none;
+    padding-bottom: 8px;
+    /* padding: 8px; */
+}
+.checkoutlist-yu .col-4 {
+    margin: 40px 12px;
+    padding: 0 0;
+    background-color: #FFFCF7;
+}
+.checkoutlist-yu .title{
+    height: 40px;
+    padding: 8px;
+    background-color: var(--color-lightcreamy);
+    border-bottom: 2px solid #0000000c;
+}
+
 /* ----- 下拉詳細訂單表格總價---------*/
 .listinfo-details-totalprice-yu{
     padding-top: 0;
@@ -192,3 +260,4 @@
     justify-content: end;
     align-items: flex-end;
 }
+

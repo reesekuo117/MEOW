@@ -120,7 +120,19 @@
 }
 /* ----------下拉詳細訂單明細---------- */
 .panel-title-yu{
+    cursor: pointer;
     padding: 0 0 12px 12px;
+}
+.panel-title-yu:hover{
+    color: #E5A62A;
+}
+.panel-title-yu:hover  svg path{
+    stroke: #E5A62A;
+    transform: rotateX(0deg);
+}
+.panel-title-yu svg path{
+    transition: all 0.5s ease 0s;
+    transform: rotateX(-40deg);
 }
 .panel-title-yu a{
     text-decoration: none;
