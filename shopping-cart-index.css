@@ -21,8 +21,7 @@
 
 /* 手機progress-bar-yu */
 .mdprogress-bar-yu{
-    margin-top: 12px;
-    margin-bottom: 40px;
+    margin: 28px 0;
     font-size: var(--font-h5-20)
 }
 .mdjustify-yu{
@@ -122,16 +121,26 @@
     width: 85%;
     margin: 28px auto;
 }
+
+/* .mdpagination-yu .btn-group> .mdpagination-yu.btn.active, .mdpagination-yu.btn-group>.mdpagination-yu.btn:active, .mdpagination-yu.btn-group>.mdpagination-yu.btn:focus, .btn-group>.mdpagination-yu.btn.active, .btn-group>.mdpagination-yu.btn:active, .btn-group>.mdpagination-yu.btn:focus {
+    z-index: -1;
+} */
+/*  手機標標籤不要浮起來 */
+.btn-group>.btn.active{
+    z-index: -1;
+}
 .mdpagination-yu .btn {
     color: rgba(67, 42, 15, 0.38);
     outline:1px solid #E5A62A;
 }
+
 .mdpagination-yu .btn:focus  {
     box-shadow:none;
     background-color: #E5A62A;
     color: #fff;
     outline:1px solid #E5A62A;
 }
+
 .mdpagination-yu .active{
     outline:1px solid #E5A62A;
     border-color:#E5A62A;
@@ -257,7 +266,7 @@
     border: 2px solid #432A0F ;
     color: #432A0F;
     border-radius: 8px;
-    width: 100%;
+    width: 70%;
     height: 36px;
     font-family: 'gensen-M';
     font-size: 16px;
@@ -267,32 +276,86 @@
 .form-select-yu:focus{
     box-shadow: 4px 4px #432A0F;
 }
-/* -------------數量增加按鈕------------- */
-.qty-yu {
-    width: 40px;
-    height: 35px;
+
+
+/* ---------手機卡片外觀 ------*/
+.card-yu , .largerCheckbox-yu{
+    align-items: flex-start;
+}
+.largerCheckbox-yu{
+    margin-right: 4px;
+}
+.mdcardlist-yu{
+    overflow: hidden;
+    /* border: 1px solid #000; */
+    width: 190px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+/*----手機購物車商品清單卡片checkbox-----  */
+.card-yu{
+    padding: 28PX 0;
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: flex-end;
+}
+.cardcheckall-yu input{
+    width: 20px;
+    height: 20px;
+}
+.card-yu input{
+    align-items: flex-start;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* ---------手機規格下拉外觀 ------*/
+.mdform-select-yu{
+    margin: 8px 0;
     text-align: center;
-    border: 0;
+    border: 2px solid #432A0F ;
+    color: #432A0F;
+    border-radius: 8px;
+    width: 70%;
+    height: 36px;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 140%;;
+    outline: none;
+}
+.mdform-select-yu:focus{
+    box-shadow: 4px 4px #432A0F;
+}
 
-}
-input.qtyplus {
-    width: 25px;
-    height: 35px;
-
-}
-input.qtyminus {
-    width: 25px;
-    height: 35px;
-}
-/* .qtyminus{
-    width: 100px;
-    height: 25px;
-    border: 0;
-    background-color: #432A0F;
+/* -------------數量增加按鈕------------- */
+#myform input.qtyminus {
+    width: 30px;
+    height: 30px;
     border-radius: 100%;
-} */
-
-/* ------刪除icon-------- */
+    color: #fff;
+    border: none;
+    background-color: rgba(67, 42, 15, 0.38);
+}
+#myform input.qtyplus {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    color: #fff;
+    border: none;
+    background-color: rgba(67, 42, 15, 0.87);
+}
+#myform input.qty-yu {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    /* border: 1px solid#000; */
+}
+/* ------桌機刪除icon-------- */
 .form-delete-yu{
     color: #432A0F;
 }
@@ -300,7 +363,7 @@ input.qtyminus {
     color: #E5A62A;
 }
 
-/*------------ 下一步按鈕 -------------*/
+/*------------ 桌機下一步按鈕 -------------*/
 
 .unique-btn-yu{
     cursor: pointer;
@@ -333,6 +396,33 @@ input.qtyminus {
     background-color: #E5A62A;
 }
 
+/* ------------手機一步按鈕-------------- */
+
+.unique-btn-yu{
+    cursor: pointer;
+}
+.mdunique-nextbutton-yu .mdunique-btn-yu{
+    /* border: 1px solid #432A0F; */
+    margin-bottom: 8px;
+    background-color: #E5A62A;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 125%;
+    width: 275px;
+    height: 41px;
+    border-radius: 8px;
+    box-shadow:none;
+}
+.mdunique-btn-yu:active {
+    box-shadow:none;
+}
+.mdunique-btn-yu:focus  {
+    box-shadow:none;
+    background-color: #E5A62A;
+}
+
+
+
 /* --------------獨家商品 總計價錢-------------- */
 .totalprice-uniqui-yu{
     border-top:1px solid #432A0F;
@@ -348,9 +438,3 @@ input.qtyminus {
 
 
 
-
-/*----手機購物車商品清單卡片-----  */
-.card-yu input{
-    width: 20px;
-    height: 20px;
-}
