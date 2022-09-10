@@ -2,7 +2,7 @@
   outline: 1px solid black;
 }
 .temp_bg{
-border:1px solid red;
+  /* border:1px solid red; */
   position: relative;
   overflow: hidden;
   background:url(./imgs/culture/台中樂成宮.jpeg)center center/ cover no-repeat;
