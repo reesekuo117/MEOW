@@ -69,11 +69,50 @@
     color: #432A0F;
 }
 
-/* ---------表單的寬度------(每一個表單都要用) */
+/* --------手機返回健icon -------------*/
+.mdicon-back-yu{
+    margin: 12px;
+}
+/* 手機progress-bar-yu */
+.mdprogress-bar-yu{
+    margin-top: 12px;
+    margin-bottom: 40px;
+    font-size: var(--font-h5-20)
+}
+.mdjustify-yu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* 購物車訂單桌機的進度條circle */
+.circle-1-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-2-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-3-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+
+/* 手機 circlemd-1 2 3-yu */
+.mdcircle-1-yu , .mdcircle-2-yu , .mdcircle-3-yu{
+    margin: auto 0;
+}  
+
+
+
+/* ---------桌機表單的寬度------(每一個表單都要用) */
 #myTabContent-yu {
     max-width: 1450px;
 }
-/* ----------------訂單明細 --------------*/
+/* ----------------桌機訂單明細 --------------*/
 .listinfo-yu{
     background-color: #FFFCF7;
 }
