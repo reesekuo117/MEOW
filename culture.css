@@ -317,12 +317,11 @@ color: var(--color-text100);
         scroll-snap-type: x mandatory;     
 }
 /* 問子瑜 */
-.media-manufacture-card1{
+/* .media-manufacture-card1{
   scroll-snap-align: center;
   scroll-snap-stop: always;
-  /* scroll-snap-align: 滾動捕獲的對齊位置 */
   display: inline-block;
-}
+} */
 .mb-ban-img-wrap{
   width: 200px;
 }
