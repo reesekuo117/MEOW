@@ -99,7 +99,39 @@ select{
 #intro p{
     padding-top: 16px;
 }
-
+/* -----------------------評價-------------------- */
+#comment .row{
+    padding: 8px;
+}
+.c_star{
+    padding: 8px 0;
+}
+.c_star h3{
+    padding: 16px 25px;
+    background-color: var(--color-yellow);
+    border-radius: 8px;
+}
+.cd{
+    margin-top: 12px;
+    border-bottom: 1px solid var(--color-text60);
+}
+.profile_img{
+    width: 100px;
+    margin: 0 auto;
+}
+.name{
+    margin: 0px;
+}
+.c_tags{
+    margin: 8px 0;
+}
+.tags{
+    margin: 0 4px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: 2px solid var(--color-text87);
+}
 /* 瀏覽其他商品 */
 .carousel {
 	margin: 30px auto 60px;
@@ -188,3 +220,4 @@ select{
 .carousel-indicators li.active {	
 	background: #555;
 }
+
