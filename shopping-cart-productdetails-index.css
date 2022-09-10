@@ -221,6 +221,47 @@
     width: 520px;
 }
 
+/* ------手機訂購人填寫資料------ */
+.mdorder-list-yu input , .form-group select{
+    border-radius: 8px;
+    border: 2px solid #432A0F;
+    height: 48px;
+    width: 100%;
+}
+.mdorder-list-yu input.mdordername-yu , input.mdorderphone-yu{
+    width: 100%;
+    height: 48px;
+}
+.mdorder-list-yu .mdorderaddress1-yu {
+    width: 100%;
+    height: 48px;
+    padding: 0 4px 0 0;
+    text-align: center;
+}
+.mdorder-list-yu .mdorderaddress2-yu{
+    width: 100%;
+    height: 48px;
+    padding: 0 0 0 4px;
+    text-align: center;
+}
+.mdorder-list-yu .mdorderaddress3-yu{
+    width: 100%;
+    height: 48px;
+    margin:0 12px 0 0px;
+}
+.mdorder-email-yu input{
+    width: 100%;
+}
+
+
+/* ----md訂購人填寫資料section----- */
+.mdsection-2-yu{
+    background-color: #FFFCF7;
+    margin-bottom: 20px;
+}
+
+
+
 /* ----收件人資料section----- */
 .section-2-yu{
     background-color: #FFFCF7;
@@ -293,10 +334,22 @@
     margin:0 12px 0 0px;
 }
 
+/*----------------- 桌機付款方式----------- */
 .section-3-yu{
     background-color: #FFFCF7;
-    
     margin-bottom: 60px;
+}
+
+/* ---手機付款方式mdsection-3-yu------- */
+.mdsection-3-yu{
+    background-color: #FFFCF7;
+    margin-bottom: 20px;
+}
+
+/* 手機付款方式mdsection-4-yu */
+.mdsection-4-yu{
+    background-color: #FFFCF7;
+    margin-bottom: 20px;
 }
 
 
