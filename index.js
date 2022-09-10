@@ -29,3 +29,10 @@ const typeWriter2 = selector => {
 
 setTimeout(typeWriter2(".js-type-writer2"), 1000)
 // FIXME:
+
+
+// 三貓 hover
+// FIXME: 現在是怎樣
+$('.leftCatImg').mouseenter(function () {
+    $('.leftCat img').attr('src', "./imgs/index/7.png");
+})
