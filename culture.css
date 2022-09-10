@@ -1,6 +1,7 @@
-* {
+/* * {
   outline: 1px solid black;
-}
+} */
+/* kv-pc */
 .temp_bg{
   /* border:1px solid red; */
   position: relative;
@@ -21,17 +22,36 @@
   left: -2105px;
   bottom: -5860px;
   border: 1px solid red;
+}
+/* kv-mb */
+.mb_kv_lb{
+background: url(./imgs/culture/台中樂成宮.jpeg) center center/ cover no-repeat;
+height: 164px;
+}
+.links-group_lb a{
+  text-decoration: none;
+  color: #909090;
+}
+.links-group_lb a:active {
+  color: var(--color-orange);
+}
 
+.s_lb{
+  font-size: 14px;
+}
+.mbnavbar_lb{
+  background-color: #FFFCF7;
 }
 
 .body_lb {
   background-color: var(--color-lightcreamy);
   /* background-image: url(./imgs/culture/REVISED_BG_PC-2.jpg); */
-  background-size:cover;
-  background-repeat: no-repeat;
+  /* background-size:cover;
+  background-repeat: no-repeat; */
   /* overflow: hidden; */
 }
 
+/* 關於月老 */
 .section1_lb{
  margin-top: -40px;
 }
@@ -43,6 +63,14 @@
 } */
 .right-pic_lb{
   width: 200px;
+}
+.mbleft_pic_lb{
+  width: 300px;
+  margin: 0 auto;
+}
+.mbleft_pic_lb{
+  width: 300px;
+  margin: 0 auto;
 }
 
 .title_lb {
@@ -139,6 +167,8 @@
   right: 300px;
   bottom:-20px;
 }
+
+
 
 
 /* 參拜流程 */
@@ -248,6 +278,19 @@
 .cp-cat-move{
   margin-top: 500px;
 }
+
+.parallaxbg_lb{
+  width: 100%;
+  height: 1000px;
+  background: url(./imgs/culture/parallaxbg.png);
+  position: absolute;
+  background-attachment: fixed;
+}
+.mbimg-wrap_lb{
+  width: 200px;
+  margin: 0 auto;
+}
+
 
 
 
