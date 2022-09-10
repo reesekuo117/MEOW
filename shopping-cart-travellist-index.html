@@ -387,7 +387,7 @@
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="" type="month" id="" name="birthday" placeholder="年/月/日" />
+                        <input class="" type="birthday" id="" name="birthday" placeholder="年/月/日" />
                     </div>
                     <div class="receiver-idnumber-yu p-3">
                         <label for="idnumber" class="">
@@ -684,7 +684,7 @@
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="receiver-idnumber-yu"type="month"placeholder="年/月/日 "class=""id="birthday-yu"name="birthday"required/>
+                        <input class="receiver-idnumber-yu"type="birthday"placeholder="年/月/日 "class=""id="birthday-yu"name="birthday"required/>
                     </div>
                     <div class="mdorder-phone-yu p-3">
                         <label for="birthday" class="">
@@ -711,23 +711,47 @@
                 <div class="p-3">
                     <input type="checkbox" name="listinfo-title-checkbox-yu" id="" />
                     <label for="name" class="m-0"> 
-                        信用卡 
+                        信用卡付款 
                     </label>
                     <div class="">
-                        <label class="p"  for="">
+                        <label class="pt-4"  for="">
                             信用卡卡號
                         </label>
                         <br>
-                        <div class="d-flex">
-                            <input type="" name="" id="">
-                            <input type="" name="" id="">
-                            <input type="" name="" id="">
-                            <input type="" name="" id="">
+                        <div class=" mdcreditcard-number-yu d-flex justify-content-center align-items-center "> 
+                            <div class=" mdcreditcard-number-backgroundcolor-yu ">
+                                <input class="text-center" type="" name="" id="" placeholder="0000 ">
                             </div>
+                            <div class=" mdcreditcard-number-backgroundcolor-yu">
+                                <input class="text-center" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor-yu">
+                                <input class="text-center" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor-yu">
+                                <input class="text-center" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                        </div>
+                        <div class="mdcreditcard-numberbox "></div>
+                    </div>
+                    <div class="">
+                        <label class="pt-5"  for="">
+                            有效 / 年月
+                        </label>
+                        <br>
+                        <div class=" mdcreditcard-year-yu d-flex "> 
+                            <div class=" mdcreditcard-year-backgroundcolor-yu ">
+                                <input class="text-center " type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-year-backgroundcolor-yu">
+                                <input class="text-center " type="" name="" id="" placeholder="0000 ">
+                            </div>
+                        </div>
+                        <div class="mdcreditcard-yearbox "></div>
                     </div>
                 </div>
             </section>
-            <div class=" d-md-flex justify-content-md-end">
+            <div class=" d-flex justify-content-center">
                 <!-- a href="#buy1.php" -->
                 <a href="http://127.0.0.1:5500/shopping-cart-creditcard-travel.html" class="btn mdunique-nextbutton-yu">
                     <button class=" mdunique-btn-yu  me-md-2" type="button">

@@ -401,9 +401,57 @@
 
 /* 手機付款方式mdsection-4-yu */
 .mdsection-4-yu{
-    background-color: #FFFCF7;
+    /* background-color: #FFFCF7; */
+    background-color: #ae7512;
     margin-bottom: 20px;
+    height: 100%;
 }
+.mdcreditcard-numberbox{
+    width: 80%;
+    border-bottom: 2px solid #432A0F ;
+    margin: -24px auto;
+    /* background-color: #FFFCF7; */
+    background-color: #ae7512;
+}
+.mdsection-4-yu .mdcreditcard-number-yu input{
+    border-radius: 8px;
+    border: 2px solid #432A0F;
+    height: 48px;
+    width: 100%;
+}
+.mdcreditcard-number-yu .mdcreditcard-number-backgroundcolor-yu{
+    margin: 0 4px;
+    padding: 0 4px;
+    background-color:  #FFFCF7 ;
+}
+
+.mdcreditcard-yearbox{
+    width: 20%;
+    border-bottom: 2px solid #432A0F ;
+    margin: -24px auto;
+    /* background-color: #FFFCF7; */
+    background-color: #ae7512;
+}
+.mdsection-4-yu .mdcreditcard-year-yu input{
+    
+    border-radius: 8px;
+    border: 2px solid #432A0F;
+    height: 48px;
+    width:60%;
+}
+.mdcreditcard-year-yu .mdcreditcard-year-backgroundcolor-yu{
+    margin: 0 4px;
+    padding: 0 4px;
+}
+
+
+
+
+
+
+
+
+
 
 /* 桌機信用卡樣式 */
 .gridContainer {
