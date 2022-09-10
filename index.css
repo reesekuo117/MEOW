@@ -3,10 +3,13 @@
 }
 
 .body_ba {
-    height: 200vh;
+    /* border: #ff5b00 1px solid; */
+    /* overflow: hidden; */
+    /* width: 100%; */
+    height: 1000vh;
     background:
         url(./imgs/index/grain2.png)center -500px / 160% no-repeat,
-        url(./imgs/index/bg0.png) center center / cover no-repeat, var(--color-orange);
+        url(./imgs/index/bg0.png) center center / 100%, var(--color-orange);
     /* background-color: var(--color-orange); */
 }
 
@@ -197,16 +200,302 @@
 /* ----------------------------- 崩潰 section1 結束 ------------------------------- */
 
 .bg2_ba {
+    /* border: #ff5b00 1px solid; */
+    overflow: hidden;
     width: 100%;
-    height: 300vh;
-    background: url(./imgs/index/bg3.png) center top / 100% no-repeat;
-    /* background-blend-mode: multiply; */
-    /* mix-blend-mode: hard-light; */
-    /* background-blend-mode: hard-light; */
+    /* height: 230vh; */
+    background: url(./imgs/index/bg3.png) center center / 100% no-repeat;
 }
 
 .meowTemple {
+    /* border: #ff5b00 1px solid; */
     width: 100%;
-    height: 100vh;
-    background: url(./imgs/index/meow-temple.png) center top / cover;
+    height: 230vh;
+    background: url(./imgs/index/meow-temple.png) center 20% / 88% no-repeat;
+}
+
+.cloud {
+    transform: scale(0.8);
+    mix-blend-mode: screen;
+}
+
+.cloud01 {
+    top: 10%;
+    left: -30%;
+    animation: cloudA ease-in-out 10s infinite;
+}
+
+.cloud02 {
+    top: 12%;
+    left: 10%;
+    animation: cloudB ease-in-out 7s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.cloud03 {
+    top: 15%;
+    right: -15%;
+    animation: cloudB ease-in-out 8s infinite;
+}
+
+.cloud04 {
+    top: 18%;
+    right: 10%;
+    animation: cloudA ease-in-out 6s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.cloud05 {
+    top: 48%;
+    left: -20%;
+    animation: cloudA ease-in-out 12s infinite;
+    z-index: 2;
+}
+
+.cloud06 {
+    top: 53%;
+    left: 8%;
+    animation: cloudA ease-in-out 15s infinite;
+    z-index: 2;
+}
+
+.cloud07 {
+    top: 55%;
+    right: 5%;
+    animation: cloudB ease-in-out 13s infinite;
+    z-index: 3;
+    filter: blur(2px);
+}
+
+.cloud08 {
+    top: 65%;
+    left: 24%;
+    animation: cloudB ease-in-out 11s infinite;
+    z-index: 3;
+}
+
+@keyframes cloudA {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(100px);
+    }
+
+}
+
+@keyframes cloudB {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-50px);
+    }
+
+}
+
+.btn-xl {
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    padding: 20px 184px;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.btn-xl:hover {
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+
+.btn01_ba {
+    z-index: 3;
+    top: 58%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ----------------------------- 崩潰 section2 結束 ------------------------------- */
+
+.section3_ba {
+    /* overflow: hidden; */
+    width: 100%;
+    height: 90vh;
+    border: #3700ff 1px solid;
+}
+
+.cloud09 {
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+}
+
+.text-align {
+    text-align: center;
+}
+
+.leftCat {
+    top: 10%;
+    left: 10%;
+    text-align: center;
+    /* border: #ff5b00 1px solid; */
+    width: 500px;
+    color: white;
+    animation: leftCat 6s ease-in-out infinite;
+}
+
+@keyframes leftCat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-90px);
+    }
+}
+
+.middleCat {
+    top: 7%;
+    left: 10%;
+    text-align: center;
+    /* border: #ff5b00 1px solid; */
+    /* width: 500px; */
+    color: white;
+    animation: leftCat 7s ease-in-out infinite;
+}
+
+.rightCat {
+    top: 4%;
+    right: 10%;
+    text-align: center;
+    /* border: #ff5b00 1px solid; */
+    /* width: 500px; */
+    color: white;
+    animation: leftCat 5s ease-in-out infinite;
+}
+
+.btn02_ba {
+    z-index: 3;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cloud10 {
+    top: -20%;
+    left: -30%;
+    animation: cloudA ease-in-out 10s infinite;
+}
+
+.cloud11 {
+    top: -23%;
+    left: 10%;
+    animation: cloudB ease-in-out 7s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.cloud12 {
+    bottom: 18%;
+    right: 7%;
+    animation: cloudA ease-in-out 6s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+/* ----------------------------- 還好崩潰的 section3 結束 ------------------------------- */
+
+.section4_ba {
+    height: 200vh;
+    margin-top: 150px;
+    color: white;
+    overflow: hidden;
+}
+
+
+.section4_ba h1 {
+    text-align: center;
+    font-size: 56px;
+    text-shadow:
+        -1px -1px 0 #000000,
+        0 3px 0 #000000,
+        3px -1px 0 #000000,
+        3px 0 0 #000000,
+        3px 3px 0 #000000,
+        0 -1px 0 #000000,
+        -1px 3px 0 #000000,
+        -1px 0 0 #000000;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.section4_ba h6 {
+    text-align: left;
+    margin-bottom: 48px;
+}
+
+.btn03_ba {
+    z-index: 3;
+    word-wrap: break-word;
+    padding: 20px 170px;
+    /* top: 80%;
+    left: 50%; */
+    /* transform: translateX(-50%); */
+}
+
+.cartCat img {
+    /* border: #ff5b00 1px solid; */
+    transform: scale(0.7) translateX(-150px);
+}
+
+.row {
+    /* border: #ff5b00 1px solid; */
+    text-align: center;
+}
+
+.cloud13 {
+    top: 10%;
+    left: -30%;
+    animation: cloudA ease-in-out 10s infinite;
+}
+
+.cloud14 {
+    top: 12%;
+    left: 10%;
+    animation: cloudB ease-in-out 7s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.cloud15 {
+    top: 90%;
+    right: -25%;
+    animation: cloudB ease-in-out 10s infinite;
+}
+
+.cloud16 {
+    top: 85%;
+    right: 10%;
+    animation: cloudA ease-in-out 7s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.yusoulCat img {
+    left: -20%;
+    transform: scale(0.8);
+}
+
+.yusoulCat {
+    left: -20%;
+    border: #ff5b00 1px solid;
 }
