@@ -416,25 +416,25 @@
                         <span id="total-price" ></span>
                         元
                 </div>
-                    <div>
-                        <!-- 如果使用者還未登入 -->
-                        <?php if(empty($_SESSION["user"])) : ?>  
-                            <!-- 跳出提示框提醒用戶先登入會員 -->
-                            <div class="alert alert-danger" role="alert">
-                                請先登入會員，再結帳
-                            </div>
-                        <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
-                    </div>
-                    <div class=" d-md-flex justify-content-md-end">
-                        <!-- a href="#buy1.php" -->
-                        <a href="shopping-cart-productdetails-index.html" class="btn unique-nextbutton-yu">
-                            <button class=" unique-btn-yu  me-md-2" type="button">
-                                <p class="m-0 text-center">
-                                    下一步
-                                </p>
-                            </button>
-                        </a>
-                    </div>
+                <div>
+                    <!-- 如果使用者還未登入 -->
+                    <?php if(empty($_SESSION["user"])) : ?>  
+                        <!-- 跳出提示框提醒用戶先登入會員 -->
+                        <div class="alert alert-danger" role="alert">
+                            請先登入會員，再結帳
+                        </div>
+                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
+                </div>
+                <div class=" d-md-flex justify-content-md-end">
+                    <!-- a href="#buy1.php" -->
+                    <a href="shopping-cart-productdetails-index.html" class="btn unique-nextbutton-yu">
+                        <button class=" unique-btn-yu  me-md-2" type="button">
+                            <p class="m-0 text-center">
+                                下一步
+                            </p>
+                        </button>
+                    </a>
+                </div>
             </div>
             <!-- 旅遊行程 -->
             <div class="tab-pane fade" id="travel-yu">
@@ -520,36 +520,32 @@
                     <span id="total-price" ></span>
                     元
             </div>
-                <div>
-                    <!-- 如果使用者還未登入 -->
-                    <?php if(empty($_SESSION["user"])) : ?>  
-                        <!-- 跳出提示框提醒用戶先登入會員 -->
-                        <div class="alert alert-danger" role="alert">
-                            請先登入會員，再結帳
-                        </div>
-                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
-                </div>
-                <div class=" d-md-flex justify-content-md-end">
-                    <a href="shopping-cart-travellist-index.html" class="btn unique-nextbutton-yu">
-                        <button class=" unique-btn-yu  me-md-2" type="button">
-                            <p class="m-0 text-center">
-                                下一步
-                            </p>
-                        </button>
-                    </a>
-                </div>
+            <div>
+                <!-- 如果使用者還未登入 -->
+                <?php if(empty($_SESSION["user"])) : ?>  
+                    <!-- 跳出提示框提醒用戶先登入會員 -->
+                    <div class="alert alert-danger" role="alert">
+                        請先登入會員，再結帳
+                    </div>
+                <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
+            </div>
+            <div class=" d-md-flex justify-content-md-end">
+                <a href="shopping-cart-travellist-index.html" class="btn unique-nextbutton-yu">
+                    <button class=" unique-btn-yu  me-md-2" type="button">
+                        <p class="m-0 text-center">
+                            下一步
+                        </p>
+                    </button>
+                </a>
+            </div>
             </div>
         </div>
         <!-- 獨家商品訂單下一步之後的填寫資料 -->
     </section>
 
-
-
-
-
-
     <!-- ------------------手機 ------------------------>
     <section class=" d-block d-md-none">
+        <!-- 返回icon -->
         <div class="mdicon-back-yu">
             <img src="/imgs/icon/返回32x32.png" alt="">
         </div>
@@ -560,8 +556,8 @@
             <a href="#mduniqui-yu" data-toggle="tab" class="px-0 m-auto btn active"  role="button">獨家商品</a>
             <a href="#mdtravel-yu" data-toggle="tab" class=" px-0 m-auto btn"  role="button">旅遊行程</a>
         </div>
-        <!-- 購物車訂單的進度條progress-bar -->
-        <div class="container-fluid p-0">
+        <!-- 手機購物車訂單的進度條progress-bar -->
+        <div class=" p-0">
             <div class="mdprogress-bar-yu" >
                 <div class=" mdjustify-yu ">
                     <span class="mdcircle-yu ">
@@ -593,26 +589,134 @@
                     </span>
                 </div>
             </div>
+            <div class="cardcheckall-yu mx-3 row d-flex align-items-center">
+                <input type="checkbox" class="">
+                <h6 class="p-1 m-0">全選</h6>
+            </div>
         </div>
-        <!--  手機購物車商品清單卡片 -->
-        <div id="" class="container-fluid">
-            <div class="card-yu">
-                <div class="row flex-nowrap">
-                    <input type="checkbox" class="largerCheckbox-yu">
-                    <img src="imgs/購物車手機版-商品(測試用).png" alt="">
-                    <p>台北霞海城隍廟獨家聯名-七夕月老供品組...</p>
-                </div>
-                <div class="">
-                    <!-- <td><?= $v["uniquiname"] ?></td>
-                    <td class="price" data-val="<?= $v["price"] ?>"></td> -->
-                    <select class="form-select-yu" id="autosizing-yu"  >
+        <div id="mdmyTabContent-yu" class=" px-1 tab-content container">
+            <!--  手機購物車商品清單卡片 -->
+            <div id="mduniqui-yu" class=" container-fluid tab-pane in active">
+                <div class="card-yu row">
+                    <!-- flex-nowrap -->
+                    <div class=" d-flex px-1">
+                        <input type="checkbox" class="largerCheckbox-yu">
+                        <img class="" src="imgs/購物車手機版-商品(測試用 大).png" alt="">
+                    </div>
+                    <div class="px-1">
+                        <div class="mdcardlist-yu">
+                            <p class="m-0">台北霞海城隍廟獨家聯名-七夕月老供品組</p>
+                        </div>
+                        <select class="mdform-select-yu" id="autosizing-yu"  >
                             <option value="0">甜作之盒單入組</option>
                             <option value="1">甜作之盒&棉布御守單入組</option>
                             <option value="2">棉布御守</option>
-                    </select>
+                        </select>
+                        <!-- 單價 -->
+                        <h5>$707</h5>
+                        <!-- 數量 -->
+                        <form class="d-flex" id='myform' method='POST' action='#'>
+                            <label for=""> </label>
+                            <input type='button' value='-' class='qtyminus' field='quantity'/>
+                            <input type='text' name='quantity' value='0' class='qty-yu' />
+                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                        </form>
+                    </div>
+                </div>
+                <div class="card-yu row">
+                    <!-- flex-nowrap -->
+                    <div class=" d-flex px-1">
+                        <input type="checkbox" class="largerCheckbox-yu">
+                        <img class="" src="imgs/購物車手機版-商品(測試用 大).png" alt="">
+                    </div>
+                    <div class="px-1">
+                        <div class="mdcardlist-yu">
+                            <p class="m-0">台北霞海城隍廟獨家聯名-七夕月老供品組</p>
+                        </div>
+                        <select class="mdform-select-yu" id="autosizing-yu"  >
+                            <option value="0">甜作之盒單入組</option>
+                            <option value="1">甜作之盒&棉布御守單入組</option>
+                            <option value="2">棉布御守</option>
+                        </select>
+                        <!-- 單價 -->
+                        <h5>$707</h5>
+                        <!-- 數量 -->
+                        <form class="d-flex" id='myform' method='POST' action='#'>
+                            <label for=""> </label>
+                            <input type='button' value='-' class='qtyminus' field='quantity'/>
+                            <input type='text' name='quantity' value='0' class='qty-yu' />
+                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="text-center px-5">2 件商品合計 </h6>
+                    <h6 class="text-center px-5">總金額: <span>NT$1414</span> </h6>
+                </div>
+                <div>
+                    <!-- 如果使用者還未登入 -->
+                    <?php if(empty($_SESSION["user"])) : ?>  
+                        <!-- 跳出提示框提醒用戶先登入會員 -->
+                        <div class="alert alert-danger" role="alert">
+                            請先登入會員，再結帳
+                        </div>
+                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
+                </div>
+                <div class=" d-flex justify-content-center">
+                    <a href="shopping-cart-productdetails-index.html" class="btn mdunique-nextbutton-yu">
+                        <button class=" mdunique-btn-yu " type="button">
+                            <p class="m-0 text-center">
+                                下一步
+                            </p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <!--  手機購物車行程清單卡片 -->
+            <div id="mdtravel-yu" class="  container-fluid tab-pane fade ">
+                <div class="card-yu row">
+                    <!-- flex-nowrap -->
+                    <div class=" d-flex px-1">
+                        <input type="checkbox" class="largerCheckbox-yu">
+                        <img class="" src="imgs/購物車手機版-行程(測試用 大).png" alt="">
+                    </div>
+                    <div class="px-1">
+                        <div class="mdcardlist-yu">
+                            <p class="m-0">
+                                大稻埕霞海城廟深度漫步文化之旅
+                            </p>
+                        </div>
+                        <!-- 數量 -->
+                        <p>X1</p>
+                        <!-- 單價 -->
+                        <h5>$707</h5>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="text-center px-5">1件商品合計 </h6>
+                    <h6 class="text-center px-5">總金額: <span>NT$1500</span> </h6>
+                </div>
+                <div>
+                    <!-- 如果使用者還未登入 -->
+                    <?php if(empty($_SESSION["user"])) : ?>  
+                        <!-- 跳出提示框提醒用戶先登入會員 -->
+                        <div class="alert alert-danger" role="alert">
+                            請先登入會員，再結帳
+                        </div>
+                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
+                </div>
+                <div class=" d-flex justify-content-center">
+                    <a href="shopping-cart-productdetails-index.html" class="btn mdunique-nextbutton-yu">
+                        <button class=" mdunique-btn-yu " type="button">
+                            <p class="m-0 text-center">
+                                下一步
+                            </p>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
+        
     </section>
 
 
