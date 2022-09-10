@@ -308,6 +308,30 @@ color: var(--color-text100);
 .ban-card>p{
   color:var(--color-text87);
 }
+
+.scroll-snap_lb{
+        margin: 0 15px ;
+        display:flex;
+        overflow-x: auto;
+        scroll-padding:0 50%;
+        scroll-snap-type: x mandatory;     
+}
+/* 問子瑜 */
+.media-manufacture-card1{
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  /* scroll-snap-align: 滾動捕獲的對齊位置 */
+  display: inline-block;
+}
+.mb-ban-img-wrap{
+  width: 200px;
+}
+.mb-ban-card{
+  min-height: 400px;
+  border-radius: 10px;
+
+} 
+
 /* 還願 */
 .section4_lb{
   padding-top: 150px;
