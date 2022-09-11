@@ -6,20 +6,17 @@
     box-sizing: border-box;
 }
 
-.product_search {
+.travel_search{
     width: 100%;
     height: 530px;
     background: url(./imgs/product/search_main.png) center center / cover;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .search_bar {
-
     padding: 32px;
-
 }
 
 .search_bar h3 {
@@ -240,14 +237,17 @@
 
 /* ---------------------------------------------------------------- */
 
-.card {
+.card_row {
     border-radius: 8px;
-    
+    background-color: var(--color-lightcreamy);
+    overflow: hidden;
+
 }
-.p_img{
+.t_img{
     position: relative;
+    width: 350px;
 }
-.p_img:hover::after{
+.t_img:hover::after{
     content: "";
     display: block;
     width: 100%;
@@ -267,6 +267,7 @@
     box-sizing: border-box;
     padding: 8px;
     margin: 0 auto;
+
 }
 .icon_heart{
     position: absolute;
@@ -306,6 +307,10 @@
     align-items: center;
 }
 
+.row .price::after{
+    content:"/人";
+    font-size: 16px;
+}
 .row .price::before{
     content:"NT$ ";
 }
