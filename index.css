@@ -119,7 +119,7 @@
     transform: scale(0.8);
 }
 
-.js-type-writer {
+/* .js-type-writer {
     color: var(--color-text100);
     text-align: center;
 }
@@ -143,7 +143,7 @@
     50% {
         border-color: transparent;
     }
-}
+} */
 
 .outline-white {
     z-index: 5;
@@ -365,10 +365,11 @@
 
 .middleCat {
     top: 7%;
-    left: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     /* border: #ff5b00 1px solid; */
-    /* width: 500px; */
+    width: 500px;
     color: white;
     animation: leftCat 7s ease-in-out infinite;
 }
@@ -415,7 +416,7 @@
 /* ----------------------------- 還好崩潰的 section3 結束 ------------------------------- */
 
 .section4_ba {
-    height: 200vh;
+    height: 150vh;
     margin-top: 150px;
     color: white;
     overflow: hidden;
@@ -463,13 +464,13 @@
 }
 
 .cloud13 {
-    top: 10%;
+    top: 40%;
     left: -30%;
     animation: cloudA ease-in-out 10s infinite;
 }
 
 .cloud14 {
-    top: 12%;
+    top: 42%;
     left: 10%;
     animation: cloudB ease-in-out 7s infinite;
     filter: blur(3px);
@@ -491,11 +492,10 @@
 }
 
 .yusoulCat img {
-    left: -20%;
     transform: scale(0.8);
 }
 
 .yusoulCat {
-    left: -20%;
-    border: #ff5b00 1px solid;
+    top: 50%;
+    left: 5%;
 }
