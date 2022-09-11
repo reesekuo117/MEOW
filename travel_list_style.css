@@ -103,13 +103,10 @@
     display: flex;
     
 }
-
-.product_cate a {
-    text-decoration: none;
-    color: var(--color-text87);
+.travel_cate{
+    padding-bottom: 20px;
 }
-
-.product_cate:hover a {
+.form-check:hover{
     color: var(--color-orange);
 }
 .aside .col{
@@ -235,7 +232,7 @@
     pointer-events: auto;
 }
 
-/* ---------------------------------------------------------------- */
+/* -------------------------行程卡片-------------------------- */
 
 .card_row {
     border-radius: 8px;
@@ -265,17 +262,38 @@
 .card-body{
     position: relative;
     box-sizing: border-box;
-    padding: 8px;
+    padding: 40px;
     margin: 0 auto;
 
 }
+.card_title{
+    padding-bottom: 20px;
+}
+.card_title a{
+    text-decoration: none;
+}
+.card-text{
+    color: var(--color-text100);
+}
+.card_small{
+    margin-bottom: 20px;
+}
+.card_small small{
+    color: var(--color-text60);
+}
 .icon_heart{
     position: absolute;
-    right: 10px;
-    bottom: 105px;
+    right: 30px;
+    bottom: 215px;
     cursor: pointer;
-}
 
+}
+.icon_fivestar i{
+    color: var(--color-yellow);
+}
+.card-text span{
+    padding-left: 3px;
+}
 .color{
     stroke: #432A0F;
     fill: #CD562F;
@@ -306,26 +324,25 @@
     justify-content: space-between;
     align-items: center;
 }
-
-.row .price::after{
-    content:"/人";
-    font-size: 16px;
+.row .price{
+    justify-content: flex-end;
 }
 .row .price::before{
     content:"NT$ ";
 }
-.icon_star{
-    width: 20px;
-    margin: 0;
+.row .price::after{
+    content:"/人";
+    font-size: 16px;
 }
 .icon_fire{
     width: 18px;
     margin: 0;
 }
+
+/* -------------------上下頁按鈕------------------ */
 .pages{
     margin: 3rem;
 }
-
 .pages .row{
     justify-content: center;
 }
@@ -346,6 +363,8 @@
 .btn:focus, .btn:hover{
     border: 1px solid var(--color-text87);
 }
+
+/* -------------------收藏卻未登入視窗------------------ */
 .notlogin{
     margin: 0 auto;
 }
