@@ -133,10 +133,20 @@ select{
     border: 2px solid var(--color-text87);
 }
 /* 瀏覽其他商品 */
-.carousel {
-	margin: 30px auto 60px;
-	padding: 0 80px;
+.otherp{
+    margin: 50px 0;
+}
+.otherp .container{
     background-color: var(--color-lightcreamy);
+    padding-top: 24px;
+}
+.otherp a{
+    text-decoration: none;
+    color: var(--color-text87);
+}
+.carousel {
+	margin: 24px auto 24px;
+	padding: 0 80px;
 }
 .carousel .carousel-item {
 	text-align: center;
@@ -149,23 +159,13 @@ select{
 	max-width: 100%;
 	display: inline-block;
 }
-.carousel .carousel-item .btn {
-	border-radius: 0;
-	font-size: 12px;
-	text-transform: uppercase;
-	font-weight: bold;
-	border: none;
-	background: #a177ff;
-	padding: 6px 15px;
-	margin-top: 5px;
+.img-box{
+    position: relative;
 }
-.carousel .carousel-item .btn:hover {
-	background: #8c5bff;
-}
-.carousel .carousel-item .btn i {
-	font-size: 14px;
-	font-weight: bold;
-	margin-left: 5px;
+.icon_heart{
+    position: absolute;
+    right: 25px;
+    top: 115px;
 }
 .carousel .thumb-wrapper {
 	margin: 5px;
@@ -182,8 +182,7 @@ select{
 	width: 44px;
 	background: none;	
 	margin: auto 0;
-	border-radius: 50%;
-	border: 3px solid rgba(0, 0, 0, 0.8);
+
 }
 .carousel-control-prev i, .carousel-control-next i {
 	font-size: 36px;
@@ -220,4 +219,6 @@ select{
 .carousel-indicators li.active {	
 	background: #555;
 }
-
+.card_under h5::before{
+    content: "NT$";
+}
