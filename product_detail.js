@@ -28,3 +28,24 @@
             $('.img-demo img').attr('src', imgClickedSrc);
         })
 
+        // ----------------小換大結束-------------------
+
+        $(window).scroll(function () {
+            // console.log('second offsetTop:', $('.second-test > .second').offset().top);
+            // console.log('first scrollTop:', $('.second').scrollTop());
+            if ($(window).scrollTop() >= ($('.pd_head').offset().top - $('.undernav').height() * 1 / 3)) {
+                $('.undernav').css({
+                    transform: 'translateY(0px)',
+                    opacity: 1,
+                })
+        
+            }
+            else {
+                $('.undernav').css({
+                    transform: 'translateY(40px)',
+                    opacity: 0,
+                })
+            }
+        
+        })
+
