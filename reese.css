@@ -148,9 +148,8 @@ p {
     box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
 /* left-------------------------------------------------------------------- */
-.tab_list_re {
-    /* height: calc(100% - 134px); */
-    height: 866px;
+.testhight-re {
+    height: 468px;
 }
 .picturewarp-re {
     width: 250px;
@@ -441,15 +440,206 @@ p {
     border-bottom: 0.5px solid var(--color-text60);
 }
 .orderlist-re td {
-    padding: 15px 0;
+    padding: 12.8px 0;
+    /* border-top: 0.5px solid var(--color-text60); */
     border-bottom: 0.5px solid var(--color-text60);
 }
 .orderlist-re:hover {
     /* background-color: var(--color-lightcreamy); */
     background-color: rgba(229, 167, 42, 0.5);
 }
+.ordertitle-other2-re {
+    /* border-top: 0.5px solid var(--color-text60); */
+}
 .ordercross-re {
-    right: 35px;
+    width: 32px;
+    height: 32px;
+    right: 20px;
+    top: 170px;
+}
+.ordercross02-re {
+    width: 32px;
+    height: 32px;
+    right: 20px;
+    top: 170px;
+}
+.orderimgwarp-re {
+    width: 257px;
+    height: 160px;
+    overflow: hidden;
+}
+.productname-re {
+    width: 257px;
+    height: 70px;
+    /* word-wrap:break-word; */
+    white-space:pre-wrap;
+}
+.widht30-re {
+    width: 30%;
+}
+@media (max-width: 767px) {
+    .ordertitle-pic-re{
+        height: 160px;
+    }
+}
+@media (max-width: 767px) {
+    .ordertitle-name-re{
+        height: 70px;
+    }
+}
+@media (max-width: 767px) {
+    .ordertitle-other-re{
+        height: 50px;
+    }
+}
+@media (max-width: 767px) {
+    .orderlist-re td.ordertitle-other2-re{
+        height: 65px;
+        border-bottom: 0.5px solid transparent;
+    }
+}
+@media (min-width: 768px) {
+    .ordertitle-other2-re{
+        border-top: 0.5px solid var(--color-text60);
+    }
+}
+@media (max-width: 767px) {
+    .phonewidth250-re{
+    width: 240px;
+    /* margin: 0 auto; */
+    }
+}
+@media (min-width: 768px) {
+    .phonewidth250-re{
+    width: 100px;
+    }
+}
+/* 訂單--------------------------------------------------------- */
+.orderlisttable-re {
+    border-collapse:collapse;
+}
+thead tr th.thpadding-re {
+    padding: 11.6px 0;
+}
+.bgcolor-re {
+    background-color: var(--color-creamy);
+}
+@media only screen and (max-width: 768px) {
+    table.orderlisttable-re {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: block;
+        position: relative;
+    }
+    table.orderlisttable-re td:empty:before {
+        content: "\00a0";
+    }
+    table.orderlisttable-re th, table.responsive-table td {
+        margin: 0;
+        vertical-align: top;
+    }
+    table.orderlisttable-re th {
+        text-align: left;
+    }
+    table.orderlisttable-re thead {
+        display: block;
+        float: left;
+    }
+    table.orderlisttable-re thead tr {
+        display: block;
+    }
+    table.orderlisttable-re thead tr th::before {
+        content: "\00a0";
+    }
+    table.orderlisttable-re tbody {
+        display: block;
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    table.orderlisttable-re tbody tr {
+        display: inline-block;
+        vertical-align: top;
+    }
+    table.orderlisttable-re th {
+        display: block;
+        text-align: right;
+    }
+    table.orderlisttable-re td {
+        display: block;
+        /* min-height: 1.25em; */
+        text-align: left;
+    }
+    table.orderlisttable-re tr {
+        border-bottom: none;
+    }
+    table.orderlisttable-re thead {
+        border: 0;
+    }
+}
+/* 訂單明細----------------------------------------------- */
+table .inside-orderlisttable-re {
+    border-collapse:collapse;
+}
+
+@media only screen and (max-width: 768px) {
+    table.inside-orderlisttable-re {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: block;
+        position: relative;
+    }
+    table.inside-orderlisttable-re td:empty:before {
+        content: "\00a0";
+    }
+    table.inside-orderlisttable-re th, table.responsive-table td {
+        margin: 0;
+        vertical-align: top;
+    }
+    table.inside-orderlisttable-re th {
+        text-align: left;
+    }
+    table.inside-orderlisttable-re thead {
+        display: block;
+        float: left;
+    }
+    table.inside-orderlisttable-re thead tr {
+        display: block;
+    }
+    table.inside-orderlisttable-re thead tr th::before {
+        content: "\00a0";
+    }
+    table.inside-orderlisttable-re tbody {
+        display: block;
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    table.inside-orderlisttable-re tbody tr {
+        display: inline-block;
+        vertical-align: top;
+    }
+    table.inside-orderlisttable-re th {
+        display: block;
+        text-align: right;
+        /* padding: auto auto; */
+    }
+    table.inside-orderlisttable-re td {
+        display: block;
+        /* min-height: 1.25em; */
+        text-align: left;
+        padding: auto 10px;
+    }
+    table.inside-orderlisttable-re tr {
+        border-bottom: none;
+    }
+    table.inside-orderlisttable-re thead {
+        border: 0;
+    }
 }
 /* --------------------------------------------------------- */
 .price-re::before{
@@ -473,17 +663,39 @@ p {
     font-size: 16px;
     color: var(--color-text100);
 }
-.tag-re {
-    border: 2px solid var(--color-brown-dark);
-    border-radius: 14px;
-    height: 28px;
-    line-height: 24px;
-    /* background-color: transparent; */
-}
-#tag-re:active {
+/* tag------------------------------------------------------------- */
+#tagall-re input[type="checkbox"] {
+    display: none; }
+#tagall-re input:checked + .tagbutton-re {
     background-color: var(--color-yellow);
 }
-button.tag-re:focus {
-    box-shadow: none;
-    background-color: var(--color-lightcreamy);
+#tagall-re .tagbutton-re {
+    border: 2px solid var(--color-brown-dark);
+    border-radius: 14px;
+    padding: 4px;
+    line-height: 24px;
+    background-color: transparent;
+    scroll-snap-align: start;
+    cursor: pointer; 
+}
+.scroll-snap-re {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+/* 求籤------------------------------------------------------------- */
+.divination-re {
+    position: fixed;
+    right: 15%;
+    animation: meow-re 3s ease-in-out infinite;
+}
+@keyframes meow-re {
+    0%, 100% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: translateY(20px) rotate(0deg);
+    }
 }
