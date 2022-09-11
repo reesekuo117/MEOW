@@ -140,7 +140,7 @@ ul li {
 <div class="loginbg-re">
 <div class="container">
     <div class="row loginwarp-re justify-content-center" id="tab-demo">
-        <div class="loginimgwarp-re">
+        <div class="loginimgwarp-re d-none d-lg-block">
             <img src="./imgs/member/loginbg.jpg" alt="">
         </div>
         <div class="logincard-re">
@@ -155,7 +155,7 @@ ul li {
             </div>
             <div id="tab01" class="tab-inner formcard-re formBx">
                 <div class="form signin-form">
-                    <form class="m-0" method="post" onsubmit="checkForm();">
+                    <form class="m-0 mb-3" method="post" onsubmit="checkForm();">
                         <div class="mb-2">
                             <label for="account" class="form-label">信箱<span style="color:#963C38">*</span></label>
                             <input class="input-re noline" type="email" placeholder=" 請輸入信箱">

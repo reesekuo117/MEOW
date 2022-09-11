@@ -47,6 +47,7 @@
     --font-s-14: 14px;
 }
 
+
 :root {
     --color-orange: #cd562f;
     --color-yellow: #e5a62a;
@@ -59,7 +60,7 @@
     --color-brown: #AE5D29;
     --color-creamy: #F3E3D4;
     --color-lightcreamy: #FFF6E9;
-    --color-ivory: #FFFCF7;
+    --color-creamy-light: #FFFCF7;
     --color-brown-dark: rgb(67, 42, 15);
     --color-text100: rgb(67, 42, 15, 1);
     --color-text87: rgba(67, 42, 15, 0.87);
@@ -229,43 +230,50 @@ footer {
     animation: back-button-transform 3s ease-in-out infinite;
 }
 
-h1 {
+h1,
+.h1 {
     font-family: 'gensen-H';
     font-size: 40px;
     line-height: 125%;
 }
 
-h2 {
+h2,
+.h2 {
     font-family: 'gensen-B';
     font-size: 32px;
     line-height: 125%;
 }
 
-h3 {
+h3,
+.h3 {
     font-family: 'gensen-M';
     font-size: 28px;
     line-height: 125%;
 }
 
-h4 {
+h4,
+.h4 {
     font-family: 'gensen-M';
     font-size: 24px;
     line-height: 140%;
 }
 
-h5 {
+h5,
+.h5 {
     font-family: 'gensen-M';
     font-size: 20px;
     line-height: 140%;
 }
 
-h6 {
+h6,
+.h6 {
     font-family: 'gensen-M';
     font-size: 20px;
     line-height: 140%;
 }
 
-s {
+small,
+.small {
     font-family: 'gensen-R';
     font-size: 14px;
     line-height: 140%;
@@ -277,7 +285,8 @@ s {
     line-height: 140%;
 }
 
-p {
+p,
+.p {
     font-family: 'gensen-R';
     font-size: 16px;
     line-height: 140%;
@@ -300,14 +309,17 @@ p {
     font-size: 16px;
     line-height: 125%;
 }
+
 .btn-s:hover {
     background-color: var(--color-yellow);
     box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
+
 .btn-m:hover {
     background-color: var(--color-yellow);
     box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
+
 .btn-l:hover {
     background-color: var(--color-yellow);
     box-shadow: 2px 2px 0px var(--color-brown-dark);

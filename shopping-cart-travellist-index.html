@@ -353,18 +353,17 @@
                     </div>
                 </div>
             </section>
-            <!-- 收件人資料 -->
+            <!-- 旅客代表人資料 -->
             <section class="section-2-yu">
                 <div class="section-2-title-yu d-flex justify-content-between">
                     <h3 class="listinfo-title-yu m-0">
-                        收件人資料
+                        旅客代表人資料
                     </h3>
                     <label for="name" class="m-0">
                         <input type="checkbox"name="listinfo-title-radio-yu"id="btnAutoInput-yu"/>
                         同訂購人
                     </label>
                 </div>
-                <!-- 收件人填寫資料 -->
                 <div class="receiver-list-yu">
                     <div class="receiver-name-yu p-3">
                         <label for="name" class="">
@@ -382,7 +381,15 @@
                         <br />
                         <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"class=""id="usermobile-yu"name="mobile"required/>
                     </div>
-                    <div class="receiver-idnumber-yu receiver-email-yu p-3">
+                    <div class="receiver-idnumber-yu p-3">
+                        <label for="idnumber" class="">
+                            出生年月日
+                            <span style="color: #963c38">*</span>
+                        </label>
+                        <br/>
+                        <input class="" type="birthday" id="" name="birthday" placeholder="年/月/日" />
+                    </div>
+                    <div class="receiver-idnumber-yu p-3">
                         <label for="idnumber" class="">
                             身份證字號
                             <span style="color: #963c38">*</span>
@@ -406,7 +413,7 @@
                     <h3 class="listinfo-title-yu m-0">付款方式</h3>
                 </div>
                 <div class="p-3">
-                    <input type="radio" name="listinfo-title-radio-yu" id="" />
+                    <input type="checkbox" name="listinfo-title-checkbox-yu" id="" />
                     <label for="name" class="m-0"> 
                         信用卡 
                     </label>
@@ -448,7 +455,7 @@
                     </div>
                 </div>
                 <div class="p-3">
-                    <input type="radio" name="listinfo-title-radio-yu" id="" />
+                    <input type="checkbox" name="listinfo-title-checkbox-yu" id="" />
                     <label for="name" class="m-0"> ATM轉帳 </label>
                 </div>
             </section>
@@ -468,10 +475,6 @@
 
     <!-- ------------------手機 ------------------------>
     <section class=" d-block d-md-none">
-        <!-- 返回icon -->
-        <div class="mdicon-back-yu">
-            <img src="/imgs/icon/返回32x32.png" alt="">
-        </div>
         <!-- 購物車訂單的進度條progress-bar -->
         <div class=" p-0">
             <div class="mdprogress-bar-yu" >
@@ -509,19 +512,19 @@
         <!-- 訂單明細 -->
         <div id="myTabContent-yu" class="container">
             <!-- 訂單明細 -->
-            <div class="listinfo-yu">
+            <div class="mdlistinfo-yu">
                 <main class="section-0-yu">
-                    <h3 class="listinfo-title-yu m-0">
+                    <h6 class="listinfo-title-yu m-0">
                         訂單明細
-                    </h3>
-                    <h6 class="listinfo-number-yu">
+                    </h6>
+                    <h6 class="listinfo-number-yu ">
                     訂單編號: <span>M20221234567</span>
                     </h6>
                     
                     <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
-                                <h6 class="panel-title-yu">
+                                <h6 class="mdpanel-title-yu">
                                     <aclass="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
                                     訂單明細
                                         <svg width="24" height="24" viewBox="0 0 24 24"fill="none"xmlns="http://www.w3.org/2000/svg">
@@ -532,11 +535,10 @@
                             </div>
                             <div id="listinfo-details-yu" class="collapse show panel-collapse collapse-yu">
                                 <div class="panel-body-yu">
-                                    <div class="px-0 col-auto justify-content-around text-center">
-                                        <div class="card-yu row">
+                                    <div class="">
+                                        <div class="card-yu d-flex px-1 py-3">
                                             <!-- flex-nowrap -->
-                                            <div class=" d-flex px-1">
-                                                <input type="checkbox" class="largerCheckbox-yu">
+                                            <div class="  px-1">
                                                 <img class="" src="imgs/購物車手機版-行程(測試用 大).png" alt="">
                                             </div>
                                             <div class="px-1">
@@ -548,7 +550,7 @@
                                                 <!-- 數量 -->
                                                 <p>X1</p>
                                                 <!-- 單價 -->
-                                                <h5>$707</h5>
+                                                <p>NT$1500</p>
                                             </div>
                                         </div>
                                     </div>
@@ -557,78 +559,84 @@
                         </div>
                     </div>
                 </main>
-                <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
-                    <h6 id="total-price-yu" class="price-uniqui-yu">
-                        訂單金額: NT$1500
+            </div>
+            <!-- 結帳明細 -->
+            <div class="mdsection-1-yu">
+                <main class="">
+                    <h6 class="listinfo-title-yu m-0">
+                        結帳明細
                     </h6>
-                    <h6 id="total-price"></h6>
-                        
-                </div>
+                    <h6 class="listinfo-number-yu d-flex justify-content-between">
+                        總金額: <span>NT$1500</span>
+                    </h6>
+                </main>
             </div>
             <!-- 訂購人資料 -->
-            <section class="section-1-yu">
-                <div class="section-1-title-yu">
-                    <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
-                </div>
+            <section class="mdsection-2-yu">
+                <h6 class="listinfo-title-yu m-0">
+                    訂購人資料
+                </h6>
                 <!-- 訂購人填寫資料 -->
-                <div class="order-list-yu">
+                <div class="mdorder-list-yu">
                     <div class="order-name-yu p-3">
                         <label for="name" class="">
                             姓名
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="ordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="nameYU"required/>
+                        <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="nameYU"required/>
                     </div>
-                    <div class="order-phone-yu p-3">
+                    <div class="mdorder-phone-yu p-3">
                         <label for="mobile" class="">
                             聯絡電話
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="orderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"required/>
+                        <input class="orderaddress3-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"required/>
                     </div>
-                    <div class="order-address-yu p-3">
+                    <div class="mdorder-address-yu p-3">
                         <label for="address" class="">
                             地址
                             <span style="color: #963c38">*</span>
                         </label>
                         <br />
-                        <div class="d-flex align-items-center">
-                            <div class="form-group m-0">
-                                <select class="orderaddress1-yu"name="city"id="city-yu"required>
-                                    <option class="" value="0">臺北市</option>
-                                    <option value="1">新北市</option>
-                                    <option value="2">基隆市</option>
-                                    <option value="3">宜蘭縣</option>
-                                    <option value="4">桃園市</option>
-                                    <option value="5">新竹市</option>
-                                    <option value="6">新竹縣</option>
-                                    <option value="7">苗栗縣</option>
-                                    <option value="8">彰化縣</option>
-                                    <option value="9">臺中市</option>
-                                    <option value="10">南投縣</option>
-                                    <option value="11">雲林縣</option>
-                                    <option value="12">嘉義市</option>
-                                    <option value="13">嘉義縣</option>
-                                    <option value="14">臺南市</option>
-                                    <option value="15">高雄市</option>
-                                    <option value="16">屏東縣</option>
-                                    <option value="17">花蓮縣</option>
-                                    <option value="18">臺東縣</option>
-                                </select>
+                        <div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="form-group mdorderaddress1-yu">
+                                    <select class=""name="city"id="city-yu"required>
+                                        <option class="" value="0">臺北市</option>
+                                        <option value="1">新北市</option>
+                                        <option value="2">基隆市</option>
+                                        <option value="3">宜蘭縣</option>
+                                        <option value="4">桃園市</option>
+                                        <option value="5">新竹市</option>
+                                        <option value="6">新竹縣</option>
+                                        <option value="7">苗栗縣</option>
+                                        <option value="8">彰化縣</option>
+                                        <option value="9">臺中市</option>
+                                        <option value="10">南投縣</option>
+                                        <option value="11">雲林縣</option>
+                                        <option value="12">嘉義市</option>
+                                        <option value="13">嘉義縣</option>
+                                        <option value="14">臺南市</option>
+                                        <option value="15">高雄市</option>
+                                        <option value="16">屏東縣</option>
+                                        <option value="17">花蓮縣</option>
+                                        <option value="18">臺東縣</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mdorderaddress2-yu">
+                                    <select class=""name="district"id="district">
+                                        <option class="" value="0">中正區</option>
+                                        <option value="1">板橋區</option>
+                                        <option value="2">仁愛區</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-group m-0">
-                                <select class="orderaddress2-yu"name="district"id="district">
-                                    <option class="" value="0">中正區</option>
-                                    <option value="1">板橋區</option>
-                                    <option value="2">仁愛區</option>
-                                </select>
-                            </div>
-                            <input class="orderaddress3-yu" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="address"/>
+                            <input class="mdorderaddress3-yu mt-3" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="address"/>
                         </div>
                     </div>
-                    <div class="order-email-yu p-3">
+                    <div class="mdorder-email-yu p-3">
                         <label for="email" class=""
                             >Email<span style="color: #963c38">*</span>
                         </label>
@@ -637,73 +645,193 @@
                     </div>
                 </div>
             </section>
-            <!-- 收件人資料 -->
-            <section class="section-2-yu">
-                <div class="section-2-title-yu d-flex justify-content-between">
-                    <h3 class="listinfo-title-yu m-0">
-                        收件人資料
-                    </h3>
-                    <label for="name" class="m-0">
-                        <input type="checkbox"name="listinfo-title-radio-yu"id="btnAutoInput-yu"/>
-                        同訂購人
-                    </label>
-                </div>
-                <!-- 收件人填寫資料 -->
-                <div class="receiver-list-yu">
-                    <div class="receiver-name-yu p-3">
+            <!-- 旅客代表人資料 -->
+            <section class="mdsection-3-yu">
+                    <div class="mdsection-2-title-yu d-flex justify-content-between">
+                        <h6 class="listinfo-title-yu m-0">
+                            旅客代表人資料
+                        </h6>
+                        <label for="name" class="m-0">
+                            <input   type="checkbox"name="listinfo-title-radio-yu"id="btnAutoInput-yu"/>
+                            同訂購人
+                        </label>
+                    </div>
+                <!-- 訂購人填寫資料 -->
+                <div class="mdorder-list-yu">
+                    <div class="order-name-yu p-3">
                         <label for="name" class="">
                             姓名
                             <span style="color: #963c38">*</span>
                         </label>
-                        <br />
-                        <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="name"required/>
+                        <br/>
+                        <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="nameYU"required/>
                     </div>
-                    <div class="receiver-phone-yu p-3">
+                    <div class="mdorder-phone-yu p-3">
                         <label for="mobile" class="">
                             聯絡電話
                             <span style="color: #963c38">*</span>
                         </label>
+                        <br/>
+                        <input class="mdorderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"required/>
+                    </div>
+                    <div class="mdorder-birthday-yu p-3">
+                        <label  for="birthday" class="">
+                            出生年月日
+                            <span style="color: #963c38">*</span>
+                        </label>
+                        <br/>
+                        <input class="receiver-idnumber-yu"type="birthday"placeholder="年/月/日 "class=""id="birthday-yu"name="birthday"required/>
+                    </div>
+                    <div class="mdorder-phone-yu p-3">
+                        <label for="birthday" class="">
+                            身分證字號
+                            <span style="color: #963c38">*</span>
+                        </label>
+                        <br/>
+                        <input class=""type="text"placeholder="年/月/日 "class=""id=""name=""required/>
+                    </div>
+                    <div class="mdorder-email-yu p-3">
+                        <label for="email" class=""
+                            >Email<span style="color: #963c38">*</span>
+                        </label>
                         <br />
-                        <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"class=""id="usermobile-yu"name="mobile"required/>
-                    </div>
-                    <div class="receiver-idnumber-yu receiver-email-yu p-3">
-                        <label for="idnumber" class="">
-                            身份證字號
-                            <span style="color: #963c38">*</span>
-                        </label>
-                        <br/>
-                        <input class="" type="text" class="" id="userid-yu" name="idnumber" />
-                    </div>
-                    <div class="receiver-email-yu p-3">
-                        <label for="email" class="">
-                            Email
-                            <span style="color: #963c38">*</span>
-                        </label>
-                        <br/>
-                        <input class="" type="text" class="" id="useremail-yu" name="email" />
+                        <input class="" type="text" class="" id="email-yu" name="email" />
                     </div>
                 </div>
             </section>
             <!-- 付款方式 -->
-            <section class="section-3-yu">
-                <div class="section-3-title-yu">
-                    <h3 class="listinfo-title-yu m-0">付款方式</h3>
+            <section class="mdsection-4-yu">
+                <div class="">
+                    <h6 class="listinfo-title-yu m-0">付款方式</h6>
                 </div>
                 <div class="p-3">
-                    <input type="radio" name="listinfo-title-radio-yu" id="" />
+                    <input type="checkbox" name="listinfo-title-checkbox-yu" id="" />
                     <label for="name" class="m-0"> 
-                        信用卡 
+                        信用卡付款 
                     </label>
-                </div>
-                <div class="p-3">
-                    <input type="radio" name="listinfo-title-radio-yu" id="" />
-                    <label for="name" class="m-0"> ATM轉帳 </label>
+                    <div class="mdditcard-numberinput-yu">
+                        <label class="pt-4 m-0"  for="">
+                            信用卡卡號
+                        </label>
+                        <br>
+                        <div class=" mdcreditcard-number-yu d-flex justify-content-center align-items-center "> 
+                            <div class=" mdcreditcard-number-backgroundcolor-yu ">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                        </div>
+                        <div class="mdcreditcard-numberbox "></div>
+                    </div>
+                    <div class="pt-5 mdditcard-numberinput-yu">
+                        <label class=" m-0"  for="">
+                            有效 / 年月
+                        </label>
+                        <br>
+                        <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
+                            <div class=" mdcreditcard-number-backgroundcolor-yu ">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor1-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor2-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                        </div>
+                        <div class="mdcreditcard2-numberbox "></div>
+                    </div>
+                    <div class="pt-5 mdditcard-numberinput-yu">
+                        <label class="m-0"  for="">
+                            背面末三碼
+                        </label>
+                        <br>
+                        <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
+                            <div class=" mdcreditcard-number-backgroundcolor-yu ">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor1-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor2-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor3-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="000 ">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <div class=" d-md-flex justify-content-md-end">
+            <div class="">
+                <!-- 訂單明細 -->
+                <div class="mdlistinfo-yu">
+                    <main class="section-0-yu">
+                        <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="listinfo-title-yu  panel-heading" role="tab" id="headingOne">
+                                    <h6 class="mdpanel-title-yu p-0 m-0">
+                                        <a class="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
+                                        訂單明細
+                                            <svg width="24" height="24" viewBox="0 0 24 24"fill="none"xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9"stroke="#432A0F"stroke-opacity="0.6"stroke-width="2"stroke-linecap="round"/>
+                                            </svg>
+                                        </a>
+                                    </h6>
+                                </div>
+                                <div id="listinfo-details-yu" class="collapse show panel-collapse collapse-yu">
+                                    <div class="panel-body-yu">
+                                        <div class="">
+                                            <div class="card-yu d-flex px-1 py-3">
+                                                <!-- flex-nowrap -->
+                                                <div class="  px-1">
+                                                    <img class="" src="imgs/購物車手機版-行程(測試用 大).png" alt="">
+                                                </div>
+                                                <div class="px-1">
+                                                    <div class="mdcardlist-yu">
+                                                        <p class="m-0">
+                                                            大稻埕霞海城廟深度漫步文化之旅
+                                                        </p>
+                                                    </div>
+                                                    <!-- 數量 -->
+                                                    <p>X1</p>
+                                                    <!-- 單價 -->
+                                                    <p>NT$1500</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+                <!-- 結帳明細 -->
+                <div class="mdsection-1-yu mb-4">
+                    <main class="">
+                        <h6 class="listinfo-title-yu m-0">
+                            結帳明細
+                        </h6>
+                        <h6 class="listinfo-number-yu d-flex justify-content-between">
+                            總金額: <span>NT$1500</span>
+                        </h6>
+                    </main>
+                </div>
+            </div>
+            <div class=" d-flex justify-content-center">
                 <!-- a href="#buy1.php" -->
-                <a href="http://127.0.0.1:5500/shopping-cart-creditcard-travel.html" class="btn unique-nextbutton-yu">
-                    <button class=" unique-btn-yu  me-md-2" type="button">
+                <a href="http://127.0.0.1:5500/shopping-cart-creditcard-travel.html" class="btn mdunique-nextbutton-yu">
+                    <button class=" mdunique-btn-yu  me-md-2" type="button">
                         <p class="m-0 text-center">
                             前往付款
                         </p>
@@ -712,20 +840,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

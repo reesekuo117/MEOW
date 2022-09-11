@@ -348,6 +348,11 @@
     position: relative;
     
 }
+.alert_title{
+    position: absolute;
+    left: 230px;
+    bottom: 180px;
+}
 .alert .btn_ok{
     position: absolute;
     left: 300px;

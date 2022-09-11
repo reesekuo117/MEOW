@@ -77,20 +77,98 @@
     color: #432A0F;
 }
 
-/* ---------表單的寬度------(每一個表單都要用) */
+
+/* --------手機返回健icon -------------*/
+.mdicon-back-yu{
+    margin: 12px;
+}
+/* 手機progress-bar-yu */
+.mdprogress-bar-yu{
+    margin:28px 0;
+    font-size: var(--font-h5-20)
+}
+.mdjustify-yu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* 購物車訂單桌機的進度條circle */
+.circle-1-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-2-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-3-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+
+/* 手機 circlemd-1 2 3-yu */
+.mdcircle-1-yu , .mdcircle-2-yu , .mdcircle-3-yu{
+    margin: auto 0;
+}  
+
+
+
+
+
+/* ---------桌機表單的寬度------(每一個表單都要用) */
 #myTabContent-yu {
     max-width: 1450px;
 }
-/* ----------------訂單明細 --------------*/
+/* ----------------桌機訂單明細 --------------*/
 .listinfo-yu{
     background-color: #FFFCF7;
 }
+
+/*-----手機訂單明細 ------  */
+.mdlistinfo-yu{
+    background-color: #FFFCF7;
+    margin-bottom:20px;
+}
+/* ---------手機卡片外觀 ------*/
+.card-yu , .largerCheckbox-yu{
+    align-items: flex-start;
+}
+.largerCheckbox-yu{
+    margin-right: 4px;
+}
+.mdcardlist-yu{
+    overflow: hidden;
+    /* border: 1px solid #000; */
+    width: 190px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+/* ------------桌機訂單明細 ------------ */
 .section-2-title-yu{
     background-color: var(--color-creamy);
 }
 .section-2-title-yu label{
     padding: 16px 0 0 0 ;
 }
+
+
+/*------- 手機同訂購人 ------------*/
+.mdsection-2-title-yu{
+    background-color: var(--color-creamy);
+}
+.mdsection-2-title-yu label{
+    padding: 16px 16px 0 0 ;
+}
+
+
+
+/* ˋ桌機 */
 .listinfo-title-yu{
     background-color: var(--color-creamy);
     padding: 12px 12px;
@@ -108,6 +186,22 @@
     padding: 24px 12px;
     margin: 0;
 }
+
+
+
+/* 手機結帳明細 */
+.mdsection-1-yu{
+    background-color: #FFFCF7;
+    margin-bottom: 20px;
+}
+
+/* 手機mdlistinfo-number-yu */
+.mdlistinfo-number-yu{
+    color: #432A0F;
+    padding: 8px 12px;
+    margin: 0;
+}
+
 .listinfo-number-yu span {
     font-family: 'gensen-R';
     font-size: 20px;
@@ -118,7 +212,7 @@
     margin: 0;
     padding: 0  12px 12px 12px;
 }
-/* ----------下拉詳細訂單明細---------- */
+/* ----------桌機下拉詳細訂單明細---------- */
 .panel-title-yu{
     cursor: pointer;
     padding: 0 0 12px 12px;
@@ -144,7 +238,24 @@
 .listinfo-detalis-title-yu svg{
     padding-bottom: 4px;
 }
-/* ---------下拉詳細訂單表格樣式---------- */
+
+/* ----------手機下拉詳細訂單明細---------- */
+.mdpanel-title-yu{
+    cursor: pointer;
+    padding: 0 0 12px 12px;
+}
+.mdpanel-title-yu a{
+    text-decoration: none;
+    color: #432A0F;
+}
+
+
+
+
+
+
+
+/* ---------桌機下拉詳細訂單表格樣式---------- */
 .panel-body-yu{
     padding: 0;
 }
@@ -172,7 +283,7 @@
     border: none;
 
 }
-/* ----- 下拉詳細訂單表格總價---------*/
+/* ----- 桌機下拉詳細訂單表格總價---------*/
 .listinfo-details-totalprice-yu{
     padding-top: 0;
     display: flex;
@@ -221,12 +332,53 @@
     width: 520px;
 }
 
+/* ------手機訂購人填寫資料------ */
+.mdorder-list-yu input , .form-group select{
+    border-radius: 8px;
+    border: 2px solid #432A0F;
+    height: 48px;
+    width: 100%;
+}
+.mdorder-list-yu input.mdordername-yu , input.mdorderphone-yu{
+    width: 100%;
+    height: 48px;
+}
+.mdorder-list-yu .mdorderaddress1-yu {
+    width: 100%;
+    height: 48px;
+    padding: 0 4px 0 0;
+    text-align: center;
+}
+.mdorder-list-yu .mdorderaddress2-yu{
+    width: 100%;
+    height: 48px;
+    padding: 0 0 0 4px;
+    text-align: center;
+}
+.mdorder-list-yu .mdorderaddress3-yu{
+    width: 100%;
+    height: 48px;
+    margin:0 12px 0 0px;
+}
+.mdorder-email-yu input{
+    width: 100%;
+}
+
+
+/* ----md訂購人填寫資料section----- */
+.mdsection-2-yu{
+    background-color: #FFFCF7;
+    margin-bottom: 20px;
+}
+
+
+
 /* ----收件人資料section----- */
 .section-2-yu{
     background-color: #FFFCF7;
     margin-bottom: 60px;
 }
-/* ------收件人填寫資料------ */
+/* ------桌機收件人填寫資料 宅配 超取btn------ */
 .receiver-list-yu input , .form-group select{
     border-radius: 8px;
     border: 2px solid #432A0F;
@@ -242,7 +394,7 @@
     color: #432A0F;
     border:  2px solid #432A0F;
     height: 52px;
-    width: 104px;
+    width: 8%;
     outline: none;
     box-shadow: none;
 }
@@ -266,6 +418,37 @@
     background-color: #E5A62A;
     color: #fff;
 }
+
+/* ------手機收件人填寫資料 宅配 超取btn------ */
+
+.mdreceiver-deliverbtn1-yu , .mdreceiver-deliverbtn2-yu {
+    margin:0 12px 0 0px;
+    border-radius: 8px;
+    color: #432A0F;
+    border:  2px solid #432A0F;
+    height: 52px;
+    width: 40%;
+    outline: none;
+    box-shadow: none;
+}
+.mdreceiver-deliverbtn1-yu:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: #E5A62A;
+    color: #fff;
+}
+.mdreceiver-deliverbtn2-yu:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: #E5A62A;
+    color: #fff;
+}
+
+
+
+
+
+
 
 
 .unique-nextbutton-yu .unique-btn-yu:hover{
@@ -293,11 +476,66 @@
     margin:0 12px 0 0px;
 }
 
+/*----------------- 桌機付款方式----------- */
 .section-3-yu{
     background-color: #FFFCF7;
-    
     margin-bottom: 60px;
 }
+
+/* ---手機付款方式mdsection-3-yu------- */
+.mdsection-3-yu{
+    background-color: #FFFCF7;
+    margin-bottom: 20px;
+}
+
+/* -------手機付款方式mdsection-4-yu ------------*/
+.mdsection-4-yu{
+    background-color: #FFFCF7;
+    /* background-color: #ae7512; */
+    margin-bottom: 20px;
+    height: 100%;
+}
+.mdcreditcard-numberbox{
+    width: 80%;
+    border-bottom: 2px solid #432A0F ;
+    margin: -24px auto;
+    background-color: #FFFCF7;
+}
+.mdsection-4-yu .mdcreditcard-number-yu input{
+    border-radius: 8px;
+    border: 2px solid #432A0F;
+    height: 48px;
+    width: 100%;
+}
+.mdcreditcard-number-yu .mdcreditcard-number-backgroundcolor-yu{
+    margin: 0 4px;
+    padding: 0 4px;
+    background-color:  #FFFCF7 ;
+}
+
+.mdcreditcard-number-backgroundcolor1-yu , .mdcreditcard-number-backgroundcolor2-yu , .mdcreditcard-number-backgroundcolor3-yu {
+    opacity: 0;
+}
+.mdcreditcard2-numberbox{
+    width: 50%;
+    border-bottom: 2px solid #432A0F ;
+    margin: -24px 6px;
+    background-color: #FFFCF7;
+}
+.mdditcard-numberinput-yu{
+    margin-top: 8px;
+}
+
+/* --------手機atm匯款的字體------- */
+.fontweight-yu p{
+    font-family: 'gensen-M';
+    font-size: 16px;
+    line-height: 140%;
+}
+
+
+
+
 
 
 /* 信用卡樣式 */
@@ -494,6 +732,36 @@ h6 {
     box-shadow:none;
 }
 .unique-btn-yu:focus  {
+    box-shadow:none;
+    background-color: #E5A62A;
+}
+
+
+
+/*------------ 手機前往付款按鈕 -------------*/
+.mdunique-btn-yu{
+    cursor: pointer;
+}
+.mdunique-nextbutton-yu .mdunique-btn-yu{
+    /* border: 1px solid #432A0F; */
+    margin: 20px;
+    background-color: #E5A62A;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 125%;
+    width: 275px;
+    height: 41px;
+    border-radius: 8px;
+    box-shadow:none;
+}
+.mdunique-btn-yu:active {
+    /* background-color: #E5A62A;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 125%; */
+    box-shadow:none;
+}
+.mdunique-btn-yu:focus  {
     box-shadow:none;
     background-color: #E5A62A;
 }

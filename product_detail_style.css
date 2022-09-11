@@ -1,7 +1,7 @@
 html{
     scroll-behavior: smooth;
 }
-.pb_head{
+.pd_head{
     margin: 80px;
 }
 /* 大換小 */
@@ -56,12 +56,42 @@ select{
     color: var(--color-text87);
     text-align: center;
     border-radius: 8px;
-    background-color: var(--color-lightcreamy);
+    background-color: var(--color-creamy-light);
     border: 2px solid var(--color-text87);
 }
-
-
-
+/* 小換大和商品標題結束 */
+.undernav{
+    width: 100%;
+    background-color: var(--color-lightcreamy);
+    /* margin: 16px 0; */
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+    z-index: 2;
+    transition: .5s;
+}
+.left_title h2::before{
+    content: "NT$";
+}
+.undernav{
+    padding: 20px 0; 
+}
+.left_title h2{
+    margin-bottom: 0;
+}
+.undernav .btns button{
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid var(--color-text87);
+}
+.btns .favorite{
+    background-color: var(--color-creamy-light);
+}
+.btns .buy{
+    margin: 0;
+}
+/* -----------------------下方列結束-------------------- */
 .links{
     flex-direction: column;
     position: sticky;
@@ -77,7 +107,7 @@ select{
 }
 .intro_bg {
     margin: 24px auto;
-    background-color: var(--color-lightcreamy);
+    background-color: var(--color-creamy-light);
     padding: 24px;
 }
 .intro_bg h5{
@@ -99,50 +129,96 @@ select{
 #intro p{
     padding-top: 16px;
 }
-
-/* 瀏覽其他商品 */
+/* -----------------------商品介紹結束-------------------- */
+#comment .row{
+    padding: 8px;
+}
+.c_star{
+    padding: 8px 0;
+}
+.c_star h3{
+    padding: 16px 25px;
+    background-color: var(--color-yellow);
+    border-radius: 8px;
+}
+.cd{
+    margin-top: 12px;
+    border-bottom: 1px solid var(--color-text60);
+}
+.profile_img{
+    width: 100px;
+    margin: 0 auto;
+}
+.name{
+    margin: 0px;
+}
+.c_tags{
+    margin: 8px 0;
+}
+.tags{
+    margin: 0 4px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: 2px solid var(--color-text87);
+}
+/* -----------------------評價結束-------------------- */
+.otherp{
+    margin: 50px 0;
+}
+.otherp h4{
+    color: var(--color-text87);
+}
+.otherp .container{
+    background-color: var(--color-creamy-light);
+    padding-top: 24px;
+}
+.otherp a{
+    text-decoration: none;
+    color: var(--color-text87);
+}
 .carousel {
-	margin: 30px auto 60px;
+	margin: 24px auto 24px;
 	padding: 0 80px;
-    background-color: var(--color-lightcreamy);
 }
 .carousel .carousel-item {
 	text-align: center;
 	overflow: hidden;
 }
-.carousel .carousel-item h4 {
-	font-family: 'Varela Round', sans-serif;
-}
+
 .carousel .carousel-item img {
 	max-width: 100%;
 	display: inline-block;
 }
-.carousel .carousel-item .btn {
-	border-radius: 0;
-	font-size: 12px;
-	text-transform: uppercase;
-	font-weight: bold;
-	border: none;
-	background: #a177ff;
-	padding: 6px 15px;
-	margin-top: 5px;
+.img-box{
+    position: relative;
 }
-.carousel .carousel-item .btn:hover {
-	background: #8c5bff;
+.img-box:hover::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 45, 45, 0.176);
+    position: absolute;
+    bottom: 0;
+    /* 直接在div下陰影 */
 }
-.carousel .carousel-item .btn i {
-	font-size: 14px;
-	font-weight: bold;
-	margin-left: 5px;
+.carousel .icon_heart{
+    position: absolute;
+    right: 25px;
+    top: 115px;
 }
+
 .carousel .thumb-wrapper {
 	margin: 5px;
 	text-align: left;
 	background: #fff;
-	box-shadow: 0px 2px 2px rgba(0,0,0,0.1);   
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.1); 
+    border-radius: 8px;
+    overflow: hidden;
 }
 .carousel .thumb-content {
-	padding: 15px;
+	padding: 10px;
 	font-size: 13px;
 }
 .carousel-control-prev, .carousel-control-next {
@@ -150,8 +226,7 @@ select{
 	width: 44px;
 	background: none;	
 	margin: auto 0;
-	border-radius: 50%;
-	border: 3px solid rgba(0, 0, 0, 0.8);
+
 }
 .carousel-control-prev i, .carousel-control-next i {
 	font-size: 36px;
@@ -159,7 +234,7 @@ select{
 	top: 50%;
 	display: inline-block;
 	margin: -19px 0 0 0;
-	z-index: 5;
+	z-index: 1;
 	left: 0;
 	right: 0;
 	color: rgba(0, 0, 0, 0.8);
@@ -187,4 +262,14 @@ select{
 }
 .carousel-indicators li.active {	
 	background: #555;
+}
+.card_under h5::before{
+    content: "NT$";
+}
+.card_under small{
+    color: var(--color-text38);
+}
+.back-button{
+    bottom: 40px;
+    z-index: 2;
 }

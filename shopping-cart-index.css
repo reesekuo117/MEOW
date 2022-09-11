@@ -21,8 +21,7 @@
 
 /* 手機progress-bar-yu */
 .mdprogress-bar-yu{
-    margin-top: 12px;
-    margin-bottom: 40px;
+    margin: 28px 0;
     font-size: var(--font-h5-20)
 }
 .mdjustify-yu{

@@ -1,0 +1,372 @@
+/* *{
+    outline: 1px solid #432A0F;
+} */
+.row {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.travel_search{
+    width: 100%;
+    height: 530px;
+    background: url(./imgs/product/search_main.png) center center / cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_bar {
+    padding: 32px;
+}
+
+.search_bar h3 {
+    color: white;
+    text-align: center;
+}
+
+.search_btn {
+    margin: 0 auto;
+    text-align: right;
+}
+.search_btn button{
+    color: #fff;
+}
+.search_btn button:hover{
+    color: var(--color-text87);
+}
+
+/* input{
+    border-radius: 8px;
+    margin: 0 0 8px;
+} */
+.container-1 {
+    width: 250px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+.container-1 input#search {
+    width: 250px;
+    height: 40px;
+    background: white;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #432A0F;
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 8px;
+}
+
+.container-1 .icon {
+    position: absolute;
+    top: 50%;
+    margin-left: 20px;
+    margin-top: 17px;
+    z-index: 1;
+    color: #432A0F;
+}
+
+.btn {
+    color: white;
+}
+
+.search_btn button {
+    border-radius: 30px;
+    border: 1px solid #432A0F;
+    background-color: #E5A62A;
+    padding: 4px 16px;
+}
+
+/* -----------------------------搜尋結束-------------------------------- */
+.sort {
+    margin: 30px;
+}
+
+.product_sort a {
+    /* padding: 8px; */
+    margin: 8px;
+    text-decoration: none;
+    color: var(--color-text60);
+}
+.product_sort a:hover {
+    color: var(--color-text87);
+}
+.product_sort a:focus {
+    color: var(--color-text87);
+}
+
+.product_section {
+    display: flex;
+    
+}
+
+.product_cate a {
+    text-decoration: none;
+    color: var(--color-text87);
+}
+
+.product_cate:hover a {
+    color: var(--color-orange);
+}
+.aside .col{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 10%;
+}
+/* -----------------------------價格篩選----------------------------- */
+.filter-content__element {
+    width: 100%;
+    padding: 60px 0 0;
+
+}
+
+.filter-content__element h5 {
+    font-size: 20px;
+    color: var(--color-text87);
+}
+
+.filter-element-content .filter-range-values {
+    width: 100%;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--color-red);
+}
+
+.filter-element-content .filter-range-values .range-1-value,
+.filter-element-content .filter-range-values .range-2-value {
+    position: absolute;
+    top: 0;
+}
+
+.filter-element-content .filter-range-values .range-1-value {
+    left: 0;
+}
+
+.filter-element-content .filter-range-values .range-2-value {
+    right: 0;
+}
+
+.filter-element-content .filter-range-content {
+    position: relative;
+    width: 100%;
+}
+
+.filter-element-content .filter-range-content input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.filter-element-content .filter-range-content .filter-range-1 {
+    left: -2px;
+}
+
+.filter-element-content .filter-range-content .filter-range-track {
+    width: 100%;
+    height: 2px;
+    background: var(--color-orange);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 1px;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-moz-range-track {
+    -moz-appearance: none;
+    height: 1px;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-ms-track {
+    appearance: none;
+    height: 1px;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border: 2px solid var(--color-orange);
+    background: var(--color-orange);
+    border-radius: 50%;
+    pointer-events: auto;
+    margin-top: -7.5px;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: var(--color-orange);
+    pointer-events: auto;
+}
+
+.filter-element-content .filter-range-content input[type="range"]::-ms-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: var(--color-orange);
+    pointer-events: auto;
+}
+
+/* ---------------------------------------------------------------- */
+
+.card_row {
+    border-radius: 8px;
+    background-color: var(--color-lightcreamy);
+    overflow: hidden;
+
+}
+.t_img{
+    position: relative;
+    width: 350px;
+}
+.t_img:hover::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 45, 45, 0.176);
+    position: absolute;
+    bottom: 0;
+    /* 直接在div下陰影 */
+    
+}
+.card:hover img{
+    background-color: #888;
+    opacity: 1;
+}
+.card-body{
+    position: relative;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 0 auto;
+
+}
+.icon_heart{
+    position: absolute;
+    right: 10px;
+    bottom: 105px;
+    cursor: pointer;
+}
+
+.color{
+    stroke: #432A0F;
+    fill: #CD562F;
+}
+
+.pl_row {
+    margin: 36px auto;
+}
+.product_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.product_list a{
+    text-decoration: none;
+    color: var(--color-text87);
+}
+
+.card-body .row{
+    /* margin: 0; */
+    padding: 4px 0;
+}
+
+.card_under{
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row .price::after{
+    content:"/人";
+    font-size: 16px;
+}
+.row .price::before{
+    content:"NT$ ";
+}
+.icon_star{
+    width: 20px;
+    margin: 0;
+}
+.icon_fire{
+    width: 18px;
+    margin: 0;
+}
+.pages{
+    margin: 3rem;
+}
+
+.pages .row{
+    justify-content: center;
+}
+.pages .row .btn{
+    padding: 4px 16px;
+    margin: 4px;
+    background-color: #fff;
+    border: 1px solid var(--color-text38);
+
+}
+.btn a{
+    text-decoration: none;
+    color: var(--color-text38);
+}
+.btn a:focus, .btn a:hover{
+    color: var(--color-text87);
+}
+.btn:focus, .btn:hover{
+    border: 1px solid var(--color-text87);
+}
+.notlogin{
+    margin: 0 auto;
+}
+.alert{
+    position: relative;
+    
+}
+.alert_title{
+    position: absolute;
+    left: 230px;
+    bottom: 180px;
+}
+.alert .btn_ok{
+    position: absolute;
+    left: 300px;
+    bottom: 100px;
+    
+}
+.alert .btn_ok button{
+    color: var(--color-text87);
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var(--color-yellow);
+}

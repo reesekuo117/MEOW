@@ -72,7 +72,43 @@
     color: #432A0F;
 }
 
-/* ---完成結帳svg------- */
+
+/* 手機progress-bar-yu */
+.mdprogress-bar-yu{
+    margin:28px 0;
+    font-size: var(--font-h5-20)
+}
+.mdjustify-yu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* 購物車訂單桌機的進度條circle */
+.circle-1-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-2-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+.circle-3-yu{
+    padding:0 24px;
+    align-items: center;
+    background-color: #fff;
+}
+
+/* 手機 circlemd-1 2 3-yu */
+.mdcircle-1-yu , .mdcircle-2-yu , .mdcircle-3-yu{
+    margin: auto 0;
+}  
+
+
+
+
+/* ---桌機完成結帳svg------- */
 .checkoutsvg-yu svg{
     transform:scale(1.4);
     transition: 2s;
@@ -89,7 +125,25 @@
         
     }
 }
-/*------------ 查詢訂單 繼續購物按鈕 -------------*/
+/* ---手機完成結帳svg------- */
+.mdcheckoutsvg-yu img{
+    transform:scale(1);
+    transition: 1s;
+    animation: mdcheckoutimg-yumove 1s 1 alternate;
+}
+@keyframes mdcheckoutimg-yumove {
+    0% {
+        transform:scale(0) ;
+        
+    }
+
+    100% {
+        transform:scale(1)  ;
+        
+    }
+}
+
+/*-----------手機 桌機查詢訂單感謝您的訂購，月老喵愛您 -----*/
 .checkout-yu h6{
     transform:scale(1);
     transition: 2s;
@@ -139,6 +193,73 @@
     box-shadow:none;
     background-color: #E5A62A;
 }
+
+
+/*------------ md查詢訂單 繼續購物按鈕 -------------*/
+.mdcheckout-yu h6{
+    transform:scale(1);
+    transition: 2s;
+    animation: checkouth6-yumove 2s 1 alternate;
+}
+@keyframes checkouth6-yumove {
+    0% {
+        transform:scale(0.1) ;
+        
+    }
+
+    100% {
+        transform:scale(1)  ;
+        
+    }
+}
+
+.mdunique-nextbutton-yu .mdunique-btn-yu{
+    /* border: 1px solid #432A0F; */
+    margin: 0 auto;
+    background-color: #E5A62A;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 125%;
+    width: 140px;
+    height: 41px;
+    border-radius: 8px;
+    box-shadow:none;
+}
+.mdunique-nextbutton-yu .mdbtnlight-yu{
+    /* border: 1px solid #432A0F; */
+    margin: 0 auto;
+    background-color: #FFFCF7;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 125%;
+    width: 140px;
+    height: 41px;
+    border-radius: 8px;
+    box-shadow:none;
+}
+/* .mdunique-nextbutton-yu .mdunique-btn-yu:hover{
+    outline: none;
+    box-shadow: 4px 4px 0px 0px #432A0F;
+} */
+.mdunique-btn-yu:active {
+    /* background-color: #E5A62A;
+    font-family: 'gensen-M';
+    font-size: 14px;
+    line-height: 125%; */
+    box-shadow:none;
+}
+.mdunique-btn-yu:focus  {
+    box-shadow:none;
+    background-color: #E5A62A;
+}
+
+
+
+
+
+
+
+
 
 /* ---------表單的寬度------(每一個表單都要用) */
 #myTabContent-yu {
@@ -197,6 +318,29 @@
 .listinfo-detalis-title-yu svg{
     padding-bottom: 4px;
 }
+
+
+/* ----------手機下拉詳細訂單明細---------- */
+.mdpanel-title-yu{
+    cursor: pointer;
+    padding: 0 0 12px 12px;
+}
+.mdpanel-title-yu a{
+    text-decoration: none;
+    color: #432A0F;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------下拉詳細訂單表格樣式---------- */
 .panel-body-yu{
     padding: 0;
@@ -250,6 +394,35 @@
     background-color: var(--color-lightcreamy);
     border-bottom: 2px solid #0000000c;
 }
+
+
+/* ---------------手機訂單明細 --------------*/
+.mdlistinfo-yu{
+    margin-top: 12px;
+}
+
+
+
+
+/*---------手機訂單明細-------- */
+.mdcheckoutlist-yu{
+    display: flex;
+    justify-content: space-around;
+}
+.mdliststylenone-yu{
+    background-color: #FFFCF7;
+    margin-bottom: 20px;
+    padding-top: 12px;
+}
+.mdliststylenone-yu li{
+    list-style: none;
+    padding-bottom: 8px;
+}
+.mdcheckoutlist-yu .title{
+    height: 40px;
+    padding: 8px;
+}
+
 
 /* ----- 下拉詳細訂單表格總價---------*/
 .listinfo-details-totalprice-yu{

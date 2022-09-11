@@ -3,10 +3,13 @@
 }
 
 .body_ba {
-    height: 200vh;
+    /* border: #ff5b00 1px solid; */
+    /* overflow: hidden; */
+    /* width: 100%; */
+    /* height: 1000vh; */
     background:
         url(./imgs/index/grain2.png)center -500px / 160% no-repeat,
-        url(./imgs/index/bg0.png) center center / cover no-repeat, var(--color-orange);
+        url(./imgs/index/bg0.png) center center / 100%, var(--color-orange);
     /* background-color: var(--color-orange); */
 }
 
@@ -116,7 +119,7 @@
     transform: scale(0.8);
 }
 
-.js-type-writer {
+/* .js-type-writer {
     color: var(--color-text100);
     text-align: center;
 }
@@ -140,7 +143,7 @@
     50% {
         border-color: transparent;
     }
-}
+} */
 
 .outline-white {
     z-index: 5;
@@ -155,12 +158,12 @@
         -3px 0 0 white;
 }
 
-.moonOldSay {
+.moonOld {
     top: 13%;
     left: 20%;
 }
 
-.meowSay {
+.meowMeow {
     bottom: 20%;
     left: 68%;
 }
@@ -197,16 +200,519 @@
 /* ----------------------------- 崩潰 section1 結束 ------------------------------- */
 
 .bg2_ba {
+    /* border: #ff5b00 1px solid; */
+    overflow: hidden;
     width: 100%;
-    height: 300vh;
-    background: url(./imgs/index/bg3.png) center top / 100% no-repeat;
-    /* background-blend-mode: multiply; */
-    /* mix-blend-mode: hard-light; */
-    /* background-blend-mode: hard-light; */
+    /* height: 230vh; */
+    background: url(./imgs/index/bg3.png) center center / 100% no-repeat;
 }
 
 .meowTemple {
+    /* border: #ff5b00 1px solid; */
     width: 100%;
-    height: 100vh;
-    background: url(./imgs/index/meow-temple.png) center top / cover;
+    height: 230vh;
+    background: url(./imgs/index/meow-temple.png) center 20% / 88% no-repeat;
+}
+
+.cloud {
+    transform: scale(0.8);
+    mix-blend-mode: screen;
+}
+
+.cloud01 {
+    top: 10%;
+    left: -30%;
+    animation: cloudA ease-in-out 10s infinite;
+}
+
+.cloud02 {
+    top: 12%;
+    left: 10%;
+    animation: cloudB ease-in-out 7s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.cloud03 {
+    top: 15%;
+    right: -15%;
+    animation: cloudB ease-in-out 8s infinite;
+}
+
+.cloud04 {
+    top: 18%;
+    right: 10%;
+    animation: cloudA ease-in-out 6s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.cloud05 {
+    top: 48%;
+    left: -20%;
+    animation: cloudA ease-in-out 12s infinite;
+    z-index: 2;
+}
+
+.cloud06 {
+    top: 53%;
+    left: 8%;
+    animation: cloudA ease-in-out 15s infinite;
+    z-index: 2;
+}
+
+.cloud07 {
+    top: 55%;
+    right: 5%;
+    animation: cloudB ease-in-out 13s infinite;
+    z-index: 3;
+    filter: blur(2px);
+}
+
+.cloud08 {
+    top: 65%;
+    left: 24%;
+    animation: cloudB ease-in-out 11s infinite;
+    z-index: 3;
+}
+
+.cloud08-1 {
+    top: 80%;
+    right: 20%;
+    animation: cloudB ease-in-out 9s infinite;
+    z-index: 3;
+    filter: blur(2px);
+}
+
+@keyframes cloudA {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(100px);
+    }
+
+}
+
+@keyframes cloudB {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-50px);
+    }
+
+}
+
+.btn-xl {
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    padding: 20px 184px;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.btn-xl:hover {
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+
+.btn01_ba {
+    z-index: 3;
+    top: 58%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ----------------------------- 崩潰 section2 結束 ------------------------------- */
+
+.section3_ba {
+    /* overflow: hidden; */
+    width: 100%;
+    height: 90vh;
+    /* border: #3700ff 1px solid; */
+}
+
+.cloud09 {
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+}
+
+.text-align {
+    text-align: center;
+}
+
+.leftCat {
+    top: 10%;
+    left: 10%;
+    text-align: center;
+    /* border: #ff5b00 1px solid; */
+    width: 500px;
+    color: white;
+    animation: leftCat 6s ease-in-out infinite;
+}
+
+@keyframes leftCat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-90px);
+    }
+}
+
+.middleCat {
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    /* border: #ff5b00 1px solid; */
+    width: 500px;
+    color: white;
+    animation: leftCat 7s ease-in-out infinite;
+}
+
+.rightCat {
+    top: 4%;
+    right: 10%;
+    text-align: center;
+    /* border: #ff5b00 1px solid; */
+    /* width: 500px; */
+    color: white;
+    animation: leftCat 5s ease-in-out infinite;
+}
+
+.btn02_ba {
+    z-index: 3;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cloud10 {
+    top: -20%;
+    left: -30%;
+    animation: cloudA ease-in-out 10s infinite;
+}
+
+.cloud11 {
+    top: -23%;
+    left: 10%;
+    animation: cloudB ease-in-out 7s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.cloud12 {
+    bottom: 18%;
+    right: 7%;
+    animation: cloudA ease-in-out 6s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+/* ----------------------------- 還好崩潰的 section3 結束 ------------------------------- */
+
+.section4_ba {
+    height: 150vh;
+    margin-top: 150px;
+    color: white;
+    overflow: hidden;
+}
+
+.section4_ba h1 {
+    text-align: center;
+    font-size: 56px;
+    text-shadow:
+        -1px -1px 0 #000000,
+        0 3px 0 #000000,
+        3px -1px 0 #000000,
+        3px 0 0 #000000,
+        3px 3px 0 #000000,
+        0 -1px 0 #000000,
+        -1px 3px 0 #000000,
+        -1px 0 0 #000000;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.section4_ba h6 {
+    text-align: left;
+    margin-bottom: 48px;
+}
+
+.btn03_ba {
+    z-index: 3;
+    word-wrap: break-word;
+    padding: 20px 170px;
+}
+
+.cartCat img {
+    transform: scale(0.7) translateX(-150px);
+}
+
+.row {
+    text-align: center;
+}
+
+.cloud13 {
+    top: 40%;
+    left: -30%;
+    animation: cloudA ease-in-out 10s infinite;
+}
+
+.cloud14 {
+    top: 42%;
+    left: 10%;
+    animation: cloudB ease-in-out 7s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.cloud15 {
+    top: 90%;
+    right: -25%;
+    animation: cloudB ease-in-out 10s infinite;
+}
+
+.cloud16 {
+    top: 85%;
+    right: 10%;
+    animation: cloudA ease-in-out 7s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+.yusoulCat img {
+    transform: scale(0.8);
+}
+
+.yusoulCat {
+    top: 50%;
+    left: 5%;
+}
+
+/* ----------------------------- 還好崩潰的 section4 結束 ------------------------------- */
+
+.section5_ba {
+    height: 150vh;
+    margin-top: 150px;
+    color: white;
+    overflow: hidden;
+    /* border: #ff5b00 1px solid; */
+}
+
+.section5_ba h1 {
+    text-align: center;
+    font-size: 56px;
+    text-shadow:
+        -1px -1px 0 #000000,
+        0 3px 0 #000000,
+        3px -1px 0 #000000,
+        3px 0 0 #000000,
+        3px 3px 0 #000000,
+        0 -1px 0 #000000,
+        -1px 3px 0 #000000,
+        -1px 0 0 #000000;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.section5_ba h6 {
+    text-align: left;
+    margin-bottom: 48px;
+}
+
+.catPhotoGroup {
+    top: -100px;
+    /* border: #ff5b00 1px solid; */
+}
+
+.catPhoto1 img {
+    transform: scale(.7) rotate(-15deg) translate(-300px, 50px);
+}
+
+.catPhoto2 img {
+    transform: scale(.7) rotate(9deg) translate(200px, 100px);
+}
+
+.catPhoto3 img {
+    transform: scale(.7) rotate(7deg) translate(0px, 350px);
+}
+
+.section5_ba .row {
+    padding: 48px;
+}
+
+.btn04_ba {
+    z-index: 3;
+    /* word-wrap: break-word; */
+    padding: 20px 140px;
+}
+
+/* ----------------------------- 還好崩潰的 section5 結束 ------------------------------- */
+
+.section6_ba {
+    /* border: #ff5b00 1px solid; */
+    width: 100%;
+    height: 170vh;
+    overflow: hidden;
+}
+
+.bg3_ba {
+    /* border: #ff5b00 1px solid; */
+    overflow: hidden;
+    width: 100%;
+    background: url(./imgs/index/bg3.png) center top / 100% no-repeat;
+}
+
+.btn05_ba {
+    z-index: 3;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.leftRainbow img {
+    transform: scale(0.9) translate(30px, 310px);
+}
+
+.rightRainbow img {
+    transform: scale(0.9) translate(640px, 310px);
+}
+
+/* FIXME: 中間會飄移 */
+.middleReel {
+    transition: 1s;
+    left: 47.5%;
+    overflow: hidden;
+    width: 0px;
+    margin-top: 48px;
+    transform: scale(0.9) translateX(-50%);
+}
+
+.leftReel {
+    transition: 1s;
+    top: 670px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+}
+
+.rightReel {
+    transition: 1s;
+    top: 670px;
+    right: 50%;
+    transform: translateX(50%) scale(0.9);
+}
+
+.section6_ba h1 {
+    color: white;
+    text-align: center;
+    font-size: 56px;
+    text-shadow:
+        -1px -1px 0 #000000,
+        0 3px 0 #000000,
+        3px -1px 0 #000000,
+        3px 0 0 #000000,
+        3px 3px 0 #000000,
+        0 -1px 0 #000000,
+        -1px 3px 0 #000000,
+        -1px 0 0 #000000;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.welfare {
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 500px;
+}
+
+.memberContent {
+    margin-top: 550px;
+    color: var(--color-brown-dark);
+}
+
+.memberCat1 {
+    top: 950px;
+    left: 400px;
+}
+
+.memberCat1 img {
+    transform: scale(0.8);
+}
+
+.memberCat2 {
+    top: 870px;
+    right: 300px;
+}
+
+.memberCat2 img {
+    transform: scale(0.8);
+}
+
+.memberCat3 {
+    top: 1150px;
+    right: 400px;
+}
+
+.memberCat3 img {
+    transform: scale(0.8);
+}
+
+.ballon {
+    top: 50%;
+    transform: scale(0.7);
+    /* border: #ff5b00 1px solid; */
+}
+
+.ballon01 {
+    top: 50%;
+    left: 10%;
+}
+
+.ballon02 {
+    top: 60%;
+    left: 15%;
+}
+
+.ballon03 {
+    top: 50%;
+    right: 10%;
+}
+
+.ballon04 {
+    top: 60%;
+    right: 6%;
+}
+
+.ballon05 {
+    top: 55%;
+    left: 5%;
+}
+
+.ballon06 {
+    top: 70%;
+    left: 8%;
+}
+
+.ballon07 {
+    top: 65%;
+    right: 2%;
+}
+
+.ballon08 {
+    top: 70%;
+    right: 9%;
 }
