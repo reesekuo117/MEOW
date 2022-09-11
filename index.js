@@ -31,7 +31,14 @@
 // FIXME:
 
 var typed = new Typed('.moonOldSay', {
-    strings: ["我最近想去放假...", "", "最近真的太忙了..."],
+    strings: ["我好想要去放假...", "", "最近真的太忙了..."],
+    typeSpeed: 150,
+    backSpeed: 100,
+    loop: true,
+});
+
+var typed = new Typed('.meowSay', {
+    strings: ["那就交給我們吧喵！", "", "我們會替你守護人們的幸福的！"],
     typeSpeed: 150,
     backSpeed: 100,
     loop: true,
@@ -56,4 +63,50 @@ $('.rightCat').mouseenter(function () {
 })
 $('.rightCat').mouseleave(function () {
     $('.rightCatImg img').attr('src', "./imgs/index/12.png");
+})
+
+// 卷軸
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.leftReel').offset().top - $(window).height() * 2 / 3)) {
+        $('.leftReel').css({
+            transform: 'translateX(-500px)',
+        })
+
+    }
+    else {
+        $('.leftReel').css({
+            transform: 'translateX(-50px)',
+        })
+    }
+
+})
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.rightReel').offset().top - $(window).height() * 2 / 3)) {
+        $('.rightReel').css({
+            transform: 'translateX(500px)',
+        })
+
+    }
+    else {
+        $('.rightReel').css({
+            transform: 'translateX(50px)',
+        })
+    }
+
+})
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.middleReel').offset().top - $(window).height() * 2 / 3)) {
+        $('.middleReel').css({
+            width: '956px',
+        })
+
+    }
+    else {
+        $('.middleReel').css({
+            width: '0px',
+        })
+    }
+
 })
