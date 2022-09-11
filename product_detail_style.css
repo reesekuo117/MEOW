@@ -171,18 +171,20 @@ select{
     position: absolute;
     bottom: 0;
     /* 直接在div下陰影 */
-    
 }
 .icon_heart{
     position: absolute;
     right: 25px;
     top: 115px;
 }
+
 .carousel .thumb-wrapper {
 	margin: 5px;
 	text-align: left;
 	background: #fff;
-	box-shadow: 0px 2px 2px rgba(0,0,0,0.1);   
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.1); 
+    border-radius: 8px;
+    overflow: hidden;
 }
 .carousel .thumb-content {
 	padding: 15px;
@@ -231,5 +233,15 @@ select{
 	background: #555;
 }
 .card_under h5::before{
+    content: "NT$";
+}
+.undernav{
+    width: 100%;
+    background-color: var(--color-lightcreamy);
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+}
+.left_title h2::before{
     content: "NT$";
 }
