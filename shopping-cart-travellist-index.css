@@ -120,9 +120,24 @@
 /*-----手機訂單明細 ------  */
 .mdlistinfo-yu{
     background-color: #FFFCF7;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
-
+/* ---------手機卡片外觀 ------*/
+.card-yu , .largerCheckbox-yu{
+    align-items: flex-start;
+}
+.largerCheckbox-yu{
+    margin-right: 4px;
+}
+.mdcardlist-yu{
+    overflow: hidden;
+    /* border: 1px solid #000; */
+    width: 190px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
 /* ------------桌機訂單明細 ------------ */
 .section-2-title-yu{
     background-color: var(--color-creamy);
@@ -139,10 +154,7 @@
     padding: 16px 16px 0 0 ;
 }
 
-
-
-
-
+/* -------------訂單明細 下拉------- */
 
 .listinfo-title-yu{
     background-color: var(--color-creamy);
@@ -171,8 +183,7 @@
     margin: 0;
     padding: 0  12px 12px 12px;
 }
-/* ----------下拉詳細訂單明細---------- */
-
+/* ----------桌機下拉詳細訂單明細---------- */
 .panel-title-yu{
     cursor: pointer;
     padding: 0 0 12px 12px;
@@ -198,6 +209,16 @@
 .listinfo-detalis-title-yu svg{
     padding-bottom: 4px;
 }
+/* ----------手機下拉詳細訂單明細---------- */
+.mdpanel-title-yu{
+    cursor: pointer;
+    padding: 0 0 12px 12px;
+}
+.mdpanel-title-yu a{
+    text-decoration: none;
+    color: #432A0F;
+}
+
 /* ---------下拉詳細訂單表格樣式---------- */
 .panel-body-yu{
     padding: 0;
@@ -401,8 +422,8 @@
 
 /* 手機付款方式mdsection-4-yu */
 .mdsection-4-yu{
-    /* background-color: #FFFCF7; */
-    background-color: #ae7512;
+    background-color: #FFFCF7;
+    /* background-color: #ae7512; */
     margin-bottom: 20px;
     height: 100%;
 }
@@ -410,8 +431,7 @@
     width: 80%;
     border-bottom: 2px solid #432A0F ;
     margin: -24px auto;
-    /* background-color: #FFFCF7; */
-    background-color: #ae7512;
+    background-color: #FFFCF7;
 }
 .mdsection-4-yu .mdcreditcard-number-yu input{
     border-radius: 8px;
@@ -425,26 +445,18 @@
     background-color:  #FFFCF7 ;
 }
 
-.mdcreditcard-yearbox{
-    width: 20%;
+.mdcreditcard-number-backgroundcolor1-yu , .mdcreditcard-number-backgroundcolor2-yu , .mdcreditcard-number-backgroundcolor3-yu {
+    opacity: 0;
+}
+.mdcreditcard2-numberbox{
+    width: 50%;
     border-bottom: 2px solid #432A0F ;
-    margin: -24px auto;
-    /* background-color: #FFFCF7; */
-    background-color: #ae7512;
+    margin: -24px 6px;
+    background-color: #FFFCF7;
 }
-.mdsection-4-yu .mdcreditcard-year-yu input{
-    
-    border-radius: 8px;
-    border: 2px solid #432A0F;
-    height: 48px;
-    width:60%;
+.mdditcard-numberinput-yu{
+    margin-top: 8px;
 }
-.mdcreditcard-year-yu .mdcreditcard-year-backgroundcolor-yu{
-    margin: 0 4px;
-    padding: 0 4px;
-}
-
-
 
 
 

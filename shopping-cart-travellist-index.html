@@ -475,10 +475,6 @@
 
     <!-- ------------------手機 ------------------------>
     <section class=" d-block d-md-none">
-        <!-- 返回icon -->
-        <div class="mdicon-back-yu">
-            <img src="/imgs/icon/返回32x32.png" alt="">
-        </div>
         <!-- 購物車訂單的進度條progress-bar -->
         <div class=" p-0">
             <div class="mdprogress-bar-yu" >
@@ -521,14 +517,14 @@
                     <h6 class="listinfo-title-yu m-0">
                         訂單明細
                     </h6>
-                    <h6 class="listinfo-number-yu">
+                    <h6 class="listinfo-number-yu ">
                     訂單編號: <span>M20221234567</span>
                     </h6>
                     
                     <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
-                                <h6 class="panel-title-yu">
+                                <h6 class="mdpanel-title-yu">
                                     <aclass="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
                                     訂單明細
                                         <svg width="24" height="24" viewBox="0 0 24 24"fill="none"xmlns="http://www.w3.org/2000/svg">
@@ -570,7 +566,7 @@
                     <h6 class="listinfo-title-yu m-0">
                         結帳明細
                     </h6>
-                    <h6 class="listinfo-number-yu">
+                    <h6 class="listinfo-number-yu d-flex justify-content-between">
                         總金額: <span>NT$1500</span>
                     </h6>
                 </main>
@@ -713,44 +709,125 @@
                     <label for="name" class="m-0"> 
                         信用卡付款 
                     </label>
-                    <div class="">
-                        <label class="pt-4"  for="">
+                    <div class="mdditcard-numberinput-yu">
+                        <label class="pt-4 m-0"  for="">
                             信用卡卡號
                         </label>
                         <br>
                         <div class=" mdcreditcard-number-yu d-flex justify-content-center align-items-center "> 
                             <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                <input class="text-center" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                <input class="text-center" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                <input class="text-center" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                <input class="text-center" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
                             </div>
                         </div>
                         <div class="mdcreditcard-numberbox "></div>
                     </div>
-                    <div class="">
-                        <label class="pt-5"  for="">
+                    <div class="pt-5 mdditcard-numberinput-yu">
+                        <label class=" m-0"  for="">
                             有效 / 年月
                         </label>
                         <br>
-                        <div class=" mdcreditcard-year-yu d-flex "> 
-                            <div class=" mdcreditcard-year-backgroundcolor-yu ">
-                                <input class="text-center " type="" name="" id="" placeholder="0000 ">
+                        <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
+                            <div class=" mdcreditcard-number-backgroundcolor-yu ">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
                             </div>
-                            <div class=" mdcreditcard-year-backgroundcolor-yu">
-                                <input class="text-center " type="" name="" id="" placeholder="0000 ">
+                            <div class=" mdcreditcard-number-backgroundcolor-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor1-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor2-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
                             </div>
                         </div>
-                        <div class="mdcreditcard-yearbox "></div>
+                        <div class="mdcreditcard2-numberbox "></div>
+                    </div>
+                    <div class="pt-5 mdditcard-numberinput-yu">
+                        <label class="m-0"  for="">
+                            背面末三碼
+                        </label>
+                        <br>
+                        <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
+                            <div class=" mdcreditcard-number-backgroundcolor-yu ">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor1-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor2-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                            </div>
+                            <div class=" mdcreditcard-number-backgroundcolor3-yu">
+                                <input class="text-center m-0" type="" name="" id="" placeholder="000 ">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
+            <div class="">
+                <!-- 訂單明細 -->
+                <div class="mdlistinfo-yu">
+                    <main class="section-0-yu">
+                        <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="listinfo-title-yu  panel-heading" role="tab" id="headingOne">
+                                    <h6 class="mdpanel-title-yu p-0 m-0">
+                                        <a class="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
+                                        訂單明細
+                                            <svg width="24" height="24" viewBox="0 0 24 24"fill="none"xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9"stroke="#432A0F"stroke-opacity="0.6"stroke-width="2"stroke-linecap="round"/>
+                                            </svg>
+                                        </a>
+                                    </h6>
+                                </div>
+                                <div id="listinfo-details-yu" class="collapse show panel-collapse collapse-yu">
+                                    <div class="panel-body-yu">
+                                        <div class="">
+                                            <div class="card-yu d-flex px-1 py-3">
+                                                <!-- flex-nowrap -->
+                                                <div class="  px-1">
+                                                    <img class="" src="imgs/購物車手機版-行程(測試用 大).png" alt="">
+                                                </div>
+                                                <div class="px-1">
+                                                    <div class="mdcardlist-yu">
+                                                        <p class="m-0">
+                                                            大稻埕霞海城廟深度漫步文化之旅
+                                                        </p>
+                                                    </div>
+                                                    <!-- 數量 -->
+                                                    <p>X1</p>
+                                                    <!-- 單價 -->
+                                                    <p>NT$1500</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+                <!-- 結帳明細 -->
+                <div class="mdsection-1-yu mb-4">
+                    <main class="">
+                        <h6 class="listinfo-title-yu m-0">
+                            結帳明細
+                        </h6>
+                        <h6 class="listinfo-number-yu d-flex justify-content-between">
+                            總金額: <span>NT$1500</span>
+                        </h6>
+                    </main>
+                </div>
+            </div>
             <div class=" d-flex justify-content-center">
                 <!-- a href="#buy1.php" -->
                 <a href="http://127.0.0.1:5500/shopping-cart-creditcard-travel.html" class="btn mdunique-nextbutton-yu">
