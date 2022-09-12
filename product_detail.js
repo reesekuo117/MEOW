@@ -34,18 +34,30 @@
             // console.log('second offsetTop:', $('.second-test > .second').offset().top);
             // console.log('first scrollTop:', $('.second').scrollTop());
             if ($(window).scrollTop() >= ($('.pd_head').offset().top - $('.undernav').height() * 1 / 3)) {
+                $('.undernav').removeClass('d-none');
                 $('.undernav').css({
                     transform: 'translateY(0px)',
                     opacity: 1,
-                })
+                    transition: '.5s',
+                });
         
             }
             else {
                 $('.undernav').css({
                     transform: 'translateY(40px)',
                     opacity: 0,
-                })
-            }
+                });
+            };
         
-        })
+        });
+
+
+
+        // 愛心
+
+$('.icon_favorite').click(function(){
+    $('.heart_line').toggleClass('color')
+});
+
+// 按收藏後真的進入收藏頁面&沒登入會跳出提示窗
 

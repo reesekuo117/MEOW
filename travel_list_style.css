@@ -9,7 +9,7 @@
 .travel_search{
     width: 100%;
     height: 530px;
-    background: url(./imgs/product/search_main.png) center center / cover;
+    background: url(./imgs/travel/T01_8.jpg) top center / cover;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -242,7 +242,7 @@
 }
 .t_img{
     position: relative;
-    width: 350px;
+    width: 400px;
 }
 .t_img:hover::after{
     content: "";
