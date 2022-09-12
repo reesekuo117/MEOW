@@ -296,18 +296,27 @@ p,
     font-family: 'gensen-R';
     font-size: 12px;
     line-height: 125%;
+    background-color: var(--color-yellow);
+    border: 2px var(--color-brown-dark) solid;
+    border-radius: 8px;
 }
 
 .btn-m {
     font-family: 'gensen-M';
     font-size: 14px;
     line-height: 125%;
+    background-color: var(--color-yellow);
+    border: 2px var(--color-brown-dark) solid;
+    border-radius: 8px;
 }
 
 .btn-l {
     font-family: 'gensen-M';
     font-size: 16px;
     line-height: 125%;
+    background-color: var(--color-yellow);
+    border: 2px var(--color-brown-dark) solid;
+    border-radius: 8px;
 }
 
 .btn-s:hover {
