@@ -239,15 +239,24 @@
 }
 
 /* ---------------------------------------------------------------- */
-
+.product_list .row{
+    justify-content: center;
+    align-items: center;
+}
 .card {
     border-radius: 8px;
-    
+    margin: 24px auto;
+
 }
 .p_img{
     position: relative;
 }
-.p_img:hover::after{
+/* .card:hover .p_img{
+    background-color: #888;
+    opacity: 1;
+} */
+
+.card:hover .p_img::after{
     content: "";
     display: block;
     width: 100%;
@@ -258,10 +267,6 @@
     /* 直接在div下陰影 */
     
 }
-.card:hover img{
-    background-color: #888;
-    opacity: 1;
-}
 .card-body{
     position: relative;
     box-sizing: border-box;
@@ -270,11 +275,14 @@
 }
 .icon_heart{
     position: absolute;
-    right: 10px;
-    bottom: 105px;
+    right: 15px;
+    bottom: 115px;
     cursor: pointer;
+    opacity: 0;
 }
-
+.card:hover .icon_heart{
+    opacity: 1;
+}
 .color{
     stroke: #432A0F;
     fill: #CD562F;
@@ -292,7 +300,7 @@
 }
 .product_list a{
     text-decoration: none;
-    color: var(--color-text87);
+    color: var(--color-text100);
 }
 
 .card-body .row{
@@ -305,18 +313,29 @@
     justify-content: space-between;
     align-items: center;
 }
-
-.row .price::before{
-    content:"NT$ ";
+.card_title{
+    margin: 0 auto;
+}
+.card-text span{
+    color: var(--color-text60);
 }
 .icon_star{
     width: 20px;
     margin: 0;
+    color: var(--color-yellow);
 }
 .icon_fire{
     width: 18px;
     margin: 0;
 }
+.price{
+    color: var(--color-text87);
+}
+.row .price::before{
+    content:"NT$ ";
+}
+
+/* ------------------頁數按鈕----------------- */
 .pages{
     margin: 3rem;
 }
@@ -341,6 +360,8 @@
 .btn:focus, .btn:hover{
     border: 1px solid var(--color-text87);
 }
+
+/* ------------------未登入提醒視窗----------------- */
 .notlogin{
     margin: 0 auto;
 }
@@ -349,18 +370,16 @@
     
 }
 .alert_title{
+    color: var(--color-text100);
     position: absolute;
     left: 230px;
     bottom: 180px;
 }
-.alert .btn_ok{
+.alert .btn_ok button{
     position: absolute;
     left: 300px;
     bottom: 100px;
-    
-}
-.alert .btn_ok button{
-    color: var(--color-text87);
+    color: var(--color-text100);
     padding: 8px 16px;
     border-radius: 8px;
     background-color: var(--color-yellow);

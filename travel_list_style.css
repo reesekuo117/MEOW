@@ -373,18 +373,17 @@
     
 }
 .alert_title{
+    color: var(--color-text100);
     position: absolute;
     left: 230px;
     bottom: 180px;
 }
-.alert .btn_ok{
+
+.alert .btn_ok button{
     position: absolute;
     left: 300px;
     bottom: 100px;
-    
-}
-.alert .btn_ok button{
-    color: var(--color-text87);
+    color: var(--color-text100);
     padding: 8px 16px;
     border-radius: 8px;
     background-color: var(--color-yellow);
