@@ -589,9 +589,9 @@
                     </span>
                 </div>
             </div>
-            <div class="cardcheckall-yu mx-3 row d-flex align-items-center">
+            <div class="cardcheckall-yu mx-2 row d-flex align-items-center">
                 <input type="checkbox" class="">
-                <h6 class="p-1 m-0">全選</h6>
+                <h6 class="pl m-0">全選</h6>
             </div>
         </div>
         <div id="mdmyTabContent-yu" class=" px-1 tab-content container">
@@ -653,15 +653,7 @@
                     <h6 class="text-center px-5">2 件商品合計 </h6>
                     <h6 class="text-center px-5">總金額: <span>NT$1414</span> </h6>
                 </div>
-                <div>
-                    <!-- 如果使用者還未登入 -->
-                    <?php if(empty($_SESSION["user"])) : ?>  
-                        <!-- 跳出提示框提醒用戶先登入會員 -->
-                        <div class="alert alert-danger" role="alert">
-                            請先登入會員，再結帳
-                        </div>
-                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
-                </div>
+                <!-- 未登入 -->
                 <div class=" d-flex justify-content-center">
                     <a href="shopping-cart-productdetails-index.html" class="btn mdunique-nextbutton-yu">
                         <button class=" mdunique-btn-yu " type="button">
@@ -696,15 +688,7 @@
                     <h6 class="text-center px-5">1件商品合計 </h6>
                     <h6 class="text-center px-5">總金額: <span>NT$1500</span> </h6>
                 </div>
-                <div>
-                    <!-- 如果使用者還未登入 -->
-                    <?php if(empty($_SESSION["user"])) : ?>  
-                        <!-- 跳出提示框提醒用戶先登入會員 -->
-                        <div class="alert alert-danger" role="alert">
-                            請先登入會員，再結帳
-                        </div>
-                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
-                </div>
+                <!-- 未登入 -->
                 <div class=" d-flex justify-content-center">
                     <a href="shopping-cart-travellist-index.html" class="btn mdunique-nextbutton-yu">
                         <button class=" mdunique-btn-yu " type="button">

@@ -204,3 +204,230 @@
     height: calc( 100vh - 134px );
     width: 100%;
 }
+
+
+/* -------手機mdtravel-frame1-yu-------- */
+.mdtravel-backgroundimg-yu{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-image: url(imgs/travel/手機旅遊首頁\(底圖\)-mobile.png);
+}
+.mdcloud_1-yu{
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    transition: 2s;
+    animation: mdc-1move 4s infinite ease-in-out;
+}
+@keyframes mdc-1move {
+    0%, 100%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(16px);
+    }
+
+}
+.mdcloud_2-yu{
+    position: absolute;
+    top: 250px;
+    left: -40px;
+    transition: 2s;
+    animation: mdc-2move 4s infinite ease-in-out;
+}
+@keyframes mdc-2move{
+    0% , 100%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-16px);
+    }
+}
+.mdcloud_3-yu{
+    position: absolute;
+    top:300px;
+    right: 10px;
+    transition: 2s;
+    animation: mdc-3move 4s infinite ease-in-out;
+}
+@keyframes mdc-3move {
+    0% , 100%{
+        transform:translateX(0);
+    }
+    50%{
+        transform: translateX( 16px);
+    }
+}
+.mdcloud_4-yu{
+    position: absolute;
+    top: 450px;
+    left: -60px;
+}
+.mdcloud_5-yu{
+    position: absolute;
+    top: 600px;
+    right: -40px;
+    transition: 2s;
+    animation: mdc-5move 3s infinite ease-in-out;
+}
+@keyframes mdc-5move {
+    0% , 100%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(16px);
+    }
+}
+.mdcloud_6-yu{
+    position: absolute;
+    top: 790px;
+    transition: 2s;
+    animation: mdc-6move 5s infinite ease-in-out;
+}
+@keyframes mdc-6move {
+    0% , 100%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translate(16px);
+    }
+}
+.mdtravel-frame1-yu{
+    padding-top: 24px;
+}
+.mdtravel1-img-yu{
+    margin: 12px 0;
+    
+}
+.pageone-yu{
+    height: 325px;
+}
+.mdtravel2-img-yu{
+    right: 28px;
+    top: 150px;
+}
+.mdtravel-frame1-p-yu{
+    margin: 12px 0;
+}
+#move1-yu{
+    animation: move1-yu 1s 1 ease-in-out;
+}
+@keyframes move1-yu {
+    0%{
+        transform: translateX(-200px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+
+}
+#move2-yu{
+    transition: 1s;
+    animation:  move2-yu 1s 1 ease-in-out;
+}
+@keyframes move2-yu {
+    0%{
+        transform: translateX(40px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+#move3-yu{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+}
+#move4-yu{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+}
+#move5-yu{
+    transform: translateX(300px);
+    transition: 1s;
+}
+#move6-yu{
+    transform: translateX(-100px);
+    transition: 1s;
+}
+
+/*  */
+.mdtravel-frame2-yu {
+    height: 230px;
+    /* padding: 0 50px ; */
+    transform: translate(-30rem -12rem);
+}
+
+.mdtravel-frame3-yu {
+    height: 260px;
+    /* padding: 0 50px ; */
+    transform: translate(-30rem -12rem);
+}
+.mdtravel3-img-yu{
+
+    top: 16px;
+    left: 50px;
+}
+.mdtravel4-img-yu{
+    width: 280px;
+    top: 16px;
+    left: 35px;
+    padding-bottom: 16px;
+}
+.mdtravel5-img-yu{
+    width: 240px;
+    right:8px ;
+}
+.mdtravel6-img-yu{
+    width: 200px;
+    top: 80px;
+    left: -20px;
+}
+
+
+.mdcloud-7-yu{
+    position: absolute;
+    right: -28px;
+    transition: 2s;
+    animation: mdc-7move 4s infinite ease-in-out;
+}
+@keyframes  mdc-7move {
+    0%, 100%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(16px);
+    }
+}
+.mdcloud-8-yu{
+    position: absolute;
+    top: 147px;
+    left: -100px;
+    transition: 2s;
+    animation: mdc-8move 4s infinite ease-in-out;
+}
+.mdcloud-9-yu{
+    position: absolute;
+    top: 380px;
+    right: 16px;
+    transition: 2s;
+    animation: mdc-8move 3s infinite ease-in-out;
+}
+.mdcloud-10-yu{
+    position: absolute;
+    top: 580px;
+    left: -100px;
+    transition: 2s;
+    animation: mdc-8move 3s infinite ease-in-out;
+}
+@keyframes mdc-8move {
+    0% , 100%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(16px);
+    }
+}

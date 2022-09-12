@@ -61,103 +61,144 @@ $(window).scroll(function () {
 })
 
 // 參拜流程
-$(window).scroll(function () {
-  if ($(window).scrollTop() >= ($('.section2_lb').offset().top - $(window).height() * 1 / 3)) {
-    $('.step1_lb').css({
-      transform: 'translateX(100px)',
+// $(window).scroll(function () {
+//   if ($(window).scrollTop() >= ($('.section2_lb').offset().top - $(window).height() * 1 / 3)) {
+//     $('.step1_lb').css({
+//       transform: 'translateX(100px)',
+//       opacity: 1,
+//     })
+//   }
+//   else {
+//     $('.step1_lb').css({
+//       transform: 'translateX(0px)',
+//       opacity: 0,
+//     })
+//   }
+// })
+
+// $(window).scroll(function () {
+//   if ($(window).scrollTop() >= ($('.step1_lb').offset().top - $(window).height() * 1 / 3)) {
+//     $('.step2_lb').css({
+//       transform: 'translateX(0px)',
+//       opacity: 1,
+//     })
+//   }
+//   else {
+//     $('.step2_lb').css({
+//       transform: 'translateX(100px)',
+//       opacity: 0,
+//     })
+//   }
+// })
+
+// $(window).scroll(function () {
+//   if ($(window).scrollTop() >= ($('.step2_lb').offset().top - $(window).height() * 1 / 3)) {
+//     $('.step3_lb').css({
+//       transform: 'translateX(100px)',
+//       opacity: 1,
+//     })
+//   }
+//   else {
+//     $('.step3_lb').css({
+//       transform: 'translateX(0px)',
+//       opacity: 0,
+//     })
+//   }
+// })
+
+// $(window).scroll(function () {
+//   if ($(window).scrollTop() >= ($('.step3_lb').offset().top - $(window).height() * 1 / 3)) {
+//     $('.step4_lb').css({
+//       transform: 'translateX(0px)',
+//       opacity: 1,
+//     })
+//   }
+//   else {
+//     $('.step4_lb').css({
+//       transform: 'translateX(100px)',
+//       opacity: 0,
+//     })
+//   }
+// })
+
+// $(window).scroll(function () {
+//   if ($(window).scrollTop() >= ($('.step4_lb').offset().top - $(window).height() * 1 / 3)) {
+//     $('.step5_lb').css({
+//       transform: 'translateX(100px)',
+//       opacity: 1,
+//     })
+//   }
+//   else {
+//     $('.step5_lb').css({
+//       transform: 'translateX(0px)',
+//       opacity: 0,
+//     })
+//   }
+// })
+
+$(window).resize(function(){
+  const windowWidth = $(window).width();
+
+  if(windowWidth <= 768){
+    $('.left-cat-animation_lb').css({
+      transform: `translateX(${0}px)`,
+      transition:'none',
       opacity: 1,
-    })
-  }
-  else {
-    $('.step1_lb').css({
-      transform: 'translateX(0px)',
-      opacity: 0,
-    })
-  }
-})
-$(window).scroll(function () {
-  if ($(window).scrollTop() >= ($('.step1_lb').offset().top - $(window).height() * 1 / 3)) {
-    $('.step2_lb').css({
-      transform: 'translateX(0px)',
+    });
+    $('.right-cat-animation_lb').css({
+      transform: `translateX(-${0}px)`,
+      transition:'none',
       opacity: 1,
-    })
+    });
   }
-  else {
-    $('.step2_lb').css({
-      transform: 'translateX(100px)',
-      opacity: 0,
-    })
-  }
-})
-$(window).scroll(function () {
-  if ($(window).scrollTop() >= ($('.step2_lb').offset().top - $(window).height() * 1 / 3)) {
-    $('.step3_lb').css({
-      transform: 'translateX(100px)',
-      opacity: 1,
-    })
-  }
-  else {
-    $('.step3_lb').css({
-      transform: 'translateX(0px)',
-      opacity: 0,
-    })
-  }
-})
-$(window).scroll(function () {
-  if ($(window).scrollTop() >= ($('.step3_lb').offset().top - $(window).height() * 1 / 3)) {
-    $('.step4_lb').css({
-      transform: 'translateX(0px)',
-      opacity: 1,
-    })
-  }
-  else {
-    $('.step4_lb').css({
-      transform: 'translateX(100px)',
-      opacity: 0,
-    })
-  }
-})
-$(window).scroll(function () {
-  if ($(window).scrollTop() >= ($('.step4_lb').offset().top - $(window).height() * 1 / 3)) {
-    $('.step5_lb').css({
-      transform: 'translateX(100px)',
-      opacity: 1,
-    })
-  }
-  else {
-    $('.step5_lb').css({
-      transform: 'translateX(0px)',
-      opacity: 0,
-    })
-  }
+ 
 })
 
-
-    // cp貓相遇
+    // cp貓PC相遇
     $(window).scroll(function () {
-      if ($(window).scrollTop() >= ($('.cp-cat-move').offset().top - $(window).height() * 2/ 3)) {
-        $('.left-cat-animation_lb').css({
-          transform: 'translateX(400px)',
-          opacity: 1,
-        });
-        $('.right-cat-animation_lb').css({
-          transform: 'translateX(450px)',
-          opacity: 1,
-        });
 
-        setTimeout(function(){
-           $('.heart-animation_lb').css({
-            opacity:1}); 
-        },1300);
+      if ($(window).scrollTop() >= ($('.cp-cat-move').offset().top - $(window).height() * 2/ 3)) {
+        const windowWidth = $(window).width();
+
+        const catParentDom = $('.left-cat-animation_lb').parent().width();
+        const leftCatWidth =  $('.left-cat-animation_lb').width();
+
+        const leftCatMovement = catParentDom/2 - leftCatWidth;
+        
+        if(windowWidth > 768){
+          $('.left-cat-animation_lb').css({
+            transform: `translateX(${leftCatMovement}px)`,
+            transition:'2s',
+            opacity: 1,
+          });
+          $('.right-cat-animation_lb').css({
+            transform: `translateX(-${leftCatMovement}px)`,
+            transition:'2s',
+            opacity: 1,
+          });
+
+          const leftCatTrans = $('.left-cat-animation_lb').css('transform');
+          setTimeout(function(){
+            $('.heart-animation_lb').css({
+             opacity:1}); 
+         },(leftCatTrans === 'none')?1300:200);
+         
+        }
+
+        else{
+            $('.heart-animation_lb').css({
+             opacity:1}); 
+        }
+        
         
       }
       else {
         $('.left-cat-animation_lb').css({
-          transform: 'translateX(-30px)',
+          // transform: 'translateX(-30px)',
           opacity: 1,
         });
         $('.right-cat-animation_lb').css({
-          transform: 'translateX(800px)',
+          // transform: 'translateX(800px)',
           opacity: 1,
         });
         $('.heart-animation_lb').css({
@@ -165,6 +206,41 @@ $(window).scroll(function () {
         })
       }
     })
+
+
+
+    // $(window).scroll(function () {
+    //   if ($(window).scrollTop() >= ($('.cp-cat-move').offset().top - $(window).height() * 2/ 3)) {
+    //     $('.left-cat-animation_lb').css({
+    //       transform: 'translateX(45px)',
+    //       opacity: 1,
+    //     });
+    //     $('.right-cat-animation_lb').css({
+    //       transform: 'translateX(90px)',
+    //       opacity: 1,
+    //     });
+
+    //     setTimeout(function(){
+    //        $('.heart-animation_lb').css({
+    //         opacity:1}); 
+    //     },1300);
+        
+    //   }
+    //   else {
+    //     $('.left-cat-animation_lb').css({
+    //       transform: 'translateX(-30px)',
+    //       opacity: 1,
+    //     });
+    //     $('.right-cat-animation_lb').css({
+    //       transform: 'translateX(100px)',
+    //       opacity: 1,
+    //     });
+    //     $('.heart-animation_lb').css({
+    //         opacity:0,
+    //     })
+    //   }
+    // })
+
 
 
     //全台月老廟篩選
@@ -267,18 +343,21 @@ scrollLink.forEach((item) => {
     console.log({targetBlock, top: targetBlock.offsetTop});
     e.preventDefault();
     console.log(targetBlock.offsetTop);
+    
     window.scrollTo({
-      top: targetBlock.offsetTop,
+      top: $(targetBlock).offset().top - ((e.currentTarget.hash === "#moonold_lb")? 400:50),
       behavior: "smooth",
     });
   });
 });
 
 $(function(){
-  for(let i =0; i<section.length; i++){
-    sections[section[i].id] = section[i].offsetTop;
-    console.log(section[i].id, section[i].offsetTop);
-  }
+  setTimeout(() => {
+    for(let i =0; i<section.length; i++){
+      sections[section[i].id] = $(section[i]).offset().top;
+      // console.log(section[i].id,  $(section[i]).offset().top);
+    }
+  }, 3000);
 })
 
 
@@ -301,8 +380,8 @@ window.onscroll = () => {
     document.documentElement.scrollTop || document.body.scrollTop;
   // let scrollPosition = window.pageYOffset;
     for (identCounter in sections) {
-    if (sections[identCounter] <= scrollPosition) {
-      console.log(identCounter, sections[identCounter], scrollPosition);
+    if (sections[identCounter] <= (scrollPosition + $(window).height() * 1/ 3) || (sections[0] <= scrollPosition ))  {
+      // console.log(identCounter, sections[identCounter], scrollPosition);
       document.querySelector(".active_lb").removeAttribute("class");
       document
         .querySelector("a[href*=" + identCounter + "]")
