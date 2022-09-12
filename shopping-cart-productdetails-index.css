@@ -533,6 +533,47 @@
     line-height: 140%;
 }
 
+/* -----------信用卡----------- */
+.usercreditcartinput-yu input{
+    border-radius: 8px;
+    border: 2px solid #432A0F;
+    height: 48px;
+    width: 80%;
+}
+.creditcartnumber-yu {
+    position: absolute;
+    top: 130px;
+    left: 132px;
+}
+.creditcartname-yu{
+    position: absolute;
+    top: 250px;
+    left: 60px;
+}
+.creditcartdate-yu{
+    position: absolute;
+    top: 250px;
+    left: 260px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
