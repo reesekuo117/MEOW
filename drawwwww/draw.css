@@ -1,0 +1,320 @@
+.body_draw01 {
+    overflow: hidden;
+    background: url(../imgs/draw/求籤bg.png);
+    text-align:center;
+    color: var(--color-brown-dark);
+}
+
+.drawSection01 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.sound-icon {
+    /* border: 1px salmon solid; */
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sound-wave {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sound-wave .bar {
+    display: block;
+    width: 5px;
+    margin-right: 1px;
+    height: 90px;
+    background: var(--color-orange);
+    animation: sound 0ms -800ms linear infinite alternate;
+    transition: height 0.8s;
+    border-radius: 8px;
+}
+
+@keyframes sound {
+    0% {
+        opacity: .35;
+        height: 6px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 46px;
+    }
+}
+
+.bar:nth-child(1) {
+    height: 2px;
+    animation-duration: 474ms;
+}
+
+.bar:nth-child(2) {
+    height: 10px;
+    animation-duration: 433ms;
+}
+
+.bar:nth-child(3) {
+    height: 18px;
+    animation-duration: 407ms;
+}
+
+.bar:nth-child(4) {
+    height: 26px;
+    animation-duration: 458ms;
+}
+
+.bar:nth-child(5) {
+    height: 30px;
+    animation-duration: 400ms;
+}
+
+.bar:nth-child(6) {
+    height: 32px;
+    animation-duration: 427ms;
+}
+
+.bar:nth-child(7) {
+    height: 34px;
+    animation-duration: 441ms;
+}
+
+.bar:nth-child(8) {
+    height: 36px;
+    animation-duration: 419ms;
+}
+
+.bar:nth-child(9) {
+    height: 40px;
+    animation-duration: 487ms;
+}
+
+.bar:nth-child(10) {
+    height: 46px;
+    animation-duration: 442ms;
+}
+
+.bar:nth-child(11) {
+    height: 2px;
+    animation-duration: 474ms;
+}
+
+.bar:nth-child(12) {
+    height: 10px;
+    animation-duration: 433ms;
+}
+
+.bar:nth-child(13) {
+    height: 18px;
+    animation-duration: 407ms;
+}
+
+.bar:nth-child(14) {
+    height: 26px;
+    animation-duration: 458ms;
+}
+
+.bar:nth-child(15) {
+    height: 30px;
+    animation-duration: 400ms;
+}
+
+.bar:nth-child(16) {
+    height: 32px;
+    animation-duration: 427ms;
+}
+
+.bar:nth-child(17) {
+    height: 34px;
+    animation-duration: 441ms;
+}
+
+.bar:nth-child(18) {
+    height: 36px;
+    animation-duration: 419ms;
+}
+
+.bar:nth-child(19) {
+    height: 40px;
+    animation-duration: 487ms;
+}
+
+.bar:nth-child(20) {
+    height: 46px;
+    animation-duration: 442ms;
+}
+
+.drawSection01 h1{
+    margin-top: 60px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection01 h4{
+    margin-top: 40px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection01 h5{
+    margin-top: 8px;
+    color: var(--color-text60);
+}
+
+.musicBlack{
+    /* border: 1px salmon solid; */
+    margin-top: -100px;
+    transform: scale(.5);
+}
+
+.onOff h1{
+    color: white;
+    margin: 0;
+}
+
+.musicOn, .musicOff{
+    transition: .2s;
+    color: white;
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    background-color: var(--color-orange);
+    margin: 20px;
+}
+
+.musicOn:hover, .musicOff:hover{
+    outline: 5px rgba(250, 128, 114, 0.757) solid;
+    
+}
+
+/*------------------ section02 ----------------*/
+
+.drawSection02 h1{
+    margin-top: 60px;
+    color: var(--color-brown-dark);
+}
+
+.selectCatFunction svg{
+    margin-top: -32px;
+}
+
+.selectCatFunction img{
+    margin-top: -48px;
+    transform: scale(.8);
+}
+
+.selectCatFunction .btn-l{
+    height: 56px;
+    width: 280px;
+    margin-top: 40px;
+}
+
+.catDialogue1{
+    text-align: left;
+    width: 248px;
+    height: 96px;
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.catDialogue2{
+    text-align: left;
+    width: 248px;
+    height: 96px;
+    top: 428px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.catDialogue3{
+    text-align: left;
+    width: 248px;
+    height: 96px;
+    top: 456px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.backto{
+    top: 17px;
+    left: 384px;
+}
+
+.musicSwitch{
+    top: 10px;
+    right: 384px;
+}
+
+.secretSection02LeftCat{
+    transition: .3s;
+    transform-origin: center center;
+    overflow: hidden;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.secretSection02MidCat{
+    transition: .3s;
+    transform-origin: center center;
+    overflow: hidden;
+    top: 197px;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.secretSection02RightCat{
+    transition: .3s;
+    transform-origin: center center;
+    overflow: hidden;
+    top: 238px;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.drawSection02 a{
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+/*------------------ section02 ----------------*/
+
+.drawSection03 h1{
+    margin-top: 60px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection03 h2{
+    line-height: 20%;
+}
+
+.drawSection03 img{
+    transform: scale(0.7);
+}
+
+.temple01Img{
+    width: 350px;
+    height: 350px;
+    text-align : center;
+}
+
+.temple01Img{
+    transform: translateY(20px);
+}
+
+.temple05Img{
+    transform: translateY(20px);
+}
+
+.row{
+    margin-top: -40px;
+}
+
+.drawSection03 a{
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
