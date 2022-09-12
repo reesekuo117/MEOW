@@ -1,7 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
-body {
+.product_07{
     background: url(./imgs/index/IMG_0705_2.png) center center / cover;
     background-color: #FFF6E9;
     box-sizing: border-box;

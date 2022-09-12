@@ -99,27 +99,6 @@ $('.icon_favorite').click(function(){
 
 
 // 側邊欄變色
-
-$(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.detail_box').offset().top)) {
-        // 視窗超過detail_box就出現undernav
-        $('.links').css({
-            color: 'var(--color-orange)',
-        });
-
-    }
-    else {
-        $('.undernav').css({
-            // 這兩個在原本的css就要下，不然第一次打開還是會出現
-            color: 'var(--color-text87)',
-
-        });
-    };
-
-});
-
-
-
 const sectionsOffsetTop = [];
 
 // $('.details > div').eq(0).offset().top
@@ -144,7 +123,7 @@ $(window).scroll(function () {
 
         for(let i = 0; i < 4; i++){
             if(nowScroll >= sectionsOffsetTop[i]){
-                $('.links a').eq(i).css('color','red').siblings().css('color','black')
+                $('.links a').eq(i).css('color','var(--color-orange)').siblings().css('color','var(--color-text87)')
             }
         }
 
