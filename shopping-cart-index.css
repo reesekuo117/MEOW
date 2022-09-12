@@ -1,8 +1,8 @@
-/* *{
-    border: 1px solid #432A0F;
- } */
 
 /*-----------------購物車訂單的進度條 ----------------- */
+/* *{
+    border: 1px solid #000;
+    } */
 .line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
@@ -300,8 +300,9 @@
     padding: 28PX 0;
     display: flex;
     /* justify-content: space-evenly; */
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
 }
+
 .cardcheckall-yu input{
     width: 20px;
     height: 20px;
