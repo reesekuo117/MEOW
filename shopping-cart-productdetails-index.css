@@ -556,6 +556,48 @@
     left: 260px;
 }
 
+/* ----------信用卡背面------- */
+.backcreaditcart-catimg-yu{
+    position: absolute;
+    top: 440px;
+    left: 30px;
+}
+.creditcartcvc-yu{
+    position: absolute;
+    top: 462px;
+    left: 390px;
+}
+/* .card-group-yu  {
+    width: 100%;
+    max-width: 400px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: -webkit-transform 0.6s;
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+    transition: transform 0.6s, -webkit-transform 0.6s;
+    cursor: pointer;
+}
+.card-group-yu .frontcreditcart-yu,
+.card-group-yu .backcreaditcart-yu {
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    color: #47525d;
+}
+
+.card-group-yu .backcreaditcart-yu {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.creditcard.flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+} */
 
 
 
