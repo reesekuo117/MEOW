@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>旅遊列表頁</title>
-    <link rel="icon" href="./imgs/favicon.ico.png">
+    <title>來求籤唷</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./draw.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./gensen-font-master/ttc/">
-    <link rel="stylesheet" href="./travel_list_style.css">
 </head>
 
-<body>
+<body class="body_draw01">
+    <!-- header-md ----------------------------------->
     <header class="d-none d-md-block">
-        <div class="navbar">
+        <div class="navbar" style="background-color:
+        none">
             <div class="container-fluid p-0">
                 <div class="row justify-content-between w-100 m-0">
                     <!-- nav-left -->
@@ -138,6 +139,7 @@
             </div>
         </div>
     </header>
+    <!-- header-xs ----------------------------------->
     <header class="header-xs d-md-none">
         <div class="container-fluid">
             <!-- hamberger -->
@@ -234,294 +236,119 @@
 
         </div>
     </header>
-    <div class="travel_search d-flex">
-        <div class="search_bar">
-            <h3>旅遊交友行程</h3>
-            <!-- <div class="input_search d-flex">
-                        <input type="text" placeholder="請輸入關鍵字搜尋">
-                        
-                        
-                        <div class="btn">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+
+    <div class="drawSection02 position-relative">
+        <a id="backtodraw01" class="position-absolute backto" href="draw01.html">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.8518 3.47604C19.1413 3.9464 18.9946 4.56235 18.5243 4.8518L6.9082 12.0001L18.5243 19.1485C18.9946 19.4379 19.1413 20.0539 18.8518 20.5242C18.5624 20.9946 17.9464 21.1413 17.4761 20.8518L5.86001 13.7035C4.59094 12.9225 4.59093 11.0778 5.86001 10.2968L17.4761 3.14848C17.9464 2.85903 18.5624 3.00569 18.8518 3.47604Z" fill="#432A0F" fill-opacity="0.38"/>
+                </svg>
+        </a>
+        <a id="musicSwitch" class="position-absolute musicSwitch" href="#">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.93934 4.93934C5.52513 4.35355 6.47487 4.35355 7.06066 4.93934L12.612 10.4906L18.6398 6.27116C19.098 5.95041 19.6966 5.91124 20.1927 6.16954C20.6888 6.42783 21 6.94069 21 7.5V18.8787L23.3897 21.2684L23.1288 20.6596C23.2077 20.5769 23.2898 20.475 23.3731 20.3499C23.7302 19.8143 23.9999 18.9878 23.9999 18C23.9999 17.0122 23.7302 16.1858 23.3731 15.6501C23.2898 15.525 23.2077 15.4232 23.1288 15.3404L24.3425 12.5083C24.9665 12.8742 25.4814 13.4043 25.8693 13.986C26.5979 15.079 26.9999 16.5025 26.9999 18C26.9999 19.4975 26.5979 20.9211 25.8693 22.014C25.6448 22.3507 25.3778 22.6701 25.0717 22.9504L26.4066 24.2853C26.6087 24.0659 26.8055 23.8152 26.9944 23.5319C27.8944 22.1819 28.4998 20.2304 28.4998 18C28.4998 15.7695 27.8944 13.8181 26.9944 12.4681C26.4134 11.5966 25.7581 11.0341 25.0994 10.7423L26.2822 7.98244C27.5792 8.55058 28.6708 9.57439 29.4905 10.804C30.7621 12.7113 31.4998 15.2599 31.4998 18C31.4998 20.7401 30.7621 23.2887 29.4905 25.196C29.2022 25.6285 28.8802 26.0355 28.5275 26.4062L31.0607 28.9393C31.6464 29.5251 31.6464 30.4749 31.0607 31.0607C30.4749 31.6464 29.5251 31.6464 28.9393 31.0607L4.93934 7.06066C4.35355 6.47487 4.35355 5.52513 4.93934 4.93934ZM18 15.8787V10.381L14.7661 12.6447L18 15.8787Z" fill="#432A0F" fill-opacity="0.38"/>
+                <path d="M7.33873 11.3994C5.63464 12.4578 4.5 14.3464 4.5 16.5V19.5C4.5 22.8137 7.18629 25.5 10.5 25.5H12.5986L18.6398 29.7289C19.098 30.0496 19.6966 30.0888 20.1927 29.8305C20.6888 29.5722 21 29.0593 21 28.5V25.0607L18 22.0607V25.619L13.5 22.469V17.5607L10.5 14.5607V22.5C8.84315 22.5 7.5 21.1569 7.5 19.5V16.5C7.5 15.1632 8.37432 14.0307 9.5823 13.643L7.33873 11.3994Z" fill="#432A0F" fill-opacity="0.38"/>
+                </svg>
+        </a>
+<!-- FIXME: 金寶跑出來 -->
+        <div class="container-fluid flex-row">
+            <h1 class="">請選擇求籤功能</h1>
+            <div class="row justify-content-center align-items-end">
+                <div class="col-3">
+                    <div class="selectCatFunction ">
+                        <div class="drawSection02LeftCat justify-content-center flex-row ">
+                            <div class="secretSection02LeftCat position-absolute">
+                                <img class="" src="../imgs/draw/40.png" alt="">
+                            </div>
+                            <div class="notsecretSection02LeftCat">
+                                <img src="../imgs/draw/41.png" alt="">
+                            </div>
+                            
+                            <svg width="286" height="180" viewBox="0 0 286 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M253 179C270.673 179 285 164.673 285 147L285 70.8658C285 53.1926 270.673 38.8658 253 38.8658L77.0059 38.8657C74.5225 29.6722 77.0247 18.0323 79.0986 9.4322C81.6731 -1.24358 46.8907 6.9113 37.9391 38.8657L37 38.8657C19.3269 38.8657 5.00001 53.1926 5.00001 70.8657L5 147C5 164.673 19.3269 179 37 179L253 179Z" fill="black"/>
+                                <path d="M77.0059 38.8657L76.0405 39.1265L76.2402 39.8657L77.0059 39.8657L77.0059 38.8657ZM79.0986 9.4322L78.1265 9.19777L78.1265 9.19777L79.0986 9.4322ZM37.9391 38.8657L37.9391 39.8657L38.6975 39.8657L38.9021 39.1355L37.9391 38.8657ZM284 147C284 164.121 270.121 178 253 178L253 180C271.225 180 286 165.225 286 147L284 147ZM284 70.8658L284 147L286 147L286 70.8658L284 70.8658ZM253 39.8658C270.121 39.8658 284 53.7449 284 70.8658L286 70.8658C286 52.6404 271.225 37.8658 253 37.8658L253 39.8658ZM77.0059 39.8657L253 39.8658L253 37.8658L77.0059 37.8657L77.0059 39.8657ZM78.1265 9.19777C77.0882 13.5034 75.9312 18.6148 75.3495 23.8152C74.7685 29.0086 74.7524 34.3581 76.0405 39.1265L77.9713 38.605C76.776 34.1798 76.7693 29.1126 77.3371 24.0376C77.904 18.9697 79.0351 13.9611 80.0707 9.66663L78.1265 9.19777ZM38.9021 39.1355C43.2902 23.4712 54.0064 13.6513 63.2848 9.05886C67.9438 6.7528 72.1432 5.81258 74.9345 6.03071C76.3371 6.14033 77.24 6.52953 77.7224 7.0214C78.1517 7.45909 78.3863 8.12033 78.1265 9.19777L80.0707 9.66663C80.4545 8.07513 80.1653 6.65588 79.1503 5.62095C78.1883 4.6402 76.7263 4.16465 75.0903 4.03679C71.8041 3.77998 67.2312 4.87392 62.3976 7.26641C52.6905 12.0711 41.5397 22.3058 36.9762 38.596L38.9021 39.1355ZM37 39.8657L37.9391 39.8657L37.9391 37.8657L37 37.8657L37 39.8657ZM6.00001 70.8657C6.00001 53.7449 19.8792 39.8657 37 39.8657L37 37.8657C18.7746 37.8657 4.00001 52.6403 4.00001 70.8657L6.00001 70.8657ZM6 147L6.00001 70.8657L4.00001 70.8657L4 147L6 147ZM37 178C19.8792 178 6 164.121 6 147L4 147C4 165.225 18.7746 180 37 180L37 178ZM253 178L37 178L37 180L253 180L253 178Z" fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M249 175C266.673 175 281 160.673 281 143L281 66.8658C281 49.1926 266.673 34.8658 249 34.8658L73.0059 34.8657C70.5225 25.6722 73.0247 14.0323 75.0986 5.4322C77.6731 -5.24358 42.8907 2.9113 33.9391 34.8657L33 34.8657C15.3269 34.8657 1.00001 49.1926 1.00001 66.8657L1 143C1 160.673 15.3269 175 33 175L249 175Z" fill="white"/>
+                                <path d="M73.0059 34.8657L72.0405 35.1265L72.2402 35.8657L73.0059 35.8657L73.0059 34.8657ZM75.0986 5.4322L74.1265 5.19777L74.1265 5.19777L75.0986 5.4322ZM33.9391 34.8657L33.9391 35.8657L34.6975 35.8657L34.9021 35.1355L33.9391 34.8657ZM280 143C280 160.121 266.121 174 249 174L249 176C267.225 176 282 161.225 282 143L280 143ZM280 66.8658L280 143L282 143L282 66.8658L280 66.8658ZM249 35.8658C266.121 35.8658 280 49.7449 280 66.8658L282 66.8658C282 48.6404 267.225 33.8658 249 33.8658L249 35.8658ZM73.0059 35.8657L249 35.8658L249 33.8658L73.0059 33.8657L73.0059 35.8657ZM74.1265 5.19777C73.0882 9.50339 71.9312 14.6148 71.3495 19.8152C70.7685 25.0086 70.7524 30.3581 72.0405 35.1265L73.9713 34.605C72.776 30.1798 72.7693 25.1126 73.3371 20.0376C73.904 14.9697 75.0351 9.96109 76.0707 5.66663L74.1265 5.19777ZM34.9021 35.1355C39.2902 19.4712 50.0064 9.6513 59.2848 5.05886C63.9438 2.7528 68.1432 1.81258 70.9345 2.03071C72.3371 2.14033 73.24 2.52953 73.7224 3.0214C74.1517 3.45909 74.3863 4.12033 74.1265 5.19777L76.0707 5.66663C76.4545 4.07513 76.1653 2.65588 75.1503 1.62095C74.1883 0.640203 72.7263 0.164649 71.0903 0.0367935C67.8041 -0.22002 63.2312 0.873919 58.3976 3.26641C48.6905 8.07107 37.5397 18.3058 32.9762 34.596L34.9021 35.1355ZM33 35.8657L33.9391 35.8657L33.9391 33.8657L33 33.8657L33 35.8657ZM2.00001 66.8657C2.00001 49.7449 15.8792 35.8657 33 35.8657L33 33.8657C14.7746 33.8657 1.10467e-05 48.6403 9.4534e-06 66.8657L2.00001 66.8657ZM2 143L2.00001 66.8657L9.4534e-06 66.8657L2.79753e-06 143L2 143ZM33 174C15.8792 174 2 160.121 2 143L2.79753e-06 143C1.20421e-06 161.225 14.7746 176 33 176L33 174ZM249 174L33 174L33 176L249 176L249 174Z" fill="black"/>
+                                </svg>
+                                <p class="catDialogue1 m-auto position-absolute">不想再遇到怪人要賴、想和藕斷絲連的前男友say good bye，或是想斬斷勾勾纏的老王和小三，通通都交給本喵來幫你切切切！</p>
+                                <a href="draw03.html">
+                                    <div class="btn-l mx-auto">
+                                        <h4>斬桃花</h4>
+                                    </div>
+                                </a>
+
                         </div>
-                    </div> -->
-            <!-- TODO: 救命關鍵字功能要怎麼寫→套PHP -->
-            <!-- https://webdesign.tutsplus.com/zh-hant/tutorials/css-experiments-with-a-search-form-input-and-button--cms-22069 -->
-            <div class="input_search">
-                <div class="container-1">
-                    <span class="icon"><i class="fa fa-search"></i></span>
-                    <input type="search" id="search" placeholder="請輸入關鍵字搜尋" />
+                    </div>
                 </div>
-            </div>
-            <div class="search_btn">
-                <button>#聯誼</button>
-                <button>#霞海</button>
-                <button>#七夕</button>
-            </div>
-        </div>
-    </div>
-    <!-- -----------------------------------搜尋欄結束------------------------------------ -->
+                <div class="col-3">
+                    <div class="selectCatFunction">
+                        <div class="drawSection02MidCat position-relative">
 
-
-    <div class="sort">
-        <div class="container">
-            <div class="product_sort d-flex">
-                <!-- <div class="col"></div> -->
-                <div class="col offset-1">
-                    <a href="#">
-                        <p>排序方式</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <p>最新上架</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <p>熱門程度</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <p>價格高 → 低</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <p>價格低 → 高</p>
-                    </a>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-    <div class="travel_section">
-        <div class="container-fluid d-flex">
-            <!-- <div class="col-1"></div> -->
-            <div class="aside offset-1">
-                <div class="col">
-                    <div class="cate_filter">
-                        <div class="travel_cate">
-                            <h5>－依活動地區</h5>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                北部
-                                </label>
+                            <div class="secretSection02MidCat position-absolute">
+                                <img class="" src="../imgs/draw/42.png" alt="">
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                中部
-                                </label>
+                            <div class="notsecretSection02MidCat">
+                                <img src="../imgs/draw/43.png" alt="">
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                南部
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                東部
-                                </label>
-                            </div>
-                        </div>
-                        <div class="travel_cate">
-                                <h5>－依活動類型</h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                    交友聯誼
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                    文化之旅
-                                    </label>
-                                </div>
+
+                            <svg width="286" height="180" viewBox="0 0 286 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M253 179C270.673 179 285 164.673 285 147L285 70.8658C285 53.1926 270.673 38.8658 253 38.8658L77.0059 38.8657C74.5225 29.6722 77.0247 18.0323 79.0986 9.4322C81.6731 -1.24358 46.8907 6.9113 37.9391 38.8657L37 38.8657C19.3269 38.8657 5.00001 53.1926 5.00001 70.8657L5 147C5 164.673 19.3269 179 37 179L253 179Z" fill="black"/>
+                                <path d="M77.0059 38.8657L76.0405 39.1265L76.2402 39.8657L77.0059 39.8657L77.0059 38.8657ZM79.0986 9.4322L78.1265 9.19777L78.1265 9.19777L79.0986 9.4322ZM37.9391 38.8657L37.9391 39.8657L38.6975 39.8657L38.9021 39.1355L37.9391 38.8657ZM284 147C284 164.121 270.121 178 253 178L253 180C271.225 180 286 165.225 286 147L284 147ZM284 70.8658L284 147L286 147L286 70.8658L284 70.8658ZM253 39.8658C270.121 39.8658 284 53.7449 284 70.8658L286 70.8658C286 52.6404 271.225 37.8658 253 37.8658L253 39.8658ZM77.0059 39.8657L253 39.8658L253 37.8658L77.0059 37.8657L77.0059 39.8657ZM78.1265 9.19777C77.0882 13.5034 75.9312 18.6148 75.3495 23.8152C74.7685 29.0086 74.7524 34.3581 76.0405 39.1265L77.9713 38.605C76.776 34.1798 76.7693 29.1126 77.3371 24.0376C77.904 18.9697 79.0351 13.9611 80.0707 9.66663L78.1265 9.19777ZM38.9021 39.1355C43.2902 23.4712 54.0064 13.6513 63.2848 9.05886C67.9438 6.7528 72.1432 5.81258 74.9345 6.03071C76.3371 6.14033 77.24 6.52953 77.7224 7.0214C78.1517 7.45909 78.3863 8.12033 78.1265 9.19777L80.0707 9.66663C80.4545 8.07513 80.1653 6.65588 79.1503 5.62095C78.1883 4.6402 76.7263 4.16465 75.0903 4.03679C71.8041 3.77998 67.2312 4.87392 62.3976 7.26641C52.6905 12.0711 41.5397 22.3058 36.9762 38.596L38.9021 39.1355ZM37 39.8657L37.9391 39.8657L37.9391 37.8657L37 37.8657L37 39.8657ZM6.00001 70.8657C6.00001 53.7449 19.8792 39.8657 37 39.8657L37 37.8657C18.7746 37.8657 4.00001 52.6403 4.00001 70.8657L6.00001 70.8657ZM6 147L6.00001 70.8657L4.00001 70.8657L4 147L6 147ZM37 178C19.8792 178 6 164.121 6 147L4 147C4 165.225 18.7746 180 37 180L37 178ZM253 178L37 178L37 180L253 180L253 178Z" fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M249 175C266.673 175 281 160.673 281 143L281 66.8658C281 49.1926 266.673 34.8658 249 34.8658L73.0059 34.8657C70.5225 25.6722 73.0247 14.0323 75.0986 5.4322C77.6731 -5.24358 42.8907 2.9113 33.9391 34.8657L33 34.8657C15.3269 34.8657 1.00001 49.1926 1.00001 66.8657L1 143C1 160.673 15.3269 175 33 175L249 175Z" fill="white"/>
+                                <path d="M73.0059 34.8657L72.0405 35.1265L72.2402 35.8657L73.0059 35.8657L73.0059 34.8657ZM75.0986 5.4322L74.1265 5.19777L74.1265 5.19777L75.0986 5.4322ZM33.9391 34.8657L33.9391 35.8657L34.6975 35.8657L34.9021 35.1355L33.9391 34.8657ZM280 143C280 160.121 266.121 174 249 174L249 176C267.225 176 282 161.225 282 143L280 143ZM280 66.8658L280 143L282 143L282 66.8658L280 66.8658ZM249 35.8658C266.121 35.8658 280 49.7449 280 66.8658L282 66.8658C282 48.6404 267.225 33.8658 249 33.8658L249 35.8658ZM73.0059 35.8657L249 35.8658L249 33.8658L73.0059 33.8657L73.0059 35.8657ZM74.1265 5.19777C73.0882 9.50339 71.9312 14.6148 71.3495 19.8152C70.7685 25.0086 70.7524 30.3581 72.0405 35.1265L73.9713 34.605C72.776 30.1798 72.7693 25.1126 73.3371 20.0376C73.904 14.9697 75.0351 9.96109 76.0707 5.66663L74.1265 5.19777ZM34.9021 35.1355C39.2902 19.4712 50.0064 9.6513 59.2848 5.05886C63.9438 2.7528 68.1432 1.81258 70.9345 2.03071C72.3371 2.14033 73.24 2.52953 73.7224 3.0214C74.1517 3.45909 74.3863 4.12033 74.1265 5.19777L76.0707 5.66663C76.4545 4.07513 76.1653 2.65588 75.1503 1.62095C74.1883 0.640203 72.7263 0.164649 71.0903 0.0367935C67.8041 -0.22002 63.2312 0.873919 58.3976 3.26641C48.6905 8.07107 37.5397 18.3058 32.9762 34.596L34.9021 35.1355ZM33 35.8657L33.9391 35.8657L33.9391 33.8657L33 33.8657L33 35.8657ZM2.00001 66.8657C2.00001 49.7449 15.8792 35.8657 33 35.8657L33 33.8657C14.7746 33.8657 1.10467e-05 48.6403 9.4534e-06 66.8657L2.00001 66.8657ZM2 143L2.00001 66.8657L9.4534e-06 66.8657L2.79753e-06 143L2 143ZM33 174C15.8792 174 2 160.121 2 143L2.79753e-06 143C1.20421e-06 161.225 14.7746 176 33 176L33 174ZM249 174L33 174L33 176L249 176L249 174Z" fill="black"/>
+                                </svg>
+
+                                <p class="catDialogue2 m-auto position-absolute">沒有勇氣向心上人告白、好希望曖昧能修成正果、想談一場甜蜜的戀愛？沒問題～小玉我可是牽紅線專家，馬上幫你綁一條超粗的紅線！</p>
+                                <a href="draw03.html">
+                                    <div class="btn-l mx-auto">
+                                        <h4>祈求姻緣</h4>
+                                    </div>
+                                </a>
                             
                         </div>
-                        <div class="travel_cate">
-                                <h5>－依旅遊時間分類</h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                    一日遊
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                    兩天一夜
-                                    </label>
-                                </div>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="selectCatFunction">
+                        <div class="drawSection02RightCat">
+                            <img class="secretSection02RightCat position-absolute" src="../imgs/draw/44.png" alt="">
+                            <div class="notsecretSection02RightCat">
+                                <img src="../imgs/draw/45.png" alt="">
+                            </div>
+                            <svg width="286" height="180" viewBox="0 0 286 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M253 179C270.673 179 285 164.673 285 147L285 70.8658C285 53.1926 270.673 38.8658 253 38.8658L77.0059 38.8657C74.5225 29.6722 77.0247 18.0323 79.0986 9.4322C81.6731 -1.24358 46.8907 6.9113 37.9391 38.8657L37 38.8657C19.3269 38.8657 5.00001 53.1926 5.00001 70.8657L5 147C5 164.673 19.3269 179 37 179L253 179Z" fill="black"/>
+                                <path d="M77.0059 38.8657L76.0405 39.1265L76.2402 39.8657L77.0059 39.8657L77.0059 38.8657ZM79.0986 9.4322L78.1265 9.19777L78.1265 9.19777L79.0986 9.4322ZM37.9391 38.8657L37.9391 39.8657L38.6975 39.8657L38.9021 39.1355L37.9391 38.8657ZM284 147C284 164.121 270.121 178 253 178L253 180C271.225 180 286 165.225 286 147L284 147ZM284 70.8658L284 147L286 147L286 70.8658L284 70.8658ZM253 39.8658C270.121 39.8658 284 53.7449 284 70.8658L286 70.8658C286 52.6404 271.225 37.8658 253 37.8658L253 39.8658ZM77.0059 39.8657L253 39.8658L253 37.8658L77.0059 37.8657L77.0059 39.8657ZM78.1265 9.19777C77.0882 13.5034 75.9312 18.6148 75.3495 23.8152C74.7685 29.0086 74.7524 34.3581 76.0405 39.1265L77.9713 38.605C76.776 34.1798 76.7693 29.1126 77.3371 24.0376C77.904 18.9697 79.0351 13.9611 80.0707 9.66663L78.1265 9.19777ZM38.9021 39.1355C43.2902 23.4712 54.0064 13.6513 63.2848 9.05886C67.9438 6.7528 72.1432 5.81258 74.9345 6.03071C76.3371 6.14033 77.24 6.52953 77.7224 7.0214C78.1517 7.45909 78.3863 8.12033 78.1265 9.19777L80.0707 9.66663C80.4545 8.07513 80.1653 6.65588 79.1503 5.62095C78.1883 4.6402 76.7263 4.16465 75.0903 4.03679C71.8041 3.77998 67.2312 4.87392 62.3976 7.26641C52.6905 12.0711 41.5397 22.3058 36.9762 38.596L38.9021 39.1355ZM37 39.8657L37.9391 39.8657L37.9391 37.8657L37 37.8657L37 39.8657ZM6.00001 70.8657C6.00001 53.7449 19.8792 39.8657 37 39.8657L37 37.8657C18.7746 37.8657 4.00001 52.6403 4.00001 70.8657L6.00001 70.8657ZM6 147L6.00001 70.8657L4.00001 70.8657L4 147L6 147ZM37 178C19.8792 178 6 164.121 6 147L4 147C4 165.225 18.7746 180 37 180L37 178ZM253 178L37 178L37 180L253 180L253 178Z" fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M249 175C266.673 175 281 160.673 281 143L281 66.8658C281 49.1926 266.673 34.8658 249 34.8658L73.0059 34.8657C70.5225 25.6722 73.0247 14.0323 75.0986 5.4322C77.6731 -5.24358 42.8907 2.9113 33.9391 34.8657L33 34.8657C15.3269 34.8657 1.00001 49.1926 1.00001 66.8657L1 143C1 160.673 15.3269 175 33 175L249 175Z" fill="white"/>
+                                <path d="M73.0059 34.8657L72.0405 35.1265L72.2402 35.8657L73.0059 35.8657L73.0059 34.8657ZM75.0986 5.4322L74.1265 5.19777L74.1265 5.19777L75.0986 5.4322ZM33.9391 34.8657L33.9391 35.8657L34.6975 35.8657L34.9021 35.1355L33.9391 34.8657ZM280 143C280 160.121 266.121 174 249 174L249 176C267.225 176 282 161.225 282 143L280 143ZM280 66.8658L280 143L282 143L282 66.8658L280 66.8658ZM249 35.8658C266.121 35.8658 280 49.7449 280 66.8658L282 66.8658C282 48.6404 267.225 33.8658 249 33.8658L249 35.8658ZM73.0059 35.8657L249 35.8658L249 33.8658L73.0059 33.8657L73.0059 35.8657ZM74.1265 5.19777C73.0882 9.50339 71.9312 14.6148 71.3495 19.8152C70.7685 25.0086 70.7524 30.3581 72.0405 35.1265L73.9713 34.605C72.776 30.1798 72.7693 25.1126 73.3371 20.0376C73.904 14.9697 75.0351 9.96109 76.0707 5.66663L74.1265 5.19777ZM34.9021 35.1355C39.2902 19.4712 50.0064 9.6513 59.2848 5.05886C63.9438 2.7528 68.1432 1.81258 70.9345 2.03071C72.3371 2.14033 73.24 2.52953 73.7224 3.0214C74.1517 3.45909 74.3863 4.12033 74.1265 5.19777L76.0707 5.66663C76.4545 4.07513 76.1653 2.65588 75.1503 1.62095C74.1883 0.640203 72.7263 0.164649 71.0903 0.0367935C67.8041 -0.22002 63.2312 0.873919 58.3976 3.26641C48.6905 8.07107 37.5397 18.3058 32.9762 34.596L34.9021 35.1355ZM33 35.8657L33.9391 35.8657L33.9391 33.8657L33 33.8657L33 35.8657ZM2.00001 66.8657C2.00001 49.7449 15.8792 35.8657 33 35.8657L33 33.8657C14.7746 33.8657 1.10467e-05 48.6403 9.4534e-06 66.8657L2.00001 66.8657ZM2 143L2.00001 66.8657L9.4534e-06 66.8657L2.79753e-06 143L2 143ZM33 174C15.8792 174 2 160.121 2 143L2.79753e-06 143C1.20421e-06 161.225 14.7746 176 33 176L33 174ZM249 174L33 174L33 176L249 176L249 174Z" fill="black"/>
+                                </svg>
+                                <p class="catDialogue3 m-auto position-absolute">希望感情不要受到時間和距離的影響，一直保持熱戀期的熱情嗎？
+                                    讓本胖來傳授你維持兩人世界的訣竅吧！</p>
+                                    <a class="text-decoration-none" href="draw03.html">
+                                        <div class="btn-l mx-auto ">
+                                            <h4>幸福美滿</h4>
+                                        </div>
+                                    </a>
                         </div>
                     </div>
-                    <!-- TODO:價格篩選怎麼寫 -->
-                    <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
-                    <div class="price_filter">
-                        <div class="filter-content__element">
-                            <div class="filter-element-heading">
-                                <h5>價格範圍</h5>
-                            </div>
-                            <div class="filter-element-content">
-                                <div class="filter-range-values">
-                                    <span class="range-1-value">NT$1000</span>
-                                    <span class="range-2-value">NT$6000</span>
-                                </div>
-                                <div class="filter-range-content">
-                                    <div class="filter-range-track"></div>
-                                    <input class="filter-range filter-range-1" type="range" min="1000" max="6000"
-                                        value="1000" id="slider-1" step="500">
-                                    <input class="filter-range filter-range-2" type="range" min="1000" max="6000"
-                                        value="6000" id="slider-2" step="500">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
-            </div>
-
-
-            <!-- --------------------卡片怎麼會這麼難---------------------- -->
-            <div class="travel_list">
-                <div class="row">
-                    <div class="col">
-                        <div class="card_row d-flex align-items-center" style="height: 300px;">
-                            <a href="#">
-                                <div class="t_img">
-                                    <img class="w-100" src="./imgs/travel/T01_1.jpg" alt="...">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                    <div class="card_title">
-                                        <a href="#">
-                                            <h6 class="card-text d-inline">
-                                                大稻埕霞海城廟深度漫步文化之旅
-                                            </h6>
-                                        </a>
-                                    </div>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        <div class="icon_heart">
-                                            <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#432A0F"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                            </svg>
-                                        </div>
-                                    <div class="">
-                                        <div class="card_under">
-                                            <div class="card_intro card-text">
-                                                <p>旅遊勢必能夠左右未來。可是，即使是這樣，旅遊的出現仍然代表了一定的意義。從這個角度來看旅遊的出現仍然代...</p>
-                                            </div>
-                                            <div class="card_small d-flex">
-                                                <div class="icon_location">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                    </svg>
-                                                    <small>台北</small>
-                                                </div>
-                                                <div class="icon_clock pl-3">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                    </svg>
-                                                    <small>出發日期：2022/10/20</small>
-                                                </div>
-                                            </div>
-                                            <div class="card_small d-flex">
-                                                <small class="card-text d-flex">
-                                                    <div class="icon_fivestar">
-                                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                                    </div> <span>4.7(50)</span> 
-                                                </small>
-                                                <small class="card-text d-flex pl-3">
-                                                    <div class="icon_fire">
-                                                        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                            <rect width="18" height="17" fill="url(#pattern0-946095)"/>
-                                                            <defs>
-                                                            <pattern id="pattern0-946095" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                                            <use xlink:href="#image0_1808_23036" transform="translate(0.0277778) scale(0.0104938 0.0111111)"/>
-                                                            </pattern>
-                                                            <image id="image0_1808_23036" width="90" height="90" xlink:href="data:image/png;base64,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"/>
-                                                            </defs>
-                                                        </svg>
-                                                    </div>
-                                                    3K個已訂購
-                                                </small>
-                                            </div>
-                                            <h4 class="card-text price d-flex align-self-end">
-                                                1500
-                                            </h4>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                </div>
-
 
             </div>
         </div>
     </div>
-
-    </div>
-
-    <div class="pages">
-        <div class="container">
-            <div class="row">
-                <div class="btn"><a href=""><i class="fa-solid fa-angles-left"></i></a></div>
-                <div class="btn"><a href="">1</a></div>
-                <div class="btn"><a href="">2</a></div>
-                <div class="btn"><a href="">3</a></div>
-                <div class="btn"><a href="">4</a></div>
-                <div class="btn"><a href="">5</a></div>
-                <div class="btn"><a href="">6</a></div>
-                <div class="btn"><a href="">7</a></div>
-                <div class="btn"><a href="">8</a></div>
-                <div class="btn"><a href="">9</a></div>
-                <div class="btn"><a href=""><i class="fa-solid fa-angles-right"></i></a></div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="notlogin">
-        <div class="container d-flex justify-content-center">
-            <div class="alert">
-                <div class="alert_img"><img src="./imgs/product/alert.jpg" alt=""></div>
-                <div class="alert_title">
-                    <h4>請先登入再收藏行程喔！</h4>
-                </div>
-                <div class="btn_ok">
-                    <button>好的喵</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    
 
 
     <!-- footer-md ----------------------------------->
-    <footer class="footer-md d-none d-md-block ">
+    <!-- <footer class="footer-md d-none d-md-block ">
         <div class="text-white text-center py-1">
             <p class="mb-0"><span class="font-weight-light"> © </span><small>2022 MoonOldMeow</small></p>
         </div>
     </footer>
-    <!-- <div class="back-button d-none d-md-block">
-    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M26 45.5C36.7696 45.5 45.5 36.7696 45.5 26C45.5 15.2304 36.7696 6.5 26 6.5C15.2304 6.5 6.5 15.2304 6.5 26C6.5 36.7696 15.2304 45.5 26 45.5ZM33.4521 31.4129C34.0484 32.0837 35.0755 32.1441 35.7463 31.5479C36.417 30.9516 36.4774 29.9245 35.8812 29.2537L28.4291 20.8701C27.1363 19.4157 24.8637 19.4157 23.5709 20.8701L16.1188 29.2537C15.5226 29.9245 15.583 30.9516 16.2537 31.5479C16.9245 32.1441 17.9516 32.0837 18.5479 31.4129L26 23.0293L33.4521 31.4129Z" fill="#AE5D29"/>
-    </svg>
-</div> -->
+    <div class="back-button d-none d-md-block">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M26 45.5C36.7696 45.5 45.5 36.7696 45.5 26C45.5 15.2304 36.7696 6.5 26 6.5C15.2304 6.5 6.5 15.2304 6.5 26C6.5 36.7696 15.2304 45.5 26 45.5ZM33.4521 31.4129C34.0484 32.0837 35.0755 32.1441 35.7463 31.5479C36.417 30.9516 36.4774 29.9245 35.8812 29.2537L28.4291 20.8701C27.1363 19.4157 24.8637 19.4157 23.5709 20.8701L16.1188 29.2537C15.5226 29.9245 15.583 30.9516 16.2537 31.5479C16.9245 32.1441 17.9516 32.0837 18.5479 31.4129L26 23.0293L33.4521 31.4129Z" fill="#AE5D29"/>
+        </svg>
+    </div> -->
     <!-- footer-xs ----------------------------------->
     <footer class="footer-xs d-md-none ">
         <ul class="d-flex">
@@ -566,9 +393,45 @@
         </svg>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./travel_list.js"></script>
+
+
+    <!-- jQ -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <!-- 我的 -->
+    <script src="draw.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+
+            // Global settings:
+
+            disable: false,
+            startEvent: 'DOMContentLoaded',
+            initClassName: 'aos-init',
+            animatedClassName: 'aos-animate',
+            useClassNames: false,
+            disableMutationObserver: false,
+            debounceDelay: 50,
+            throttleDelay: 99,
+
+            // 透過 data-aos 來設定相關元素
+
+            offset: 1000,        // 移動距離 (單位為像素)
+            delay: 0,            // 延遲時間，範圍從 0-3000
+            duration: 1000,   // 完成動畫所需的時間，範圍從 0-3000
+            easing: 'ease',   // 動畫曲線
+            once: false,       // 動畫是否只跑一次
+            mirror: false,
+            anchorPlacement: 'center-bottom',  // 動畫觸發的位置
+        });
+    </script>
 </body>
 
 </html>

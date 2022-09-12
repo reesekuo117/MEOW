@@ -10,16 +10,34 @@ html{
 }
 .img-demo > img{
     width: 100%;
+    position: relative;
 }
 .img-wrap > img{
     width: 100%;
 }
+.top_carousel .carousel-control-prev i,.top_carousel .carousel-control-next i{
+    color: #fff;
+    margin: 0;
+    font-size: 30px;
+}
+.icon_favorite{
+    position: absolute;
+    bottom: 100px;
+    right: 30px;
+}
+/* 輪播結束 */
 .detail_title .row{
     flex-direction: column;
 }
 .evaluation{
     display: flex;
 
+}
+.icon_favorite{
+    cursor: pointer;
+}
+.icon_fivestar i{
+    color: var(--color-yellow);
 }
 .price h2::before{
     content: "NT$ ";
@@ -68,7 +86,7 @@ select{
     left: 0px;
     bottom: 0;
     z-index: 2;
-    transition: .5s;
+    /* transition: .5s; */
 }
 .left_title h2::before{
     content: "NT$";
@@ -205,8 +223,8 @@ select{
 }
 .carousel .icon_heart{
     position: absolute;
-    right: 25px;
-    top: 115px;
+    right: 36px;
+    top: 148px;
 }
 
 .carousel .thumb-wrapper {
@@ -221,14 +239,14 @@ select{
 	padding: 10px;
 	font-size: 13px;
 }
-.carousel-control-prev, .carousel-control-next {
+.otherp .carousel-control-prev,.otherp .carousel-control-next {
 	height: 44px;
 	width: 44px;
 	background: none;	
 	margin: auto 0;
 
 }
-.carousel-control-prev i, .carousel-control-next i {
+.otherp .carousel-control-prev i,.otherp .carousel-control-next i {
 	font-size: 36px;
 	position: absolute;
 	top: 50%;
@@ -241,10 +259,10 @@ select{
 	text-shadow: none;
 	font-weight: bold;
 }
-.carousel-control-prev i {
+.otherp .carousel-control-prev i {
 	margin-left: -3px;
 }
-.carousel-control-next i {
+.otherp .carousel-control-next i {
 	margin-right: -3px;
 }
 .carousel-indicators {

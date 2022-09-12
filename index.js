@@ -1,3 +1,40 @@
+// nav
+let lastScroll = 0;
+$(window).scroll(function(){
+let scrollNow =  $(window).scrollTop();
+//console.log('lastScroll:', lastScroll);
+//console.log('scrollNow', scrollNow);
+if(scrollNow > lastScroll){
+$('header').addClass('hidden')
+}
+else{
+$('header').removeClass('hidden')
+}
+lastScroll = scrollNow;
+})
+//漢堡
+$('#menuToggle input').click(function(){
+    $('#menu').css('transform','translate(0%, 0)')
+    //  console.log($('#menu').css('transform'))
+    if($('#menu').css('transform') == ('matrix(1, 0, 0, 1, 0, 0)')) {
+    //console.log('hi');
+    $('#menu').css('transform','translate(-500%, 0)')
+    }
+})
+$('#menu a').click(function(){
+    $('#menu').css('transform','translate(-1000%, 0)');
+    // console.log('HEREEEEEEE', $('#menuToggle input').prop('checked'));
+    $('#menuToggle input').prop('checked',false)
+})
+//TOP
+$('.back-button').click(function(){
+    $('html, body').animate({scrollTop:0},10)
+})
+
+// TODO: nav不要有顏色
+// 用一個我自己的 class name 只有我會吃到
+// $('.navbar').
+
 // const typeWriter = selector => {
 //     const el = document.querySelector(selector)
 //     const text = el.innerHTML
@@ -38,7 +75,7 @@ var typed = new Typed('.moonOldSay', {
 });
 
 var typed = new Typed('.meowSay', {
-    strings: ["那就交給我們吧喵！", "", "我們會替你守護人們的幸福的！"],
+    strings: ["就交給我們吧喵！", "", "我們會替人們找到幸福的！"],
     typeSpeed: 150,
     backSpeed: 100,
     loop: true,
@@ -69,13 +106,13 @@ $('.rightCat').mouseleave(function () {
 $(window).scroll(function () {
     if ($(window).scrollTop() >= ($('.leftReel').offset().top - $(window).height() * 2 / 3)) {
         $('.leftReel').css({
-            transform: 'translateX(-500px)',
+            transform: 'translateX(-500px) scale(1)',
         })
 
     }
     else {
         $('.leftReel').css({
-            transform: 'translateX(-50px)',
+            transform: 'translateX(-30px) scale(1)',
         })
     }
 
@@ -84,13 +121,13 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     if ($(window).scrollTop() >= ($('.rightReel').offset().top - $(window).height() * 2 / 3)) {
         $('.rightReel').css({
-            transform: 'translateX(500px)',
+            transform: 'translateX(500px) scale(1)',
         })
 
     }
     else {
         $('.rightReel').css({
-            transform: 'translateX(50px)',
+            transform: 'translateX(30px)scale(1)',
         })
     }
 
@@ -110,3 +147,5 @@ $(window).scroll(function () {
     }
 
 })
+
+

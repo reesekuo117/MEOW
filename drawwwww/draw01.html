@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>旅遊列表頁</title>
-    <link rel="icon" href="./imgs/favicon.ico.png">
+    <title>來求籤唷</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./draw.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./gensen-font-master/ttc/">
-    <link rel="stylesheet" href="./travel_list_style.css">
 </head>
 
-<body>
+<body class="body_draw01">
+    <!-- header-md ----------------------------------->
     <header class="d-none d-md-block">
-        <div class="navbar">
+        <div class="navbar" style="background-color:
+        none">
             <div class="container-fluid p-0">
                 <div class="row justify-content-between w-100 m-0">
                     <!-- nav-left -->
@@ -138,6 +139,7 @@
             </div>
         </div>
     </header>
+    <!-- header-xs ----------------------------------->
     <header class="header-xs d-md-none">
         <div class="container-fluid">
             <!-- hamberger -->
@@ -234,294 +236,75 @@
 
         </div>
     </header>
-    <div class="travel_search d-flex">
-        <div class="search_bar">
-            <h3>旅遊交友行程</h3>
-            <!-- <div class="input_search d-flex">
-                        <input type="text" placeholder="請輸入關鍵字搜尋">
-                        
-                        
-                        <div class="btn">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                    </div> -->
-            <!-- TODO: 救命關鍵字功能要怎麼寫→套PHP -->
-            <!-- https://webdesign.tutsplus.com/zh-hant/tutorials/css-experiments-with-a-search-form-input-and-button--cms-22069 -->
-            <div class="input_search">
-                <div class="container-1">
-                    <span class="icon"><i class="fa fa-search"></i></span>
-                    <input type="search" id="search" placeholder="請輸入關鍵字搜尋" />
+
+    <div class="drawSection01">
+        <div class="container flex-row ">
+            <h1 class="">歡迎來月老喵線上求籤！</h1>
+            <h4>
+                為了讓體驗更完善，<br>
+                求籤過程會播放能讓你放鬆、專注的音樂，<br>
+                請問你要開啟背景音樂嗎？
+            </h4>
+            <h5>＊求籤過程中也能選擇是否開啟背景音樂</h5>
+            <div class="musicBlack">
+                <img src="../imgs/draw/46.png" alt="">
+            </div>
+            <div class="sound-icon disabled justify-content-center ">
+                <div class="sound-wave">
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
+                        <i class="bar"></i>
                 </div>
             </div>
-            <div class="search_btn">
-                <button>#聯誼</button>
-                <button>#霞海</button>
-                <button>#七夕</button>
-            </div>
-        </div>
-    </div>
-    <!-- -----------------------------------搜尋欄結束------------------------------------ -->
-
-
-    <div class="sort">
-        <div class="container">
-            <div class="product_sort d-flex">
-                <!-- <div class="col"></div> -->
-                <div class="col offset-1">
-                    <a href="#">
-                        <p>排序方式</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <p>最新上架</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <p>熱門程度</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <p>價格高 → 低</p>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <p>價格低 → 高</p>
-                    </a>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-    <div class="travel_section">
-        <div class="container-fluid d-flex">
-            <!-- <div class="col-1"></div> -->
-            <div class="aside offset-1">
-                <div class="col">
-                    <div class="cate_filter">
-                        <div class="travel_cate">
-                            <h5>－依活動地區</h5>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                北部
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                中部
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                南部
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                東部
-                                </label>
-                            </div>
-                        </div>
-                        <div class="travel_cate">
-                                <h5>－依活動類型</h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                    交友聯誼
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                    文化之旅
-                                    </label>
-                                </div>
-                            
-                        </div>
-                        <div class="travel_cate">
-                                <h5>－依旅遊時間分類</h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                    一日遊
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                    兩天一夜
-                                    </label>
-                                </div>
-                        </div>
+            <div class="onOff d-flex justify-content-center ">
+                <a class="text-decoration-none" href="draw02.html">
+                    <div class="musicOn d-flex justify-content-center align-items-center">
+                        <h1>開</h1>
                     </div>
-                    <!-- TODO:價格篩選怎麼寫 -->
-                    <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
-                    <div class="price_filter">
-                        <div class="filter-content__element">
-                            <div class="filter-element-heading">
-                                <h5>價格範圍</h5>
-                            </div>
-                            <div class="filter-element-content">
-                                <div class="filter-range-values">
-                                    <span class="range-1-value">NT$1000</span>
-                                    <span class="range-2-value">NT$6000</span>
-                                </div>
-                                <div class="filter-range-content">
-                                    <div class="filter-range-track"></div>
-                                    <input class="filter-range filter-range-1" type="range" min="1000" max="6000"
-                                        value="1000" id="slider-1" step="500">
-                                    <input class="filter-range filter-range-2" type="range" min="1000" max="6000"
-                                        value="6000" id="slider-2" step="500">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </a>
 
-
-            <!-- --------------------卡片怎麼會這麼難---------------------- -->
-            <div class="travel_list">
-                <div class="row">
-                    <div class="col">
-                        <div class="card_row d-flex align-items-center" style="height: 300px;">
-                            <a href="#">
-                                <div class="t_img">
-                                    <img class="w-100" src="./imgs/travel/T01_1.jpg" alt="...">
-                                </div>
-                            </a>
-                            <div class="card-body">
-                                    <div class="card_title">
-                                        <a href="#">
-                                            <h6 class="card-text d-inline">
-                                                大稻埕霞海城廟深度漫步文化之旅
-                                            </h6>
-                                        </a>
-                                    </div>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        <div class="icon_heart">
-                                            <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#432A0F"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                            </svg>
-                                        </div>
-                                    <div class="">
-                                        <div class="card_under">
-                                            <div class="card_intro card-text">
-                                                <p>旅遊勢必能夠左右未來。可是，即使是這樣，旅遊的出現仍然代表了一定的意義。從這個角度來看旅遊的出現仍然代...</p>
-                                            </div>
-                                            <div class="card_small d-flex">
-                                                <div class="icon_location">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                    </svg>
-                                                    <small>台北</small>
-                                                </div>
-                                                <div class="icon_clock pl-3">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6"/>
-                                                    </svg>
-                                                    <small>出發日期：2022/10/20</small>
-                                                </div>
-                                            </div>
-                                            <div class="card_small d-flex">
-                                                <small class="card-text d-flex">
-                                                    <div class="icon_fivestar">
-                                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                                    </div> <span>4.7(50)</span> 
-                                                </small>
-                                                <small class="card-text d-flex pl-3">
-                                                    <div class="icon_fire">
-                                                        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                            <rect width="18" height="17" fill="url(#pattern0-946095)"/>
-                                                            <defs>
-                                                            <pattern id="pattern0-946095" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                                            <use xlink:href="#image0_1808_23036" transform="translate(0.0277778) scale(0.0104938 0.0111111)"/>
-                                                            </pattern>
-                                                            <image id="image0_1808_23036" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAAI90lEQVR4nO2dfWxbVxnGn/faTtKuiTsB1dYNVNq1K4TE8XXCxGhLmSZtlG6ErDeJ2LIGhDpNFZrWQmkZbGVjAzGKqqkIqCpYC6Kx7zpQJy1AgfK5lmHHdrIMSqMOpoGQULek7Rw3cc7LH+1KlMSOfc65HyD//mp87vu8b56enJx7zrk3QJUqVapUqVKlihuQ1wXMZNhqrMlT8DEAPQCYCIdqReGRRnt4wuvaVAh6XcBMxin4KAE73vqaGTvzFHwnAz0EsJe1qWB4XcBMCLh3jo/vHrBavuB6MRrx1dCR7Wm+qnCRLhRpZhA2xeLZZ10tShP+6tF5LCnRSmAcTN7VtNq1ejTiK6MnAyWNBoBFCBiHj/cuq3OlII34ymhDUHS+awhoaciFv+FGPTrxldEgXlvmlVtTnc13OFqLZnxjNO+GwUzry4+g76TbWxY7V5FefGN0+uXoLQCWVhCyVNTwN52qRze+MVqAPyUR9smU1Xy79mIcwBfz6GRH7FoKFs4AqHg2wcAr5xeOvffDT/8t70Bp2vBFj6bg5A5ImAwABLy7PtfwoOaStON5j37RarwmQMEzABYoyJyf4sKq99vD/9JVl24879GGEfwK1EwGgPrLOr7F0x6d7G6+iQS9AD3/4QKBqWjs8EuDGrS041mPTlhWgKawT2MNBkTAtyt8nhm9Aqe3gahVqyhjU/qulpVaNTXhidGZrsgqEH/ZAemACPB2B3SVcd3ohGUFBON7UP8FWIzeZEfsWoe0pXHd6BV06vMMfNDBFLUUmtzqoL4Urhqd7Go2AXrE8USMHt7t/dR1Oq4Vc7x3WR0xHQRQ43w2eld6OFrukqsruGZ0Q65hD4D3uZVPGKLHrVzl4MoNS8pqvh1Ez7uV7zJj5xaOXVNqsSm5JRYyRgtf5UtnSAwCDorFwV2t+1OTuotxvEen21sWg+gA3L8LDTeMhzeUuoDGJh9nYDuAJQDezsB2jBW+5kQxjhvNNWIvgOuczlOE24o1JLfEQmD69MzPiXG/Ezs3jhqd6opsZNBmJ3PMw63FGoxzk+sAXD1H0wIR4nt0F+KY0YOfaLoajO86pV8WjOUZKzL3TxOj+I4OYVZPV8UxoycLxlOobA/QEdiYvZ7yx4+vfhszdZQIi6S7Wtp01uGI0amuyEYA2n/8ZGCwOfOzUKj2Acyzo8OMLTrr0G708d5ldWDaq1tXHr5h+lcZK3IdA/NufTG4c9hq1HZzpd3ocC78WYBX6NaVhQUtm/71FGEfgEVlhDbkEPqQrjq0Gj3QHV3KwE6dmsoQX//WPwesyDYA7WWHEms7DaXVaGaxC8BVOjXVoXoASHVGOpnwZIXBG7VVoUso29F8fSFIIwBqdWlqYoKZdxDRHgCBSoMFcVNbfPAl1SK09ehCkHbCfyYDQA0R7YWEyQBADC3Dhxajk1YsDKBXh5bfIPjIaMMo3Avfjc26oLbf33ljvaqKFqN1T+59RrBuQd0HVEWUjb60PeXegr4XEHidqoZ6jxakbQrkV0iQ8maystEEfZN6v8IEkxWnwkpGD1jRd4Bo1qLN/yENA5aptKygZLQwRFRV438FvvS9SqNkEgmKqMSXlQP4AzFrX4ivFIP5RqV4pezEThqdA9N90UR2LZPh+QOcTPBu6ADjhvkvkhJ+VRhYE7Mz+y+90YCL7v25BtNylXC110gQtO8WM/CaUQisa3s2/ff/fkjLQV6/QYKVtuXUxmhoN/oNg43bzOkmAwAJr44rTCesEqxkNOs2mrDdtNMvz9HgdXcGgAaVYNWpmUYD+DdmPPt0kcaz+vJI490NC4A3FOOvYJDxuWKv8iHADw8AvakS7A+jmZPReOZPxZoF8c+15FGj2JtxykJtjGY+rRJ/RYfoaMkLRMgGMKYjlyysOHwp3rBQSin+ShHGiVLtrXZqDMT7dOSShRhnVOKVjDZIJFXir+iw+PN813Au9ASAER35pCDyzui8WPRrKI5dAFDIB+cd61ufS+VA3APgomo+KYjnmHaWj5LRN9snxhn0nIoGAEzU1ZQ1TYzFB0+CcL9qPhm4IEoOb/OhvMTJwA9VNULiQtnPBcbi2e+D6YuqOSuDz8aODJ1SUVA2ujWR6QegdsDECFS0MhazM48TwZFHIOaGjqm+rlPDVhaYGF9XKoIqX50z49ldAD2hkrcCfqwqoGV3ZASrfgRgQDaeGR+ViYslMg8R8Jhs3jLJjefz/aoiWozutO0pEG8FIGTiidCY6m6WegDTTGQfdtJsJhxec/TUeVUdbft9sfjgSQLkbyoEPSAbaiayDwP4lnTuEpAQ39aho3Vjtf78mzvASEuGd6g8N2Imsp8h8EHZ+Lkg4FjMHtJ096uRlf0jFwMGugl4XSKchOA9sucnCOBantoC4Gcy8XNqGrRbl5b2owIt8exf2eB2yNzBEdamOyP3yeZutIcnjAnqZuAVWY1pHIn2ZV7QoAPAoTMZsb7B3xHzPQAKlcYy8KTK63qiP8mMMqNbJvc0cszBbQrxs3Ds8ItpDz5D4G4AlT7AvkgE+ejJu2+S3jpqs7MvMuEp2Xgi7Gy1U6/Kxs+Fo6eMzMTgEQFqR6ULT4zVwYnxQ8fXr5fepc+P53cD+GelcQQci8az2pdkHT/O1ZbIPG8wrWXgtUriiOhj4SWvH0hYltQjEZfnvpW90JtwOs+Fbif+OoYr5+aidiZjsGEC+GklcQzavJxO98n27PF8/gCA0TIvH+WCuPNme1hmxjQvrh1QNO30v81EdgOIHgRQ9p0WgTeFl4w+KpNzzdFT5xnoK+PSPBm8qfXI0F9k8pSDqydBCeBYPLM3wHgPg54pP5Klp3wGidL7kUCOYNxh9g3+UjZHWXU4KV6MFjv7j9ZExiISG5gxPN/1DEi/G7r+3PivUHRjl88SxEfMRPoXsvrl4unZZjM+1B+zs01EYgMYRXsUEQ7J5ljZP3IRxPtnNTDSQUabmRj6rax2JXj+t7IIYMSH+gH0J62mJoMMC8AtDDQBuMDAD+pEQeldeRwOPURjkwDTZgBEwKE8Fn4pZp8Y1/E9VKlSpUqVKlWq+If/ANnfn19op2weAAAAAElFTkSuQmCC"/>
-                                                            </defs>
-                                                        </svg>
-                                                    </div>
-                                                    3K個已訂購
-                                                </small>
-                                            </div>
-                                            <h4 class="card-text price d-flex align-self-end">
-                                                1500
-                                            </h4>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-    </div>
-
-    <div class="pages">
-        <div class="container">
-            <div class="row">
-                <div class="btn"><a href=""><i class="fa-solid fa-angles-left"></i></a></div>
-                <div class="btn"><a href="">1</a></div>
-                <div class="btn"><a href="">2</a></div>
-                <div class="btn"><a href="">3</a></div>
-                <div class="btn"><a href="">4</a></div>
-                <div class="btn"><a href="">5</a></div>
-                <div class="btn"><a href="">6</a></div>
-                <div class="btn"><a href="">7</a></div>
-                <div class="btn"><a href="">8</a></div>
-                <div class="btn"><a href="">9</a></div>
-                <div class="btn"><a href=""><i class="fa-solid fa-angles-right"></i></a></div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="notlogin">
-        <div class="container d-flex justify-content-center">
-            <div class="alert">
-                <div class="alert_img"><img src="./imgs/product/alert.jpg" alt=""></div>
-                <div class="alert_title">
-                    <h4>請先登入再收藏行程喔！</h4>
-                </div>
-                <div class="btn_ok">
-                    <button>好的喵</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
+                <a class="text-decoration-none" href="draw02.html">
+                    <div class="musicOff d-flex justify-content-center align-items-center">
+                        <h1>關</h1>
     
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+
+    </div>
 
 
     <!-- footer-md ----------------------------------->
-    <footer class="footer-md d-none d-md-block ">
+    <!-- <footer class="footer-md d-none d-md-block ">
         <div class="text-white text-center py-1">
             <p class="mb-0"><span class="font-weight-light"> © </span><small>2022 MoonOldMeow</small></p>
         </div>
     </footer>
-    <!-- <div class="back-button d-none d-md-block">
-    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M26 45.5C36.7696 45.5 45.5 36.7696 45.5 26C45.5 15.2304 36.7696 6.5 26 6.5C15.2304 6.5 6.5 15.2304 6.5 26C6.5 36.7696 15.2304 45.5 26 45.5ZM33.4521 31.4129C34.0484 32.0837 35.0755 32.1441 35.7463 31.5479C36.417 30.9516 36.4774 29.9245 35.8812 29.2537L28.4291 20.8701C27.1363 19.4157 24.8637 19.4157 23.5709 20.8701L16.1188 29.2537C15.5226 29.9245 15.583 30.9516 16.2537 31.5479C16.9245 32.1441 17.9516 32.0837 18.5479 31.4129L26 23.0293L33.4521 31.4129Z" fill="#AE5D29"/>
-    </svg>
-</div> -->
+    <div class="back-button d-none d-md-block">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M26 45.5C36.7696 45.5 45.5 36.7696 45.5 26C45.5 15.2304 36.7696 6.5 26 6.5C15.2304 6.5 6.5 15.2304 6.5 26C6.5 36.7696 15.2304 45.5 26 45.5ZM33.4521 31.4129C34.0484 32.0837 35.0755 32.1441 35.7463 31.5479C36.417 30.9516 36.4774 29.9245 35.8812 29.2537L28.4291 20.8701C27.1363 19.4157 24.8637 19.4157 23.5709 20.8701L16.1188 29.2537C15.5226 29.9245 15.583 30.9516 16.2537 31.5479C16.9245 32.1441 17.9516 32.0837 18.5479 31.4129L26 23.0293L33.4521 31.4129Z" fill="#AE5D29"/>
+        </svg>
+    </div> -->
     <!-- footer-xs ----------------------------------->
     <footer class="footer-xs d-md-none ">
         <ul class="d-flex">
@@ -566,9 +349,45 @@
         </svg>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./travel_list.js"></script>
+
+
+    <!-- jQ -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <!-- 我的 -->
+    <script src="draw.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+
+            // Global settings:
+
+            disable: false,
+            startEvent: 'DOMContentLoaded',
+            initClassName: 'aos-init',
+            animatedClassName: 'aos-animate',
+            useClassNames: false,
+            disableMutationObserver: false,
+            debounceDelay: 50,
+            throttleDelay: 99,
+
+            // 透過 data-aos 來設定相關元素
+
+            offset: 1000,        // 移動距離 (單位為像素)
+            delay: 0,            // 延遲時間，範圍從 0-3000
+            duration: 1000,   // 完成動畫所需的時間，範圍從 0-3000
+            easing: 'ease',   // 動畫曲線
+            once: false,       // 動畫是否只跑一次
+            mirror: false,
+            anchorPlacement: 'center-bottom',  // 動畫觸發的位置
+        });
+    </script>
 </body>
 
 </html>

@@ -2,6 +2,17 @@
     font-family: 'gensen-M';
 }
 
+header .navbar {
+    /* background-color: var(--color-orange); */
+    width: 100%;
+    height: 100px;
+    padding: 0 80px;
+}
+
+.section1_ba{
+    top: -30px;
+}
+
 .body_ba {
     /* border: #ff5b00 1px solid; */
     /* overflow: hidden; */
@@ -15,17 +26,18 @@
 
 .bg1_ba {
     width: 100%;
-    height: 100vh;
-    border: 250px transparent solid;
+    height: calc(100vh - 70px);
+    border: 150px transparent solid;
     border-image: url(./imgs/index/flower-border.png) 300 stretch;
-    background: url(./imgs/index/bg2.png) center -350px / cover no-repeat;
+    background: url(./imgs/index/bg2.png) center -230px / 80% no-repeat;
 }
 
 .left {
     left: -300px;
-    top: -200px;
+    top: -100px;
     width: 60%;
     height: 100vh;
+    transform: scale(0.9);
     /* border: #ff5b00 1px solid; */
 }
 
@@ -77,10 +89,12 @@
 }
 
 .right {
-    right: -350px;
-    top: -200px;
+    right: -300px;
+    top: -100px;
     width: 30%;
     height: 100vh;
+    transform: scale(0.9);
+
     /* border: #4400ff 1px solid; */
 }
 
@@ -160,7 +174,7 @@
 
 .moonOld {
     top: 13%;
-    left: 20%;
+    left: 17%;
 }
 
 .meowMeow {
@@ -314,6 +328,10 @@
     border: var(--color-brown-dark) 2px solid;
     border-radius: 8px;
     transition: .3s;
+    /* width: 560px;
+    height: 76px; */
+    /* align-items: center; */
+    margin: 0 auto ;
     padding: 20px 184px;
     background-color: var(--color-yellow);
     text-align: center;
@@ -351,12 +369,17 @@
 
 .leftCat {
     top: 10%;
-    left: 10%;
+    left: 7%;
     text-align: center;
     /* border: #ff5b00 1px solid; */
     width: 500px;
     color: white;
     animation: leftCat 6s ease-in-out infinite;
+}
+
+.leftCat img, .middleCat img, .rightCat img{
+    transform: scale(0.8);
+
 }
 
 @keyframes leftCat {
@@ -367,7 +390,7 @@
     }
 
     50% {
-        transform: translateY(-90px);
+        transform: translateY(-70px);
     }
 }
 
@@ -384,7 +407,7 @@
 
 .rightCat {
     top: 4%;
-    right: 10%;
+    right: 7%;
     text-align: center;
     /* border: #ff5b00 1px solid; */
     /* width: 500px; */
@@ -394,7 +417,7 @@
 
 .btn02_ba {
     z-index: 3;
-    top: 80%;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -424,8 +447,8 @@
 /* ----------------------------- 還好崩潰的 section3 結束 ------------------------------- */
 
 .section4_ba {
-    height: 150vh;
-    margin-top: 150px;
+    height: 120vh;
+    /* margin-top: 150px; */
     color: white;
     overflow: hidden;
 }
@@ -458,7 +481,7 @@
 }
 
 .cartCat img {
-    transform: scale(0.7) translateX(-150px);
+    transform: scale(0.6) translateX(-250px);
 }
 
 .row {
@@ -466,14 +489,14 @@
 }
 
 .cloud13 {
-    top: 40%;
-    left: -30%;
+    top: 50%;
+    left: -40%;
     animation: cloudA ease-in-out 10s infinite;
 }
 
 .cloud14 {
-    top: 42%;
-    left: 10%;
+    top: 52%;
+    left: 0%;
     animation: cloudB ease-in-out 7s infinite;
     filter: blur(3px);
     mix-blend-mode: screen;
@@ -593,26 +616,27 @@
 
 /* FIXME: 中間會飄移 */
 .middleReel {
+    /* border: 1px salmon solid; */
     transition: 1s;
-    left: 47.5%;
+    left: 50%;
     overflow: hidden;
     width: 0px;
     margin-top: 48px;
-    transform: scale(0.9) translateX(-50%);
+    transform: scale(1)translateX(-50%) ;
 }
 
 .leftReel {
-    transition: 1s;
+    transition: 0.8s;
     top: 670px;
     left: 50%;
-    transform: translateX(-50%) scale(0.9);
+    transform: translateX(-50%) scale(1);
 }
 
 .rightReel {
-    transition: 1s;
+    transition: 0.8s;
     top: 670px;
     right: 50%;
-    transform: translateX(50%) scale(0.9);
+    transform: translateX(50%) scale(1);
 }
 
 .section6_ba h1 {
@@ -680,39 +704,57 @@
 .ballon01 {
     top: 50%;
     left: 10%;
+    animation: ballon 3s infinite ease-in-out;
 }
 
 .ballon02 {
     top: 60%;
     left: 15%;
+    animation: ballon 4.5s infinite ease-in-out;
 }
 
 .ballon03 {
     top: 50%;
     right: 10%;
+    animation: ballon 5s infinite ease-in-out;
 }
 
 .ballon04 {
     top: 60%;
     right: 6%;
+    animation: ballon 6s infinite ease-in-out;
 }
 
 .ballon05 {
     top: 55%;
     left: 5%;
+    animation: ballon 5.5s infinite ease-in-out;
 }
 
 .ballon06 {
     top: 70%;
     left: 8%;
+    animation: ballon 3.5s infinite ease-in-out;
 }
 
 .ballon07 {
     top: 65%;
     right: 2%;
+    animation: ballon 5.5 infinite ease-in-out;
 }
 
 .ballon08 {
     top: 70%;
     right: 9%;
+    animation: ballon 4s infinite ease-in-out;
+}
+
+@keyframes ballon {
+    0%, 100%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-50px);
+    }
 }
