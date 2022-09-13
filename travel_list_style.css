@@ -1,5 +1,5 @@
 /* *{
-    outline: 1px solid #432A0F;
+    outline: 1px solid #fff;
 } */
 .row {
     margin: 0;
@@ -15,18 +15,22 @@
     align-items: center;
 }
 
-.search_bar {
-    padding: 32px;
+.search_bar h3{
+    padding-bottom: 8px;
 }
-
+.search_btn button{
+    margin-top: 8px;
+}
 .search_bar h3 {
     color: white;
     text-align: center;
+    margin: 0 auto;
+
 }
 
 .search_btn {
     margin: 0 auto;
-    text-align: right;
+    text-align: center;
 }
 .search_btn button{
     color: #fff;
@@ -58,14 +62,15 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    margin: 8px;
+    /* margin: 8px; */
 }
 
 .container-1 .icon {
     position: absolute;
-    top: 50%;
-    margin-left: 20px;
-    margin-top: 17px;
+    top: 10px;
+    left: 10px;
+    /* margin-left: 20px;
+    margin-top: 17px; */
     z-index: 1;
     color: #432A0F;
 }
@@ -284,7 +289,7 @@
 .icon_heart{
     position: absolute;
     right: 30px;
-    bottom: 215px;
+    top: 30px;
     cursor: pointer;
 
 }
@@ -302,18 +307,21 @@
 .pl_row {
     margin: 36px auto;
 }
-.product_list{
+.travel_list{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+
 }
-.product_list a{
+.travel_list a{
     text-decoration: none;
     color: var(--color-text87);
 }
-
+.t_card{
+    padding-bottom: 32px;
+}
 .card-body .row{
     /* margin: 0; */
     padding: 4px 0;
@@ -364,27 +372,74 @@
     border: 1px solid var(--color-text87);
 }
 
-/* -------------------收藏卻未登入視窗------------------ */
+/* ------------------未登入提醒視窗----------------- */
 .notlogin{
-    margin: 0 auto;
-}
-.alert{
-    position: relative;
+    /* margin: 0 auto; */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(47, 47, 47, 0.635);
     
 }
-.alert_title{
-    color: var(--color-text100);
-    position: absolute;
-    left: 230px;
-    bottom: 180px;
-}
 
-.alert .btn_ok button{
+.alert{
+    overflow: hidden;
+    flex-direction: column;
+    width: 500px;
+    height: 300px;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    /* position: relative; */
     position: absolute;
-    left: 300px;
-    bottom: 100px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+}
+.alert_head{
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-yellow);
+    position: absolute;
+    top: 0;
+}
+.alert_head i{
+    font-size: 2.5rem;
+    line-height: 60px;
+    padding-left: 16px;
+    color: var(--color-text100);
+}
+.alert_title{
+    text-align: center;
+    color: var(--color-text100);
+    padding-top: 30px;
+    /* line-height: 250px; */
+    /* position: absolute;
+    left: 130px;
+    bottom: 180px; */
+}
+.btn_ok{
+    /* margin: 0 auto; */
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 30px;
+}
+.alert .btn_ok button{
+    /* position: absolute;
+    left: 200px;
+    bottom: 100px; */
+    
     color: var(--color-text100);
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 16px;
     background-color: var(--color-yellow);
+}
+.alert_img{
+    width: 100px;
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
 }
