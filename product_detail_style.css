@@ -116,17 +116,22 @@ select{
 .choice{
     padding-bottom: 16px;
 }
+.number input{
+    width: 50px;
+    text-align: center;
+    border: none;
+}
 .quantity{
     padding: 4 8px;
     margin: 0 8px;
 }
-.minus button{
+.minus{
     background-color: var(--color-text38);
     border-radius: 50%;
     border: none;
     color: #fff;
 }
-.plus button{
+.plus{
     background-color: var(--color-text87);
     border-radius: 50%;
     border: none;

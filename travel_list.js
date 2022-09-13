@@ -34,7 +34,7 @@ function slideTwo() {
 
     let sliderTwoPercentage = sliderTwo.attributes.max.nodeValue;
     let sliderMovementTwo = Math.abs(sliderTwo.value - sliderTwoPercentage);
-    SliderValTwo.style.right = `${sliderMovementTwo /2900 * 40 }%`;
+    SliderValTwo.style.right = `${sliderMovementTwo /2900 * 70 }px`;
 }
 
 sliderOne.addEventListener('input', slideOne)
@@ -43,7 +43,7 @@ sliderTwo.addEventListener('input', slideTwo)
 // 愛心
 
 $('.icon_heart').click(function(){
-    $('.heart_line').toggleClass('color')
+    $(this).find('.heart_line').toggleClass('color')
 });
 
 // 按收藏後真的進入收藏頁面&沒登入會跳出提示窗

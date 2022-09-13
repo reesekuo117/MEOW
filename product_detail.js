@@ -86,7 +86,7 @@
             };
         
         });
-
+        // ----------------下方列結束-------------------
 
 
         // 愛心變色(輪播牆+卡片)
@@ -96,13 +96,13 @@ $('.icon_heart').click(function(e){
     $(this).find('.heart_line').toggleClass('color')
 });
 
-//下方列按鈕變色
+//下方列愛心變色
 $('.favorite > .icon_heart_nav').click(function(){
     $('.icon_heart_nav > svg').toggleClass('color')
 });
+        // ----------------愛心變色結束-------------------
 
 // ??按收藏後真的進入收藏頁面&沒登入會跳出提示窗
-
 
 
 // 側邊欄變色
@@ -146,3 +146,43 @@ $(window).scroll(function () {
 
     }
 )
+        // ----------------側邊攔變色結束-------------------
+
+
+$(function() {
+    // This button will increment the value
+    $('.plus').click(function() {
+    // Stop acting like a button
+    // e.preventDefault();
+    // Get the field name
+    fieldName = $(this).attr('field');
+    // Get its current value
+    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // If is not undefined
+    if (!isNaN(currentVal)) {
+      // Increment
+        $('input[name=' + fieldName + ']').val(currentVal + 1);
+    } else {
+      // Otherwise put a 0 there
+        $('input[name=' + fieldName + ']').val(0);
+    }
+    });
+
+    // This button will decrement the value till 0
+        $(".minus").click(function() {
+        // Stop acting like a button
+        // e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+        // Decrement one
+            $('input[name=' + fieldName + ']').val(currentVal - 1);
+        } else {
+        // Otherwise put a 0 there
+            $('input[name=' + fieldName + ']').val(0);
+        }
+        });
+    });
