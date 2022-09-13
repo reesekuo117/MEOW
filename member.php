@@ -6,7 +6,7 @@
 <div class="background-re">
 <div class="container-re">
     <div class="tab row m-0">
-        <div class="tab_list_re d-none d-md-block col-md-3">
+        <div class=" d-none d-md-block col-md-3">
             <div class="picturewarp-re mx-auto my-4 position-relative">
                 <img class="w-100" src="./imgs/member/picture01.png" alt="">
             </div>
@@ -17,11 +17,11 @@
                     <circle cx="21.3333" cy="13.3333" r="1.33333" fill="#432A0F"/>
                 </svg>
             </div>
-            <ul class="m-0 p-0 text-center  testhight-re">
-                <li class="current_re text-20-re mb-2" id="">會員資料</li>
-                <li class="text-20-re mb-2" id="">修改密碼</li>
-                <li class="text-20-re mb-2" id="" onclick="addToCartRe(event)">我的最愛</li>
-                <li class="text-20-re mb-2" id="">查詢訂單</li>
+            <ul class="tab_list_re m-0 p-0 text-center  testhight-re">
+                <li class="current_re text-20-re mb-2" data-val="member-data">會員資料</li>
+                <li class="text-20-re mb-2" data-val="modify-password">修改密碼</li>
+                <li class="text-20-re mb-2" data-val="my-favorites" onclick="/*addToCartRe(event)*/">我的最愛</li>
+                <li class="text-20-re mb-2" data-val="member-order">查詢訂單</li>
                 <li class="signupbutton "><input class="btn-re btn200-re phonewidth330-re" type="submit" value="登出"></li>
             </ul>
         </div>
@@ -40,7 +40,7 @@
                         </defs>
                     </svg>
                 </div>
-                <!-- phone -->
+                <!-- xs -->
                 <div class="col-12 d-md-none">
                     <div class="picturewarp-re mx-auto my-4 position-relative">
                         <img class="w-100" src="./imgs/member/picture01.png" alt="">
@@ -54,8 +54,8 @@
                     </div>
                 </div>
                 <div class="d-flex tab_phonelist_re">
-                <h5 class="membertitle-re col-6 p-0 d-inline-block">會員資料</h5>
-                <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block">修改密碼</h5>
+                    <h5 class="membertitle-re col-6 p-0 d-inline-block">會員資料</h5>
+                    <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block">修改密碼</h5>
                 </div>
                 <form name='form1-re' class="padding225-re" onsubmit=" checkForm(); return false;">  
                 <!-- novalidate 不要驗證表單 -->
@@ -782,9 +782,33 @@
 </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>
 <script>
+
+    const my_pages = $(".tab_con_re .item_re");
+    const myHashChange =  function(){
+        const hash = location.hash;
+        switch(hash) {
+            case '#member-data':
+                my_pages.eq(0).show().siblings().hide();
+                break;
+            case '#modify-password':
+                my_pages.eq(1).show().siblings().hide();
+                break;
+            case '#my-favorites':
+                my_pages.eq(2).show().siblings().hide();
+                break;
+            case '#member-order':
+                my_pages.eq(3).show().siblings().hide();
+                break;
+        }
+    };
+    window.addEventListener('hashchange', myHashChange);
+
+    // #member-data, #modify-password, #my-favorites, #member-order
     // 側邊欄切換
     $(function(){
-		//點擊上部的li，當前li添加current類，其餘兄弟移除類
+		
+        /*
+        //點擊上部的li，當前li添加current類，移除其他
 		$(".tab_list_re li").click(function(){
 			$(this).addClass("current_re").siblings().removeClass("current_re");
 			//點擊的同時，得到當前li的索引號
@@ -792,6 +816,12 @@
 			//讓下部裡面相應索引號的item顯示，其餘的item隱藏
 			$(".tab_con_re .item_re").eq(index).show().siblings().hide();
 		})
+        */
+        $(".tab_list_re li").click(function(){
+            const dataVal = $(this).attr('data-val')
+            location.href = '#' + dataVal;
+        });
+        myHashChange();
 	})
     //手機會員/修改
     $(function(){
