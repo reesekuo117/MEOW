@@ -68,16 +68,21 @@ html{
     margin: 0;
     font-size: 30px;
 }
-.icon_favorite{
+.icon_heart{
     position: absolute;
     bottom: 10px;
     right: 10px;
     z-index: 2;
-
+    cursor: pointer;
+}
+.color{
+    stroke: #432A0F;
+    fill: #CD562F;
 }
 .icon_fivestar i{
     color: var(--color-yellow);
 }
+
 /* 輪播結束 */
 .detail_title .row{
     flex-direction: column;
@@ -154,6 +159,7 @@ select{
 .btns .favorite{
     background-color: var(--color-creamy-light);
 }
+
 .btns .buy{
     margin: 0;
 }
@@ -230,7 +236,7 @@ select{
 }
 /* -----------------------評價結束-------------------- */
 .otherp{
-    margin: 50px 0;
+    margin: 65px 0;
 }
 .otherp h4{
     color: var(--color-text87);
@@ -269,11 +275,11 @@ select{
     bottom: 0;
     /* 直接在div下陰影 */
 }
-.carousel .icon_heart{
+/* .carousel .icon_heart{
     position: absolute;
-    right: 36px;
-    top: 148px;
-}
+    right: 10px;
+    bottom: 10px;
+} */
 
 .carousel .thumb-wrapper {
 	margin: 5px;

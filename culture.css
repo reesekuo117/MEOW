@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid black;
-} */
+}
 /* kv-pc */
 .temp_bg{
   /* border:1px solid red; */
@@ -683,4 +683,46 @@ color: #CD562F;
 /* #north-group_lb{
   visibility: hidden;
 } */
+.mbTemCard{
+  margin: 20px;
+  width: 200px;
+  height: 280px;
+  border-radius: 8px;
+  background-color: var(--color-orange);
 
+}
+.mbTemImg-wrap{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: url(./imgs/culture/temple/C01_1.jpeg) center center no-repeat;
+  background-size: cover;
+
+}
+
+.mbdetail-info_lb{
+  margin-top: 50px;
+}
+.mbdetail-info_lb span{
+  display: inline-block;
+  position: relative;
+}
+.mbdetail-info_lb span:before{
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -8px;
+  background: var(--color-white);
+  width: 2px;
+  height: 14px;
+}
+
+.temScroll-snap_lb{
+  border: 1px solid red;
+  margin: 0 10px ;
+  display:flex;
+  overflow-x: auto;
+  scroll-padding:0 50%;
+  scroll-snap-type: x mandatory;     
+}

@@ -1,4 +1,4 @@
-        // 輪播牆+小換大
+        // 輪播牆+小換大+愛心被點擊
         let nowPage = 0;
         $('.carousel-control-next').click(function(e){
             console.log('click');
@@ -24,11 +24,11 @@
         })
 
         function moveX(nowPage){
-            $('.img-demo img').eq(nowPage).css('opacity','1').siblings().not('.icon_favorite').css('opacity','0')
+            $('.img-demo img').eq(nowPage).css('opacity','1').siblings().not('.icon_heart').css('opacity','0')
         }
 
-        $('.icon_favorite').click(function(){
-            console.log('icon_favorite clicked');
+        $('.icon_heart').click(function(){
+            console.log('.icon_heart clicked');
         })
 
 
@@ -89,13 +89,20 @@
 
 
 
-        // 愛心變色
+        // 愛心變色(輪播牆+卡片)
 
-$('.icon_favorite').click(function(){
-    $('.heart_line').toggleClass('color')
+$('.icon_heart').click(function(e){
+    e.preventDefault();
+    $(this).find('.heart_line').toggleClass('color')
+});
+
+//下方列按鈕變色
+$('.favorite > .icon_heart_nav').click(function(){
+    $('.icon_heart_nav > svg').toggleClass('color')
 });
 
 // ??按收藏後真的進入收藏頁面&沒登入會跳出提示窗
+
 
 
 // 側邊欄變色
