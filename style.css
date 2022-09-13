@@ -3,14 +3,6 @@
     font-family: 'gensen-M';
 }
 
-/* @font-face {
-    font-family: gensen;
-    src: url('./gensen-font-master/ttc/GenSenRounded-H.ttc');
-    src: url('./gensen-font-master/ttc/GenSenRounded-B.ttc');
-    src: url('./gensen-font-master/ttc/GenSenRounded-M.ttc');
-    src: url('./gensen-font-master/ttc/GenSenRounded-R.ttc');
-} */
-
 @font-face {
     font-family: 'gensen-B';
     src: url('./gensen-font-master/ttc/GenSenRounded-B.ttc');

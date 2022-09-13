@@ -5,6 +5,13 @@
     color: var(--color-brown-dark);
 }
 
+.youcantseeme{
+    width: 100px;
+    height: 100px;
+    /* border: 1px salmon solid; */
+    transform: translateX(-900px);
+}
+
 .drawSection01 {
     width: 100%;
     height: calc(100vh - 100px);
@@ -190,11 +197,16 @@
     
 }
 
-/*------------------ section02 ----------------*/
+/*------------------ draw02 ----------------*/
 
 .drawSection02 h1{
     margin-top: 60px;
     color: var(--color-brown-dark);
+}
+
+.drawSection02 .row{
+    margin-top:12px ;
+    /* top: 48px; */
 }
 
 .selectCatFunction svg{
@@ -271,7 +283,7 @@
     transition: .3s;
     transform-origin: center center;
     overflow: hidden;
-    top: 238px;
+    top: 215px;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
 }
@@ -281,7 +293,7 @@
     text-decoration: none;
 }
 
-/*------------------ section02 ----------------*/
+/*------------------ draw03 ----------------*/
 
 .drawSection03 h1{
     margin-top: 60px;
@@ -311,10 +323,292 @@
 }
 
 .row{
-    margin-top: -40px;
+    margin-top: -50px;
 }
 
 .drawSection03 a{
     color: var(--color-brown-dark);
     text-decoration: none;
+}
+
+.body_draw04 {
+    overflow: hidden;
+    background: url(../imgs/draw/求籤bgblack.png);
+    text-align:center;
+    color: white;
+}
+
+/*------------------ draw04 ----------------*/
+
+.drawSection04 h1{
+    margin-top: 60px;
+    padding-top: 120px;
+    color: var(--color-white);
+}
+
+.drawSection04 h5{
+    margin-top: 56px;
+    color: var(--color-white);
+}
+
+.drawSection04 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.btn-xl:hover {
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+/*------------------ draw05 ----------------*/
+
+.drawSection05 h1{
+    margin-top: 60px;
+    padding-top: 160px;
+    color: var(--color-white);
+}
+
+.drawSection05 .notbtn{
+    margin-top: 0px;
+    color: #6F6F6F;
+}
+
+.drawSection05 .container h5{
+    margin-top: 56px;
+    color: var(--color-white);
+}
+
+.drawSection05 .stepCircleActive h5{
+    margin: 0;
+    color: var(--color-white);
+}
+
+.drawSection05 .stepCircle h5{
+    margin: 0;
+    color: var(--color-text60);
+}
+
+.drawSection05 .stepActive h5{
+    color: var(--color-white);
+}
+.drawSection05 .stepUnActive h5{
+    color: #6F6F6F;
+}
+
+.drawSection05 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.step_ba{
+    width: 850px;
+    height: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.stepCircleActive{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-yellow);
+}
+
+.stepCircle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(229, 167, 42, 0.3);
+}
+
+.stepline_ba{
+    width: 80px;
+    height: 2px;
+    background-color: #6F6F6F;
+}
+
+/*------------------ draw06 ----------------*/
+
+.drawSection06 h1{
+    margin-top: 60px;
+    padding-top: 160px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection06 h5{
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection06 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.drawSection06 .stepCircleActive h5{
+    margin: 0;
+    color: var(--color-white);
+}
+
+.drawSection06 .stepCircle h5{
+    margin: 0;
+    color: var(--color-text60);
+}
+
+.drawSection06 .stepActive h5{
+    color: var(--color-brown-dark);
+}
+.drawSection06 .stepUnActive h5{
+    color: var(--color-text60);
+}
+
+.drawSection06 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+/*------------------ draw07 ----------------*/
+
+.drawSection07 h1{
+    margin-top: 60px;
+    padding-top: 60px;
+    color: var(--color-brown-dark);
+}
+
+
+.multipleChoice{
+    color:var(--color-text60) ;
+}
+/* .drawSection04 h5{
+    margin-top: 56px;
+    color: var(--color-white);
+} */
+
+/* .drawSection04 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+} */
+
+/* .eyes_ba{
+    top: 41%;
+    left: 50%;
+    transform: translateX(-94px);
+    width: 180px;
+    height: 50px;
+    
+} */
+/* 
+.eye_ba{
+    border: 6.5px black solid;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+} */
+/* 
+.eye_ba::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+} */
+
+/* .lefteye{
+    top: 0;
+    left: 0;
+}
+
+.righteye{
+    top: 10;
+    left: 10;
+}
+
+.eye-white {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 80px;
+    height: 80px;
+    background-color: #fafffb;
+    border-radius: 50%;
+    border: 6.5px solid black;
+}
+.eye-black {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+} */
+
+.drawSection07Cat{
+    box-sizing:content-box ; 
+}
+
+.face {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background-color: #3ecc6c;
+    border: 1px solid black;
+}
+.eye {
+    position: absolute;
+    left: 500px;
+    top: 200px;
+}
+.eye-white {
+    position: absolute;
+    top: -42.5px;
+    left: -42.5px;
+    width: 85px;
+    height: 85px;
+    background-color: white;
+    border-radius: 50%;
+    border: 7px solid black;
+}
+.eye-black {
+    position: absolute;
+    top: -25px;
+    left: -10px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
 }

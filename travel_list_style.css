@@ -332,7 +332,7 @@
 }
 .row .price::after{
     content:"/人";
-    font-size: 16px;
+    font-size: 14px;
 }
 .icon_fire{
     width: 18px;
