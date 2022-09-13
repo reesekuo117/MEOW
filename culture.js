@@ -288,6 +288,7 @@ $(window).resize(function(){
 
 
 //當點擊哪一區地圖會變色加位移
+/*
 $('.path_lb').on({
   click: function (){
     $('.path_lb').removeAttr('style');
@@ -296,7 +297,8 @@ $('.path_lb').on({
        "-webkit-transform":"translate(-5px,-5px)",
     });
     }
-}); 
+});
+*/
 //預設北部
 $('.path_lb').eq(0).css({
   "fill":"#E5A62A",
@@ -304,27 +306,56 @@ $('.path_lb').eq(0).css({
 });
 
 //點擊出現地標卡片  
-$('.north').click(function(){
+const northClicked = function(){
+  $('.path_lb').removeAttr('style');
+  $('.north').css({
+      "fill":"#E5A62A",
+      "-webkit-transform":"translate(-5px,-5px)",
+  });
   $('#north-group_lb').removeClass('d-none');
   $('#middle-group_lb').addClass('d-none');
   $('#south-group_lb').addClass('d-none');
   $('#area_lb').val('0')
-})
+}
+$('.north').click(northClicked);
 
-  
-$('.middle').click(function(){
+const middleClicked = function(){
+  $('.path_lb').removeAttr('style');
+  $('.middle').css({
+    "fill":"#E5A62A",
+    "-webkit-transform":"translate(-5px,-5px)",
+  });
   $('#north-group_lb').addClass('d-none');
   $('#middle-group_lb').removeClass('d-none');
   $('#south-group_lb').addClass('d-none');
   $('#area_lb').val('1')
-})
+}
+$('.middle').click(middleClicked)
   
-$('.south').click(function(){
+const southClicked = function(){
+  $('.path_lb').removeAttr('style');
+  $('.south').css({
+    "fill":"#E5A62A",
+    "-webkit-transform":"translate(-5px,-5px)",
+  });
   $('#north-group_lb').addClass('d-none');
   $('#middle-group_lb').addClass('d-none');
   $('#south-group_lb').removeClass('d-none');
   $('#area_lb').val('2')
+}
+$('.south').click(southClicked);
+
+$('#area_lb').on('change', function(){
+
+  const val = $(this).val();
+  console.log({val});
+
+  const areas = [northClicked, middleClicked, southClicked];
+
+  areas[val]();
+
 })
+
   
 $('.C01').click(function () {
   $('#c01-info-card_lb').removeClass('d-none');

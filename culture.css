@@ -28,16 +28,25 @@
 background: url(./imgs/culture/台中樂成宮.jpeg) center center/ cover no-repeat;
 height: 164px;
 }
+
+
+.s_lb{
+  font-size: 14px;
+}
+
 .links-group_lb a{
   text-decoration: none;
   color: #909090;
 }
-.links-group_lb a:focus{
+/* .links-group_lb a:focus{
   color: var(--color-orange);
-}
+} */
 
-.s_lb{
-  font-size: 14px;
+/* .links-group_lb .active{
+  color: #CD562F;
+} */
+.links-group_lb .active a{
+  color: #CD562F;
 }
 .mbnavbar_lb{
 /* height: 40px; */
@@ -781,13 +790,15 @@ color: #CD562F;
   width: 375px;
   /* height: 667px; */
   background-color: var(--color-orange);
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .mbTemCard-bottom_lb{
 border-radius: 8px 8px 0 0;
   height: 443px;
   background-color: var(--color-creamy);
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 10px 0;
-
+}
+.mbselected-temple_lb{
+  /* overflow: hidden; */
 }

@@ -612,3 +612,87 @@
     background-color: black;
     border-radius: 50%;
 }
+
+/*------------------ draw15 ----------------*/
+
+.drawSection15 h1{
+    margin-top: 60px;
+    padding-top: 40px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection15 h5{
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection15 .btn-l {
+    width: 200px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 0 auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+.page15Cat{
+    width: 120px;
+}
+
+.drawSection15 a{
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+
+/*------------------ draw16 ----------------*/
+.drawSection16 h1{
+    margin-top: 60px;
+    padding-top: 160px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection16 h5{
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection16 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 150px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+.page16cat{
+    width: 220px;
+    position: absolute;
+    right: 0;
+}
+
+
+
+
+
+
+.drawSection06 .stepCircleActive h5{
+    margin: 0;
+    color: var(--color-white);
+}
+
+.drawSection06 .stepCircle h5{
+    margin: 0;
+    color: var(--color-text60);
+}
+
+.drawSection06 .stepActive h5{
+    color: var(--color-brown-dark);
+}
+.drawSection06 .stepUnActive h5{
+    color: var(--color-text60);
+}
+
