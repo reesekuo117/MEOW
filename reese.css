@@ -300,9 +300,7 @@ p {
     to {transform: scale(1)}
 }
 /* left-------------------------------------------------------------------- */
-.testhight-re {
-    height: 468px;
-}
+
 .picturewarp-re {
     width: 250px;
     height: 250px;
@@ -312,8 +310,8 @@ p {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    right: 80px;
-    top: 220px;
+    right: 10px;
+    bottom: 10px;
     background-color: var(--color-creamy);
     
 }
@@ -572,16 +570,37 @@ p {
 
 /* likecard-------------------------------------------------------------------- */
 .likeicon-re {
-    z-index: 9;
+    /* z-index: 9; */
     top: 10px;
     right: 10px;
 }
+/* 詩籤 */
 .likeicon2-re {
     top: 20px;
     right: 32px;
 }
+.card-re {
+    border-radius: 8px;
+    overflow: hidden;
+}
+.cardimg-re {
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    
+}
 .card-body-re {
     padding: 12px;
+    background-color: var(--color-lightcreamy);
+
+}
+@media (min-width: 768px){
+    .likehight-re{
+        height: 623.56px;
+    }
+    .allright-re{
+        height: 733.55px;
+    }
 }
 /* -------------------------------------------------------------------- */
 .orderbtn-re, .orderbtn02-re {
@@ -606,16 +625,8 @@ p {
     /* border-top: 0.5px solid var(--color-text60); */
 }
 .ordercross-re {
-    width: 32px;
-    height: 32px;
-    right: 20px;
-    top: 170px;
-}
-.ordercross02-re {
-    width: 32px;
-    height: 32px;
-    right: 20px;
-    top: 170px;
+    right: 10px;
+    top: 10px;
 }
 .orderimgwarp-re {
     width: 257px;

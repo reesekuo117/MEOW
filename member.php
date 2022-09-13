@@ -9,15 +9,15 @@
         <div class=" d-none d-md-block col-md-3">
             <div class="picturewarp-re mx-auto my-4 position-relative">
                 <img class="w-100" src="./imgs/member/picture01.png" alt="">
+                <div class="pictureicon-re position-absolute">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="8" width="24" height="17.3333" rx="4" stroke="#432A0F" stroke-width="2.66667"/>
+                        <path d="M6.82947 20.6949C6.47686 21.3413 6.71507 22.1512 7.36153 22.5039C8.00799 22.8565 8.81791 22.6183 9.17053 21.9718L6.82947 20.6949ZM18.1818 21.3333L17.0113 21.9718C17.2383 22.388 17.6692 22.6523 18.1431 22.6661C18.617 22.6799 19.0625 22.441 19.3133 22.0387L18.1818 21.3333ZM22.8685 22.0387C23.2581 22.6636 24.0804 22.8544 24.7053 22.4648C25.3302 22.0753 25.521 21.2529 25.1315 20.628L22.8685 22.0387ZM9.17053 21.9718L13.0909 14.7844L10.7499 13.5075L6.82947 20.6949L9.17053 21.9718ZM13.0909 14.7844L17.0113 21.9718L19.3523 20.6949L15.432 13.5075L13.0909 14.7844ZM19.3133 22.0387L21.0909 19.1871L18.8279 17.7764L17.0503 20.628L19.3133 22.0387ZM21.0909 19.1871L22.8685 22.0387L25.1315 20.628L23.3539 17.7764L21.0909 19.1871ZM21.0909 19.1871L21.0909 19.1871L23.3539 17.7764C22.31 16.1018 19.8719 16.1018 18.8279 17.7764L21.0909 19.1871ZM13.0909 14.7844L13.0909 14.7844L15.432 13.5075C14.4213 11.6545 11.7606 11.6545 10.7499 13.5075L13.0909 14.7844Z" fill="#432A0F"/>
+                        <circle cx="21.3333" cy="13.3333" r="1.33333" fill="#432A0F"/>
+                    </svg>
+                </div>
             </div>
-            <div class="pictureicon-re position-absolute">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="4" y="8" width="24" height="17.3333" rx="4" stroke="#432A0F" stroke-width="2.66667"/>
-                    <path d="M6.82947 20.6949C6.47686 21.3413 6.71507 22.1512 7.36153 22.5039C8.00799 22.8565 8.81791 22.6183 9.17053 21.9718L6.82947 20.6949ZM18.1818 21.3333L17.0113 21.9718C17.2383 22.388 17.6692 22.6523 18.1431 22.6661C18.617 22.6799 19.0625 22.441 19.3133 22.0387L18.1818 21.3333ZM22.8685 22.0387C23.2581 22.6636 24.0804 22.8544 24.7053 22.4648C25.3302 22.0753 25.521 21.2529 25.1315 20.628L22.8685 22.0387ZM9.17053 21.9718L13.0909 14.7844L10.7499 13.5075L6.82947 20.6949L9.17053 21.9718ZM13.0909 14.7844L17.0113 21.9718L19.3523 20.6949L15.432 13.5075L13.0909 14.7844ZM19.3133 22.0387L21.0909 19.1871L18.8279 17.7764L17.0503 20.628L19.3133 22.0387ZM21.0909 19.1871L22.8685 22.0387L25.1315 20.628L23.3539 17.7764L21.0909 19.1871ZM21.0909 19.1871L21.0909 19.1871L23.3539 17.7764C22.31 16.1018 19.8719 16.1018 18.8279 17.7764L21.0909 19.1871ZM13.0909 14.7844L13.0909 14.7844L15.432 13.5075C14.4213 11.6545 11.7606 11.6545 10.7499 13.5075L13.0909 14.7844Z" fill="#432A0F"/>
-                    <circle cx="21.3333" cy="13.3333" r="1.33333" fill="#432A0F"/>
-                </svg>
-            </div>
-            <ul class="tab_list_re m-0 p-0 text-center  testhight-re">
+            <ul class="tab_list_re m-0 p-0 text-center">
                 <li class="current_re text-20-re mb-2" data-val="member-data">會員資料</li>
                 <li class="text-20-re mb-2" data-val="modify-password">修改密碼</li>
                 <li class="text-20-re mb-2" data-val="my-favorites" onclick="/*addToCartRe(event)*/">我的最愛</li>
@@ -170,109 +170,113 @@
                 </div>
     <!-- p3-P------------------------------------------------------------------ -->
                 <div id="tab01-re" class="tab-inner-re ">
-                    <div class="row my-3 mx-0">
-                        <div class="col-6 col-md-4 px-2 pb-3">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
+                    <div class="row my-3 mx-0 likehight-re">
+                        <div class="col-6 col-md-3 px-2 pb-3">
+                            <div class="card-re">
+                                <div class="position-relative ">
+                                    <div class="cardimg-re">
+                                        <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
+                                    </div>
+                                    <div class="position-absolute likeicon-re">
+                                        <svg class="likeiconsvg-re" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path  fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg class="likeiconsvg-re" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path  fill="none" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</h5>
-                                    <p class="text-18-re price-re">520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 px-2 pb-3">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
-                                </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path  fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</h5>
-                                    <p class="text-18-re price-re">520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
+                                <div class="card-body-re">
+                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <div class="d-flex">
+                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 px-2 pb-3">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
+                        <div class="col-6 col-md-3 px-2 pb-3">
+                            <div class="card-re">
+                                <div class="position-relative ">
+                                    <div class="cardimg-re">
+                                        <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
+                                    </div>
+                                    <div class="position-absolute likeicon-re">
+                                        <svg class="likeiconsvg-re" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path  fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</h5>
-                                    <p class="text-18-re price-re">520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 px-2">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
-                                </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</h5>
-                                    <p class="text-18-re price-re">520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
+                                <div class="card-body-re">
+                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <div class="d-flex">
+                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 px-2">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
+                        <div class="col-6 col-md-3 px-2 pb-3">
+                            <div class="card-re">
+                                <div class="position-relative ">
+                                    <div class="cardimg-re">
+                                        <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
+                                    </div>
+                                    <div class="position-absolute likeicon-re">
+                                        <svg class="likeiconsvg-re" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path  fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</h5>
-                                    <p class="text-18-re price-re">520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 px-2">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
-                                </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</h5>
-                                    <p class="text-18-re price-re">520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
+                                <div class="card-body-re">
+                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <div class="d-flex">
+                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-6 col-md-3 px-2 pb-3">
+                            <div class="card-re">
+                                <div class="position-relative ">
+                                    <div class="cardimg-re">
+                                        <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
+                                    </div>
+                                    <div class="position-absolute likeicon-re">
+                                        <svg class="likeiconsvg-re" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path  fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="card-body-re">
+                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <div class="d-flex">
+                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 px-2 pb-3">
+                            <div class="card-re">
+                                <div class="position-relative ">
+                                    <div class="cardimg-re">
+                                        <img src="./imgs/購物車-商品(測試用).png" class="card-img-top" alt="">
+                                    </div>
+                                    <div class="position-absolute likeicon-re">
+                                        <svg class="likeiconsvg-re" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path  fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="card-body-re">
+                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <div class="d-flex">
+                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div> 
                     <div class="pagebtngroup-re text-center mb-3">
                         <button type="button" class="pagebtn-re ">
@@ -292,109 +296,27 @@
                 </div>
     <!-- p3-T------------------------------------------------------------------ -->
                 <div id="tab02-re" class="tab-inner-re">
-                <div class="row my-3 mx-0">
-                        <div class="col-6 col-md-4 px-2 pb-3">
+                <div class="row my-3 mx-0 likehight-re">
+                        <div class="col-6 col-md-3 px-2 pb-3">
                             <div class="card">
                                 <div class="position-relative">
                                     <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
+                                    <div class="position-absolute likeicon-re">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家行程一日遊</h5>
-                                    <p class="text-18-re price-re">5520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 px-2 pb-3">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
-                                </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家行程一日遊</h5>
-                                    <p class="text-18-re price-re">5520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
+                                <div class="card-body-re">
+                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家行程一日遊</p>
+                                    <div class="d-flex">
+                                        <p class="text-20-re price-re col-6 p-0 my-auto">5520</p>
+                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6  col-md-4 px-2 pb-3">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
-                                </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家行程一日遊</h5>
-                                    <p class="text-18-re price-re">5520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6  col-md-4 px-2">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
-                                </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家行程一日遊</h5>
-                                    <p class="text-18-re price-re">5520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 px-2">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
-                                </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家行程一日遊</h5>
-                                    <p class="text-18-re price-re">5520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4 px-2">
-                            <div class="card">
-                                <div class="position-relative">
-                                    <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
-                                </div>
-                                <div class="position-absolute likeicon-re">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body-re text-center">
-                                    <h5 class="card-title-re text-20-re">台北霞海城隍廟獨家行程一日遊</h5>
-                                    <p class="text-18-re price-re">5520</p>
-                                    <button class="btn-re btn200-re col-12"  onclick="addToCartRe(event)">加入購物車</button>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                     <div class="pagebtngroup-re text-center mb-3">
                         <button type="button" class="pagebtn-re ">
@@ -414,7 +336,7 @@
                 </div>
     <!-- p3-D------------------------------------------------------------------ -->
                 <div id="tab03-re" class="tab-inner-re">
-                    <div class="row mb-3 mx-0 my-3">
+                    <div class="row mb-3 mx-0 my-3 likehight-re">
                         <div class="col-12 col-md-4 likecard-re position-relative pb-3">
                             <img class="w-100" src="./imgs/testre.jpg" alt="">
                             <div class="position-absolute likeicon2-re">
@@ -459,7 +381,7 @@
                 </div>
     <!-- p3-F------------------------------------------------------------------ -->
                 <div id="tab04-re" class="tab-inner-re">
-                    <div class="row mb-3 mx-0 my-3">
+                    <div class="row mb-3 mx-0 my-3 likehight-re">
                     <div class="col-12 col-md-4 likecard-re position-relative pb-3">
                         <img class="w-100" src="./imgs/testre.jpg" alt="">
                         <div class="position-absolute likeicon2-re">
@@ -600,9 +522,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slide2-re px-3 py-3">
-                        <h6 class="mb-3 position-relative">請給這次的體驗打個分數吧！</h6>
-                        <div class="ordercross-re d-inline-block position-absolute">
+                    <div class="slide2-re px-3 py-3 position-relative">
+                        <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
+                        <div class="ordercross-re ordercross01-re d-inline-block position-absolute">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
                                 <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
@@ -645,7 +567,7 @@
                     </div>
                 </div>
     <!-- p4-T------------------------------------------------------------------ -->
-                <div id="tab06-re" class="ordertab-inner-re">
+                <div id="tab06-re" class="ordertab-inner-re orderhight-re">
                     <table class="orderlisttable-re tablehover text-center w-100" >
                         <thead class="col-4 p-0">
                             <tr class="orderlist-title-re col-12 p-0">
@@ -731,9 +653,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="rightslide02-re px-3 py-3">
-                        <h6 class="mb-3 position-relative">請給這次的體驗打個分數吧！</h6>
-                        <div class="ordercross02-re d-inline-block position-absolute">
+                    <div class="rightslide02-re px-3 py-3 position-relative">
+                        <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
+                        <div class="ordercross-re ordercross02-re d-inline-block position-absolute">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
                                 <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
@@ -841,18 +763,7 @@
             $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
         });
     });
-    // 收藏愛心
-    // $('.icon_heart').click(function(){
-    //     $('.heart_line').toggleClass('color')
-    // });
-    // $('.likeicon-re').click(function(){
-    //     $('.likeiconsvg-re').css('fill',none)
-    //     if('.likeiconsvg-re'){
-    //         $('.likeiconsvg-re').css('fill','#CD562F')
-    //     }else{
-    //         $('.likeiconsvg-re').css('fill',none)
-    //     }
-    // });
+
     // order標籤切換
     $(function(){
     let $li = $('ul.ordertab-title-re li');
