@@ -114,10 +114,12 @@ const sectionsOffsetTop = [];
 // sectionsOffsetTop.push($('.details > div').eq(1).offset().top)
 // sectionsOffsetTop.push($('.details > div').eq(2).offset().top)
 // sectionsOffsetTop.push($('.details > div').eq(3).offset().top)
+$(function(){
+    for(let i = 0; i < 4; i ++){
+        sectionsOffsetTop.push($('.details > div').eq(i).offset().top)
+    }
+})
 
-for(let i = 0; i < 4; i ++){
-    sectionsOffsetTop.push($('.details > div').eq(i).offset().top)
-}
 
 // console.log('sectionsOffsetTop array:',sectionsOffsetTop);
 // console.log('sectionsOffsetTop array:',sectionsOffsetTop[0]);
@@ -129,7 +131,7 @@ $(window).scroll(function () {
         // console.log(' now scroll', nowScroll);
 
         for(let i = 0; i < 4; i++){
-            if(nowScroll >= sectionsOffsetTop[i]){
+            if(nowScroll >= sectionsOffsetTop[i]-30){
                 $('.links a').eq(i).css('color','var(--color-orange)').siblings().css('color','var(--color-text87)')
             }
         }

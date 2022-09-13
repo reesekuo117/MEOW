@@ -273,7 +273,7 @@
     padding: 8px;
     margin: 0 auto;
 }
-.icon_heart{
+.icon_heart {
     position: absolute;
     right: 15px;
     bottom: 115px;
@@ -283,7 +283,10 @@
 .card:hover .icon_heart{
     opacity: 1;
 }
-.color{
+.icon_heart.color {
+    opacity: 1;
+}
+.icon_heart.color .heart_line {
     stroke: #432A0F;
     fill: #CD562F;
 }

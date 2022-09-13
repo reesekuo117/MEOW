@@ -594,6 +594,7 @@
     border-radius: 50%;
 }
 
+<<<<<<< HEAD
 .btn_md_next {
     width: 137px;
     height: 41px;
@@ -623,11 +624,60 @@
 }
 
 .drawSection09 .btn-xl {
+=======
+/*------------------ draw15 ----------------*/
+
+.drawSection15 h1{
+    margin-top: 60px;
+    padding-top: 40px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection15 h5{
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection15 .btn-l {
+    width: 200px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 0 auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+.page15Cat{
+    width: 120px;
+}
+
+.drawSection15 a{
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+
+/*------------------ draw16 ----------------*/
+.drawSection16 h1{
+    margin-top: 60px;
+    padding-top: 160px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection16 h5{
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection16 .btn-xl {
+>>>>>>> 450ea70714c3f33bd1baa4578b61df0cf562bd90
     width: 560px;
     height: 76px;
     border: var(--color-brown-dark) 2px solid;
     border-radius: 8px;
     transition: .3s;
+<<<<<<< HEAD
     margin: 96px auto;
     background-color: var(--color-yellow);
     text-align: center;
@@ -658,3 +708,16 @@
     /* border: 1px salmon solid; */
     /* margin-top: 120px; */
 }
+=======
+    margin: 150px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+.page16cat{
+    width: 220px;
+    position: absolute;
+    right: 0;
+}
+
+
+>>>>>>> 450ea70714c3f33bd1baa4578b61df0cf562bd90

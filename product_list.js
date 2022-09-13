@@ -44,7 +44,8 @@ sliderTwo.addEventListener('input', slideTwo)
 
 $('.icon_heart').click(function(){
     // $('.heart_line').eq(0).toggleClass('color')
-    $(this).find('.heart_line').toggleClass('color')
+    // $(this).find('.heart_line').toggleClass('color')
+    $(this).toggleClass('color')
 });
 
 // 按收藏後真的進入收藏頁面&沒登入會跳出提示窗
