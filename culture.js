@@ -14,6 +14,22 @@ $(window).scroll(function () {
       }
     })
 
+
+//mbnavfixed
+const navOffsetTop = $('.mbnavbar_lb').offset().top;
+
+$(window).scroll(function(){
+
+    if($(window).scrollTop() >= navOffsetTop){
+        $('.mbnavbar_lb').addClass('mbnavbar_fixed')
+    }
+    else{
+        // console.log('nav remove fixed');
+        $('.mbnavbar_lb').removeClass('mbnavbar_fixed')
+    }
+})
+
+
 //廟照片滑動
 $(window).scroll(function () {
   if ($(window).scrollTop() >= ($('.pic-group_lb').offset().top - $(window).height() * 2 / 3)) {

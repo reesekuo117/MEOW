@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid black;
-}
+} */
 /* kv-pc */
 .temp_bg{
   /* border:1px solid red; */
@@ -40,7 +40,16 @@ height: 164px;
   font-size: 14px;
 }
 .mbnavbar_lb{
-  background-color: #FFFCF7;
+/* height: 40px; */
+  background-color:#FFFCF7;
+ 
+  box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 2px 2px 2px #432A0F; */
+}
+.mbnavbar_fixed{
+    position: fixed;
+    top: 0;
+    z-index: 999;
 }
 
 .body_lb {
@@ -269,13 +278,13 @@ height: 164px;
     /* margin-top: 20px; */
   }
  
-  .mb-title_lb{
+  /* .mb-title_lb{
    font-size: 24px;
    color: var(--color-text100);
   }
   .mb-p_lb{
     color: var(--color-text87);
-  }
+  } */
   .wcard-p_lb{
     padding: 0 20px;
   }
@@ -353,6 +362,13 @@ height: 164px;
   background-attachment: fixed;
 }
 
+.mb-title_lb{
+  font-size: 24px;
+  color: var(--color-text100);
+ }
+ .mb-p_lb{
+   color: var(--color-text87);
+ }
 
 
 
@@ -401,13 +417,8 @@ color: var(--color-text100);
 }
 
 /* 還願 */
-@media (max-width:768px) {
-  .section4_lb{
-    /* padding-top: 100px; */
-    margin: 150px auto;
-  }
-  
-}
+
+
 .section4_lb{
   padding-top: 150px;
   margin: 150px auto;
@@ -422,9 +433,11 @@ color: var(--color-text100);
   width: 320px;
   top: -90px;
   left: 6%;
-
 }
-
+.mbsection4_lb{
+  padding-top: 150px;
+  margin: 110px auto;
+}
 .devotion-bg{
   margin: 0 auto;
 }
@@ -550,7 +563,6 @@ margin-top: -170px;
   border: 1px solid var(--color-orange);
   border-radius: 50px;
   display: inline-block;
-
 }
 .steptext_lb, .temnoticetext_lb{
   color: var(--color-text87);
@@ -586,11 +598,14 @@ margin-top: -170px;
 .sidebar_lb a.active_lb {
 color: #CD562F;
 }
+.mbnavbar_lb a.active_lb {
+color: #CD562F;
+}
 
 /* 預設關於月老一開始就是紅色 */
-/* .mbnavbar_lb a.mbactive_lb{
+.mbnavbar_lb a:focus  {
 color: #CD562F;
-} */
+}
 
 /* 地圖地標 */
 .landmark_lb{
@@ -684,12 +699,12 @@ color: #CD562F;
   visibility: hidden;
 } */
 .mbTemCard{
+  border: 1px solid red;
   margin: 20px;
   width: 200px;
   height: 280px;
   border-radius: 8px;
   background-color: var(--color-orange);
-
 }
 .mbTemImg-wrap{
   width: 120px;
@@ -698,11 +713,46 @@ color: #CD562F;
   overflow: hidden;
   background: url(./imgs/culture/temple/C01_1.jpeg) center center no-repeat;
   background-size: cover;
+}
+.mbdetail-card_lb{
+  position: absolute;
+  top: 5px;
+  right: 0;
+  transition: 0.5s;
+  /* z-index: 100; */
+  /* transform-origin: 0% 0%; */
+  transform: translateY(600px);
 
 }
 
+.mbDetailTemImg-wrap{  
+  width: 120px;
+  height: 120px;
+  /* width: 100%;
+  height: 100%; */
+  border-radius: 50%;
+  overflow: hidden;
+  background: url(./imgs/culture/temple/C01_1.jpeg) center center no-repeat;
+  background-size: cover;
+}
+
+.mbselect_lb{
+  width: 160px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid var(--color-brown-dark);
+  outline-style: none;
+  color: var(--color-brown-dark);
+ 
+}
+.mbselect_lb:focus{
+  box-shadow: 2px 2px #432A0F;
+}
+
+
 .mbdetail-info_lb{
-  margin-top: 50px;
+  margin-top: 40px;
+  padding: 0 8px;
 }
 .mbdetail-info_lb span{
   display: inline-block;
@@ -719,10 +769,25 @@ color: #CD562F;
 }
 
 .temScroll-snap_lb{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0 10px ;
   display:flex;
   overflow-x: auto;
   scroll-padding:0 50%;
   scroll-snap-type: x mandatory;     
+}
+.mbdetail-card_lb{
+  border-radius: 8px 8px 0 0;
+  width: 375px;
+  /* height: 667px; */
+  background-color: var(--color-orange);
+  border: 1px solid red;
+}
+.mbTemCard-bottom_lb{
+border-radius: 8px 8px 0 0;
+  height: 443px;
+  background-color: var(--color-creamy);
+  border: 1px solid red;
+  padding: 10px 0;
+
 }
