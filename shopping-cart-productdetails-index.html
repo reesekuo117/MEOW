@@ -514,7 +514,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="ordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="nameYU"required/>
+                            <input class="ordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="name-yu" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength=20  required/>
                         </div>
                         <div class="order-phone-yu p-3">
                             <label for="mobile" class="">
@@ -522,7 +522,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="orderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"required/>
+                            <input class="orderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"  maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'')" required/>
                         </div>
                         <div class="order-address-yu p-3">
                             <label for="address" class="">
@@ -569,7 +569,7 @@
                                 >Email<span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="" type="text" class="" id="email-yu" name="email" />
+                            <input type="email" class="" id="email-yu" name="email"  />
                         </div>
                     </div>
                 </section>
@@ -592,7 +592,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="name"required/>
+                            <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="name" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength=20required/>
                         </div>
                         <div class="receiver-phone-yu p-3">
                             <label for="mobile" class="">
@@ -600,7 +600,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"class=""id="usermobile-yu"name="mobile"required/>
+                            <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="mobile" maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'')" required/>
                         </div>
                         <div class="receiver-deliver-yu p-3">
                             <label for="" class="">
@@ -621,7 +621,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="" type="text" class="" id="useremail-yu" name="email" />
+                            <input class="" type="text" id="useremail-yu" name="email" />
                         </div>
                         <div class="receiver-address-yu p-3">
                             <label for="address" class="">
@@ -1484,6 +1484,8 @@
         })
     });
 
+    //email
+    
 
 
 
