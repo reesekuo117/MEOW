@@ -675,24 +675,3 @@
 }
 
 
-
-
-
-
-.drawSection06 .stepCircleActive h5{
-    margin: 0;
-    color: var(--color-white);
-}
-
-.drawSection06 .stepCircle h5{
-    margin: 0;
-    color: var(--color-text60);
-}
-
-.drawSection06 .stepActive h5{
-    color: var(--color-brown-dark);
-}
-.drawSection06 .stepUnActive h5{
-    color: var(--color-text60);
-}
-
