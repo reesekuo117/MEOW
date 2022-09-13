@@ -286,42 +286,21 @@ p,
 }
 
 .btn-s {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'gensen-R';
     font-size: 12px;
     line-height: 125%;
-    background-color: var(--color-yellow);
-    border: 2px var(--color-brown-dark) solid;
-    border-radius: 8px;
-    transition: .2s;
 }
 
 .btn-m {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'gensen-M';
     font-size: 14px;
     line-height: 125%;
-    background-color: var(--color-yellow);
-    border: 2px var(--color-brown-dark) solid;
-    border-radius: 8px;
-    transition: .2s;
 }
 
 .btn-l {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'gensen-M';
     font-size: 16px;
     line-height: 125%;
-    background-color: var(--color-yellow);
-    border: 2px var(--color-brown-dark) solid;
-    border-radius: 8px;
-    transition: .2s;
 }
 
 .btn-s:hover {

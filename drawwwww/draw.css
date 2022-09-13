@@ -1,11 +1,11 @@
 .body_draw01 {
     overflow: hidden;
     background: url(../imgs/draw/求籤bg.png);
-    text-align:center;
+    text-align: center;
     color: var(--color-brown-dark);
 }
 
-.youcantseeme{
+.youcantseeme {
     width: 100px;
     height: 100px;
     /* border: 1px salmon solid; */
@@ -156,33 +156,34 @@
     animation-duration: 442ms;
 }
 
-.drawSection01 h1{
+.drawSection01 h1 {
     margin-top: 60px;
     color: var(--color-brown-dark);
 }
 
-.drawSection01 h4{
+.drawSection01 h4 {
     margin-top: 40px;
     color: var(--color-brown-dark);
 }
 
-.drawSection01 h5{
+.drawSection01 h5 {
     margin-top: 8px;
     color: var(--color-text60);
 }
 
-.musicBlack{
+.musicBlack {
     /* border: 1px salmon solid; */
     margin-top: -100px;
     transform: scale(.5);
 }
 
-.onOff h1{
+.onOff h1 {
     color: white;
     margin: 0;
 }
 
-.musicOn, .musicOff{
+.musicOn,
+.musicOff {
     transition: .2s;
     color: white;
     width: 144px;
@@ -192,39 +193,40 @@
     margin: 20px;
 }
 
-.musicOn:hover, .musicOff:hover{
+.musicOn:hover,
+.musicOff:hover {
     outline: 5px rgba(250, 128, 114, 0.757) solid;
-    
+
 }
 
 /*------------------ draw02 ----------------*/
 
-.drawSection02 h1{
+.drawSection02 h1 {
     margin-top: 60px;
     color: var(--color-brown-dark);
 }
 
-.drawSection02 .row{
-    margin-top:12px ;
+.drawSection02 .row {
+    margin-top: 12px;
     /* top: 48px; */
 }
 
-.selectCatFunction svg{
+.selectCatFunction svg {
     margin-top: -32px;
 }
 
-.selectCatFunction img{
+.selectCatFunction img {
     margin-top: -48px;
     transform: scale(.8);
 }
 
-.selectCatFunction .btn-l{
+.selectCatFunction .btn-l {
     height: 56px;
     width: 280px;
     margin-top: 40px;
 }
 
-.catDialogue1{
+.catDialogue1 {
     text-align: left;
     width: 248px;
     height: 96px;
@@ -233,7 +235,7 @@
     transform: translateX(-50%);
 }
 
-.catDialogue2{
+.catDialogue2 {
     text-align: left;
     width: 248px;
     height: 96px;
@@ -242,7 +244,7 @@
     transform: translateX(-50%);
 }
 
-.catDialogue3{
+.catDialogue3 {
     text-align: left;
     width: 248px;
     height: 96px;
@@ -251,17 +253,17 @@
     transform: translateX(-50%);
 }
 
-.backto{
+.backto {
     top: 17px;
     left: 384px;
 }
 
-.musicSwitch{
+.musicSwitch {
     top: 10px;
     right: 384px;
 }
 
-.secretSection02LeftCat{
+.secretSection02LeftCat {
     transition: .3s;
     transform-origin: center center;
     overflow: hidden;
@@ -270,7 +272,7 @@
     transform: translate(-50%, -50%) scale(0);
 }
 
-.secretSection02MidCat{
+.secretSection02MidCat {
     transition: .3s;
     transform-origin: center center;
     overflow: hidden;
@@ -279,7 +281,7 @@
     transform: translate(-50%, -50%) scale(0);
 }
 
-.secretSection02RightCat{
+.secretSection02RightCat {
     transition: .3s;
     transform-origin: center center;
     overflow: hidden;
@@ -288,45 +290,45 @@
     transform: translate(-50%, -50%) scale(0);
 }
 
-.drawSection02 a{
+.drawSection02 a {
     color: var(--color-brown-dark);
     text-decoration: none;
 }
 
 /*------------------ draw03 ----------------*/
 
-.drawSection03 h1{
+.drawSection03 h1 {
     margin-top: 60px;
     color: var(--color-brown-dark);
 }
 
-.drawSection03 h2{
+.drawSection03 h2 {
     line-height: 20%;
 }
 
-.drawSection03 img{
+.drawSection03 img {
     transform: scale(0.7);
 }
 
-.temple01Img{
+.temple01Img {
     width: 350px;
     height: 350px;
-    text-align : center;
+    text-align: center;
 }
 
-.temple01Img{
+.temple01Img {
     transform: translateY(20px);
 }
 
-.temple05Img{
+.temple05Img {
     transform: translateY(20px);
 }
 
-.row{
+.row {
     margin-top: -50px;
 }
 
-.drawSection03 a{
+.drawSection03 a {
     color: var(--color-brown-dark);
     text-decoration: none;
 }
@@ -334,19 +336,19 @@
 .body_draw04 {
     overflow: hidden;
     background: url(../imgs/draw/求籤bgblack.png);
-    text-align:center;
+    text-align: center;
     color: white;
 }
 
 /*------------------ draw04 ----------------*/
 
-.drawSection04 h1{
+.drawSection04 h1 {
     margin-top: 60px;
     padding-top: 120px;
     color: var(--color-white);
 }
 
-.drawSection04 h5{
+.drawSection04 h5 {
     margin-top: 56px;
     color: var(--color-white);
 }
@@ -357,7 +359,7 @@
     border: var(--color-brown-dark) 2px solid;
     border-radius: 8px;
     transition: .3s;
-    margin: 96px auto ;
+    margin: 96px auto;
     background-color: var(--color-yellow);
     text-align: center;
 }
@@ -365,38 +367,40 @@
 .btn-xl:hover {
     box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
+
 /*------------------ draw05 ----------------*/
 
-.drawSection05 h1{
+.drawSection05 h1 {
     margin-top: 60px;
     padding-top: 160px;
     color: var(--color-white);
 }
 
-.drawSection05 .notbtn{
+.drawSection05 .notbtn {
     margin-top: 0px;
     color: #6F6F6F;
 }
 
-.drawSection05 .container h5{
+.drawSection05 .container h5 {
     margin-top: 56px;
     color: var(--color-white);
 }
 
-.drawSection05 .stepCircleActive h5{
+.drawSection05 .stepCircleActive h5 {
     margin: 0;
     color: var(--color-white);
 }
 
-.drawSection05 .stepCircle h5{
+.drawSection05 .stepCircle h5 {
     margin: 0;
     color: var(--color-text60);
 }
 
-.drawSection05 .stepActive h5{
+.drawSection05 .stepActive h5 {
     color: var(--color-white);
 }
-.drawSection05 .stepUnActive h5{
+
+.drawSection05 .stepUnActive h5 {
     color: #6F6F6F;
 }
 
@@ -406,33 +410,33 @@
     border: var(--color-brown-dark) 2px solid;
     border-radius: 8px;
     transition: .3s;
-    margin: 96px auto ;
+    margin: 96px auto;
     background-color: var(--color-yellow);
     text-align: center;
 }
 
-.step_ba{
+.step_ba {
     width: 850px;
     height: 56px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.stepCircleActive{
+.stepCircleActive {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: var(--color-yellow);
 }
 
-.stepCircle{
+.stepCircle {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: rgba(229, 167, 42, 0.3);
 }
 
-.stepline_ba{
+.stepline_ba {
     width: 80px;
     height: 2px;
     background-color: #6F6F6F;
@@ -440,13 +444,13 @@
 
 /*------------------ draw06 ----------------*/
 
-.drawSection06 h1{
+.drawSection06 h1 {
     margin-top: 60px;
     padding-top: 160px;
     color: var(--color-brown-dark);
 }
 
-.drawSection06 h5{
+.drawSection06 h5 {
     margin-top: 56px;
     color: var(--color-brown-dark);
 }
@@ -457,25 +461,26 @@
     border: var(--color-brown-dark) 2px solid;
     border-radius: 8px;
     transition: .3s;
-    margin: 96px auto ;
+    margin: 96px auto;
     background-color: var(--color-yellow);
     text-align: center;
 }
 
-.drawSection06 .stepCircleActive h5{
+.drawSection06 .stepCircleActive h5 {
     margin: 0;
     color: var(--color-white);
 }
 
-.drawSection06 .stepCircle h5{
+.drawSection06 .stepCircle h5 {
     margin: 0;
     color: var(--color-text60);
 }
 
-.drawSection06 .stepActive h5{
+.drawSection06 .stepActive h5 {
     color: var(--color-brown-dark);
 }
-.drawSection06 .stepUnActive h5{
+
+.drawSection06 .stepUnActive h5 {
     color: var(--color-text60);
 }
 
@@ -485,114 +490,89 @@
     border: var(--color-brown-dark) 2px solid;
     border-radius: 8px;
     transition: .3s;
-    margin: 96px auto ;
+    margin: 96px auto;
     background-color: var(--color-yellow);
     text-align: center;
 }
 
 /*------------------ draw07 ----------------*/
 
-.drawSection07 h1{
+.drawSection07 h1 {
     margin-top: 60px;
     padding-top: 60px;
     color: var(--color-brown-dark);
 }
 
-
-.multipleChoice{
-    color:var(--color-text60) ;
+.multipleChoice {
+    color: var(--color-text60);
 }
-/* .drawSection04 h5{
-    margin-top: 56px;
-    color: var(--color-white);
-} */
 
-/* .drawSection04 .btn-xl {
-    width: 560px;
-    height: 76px;
+.drawSection07btnGroup {
+    height: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.drawSection07btnGroup1 {
+    top: 100px;
+    width: 1600px;
+}
+
+.drawSection07btnGroup2 {
+    top: 220px;
+    width: 2000px;
+}
+
+.drawSection07btnGroup3 {
+    top: 370px;
+    width: 1800px;
+}
+
+.drawSection07btnGroup4 {
+    top: 520px;
+    width: 1400px;
+}
+
+.drawSection07btnGroup5 {
+    top: 620px;
+    width: 540px;
+}
+
+.drawSection07 .btn-round {
+    width: 200px;
+    height: 88px;
     border: var(--color-brown-dark) 2px solid;
-    border-radius: 8px;
+    border-radius: 100px;
     transition: .3s;
-    margin: 96px auto ;
-    background-color: var(--color-yellow);
-    text-align: center;
-} */
-
-/* .eyes_ba{
-    top: 41%;
-    left: 50%;
-    transform: translateX(-94px);
-    width: 180px;
-    height: 50px;
-    
-} */
-/* 
-.eye_ba{
-    border: 6.5px black solid;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    margin: 96px auto;
     background-color: white;
-} */
-/* 
-.eye_ba::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: black;
-} */
-
-/* .lefteye{
-    top: 0;
-    left: 0;
+    text-align: center;
 }
 
-.righteye{
-    top: 10;
-    left: 10;
+.drawSection07 .btn-round:hover {
+    background-color: var(--color-yellow);
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
 
-.eye-white {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 80px;
-    height: 80px;
-    background-color: #fafffb;
-    border-radius: 50%;
-    border: 6.5px solid black;
-}
-.eye-black {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    border-radius: 50%;
-} */
-
-.drawSection07Cat{
-    box-sizing:content-box ; 
+.drawSection07Cat {
+    box-sizing: content-box;
 }
 
-.face {
+/* .face {
     position: absolute;
     width: 600px;
     height: 600px;
     border-radius: 50%;
     background-color: #3ecc6c;
     border: 1px solid black;
-}
+} */
+
 .eye {
     position: absolute;
     left: 500px;
     top: 200px;
 }
+
 .eye-white {
     position: absolute;
     top: -42.5px;
@@ -603,6 +583,7 @@
     border-radius: 50%;
     border: 7px solid black;
 }
+
 .eye-black {
     position: absolute;
     top: -25px;
@@ -611,4 +592,69 @@
     height: 50px;
     background-color: black;
     border-radius: 50%;
+}
+
+.btn_md_next {
+    width: 137px;
+    height: 41px;
+    border-radius: 8px;
+    background-color: var(--color-yellow);
+    transition: .3s;
+    right: 240px;
+    bottom: 60px;
+    margin: auto auto;
+}
+
+.btn_md_next:hover {
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+
+/*------------------ draw09 ----------------*/
+
+.drawSection09 h1 {
+    margin-top: 60px;
+    padding-top: 72px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection09 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection09 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.white-box_ba{
+    width: 800px;
+    height: 700px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.howOldbtn{
+    width: 126px;
+    height: 41px;
+    border: 1px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.howOldbtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.drawSection09 .row{
+    /* border: 1px salmon solid; */
+    /* margin-top: 120px; */
 }

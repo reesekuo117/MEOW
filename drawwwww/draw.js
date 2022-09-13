@@ -92,8 +92,14 @@ var eyes = $('.eye');
 $(window).on('mousemove', function(event){
     // document.querySelector('.drawSection07Img').getBoundingClientRect()
     eyes.each(function(){
-        var dx = event.pageX -405- $(this).position().left;
-        var dy = event.pageY -350- $(this).position().top;
+        const rect = this.getBoundingClientRect();
+        var dx = event.pageX - rect.x;
+        var dy = event.pageY - rect.y;
+
+
+
+        // var dx = event.pageX -405- $(this).position().left;
+        // var dy = event.pageY -350- $(this).position().top;
 
         var ang = Math.atan2(dy, dx)/Math.PI*180; // degree
 

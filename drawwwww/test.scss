@@ -1,0 +1,112 @@
+.carousel {
+    position: relative;
+    margin: 200px auto;
+    display: block;
+    max-width: 1020px;
+
+    &__container {
+        margin: 0 auto 25px;
+        display: block;
+        perspective: 980px;
+        position: relative;
+        max-width: 780px;
+        height: 420px;
+
+        img {
+            display: inline-block;
+            width: 100%;
+            max-width: 780px;
+            max-height: 420px;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            box-shadow: -1px 2px 17px 3px rgba(0, 0, 0, 0.3);
+            opacity: 0.4;
+            transition: 0.4s all;
+            cursor: pointer;
+
+            &.carousel__container--active {
+                z-index: 4;
+                opacity: 1;
+            }
+
+            &:hover:not(.carousel__container--active) {
+                opacity: 0.9;
+            }
+        }
+    }
+
+    &__arrow {
+        top: 40%;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #fff;
+        text-decoration: none;
+        opacity: 0.6;
+        transition: 0.4s all;
+        z-index: 4;
+
+        &:before {
+            top: 2px;
+            left: 2px;
+            content: '';
+            display: inline-block;
+            position: relative;
+            width: 7px;
+            height: 7px;
+            transform: rotate(-45deg);
+            border-style: solid;
+            border-width: 4px 4px 0 0;
+            vertical-align: top;
+            color: #fbe1ea;
+        }
+
+        &--right {
+            right: 0;
+
+            &:before {
+                top: 20px;
+                left: 20px;
+                transform: rotate(45deg);
+            }
+        }
+
+        &--left:before {
+            top: 20px;
+            left: 20px;
+            transform: rotate(-135deg);
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__dot-nav {
+        text-align: center;
+
+        li {
+            margin: 0 5px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 3px solid #fff;
+            border-radius: 100%;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.4s all;
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+
+        &--active {
+            background-color: #fff;
+        }
+    }
+}
