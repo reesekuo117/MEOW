@@ -426,11 +426,9 @@ color: var(--color-text100);
 }
 
 /* 還願 */
-
-
 .section4_lb{
   padding-top: 150px;
-  margin: 150px auto;
+  margin: 70px auto 200px;
 }
 .devotion-title{
   width: 500px;
