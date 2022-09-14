@@ -1,3 +1,11 @@
+// $('.backto').mouseenter(function () {
+//     $(this).find('svg').attr('fill','white')
+// })
+// $('.backto').mouseenter(function () {
+//     $(this).find('svg').attr('fill','#432A0F')
+// })
+
+
 $('.drawSection02LeftCat').mouseenter(function () {
     $('.secretSection02LeftCat').css({
         transform: 'translate(-50%, -50%) scale(1)'
@@ -106,3 +114,82 @@ $(window).on('mousemove', function(event){
         $(this).css('transform', 'rotate('+ang+'deg)');
     });
 });
+
+// 年紀
+
+$('.howOldbtn').click(function () {
+    $(this).toggleClass('howOldbtnToggle')
+})
+
+
+// 貓翻牌
+$('.drawSection09 img').mouseenter(function () {
+    $(this).css('animation', 'flip .3s forwards');
+})
+$('.drawSection09 img').mouseleave(function () {
+    $(this).css('animation', 'flip_back .3s forwards');
+})
+
+$('.drawSection10 img').mouseenter(function () {
+    $(this).css('animation', 'flip .3s forwards');
+})
+$('.drawSection10 img').mouseleave(function () {
+    $(this).css('animation', 'flip_back .3s forwards');
+})
+
+$('.drawSection11 img').mouseenter(function () {
+    $(this).css('animation', 'flip .3s forwards');
+})
+$('.drawSection11 img').mouseleave(function () {
+    $(this).css('animation', 'flip_back .3s forwards');
+})
+
+$('.drawSection12 .lionCat img').mouseenter(function () {
+    $(this).css('animation', 'flip .3s forwards');
+})
+$('.drawSection12 .lionCat img').mouseleave(function () {
+    $(this).css('animation', 'flip_back .3s forwards');
+})
+
+$('.drawSection12 .horobtn').mouseenter(function () {
+    $(this).find("img").css('animation', 'flip_horo .3s forwards');
+})
+$('.drawSection12 .horobtn').mouseleave(function () {
+    $(this).find("img").css('animation', 'flip_horo_back .3s forwards');
+})
+
+// 興趣
+
+$('.interestbtn').click(function () {
+    $(this).toggleClass('interestbtnToggle')
+})
+
+// 個性
+
+$('.personalitybtn').click(function () {
+    $(this).toggleClass('personalitybtnToggle')
+})
+
+// 星座
+
+$('.horobtn').click(function () {
+    $(this).toggleClass('horobtnToggle')
+})
+
+// 身高
+
+$('.heightbtn').click(function () {
+    $(this).toggleClass('heightbtnToggle')
+})
+
+// 體格
+
+$('.musclebtn').click(function () {
+    $(this).toggleClass('musclebtnToggle')
+})
+
+// 臉
+
+$('.facebtn').click(function () {
+    $(this).toggleClass('facebtnToggle')
+})

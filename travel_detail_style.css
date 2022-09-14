@@ -1,0 +1,295 @@
+html{
+    scroll-behavior: smooth;
+}
+.pd_head{
+    margin: 80px;
+}
+/* ------------------------輪播------------------------ */
+.carousel-item{
+    height: 650px;
+}
+.carousel-item img{
+    aspect-ratio: 16/9;
+}
+.top_carousel .carousel-control-prev i,.top_carousel .carousel-control-next i{
+    color: #fff;
+    margin: 0;
+    font-size: 30px;
+}
+.color{
+    stroke: #432A0F;
+    fill: #CD562F;
+}
+.icon_fivestar{
+    color: var(--color-yellow);
+    padding: 0 8px;
+}
+.star .icon_fivestar{
+    color: var(--color-yellow);
+    padding-left:  0;
+}
+
+/* 輪播結束 */
+.detail_title .row{
+    justify-content: center;
+    align-items: center;
+}
+.evaluation{
+    display: flex;
+
+}
+
+
+.price h2::before{
+    content: "NT$ ";
+}
+.price h2::after{
+    content: "/人";
+    font-size: 14px;
+}
+.fire p{
+    line-height: 24px;
+}
+
+.buy{
+    width: 250px;
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-yellow);
+    border: 2px solid var(--color-text87);
+    margin-bottom: 16px;
+}
+.cart{
+    width: 250px;
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-creamy-light);
+    border: 2px solid var(--color-text87);
+}
+/* 小換大和商品標題結束 */
+.undernav{
+    width: 100%;
+    padding: 20px 0; 
+    background-color: var(--color-lightcreamy);
+    /* margin: 16px 0; */
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+    z-index: 3;
+    transform: translateY(40px);
+    opacity: 0;
+}
+.left_title h2::before{
+    content: "NT$";
+}
+.left_title h2{
+    margin-bottom: 0;
+}
+button:hover{
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+.undernav .btns button{
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid var(--color-text87);
+}
+.btns .favorite{
+    background-color: var(--color-creamy-light);
+}
+
+.btns .buy{
+    margin: 0;
+}
+/* -----------------------下方列結束-------------------- */
+.links{
+    flex-direction: column;
+    position: sticky;
+    top: 10px;
+}
+.links a{
+    padding: 4px 0;
+    text-decoration: none;
+    color: var(--color-text87);
+}
+.links a:hover, .links a:focus{
+    color: var(--color-orange);
+}
+.intro_bg {
+    margin: 40px auto;
+    background-color: var(--color-creamy-light);
+    padding: 24px;
+}
+.intro_bg h5{
+    position: relative;
+    border-bottom: 1.5px solid var(--color-text60);
+    /* box-shadow: 0px 3px 0px var(--color-text87); */
+}
+.intro_bg h5::after{
+    content: "";
+    border-bottom: 1.5px solid var(--color-text60);
+    width: 100%;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+}
+.intro_img{
+    margin: 16px 0 0;
+}
+#intro p{
+    padding-top: 16px;
+}
+/* -----------------------商品介紹結束-------------------- */
+#comment .row{
+    padding: 8px;
+}
+.c_star{
+    padding: 8px 0;
+}
+.c_star h3{
+    padding: 16px 25px;
+    background-color: var(--color-yellow);
+    border-radius: 8px;
+}
+.cd{
+    margin-top: 12px;
+    border-bottom: 1px solid var(--color-text60);
+}
+
+.profile_img{
+    width: 100px;
+    margin: 0 auto;
+}
+.name{
+    margin: 0px;
+}
+.star_date .icon_fivestar{
+    padding-left: 0;
+}
+.c_tags{
+    margin: 8px 0;
+}
+.tags{
+    margin: 0 4px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: 2px solid var(--color-text87);
+}
+/* -----------------------評價結束-------------------- */
+.otherp{
+    margin: 28px 0 120px;
+}
+.otherp h4{
+    color: var(--color-text87);
+}
+.otherp .container{
+    background-color: var(--color-creamy-light);
+    padding-top: 24px;
+}
+.otherp a{
+    text-decoration: none;
+    color: var(--color-text87);
+}
+.carousel {
+	margin: 24px auto 24px;
+	padding: 0 80px;
+}
+.carousel .carousel-item {
+	text-align: center;
+	overflow: hidden;
+}
+
+.carousel .carousel-item img {
+	max-width: 100%;
+	display: inline-block;
+}
+.img-box{
+    position: relative;
+}
+.img-box:hover::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(45, 45, 45, 0.176); */
+    position: absolute;
+    bottom: 0;
+    /* 直接在div下陰影 */
+}
+
+.carousel .thumb-wrapper {
+	margin: 5px;
+	text-align: left;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.1); 
+    border-radius: 8px;
+    overflow: hidden;
+}
+.carousel .thumb-content {
+	padding: 10px;
+	font-size: 13px;
+}
+.otherp .carousel-control-prev,.otherp .carousel-control-next {
+	height: 44px;
+	width: 44px;
+	background: none;	
+	margin: auto 0;
+
+}
+.otherp .carousel-control-prev i,.otherp .carousel-control-next i {
+	font-size: 36px;
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	margin: -19px 0 0 0;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	color: var(--color-orange);
+	text-shadow: none;
+	font-weight: bold;
+}
+.otherp .carousel-control-prev i {
+	margin-left: -3px;
+}
+.otherp .carousel-control-next i {
+	margin-right: -3px;
+}
+.carousel-indicators {
+	bottom: -50px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 4px;
+	border: none;
+}
+.carousel-indicators li {	
+	/* background: #ababab; */
+}
+.carousel-indicators li.active {	
+	/* background: rgb(85, 85, 85); */
+}
+.thumb-wrapper .img-box .icon_heart{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+.card_under h5::before{
+    content: "NT$";
+}
+.card_under small{
+    color: var(--color-text38);
+}
+.back-button{
+    bottom: 40px;
+    z-index: 2;
+}

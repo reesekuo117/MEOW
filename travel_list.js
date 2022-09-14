@@ -1,3 +1,11 @@
+// 手機版篩選
+$('.travel_sortbtn_mb > button').click(function(){
+    console.log('hello');
+    // $('.travel_cate_mb').removeClass('d-none').addClass('d-block')
+    $('.travel_cate_mb').toggleClass('d-none')
+})
+
+
 // 價格篩選
 let sliderOne = document.querySelector('.filter-range-1')
 let sliderTwo = document.querySelector('.filter-range-2')
@@ -42,8 +50,10 @@ sliderTwo.addEventListener('input', slideTwo)
 
 // 愛心
 
-$('.icon_heart').click(function(){
+$('.icon_heart_pc').click(function(){
     $(this).find('.heart_line').toggleClass('color')
 });
-
+$('.icon_heart_mb').click(function(){
+    $(this).find('.heart_line').toggleClass('color')
+});
 // 按收藏後真的進入收藏頁面&沒登入會跳出提示窗

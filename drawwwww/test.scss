@@ -1,3 +1,57 @@
+body {
+    font-family: 'Helvetica Neue';
+    background: #e6d4ec;
+    background: linear-gradient(to bottom, #e6d4ec 0%, #ffdddb 100%);
+}
+
+.top-nav {
+    padding: 44px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff1f1;
+
+    nav {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 980px;
+
+        a {
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        button {
+            margin-left: auto;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff1f1;
+            background: #a8ecff;
+            background: linear-gradient(#a8ecff, #7ee0fd);
+            border: 0;
+            border-radius: 30px;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            &:hover {
+                background: #7ee0fd;
+                background: linear-gradient(#7ee0fd, #a8ecff);
+            }
+        }
+    }
+}
+
 .carousel {
     position: relative;
     margin: 200px auto;

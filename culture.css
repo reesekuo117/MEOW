@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid black;
-}
+} */
 /* kv-pc */
 .temp_bg{
   /* border:1px solid red; */
@@ -51,7 +51,6 @@ height: 164px;
 .mbnavbar_lb{
 /* height: 40px; */
   background-color:#FFFCF7;
- 
   box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   /* box-shadow: 2px 2px 2px #432A0F; */
 }
@@ -74,7 +73,7 @@ height: 164px;
  /* margin-top: -20px; */
 }
 .section1-content2_lb {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .section1-content_lb{
   margin-top: -20px;
@@ -200,38 +199,36 @@ height: 164px;
 .section2_box {
   overflow: hidden;
 }
-.rdLine-1{
+/* .rdLine-1{
   position: absolute;
-  right: 5px;
+  right: 30px;
   top: 30px;
-  stroke-dasharray:600;
-  stroke-dashoffset:200;
-
-  animation: rdLine-1Move 3s linear both;
+  stroke-dasharray:700;
+  stroke-dashoffset:700;
+  animation: rdLine-1Move 1.5s linear forwards;
+  transition: .5s;
 }
 
 @keyframes rdLine-1Move {
   from{
-      stroke-dashoffset: 0;
+      stroke-dashoffset: 700;
   }
   to{
-      stroke-dashoffset: 200;
+      stroke-dashoffset: 0;
   }
-}
-
+} */
 
 
 .rdLine-2{
   position: absolute;
-  right: 790px;
-  top: 520px;
+  right: 800px;
+  top: 570px;
   stroke-dasharray:300;
   stroke-dashoffset:300;
-
-  animation: rdLine-1Move 3s linear both;
+  animation: rdLine-2Move 1s linear forwards;
 }
 
-@keyframes rdLine-1Move {
+@keyframes rdLine-2Move {
   from{
       stroke-dashoffset: 300;
   }
@@ -239,25 +236,74 @@ height: 164px;
       stroke-dashoffset: 0;
   }
 }
+
+
+
 .rdLine-3{
   position: absolute;
   right: 840px;
   top: 1000px;
+  stroke-dasharray:700;
+  stroke-dashoffset:700;
+  animation: rdLine-3Move 1.5s linear forwards;
 }
+@keyframes rdLine-3Move {
+  from{
+      stroke-dashoffset: 700;
+  }
+  to{
+      stroke-dashoffset: 0;
+  }
+}
+
 .rdLine-4{
   position: absolute;
   right: 700px;
-  top: 1400px;
+  top: 1500px;
+  stroke-dasharray:760;
+  stroke-dashoffset:760;
+  animation: rdLine-4Move 1.5s linear forwards;
 }
+@keyframes rdLine-4Move {
+  from{
+      stroke-dashoffset: 760;
+  }
+  to{
+      stroke-dashoffset: 0;
+  }
+}
+
 .rdLine-5{
   position: absolute;
-  right: 700px;
-  bottom: 1200px;
+  right: 790px;
+  bottom: 1240px;
+  stroke-dasharray:760;
+  stroke-dashoffset:760;
+  animation: rdLine-5Move 1.5s linear forwards;
+}
+@keyframes rdLine-5Move {
+  from{
+      stroke-dashoffset: 760;
+  }
+  to{
+      stroke-dashoffset: 0;
+  }
 }
 .rdLine-6{
   position: absolute;
-  right: 600px;
-  bottom: 500px;
+  right: 800px;
+  bottom: 450px;
+  stroke-dasharray:760;
+  stroke-dashoffset:760;
+  animation: rdLine-6Move 1.5s linear forwards;
+}
+@keyframes rdLine-6Move {
+  from{
+      stroke-dashoffset: 760;
+  }
+  to{
+      stroke-dashoffset: 0;
+  }
 }
 
 
@@ -298,7 +344,7 @@ height: 164px;
 .section2_lb h1{
   color: var(--color-text100);
 }
-.worship-card h3{
+.worship-card h4{
   color: var(--color-text100);
   color:  rgb(67, 42, 15, 1);
 }
@@ -318,6 +364,7 @@ height: 164px;
     margin-top: 40px;
   }
  .worship-card-title{
+    color: var(--color-brown-dark);
     text-align: center;
     font-size: 20px;
     /* margin-top: 20px; */
@@ -835,4 +882,116 @@ border-radius: 8px 8px 0 0;
 }
 .mbselected-temple_lb{
   /* overflow: hidden; */
+}
+
+/* 月老喵推薦卡片 */
+.otherp{
+  margin: 28px 0 120px;
+}
+.otherp h4{
+  color: var(--color-text87);
+}
+.otherp .container{
+  background-color: var(--color-creamy-light);
+  padding-top: 24px;
+}
+.otherp a{
+  text-decoration: none;
+  color: var(--color-text87);
+}
+.carousel {
+margin: 24px auto 24px;
+padding: 0 80px;
+}
+.carousel .carousel-item {
+text-align: center;
+overflow: hidden;
+}
+
+.carousel .carousel-item img {
+max-width: 100%;
+display: inline-block;
+}
+.img-box{
+  position: relative;
+}
+.img-box:hover::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(45, 45, 45, 0.176); */
+  position: absolute;
+  bottom: 0;
+  /* 直接在div下陰影 */
+}
+/* .carousel .icon_heart{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+} */
+
+.carousel .thumb-wrapper {
+margin: 5px;
+text-align: left;
+background: #fff;
+box-shadow: 0px 2px 2px rgba(0,0,0,0.1); 
+  border-radius: 8px;
+  overflow: hidden;
+}
+.carousel .thumb-content {
+padding: 10px;
+font-size: 13px;
+}
+.otherp .carousel-control-prev,.otherp .carousel-control-next {
+height: 44px;
+width: 44px;
+background: none;	
+margin: auto 0;
+
+}
+.otherp .carousel-control-prev i,.otherp .carousel-control-next i {
+font-size: 36px;
+position: absolute;
+top: 50%;
+display: inline-block;
+margin: -19px 0 0 0;
+z-index: 1;
+left: 0;
+right: 0;
+color: var(--color-orange);
+text-shadow: none;
+font-weight: bold;
+}
+.otherp .carousel-control-prev i {
+margin-left: -3px;
+}
+.otherp .carousel-control-next i {
+margin-right: -3px;
+}
+.carousel-indicators {
+bottom: -50px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+margin: 4px;
+border: none;
+}
+.carousel-indicators li {	
+/* background: #ababab; */
+}
+.carousel-indicators li.active {	
+/* background: rgb(85, 85, 85); */
+}
+.card_under h5::before{
+  content: "NT$";
+}
+.card_under small{
+  color: var(--color-text38);
+}
+.back-button{
+  bottom: 40px;
+  z-index: 2;
 }

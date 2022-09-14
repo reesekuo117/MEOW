@@ -91,23 +91,22 @@
     margin: 30px;
 }
 
-.product_sort a {
+.travel_sort a {
     /* padding: 8px; */
     margin: 8px;
     text-decoration: none;
     color: var(--color-text60);
 }
-.product_sort a:hover {
+.travel_sort a:hover {
     color: var(--color-text87);
 }
-.product_sort a:focus {
+.travel_sort a:focus {
     color: var(--color-text87);
 }
 
-.product_section {
+/* .travel_section {
     display: flex;
-    
-}
+} */
 .travel_cate{
     padding-bottom: 20px;
 }
@@ -121,6 +120,22 @@
     position: sticky;
     top: 10%;
 }
+/* 手機版排序 */
+.travel_sortbtn_mb button{
+    border: 2px solid var(--color-text60);
+    border-radius: 8px;
+    padding: 4px;
+    background-color: var(--color-lightcreamy);
+    color: var(--color-text87);
+}
+.travel_sortbtn_mb:hover button{
+    background-color: var(--color-yellow);
+    color: var(--color-text87);
+
+}
+/* .travel_cate_mb{
+    background-color: var(--color-creamy-light);
+} */
 /* -----------------------------價格篩選----------------------------- */
 .filter-content__element {
     width: 100%;
@@ -238,41 +253,40 @@
 }
 
 /* -------------------------行程卡片-------------------------- */
-
+.travel_list .row{
+    flex-direction: column;
+}
 .card_row {
     border-radius: 8px;
     background-color: var(--color-lightcreamy);
-    overflow: hidden;
-
+}
+.t_card_mb{
+    margin-top: 24px;
 }
 .t_img{
     position: relative;
     width: 400px;
 }
-.t_img:hover::after{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(45, 45, 45, 0.176);
-    position: absolute;
-    bottom: 0;
-    /* 直接在div下陰影 */
-    
-}
-.card:hover img{
-    background-color: #888;
-    opacity: 1;
+.t_img_mb{
+    width: 300px;
 }
 .card-body{
     position: relative;
     box-sizing: border-box;
     padding: 40px;
     margin: 0 auto;
-
+}
+.card-body_mb{
+    padding: 12px;
+}
+.card-body .row{
+    flex-direction: column;
 }
 .card_title{
     padding-bottom: 20px;
+}
+.card_title_mb{
+    padding-bottom: 8px;
 }
 .card_title a{
     text-decoration: none;
@@ -283,27 +297,41 @@
 .card_small{
     margin-bottom: 20px;
 }
+.card_small_mb{
+    padding-bottom: 8px;
+}
 .card_small small{
     color: var(--color-text60);
 }
-.icon_heart{
+.card_intro_mb p{
+    margin: 0;
+    padding-bottom: 10px;
+}
+.p_img{
+    position: relative;
+}
+.icon_heart_pc{
     position: absolute;
     right: 30px;
     top: 30px;
     cursor: pointer;
-
+}
+.t_img_mb{
+    position: relative;
+}
+.icon_heart_mb{
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    cursor: pointer;
 }
 .icon_fivestar i{
     color: var(--color-yellow);
-}
-.card-text span{
-    padding-left: 3px;
 }
 .color{
     stroke: #432A0F;
     fill: #CD562F;
 }
-
 .pl_row {
     margin: 36px auto;
 }
@@ -346,7 +374,9 @@
     width: 18px;
     margin: 0;
 }
-
+.icon_fire i{
+    color: var(--color-orange);
+}
 /* -------------------上下頁按鈕------------------ */
 .pages{
     margin: 3rem;

@@ -35,18 +35,18 @@ if (!empty($_SESSION['user'])) {
     
     
     <button onclick="document.getElementById('loginCard_re').style.display='block'" style="width:auto;">Login</button>
-    <div id="loginCard_re" class="loginmodal-re">
+    <div id="loginCard_re" class="loginmodal-re paddingtop-0-re">
     <form class="loginanimate-re" action="/action_page.php" method="post">
-        <div class="row loginwarp-re justify-content-center" id="tab-demo">
-            <div class="loginimgwarp-re d-none d-lg-block col-4 p-0">
+        <div class="row loginwarp-re  justify-content-center m-0" id="tab-demo">
+            <div class="loginimgwarp-re d-none d-lg-block col-3 p-0">
                 <img class="w-100" src="./imgs/member/loginbg.jpg" alt="">
             </div>
-            <div class="logincard-re col-12 col-md-4">
+            <div class="logincard-re col-12 col-md-3">
                 <div class="d-flex justify-content-end py-1">
-                    <svg class="closeicon-re" onclick="document.getElementById('loginCard_re').style.display='none'" class="close" title="Close Modal" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="closeicon-re" onclick="document.getElementById  ('loginCard_re').style.display='none'" class="close" title="Close Modal" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
                         <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
-                        </svg>
+                    </svg>
                 </div>
                 <div class="logincardtitle-re mb-3">
                     <ul class="buttonbox-re tab-title d-flex p-0 m-0 position-relative">

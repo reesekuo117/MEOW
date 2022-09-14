@@ -6,10 +6,10 @@
 }
 
 .youcantseeme {
+    top: 0;
+    left: 0;
     width: 100px;
     height: 100px;
-    /* border: 1px salmon solid; */
-    transform: translateX(-900px);
 }
 
 .drawSection01 {
@@ -18,7 +18,6 @@
 }
 
 .sound-icon {
-    /* border: 1px salmon solid; */
     margin-top: -100px;
     display: flex;
     flex-direction: column;
@@ -211,6 +210,19 @@
     /* top: 48px; */
 }
 
+.drawSection02 .btn-l {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'gensen-M';
+    font-size: 16px;
+    line-height: 125%;
+    background-color: var(--color-yellow);
+    border: 2px var(--color-brown-dark) solid;
+    border-radius: 8px;
+    transition: .2s;
+}
+
 .selectCatFunction svg {
     margin-top: -32px;
 }
@@ -257,6 +269,10 @@
     top: 17px;
     left: 384px;
 }
+
+/* .backto:hover svg{
+    fill: var(--color-brown-dark);
+} */
 
 .musicSwitch {
     top: 10px;
@@ -507,6 +523,21 @@
     color: var(--color-text60);
 }
 
+.clearAll_ba{
+    top: 28%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    /* border: 1px salmon solid; */
+    width: 10%;
+    text-decoration: none;
+    color: var(--color-brown-dark);
+}
+
+.clearAll_ba:hover{
+    color: var(--color-orange);
+}
+
 .drawSection07btnGroup {
     height: 80px;
     left: 50%;
@@ -556,16 +587,10 @@
 
 .drawSection07Cat {
     box-sizing: content-box;
+    /* left: 20%; */
+    /* top: 20%; */
+    transform: translateY(40px);
 }
-
-/* .face {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background-color: #3ecc6c;
-    border: 1px solid black;
-} */
 
 .eye {
     position: absolute;
@@ -609,6 +634,123 @@
     box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
 
+/*------------------ draw08 ----------------*/
+
+.heightCatImgWrap{
+    width: 145px;
+}
+
+.muscleCatImgWrap{
+    width: 277px;
+}
+
+.faceCatImgWrap{
+    width: 198px;
+}
+
+.drawSection08 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection08 h4{
+    color: var(--color-text60);
+}
+
+.heightbtnGroup{
+    margin-top: 120px;
+}
+
+.heightbtn{
+    width: 126px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.heightbtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.heightbtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.heightbtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.heightbtnGroup .row{
+    margin-top: 40px;
+}
+
+.heightbtnGroup{
+    margin-top: 120px;
+}
+
+.musclebtn{
+    width: 100px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.musclebtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.musclebtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.musclebtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.musclebtnGroup .row{
+    margin-top: 24px;
+}
+
+.musclebtnGroup{
+    margin-top: 68px;
+}
+
+.facebtn{
+    width: 100px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.facebtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.facebtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.facebtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.facebtnGroup .row{
+    margin-top: 24px;
+}
+
+.facebtnGroup{
+    margin-top: 68px;
+}
+
 /*------------------ draw09 ----------------*/
 
 .drawSection09 h1 {
@@ -626,6 +768,314 @@
     margin: 150px auto ;
     background-color: var(--color-yellow);
     text-align: center;
+}
+
+.white-box_ba{
+    width: 800px;
+    height: 700px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.howOldbtnGroup{
+    margin-top: 160px;
+}
+
+.howOldbtn{
+    width: 126px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.howOldbtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.howOldbtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.howOldbtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.drawSection09 .row{
+    margin-top: 40px;
+}
+
+.drawSection09 img{
+    transform: scale(.7);
+    Transform-style:preserve-3d;
+    perspective: 900px;
+}
+
+@keyframes flip {
+    0%{
+        transform: scale(.7) rotateY(0deg);
+    }
+    100%{
+        transform: scale(.7) rotateY(180deg);
+    }
+}
+
+@keyframes flip_back {
+    0%{
+        transform: scale(.7) rotateY(180deg);
+    }
+    100%{
+        transform: scale(.7) rotateY(0deg);
+    }
+}
+
+.oldCat{
+    top: 0;
+    right: 22%;
+}
+
+.youngCat{
+    top: 60%;
+    left: 22%;
+}
+
+.drawSection09 h4{
+    color: var(--color-text60);
+    /* left: 0; */
+}
+
+/*------------------ draw10 ----------------*/
+
+.drawSection10 h1 {
+    margin-top: 60px;
+    padding-top: 72px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection10 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection10 .btn-xl {
+    margin: 150px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.interestbtnGroup{
+    margin-top: 60px;
+}
+
+.interestbtn{
+    width: 126px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 8px;
+}
+
+.interestbtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.interestbtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.interestbtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.drawSection10 .row{
+    margin-top: 28px;
+}
+
+.drawSection10 img{
+    transform: scale(0.7);
+    Transform-style:preserve-3d;
+    perspective: 900px;
+}
+
+.skakeBoadCat{
+    top: -5%;
+    right: 15%;
+}
+
+.yogaCat{
+    top: 55%;
+    left: 18%;
+}
+
+.drawSection10 h4{
+    color: var(--color-text60);
+}
+
+/*------------------ draw11 ----------------*/
+
+.drawSection11 h1 {
+    margin-top: 60px;
+    padding-top: 72px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection11 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection11 .btn-xl {
+    margin: 150px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.personalitybtnGroup{
+    margin-top: 60px;
+}
+
+.personalitybtn{
+    width: 126px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 8px;
+}
+
+.personalitybtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.personalitybtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.personalitybtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.drawSection11 .row{
+    margin-top: 28px;
+}
+
+.drawSection11 img{
+    transform: scale(0.7);
+    Transform-style:preserve-3d;
+    perspective: 900px;
+}
+
+.happyCat{
+    top: -3%;
+    right: 18%;
+}
+
+.quietCat{
+    top: 40%;
+    left: 20%;
+}
+
+.drawSection11 h4{
+    color: var(--color-text60);
+}
+
+/*------------------ draw12 ----------------*/
+
+.drawSection12 h1 {
+    margin-top: 60px;
+    padding-top: 72px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection12 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection12 .btn-xl {
+    margin: 150px auto ;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.horobtnGroup{
+    margin-top: 16px;
+}
+
+.horobtn{
+    width: 140px;
+    height: 140px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 100px;
+    margin: 0 12px;
+}
+
+.horobtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.horobtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.horobtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.drawSection12 .row{
+    margin-top: 28px;
+}
+
+.drawSection12 .lionCat img{
+    transform: scale(0.7);
+    Transform-style:preserve-3d;
+    perspective: 900px;
+}
+
+.lionCat{
+    top: 65%;
+    left: 15%;
+}
+
+.drawSection12 h4{
+    color: var(--color-text60);
+}
+
+.horoImgWrap{
+    width: 60px;
+    height: 60px;
+
+}
+
+.horoImgWrap img{
+    transform: scale(1);
+    /* animation: infinite; */
+}
+
+
+@keyframes flip_horo {
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes flip_horo_back {
+    0%{
+        transform: rotateY(180deg);
+    }
+    100%{
+        transform: rotateY(0deg);
+    }
 }
 /*------------------ draw15 ----------------*/
 
@@ -661,6 +1111,7 @@
 
 
 /*------------------ draw16 ----------------*/
+
 .drawSection16 h1{
     margin-top: 60px;
     padding-top: 160px;
@@ -683,36 +1134,16 @@
     text-align: center;
 }
 
-.white-box_ba{
-    width: 800px;
-    height: 700px;
-    background-color: white;
-    border-radius: 8px;
-}
-
-.howOldbtn{
-    width: 126px;
-    height: 41px;
-    border: 1px var(--color-brown-dark) solid;
-    background-color: white;
-    border-radius: 50px;
-    margin: 0 16px;
-}
-
-.howOldbtn h5{
-    color: var(--color-brown-dark);
-    margin: 0;
-}
-
-.drawSection09 .row{
-    /* border: 1px salmon solid; */
-    /* margin-top: 120px; */
-}
-
 .page16cat{
     width: 220px;
     position: absolute;
     right: 0;
 }
 
+.drawSection16 .stepActive h5 {
+    color: var(--color-brown-dark);
+}
 
+.drawSection16 .stepUnActive h5 {
+    color: var(--color-text60);
+}

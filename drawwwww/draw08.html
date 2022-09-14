@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./draw.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./test.scss">
+    <!-- <link rel="stylesheet" href="./test.scss"> -->
+    <link rel="stylesheet" href="./re.css">
 
 </head>
 
@@ -259,35 +260,204 @@
         <a class="position-absolute" href="draw01.html">
             <div class="youcantseeme"></div>
         </a>
+        <div class="container">
+            <section id="carousel">  
+                <input type="radio" name="slider" id="s1" checked class="d-none">
+                <input type="radio" name="slider" id="s2" class="d-none">
+                <input type="radio" name="slider" id="s3" class="d-none">
+                    <label for="s1" id="slider1">
+                        <div class="drawbox08 position-relative">
+                            <h1>外型 —— 身高</h1>
+                            <h5 class="d-block">(可複選)</h5>
+                            <div class="heightbtnGroup">
+                                <div class="row justify-content-center d-flex">
+                                    <button class="heightbtn">
+                                        <h5>150-155</h5>
+                                    </button>
+                                    <button class="heightbtn">
+                                        <h5>156-160</h5>
+                                    </button>
+                                    <button class="heightbtn">
+                                        <h5>161-165</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="heightbtn">
+                                        <h5>166-170</h5>
+                                    </button>
+                                    <button class="heightbtn">
+                                        <h5>171-175</h5>
+                                    </button>
+                                    <button class="heightbtn">
+                                        <h5>176-180</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="heightbtn">
+                                        <h5>181-185</h5>
+                                    </button>
+                                    <button class="heightbtn">
+                                        <h5>186-190</h5>
+                                    </button>
+                                    <button class="heightbtn">
+                                        <h5>190~</h5>
+                                    </button>
+                                </div>
+                            </div>
 
-        <div class="container flex-row">
-            <h1 class=""></h1>
-            <section class="carousel">
-                <a href="#!" class="carousel__arrow carousel__arrow--left"></a>
-                <div class="carousel__container">
-                    <img data-target="0"
-                        src="../imgs/draw/29.png"
-                        alt="Carousel Photo One" />
-                    <img data-target="1" class="carousel__container--active"
-                        src=""
-                        alt="Carousel Photo Two" />
-                    <img data-target="2"
-                        src=""
-                        alt="Carousel Photo Three" />
-                </div>
-                <a href="#!" class="carousel__arrow carousel__arrow--right"></a>
-                <ul class="carousel__dot-nav">
-                    <li data-target="0">Carousel Photo One</li>
-                    <li data-target="1" class="carousel__dot-nav--active">Carousel Photo Two</li>
-                    <li data-target="2">Carousel Photo Three</li>
-                </ul>
+                            <div class="catpicture08 position-absolute">
+                                <div class="heightCatImgWrap">
+                                    <img class="w-100" src="../imgs/draw/36.png" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                    </label>
+                    <label for="s2" id="slider2">
+                        <div class="drawbox08 position-relative">
+                            <h1>外型 —— 體格</h1>
+                            <h5 class="d-block">(多選最多五項)</h5>
+                            <div class="musclebtnGroup">
+                                <div class="row justify-content-center d-flex">
+                                    <button class="musclebtn">
+                                        <h5>#苗條</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#嬌小</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#豐滿</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="musclebtn">
+                                        <h5>#壯碩</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#肉肉</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#精壯</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="musclebtn">
+                                        <h5>#適中</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#纖細</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#窄肩</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="musclebtn">
+                                        <h5>#寬肩</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#修身</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#魁梧</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="musclebtn">
+                                        <h5>#高挑</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#骨感</h5>
+                                    </button>
+                                    <button class="musclebtn">
+                                        <h5>#壯碩</h5>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="catpicture08 position-absolute">
+                                <div class="muscleCatImgWrap">
+                                    <img class="w-100" src="../imgs/draw/37.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label for="s3" id="slider3">
+                        <div class="drawbox08 position-relative">
+                            <h1>外型 —— 五官</h1>
+                            <h5 class="d-block">(多選最多五項)</h5>
+                            <div class="facebtnGroup">
+                                <div class="row justify-content-center d-flex">
+                                    <button class="facebtn">
+                                        <h5>#鬍子</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#鷹勾鼻</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#鵝蛋臉</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="facebtn">
+                                        <h5>#雙眼皮</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#單眼皮</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#長髮</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="facebtn">
+                                        <h5>#小眼睛</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#大眼睛</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#厚唇</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="facebtn">
+                                        <h5>#藍眼睛</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#短髮</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#鳳眼</h5>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center d-flex">
+                                    <button class="facebtn">
+                                        <h5>#捲髮</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#戴眼鏡</h5>
+                                    </button>
+                                    <button class="facebtn">
+                                        <h5>#酒窩</h5>
+                                    </button>
+                                </div>
+
+
+                            </div>
+                            <div class="catpicture08 position-absolute ml-5">
+                                <div class="faceCatImgWrap">
+                                    <img class="w-100" src="../imgs/draw/38.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </label>
             </section>
 
+            <h4 class="position-absolute">(1/5)</h4>
+
         </div>
-
-
-
-
     </div>
     <a href="draw09.html">
         <button class="btn_md_next position-absolute" href="draw09.html">
