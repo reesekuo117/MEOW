@@ -1,5 +1,5 @@
 *{
-    /* outline: 1px solid #000; */
+    outline: 1px solid #000;
 }
 header .navbar {
     /* background-color: transparent!important; */
@@ -25,7 +25,7 @@ header .navbar {
         padding: 80px 0 0 0;
     }
     .likehight-re{
-        min-height: 623.56px;
+        /* min-height: 623.56px; */
     }
     .allright-re{
         /* height: 733.55px; */
@@ -119,7 +119,7 @@ p {
     line-height: 140%;
 }
 .text-16-re {
-    font-family: 'gensen-M';
+    font-family: 'gensen-R';
     font-size: 16px;
     line-height: 140%;
 }
@@ -167,6 +167,30 @@ p {
     background-color: #F5DFC2;
     border-bottom: 2px solid #432A0F;
 }
+.logincard-re {
+    border-radius:0 8px 8px 0;
+}
+@media (max-width: 767px) {
+    .logincard-re {
+        min-height: 667px;
+        padding-top: -180px;
+    }
+}
+.loginimgwarp-re {
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .paddingtop-0-re {
+        padding: 0px;
+    }
+}
+@media (min-width: 768px){
+    .paddingtop-0-re {
+        padding-top: 180px;
+    }
+}
 /* right --------------------------------------*/
 .logincard-re {
     background-color: #F5DFC2;
@@ -181,7 +205,7 @@ p {
     /* box-shadow:none; */
     /* outline-style: none; */
     /* width: 165px; */
-    height: 41px;
+    /* height: 41px; */
     background-color: #F5DFC2;
     border: 2px solid #432A0F;
     border-radius: 8px 8px 0 0;
@@ -282,11 +306,11 @@ p {
     left: 0;
     top: 0;
     width: 100%;
-    height: 80%;
+    height: 100%;
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-    padding-top: 120px;
+    /* padding-top: 180px; */
 }
 .loginanimate-re {
     -webkit-animation: animatezoom 0.6s;
@@ -591,9 +615,42 @@ p {
     
 }
 .card-body-re {
-    padding: 12px;
+    padding: 8px;
     background-color: var(--color-lightcreamy);
 
+}
+@media (max-width: 767px) {
+    .textphone-16-re{
+        font-family: 'gensen-M';
+        font-size: 18px;
+        line-height: 140%;
+        padding: 10px 0;
+        border-radius: 8px 8px 0 0;
+    }
+}
+@media (min-width: 768px) {
+    .textphone-16-re{
+        font-family: 'gensen-M';
+        font-size: 20px;
+        line-height: 140%;
+        padding: 4px 0;
+        border-radius: 8px 8px 0 0;
+    }
+}
+@media (max-width: 767px) {
+    .textphone-14-re{
+        font-family: 'gensen-R';
+        font-size: 14px;
+        line-height: 140%;
+
+    }
+}
+@media (min-width: 768px) {
+    .textphone-14-re{
+        font-family: 'gensen-R';
+        font-size: 16px;
+        line-height: 140%;
+    }
 }
 /* -------------------------------------------------------------------- */
 .orderbtn-re, .orderbtn02-re {

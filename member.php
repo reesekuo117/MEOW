@@ -54,8 +54,8 @@
                     </div>
                 </div>
                 <div class="d-flex tab_phonelist_re">
-                    <h5 class="membertitle-re col-6 p-0 d-inline-block">會員資料</h5>
-                    <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block">修改密碼</h5>
+                    <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">會員資料</h5>
+                    <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
                 <form name='form1-re' class="padding225-re" onsubmit=" checkForm(); return false;">  
                 <!-- novalidate 不要驗證表單 -->
@@ -139,8 +139,8 @@
                     </div>
                 </div>
                 <div class="d-flex tab_phonelist_re">
-                    <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block">會員資料</h5>
-                    <h5 class="membertitle-re col-6 p-0 d-inline-block">修改密碼</h5>
+                    <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">會員資料</h5>
+                    <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
                 <form name='form1-re' class="padding225-re" onsubmit=" checkForm(); return false;">  
                 <!-- novalidate 不要驗證表單 -->
@@ -165,13 +165,13 @@
             <div id="like-page-re" class="item_re">
                 <div>
                     <ul class="tab-liketitle-re liketitle-all-re d-flax p-0">
-                        <li class="col-3 text-18-re d-inline-block liketitle-re text-center active-re"><a href="#tab01-re">收藏商品</a></li><li class="col-3 text-18-re d-inline-block liketitle-re text-center "><a href="#tab02-re">收藏行程</a></li><li class="col-3 text-18-re d-inline-block liketitle-re text-center "><a href="#tab03-re">收藏詩籤</a></li><li class="col-3 text-18-re d-inline-block liketitle-re text-center "><a href="#tab04-re">收藏運勢</a></li>
+                        <li class="col-3 textphone-16-re d-inline-block liketitle-re text-center active-re"><a href="#tab01-re">收藏商品</a></li><li class="col-3 textphone-16-re d-inline-block liketitle-re text-center "><a href="#tab02-re">收藏行程</a></li><li class="col-3 textphone-16-re d-inline-block liketitle-re text-center "><a href="#tab03-re">收藏詩籤</a></li><li class="col-3 textphone-16-re d-inline-block liketitle-re text-center "><a href="#tab04-re">收藏運勢</a></li>
                     </ul>
                 </div>
     <!-- p3-P------------------------------------------------------------------ -->
                 <div id="tab01-re" class="tab-inner-re ">
-                    <div class="row my-3 mx-0 likehight-re">
-                        <div class="col-6 col-md-3 px-2 pb-3">
+                    <div class="row mx-0 likehight-re">
+                        <div class="col-6 col-md-3 px-2 pb-2">
                             <div class="card-re">
                                 <div class="position-relative ">
                                     <div class="cardimg-re">
@@ -184,7 +184,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <p class="card-title-re textphone-14-re mb-2">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
                                         <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
@@ -212,7 +212,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <p class="card-title-re textphone-14-re mb-2">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
                                         <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
@@ -240,7 +240,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <p class="card-title-re textphone-14-re mb-2">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
                                         <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
@@ -268,7 +268,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <p class="card-title-re textphone-14-re mb-2">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
                                         <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
@@ -296,7 +296,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
+                                    <p class="card-title-re textphone-14-re mb-2">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
                                         <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
@@ -311,6 +311,7 @@
                                 </div>
                             </div>
                         </div>
+
 
                     </div> 
                     <div class="pagebtngroup-re text-center mb-3">
@@ -331,7 +332,7 @@
                 </div>
     <!-- p3-T------------------------------------------------------------------ -->
                 <div id="tab02-re" class="tab-inner-re">
-                <div class="row my-3 mx-0 likehight-re">
+                <div class="row mx-0 likehight-re">
                         <div class="col-6 col-md-3 px-2 pb-3">
                             <div class="card">
                                 <div class="position-relative">
@@ -378,7 +379,7 @@
                 </div>
     <!-- p3-D------------------------------------------------------------------ -->
                 <div id="tab03-re" class="tab-inner-re">
-                    <div class="row mb-3 mx-0 my-3 likehight-re">
+                    <div class="row mb-3 mx-0 likehight-re">
                         <div class="col-12 col-md-4 likecard-re position-relative pb-3">
                             <img class="w-100" src="./imgs/testre.jpg" alt="">
                             <div class="position-absolute likeicon2-re">
@@ -423,7 +424,7 @@
                 </div>
     <!-- p3-F------------------------------------------------------------------ -->
                 <div id="tab04-re" class="tab-inner-re">
-                    <div class="row mb-3 mx-0 my-3 likehight-re">
+                    <div class="row mb-3 mx-0 likehight-re">
                     <div class="col-12 col-md-4 likecard-re position-relative pb-3">
                         <img class="w-100" src="./imgs/testre.jpg" alt="">
                         <div class="position-absolute likeicon2-re">
