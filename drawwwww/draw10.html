@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./draw.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./test.scss">
 
 </head>
 
@@ -237,40 +238,14 @@
         </div>
     </header>
 
-    <div class="drawSection06 position-relative">
-        <a id="backtodraw05" class="position-absolute backto d-none" href="draw05.html">
+    <div class="drawSection10 flex-row position-relative justify-content-center">
+        <a id="backtodraw09" class="position-absolute backto" href="draw09.html">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M18.8518 3.47604C19.1413 3.9464 18.9946 4.56235 18.5243 4.8518L6.9082 12.0001L18.5243 19.1485C18.9946 19.4379 19.1413 20.0539 18.8518 20.5242C18.5624 20.9946 17.9464 21.1413 17.4761 20.8518L5.86001 13.7035C4.59094 12.9225 4.59093 11.0778 5.86001 10.2968L17.4761 3.14848C17.9464 2.85903 18.5624 3.00569 18.8518 3.47604Z"
                     fill="#432A0F" fill-opacity="0.38" />
             </svg>
         </a>
-        <div class="step_ba position-absolute d-flex align-items-center justify-content-between">
-            <div class="stepUnActive d-flex align-items-center">
-                <div class="stepCircle align-items-center">
-                    <h5 class="mt-2">1</h5>
-                </div>
-                <h5 class="ml-2 mt-2">自我介紹</h5>
-            </div>
-
-            <div class="stepline_ba"></div>
-
-            <div class="stepActive d-flex align-items-center">
-                <div class="stepCircleActive align-items-center">
-                    <h5 class="mt-2">2</h5>
-                </div>
-                <h5 class="ml-2 mt-2">誠心祈求</h5>
-            </div>
-
-            <div class="stepline_ba"></div>
-
-            <div class="stepUnActive d-flex align-items-center">
-                <div class="stepCircle align-items-center">
-                    <h5 class="mt-2">3</h5>
-                </div>
-                <h5 class="ml-2 mt-2">求籤</h5>
-            </div>
-        </div>
         <a id="musicSwitch" class="position-absolute musicSwitch" href="#">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -284,25 +259,138 @@
         <a class="position-absolute youcantseeme" href="draw01.html"></a>
 
         <div class="container flex-row">
-            <h1 class="">誠心祈求</h1>
-            <h5>
-                請告訴月老你理想的類型和條件，<br>
-                外貌、興趣、職業、個性等等，越詳細越好，<br>
-                讓月老不會鎖定錯誤目標，更快幫你找到適合的人選！<br>
-                若已經有心儀的對象，也可以直接跟月老說對方的姓名和生日喔！
-            </h5>
-            <a href="draw07.html">
-                <button class="btn-xl">
-                    <h4>
-                        下一步
-                    </h4>
-                </button>
-            </a>
+            
+            <div class="white-box_ba m-auto">
+                <h1 class="">興趣</h1>
+                <h5 class="d-block">(多選最多五項)</h5>
+                <div class="interestbtnGroup">
+                    <div class="skakeBoadCat position-absolute">
+                        <img src="../imgs/draw/32.png" alt="">
+                    </div>
+                    <div class="yogaCat position-absolute">
+                        <img src="../imgs/draw/33.png" alt="">
+                    </div>
+                    <div class="row justify-content-center d-flex">
+                        <button class="interestbtn">
+                            <h5>#露營</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#烹飪</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#爬山</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#繪畫</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#園藝</h5>
+                        </button>
+                    </div>
+                    <div class="row justify-content-center d-flex">
+                        <button class="interestbtn">
+                            <h5>#唱歌</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#追劇</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#旅遊</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#攝影</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#整理</h5>
+                        </button>
+                    </div>
+                    <div class="row justify-content-center d-flex">
+                        <button class="interestbtn">
+                            <h5>#看展</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#健身</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#逛街</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#球賽</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#下棋</h5>
+                        </button>
+                    </div>
+                    <div class="row justify-content-center d-flex">
+                        <button class="interestbtn">
+                            <h5>#手作</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#跑山</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#寵物</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#寫作</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#滑板</h5>
+                        </button>
+                    </div>
+                    <div class="row justify-content-center d-flex">
+                        <button class="interestbtn">
+                            <h5>#看電影</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#吃美食</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#聽音樂</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#瑜珈</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#打球</h5>
+                        </button>
+                    </div>
+                    <div class="row justify-content-center d-flex">
+                        <button class="interestbtn">
+                            <h5>#密室逃脫</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#戶外活動</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#彈奏樂器</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#釣魚</h5>
+                        </button>
+                        <button class="interestbtn">
+                            <h5>#美妝保養</h5>
+                        </button>
+                    </div>
 
+                </div>
 
-
+            </div>
+            <h4 class="position-absolute">(3/5)</h4>
         </div>
+
+
+
+
     </div>
+    <a href="draw11.html">
+        <button class="btn_md_next position-absolute" href="draw11.html">
+            <p class="m-0">
+                下一步
+            </p>
+        </button>
+    </a>
+
 
 
     <!-- footer-md ----------------------------------->
@@ -361,7 +449,7 @@
     </div>
 
 
-
+    <script src="test.js"></script>
     <!-- jQ -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
