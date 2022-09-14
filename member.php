@@ -165,7 +165,7 @@
             <div id="like-page-re" class="item_re">
                 <div>
                     <ul class="tab-liketitle-re liketitle-all-re d-flax p-0">
-                        <li class="col-3 text-20-re d-inline-block liketitle-re text-center active-re"><a href="#tab01-re">獨家商品</a></li><li class="col-3 text-20-re d-inline-block liketitle-re text-center "><a href="#tab02-re">旅遊行程</a></li><li class="col-3 text-20-re d-inline-block liketitle-re text-center "><a href="#tab03-re">收藏詩籤</a></li><li class="col-3 text-20-re d-inline-block liketitle-re text-center "><a href="#tab04-re">每日運勢</a></li>
+                        <li class="col-3 text-18-re d-inline-block liketitle-re text-center active-re"><a href="#tab01-re">收藏商品</a></li><li class="col-3 text-18-re d-inline-block liketitle-re text-center "><a href="#tab02-re">收藏行程</a></li><li class="col-3 text-18-re d-inline-block liketitle-re text-center "><a href="#tab03-re">收藏詩籤</a></li><li class="col-3 text-18-re d-inline-block liketitle-re text-center "><a href="#tab04-re">收藏運勢</a></li>
                     </ul>
                 </div>
     <!-- p3-P------------------------------------------------------------------ -->
@@ -186,8 +186,15 @@
                                 <div class="card-body-re">
                                     <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
-                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
-                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                        <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
+                                                <circle cx="13.2115" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                                <circle cx="22.1634" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -207,8 +214,15 @@
                                 <div class="card-body-re">
                                     <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
-                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
-                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                        <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
+                                                <circle cx="13.2115" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                                <circle cx="22.1634" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -228,8 +242,15 @@
                                 <div class="card-body-re">
                                     <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
-                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
-                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                        <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
+                                                <circle cx="13.2115" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                                <circle cx="22.1634" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -249,8 +270,15 @@
                                 <div class="card-body-re">
                                     <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
-                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
-                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                        <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
+                                                <circle cx="13.2115" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                                <circle cx="22.1634" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -270,8 +298,15 @@
                                 <div class="card-body-re">
                                     <p class="card-title-re text-16-re">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</p>
                                     <div class="d-flex">
-                                        <p class="text-20-re price-re col-6 p-0 my-auto">520</p>
-                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                        <p class="text-20-re price-re col-9 p-0 my-auto">520</p>
+                                        <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
+                                                <circle cx="13.2115" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                                <circle cx="22.1634" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -310,8 +345,15 @@
                                 <div class="card-body-re">
                                     <p class="card-title-re text-16-re">台北霞海城隍廟獨家行程一日遊</p>
                                     <div class="d-flex">
-                                        <p class="text-20-re price-re col-6 p-0 my-auto">5520</p>
-                                        <button class="btn-re btn200-re col-6"  onclick="addToCartRe(event)">加入購物車</button>
+                                        <p class="text-20-re price-re col-9 p-0 my-auto">5520</p>
+                                        <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
+                                                <circle cx="13.2115" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                                <circle cx="22.1634" cy="26.0336" r="1.27885" fill="#432A0F"/>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
