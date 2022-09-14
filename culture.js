@@ -317,6 +317,7 @@ const northClicked = function(){
   $('#south-group_lb').addClass('d-none');
   $('#area_lb').val('0')
 }
+
 $('.north').click(northClicked);
 
 const middleClicked = function(){
@@ -349,7 +350,6 @@ $('#area_lb').on('change', function(){
 
   const val = $(this).val();
   console.log({val});
-
   const areas = [northClicked, middleClicked, southClicked];
 
   areas[val]();
