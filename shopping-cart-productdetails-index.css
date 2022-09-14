@@ -117,10 +117,19 @@
     margin: auto 0;
 }  
 
-
-
-
-
+/* -------#error----------- */
+.invalid { 
+    border-color: rgb(168, 41, 3); 
+}
+#error{
+    color: #E5A62A;
+}
+.fa-check-circle{
+    visibility: hidden;
+}
+.fas{
+    visibility: visible;
+}
 /* ---------桌機表單的寬度------(每一個表單都要用) */
 #myTabContent-yu {
     max-width: 1450px;
@@ -171,7 +180,7 @@
 
 
 
-/* ˋ桌機 */
+/* ---------桌機---------- */
 .listinfo-title-yu{
     background-color: var(--color-creamy);
     padding: 12px 12px;
@@ -311,6 +320,7 @@
     height: 48px;
 }
 .order-list-yu input.ordername-yu , input.orderphone-yu{
+    visibility: visible;
     width: 330px;
     height: 48px;
 }

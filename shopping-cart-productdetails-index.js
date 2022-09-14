@@ -89,16 +89,85 @@ $('#usercity-yu').change(function () {
 });
 
 
-//-----------------表單驗證---------------------------
-function CheckForm(){  
-    if   (document.form1.test.value.length   ==   '')  
-    {  
-    alert("不得為空!");
-    document.from1-yu.test.focus();
-    return  false;
+// -----------------表單驗證---------------------------
+
+// $("input").focus(function(){
+//     console.log("hihi")
+// });
+
+// const input = $('ordername-yu');
+
+// $("input").blur(function(){
+//     if(bajohn.test.value == ""){
+//         console.log("HI")
+//         console.log(this);
+//         $(this).closest('i').toggleClass("fas")
+//     }else{
+//         console.log("no");
+//     }
+// });
+
+
+$("input").focus(function(){
+    console.log("hihi")
+});
+
+const input = $('ordername-yu');
+
+$("input").blur(function(){
+    if(bajohn.test.value == ""){
+        alert("請填寫姓名")
+    }else{
+        console.log("no");
     }
-    return  true;
-}
+});
+
+
+
+
+
+
+
+
+
+
+// $(document).ready(function(){
+//     if (input.value == ""){
+//         $(this).removeClass(".d-none")
+//     };
+// });
+
+// $(document).ready(function(){
+//     $("input").focus(function(){
+//     $(this).css("background-color","#FFFFCC");
+//     });
+//     $("input").blur(function(){
+//     $(this).css("background-color","#D6D6FF");
+//     });
+//   });
+    // input.blur = function() {
+    //     if (!input.value.includes('@')) { // not email
+    //     input.classList.add('invalid');
+    //     error.innerHTML = 'Please enter a correct email.'
+    //     }
+    //     };
+
+    //.contains
+    // input.blur = function() {
+    //     if (input.value == ""('invalid')) {
+    //     this.classList.remove('invalid');
+    //     error.innerHTML = "";
+    //     }
+    // };
+    // function addColor(){
+    //     this.style.background="red";
+    // }
+    // var form = document.forms['form1-yu'];
+    //   if (form.addEventListener) { // 非 IE 浏览器
+    //     form.addEventListener('focus', addColor, true);
+    //   }else{  // IE
+    //     form.onfocusin = addColor
+    // }
 
 //---------------------input:radio 能取消點選--------------
 $(document).ready(function () {
@@ -112,15 +181,15 @@ $(document).ready(function () {
 //------------------------同訂購人 取值------------------------
 //姓名
 $("#btnAutoInput-yu").click(function () {
-$("#username-yu").val ($("#name-yu").val()) ;
+$("#name_yu-yu").val ($("#name-yu").val()) ;
 });
 //電話
 $("#btnAutoInput-yu").click(function () {
 $("#usermobile-yu").val ($("#mobile-yu").val()) ;
 });
-//email
+//mobile_yu
 $("#btnAutoInput-yu").click(function () {
-$("#useremail-yu").val ($("#email-yu").val()) ;
+$("#usermobile_yu-yu").val ($("#mobile_yu-yu").val()) ;
 });
 //地址(有問題)
 $("#btnAutoInput-yu").click(function () {
@@ -189,7 +258,7 @@ else{
 //button 偵測欄位是否有填寫
 //     function checkForm() {
 //     // TODO: 欄位檢查
-//     if (!$('#email').val()) {
+//     if (!$('#mobile_yu').val()) {
 //         alert('請填寫帳號');
 //         return;
 //     }
@@ -199,9 +268,9 @@ else{
 //     }
 // }
 
-//------email驗證 (失敗)
+//------mobile_yu驗證 (失敗)
 function checkForm(){
-var eValue = document.getElementById("email").value;
+var eValue = document.getElementById("mobile_yu").value;
 if(!/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(eValue)){
 alert("郵箱地址不對!");
 return false;
@@ -211,7 +280,7 @@ return false;
 
 
 
-// var result = "";
+// 
 
 
 

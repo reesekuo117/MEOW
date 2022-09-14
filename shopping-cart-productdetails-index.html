@@ -507,7 +507,7 @@
                         <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
                     </div>
                     <!-- 訂購人填寫資料 -->
-                    <form  class=" from1-yu order-list-yu" method="post" action="" onsubmit="return CheckForm();">
+                    <form id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu" method="post" action="" onsubmit="return CheckForm();">
                         <div class="order-name-yu p-3">
                             <label for="name" class="">
                                 姓名
@@ -515,6 +515,12 @@
                             </label>
                             <br/>
                             <input class="ordername-yu"type="text"placeholder="請輸入姓名 " id="name-yu" name="test" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength=20  required/>
+                            
+                            <div>
+                                <i class="fccyu fa-check-circle"></i>
+                            </div>
+			                <i class="fa-exclamation-circle "></i>
+			                <!-- <small>Error message</small> -->
                         </div>
                         <div class="order-phone-yu p-3">
                             <label for="mobile" class="">
@@ -569,7 +575,8 @@
                                 Email<span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input type="email" name="test" id="email-yu" name="email"  />
+                            <input type="email" class="email-yu"  id="email-yu" name="email"  />
+                            <div id="error"></div>
                         </div>
                     </form>
                 </div>
@@ -1426,6 +1433,6 @@
         <script src="shopping-cart-productdetails-index.js"></script>
 
 
-        
+
     </body>
 </html>
