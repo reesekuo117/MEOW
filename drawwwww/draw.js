@@ -144,10 +144,10 @@ $('.drawSection11 img').mouseleave(function () {
     $(this).css('animation', 'flip_back .3s forwards');
 })
 
-$('.drawSection11 .lionCat img').mouseenter(function () {
+$('.drawSection12 .lionCat img').mouseenter(function () {
     $(this).css('animation', 'flip .3s forwards');
 })
-$('.drawSection11 .lionCat img').mouseleave(function () {
+$('.drawSection12 .lionCat img').mouseleave(function () {
     $(this).css('animation', 'flip_back .3s forwards');
 })
 
@@ -174,4 +174,22 @@ $('.personalitybtn').click(function () {
 
 $('.horobtn').click(function () {
     $(this).toggleClass('horobtnToggle')
+})
+
+// 身高
+
+$('.heightbtn').click(function () {
+    $(this).toggleClass('heightbtnToggle')
+})
+
+// 體格
+
+$('.musclebtn').click(function () {
+    $(this).toggleClass('musclebtnToggle')
+})
+
+// 臉
+
+$('.facebtn').click(function () {
+    $(this).toggleClass('facebtnToggle')
 })

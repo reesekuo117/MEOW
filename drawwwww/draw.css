@@ -10,7 +10,6 @@
     left: 0;
     width: 100px;
     height: 100px;
-    /* border: 1px salmon solid; */
 }
 
 .drawSection01 {
@@ -19,7 +18,6 @@
 }
 
 .sound-icon {
-    /* border: 1px salmon solid; */
     margin-top: -100px;
     display: flex;
     flex-direction: column;
@@ -636,6 +634,123 @@
     box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
 
+/*------------------ draw08 ----------------*/
+
+.heightCatImgWrap{
+    width: 145px;
+}
+
+.muscleCatImgWrap{
+    width: 277px;
+}
+
+.faceCatImgWrap{
+    width: 198px;
+}
+
+.drawSection08 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection08 h4{
+    color: var(--color-text60);
+}
+
+.heightbtnGroup{
+    margin-top: 120px;
+}
+
+.heightbtn{
+    width: 126px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.heightbtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.heightbtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.heightbtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.heightbtnGroup .row{
+    margin-top: 40px;
+}
+
+.heightbtnGroup{
+    margin-top: 120px;
+}
+
+.musclebtn{
+    width: 100px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.musclebtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.musclebtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.musclebtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.musclebtnGroup .row{
+    margin-top: 24px;
+}
+
+.musclebtnGroup{
+    margin-top: 68px;
+}
+
+.facebtn{
+    width: 100px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.facebtn:hover{
+    background-color: var(--color-yellow);
+}
+
+.facebtnToggle{
+    background-color: var(--color-yellow);
+}
+
+.facebtn h5{
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.facebtnGroup .row{
+    margin-top: 24px;
+}
+
+.facebtnGroup{
+    margin-top: 68px;
+}
+
 /*------------------ draw09 ----------------*/
 
 .drawSection09 h1 {
@@ -996,6 +1111,7 @@
 
 
 /*------------------ draw16 ----------------*/
+
 .drawSection16 h1{
     margin-top: 60px;
     padding-top: 160px;
