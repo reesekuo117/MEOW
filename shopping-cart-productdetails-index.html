@@ -502,19 +502,19 @@
                     </div>
                 </div>
                 <!-- 訂購人資料 -->
-                <section class="section-1-yu">
+                <div class="section-1-yu">
                     <div class="section-1-title-yu">
                         <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
                     </div>
                     <!-- 訂購人填寫資料 -->
-                    <div class="order-list-yu">
+                    <form  class=" from1-yu order-list-yu" method="post" action="" onsubmit="return CheckForm();">
                         <div class="order-name-yu p-3">
                             <label for="name" class="">
                                 姓名
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="ordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="name-yu" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength=20  required/>
+                            <input class="ordername-yu"type="text"placeholder="請輸入姓名 " id="name-yu" name="test" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength=20  required/>
                         </div>
                         <div class="order-phone-yu p-3">
                             <label for="mobile" class="">
@@ -522,7 +522,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="orderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"  maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'')" required/>
+                            <input class="orderphone-yu" type="text" placeholder="請輸入聯絡電話" id="mobile-yu" name="test"  maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'')" required/>
                         </div>
                         <div class="order-address-yu p-3">
                             <label for="address" class="">
@@ -532,7 +532,7 @@
                             <br />
                             <div class="d-flex align-items-center">
                                 <div class="form-group m-0">
-                                    <select class="orderaddress1-yu"name="city"id="city-yu"required>
+                                    <select class="orderaddress1-yu" name="test" id="city1-yu"required>
                                         <option class="" value="0">臺北市</option>
                                         <option value="1">新北市</option>
                                         <option value="2">基隆市</option>
@@ -555,32 +555,32 @@
                                     </select>
                                 </div>
                                 <div class="form-group m-0">
-                                    <select class="orderaddress2-yu"name="district"id="district">
+                                    <select class="orderaddress2-yu"name="test"id="district1-yu">
                                         <option class="" value="0">中正區</option>
                                         <option value="1">板橋區</option>
                                         <option value="2">仁愛區</option>
                                     </select>
                                 </div>
-                                <input class="orderaddress3-yu" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="address"/>
+                                <input class="orderaddress3-yu" name="test"placeholder=" 請輸入詳細地址" id="address-yu"name="address"/>
                             </div>
                         </div>
                         <div class="order-email-yu p-3">
-                            <label for="email" class=""
-                                >Email<span style="color: #963c38">*</span>
+                            <label for="email" class="">
+                                Email<span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input type="email" class="" id="email-yu" name="email"  />
+                            <input type="email" name="test" id="email-yu" name="email"  />
                         </div>
-                    </div>
-                </section>
+                    </form>
+                </div>
                 <!-- 收件人資料 -->
-                <section class="section-2-yu">
+                <form class=" from2-yu section-2-yu" method="post" action="" onsubmit="return CheckForm();">
                     <div class="section-2-title-yu d-flex justify-content-between">
                         <h3 class="listinfo-title-yu m-0">
                             收件人資料
                         </h3>
                         <label for="name" class="m-0">
-                            <input type="checkbox"name="listinfo-title-checkbox-yu"id="btnAutoInput-yu"/>
+                            <input type="checkbox" name="test" id="btnAutoInput-yu"/>
                             同訂購人
                         </label>
                     </div>
@@ -592,7 +592,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="name" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength=20required/>
+                            <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="test" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength="50" required/>
                         </div>
                         <div class="receiver-phone-yu p-3">
                             <label for="mobile" class="">
@@ -600,7 +600,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="mobile" maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'')" required/>
+                            <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="test" maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'')" required/>
                         </div>
                         <div class="receiver-deliver-yu p-3">
                             <label for="" class="">
@@ -621,7 +621,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="" type="text" id="useremail-yu" name="email" />
+                            <input class="" type="email " id="useremail-yu" name="test" />
                         </div>
                         <div class="receiver-address-yu p-3">
                             <label for="address" class="">
@@ -631,7 +631,7 @@
                             <br/>
                             <div class="d-flex align-items-center">
                                 <div class="form-group m-0">
-                                    <select class="receiveraddress1-yu"name="city"id="usercity-yu"required>
+                                    <select class="receiveraddress1-yu" name="test" id="usercity-yu"required>
                                         <option class="" value="0">臺北市</option>
                                         <option value="1">新北市</option>
                                         <option value="2">基隆市</option>
@@ -654,19 +654,19 @@
                                         </select>
                                 </div>
                                 <div class="form-group m-0">
-                                    <select class="receiveraddress2-yu"name="district"id="district">
+                                    <select class="receiveraddress2-yu"name="test"id="userdistrict-yu">
                                         <option class="" value="0">中正區</option>
                                         <option value="1">板橋區</option>
                                         <option value="2">仁愛區</option>
                                     </select>
                                 </div>
-                                <input class="receiveraddress3-yu"type="text"placeholder=" 請輸入詳細地址"id="useraddress-yu"name="address"/>
+                                <input class="receiveraddress3-yu"type="text"placeholder=" 請輸入詳細地址"id="useraddress-yu"name="test"/>
                             </div>
                         </div>
                     </div>
-                </section>
+                </form>
                 <!-- 付款方式 -->
-                <section class="section-3-yu">
+                <form class=" from3-yu section-3-yu"  method="post" action="" onsubmit="return CheckForm();">
                     <div class="section-3-title-yu">
                         <h3 class="listinfo-title-yu m-0">付款方式</h3>
                     </div>
@@ -684,17 +684,17 @@
                                                 <img src="imgs/shopping-cart/信用卡的前面png.png" alt="">
                                             </div>
                                             <div class="creditcardnumber-yu d-flex" id="creditcardnumber-yu">
-                                                <input id="creditcardnumber1-yu" class="text-center" type="text" placeholder="0000" maxlength="4">
-                                                <input id="creditcardnumber2-yu" class="text-center"  type="text" placeholder="0000" maxlength="4">
-                                                <input id="creditcardnumber3-yu" class="text-center"  type="text" placeholder="0000" maxlength="4">
-                                                <input id="creditcardnumber4-yu" class="text-center"  type="text" placeholder="0000" maxlength="4">
+                                                <input id="creditcardnumber1-yu" class="text-center" type="text"name="test" placeholder="0000" maxlength="4">
+                                                <input id="creditcardnumber2-yu" class="text-center"  type="text"name="test" placeholder="0000" maxlength="4">
+                                                <input id="creditcardnumber3-yu" class="text-center"  type="text"name="test" placeholder="0000" maxlength="4">
+                                                <input id="creditcardnumber4-yu" class="text-center"  type="text"name="test" placeholder="0000" maxlength="4">
                                             </div>
                                             <div class="creditcarddate-yu d-flex" id="creditcarddate-yu">
-                                                <input class="text-center"  type="text" placeholder="月" maxlength="2" id="creditcardmonth-yu" >
+                                                <input class="text-center"  type="text"name="test" placeholder="月" maxlength="2" id="creditcardmonth-yu" >
                                                 <h6>
                                                     /
                                                 </h6>
-                                                <input class="text-center"  type="text" placeholder="年" maxlength="2" id="creditcardyear-yu"  >
+                                                <input class="text-center"  type="text" name="test"placeholder="年" maxlength="2" id="creditcardyear-yu"  >
                                             </div>
                                             <!-- <div class="ring"></div> -->
                                         </div>
@@ -719,16 +719,16 @@
                                         <br>
                                         <div class="  d-flex justify-content-start align-items-start"> 
                                             <div class=" mx-1 ">
-                                                <input class="text-center m-0" type="" name="" id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyup="value=value.replace(/[^\d]/g,'')">
+                                                <input class="text-center m-0" type="" name="test"id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyup="value=value.replace(/[^\d]/g,'')">
                                             </div>
                                             <div class=" mx-1">
-                                                <input class="text-center m-0" type="" name="" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class="text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
                                             </div>
                                             <div class="mx-1">
-                                                <input class="text-center m-0" type="" name=""placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class="text-center m-0" type="" name="test"placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
                                             </div>
                                             <div class="mx-1">
-                                                <input class="text-center m-0" type="" name="" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class="text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
                                             </div>
                                         </div>
                                     </div>
@@ -739,10 +739,10 @@
                                         <br>
                                         <div class=" d-flex justify-content-start align-items-start "> 
                                             <div class=" mx-1 ">
-                                                <input class="text-center m-0" type="" name="" placeholder="月 " maxlength="2" id="usercreditcardmonth-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>12)value=12">
+                                                <input class="text-center m-0" type="" name="test" placeholder="月 " maxlength="2" id="usercreditcardmonth-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>12)value=12">
                                             </div>
                                             <div class=" mx-1">
-                                                <input class="text-center m-0" type="" name=""placeholder="年" maxlength="2" id="usercreditcardyear-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>29)value=29">
+                                                <input class="text-center m-0" type="" name="test"placeholder="年" maxlength="2" id="usercreditcardyear-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>29)value=29">
                                             </div>
                                         </div>
                                     </div>
@@ -753,7 +753,7 @@
                                         <br>
                                         <div class=" d-flex justify-content-start align-items-start "> 
                                             <div class="mx-1 ">
-                                                <input class="text-center m-0" type="" name="" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class="text-center m-0" type="" name="test" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
                                             </div>
                                         </div>
                                     </div>
@@ -765,11 +765,12 @@
                         <input type="radio" name="listinfo-title-radio-yu" id="" />
                         <label for="name" class="m-0"> ATM轉帳 </label>
                     </div>
-                </section>
+                </form>
                 <div class=" d-md-flex justify-content-md-end">
                     <!-- a href="#buy1.php" -->
                     <a href="shopping-cart-ATM-product.html" class="btn unique-nextbutton-yu">
-                        <button class=" unique-btn-yu  me-md-2 que-btn-yu" type="button">
+                        <button class=" unique-btn-yu  me-md-2 que-btn-yu" type="submit"  name=ok value="送出"
+                        onclick="if(confirm('您確定送出嗎?')) return true;else return false">
                             <p class="m-0 text-center">
                                 前往付款
                             </p>
@@ -921,7 +922,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="nameYU"required/>
+                            <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="test"required/>
                         </div>
                         <div class="mdorder-phone-yu p-3">
                             <label for="mobile" class="">
@@ -929,7 +930,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="orderaddress3-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"required/>
+                            <input class="orderaddress3-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="test"required/>
                         </div>
                         <div class="mdorder-address-yu p-3">
                             <label for="address" class="">
@@ -940,7 +941,7 @@
                             <div>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="form-group mdorderaddress1-yu">
-                                        <select class=""name="city"id="city-yu"required>
+                                        <select class=""name="test"id="city-yu"required>
                                             <option class="" value="0">臺北市</option>
                                             <option value="1">新北市</option>
                                             <option value="2">基隆市</option>
@@ -963,14 +964,14 @@
                                         </select>
                                     </div>
                                     <div class="form-group mdorderaddress2-yu">
-                                        <select class=""name="district"id="district">
+                                        <select class=""name="test"id="district">
                                             <option class="" value="0">中正區</option>
                                             <option value="1">板橋區</option>
                                             <option value="2">仁愛區</option>
                                         </select>
                                     </div>
                                 </div>
-                                <input class="mdorderaddress3-yu mt-1" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="address"/>
+                                <input class="mdorderaddress3-yu mt-1" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="test"/>
                             </div>
                         </div>
                         <div class="mdorder-email-yu p-3">
@@ -978,7 +979,7 @@
                                 >Email<span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="" type="text" class="" id="email-yu" name="email" />
+                            <input class="" type="text" class="" id="email-yu" name="test" />
                         </div>
                     </div>
                 </section>
@@ -1001,7 +1002,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="nameYU"required/>
+                            <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="test"required/>
                         </div>
                         <div class="mdorder-phone-yu p-3">
                             <label for="mobile" class="">
@@ -1009,7 +1010,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="mdorderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"required/>
+                            <input class="mdorderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="test"required/>
                         </div>
                         <div class="receiver-deliver-yu p-3">
                             <label for="" class="">
@@ -1033,7 +1034,7 @@
                             <div>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="form-group mdorderaddress1-yu">
-                                        <select class=""name="city"id="city-yu"required>
+                                        <select class=""name="test"id="city-yu"required>
                                             <option class="" value="0">臺北市</option>
                                             <option value="1">新北市</option>
                                             <option value="2">基隆市</option>
@@ -1056,14 +1057,14 @@
                                         </select>
                                     </div>
                                     <div class="form-group mdorderaddress2-yu">
-                                        <select class=""name="district"id="district">
+                                        <select class=""name="test"id="district">
                                             <option class="" value="0">中正區</option>
                                             <option value="1">板橋區</option>
                                             <option value="2">仁愛區</option>
                                         </select>
                                     </div>
                                 </div>
-                                <input class="mdorderaddress3-yu mt-1" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="address"/>
+                                <input class="mdorderaddress3-yu mt-1" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="test"/>
                             </div>
                         </div>
                         <div class="mdorder-email-yu p-3">
@@ -1071,7 +1072,7 @@
                                 >Email<span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="" type="text" class="" id="email-yu" name="email" />
+                            <input class="" type="text" class="" id="email-yu" name="test" />
                         </div>
                     </div>
                 </section>
@@ -1093,16 +1094,16 @@
                                 <br>
                                 <div class=" mdcreditcard-number-yu d-flex justify-content-center align-items-center "> 
                                     <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                 </div>
                                 <div class="mdcreditcard-numberbox "></div>
@@ -1114,16 +1115,16 @@
                                 <br>
                                 <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
                                     <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor1-yu">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor2-yu">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                 </div>
                                 <div class="mdcreditcard2-numberbox "></div>
@@ -1135,22 +1136,22 @@
                                 <br>
                                 <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
                                     <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor1-yu">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor2-yu">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor3-yu">
-                                        <input class="text-center m-0" type="" name="" id="" placeholder="000 ">
+                                        <input class="text-center m-0" type="" name="test" id="" placeholder="000 ">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="pt-4">
-                            <input type="checkbox" name="listinfo-title-checkbox-yu" id="" />
+                            <input type="checkbox" name="test" id="" />
                             <label for="name" class="m-0 "> 
                                 ATM匯款
                             </label>
@@ -1253,7 +1254,8 @@
                 <div class=" d-flex justify-content-center">
                     <!-- a href="#buy1.php" -->
                     <a href="shopping-cart-ATM-product.html" class="btn mdunique-nextbutton-yu">
-                        <button class=" mdunique-btn-yu  me-md-2" type="button">
+                        <button class=" mdunique-btn-yu  me-md-2" type="button" type="submit"  name=ok value="送出"
+                        onclick="if(confirm('您確定送出嗎?')) return true;else return false">
                             <p class="m-0 text-center">
                                 確認付款
                             </p>
@@ -1421,196 +1423,9 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"
         ></script>
-        <script>
-        // nav
-        let lastScroll = 0;
-        $(window).scroll(function () {
-            let scrollNow = $(window).scrollTop();
-            //console.log('lastScroll:', lastScroll);
-            //console.log('scrollNow', scrollNow);
-            if (scrollNow > lastScroll) {
-            $("header").addClass("hidden");
-            } else {
-            $("header").removeClass("hidden");
-            }
-            lastScroll = scrollNow;
-        });
-        //漢堡
-        $("#menuToggle input").click(function () {
-            $("#menu").css("transform", "translate(0%, 0)");
-            //  console.log($('#menu').css('transform'))
-            if ($("#menu").css("transform") == "matrix(1, 0, 0, 1, 0, 0)") {
-            //console.log('hi');
-            $("#menu").css("transform", "translate(-500%, 0)");
-            }
-        });
-        $("#menu a").click(function () {
-            $("#menu").css("transform", "translate(-1000%, 0)");
-            // console.log('HEREEEEEEE', $('#menuToggle input').prop('checked'));
-            $("#menuToggle input").prop("checked", false);
-        });
-        //TOP
-        $(".back-button").click(function () {
-            $("html, body").animate({ scrollTop: 0 }, 10);
-        });
+        <script src="shopping-cart-productdetails-index.js"></script>
 
 
-
-
-        //-------------------------訂購人地址------------------------------------------
-        let districtArray = [
-        ['中正區', '大同區', '中山區', '萬華區', '信義區', '松山區', '大安區', '南港區', '北投區', '內湖區', '士林區', '文山區'],
-        ['板橋區', '新莊區', '泰山區', '林口區', '淡水區', '金山區', '八里區', '萬里區', '石門區', '三芝區', '瑞芳區', '汐止區', '平溪區', '貢寮區', '雙溪區', '深坑區', '石碇區', '新店區', '坪林區', '烏來區', '中和區', '永和區', '土城區', '三峽區', '樹林區', '鶯歌區', '三重區', '蘆洲區', '五股區'],
-        ['仁愛區', '中正區', '信義區', '中山區', '安樂區', '暖暖區', '七堵區'],
-    ];
-    $('#city-yu').change(function () {
-        const cityNumber = $(this).val();
-        const districtData = districtArray[cityNumber];
-        // 用迴圈會更方便
-        // $('#district option').eq(0).text(districtData[0])
-        // $('#district option').eq(1).text(districtData[1])
-        // $('#district option').eq(2).text(districtData[2])
-
-        // 迴圈 一直要做重複的動作，裡面的索引值可能會改變
-        // 1.自己寫規則，for 迴圈，次數自己決定
-        // 2.用陣列的方法來寫迴圈，次數就是陣列的資料數量
-
-        console.log('districtData:', districtData.length);
-        $('#district').empty();
-        $(districtData).each(function (index, item) {
-        console.log('JQ item:', item);
-        console.log('JQ index:', index);
-        $('#district').append(`<option value="${index}">${item}</option>`)
-        })
-    });
-
-    //email
-    
-
-
-
-        //---------------------input:radio 能取消點選--------------------
-        $(document).ready(function () {
-            $("#btnAutoInput-yu").click(function () {
-            $(
-                "input:text[name=listinfo-title-radio-yu]:checked"
-            )[0].checked = false;
-            });
-        });
-
-        //------------------------同訂購人 取值------------------------
-        //姓名
-        $("#btnAutoInput-yu").click(function () {
-        $("#username-yu").val ($("#name-yu").val()) ;
-        });
-        //電話
-        $("#btnAutoInput-yu").click(function () {
-        $("#usermobile-yu").val ($("#mobile-yu").val()) ;
-        });
-        //email
-        $("#btnAutoInput-yu").click(function () {
-        $("#useremail-yu").val ($("#email-yu").val()) ;
-        });
-        //地址(有問題)
-        // $("#btnAutoInput-yu").click(function () {
-        // $("#city-yu").val ($("#usercity-yu").val()) ;
-        // });
-        // $("#btnAutoInput-yu").click(function ()
-        // $(".orderaddress2-yu").val ($(".receiveraddress2-yu").val()) ;
-        // });
-        // $("#btnAutoInput-yu").click(function () {
-        // $("#address-yu").val ($("#useraddress-yu").val()) ;
-        // });
-    
-
-
-        //----------信用卡動態--------//
-
-        $('.creditcard-yu').mouseenter(function(){
-            $('.creditcard-yu').css("animation" , "mouseenter-yu 2s cubic-bezier(.37,-0.37,.64,1.34) forwards")
-        });
-        $(".creditcard-yu").mouseleave(function(){
-            $('.creditcard-yu').css("animation" , " mouseleave-yu 2s cubic-bezier(.37,-0.37,.64,1.34) forwards")
-        });
-
-
-        //信用卡number
-        //keyup paste 印在另一邊
-        $("#usercreditcardnumber1-yu").bind("keyup paste" , function(){
-            $("#creditcardnumber1-yu").val($(this).val());
-        });
-        $("#usercreditcardnumber2-yu").bind("keyup paste" , function(){
-            $("#creditcardnumber2-yu").val($(this).val());
-        });
-        $("#usercreditcardnumber3-yu").bind("keyup paste" , function(){
-            $("#creditcardnumber3-yu").val($(this).val());
-        });
-        $("#usercreditcardnumber4-yu").bind("keyup paste" , function(){
-            $("#creditcardnumber4-yu").val($(this).val());
-        });
         
-        //信用卡年月
-        $("#usercreditcardmonth-yu").bind("keyup paste" , function(){
-            $("#creditcardmonth-yu").val($(this).val());
-        });
-        $("#usercreditcardyear-yu").bind("keyup paste" , function(){
-            $("#creditcardyear-yu").val($(this).val());
-        });
-
-        //cvc
-        $("#usercreditcardid-yu").bind("keyup paste" , function(){
-            $("#creditcardid-yu").val($(this).val());
-        });
-
-        //信用卡下拉
-        $('input[type="radio"]').click(function(){
-            if($("#creditcard-radio-yu").prop("checked")){
-            console.log("hi");
-            $(".visacard-yu").css("height" , "275px")
-        }
-        else{
-            $(".visacard-yu").css("height" , "0px")
-        }
-        });
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // var result = "";
-        // $("input[type=radio]:checked").each(function () {
-        //     result = $(this).val();
-        // });
-
-        // $("#btnAutoInput-yu").click(function () {
-        //     $("#username-yu").val("");
-        //     $("#email-yu").val("");
-        //     $("#mobile-yu").val("");
-        // });
-
-        // // 購物車商品詳細清單下拉
-        // $('.panel-collapse').on('show.bs.collapse', function () {
-        //     $(this).siblings('.panel-heading').addClass('active');
-        // });
-
-        // $('.panel-collapse').on('hide.bs.collapse', function () {
-        //     $(this).siblings('.panel-heading').removeClass('active');
-        // });
-        </script>
     </body>
 </html>
