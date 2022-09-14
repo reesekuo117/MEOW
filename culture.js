@@ -77,20 +77,61 @@ $(window).scroll(function () {
 })
 
 // 參拜流程
-// $(window).scroll(function () {
-//   if ($(window).scrollTop() >= ($('.section2_lb').offset().top - $(window).height() * 1 / 3)) {
-//     $('.step1_lb').css({
-//       transform: 'translateX(100px)',
-//       opacity: 1,
-//     })
-//   }
-//   else {
-//     $('.step1_lb').css({
-//       transform: 'translateX(0px)',
-//       opacity: 0,
-//     })
-//   }
-// })
+//觸發rd1動畫
+// $(document).on('scroll', function() {}
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.section2_box').offset().top - $(window).height() * 1 / 3)) {
+    $('#rdLine-1').addClass('rdLine-1 d-md-block')
+  }
+  else {
+    $('#rdLine-1').removeClass('rdLine-1 d-md-block')
+  }
+})
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.step1_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('#rdLine-2').addClass('rdLine-2 d-md-block')
+  }
+  else {
+    $('#rdLine-2').removeClass('rdLine-2 d-md-block')
+  }
+})
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.step2_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('#rdLine-3').addClass('rdLine-3 d-md-block')
+  }
+  else {
+    $('#rdLine-3').removeClass('rdLine-3 d-md-block')
+  }
+})
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.step3_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('#rdLine-4').addClass('rdLine-4 d-md-block')
+  }
+  else {
+    $('#rdLine-4').removeClass('rdLine-4 d-md-block')
+  }
+})
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.step4_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('#rdLine-5').addClass('rdLine-5 d-md-block')
+  }
+  else {
+    $('#rdLine-5').removeClass('rdLine-5 d-md-block')
+  }
+})
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= ($('.step5_lb').offset().top - $(window).height() * 1 / 3)) {
+    $('#rdLine-6').addClass('rdLine-6 d-md-block')
+  }
+  else {
+    $('#rdLine-6').removeClass('rdLine-6 d-md-block')
+  }
+})
+
+
+
+
 
 // $(window).scroll(function () {
 //   if ($(window).scrollTop() >= ($('.step1_lb').offset().top - $(window).height() * 1 / 3)) {
