@@ -47,7 +47,7 @@
                 </div>
                 <!-- nav-right -->
                 <div class="d-flex align-items-center">
-                    <a class="nav-icon pr-3" href="">
+                    <a class="nav-icon pr-3" href="member.php#my-favorites">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.73421 10.0174C5.97687 11.7747 5.97687 14.6239 7.73421 16.3813L13.9805 22.6273C15.0219 23.6687 16.7104 23.6687 17.7518 22.6273L23.9979 16.3813C25.7553 14.6239 25.7553 11.7747 23.9979 10.0174C22.2406 8.26005 19.3914 8.26005 17.634 10.0174L15.8662 11.7852L14.0981 10.0174C12.3408 8.26005 9.49156 8.26005 7.73421 10.0174ZM15.8647 8.01538C13.0577 5.33358 8.60799 5.37238 5.8486 8.13177C3.04986 10.9305 3.04986 15.4682 5.8486 18.2669L12.0949 24.5129C14.1777 26.5957 17.5546 26.5957 19.6374 24.5129L25.8835 18.2669C28.6823 15.4682 28.6823 10.9305 25.8835 8.13177C23.1242 5.37241 18.6745 5.33359 15.8675 8.01531L15.8661 8.0139L15.8647 8.01538Z" fill="white"/>
                         </svg>
@@ -57,7 +57,7 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M5.33333 4C4.59695 4 4 4.59695 4 5.33333C4 6.06971 4.59695 6.66667 5.33333 6.66667H6.94005L7.61858 9.59792L9.31158 19.3496C8.51433 19.9586 8 20.9193 8 22C8 23.8409 9.49238 25.3333 11.3333 25.3333H13.3333C12.597 25.3333 12 25.9303 12 26.6667C12 27.403 12.597 28 13.3333 28C14.0697 28 14.6667 27.403 14.6667 26.6667C14.6667 25.9303 14.0697 25.3333 13.3333 25.3333H22.6667C21.9303 25.3333 21.3333 25.9303 21.3333 26.6667C21.3333 27.403 21.9303 28 22.6667 28C23.403 28 24 27.403 24 26.6667C24 25.9303 23.403 25.3333 22.6667 25.3333H25.3333C26.0697 25.3333 26.6667 24.7364 26.6667 24C26.6667 23.2636 26.0697 22.6667 25.3333 22.6667H11.3333C10.9651 22.6667 10.6667 22.3682 10.6667 22C10.6667 21.6318 10.9651 21.3333 11.3333 21.3333H25.2222C25.8895 21.3333 26.454 20.8401 26.5435 20.1789L27.9879 9.51226C28.0396 9.13091 27.9239 8.74586 27.6707 8.45606C27.4175 8.16627 27.0515 8 26.6667 8H9.98587L9.29899 5.03264C9.15904 4.42809 8.62054 4 8 4H5.33333ZM11.8996 18.6667L10.5107 10.6667H25.1406L24.0573 18.6667H11.8996Z" fill="white"/>
                         </svg>
                     </a>
-                    <a class="nav-icon pl-3" href="">
+                    <a class="nav-icon pl-3" href="" onclick="document.getElementById('loginCard_re').style.display='block'; return false;" style="width:auto;">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M16 4C13.0545 4 10.6667 6.38781 10.6667 9.33333C10.6667 12.2789 13.0545 14.6667 16 14.6667C18.9455 14.6667 21.3333 12.2789 21.3333 9.33333C21.3333 6.38781 18.9455 4 16 4ZM13.3333 9.33333C13.3333 7.86057 14.5272 6.66667 16 6.66667C17.4728 6.66667 18.6667 7.86057 18.6667 9.33333C18.6667 10.8061 17.4728 12 16 12C14.5272 12 13.3333 10.8061 13.3333 9.33333Z" fill="white"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6667 16C9.512 16 5.33333 20.1787 5.33333 25.3333V26.6667C5.33333 27.403 5.93028 28 6.66666 28H25.3333C26.0697 28 26.6667 27.403 26.6667 26.6667V25.3333C26.6667 20.1787 22.488 16 17.3333 16H14.6667ZM7.99999 25.3333C7.99999 21.6514 10.9848 18.6667 14.6667 18.6667H17.3333C21.0152 18.6667 24 21.6514 24 25.3333H7.99999Z" fill="white"/>
@@ -125,7 +125,71 @@
 
         </div>    
     </header>
-
+    <!-- 登入註冊視窗 -->
+        <div id="loginCard_re" class="loginmodal-re paddingtop-0-re">
+            <form class="loginanimate-re" action="" method="post">
+                <div class="row loginwarp-re  justify-content-center m-0" id="tab-demo">
+                    <div class="loginimgwarp-re d-none d-lg-block col-3 p-0">
+                        <img class="w-100" src="./imgs/member/loginbg.jpg" alt="">
+                    </div>
+                    <div class="logincard-re col-12 col-md-3">
+                        <div class="d-flex justify-content-end py-1">
+                            <svg class="closeicon-re" onclick="document.getElementById  ('loginCard_re').style.display='none'" class="close" title="Close Modal" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                                <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="logincardtitle-re mb-3">
+                            <ul class="buttonbox-re tab-title d-flex p-0 m-0 position-relative">
+                                <li class="signinBtn-re btntitle-re border-0 d-inline-block text-center pt-1 active-re col-6"><a href="#tab01">登入</a></li><li class="signoutBtn-re btntitle-re border-0 d-inline-block text-center pt-1 col-6"><a href="#tab02">註冊</a></li>
+                            </ul>
+                        </div>
+                        <div id="tab01" class="tab-inner formcard-re formBx px-4">
+                            <div class="form signin-form">
+                                <form class="m-0 mb-3" method="post" onsubmit="checkForm();">
+                                    <div class="mb-2">
+                                        <label for="account" class="form-label" required>信箱<span style="color:#963C38">*</span></label>
+                                        <input class="logininput-re noline" type="email" placeholder=" 請輸入信箱">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="account" class="form-label" required>密碼<span style="color:#963C38">*</span></label>
+                                        <input class="logininput-re noline" type="password" placeholder=" 請輸入密碼">
+                                    </div>
+                                    <div class="forget-re float-right">
+                                        <a href="#">
+                                            <svg class="pb-1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="8" cy="8" r="7" stroke="#432A0F" stroke-width="2"/>
+                                            <path d="M6 5.50504C6.1745 5.0484 6.50859 4.51968 6.94386 4.2782C7.41947 4.0051 7.88786 3.95163 8.38114 4.03779C8.87442 4.12395 9.32084 4.37589 9.64237 4.74956C10.003 5.16864 10.2229 6 9.64237 6.61201C9.0618 7.22402 7.98726 7.61538 7.98726 9" stroke="#432A0F" stroke-width="2" stroke-linecap="round"/>
+                                            <circle cx="8" cy="12" r="1" fill="#432A0F"/>
+                                            </svg>
+                                            忘記密碼</a></div>
+                                    <div class="loginbutton-re"><input class="loginbtn-re" type="submit" value="登入"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="tab02" class="tab-inner formcard-re formBx px-4">
+                            <div class="form signup-form">
+                                <form onsubmit=" checkFormSignu(); return false;">
+                                    <div class="mb-2">
+                                        <label for="account" class="form-label" required>信箱<span style="color:#963C38">*</span></label>
+                                        <input class="logininput-re noline" type="email" placeholder=" 請輸入信箱">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="account" class="form-label" required>密碼<span style="color:#963C38">*</span></label>
+                                        <input class="logininput-re noline" type="password" placeholder=" 請輸入密碼">
+                                    </div>
+                                    <div class="">
+                                        <label for="account" class="form-label" required>確認密碼<span style="color:#963C38">*</span></label>
+                                        <input class="logininput-re noline" type="password" placeholder=" 請再次輸入密碼">
+                                    </div>
+                                    <div class="signupbutton-re"><input class="loginbtn-re" type="submit" value="註冊"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     <script>
         // nav
         let lastScroll = 0;
@@ -141,6 +205,24 @@
         }
         lastScroll = scrollNow;
         })
+        // 登入視窗
+        let modal = document.getElementById('loginCard_re');
+        window.onclick = function(event) {
+            
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        // 分頁切換
+        $(function(){
+        var $li = $('ul.tab-title li');
+            $($li. eq(0) .addClass('active-re').find('a').attr('href')).siblings('.tab-inner').hide();
+        
+            $li.click(function(){
+                $($(this).find('a'). attr ('href')).show().siblings ('.tab-inner').hide();
+                $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
+            });
+        });
         //漢堡
         $('#menuToggle input').click(function(){
             $('#menu').css('transform','translate(0%, 0)')
