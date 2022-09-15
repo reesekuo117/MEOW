@@ -930,7 +930,13 @@ display: inline-block;
   right: 10px;
   bottom: 10px;
 } */
-
+.icon_heart{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  cursor: pointer;
+}
 .carousel .thumb-wrapper {
 margin: 5px;
 text-align: left;
@@ -979,12 +985,7 @@ border-radius: 50%;
 margin: 4px;
 border: none;
 }
-.carousel-indicators li {	
-/* background: #ababab; */
-}
-.carousel-indicators li.active {	
-/* background: rgb(85, 85, 85); */
-}
+
 .card_under h5::before{
   content: "NT$";
 }
@@ -994,4 +995,11 @@ border: none;
 .back-button{
   bottom: 40px;
   z-index: 2;
+}
+.color{
+  stroke: #432A0F;
+  fill: #CD562F;
+}
+.fire p{
+  line-height: 24px;
 }
