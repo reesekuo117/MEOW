@@ -72,12 +72,14 @@ header .navbar {
     padding: 0 32px 0 0;
 }
 
-.nav-menu>a {
+.nav-menu a {
     font-size: var(--font-h5-20);
     color: var(--color-white);
     line-height: 50px;
     padding: 0 20px 0 0;
-
+}
+.nav-menu a:hover {
+    text-decoration: none;
 }
 
 /* header-xs  */

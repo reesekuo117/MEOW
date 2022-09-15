@@ -1,4 +1,7 @@
-
+<?php
+require __DIR__. '/parts/meow_db.php';  // /開頭
+$pageName ='member'; //頁面名稱
+?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./reese.css">

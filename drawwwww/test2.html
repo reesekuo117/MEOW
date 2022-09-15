@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .drop-area {
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+        }
+    
+        .drag {
+            background: rgb(140, 237, 250);
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            border: 1px solid black;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+    
+        .drag-title {
+            background: #e9a2a2;
+        }
+    </style>
+</head>
+<body>
+    <h2>拖曳物件測試</h2>
+    <div class="drop-area">
+        <div class="drag">
+            <p class="drag-title">drag</p>
+        </div>
+    </div>
+
+    <script>
+        let dragDiv = document.querySelector('.drag');
+        let dragTitle = dragDiv.querySelector('.drag-title') || dragDiv;
+        let dropArea = document.querySelector('.drop-area');
+        let area = {
+            left: dropArea.offsetLeft,
+            right: dropArea.offsetLeft + dropArea.offsetWidth - dragDiv.offsetWidth,
+            top: dropArea.offsetTop,
+            bottom: dropArea.offsetTop + dropArea.offsetHeight - dragDiv.offsetHeight,
+        };
+
+        let startX = 0;
+        let startY = 0;
+
+        dragTitle.addEventListener('mousedown', dragStart);
+
+        function dragStart(e) {
+            e.preventDefault();
+            //記錄點擊相對被點擊物件的座標
+            startX = e.clientX - dragDiv.offsetLeft;
+            startY = e.clientY - dragDiv.offsetTop;
+            document.addEventListener('mousemove', move);
+            document.addEventListener('mouseup', stop);
+        }
+
+        function move(e) {
+            //計算出拖曳物件最左上角座標
+            x = e.clientX - startX;
+            y = e.clientY - startY;
+            x = Math.max(Math.min(x, area.right), area.left);
+            y = Math.max(Math.min(y, area.bottom), area.top);
+            dragDiv.style.left = x + 'px';
+            dragDiv.style.top = y + 'px';
+        }
+
+        function stop() {
+            document.removeEventListener('mousemove', move);
+            document.removeEventListener('mouseup', stop)
+        }
+
+    </script>
+</body>
+</html>
