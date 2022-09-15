@@ -117,18 +117,20 @@
     margin: auto 0;
 }  
 
-/* -------#error----------- */
-.invalid { 
-    border-color: rgb(168, 41, 3); 
-}
-#error{
+/* -------#input狀態----------- */
+
+.fa-regular{
+    visibility: hidden;
     color: #E5A62A;
 }
-.fa-check-circle{
+.fa-solid {
     visibility: hidden;
+    color: #963c38 ;
 }
-.fas{
-    visibility: visible;
+
+#error-yu small{
+    visibility: hidden;
+    color: #963c38 ;
 }
 /* ---------桌機表單的寬度------(每一個表單都要用) */
 #myTabContent-yu {
