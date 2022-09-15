@@ -113,12 +113,14 @@ height: 164px;
     bottom: -20px;
 }
 .top-content_lb {
+  /* padding-left: 200px; */
   color: var(--color-text87);
-  margin: auto 0;
+  margin: auto 100px;
 }
 .bottom-content_lb {
   color: var(--color-text87);
-  margin: auto 0;
+  /* padding-left: 100px; */
+  margin: auto 100px;
 }
 .s-title_lb{
   color: var(--color-brown-dark);
@@ -171,19 +173,9 @@ height: 164px;
 
 /* 雲怎麼不會動??? */
 .cloud_right_lb{
-  width: 300px;
+  /* width: 300px; */
   right: 0px;
   bottom: 50px;
-  animation: cloudMove_lb infinite ease-in-out;
-  transition: .5s;
-}
-@keyframes cloudMove_lb {
-  0%,100%{
-    transform: translateX(-100px);
-  }
-50%{
-    transform: translateX(0px);
-  }
 }
 
 .section1-cat2_lb {
@@ -466,18 +458,85 @@ height: 164px;
 
 /* 禁忌 */
 .section3_lb{
-  margin-top: 124px;
+  /* height: 100vh; */
+  margin-top: 150px;
 
 }
 .section3_lb>h1{
 color: var(--color-text100);
 }
-.ban-card>h4{
+
+/* .ban-card>h4{
   color: var(--color-text100);
 }
 .ban-card>p{
   color:var(--color-text87);
+} */
+.ban-img-wrap{
+  transition: 0.7s;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.face_lb{
+  height: 200px;
+  transition: 0.5s;
+}
+.face1_lb{
+  box-shadow: 0px 2px 5px rgba(67, 42, 15, 0.38); 
+  border-radius: 8px;
+  position: relative;
+  background: #F3E3D4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+.ban-card:hover .face_lb.face1_lb{
+  transform: translateY(0px);
+}
+.ban-card.face_lb.face2_lb .ban-card-content{
+  transform: translateY(0px);
+}
+.ban-card:hover .face_lb.face1_lb .ban-card-content{
+  opacity: 1;
+}
+.ban-card .face_lb.face2_lb {
+  border-radius: 8px;
+  height: 150px;
+  /* position: relative; */
+  background:#fff;
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  padding: 20px;
+  box-sizing: border-box;
+  /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.536); */
+  transform: translateY(-100px);
+}
+.ban-card:hover .face_lb.face2_lb{
+  transform: translateY(0);
+}
+
+.ban-card .face_lb.face2_lb .ban-card-content p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #414141;
+}
+.ban-card .face_lb.face2_lb .ban-card-content h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  color: var(--color-text100);
+} 
+
 
 .scroll-snap_lb{
         margin: 0 15px ;
@@ -702,8 +761,11 @@ color: #CD562F;
   border-radius:8px;
   width: 120px;
   overflow: hidden;
+  /* border: 1px solid red; */
+  box-shadow: 0px 2px 5px rgba(67, 42, 15, 0.38);
 }
 .loation_lb{
+
   color: var(--color-white);
   background-color: var(--color-orange);
 }
@@ -714,13 +776,13 @@ color: #CD562F;
 /* 霞海城隍廟 */
 .C01 {
   top: 10px;
-  left: 360px;
+  left: 420px;
   cursor: pointer;
 }
 /* 龍山寺 */
 .C06 {
-  top: 100px;
-  left: 320px;
+  top: 110px;
+  left: 400px;
   cursor: pointer;
 }
 /* 指南宮 */
@@ -737,14 +799,14 @@ color: #CD562F;
 }
 /* 樂成宮 */
 .C03{
-  top: 230px;
-  left: 260px;
+  top: 260px;
+  left: 300px;
   cursor: pointer;
 }
 /* 鹿港天后宮 */
 .C04{
-  top: 330px;
-  left: 210px;
+  top: 370px;
+  left: 260px;
   cursor: pointer;
 }
 /* 月下老人 */
@@ -781,7 +843,7 @@ color: #CD562F;
 /* 關帝廟 */
 .C12{
     top: 680px;
-    left: 160px;
+    left: 170px;
     cursor: pointer;
   }
 
@@ -789,7 +851,7 @@ color: #CD562F;
   visibility: hidden;
 } */
 .mbTemCard{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 20px;
   width: 200px;
   height: 280px;
@@ -930,7 +992,13 @@ display: inline-block;
   right: 10px;
   bottom: 10px;
 } */
-
+.icon_heart{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  cursor: pointer;
+}
 .carousel .thumb-wrapper {
 margin: 5px;
 text-align: left;
@@ -979,12 +1047,7 @@ border-radius: 50%;
 margin: 4px;
 border: none;
 }
-.carousel-indicators li {	
-/* background: #ababab; */
-}
-.carousel-indicators li.active {	
-/* background: rgb(85, 85, 85); */
-}
+
 .card_under h5::before{
   content: "NT$";
 }
@@ -994,4 +1057,11 @@ border: none;
 .back-button{
   bottom: 40px;
   z-index: 2;
+}
+.color{
+  stroke: #432A0F;
+  fill: #CD562F;
+}
+.fire p{
+  line-height: 24px;
 }

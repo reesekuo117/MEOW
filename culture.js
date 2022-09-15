@@ -479,4 +479,10 @@ window.onscroll = () => {
 };
 
 
+// 愛心變色(卡片)
+
+$('.icon_heart').click(function(e){
+  e.preventDefault();
+  $(this).find('.heart_line').toggleClass('color')
+});
 

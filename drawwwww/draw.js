@@ -76,24 +76,16 @@ $('.temple05').mouseleave(function () {
     $('.temple05Img img').attr('src', '../imgs/draw/temple03.png');
 })
 
-// ------------------- draw03 -------------------------
+$('.drawdraw').mouseenter(function () {
+    $(this).find('img').attr('src', '../imgs/draw/53-hover.png');
+})
+$('.drawdraw').mouseleave(function () {
+    $(this).find('img').attr('src', '../imgs/draw/53.png');
+})
 
-// $('body')
+// ------------------- draw07 -------------------------
 
-// $("body").addEventListener('mousemove', eyeball);
-// function eyeball(event) {
-//     // console.log(1)
-//     const eye = $(".eye_ba");
-//     eye.forEach(function (eye) {
-//         let x = (eye.getBoundingclientRect().left + eye.clientWidth / 2);
-//         let y = (eye.getBoundingclientRect().top + eye.clientHeight / 2);
-//         let radian = Math.atan2(event.pageX - x, event.pageY - y);
-//         let rot = (radian * (180 / Math.PI) * -1) + 270;
-//         eye.style.transform = "rotate(" + rot + "deg)";
-//     })
-// }
-
-
+// 眼睛跟著游標
 // 'use strict';
 var eyes = $('.eye');
 
@@ -158,6 +150,12 @@ $('.drawSection12 .horobtn').mouseleave(function () {
     $(this).find("img").css('animation', 'flip_horo_back .3s forwards');
 })
 
+// 條件
+
+$('.wantbtn').click(function () {
+    $(this).toggleClass('drawbtnToggle')
+})
+
 // 興趣
 
 $('.interestbtn').click(function () {
@@ -179,7 +177,7 @@ $('.horobtn').click(function () {
 // 身高
 
 $('.heightbtn').click(function () {
-    $(this).toggleClass('heightbtnToggle')
+    $(this).toggleClass('drawbtnToggle')
 })
 
 // 體格
@@ -193,3 +191,156 @@ $('.musclebtn').click(function () {
 $('.facebtn').click(function () {
     $(this).toggleClass('facebtnToggle')
 })
+
+// 超過五個
+
+$('.wantbtn').click(function () {
+    if( $('.drawbtnToggle').length > 5 ){
+        alert('超過五項囉喵')
+        // console.log(this);
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
+})
+
+$('.interestbtn').click(function () {
+    if( $('.interestbtnToggle').length > 5 ){
+        alert('超過五項囉喵')
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
+})
+
+$('.personalitybtn').click(function () {
+    if( $('.personalitybtnToggle').length > 5 ){
+        alert('超過五項囉喵')
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
+})
+
+$('.horobtn').click(function () {
+    if( $('.horobtnToggle').length > 5 ){
+        alert('超過五項囉喵')
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
+})
+
+// clearAll 清除
+$('.clearAll_ba').click(function () {
+    $('.wantbtn').removeClass('drawbtnToggle')
+})
+
+
+// 搖籤
+var windowWidth = window.innerWidth;
+// console.log(windowWidth);
+
+
+let prevStat = ''; // '', 'left', 'right'
+// 過去狀態
+let drawcounter = 0;
+// 搖動次數
+
+const handler = (e)=>{
+    //let drawcounter = 0
+    // $('#info').html(e.offsetX) //游標在瀏覽器的 X軸
+
+    let currentStat; //當前狀態
+    if( e.offsetX > windowWidth){
+        currentStat = 'right';
+        $('.drawImgWrap img').attr('src','../imgs/draw/draw-r.png')
+        if(prevStat==='left'){
+            drawcounter ++;
+        }
+        prevStat = currentStat;
+    } else if(e.offsetX < windowWidth){
+        currentStat = 'left';
+        $('.drawImgWrap img').attr('src','../imgs/draw/draw-l.png')
+        if(prevStat==='right'){
+            drawcounter ++;
+        }
+        prevStat = currentStat;
+        // 讓前一狀態等於當前狀態
+    }
+    // console.log({drawcounter});
+    if(drawcounter>10){
+        // console.log('next');
+        window.location.href = "draw18.html"
+    }
+}
+
+
+// $('body').click(function () {
+//     const rect = this.getBoundingClientRect();
+//     console.log(rect);
+// })
+
+/*
+window.addEventListener('mousedown', function(){
+    window.addEventListener('mousemove', handler);
+})
+window.addEventListener('mouseup', function(){
+    window.removeEventListener('mousemove', handler);
+})
+*/
+        let dragDiv = document.querySelector('.drag');
+        let dragTitle = dragDiv.querySelector('.drag-title') || dragDiv;
+        let dropArea = document.querySelector('.drop-area');
+        let area = {
+            left: dropArea.offsetLeft,
+            right: dropArea.offsetLeft + dropArea.offsetWidth - dragDiv.offsetWidth,
+            top: dropArea.offsetTop,
+            bottom: dropArea.offsetTop + dropArea.offsetHeight - dragDiv.offsetHeight,
+        };
+        area.middle = (area.left+area.right)/2;
+
+        let startX = 0;
+        let startY = 0;
+
+        dragTitle.addEventListener('mousedown', dragStart);
+
+        function dragStart(e) {
+            e.preventDefault();
+            //記錄點擊相對被點擊物件的座標
+            startX = e.clientX - dragDiv.offsetLeft;
+            startY = e.clientY - dragDiv.offsetTop;
+            document.addEventListener('mousemove', move);
+            document.addEventListener('mouseup', stop);
+        }
+
+        function move(e) {
+            //計算出拖曳物件最左上角座標
+            x = e.clientX - startX;
+            y = e.clientY - startY;
+            x = Math.max(Math.min(x, area.right), area.left);
+            y = Math.max(Math.min(y, area.bottom), area.top);
+            dragDiv.style.left = x + 'px';
+            dragDiv.style.top = y + 'px';
+            // console.log({x, y, area})
+
+            let currentStat; //當前狀態
+            if( x > area.middle){
+                currentStat = 'right';
+                $('.drawImgWrap img').attr('src','../imgs/draw/draw-r.png')
+                if(prevStat==='left'){
+                    drawcounter ++;
+                }
+                prevStat = currentStat;
+            } else if( x <= area.middle){
+                currentStat = 'left';
+                $('.drawImgWrap img').attr('src','../imgs/draw/draw-l.png')
+                if(prevStat==='right'){
+                    drawcounter ++;
+                }
+                prevStat = currentStat;
+                // 讓前一狀態等於當前狀態
+            }
+            if(drawcounter>8){
+                // console.log('next');
+                window.location.href = "draw18.html"
+            }
+
+        }
+
+        function stop() {
+            document.removeEventListener('mousemove', move);
+            document.removeEventListener('mouseup', stop)
+        }
