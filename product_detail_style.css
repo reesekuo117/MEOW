@@ -4,6 +4,15 @@ html{
 .pd_head{
     margin: 80px;
 }
+h2,h5,h6{
+    color: var(--color-text87);
+}
+p,small{
+    color: var(--color-text100);
+}
+.xs{
+    color: var(--color-text60);
+}
 /* ------------------------輪播------------------------ */
 .img-demo{
     position: relative;
@@ -126,10 +135,13 @@ select{
     margin: 0 8px;
 }
 .minus{
-    background-color: var(--color-text38);
+    background-color: var(--color-text87);
     border-radius: 50%;
     border: none;
     color: #fff;
+}
+.minus.disabled{
+    background-color: var(--color-text38);
 }
 .plus{
     background-color: var(--color-text87);
