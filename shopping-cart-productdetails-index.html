@@ -595,28 +595,36 @@
                         <h3 class="listinfo-title-yu m-0">
                             收件人資料
                         </h3>
-                        <label for="name" class="m-0">
+                        <label for="name" class="m-0 mr-3">
                             <input type="checkbox" name="test" id="btnAutoInput-yu"/>
                             同訂購人
                         </label>
                     </div>
                     <!-- 收件人填寫資料 -->
                     <div class="receiver-list-yu">
-                        <div class="receiver-name-yu p-3">
+                        <div class=" field2 receiver-name-yu p-3">
                             <label for="name" class="">
                                 姓名
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br />
                             <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="test" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength="50" required/>
+                            <i class="right fa-regular fa-circle-check"></i>
+                            <i class="wrong fa-solid fa-triangle-exclamation">
+                                <small>請輸入正確姓名</small>
+                            </i>
                         </div>
-                        <div class="receiver-phone-yu p-3">
+                        <div class="field2 receiver-phone-yu p-3">
                             <label for="mobile" class="">
                                 聯絡電話
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br />
                             <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="test" maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'')" required/>
+                            <i class="right fa-regular fa-circle-check"></i>
+                            <i class="wrong fa-solid fa-triangle-exclamation">
+                                <small>請輸入正確連絡電話</small>
+                            </i>
                         </div>
                         <div class="receiver-deliver-yu p-3">
                             <label for="" class="">
@@ -624,22 +632,50 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <button type="button" class="btn receiver-deliverbtn1-yu h6">
+                            <button type="button" class="tohomebtn btn receiver-deliverbtn1-yu h6">
                                 宅配
                             </button>
-                            <button type="button" class="btn receiver-deliverbtn2-yu h6">
+                            <button id="rdbtn-yu" type="button" class="btn receiver-deliverbtn2-yu h6" >
                                 超商取貨
                             </button>
+                            <div class="familyinput-yu">
+                                <div class="d-flex align-items-center">
+                                    <input type="radio" name="listinfo-title-radio-yu" id="eleveninput-yu"/>
+                                    <label for="" class="m-0"> 
+                                        <p class="m-0 pl-2">
+                                            7-11取貨運60單筆訂單滿199,即享免運費優惠。 
+                                            <a href="https://emap.pcsc.com.tw/ecmap/default.aspx" class="familya-yu">
+                                                選擇取貨門市
+                                            </a>
+                                        </p>
+                                    </label>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <input type="radio" name="listinfo-title-radio-yu"  id=""/>
+                                    <label for="" class="m-0"> 
+                                        <p class="m-0 pl-2">
+                                            全家取貨费60元·單筆訂單滿199,即享免運費優惠。
+                                            <a href="https://www.famiport.com.tw/Web_Famiport/page/ShopQuery.aspx" class="familya-yu">
+                                                選擇取貨門市
+                                            </a>
+                                        </p>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="receiver-email-yu p-3">
+                        <div class="field2 receiver-email-yu p-3">
                             <label for="email" class="">
                                 Email
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="" type="email " id="useremail-yu" name="test" />
+                            <input class="receiveremail-yu" type="email " id="useremail-yu" name="test" />
+                            <i class="right fa-regular fa-circle-check"></i>
+                            <i class="wrong fa-solid fa-triangle-exclamation">
+                                <small>請輸入正確連絡電話</small>
+                            </i>
                         </div>
-                        <div class="receiver-address-yu p-3">
+                        <div class="field2 receiver-address-yu p-3">
                             <label for="address" class="">
                                 地址
                                 <span style="color: #963c38">*</span>
@@ -677,6 +713,10 @@
                                     </select>
                                 </div>
                                 <input class="receiveraddress3-yu"type="text"placeholder=" 請輸入詳細地址"id="useraddress-yu"name="test"/>
+                                <i class="right fa-regular fa-circle-check"></i>
+                            <i class="wrong fa-solid fa-triangle-exclamation">
+                                <small>請輸入正確地址</small>
+                            </i>
                             </div>
                         </div>
                     </div>
@@ -735,16 +775,17 @@
                                         <br>
                                         <div class="  d-flex justify-content-start align-items-start"> 
                                             <div class=" mx-1 ">
-                                                <input class=" autotab-yu text-center m-0" type="" name="test"id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyup="value=value.replace(/[^\d]/g,'')">
+                                                <input class=" text-center m-0" type="" name="test"id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyPress="autoTab()" onkeyUp="autoTab()">
                                             </div>
                                             <div class=" mx-1">
-                                                <input class=" autotab-yu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class="text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
+                                                <!-- onkeyup="value=value.replace(/[^\d]/g,'') " -->
                                             </div>
                                             <div class="mx-1">
-                                                <input class=" autotab-yu text-center m-0" type="" name="test"placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class="text-center m-0" type="" name="test"placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" >
                                             </div>
                                             <div class="mx-1">
-                                                <input class=" autotab-yu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class=" text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu">
                                             </div>
                                         </div>
                                     </div>

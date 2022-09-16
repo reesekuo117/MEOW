@@ -170,13 +170,9 @@ $("#usercity-yu").change(function () {
   });
 });
 
-// -----------------表單驗證---------------------------
+// -----------------訂購人表單驗證---------------------------
 
-$("input").focus(function () {
-  console.log("hihi");
-});
-
-// 姓名
+// ----------姓名
 const ordername_yu = $(".ordername-yu");
 
 //input在這邊是一個事件
@@ -189,28 +185,56 @@ ordername_yu.on("input", function () {
     // wrong
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
+    $(ordername_yu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
   } else {
     // right
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
+
+    $(ordername_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
   }
 });
 
 ordername_yu.on("blur", function () {
-    console.log(this.value);
+  console.log(this.value);
   const field = $(this).closest(".field"); //定義field
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
-  if (!this.value) {
+  if (/\d/g.test(this.value) || this.value.length >= 20 || !this.value) {
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
+    $(ordername_yu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
   } else {
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
+    $(ordername_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
   }
 });
 
-//電話
+ordername_yu.on("focus", function () {
+  // console.log("this.value", this.value);
+  // console.log("this.value", !this.value);
+  if (!this.value) {
+    $(ordername_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+//----------電話--------
 const orderphone_yu = $(".orderphone-yu");
 
 orderphone_yu.on("input", function () {
@@ -219,34 +243,63 @@ orderphone_yu.on("input", function () {
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
   console.log({ field, wi, ri });
-  console.log(/^09\d{8}$/.test(this.value));
+  console.log(!/^09\d{8}$/.test(this.value));
   //!如果不符合/^09\d{8}$/.test(this.value)//
   if (!/^09\d{8}$/.test(this.value)) {
     // wrong
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
+
+    $(orderphone_yu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
   } else {
     // right
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
+
+    $(orderphone_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
   }
 });
 
 orderphone_yu.on("blur", function () {
-    console.log(this.value);
+  console.log(this.value);
   const field = $(this).closest(".field"); //定義field
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
-  if (!this.value) {
+  if (!/^09\d{8}$/.test(this.value)) {
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
+    $(orderphone_yu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
   } else {
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
+    $(orderphone_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
   }
 });
 
-//地址
+orderphone_yu.on("focus", function () {
+  // console.log("this.value", this.value);
+  // console.log("this.value", !this.value);
+  if (!this.value) {
+    $(orderphone_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+//-------------地址-------------
 const orderaddress3_yu = $(".orderaddress3-yu");
 
 orderaddress3_yu.on("input", function () {
@@ -260,28 +313,59 @@ orderaddress3_yu.on("input", function () {
     // wrong
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
+    $(orderaddress3_yu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
   } else {
     // right
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
+    $(orderaddress3_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
   }
 });
 
 orderaddress3_yu.on("blur", function () {
-    console.log(this.value);
+  console.log(this.value);
   const field = $(this).closest(".field"); //定義field
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
-  if (!this.value) {
+  if (!/[^\a-\z\A-\Z0-9]/g.test(this.value) || !this.value) {
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
+
+    $(orderaddress3_yu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
   } else {
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
+
+    $(orderaddress3_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
   }
 });
 
-//email
+
+orderaddress3_yu.on("focus", function () {
+  // console.log("this.value", this.value);
+  // console.log("this.value", !this.value);
+  if (!this.value) {
+    $(orderaddress3_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+
+//email 
 
 //emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
 // ^\w+：@ 之前必須以一個以上的文字&數字開頭，例如 abc
@@ -303,7 +387,76 @@ email_yu.on("input", function () {
   const ri = field.find("i.right");
   console.log({ field, wi, ri });
   console.log(!this.value);
+  if (
+    !/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g.test(
+      this.value
+    ) ||
+    !this.value
+  ) {
+    // wrong
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+    $(orderaddress3_yu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    // right
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+
+    $(email_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+email_yu.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
   if (!/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g.test(this.value) || !this.value) {
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+
+    $( email_yu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+
+    $( email_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+email_yu.on("focus", function () {
+  // console.log("this.value", this.value);
+  // console.log("this.value", !this.value);
+  if (!this.value) {
+    $( email_yu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+//-----------收件人input----------------
+//姓名
+const receivername_yu = $(".receivername-yu");
+//input在這邊是一個事件
+receivername_yu.on("input", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field2"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  if (/\d/g.test(this.value) || this.value.length >= 20 || !this.value) {
     // wrong
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
@@ -314,9 +467,119 @@ email_yu.on("input", function () {
   }
 });
 
-email_yu.on("blur", function () {
-    console.log(this.value);
-  const field = $(this).closest(".field"); //定義field
+receivername_yu.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field2"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  if (!this.value) {
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+  } else {
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+  }
+});
+
+//電話
+const receiverphone_yu = $(".receiverphone-yu");
+
+receiverphone_yu.on("input", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field2");
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  console.log({ field, wi, ri });
+  console.log(/^09\d{8}$/.test(this.value));
+  //!如果不符合/^09\d{8}$/.test(this.value)//
+  if (!/^09\d{8}$/.test(this.value)) {
+    // wrong
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+  } else {
+    // right
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+  }
+});
+
+receiverphone_yu.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field2"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  if (!this.value) {
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+  } else {
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+  }
+});
+
+//email
+const receiveremail_yu = $(".receiveremail-yu");
+
+receiveremail_yu.on("input", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field2");
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  console.log({ field, wi, ri });
+  console.log(!this.value);
+  if (
+    !/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g.test(
+      this.value
+    ) ||
+    !this.value
+  ) {
+    // wrong
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+  } else {
+    // right
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+  }
+});
+
+receiveremail_yu.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field2"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  if (!this.value) {
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+  } else {
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+  }
+});
+
+//地址
+const receiveraddress3_yu = $(".receiveraddress3-yu");
+
+receiveraddress3_yu.on("input", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field2");
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  console.log({ field, wi, ri });
+  console.log(!this.value);
+  if (!/[^\a-\z\A-\Z0-9]/g.test(this.value) || !this.value) {
+    // wrong
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+  } else {
+    // right
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+  }
+});
+receiveraddress3_yu.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field2"); //定義field
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
   if (!this.value) {
@@ -329,13 +592,14 @@ email_yu.on("blur", function () {
 });
 
 //測試
+
 // $(document).ready(function(){
-//     $("input").focus(function(){
-//     $(this).css("background-color","#FFFFCC");
+//     $("input").on( "focus" , function(){
+//     $(this).css("border","1px solid #E5A62A");
 //     });
-//     $("input").blur(function(){
-//     $(this).css("background-color","#D6D6FF");
-//     });
+//     // $("input").blur(function(){
+//     // $(this).css("border","1px solid #E5A62A");
+//     // });
 //   });
 // input.blur = function() {
 //     if (!input.value.includes('@')) { // not email
@@ -391,8 +655,41 @@ $("#btnAutoInput-yu").click(function () {
 $("#btnAutoInput-yu").click(function () {
   $("#useraddress-yu").val($("#address-yu").val());
 });
-$("#btnAutoInput-yu").click(function(){
-    $("#useremail-yu").val($("#email-yu").val());
+$("#btnAutoInput-yu").click(function () {
+  $("#useremail-yu").val($("#email-yu").val());
+});
+
+//---------超商取貨門市------------
+
+const rdbtn_yu = $("#rdbtn-yu");
+
+$(rdbtn_yu).click(function(){
+  console.log("123");
+  // $(rdbtn_yu).toggleClass("familyinputFocus-yu");
+})
+
+
+$(rdbtn_yu).click(function () {
+  if ($(".familyinput-yu").css("height", "0px")) {
+    $(".familyinput-yu").css("height", "60px");
+    $(rdbtn_yu).addClass(".focus_ba");
+    $(rdbtn_yu).toggleClass("familyinputFocus-yu");
+    console.log("baj");
+  } else {
+    $(".familyinput-yu").css("height", "0px");
+    $(rdbtn_yu).removeClass(".focus_ba");
+    $(rdbtn_yu).removeClass("familyinputFocus-yu");
+  }
+});
+
+$(".tohomebtn").click(function () {
+  if ($(".familyinput-yu").css("height", "60px")) {
+    $(".familyinput-yu").css("height", "0px");
+    $(".tohomebtn").addClass(".focus_ba");
+  } else {
+    $(rdbtn_yu).removeClass(".focus_ba");
+    $(rdbtn_yu).removeClass("familyinputFocus-yu");
+  }
 });
 
 //----------信用卡動態--------
@@ -447,22 +744,32 @@ $('input[type="radio"]').click(function () {
     $(".visacard-yu").css("height", "0px");
   }
 });
-  //信用卡輸入欄位直接跳下一個
+
+// //信用卡輸入欄位直接跳下一個
 //   var tablist = ["autotab-yu"];
 
 //   //特殊功能鍵 防止修改時按了 ctrl shift alt 方向鍵、del 之類的被跳到下一格
-//   var functionkey = [8, 9, 16, 17, 18, 20, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46, 93, 144];
-//   tablist.forEach(function(element){
-//     $("." + element).on("keydown" , function(event){
+//   var functionkey = [8,9,16,17,18,20,33,34,35,36,37,38,39,40,45,46,93,144];
+// tablist.forEach(function(element) {
+//   $("."+element).on( "keydown", function( event ) {
+//     console.log("ee")
 //         //next
-//         if($(this).attr("maxLength") == $(this).val().length && (functionkey.indexOf(event.keyCode)  == -1))
-//         $(this).nextAll("." + element).first().focus();
+//         if ($(this).attr("maxLength") == $(this).val().length && (functionkey.indexOf(event.keyCode)==-1))
+//             $(this).nextAll("."+element).first().focus();
 //         //prev
-//         if($(this).var().length == 0 && event.keyCode == 8){
-//             $(this).prevAll("." + element).first().focus();
+//         if($(this).val().length==0 && event.keyCode==8) {
+//         $(this).prevAll("."+element).first().focus();
 //         }
-//     });
 //   });
+// });
+
+// function autoTab()
+// {
+//     if (document.getElementById("ucdinput1-yu").value.maxLength==4)
+//     {
+//         document.getElementById("ucdinput2-yu").focus();
+//     }
+// }
 
 // $(function(){
 //     $("#usercreditcardnumber1-yu").focus();
@@ -487,4 +794,3 @@ $('input[type="radio"]').click(function () {
 //         if (len == 4) device_verify();
 //     });
 // });
-
