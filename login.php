@@ -34,7 +34,7 @@ if (!empty($_SESSION['user'])) {
     </div> -->
     
     
-    <button onclick="document.getElementById('loginCard_re').style.display='block'" style="width:auto;">Login</button>
+    <!-- <button onclick="document.getElementById('loginCard_re').style.display='block'" style="width:auto;">Login</button> -->
     <div id="loginCard_re" class="loginmodal-re paddingtop-0-re">
     <form class="loginanimate-re" action="" method="post">
         <div class="row loginwarp-re  justify-content-center m-0" id="tab-demo">

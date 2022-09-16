@@ -507,35 +507,37 @@
                         <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
                     </div>
                     <!-- 訂購人填寫資料 -->
-                    <form id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu" method="post" action="" onsubmit="return CheckForm();">
-                        <div class="order-name-yu p-3">
+                    <form id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu" method="post" action="">
+                        <div class="field order-name-yu p-3 ">
                             <label for="name" class="">
                                 姓名
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="ordername-yu"type="text"placeholder="請輸入姓名 " id="name-yu" name="test" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength=20  required/>
-                            
-                            <div>
-                                <i class="fccyu fa-check-circle"></i>
-                            </div>
-			                <i class="fa-exclamation-circle "></i>
-			                <!-- <small>Error message</small> -->
+                            <input class="ordername-yu" type="text" placeholder="請輸入姓名 " id="name-yu" name="test" required/>
+                            <i class="right fa-regular fa-circle-check"></i>
+                            <i class="wrong fa-solid fa-triangle-exclamation">
+                                <small>請輸入正確姓名</small>
+                            </i>
                         </div>
-                        <div class="order-phone-yu p-3">
+                        <div class="field order-phone-yu p-3">
                             <label for="mobile" class="">
                                 聯絡電話
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="orderphone-yu" type="text" placeholder="請輸入聯絡電話" id="mobile-yu" name="test"  maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'')" required/>
+                            <input class="orderphone-yu" type="text" placeholder="請輸入聯絡電話" id="mobile-yu" name="test"  required/>
+                            <i class="right fa-regular fa-circle-check"></i>
+                            <i class="wrong fa-solid fa-triangle-exclamation">
+                                <small>請輸入正確的聯絡電話</small>
+                            </i>
                         </div>
-                        <div class="order-address-yu p-3">
+                        <div class=" field order-address-yu p-3">
                             <label for="address" class="">
                                 地址
                                 <span style="color: #963c38">*</span>
                             </label>
-                            <br />
+                            <br/>
                             <div class="d-flex align-items-center">
                                 <div class="form-group m-0">
                                     <select class="orderaddress1-yu" name="test" id="city1-yu"required>
@@ -567,21 +569,28 @@
                                         <option value="2">仁愛區</option>
                                     </select>
                                 </div>
-                                <input class="orderaddress3-yu" name="test"placeholder=" 請輸入詳細地址" id="address-yu"name="address"/>
+                                <input class="orderaddress3-yu" name="test" placeholder=" 請輸入詳細地址" id="address-yu" name="address"/>
+                                <i class="right fa-regular fa-circle-check"></i>
+                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                    <small>請輸入正確的地址</small>
+                                </i>
                             </div>
                         </div>
-                        <div class="order-email-yu p-3">
+                        <div class="field order-email-yu p-3">
                             <label for="email" class="">
                                 Email<span style="color: #963c38">*</span>
                             </label>
                             <br />
                             <input type="email" class="email-yu"  id="email-yu" name="email"  />
-                            <div id="error"></div>
+                            <i class="right fa-regular fa-circle-check"></i>
+                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                    <small>請輸入正確的Email</small>
+                                </i>
                         </div>
                     </form>
                 </div>
                 <!-- 收件人資料 -->
-                <form class=" from2-yu section-2-yu" method="post" action="" onsubmit="return CheckForm();">
+                <form class=" from2-yu section-2-yu" method="post" action="">
                     <div class="section-2-title-yu d-flex justify-content-between">
                         <h3 class="listinfo-title-yu m-0">
                             收件人資料
@@ -726,16 +735,16 @@
                                         <br>
                                         <div class="  d-flex justify-content-start align-items-start"> 
                                             <div class=" mx-1 ">
-                                                <input class="text-center m-0" type="" name="test"id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyup="value=value.replace(/[^\d]/g,'')">
+                                                <input class=" autotab-yu text-center m-0" type="" name="test"id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyup="value=value.replace(/[^\d]/g,'')">
                                             </div>
                                             <div class=" mx-1">
-                                                <input class="text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class=" autotab-yu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
                                             </div>
                                             <div class="mx-1">
-                                                <input class="text-center m-0" type="" name="test"placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class=" autotab-yu text-center m-0" type="" name="test"placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
                                             </div>
                                             <div class="mx-1">
-                                                <input class="text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <input class=" autotab-yu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
                                             </div>
                                         </div>
                                     </div>

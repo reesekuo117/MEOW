@@ -86,6 +86,38 @@
             };
         
         });
+
+        // ----------------訂購數量和總額-------------------
+        // 1.按+的時候input的value++
+        // 2.按-的時候input的value-1
+        // 3.當value的值是1時，-的按鈕是灰色，且不能再向下減
+        // 4.當value的值不是1時，-的按鈕是咖啡色
+        // 5.按下購買按鈕後，會記住按過的值跳轉到結帳頁面`→記在參數/記在session傳給後端(要再寫一支PHP)/記在localstorage(結帳頁面要來localstorage)
+        
+        const minusBtn = $('button.minus');
+        const plusBtn = $('button.plus');
+        const productDiv = $('.product_q');
+
+        plusBtn.on('click', function(){
+            // 可以用function也可以用箭頭函式，用箭頭函不能用this
+            let num = +productDiv.html();
+            // +productDiv.html()→將.people裡面的文字轉換為數值，原生的用法是將.html()改成.innerText()
+            productDiv.html(num+1);
+            minusBtn.removeClass('disabled');
+        });
+
+        minusBtn.on('click', function(){
+            let num = +productDiv.html();
+            if(num>1){
+                productDiv.html(num-1);
+            }
+            num = +productDiv.html();
+            //為了知道值到底是多少，所以要呼叫num = +productDiv.html();
+            if(num===1){
+                minusBtn.addClass('disabled');
+            }
+        });
+
         // ----------------下方列結束-------------------
 
 
@@ -149,40 +181,40 @@ $(window).scroll(function () {
         // ----------------側邊攔變色結束-------------------
 
 
-$(function() {
+// $(function() {
     // This button will increment the value
-    $('.plus').click(function() {
+    // $('.plus').click(function() {
     // Stop acting like a button
     // e.preventDefault();
     // Get the field name
-    fieldName = $(this).attr('field');
+    // fieldName = $(this).attr('field');
     // Get its current value
-    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+    // var currentVal = parseInt($('input[name=' + fieldName + ']').val());
     // If is not undefined
-    if (!isNaN(currentVal)) {
+    // if (!isNaN(currentVal)) {
       // Increment
-        $('input[name=' + fieldName + ']').val(currentVal + 1);
-    } else {
+        // $('input[name=' + fieldName + ']').val(currentVal + 1);
+    // } else {
       // Otherwise put a 0 there
-        $('input[name=' + fieldName + ']').val(0);
-    }
-    });
+       //  $('input[name=' + fieldName + ']').val(0);
+    // }
+    // });
 
     // This button will decrement the value till 0
-        $(".minus").click(function() {
+        // $(".minus").click(function() {
         // Stop acting like a button
         // e.preventDefault();
         // Get the field name
-        fieldName = $(this).attr('field');
+        // fieldName = $(this).attr('field');
         // Get its current value
-        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+        // var currentVal = parseInt($('input[name=' + fieldName + ']').val());
         // If it isn't undefined or its greater than 0
-        if (!isNaN(currentVal) && currentVal > 0) {
+        // if (!isNaN(currentVal) && currentVal > 0) {
         // Decrement one
-            $('input[name=' + fieldName + ']').val(currentVal - 1);
-        } else {
+            // $('input[name=' + fieldName + ']').val(currentVal - 1);
+        // } else {
         // Otherwise put a 0 there
-            $('input[name=' + fieldName + ']').val(0);
-        }
-        });
-    });
+            // $('input[name=' + fieldName + ']').val(0);
+        // }
+        // });
+    // });
