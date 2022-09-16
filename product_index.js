@@ -130,7 +130,14 @@ $(window).scroll(function () {
     // 喵獨家結束
 
 
+    // 桌機版卡片
+    //下方列+卡片輪播愛心變色
+    $('.icon_heart').click(function(e){
+        e.preventDefault();
+        $(this).find('.heart_line').toggleClass('color')
+    });
 
+// 手機版卡片
 const cardsContainer = document.querySelector(".card-carousel");
 const cardsController = document.querySelector(".card-carousel + .card-controller")
 
