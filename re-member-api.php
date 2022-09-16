@@ -8,8 +8,9 @@ $output = [
     'postData' => $_POST,
 ];
 
-// $id = var_dump( $_SESSION['user'];
-$id = $_SESSION['user'];
+
+// $id = "SELECT * FROM member WHERE id=?";
+$id = $_SESSION["userid"];
 
 $sql = "UPDATE `member` SET 
         `name`=?,
@@ -21,13 +22,6 @@ $sql = "UPDATE `member` SET
         WHERE `sid`=?";
 
 $stmt = $pdo->prepare($sql);
-echo $_POST['name'];
-echo $_POST['mobile'];
-echo $_POST['birthday'];
-echo $_POST['address_city'];
-echo $_POST['address_region'];
-echo $_POST['address'];
-
 $stmt->execute([
     $_POST['name'],
     $_POST['mobile'],
