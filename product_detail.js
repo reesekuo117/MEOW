@@ -24,7 +24,10 @@
         })
 
         function moveX(nowPage){
-            $('.img-demo img').eq(nowPage).css('opacity','1').siblings().not('.icon_heart').css('opacity','0')
+            // $('.img-demo img').eq(nowPage).css('opacity','1').siblings().not('.icon_heart').css('opacity','0')
+            // 因為icon_heart也是那五張圖的平輩，但是它不能被調整透明度，所以將他寫在siblings之間
+
+            $('.img-demo img').css('opacity','0').eq(nowPage).css('opacity','1')
         }
 
         $('.icon_heart').click(function(){

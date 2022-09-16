@@ -60,27 +60,27 @@ $pageName ='member'; //頁面名稱
                     <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">會員資料</h5>
                     <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
-                <form name='form1-re' class="padding225-re" onsubmit=" checkForm(); return false;">  
+                <form id="form_member_re" name='form_member_re' class="padding225-re" method="post" onsubmit=" checkFormMember(); return false;">  
                 <!-- novalidate 不要驗證表單 -->
                 <!-- https://www.wfublog.com/2021/04/html5-validator.html -->
                     <div class="mb-3">
                         <label for="name" class="form-label-re text-18-re">姓名<span style="color:#963C38">*</span></label><br>
-                        <input class="input-re noline-re" type="text" placeholder=" 請輸入姓名" class="form-control" id="name" name="name" required>
+                        <input id="member_name_re" class="input-re noline-re" type="text" placeholder=" 請輸入姓名" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="mobile" class="form-label-re text-18-re">聯絡電話<span style="color:#963C38">*</span></label><br>
-                        <input class="input-re noline-re" type="text" placeholder=" 請輸入聯絡電話" class="form-control" id="mobile" name="mobile" required>
+                        <input id="member_phone_re" class="input-re noline-re" type="text" placeholder=" 請輸入聯絡電話" class="form-control" id="mobile" name="mobile" required>
                         <!-- 手機驗證<input type="text" required="required" maxlength="11" pattern="09\d{2}-\d{6}"/> -->
                     </div>
                     <div class="mb-3">
                         <label for="birthday" class="form-label-re text-18-re">出生日期</label><br>
-                        <input class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control" id="birthday" name="birthday">
+                        <input id="member_birthday_re" class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control" id="birthday" name="birthday">
                     </div>
                     <div class="">
                         <label for="address" class="form-label-re text-18-re">通訊地址</label><br>
                         <div class="address-re d-flex flex-wrap">
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="city" id="city">
+                                <select class="select-re" name="address_city" id="member_city_re">
                                     <option class="option-re text-16-re" value="0">臺北市</option>
                                     <option value="1">新北市</option>
                                     <option value="2">基隆市</option>
@@ -103,27 +103,23 @@ $pageName ='member'; //頁面名稱
                                 </select>
                             </div>
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="district" id="district">
+                                <select class="select-re" name="address_region" id="member_district_re">
                                     <option class="option-re text-16-re" value="0">中正區</option>
                                     <option value="1">板橋區</option>
                                     <option value="2">仁愛區</option>
                                 </select>
                             </div>
                             <div class="col-12 col-md-4 d-inline-block p-0">
-                                <input class="input-re addressarea-re col-12 col-md-4 noline-re" type="text" placeholder=" 請輸入詳細地址" class="form-control right-0" id="address" name="address">
+                                <input id="member_address_re" class="input-re addressarea-re col-12 col-md-4 noline-re" type="text" placeholder=" 請輸入詳細地址" class="form-control right-0" id="address" name="address">
                             </div>
                         </div>
-                        <!-- <input type="text">
-                        <textarea class="form-control" id="address" name="address" 
-                            cols="30" rows="1"></textarea> -->
-                            <!-- textarea /textarea 之間不能換行 裡面的所有值會在頁面上顯示 -->
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label-re text-18-re">信箱帳號<span style="color:#963C38">*</span></label><br>
-                        <input class="inputdisabled-re col-8 noline-re" type="text" class="form-control" id="email" name="email" disabled="disabled">
+                        <input id="member_email_re" class="inputdisabled-re col-8 noline-re" type="text" class="form-control" id="email" name="email" disabled="disabled">
                     </div>
+                    <div id="member_msgContainer"></div>
                     <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
-                    <!-- <button type="submit" class="btn btn200-re">儲存</button> -->
                 </form>
             </div>
 <!-- p2-password--------------------------------------------------------------------------------------------------------- -->
@@ -145,9 +141,7 @@ $pageName ='member'; //頁面名稱
                     <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">會員資料</h5>
                     <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
-                <form name='form1-re' class="padding225-re" onsubmit=" checkForm(); return false;">  
-                <!-- novalidate 不要驗證表單 -->
-                <!-- https://www.wfublog.com/2021/04/html5-validator.html -->
+                <form name='form_forget_re' class="padding225-re" onsubmit=" checkForm(); return false;">  
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">舊密碼<span style="color:#963C38">*</span></label><br>
                         <input class="input-re noline-re" type="password" placeholder=" 請輸入舊密碼" required>
@@ -161,7 +155,6 @@ $pageName ='member'; //頁面名稱
                         <input class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
                     </div>
                     <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
-                    <!-- <button type="submit" class="btn btn-l">儲存</button> -->
                 </form>
             </div>
 <!-- p3-like------------------------------------------------------------------------------------------------------------- -->
@@ -791,7 +784,7 @@ $pageName ='member'; //頁面名稱
         });
         myHashChange();
 	})
-    //手機會員/修改
+    //手機會員/修改頁面
     $(function(){
 		$(".tab_phonelist_re h5").click(function(){
 			$(this).addClass("current_re").siblings().removeClass("current_re");
@@ -879,32 +872,13 @@ $pageName ='member'; //頁面名稱
     //
     
     
-    // 加入購物車
-    // function addToCartRe(event) {
-    //     const btn = $(event.currentTarget);
-    //     //currentTarget 事件屬性返回其事件偵聽器觸發事件的元素
-    //     const qty = btn.closest('.card-body').find('select').val();
-    //     const sid = btn.attr('data-sid');
-    //     //使用attr叫出自定屬性 data-sid
-    //     // console.log(btn.closest('.card-body').find('select'));
-    //     console.log({sid, qty});
-    //     // $(selector).get(url,data,success(response,status,xhr),dataType)
-    //     $.get(
-    //         'handle-cart.php', 
-    //         {sid, qty}, 
-    //         function(data){
-    //             showCartCount(data);
-    //         }, 
-    //         'json');
-    // }
-
     // 
     let districtArray = [
         ['中正區', '大同區', '中山區', '萬華區', '信義區', '松山區', '大安區', '南港區', '北投區', '內湖區', '士林區', '文山區'],
         ['板橋區', '新莊區', '泰山區', '林口區', '淡水區', '金山區', '八里區', '萬里區', '石門區', '三芝區', '瑞芳區', '汐止區', '平溪區', '貢寮區', '雙溪區', '深坑區', '石碇區', '新店區', '坪林區', '烏來區', '中和區', '永和區', '土城區', '三峽區', '樹林區', '鶯歌區', '三重區', '蘆洲區', '五股區'],
         ['仁愛區', '中正區', '信義區', '中山區', '安樂區', '暖暖區', '七堵區'],
     ];
-    $('#city').change(function () {
+    $('#member_city_re').change(function () {
         const cityNumber = $(this).val();
         const districtData = districtArray[cityNumber];
         // 用迴圈會更方便
@@ -915,14 +889,51 @@ $pageName ='member'; //頁面名稱
         // 1.自己寫規則，for 迴圈，次數自己決定
         // 2.用陣列的方法來寫迴圈，次數就是陣列的資料數量
         //console.log('districtData:', districtData.length);
-        $('#district').empty();
+        $('#member_district_re').empty();
         $(districtData).each(function (index, item) {
         console.log('JQ item:', item);
         console.log('JQ index:', index);
-        $('#district').append(`<option value="${index}">${item}</option>`)
+        $('#member_district_re').append(`<option value="${index}">${item}</option>`)
         })
     });
-    
+    // 欄位錯誤狀態
+    const msgc_signup2 = $('#member_msgContainer');
+            function genAlert3(msg3, type='danger'){
+                const a = $(`
+                <div class="alert alert-${type}" role="alert">
+                    ${msg3}
+                </div>
+                `);
+                msgc_signup2.append(a);
+            }
+            $('#member-page-re').click(function(){
+                $('.alert').remove();
+            })
+    // 會員資料欄位檢查
+    function checkFormMember(){
+        console.log('checkFormMember');
+        let isPass = true;
+        if (!$('#member_name_re').val()) {
+            genAlert3('請填寫正確資料');
+            return;
+        }else if (!$('#member_phone_re').val()) {
+            genAlert3('請填寫正確資料');
+            return;
+        }
+        if(isPass){
+            $.post(
+                're-member-api.php', 
+                $(document.form_member_re).serialize(),
+                function(data){
+                    console.log('checkFormMember data',data);
+                    if(data.success){
+                        genAlert('修改成功', 'success');
+                    }else{
+                        genAlert(data.error);
+                    }
+            }, 'json');
+        }
+    }
 
 </script>
 
