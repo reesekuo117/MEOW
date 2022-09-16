@@ -125,6 +125,10 @@ height: 164px;
 .cloud_left_lb{
     bottom: -20px;
 }
+.cloud_right_lb {
+  right: 0;
+  
+}
 .top-content_lb {
   /* padding-left: 200px; */
   color: var(--color-text87);
