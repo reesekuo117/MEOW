@@ -4,10 +4,18 @@ html{
 .pd_head{
     margin: 80px;
 }
-/* ------------------------輪播------------------------ */
-.carousel-item{
-    height: 650px;
+/* 要再改 */
+h2,h5,h6{
+    color: var(--color-text87);
 }
+p,small{
+    color: var(--color-text100);
+}
+.xs{
+    color: var(--color-text60);
+}
+/* ------------------------輪播牆------------------------ */
+
 .carousel-item img{
     aspect-ratio: 16/9;
 }
@@ -22,7 +30,7 @@ html{
 }
 .icon_fivestar{
     color: var(--color-yellow);
-    padding: 0 8px;
+    padding: 0 4px;
 }
 .star .icon_fivestar{
     color: var(--color-yellow);
@@ -38,8 +46,9 @@ html{
     display: flex;
 
 }
-
-
+.travel_head .col-md-3{
+    text-align: center;
+}
 .price h2::before{
     content: "NT$ ";
 }
@@ -50,7 +59,42 @@ html{
 .fire p{
     line-height: 24px;
 }
+.number{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.quantity{
+    padding: 4 8px;
+    margin: 0 8px;
+}
+.minus{
+    background-color: var(--color-text87);
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+}
+.minus.disabled{
+    background-color: var(--color-text38);
+}
 
+/* .disable{
+    background-color: var(--color-text38);
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+} */
+.plus{
+    background-color: var(--color-text87);
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+
+}
+.people{
+    margin: 4px;
+}
 .buy{
     width: 250px;
     height: 45px;
@@ -61,7 +105,7 @@ html{
     border: 2px solid var(--color-text87);
     margin-bottom: 16px;
 }
-.cart{
+.favorite{
     width: 250px;
     height: 45px;
     color: var(--color-text87);
@@ -70,7 +114,50 @@ html{
     background-color: var(--color-creamy-light);
     border: 2px solid var(--color-text87);
 }
-/* 小換大和商品標題結束 */
+
+/* 商品標題結束 */
+/* 訂購行程 */
+.purchase_travel .container{
+    margin: 40px auto;
+    background-color: var(--color-creamy-light);
+    padding: 24px;
+}
+.purchase_travel .row{
+    padding-top: 16px;
+}
+.purchase_travel h5::after{
+    content: "";
+    border-bottom: 1.5px solid var(--color-text60);
+    width: 100%;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+}
+.purchase_travel h5{
+    position: relative;
+    border-bottom: 1.5px solid var(--color-text60);
+    /* box-shadow: 0px 3px 0px var(--color-text87); */
+}
+.signup .form-check{
+    text-indent: 1rem;
+    padding: 4px;
+}
+/* .number{
+    margin-top: 32px;
+} */
+.choice{
+    margin-bottom: 12px;
+}
+.total{
+    /* padding: 12px; */
+    border-top: 1px solid var(--color-text60);
+    width: 250px;
+}
+.total h6{
+    margin: 12px;
+}
+/* 訂購行程結束 */
+/* 下方列 */
 .undernav{
     width: 100%;
     padding: 20px 0; 
@@ -106,6 +193,7 @@ button:hover{
     margin: 0;
 }
 /* -----------------------下方列結束-------------------- */
+/* 側邊攔 */
 .links{
     flex-direction: column;
     position: sticky;
@@ -119,6 +207,7 @@ button:hover{
 .links a:hover, .links a:focus{
     color: var(--color-orange);
 }
+/* 側邊欄結束 */
 .intro_bg {
     margin: 40px auto;
     background-color: var(--color-creamy-light);
@@ -146,6 +235,11 @@ button:hover{
 /* -----------------------商品介紹結束-------------------- */
 #comment .row{
     padding: 8px;
+}
+select{
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid var(--color-text87);
 }
 .c_star{
     padding: 8px 0;

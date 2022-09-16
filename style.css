@@ -78,6 +78,7 @@ header .navbar {
     line-height: 50px;
     padding: 0 20px 0 0;
 }
+
 .nav-menu a:hover {
     text-decoration: none;
 }
@@ -318,4 +319,15 @@ p,
 .btn-l:hover {
     background-color: var(--color-yellow);
     box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+
+button[disabled] {
+    opacity: .6;
+    background-color: white;
+    color: var(--color-brown-dark);
+    border: var(--color-brown-dark) 2px solid;
+}
+
+button[disabled]:hover {
+    box-shadow: none
 }

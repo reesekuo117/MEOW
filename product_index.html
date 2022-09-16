@@ -6,16 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品首頁</title>
-    <!-- 爆版，還沒做RWD -->
     <link rel="icon" href="./imgs/favicon.ico.png">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./gensen-font-master/ttc/">
     <link rel="stylesheet" href="./product_index_style.css">
 </head>
 
-<body class="product_07">
+<body>
+<div class="product_07">
     <header class="d-none d-md-block">
         <div class="navbar">
             <div class="container-fluid p-0">
@@ -142,8 +143,21 @@
         </div>    
     </header>
 
-    <!-- 輪播牆在手機版爆版，換按鈕，hover和點擊時箭頭或點點換顏色 -->
+    
     <div class="product_head" id="product_head">
+        <!-- mobile -->
+        <div class="mb_head d-block d-md-none">
+            <div class="product_title mb_title">
+                <h6>
+                    好想談戀愛？ <br>
+                    好想擺脫噁男搭訕？ <br>
+                    好想和另一半長長久久？ <br>
+                    你的心願我們都聽到了！<br>
+                </h6>
+                <button class="mb_btn btn-s">看更多熱門商品！</button>
+            </div>
+        </div>
+        <!-- computer -->
         <div id="carouselExampleControls" class="carousel slide d-none d-md-block" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active w-100">
@@ -167,92 +181,84 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="product_title pc_title d-flex">
-                        <h1 class="d-none d-md-flex ">
-                            好想談戀愛？ <br>
-                            好想擺脫噁男搭訕？ <br>
-                            好想和另一半長長久久？ <br>
-                            你的心願我們都聽到了！<br>
-                        </h1>
-                        <h6 class="mb_title d-flex d-md-none">
-
-                            好想談戀愛？ <br>
-                            好想擺脫噁男搭訕？ <br>
-                            好想和另一半長長久久？ <br>
-                            你的心願我們都聽到了！<br>
-                        </h6>
-                        <div class="pc_btn btn">看更多熱門商品！</div>
-
-                    </div>
-                    <div class="product_title mb_title d-flex d-md-none">
-                        <h6 class="mb_title d-flex d-md-none">
-
-                            好想談戀愛？ <br>
-                            好想擺脫噁男搭訕？ <br>
-                            好想和另一半長長久久？ <br>
-                            你的心願我們都聽到了！<br>
-                        </h6>
-                        <div class="mb_btn btn">看更多熱門商品！</div>
-                    </div>
-                </div>
+            <div class="product_title pc_title d-flex">
+                <h1 class="d-none d-md-block ">
+                    好想談戀愛？ <br>
+                    好想擺脫噁男搭訕？ <br>
+                    好想和另一半長長久久？ <br>
+                    你的心願我們都聽到了！<br>
+                </h1>
+                <button class="pc_btn btn-l d-none d-md-block">看更多熱門商品！</button>
             </div>
         </div>
+
     </div>
     <!-- -------------------------輪播牆結束------------------------- -->
 
     <div class="product_midcontrol">
         <div class="container">
-            <div class="row">
-                <div class="col">
+            <div class="row no-gutters">
+                <div class="col-3">
                     <div class="midicon">
                         <a href="#product_brand">
-                            <div class="midimg">
+                            <div class="midimg d-none d-md-block">
                                 <img class="h-100" src="./imgs/product/cate1.png" alt="">
                             </div>
-                            <h3>
+                            <h3 class="d-none d-md-block">
                                 品牌聯名
                             </h3>
+                            <div class="midimg_mb d-block d-md-none">
+                                <img class="h-100" src="./imgs/product/cate1.png" alt="">
+                            </div>
+                            <p class="d-md-none d-block">品牌聯名</p>
                         </a>
-
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3">
                     <div class="midicon">
                         <a href="#product_young">
-                            <div class="midimg">
+                            <div class="midimg d-none d-md-block">
                                 <img class="h-100" src="./imgs/product/cate2.png" alt="">
                             </div>
-                            <h3>
+                            <h3 class="d-none d-md-block">
                                 文創商品
                             </h3>
+                            <div class="midimg_mb d-block d-md-none">
+                                <img class="h-100" src="./imgs/product/cate2.png" alt="">
+                            </div>
+                            <p class="d-md-none d-block">文創商品</p>
                         </a>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3">
                     <div class="midicon">
                         <a href="#product_sweet">
-                            <div class="midimg">
+                            <div class="midimg d-none d-md-block">
                                 <img class="h-100" src="./imgs/product/cate3.png" alt="">
                             </div>
-                            <h3>
+                            <h3 class="d-none d-md-block">
                                 甜蜜供品
                             </h3>
-                        </a>
+                            <div class="midimg_mb d-block d-md-none">
+                                <img class="h-100" src="./imgs/product/cate3.png" alt="">
+                            </div>
+                            <p class="d-md-none d-block">甜蜜供品</p>
+                        </a>                        
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3">
                     <div class="midicon">
                         <a href="#product_meow">
-                            <div class="midimg paw">
+                            <div class="midimg paw d-none d-md-block">
                                 <img class="h-100" src="./imgs/product/cate4.png" alt="">
                             </div>
-                            <h3>
+                            <h3 class="d-none d-md-block">
                                 月老喵獨家
                             </h3>
+                            <div class="midimg_mb paw_mb d-block d-md-none">
+                                <img class="h-100" src="./imgs/product/cate4.png" alt="">
+                            </div>
+                            <p class="d-md-none d-block">月老喵獨家</p>
                         </a>
                     </div>
                 </div>
@@ -263,42 +269,95 @@
     </div>
     <!-- -------------------------中間選單結束------------------------- -->
     <div id="product_brand" class="product_brand">
-        <div class="brand_1">
-            <img class="w-100" src="./imgs/product/P20_big.png" alt="">
+        <!-- mobile -->
+        <div class="p_mb d-block d-md-none">
+            <h6>
+                月老喵 X 霞海城隍廟加持， <br>
+                讓你感情升溫、幸福加分！
+            </h6>
+            <div class="p_img d-flex scroll-snap_07">
+                <div class="brand_1_mb">
+                    <img class="h-100" src="./imgs/product/P26_3.png" alt="">
+                </div>
+                <div class="brand_2_mb">
+                    <img class="h-100" src="./imgs/product/P24_1.jpg" alt="">
+                </div>
+                <div class="brand_3_mb">
+                    <img class="h-100" src="./imgs/product/P18_1_small.jpg" alt="">
+                </div>
+            </div>
+            <small>
+                台北霞海城隍廟是網友公認台灣最靈驗月老廟， <br>
+                更被日韓旅遊書推薦為亞洲最強結緣神， <br>
+                月老喵與亞洲最強月老聯名，網羅所有結緣必備元素， <br>
+                達成你的所有戀愛願望！
+            </small>
+            <button class="mb_btn btn-s d-block d-md-none mt-3">看更多品牌聯名</button>
         </div>
-        <div class="brand_2">
-            <img class="w-100 d-none d-md-block" src="./imgs/product/P24_1.jpg" alt="">
-        </div>
-        <div class="brand_3">
-            <img class="w-100" src="./imgs/product/P18_1_small.jpg" alt="">
-        </div>
-        <div class="pb_sec">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="pb_title d-flex">
-                            <h2>
-                                月老喵 X 霞海城隍廟加持， <br>
-                                讓你感情升溫、幸福加分！
-                            </h2>
-                            <h6>
-                                台北霞海城隍廟是網友公認台灣最靈驗月老廟， <br>
-                                更被日韓旅遊書推薦為亞洲最強結緣神， <br>
-                                月老喵與亞洲最強月老聯名，網羅所有結緣必備元素， <br>
-                                達成你的所有戀愛願望！
-                            </h6>
-                            <div class="btn">看更多品牌聯名</div>
+        <!-- computer -->
+        <div class="pb_pc d-none d-md-block">
+            <div class="brand_1">
+                <img class="w-100" src="./imgs/product/P20_big.png" alt="">
+            </div>
+            <div class="brand_2">
+                <img class="w-100" src="./imgs/product/P24_1.jpg" alt="">
+            </div>
+            <div class="brand_3">
+                <img class="w-100" src="./imgs/product/P18_1_small.jpg" alt="">
+            </div>
+            <div class="pb_sec">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="pb_title d-md-flex d-none">
+                                <h2>
+                                    月老喵 X 霞海城隍廟加持， <br>
+                                    讓你感情升溫、幸福加分！
+                                </h2>
+                                <h6>
+                                    台北霞海城隍廟是網友公認台灣最靈驗月老廟， <br>
+                                    更被日韓旅遊書推薦為亞洲最強結緣神， <br>
+                                    月老喵與亞洲最強月老聯名，網羅所有結緣必備元素， <br>
+                                    達成你的所有戀愛願望！
+                                </h6>
+                                <button class="btn-l">看更多品牌聯名</button>
+                            </div>
                         </div>
+                        <div class="col"></div>
                     </div>
-                    <div class="col"></div>
-
                 </div>
             </div>
         </div>
     </div>
     <!-- -------------------------品牌聯名結束------------------------- -->
     <div id="product_young" class="product_young">
-        <div class="container">
+        <!-- mobile -->
+        <div class="p_mb d-block d-md-none mt-5">
+            <h6>
+                可愛又精緻的結緣小物， <br>
+                幫你牽起美好緣分！
+            </h6>
+            <div class="p_img d-flex scroll-snap_07">
+                <div class="young_1_mb">
+                    <img class="h-100" src="./imgs/product/P06_1.jpg" alt="">
+                </div>
+                <div class="young_2_mb">
+                    <img class="h-100" src="./imgs/product/P01_1.jpg" alt="">
+                </div>
+                <div class="young_3_mb">
+                    <img class="h-100" src="./imgs/product/P08_2.jpg" alt="">
+                </div>
+            </div>
+            <small>
+                月老喵精選台灣在地文創店家， <br>
+                攜手打造可愛又精緻的結緣商品， <br>
+                無論是手鍊、香氛精油、愛情御守通通都有， <br>
+                精心為你打造質感生活與戀情守護。 <br>
+            </small>
+            <button class="mb_btn btn-s d-block d-md-none mt-3">看更多文創商品</button>
+        </div>
+        <!-- computer -->
+        <div class="container py_pc d-none d-md-block">
             <div class="row">
                 <div class="col">
                     <div class="young_1">
@@ -330,24 +389,47 @@
                                 無論是手鍊、香氛精油、愛情御守通通都有， <br>
                                 精心為你打造質感生活與戀情守護。 <br>
                             </h6>
-                            <div class="btn">看更多文創商品</div>
+                            <button class="btn-l">看更多文創商品</button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
     <div class="product_sweet" id="product_sweet">
-        <div class="row">
-            <div class="col-8">
+        <!-- mobile -->
+        <div class="p_mb d-block d-md-none mt-5">
+            <h6>
+                不論是拜月老的供品， <br>
+                還是送伴侶的甜品， <br>
+                我們都幫你準備好了！
+            </h6>
+            <div class="ps_img mb-3">
+                <div class="sweet_mb mx-auto">
+                    <img class="w-100" src="./imgs/product/sweet_main.jpg" alt="">
+                </div>
+            </div>
+            <small>
+                你知道嗎？月老很喜歡吃甜食喔！ <br>
+                拜月老的供品除了傳統經典的紅棗、枸杞和桂圓之外， <br>
+                月老喵也有巧克力、糖果、甜麻糬等禮盒， <br>
+                幫你解決準備供品的煩惱。 <br>
+                包裝精美又美味的禮盒也適合送給另一半， <br>
+                讓你們的感情更甜蜜！
+            </small>
+            <button class="mb_btn btn-s d-block d-md-none mt-3">看更多甜蜜供品</button>
+        </div>
+
+        <!-- computer -->
+        <div class="row ps_pc d-none d-md-flex">
+            <div class="col-md-8 mx-0">
                 <div class="ps_img">
                     <img class="w-100" src="./imgs/product/sweet_main.jpg" alt="">
                 </div>
             </div>
-            <div class="ps_title">
-                <div class="col d-flex">
+            <div class="ps_title col-md-4">
+                <div class="">
                     <h2>
                         不論是拜月老的供品， <br>
                         還是送伴侶的甜品， <br>
@@ -361,7 +443,7 @@
                         包裝精美又美味的禮盒也適合送給另一半， <br>
                         讓你們的感情更甜蜜！
                     </h6>
-                    <div class="btn">看更多甜蜜供品</div>
+                    <button class="btn-l">看更多甜蜜供品</button>
                 </div>
             </div>
         </div>
@@ -369,45 +451,70 @@
     </div>
 
     <div class="product_meow" id="product_meow">
-        <div class="meow_test">
-            <div class="col">
+        <!-- mobile -->
+        <div class="p_mb d-block d-md-none mt-5">
+            <h6>
+                還有最可靠的小幫手小玉、 <br>
+                小黑和金寶守護你的愛情！
+            </h6>
+            <div class="pm_img mb-3">
+                <div class="meow_mb mx-auto">
+                    <img class="w-100" src="./imgs/product/P45_1.jpg" alt="">
+                </div>
+            </div>
+            <small>
+                有感情上的煩惱嗎？ <br>
+                別擔心！ <br>
+                小玉、小黑和金寶都在月老身邊修煉了好幾千年， <br>
+                三隻喵都有不同的本領！熱心助人的小玉擅長牽紅線， <br>
+                帥氣的小黑是斬斷爛桃花的高手， <br>
+                而個性和善的金寶則是讓戀情幸福美滿、 <br>
+                長長久久的最大功臣， <br>
+                交給他們準沒錯！
+            </small>
+            <button class="mb_btn btn-s d-block d-md-none mt-3">看更多獨家商品</button>
+        </div>
+
+        <!-- computer -->
+        <div class="pm_pc d-none d-md-flex">
+            <div class="meow_test w-100">
                 <div class="meow_img">
                     <img class="w-100" src="./imgs/product/meow_main.png" alt="">
                 </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col d-none d-md-flex">
-                    <div class="pm_title d-flex">
-                        <h2>
-                            還有最可靠的小幫手小玉、 <br>
-                            小黑和金寶守護你的愛情！
-                        </h2>
-                        <h6>
-                            有感情上的煩惱嗎？ <br>
-                            別擔心！ <br>
-                            小玉、小黑和金寶都在月老身邊修煉了好幾千年， <br>
-                            三隻喵都有不同的本領！熱心助人的小玉擅長牽紅線， <br>
-                            帥氣的小黑是斬斷爛桃花的高手， <br>
-                            而個性和善的金寶則是讓戀情幸福美滿、 <br>
-                            長長久久的最大功臣， <br>
-                            交給他們準沒錯！
-                        </h6>
-                        <div class="btn">看更多文創商品</div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="pm_title d-flex">
+                                <h2>
+                                    還有最可靠的小幫手小玉、 <br>
+                                    小黑和金寶守護你的愛情！
+                                </h2>
+                                <h6>
+                                    有感情上的煩惱嗎？ <br>
+                                    別擔心！ <br>
+                                    小玉、小黑和金寶都在月老身邊修煉了好幾千年， <br>
+                                    三隻喵都有不同的本領！熱心助人的小玉擅長牽紅線， <br>
+                                    帥氣的小黑是斬斷爛桃花的高手， <br>
+                                    而個性和善的金寶則是讓戀情幸福美滿、 <br>
+                                    長長久久的最大功臣， <br>
+                                    交給他們準沒錯！
+                                </h6>
+                                <button class="btn-l">看更多獨家商品</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col d-none d-md-flex"></div>
             </div>
-        </div>
-        <div class="meow_1">
-            <img src="./imgs/product/meow_1.png" alt="">
-        </div>
-        <div class="meow_2">
-            <img src="./imgs/product/meow_2.png" alt="">
-        </div>
-        <div class="meow_3">
-            <img class="w-100" src="./imgs/product/meow_3.png" alt="">
+            
+            <div class="meow_1">
+                <img src="./imgs/product/meow_1.png" alt="">
+            </div>
+            <div class="meow_2">
+                <img src="./imgs/product/meow_2.png" alt="">
+            </div>
+            <div class="meow_3">
+                <img class="w-100" src="./imgs/product/meow_3.png" alt="">
+            </div>
         </div>
     </div>
 
@@ -421,13 +528,397 @@
                 </div>
 
             </div>
+            <!-- 桌機卡片 -->
+                <!-- 瀏覽其他商品＆下方列固定 -->
+    <!-- https://rainbowfun.ispan.com.tw/course/JavaScript -->
+        <div class="otherp d-md-block d-none">
+            <div class="container">
+                <!-- https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=thumbnail-carousel-with-content -->
+                <div class="row">
+                    <div class="col mx-auto">
+                        <div id="myCarousel" class="carousel carousel_card slide" data-ride="carousel" data-interval="0">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="">
+                                                <div class="thumb-wrapper mx-3">
+                                                    <div class="img-box">
+                                                        <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                        <div class="icon_heart">
+                                                            <svg class="heart_line" width="32" height="32"
+                                                                viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                    stroke-width="2.66667" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="thumb-content">
+                                                        <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
-            
+                                                        <div
+                                                            class="card_under d-flex justify-content-between align-items-center">
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_star">
+                                                                    <svg width="20" height="20" viewBox="0 0 20 20"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z"
+                                                                            fill="#E5A62A" />
+                                                                    </svg>
+                                                                </div> 4.7(50)
+                                                            </small>
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_fire ">
+                                                                    <svg width="18" height="17" viewBox="0 0 18 17"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                        <rect width="18" height="17"
+                                                                            fill="url(#pattern0-946095)" />
+                                                                        <defs>
+                                                                            <pattern id="pattern0-946095"
+                                                                                patternContentUnits="objectBoundingBox"
+                                                                                width="1" height="1">
+                                                                                <use xlink:href="#image0_1808_23036"
+                                                                                    transform="translate(0.0277778) scale(0.0104938 0.0111111)" />
+                                                                            </pattern>
+                                                                            <image id="image0_1808_23036" width="90"
+                                                                                height="90"
+                                                                                xlink:href="data:image/png;base64,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" />
+                                                                        </defs>
+                                                                    </svg>
+                                                                </div>
+                                                                3K個已訂購
+                                                            </small>
+                                                            <h5 class="m-0 ml-auto">850</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="">
+                                                <div class="thumb-wrapper mx-3">
+                                                    <div class="img-box">
+                                                        <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                        <div class="icon_heart">
+                                                            <svg class="heart_line" width="32" height="32"
+                                                                viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                    stroke-width="2.66667" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="thumb-content">
+                                                        <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                        <div
+                                                            class="card_under d-flex justify-content-between align-items-center">
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_star">
+                                                                    <svg width="20" height="20" viewBox="0 0 20 20"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z"
+                                                                            fill="#E5A62A" />
+                                                                    </svg>
+                                                                </div> 4.7(50)
+                                                            </small>
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_fire ">
+                                                                    <svg width="18" height="17" viewBox="0 0 18 17"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                        <rect width="18" height="17"
+                                                                            fill="url(#pattern0-946095)" />
+                                                                        <defs>
+                                                                            <pattern id="pattern0-946095"
+                                                                                patternContentUnits="objectBoundingBox"
+                                                                                width="1" height="1">
+                                                                                <use xlink:href="#image0_1808_23036"
+                                                                                    transform="translate(0.0277778) scale(0.0104938 0.0111111)" />
+                                                                            </pattern>
+                                                                            <image id="image0_1808_23036" width="90"
+                                                                                height="90"
+                                                                                xlink:href="data:image/png;base64,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" />
+                                                                        </defs>
+                                                                    </svg>
+                                                                </div>
+                                                                3K個已訂購
+                                                            </small>
+                                                            <h5 class="m-0 ml-auto">850</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="">
+                                                <div class="thumb-wrapper mx-3">
+                                                    <div class="img-box">
+                                                        <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                        <div class="icon_heart">
+                                                            <svg class="heart_line" width="32" height="32"
+                                                                viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                    stroke-width="2.66667" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="thumb-content">
+                                                        <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                        <div
+                                                            class="card_under d-flex justify-content-between align-items-center">
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_star">
+                                                                    <svg width="20" height="20" viewBox="0 0 20 20"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z"
+                                                                            fill="#E5A62A" />
+                                                                    </svg>
+                                                                </div> 4.7(50)
+                                                            </small>
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_fire ">
+                                                                    <svg width="18" height="17" viewBox="0 0 18 17"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                        <rect width="18" height="17"
+                                                                            fill="url(#pattern0-946095)" />
+                                                                        <defs>
+                                                                            <pattern id="pattern0-946095"
+                                                                                patternContentUnits="objectBoundingBox"
+                                                                                width="1" height="1">
+                                                                                <use xlink:href="#image0_1808_23036"
+                                                                                    transform="translate(0.0277778) scale(0.0104938 0.0111111)" />
+                                                                            </pattern>
+                                                                            <image id="image0_1808_23036" width="90"
+                                                                                height="90"
+                                                                                xlink:href="data:image/png;base64,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" />
+                                                                        </defs>
+                                                                    </svg>
+                                                                </div>
+                                                                3K個已訂購
+                                                            </small>
+                                                            <h5 class="m-0 ml-auto">850</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="">
+                                                <div class="thumb-wrapper mx-3">
+                                                    <div class="img-box">
+                                                        <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                        <div class="icon_heart">
+                                                            <svg class="heart_line" width="32" height="32"
+                                                                viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                    stroke-width="2.66667" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="thumb-content">
+                                                        <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                        <div
+                                                            class="card_under d-flex justify-content-between align-items-center">
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_star">
+                                                                    <svg width="20" height="20" viewBox="0 0 20 20"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z"
+                                                                            fill="#E5A62A" />
+                                                                    </svg>
+                                                                </div> 4.7(50)
+                                                            </small>
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_fire ">
+                                                                    <svg width="18" height="17" viewBox="0 0 18 17"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                        <rect width="18" height="17"
+                                                                            fill="url(#pattern0-946095)" />
+                                                                        <defs>
+                                                                            <pattern id="pattern0-946095"
+                                                                                patternContentUnits="objectBoundingBox"
+                                                                                width="1" height="1">
+                                                                                <use xlink:href="#image0_1808_23036"
+                                                                                    transform="translate(0.0277778) scale(0.0104938 0.0111111)" />
+                                                                            </pattern>
+                                                                            <image id="image0_1808_23036" width="90"
+                                                                                height="90"
+                                                                                xlink:href="data:image/png;base64,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" />
+                                                                        </defs>
+                                                                    </svg>
+                                                                </div>
+                                                                3K個已訂購
+                                                            </small>
+                                                            <h5 class="m-0 ml-auto">850</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="">
+                                                <div class="thumb-wrapper mx-3">
+                                                    <div class="img-box">
+                                                        <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                        <div class="icon_heart">
+                                                            <svg class="heart_line" width="32" height="32"
+                                                                viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                    stroke-width="2.66667" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="thumb-content">
+                                                        <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                        <div
+                                                            class="card_under d-flex justify-content-between align-items-center">
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_star">
+                                                                    <svg width="20" height="20" viewBox="0 0 20 20"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z"
+                                                                            fill="#E5A62A" />
+                                                                    </svg>
+                                                                </div> 4.7(50)
+                                                            </small>
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_fire ">
+                                                                    <svg width="18" height="17" viewBox="0 0 18 17"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                        <rect width="18" height="17"
+                                                                            fill="url(#pattern0-946095)" />
+                                                                        <defs>
+                                                                            <pattern id="pattern0-946095"
+                                                                                patternContentUnits="objectBoundingBox"
+                                                                                width="1" height="1">
+                                                                                <use xlink:href="#image0_1808_23036"
+                                                                                    transform="translate(0.0277778) scale(0.0104938 0.0111111)" />
+                                                                            </pattern>
+                                                                            <image id="image0_1808_23036" width="90"
+                                                                                height="90"
+                                                                                xlink:href="data:image/png;base64,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" />
+                                                                        </defs>
+                                                                    </svg>
+                                                                </div>
+                                                                3K個已訂購
+                                                            </small>
+                                                            <h5 class="m-0 ml-auto">850</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="">
+                                                <div class="thumb-wrapper mx-3">
+                                                    <div class="img-box">
+                                                        <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                        <div class="icon_heart">
+                                                            <svg class="heart_line" width="32" height="32"
+                                                                viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                    stroke-width="2.66667" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="thumb-content">
+                                                        <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                        <div
+                                                            class="card_under d-flex justify-content-between align-items-center">
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_star">
+                                                                    <svg width="20" height="20" viewBox="0 0 20 20"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z"
+                                                                            fill="#E5A62A" />
+                                                                    </svg>
+                                                                </div> 4.7(50)
+                                                            </small>
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_fire ">
+                                                                    <svg width="18" height="17" viewBox="0 0 18 17"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                        <rect width="18" height="17"
+                                                                            fill="url(#pattern0-946095)" />
+                                                                        <defs>
+                                                                            <pattern id="pattern0-946095"
+                                                                                patternContentUnits="objectBoundingBox"
+                                                                                width="1" height="1">
+                                                                                <use xlink:href="#image0_1808_23036"
+                                                                                    transform="translate(0.0277778) scale(0.0104938 0.0111111)" />
+                                                                            </pattern>
+                                                                            <image id="image0_1808_23036" width="90"
+                                                                                height="90"
+                                                                                xlink:href="data:image/png;base64,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" />
+                                                                        </defs>
+                                                                    </svg>
+                                                                </div>
+                                                                3K個已訂購
+                                                            </small>
+                                                            <h5 class="m-0 ml-auto">850</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                                <i class="fa-solid fa-caret-left"></i>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                                <i class="fa-solid fa-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
             <!-- https://codepen.io/WillyW/details/wZebow -->
             <!-- https://codepen.io/rblinzler/pen/abVGzNM -->
-
-            <div class="container carousel_test">
+            <!-- 手機卡片 -->
+            <div class="container carousel_mb d-block d-md-none">
                 <div class="card-carousel">
                     <div class="card" id="1">
                         <div class="image-container"></div>
@@ -452,51 +943,10 @@
                 </div>
                 <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
             </div>
-            <!-- 
-<h2>Check out <a target="_blank" href="https://codepen.io/WillyW/pen/RwRrvjv">Circle Carousel</a></h2> -->
-
-            <!-- <div class="row">
-                <div class="col">
-                    <a href="#">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./imgs/product/P20_4.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">
-                                    霞海城隍廟 X 護手霜禮盒
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./imgs/product/P19_1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">
-                                    霞海城隍聯名 X 姻緣簿茶蜜組
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">
-                                    霞海城隍廟 X 扣式真皮中夾禮盒
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div> -->
         </div>
         
     </div>
-<!-- footer-md ----------------------------------->
+        <!-- footer-md ----------------------------------->
     <footer class="footer-md d-none d-md-block ">
             <div class="text-white text-center py-1">
                 <p class="mb-0"><span class="font-weight-light"> © </span><small>2022 MoonOldMeow</small></p>
@@ -509,7 +959,7 @@
                 </svg>
             </a>
     </div>
-<!-- footer-xs ----------------------------------->
+        <!-- footer-xs ----------------------------------->
     <footer class="footer-xs d-md-none ">
             <ul class="d-flex">
                 <li><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -540,6 +990,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./product_index.js"></script>
+</div>
 </body>
 
 </html>

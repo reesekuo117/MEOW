@@ -89,9 +89,9 @@ $('.drawdraw').mouseleave(function () {
 // 'use strict';
 var eyes = $('.eye');
 
-$(window).on('mousemove', function(event){
+$(window).on('mousemove', function (event) {
     // document.querySelector('.drawSection07Img').getBoundingClientRect()
-    eyes.each(function(){
+    eyes.each(function () {
         const rect = this.getBoundingClientRect();
         var dx = event.pageX - rect.x;
         var dy = event.pageY - rect.y;
@@ -101,9 +101,9 @@ $(window).on('mousemove', function(event){
         // var dx = event.pageX -405- $(this).position().left;
         // var dy = event.pageY -350- $(this).position().top;
 
-        var ang = Math.atan2(dy, dx)/Math.PI*180; // degree
+        var ang = Math.atan2(dy, dx) / Math.PI * 180; // degree
 
-        $(this).css('transform', 'rotate('+ang+'deg)');
+        $(this).css('transform', 'rotate(' + ang + 'deg)');
     });
 });
 
@@ -195,7 +195,7 @@ $('.facebtn').click(function () {
 // 超過五個
 
 $('.wantbtn').click(function () {
-    if( $('.drawbtnToggle').length > 5 ){
+    if ($('.drawbtnToggle').length > 5) {
         alert('超過五項囉喵')
         // console.log(this);
         this.click(); // 模擬再點擊一次，讓他變白
@@ -203,25 +203,33 @@ $('.wantbtn').click(function () {
 })
 
 $('.interestbtn').click(function () {
-    if( $('.interestbtnToggle').length > 5 ){
+    if ($('.interestbtnToggle').length > 5) {
         alert('超過五項囉喵')
         this.click(); // 模擬再點擊一次，讓他變白
     }
 })
 
 $('.personalitybtn').click(function () {
-    if( $('.personalitybtnToggle').length > 5 ){
+    if ($('.personalitybtnToggle').length > 5) {
         alert('超過五項囉喵')
         this.click(); // 模擬再點擊一次，讓他變白
     }
 })
 
 $('.horobtn').click(function () {
-    if( $('.horobtnToggle').length > 5 ){
+    if ($('.horobtnToggle').length > 5) {
         alert('超過五項囉喵')
         this.click(); // 模擬再點擊一次，讓他變白
     }
 })
+
+// 沒按不能下一步
+if ($('.drawbtnToggle').length > 1) {
+    $('.btn_md_next').attr('disabled', false)
+} else if ($('.drawbtnToggle').length < 1) {
+    $('.btn_md_next').attr('disabled', true)
+
+}
 
 // clearAll 清除
 $('.clearAll_ba').click(function () {
@@ -239,29 +247,29 @@ let prevStat = ''; // '', 'left', 'right'
 let drawcounter = 0;
 // 搖動次數
 
-const handler = (e)=>{
+const handler = (e) => {
     //let drawcounter = 0
     // $('#info').html(e.offsetX) //游標在瀏覽器的 X軸
 
     let currentStat; //當前狀態
-    if( e.offsetX > windowWidth){
+    if (e.offsetX > windowWidth) {
         currentStat = 'right';
-        $('.drawImgWrap img').attr('src','../imgs/draw/draw-r.png')
-        if(prevStat==='left'){
-            drawcounter ++;
+        $('.drawImgWrap img').attr('src', '../imgs/draw/draw-r.png')
+        if (prevStat === 'left') {
+            drawcounter++;
         }
         prevStat = currentStat;
-    } else if(e.offsetX < windowWidth){
+    } else if (e.offsetX < windowWidth) {
         currentStat = 'left';
-        $('.drawImgWrap img').attr('src','../imgs/draw/draw-l.png')
-        if(prevStat==='right'){
-            drawcounter ++;
+        $('.drawImgWrap img').attr('src', '../imgs/draw/draw-l.png')
+        if (prevStat === 'right') {
+            drawcounter++;
         }
         prevStat = currentStat;
         // 讓前一狀態等於當前狀態
     }
     // console.log({drawcounter});
-    if(drawcounter>10){
+    if (drawcounter > 10) {
         // console.log('next');
         window.location.href = "draw18.html"
     }
@@ -281,66 +289,66 @@ window.addEventListener('mouseup', function(){
     window.removeEventListener('mousemove', handler);
 })
 */
-        let dragDiv = document.querySelector('.drag');
-        let dragTitle = dragDiv.querySelector('.drag-title') || dragDiv;
-        let dropArea = document.querySelector('.drop-area');
-        let area = {
-            left: dropArea.offsetLeft,
-            right: dropArea.offsetLeft + dropArea.offsetWidth - dragDiv.offsetWidth,
-            top: dropArea.offsetTop,
-            bottom: dropArea.offsetTop + dropArea.offsetHeight - dragDiv.offsetHeight,
-        };
-        area.middle = (area.left+area.right)/2;
+let dragDiv = document.querySelector('.drag');
+let dragTitle = dragDiv.querySelector('.drag-title') || dragDiv;
+let dropArea = document.querySelector('.drop-area');
+let area = {
+    left: dropArea.offsetLeft,
+    right: dropArea.offsetLeft + dropArea.offsetWidth - dragDiv.offsetWidth,
+    top: dropArea.offsetTop,
+    bottom: dropArea.offsetTop + dropArea.offsetHeight - dragDiv.offsetHeight,
+};
+area.middle = (area.left + area.right) / 2;
 
-        let startX = 0;
-        let startY = 0;
+let startX = 0;
+let startY = 0;
 
-        dragTitle.addEventListener('mousedown', dragStart);
+dragTitle.addEventListener('mousedown', dragStart);
 
-        function dragStart(e) {
-            e.preventDefault();
-            //記錄點擊相對被點擊物件的座標
-            startX = e.clientX - dragDiv.offsetLeft;
-            startY = e.clientY - dragDiv.offsetTop;
-            document.addEventListener('mousemove', move);
-            document.addEventListener('mouseup', stop);
+function dragStart(e) {
+    e.preventDefault();
+    //記錄點擊相對被點擊物件的座標
+    startX = e.clientX - dragDiv.offsetLeft;
+    startY = e.clientY - dragDiv.offsetTop;
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mouseup', stop);
+}
+
+function move(e) {
+    //計算出拖曳物件最左上角座標
+    x = e.clientX - startX;
+    y = e.clientY - startY;
+    x = Math.max(Math.min(x, area.right), area.left);
+    y = Math.max(Math.min(y, area.bottom), area.top);
+    dragDiv.style.left = x + 'px';
+    dragDiv.style.top = y + 'px';
+    // console.log({x, y, area})
+
+    let currentStat; //當前狀態
+    if (x > area.middle) {
+        currentStat = 'right';
+        $('.drawImgWrap img').attr('src', '../imgs/draw/draw-r.png')
+        if (prevStat === 'left') {
+            drawcounter++;
         }
-
-        function move(e) {
-            //計算出拖曳物件最左上角座標
-            x = e.clientX - startX;
-            y = e.clientY - startY;
-            x = Math.max(Math.min(x, area.right), area.left);
-            y = Math.max(Math.min(y, area.bottom), area.top);
-            dragDiv.style.left = x + 'px';
-            dragDiv.style.top = y + 'px';
-            // console.log({x, y, area})
-
-            let currentStat; //當前狀態
-            if( x > area.middle){
-                currentStat = 'right';
-                $('.drawImgWrap img').attr('src','../imgs/draw/draw-r.png')
-                if(prevStat==='left'){
-                    drawcounter ++;
-                }
-                prevStat = currentStat;
-            } else if( x <= area.middle){
-                currentStat = 'left';
-                $('.drawImgWrap img').attr('src','../imgs/draw/draw-l.png')
-                if(prevStat==='right'){
-                    drawcounter ++;
-                }
-                prevStat = currentStat;
-                // 讓前一狀態等於當前狀態
-            }
-            if(drawcounter>8){
-                // console.log('next');
-                window.location.href = "draw18.html"
-            }
-
+        prevStat = currentStat;
+    } else if (x <= area.middle) {
+        currentStat = 'left';
+        $('.drawImgWrap img').attr('src', '../imgs/draw/draw-l.png')
+        if (prevStat === 'right') {
+            drawcounter++;
         }
+        prevStat = currentStat;
+        // 讓前一狀態等於當前狀態
+    }
+    if (drawcounter > 8) {
+        // console.log('next');
+        window.location.href = "draw18.html"
+    }
 
-        function stop() {
-            document.removeEventListener('mousemove', move);
-            document.removeEventListener('mouseup', stop)
-        }
+}
+
+function stop() {
+    document.removeEventListener('mousemove', move);
+    document.removeEventListener('mouseup', stop)
+}
