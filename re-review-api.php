@@ -8,15 +8,15 @@ $output = [
     'postData' => $_POST,
 ];
 
-if(empty($_POST['signuemail']) or empty($_POST['signupassword']) or empty($_POST['signupagain'])){
-    $output['error'] = '欄位資料不足';
+if(empty($_POST['signup_email']) or empty($_POST['signup_password']) or empty($_POST['signup_again'])){
+    $output['error'] = '請輸入正確的帳號密碼!';
     echo json_encode($output, JSON_UNESCAPED_UNICODE);
     exit;
 }
 
 $sql = "INSERT INTO `member`(
-        `email`, 
-        `password`, 
+        -- `email`, 
+        -- `password`, 
         `picture`, 
         `name`, 
         `mobile`, 
@@ -24,8 +24,10 @@ $sql = "INSERT INTO `member`(
         `address_city`, 
         `address_region`, 
         `address`, 
-        `created_at`
+        -- `created_at`
     ) VALUES (
+        -- ?,
+        -- ?,
         ?,
         ?,
         ?,
@@ -33,24 +35,27 @@ $sql = "INSERT INTO `member`(
         ?,
         ?,
         ?,
-        ?,
-        ?,
-        NOW()
+        -- NOW()
     )";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    $_POST['signuemail'],
-    $_POST['signupassword'],
+    // $_POST['signup_email'],
+    // $_POST['signup_password'],
+    $picture, 
+    $name, 
+    $mobile, 
+    $birthday, 
+    $address_city, 
+    $address_region, 
+    $address, 
+    $created_at,
 ]);
 
 if($stmt->rowCount()){
     $output['success'] = true;
 } else {
-    $output['error'] = '資料沒有新增';
+    $output['error'] = '錯誤';
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
-
-
-

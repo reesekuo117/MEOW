@@ -7,7 +7,7 @@ $pageName ='home'; //頁面名稱
 <?php include __DIR__. '/parts/navbar.php'; ?>
 <div class="container">
     <h2>
-        Hello
+        
     </h2>
     
     <!-- test -->
