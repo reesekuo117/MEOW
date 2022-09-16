@@ -1,10 +1,10 @@
 <?php
-session_start();  
+// session_start(); 
 // 如果已經登入會員
-if (!empty($_SESSION['user'])) {
-    header('Location: ./');
-    exit;
-}
+// if (!empty($_SESSION['user'])) {
+//     header('Location: ./index_.php');
+//     exit;
+// }
 ?>
     <!-- header-md ----------------------------------->
     <header class="d-none d-md-block">
@@ -66,7 +66,7 @@ if (!empty($_SESSION['user'])) {
                         </svg>
                     </a>
                     <!-- 判斷登入狀態 -->
-                    <?php if(! empty($_SESSION['user'])): ?>
+                    <?php if(!empty($_SESSION['user'])): ?>
                         <a class="pl-3" href="member.php" >
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <rect width="32" height="32" fill="url(#pattern0-450640)"/>
@@ -173,11 +173,11 @@ if (!empty($_SESSION['user'])) {
                                 <form name="login_form" class="m-0 mb-3" method="post" onsubmit="checkFormSignin(); return false;">
                                     <div class="mb-2">
                                         <label for="account" class="form-label" required>信箱<span style="color:#963C38">*</span></label>
-                                        <input id="signinemail" name="signinemail" class="logininput-re noline" type="email" placeholder=" 請輸入信箱">
+                                        <input id="signin_email" name="signin_email" class="logininput-re noline" type="email" placeholder=" 請輸入信箱">
                                     </div>
                                     <div class="mb-2">
                                         <label for="account" class="form-label" required>密碼<span style="color:#963C38">*</span></label>
-                                        <input id="signinpassword" name="signinpassword" class="logininput-re noline" type="password" placeholder=" 請輸入密碼">
+                                        <input id="signin_password" name="signin_password" class="logininput-re noline" type="password" placeholder=" 請輸入密碼">
                                     </div>
                                     <div class="forget-re float-right">
                                         <a href="#">
@@ -187,6 +187,7 @@ if (!empty($_SESSION['user'])) {
                                             <circle cx="8" cy="12" r="1" fill="#432A0F"/>
                                             </svg>
                                             忘記密碼</a></div>
+                                    <div id="signin_msgContainer"></div>
                                     <div class="loginbutton-re"><input class="loginbtn-re" type="submit" value="登入"></div>
                                 </form>
                             </div>
@@ -194,19 +195,20 @@ if (!empty($_SESSION['user'])) {
 <!-- 註冊 ----------------------------------------------------------------------------------------->
                         <div id="tab02" class="tab-inner formcard-re formBx px-4">
                             <div class="form signup-form">
-                                <form name="register_form" onsubmit=" checkFormSignup(); return false;">
+                                <form name="register_form" method="post" onsubmit="checkFormSignup(); return false;">
                                     <div class="mb-2">
                                         <label for="account" class="form-label" required>信箱<span style="color:#963C38">*</span></label>
-                                        <input id="signupemail" name="signuemail" class="logininput-re noline" type="email" placeholder=" 請輸入信箱">
+                                        <input id="signup_email" name="signup_email" class="logininput-re noline" type="email" placeholder=" 請輸入信箱">
                                     </div>
                                     <div class="mb-2">
                                         <label for="account" class="form-label" required>密碼<span style="color:#963C38">*</span></label>
-                                        <input id="signuppassword" name="signupassword" class="logininput-re noline" type="password" placeholder=" 請輸入密碼">
+                                        <input id="signup_password" name="signup_password" class="logininput-re noline" type="password" placeholder=" 請輸入密碼">
                                     </div>
                                     <div class="">
                                         <label for="account" class="form-label" required>確認密碼<span style="color:#963C38">*</span></label>
-                                        <input id="signupagain" name="signupagain" class="logininput-re noline" type="password" placeholder=" 請再次輸入密碼">
+                                        <input id="signup_again" name="signup_again" class="logininput-re noline" type="password" placeholder=" 請再次輸入密碼">
                                     </div>
+                                    <div id="signup_msgContainer"></div>
                                     <div class="signupbutton-re"><input class="loginbtn-re" type="submit" value="註冊"></div>
                                 </form>
                             </div>
@@ -215,8 +217,6 @@ if (!empty($_SESSION['user'])) {
                 </div>
             </div>
         </div>
-
-
     <script>
         // nav
         let lastScroll = 0;
@@ -269,61 +269,86 @@ if (!empty($_SESSION['user'])) {
                 $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
             });
         });
+        // 欄位錯誤狀態
+        const msgc_signin = $('#signin_msgContainer');
+            function genAlert(msg1, type='danger'){
+                const a = $(`
+                <div class="alert alert-${type}" role="alert">
+                    ${msg1}
+                </div>
+                `);
+                msgc_signin.append(a);
+                setTimeout(()=>{
+                    $(window).click(function(){
+                        a.remove();
+                    })
+                }, 2000);
+            }
+        // 欄位錯誤狀態
+        const msgc_signup = $('#signup_msgContainer');
+            function genAlert2(msg2, type='danger'){
+                const a = $(`
+                <div class="alert alert-${type}" role="alert">
+                    ${msg2}
+                </div>
+                `);
+                msgc_signup.append(a);
+            }
+            $('#loginCard_re').click(function(){
+                $('.alert').remove();
+            })
         // 登入頁面欄位檢查
         function checkFormSignin() {
-            if (!$('#signinemail').val()) {
-                alert('請填寫帳號');
+            console.log('send');
+            if (!$('#signin_email').val()) {
+                genAlert('請填寫正確的帳號密碼');
                 return;
             }
-            if (!$('#signinpassword').val()) {
-                alert('請填寫密碼');
+            if (!$('#signin_password').val()) {
+                genAlert('請填寫正確的帳號密碼');
                 return;
             }
             $.post(
-                'login-api.php',
+                're-login-api.php',
                 $(document.login_form).serialize(),
                 function(data) {
+                    console.log('data',data);
                     if(data.success){
-                        location.href = './';
+                        location.href = './index_.php';
                     } else {
-                        alert(data.error);
+                        console.log(data);
+                        // genAlert(data.error);
                     }
                 },
                 'json'
             );
         }
-        //註冊頁面
+        //註冊頁面欄位檢查
         function checkFormSignup(){
             //TODO: 檢查欄位資料格式是不是符合
             let isPass = true; //預設表單的資料是沒問題的
-            // const name = document.form1.name.value;
-            const email = document.register_form.signuemail.value;
-            const password = document.register_form.signupassword.value;
-            const passwordagain = document.register_form.signupagain.value;
-            // if(name.length < 2){
-            //     genAlert('請填寫正確的姓名！');
-            //     isPass = false;
-            // }
-            if(! email){
-                genAlert('帳號或密碼錯誤 請重新輸入！');
-                isPass = false;
+            if (!$('#signup_email').val()) {
+                genAlert2('請填寫正確的帳號密碼');
+                return;
+            }else if (!$('#signup_password').val()) {
+                genAlert2('請填寫正確的帳號密碼');
+                return;
+            }else if (!$('#signup_again').val()) {
+                genAlert2('請填寫正確的帳號密碼');
+                return;
+            }else if ($('#signup_password').val() != $('#signup_again').val()){
+                genAlert2('資料不符請重新輸入！');
+                return;
             }
-            if(! email){
-                genAlert('資料不符 請重新輸入！');
-                isPass = false;
-            }
-            // if(name.length < 2){
-            //     genAlert('請填寫正確的姓名！');
-            //     isPass = false;
-            // }
             if(isPass){
                 $.post(
-                    'signup-api.php', 
+                    're-register-api.php', 
                     $(document.register_form).serialize(),
                     function(data){
                         console.log(data);
                         if(data.success){
-                            genAlert('新增成功', 'success');
+                            genAlert('註冊成功', 'success');
+                            location.href = './member.php';
                         }else{
                             genAlert(data.error);
                         }

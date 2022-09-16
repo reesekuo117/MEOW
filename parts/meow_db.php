@@ -1,4 +1,5 @@
 <?php
+session_start();  
 // $db_host = '192.168.33.78';
 // $db_user = 'meow';
 // $db_pass = 'meow';

@@ -1,7 +1,21 @@
-* {
+/* * {
   outline: 1px solid black;
+} */
+
+/* 手機滑動滾輪隱藏 */
+/* body::-webkit-scrollbar{
+  display: none;
+
+} */
+
+/* 文字顏色 */
+.cul-text100{
+  color: var(--color-text100);
 }
-/* kv-pc */
+.cul-text87{
+  color: var(--color-text87);
+}
+
 .temp_bg{
   /* border:1px solid red; */
   position: relative;
@@ -73,15 +87,14 @@ height: 164px;
  /* margin-top: -20px; */
 }
 .section1-content2_lb {
-  /* overflow: hidden; */
+  transition: .5s;
+
 }
 .section1-content_lb{
+  transition: .5s;
   margin-top: -20px;
- 
 }
-/* .section1-content2_lb{
-  margin-top: 10px;
-} */
+
 .right-pic_lb{
   width: 200px;
 }
@@ -111,6 +124,10 @@ height: 164px;
 }
 .cloud_left_lb{
     bottom: -20px;
+}
+.cloud_right_lb {
+  right: 0;
+  
 }
 .top-content_lb {
   /* padding-left: 200px; */
@@ -146,21 +163,22 @@ height: 164px;
   right: 80px;
   bottom: 300px;
 }
-/* 為什麼我的animation不會動！！！！！！ */
+
 .s1-circleBg{
   width: 300px;
   left: 500px;
   bottom: 150px;
-  animation: circle infinite ease-in-out;
-  /* transition: .5s; */
+  animation: circle 3s infinite ease-in-out;
+  transition: .5s;
+  filter: blur(4px);
 }
 
 @keyframes circle {
-  0%{
-    transform: translateX(-200px);
+  0%,100%{
+    transform: scale(1);
   }
-  100%{
-    transform: translateX(100px);
+  50%{
+    transform: scale(0.9);
   }
 }
 
@@ -168,14 +186,18 @@ height: 164px;
   width: 400px;
   right: -50px;
   top: 50px;
-
+  transition: .5s;
+  filter: blur(2px);
+  animation: circle2 3s infinite ease-in-out;
 }
 
-/* 雲怎麼不會動??? */
-.cloud_right_lb{
-  /* width: 300px; */
-  right: 0px;
-  bottom: 50px;
+@keyframes circle2 {
+  0%,100%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(0.9);
+  }
 }
 
 .section1-cat2_lb {
@@ -183,8 +205,6 @@ height: 164px;
   right: 300px;
   bottom:-20px;
 }
-
-
 
 
 /* 參拜流程 */
@@ -298,7 +318,6 @@ height: 164px;
   }
 }
 
-
 .s2-leftcloud_lb{
   width: 700px;
   left: -100px;
@@ -306,8 +325,10 @@ height: 164px;
 }
 .s2-rightcloud_lb{
   width: 600px;
-  right: -200px;
-  bottom: 1400px;
+  right: 0px;
+  bottom: 700px;
+  backdrop-filter: blur(2px);
+  filter: blur(3);
   animation: cloud-move 3s infinite ease-in-out;
 }
 
@@ -323,6 +344,7 @@ height: 164px;
   }
 }
 .s2-leftBg{
+  width: 800px;
   top: 1100px;
   left: 50px;
 
@@ -455,23 +477,27 @@ height: 164px;
  }
 
 
-
 /* 禁忌 */
 .section3_lb{
-  /* height: 100vh; */
   margin-top: 150px;
+  overflow: hidden;
 
 }
-.section3_lb>h1{
-color: var(--color-text100);
+
+.s3-leftcloud_lb{
+  width: 450px;
+  left: -3%;
+  top: 0;
+
+}
+.s3-rightcloud_lb{
+  width: 600px;
+  right: -8%;
+  bottom: 0;
+  /* border: 1px solid red; */
 }
 
-/* .ban-card>h4{
-  color: var(--color-text100);
-}
-.ban-card>p{
-  color:var(--color-text87);
-} */
+
 .ban-img-wrap{
   transition: 0.7s;
   z-index: 1;
@@ -526,7 +552,7 @@ color: var(--color-text100);
   margin: 0;
   padding: 0;
   text-align: center;
-  color: #414141;
+  color: var(--color-text87);
 }
 .ban-card .face_lb.face2_lb .ban-card-content h3 {
   margin: 0 0 10px 0;
@@ -537,20 +563,14 @@ color: var(--color-text100);
   color: var(--color-text100);
 } 
 
-
 .scroll-snap_lb{
         margin: 0 15px ;
         display:flex;
         overflow-x: auto;
         scroll-padding:0 50%;
-        scroll-snap-type: x mandatory;     
+        scroll-snap-type: x mandatory; 
+        scroll-snap-align: center;    
 }
-/* 問子瑜 */
-/* .media-manufacture-card1{
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-  display: inline-block;
-} */
 .mb-ban-img-wrap{
   width: 220px;
 }
@@ -568,6 +588,15 @@ color: var(--color-text100);
 }
 
 /* 還願 */
+.s4-bg-1_lb{
+  width: 300px;
+  left: 0;
+  opacity: .5;
+}
+.s3-rightbg{
+  right: 0;
+  bottom: 0;
+}
 .section4_lb{
   padding-top: 150px;
   margin: 70px auto 200px;
@@ -670,7 +699,6 @@ margin-top: -170px;
  padding-top: 40px;
   color: var(--color-text87);
 }
-
 
 .detail-info_lb span{
   display: inline-block;
@@ -947,14 +975,17 @@ border-radius: 8px 8px 0 0;
 }
 
 /* 月老喵推薦卡片 */
+.recommand_lb{
+  margin-top: 80px;
+}
 .otherp{
-  margin: 28px 0 120px;
+ padding: 28px 0;
 }
 .otherp h4{
   color: var(--color-text87);
 }
 .otherp .container{
-  background-color: var(--color-creamy-light);
+  /* background-color: var(--color-creamy-light); */
   padding-top: 24px;
 }
 .otherp a{

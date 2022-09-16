@@ -223,13 +223,47 @@ $('.horobtn').click(function () {
     }
 })
 
-// 沒按不能下一步
-if ($('.drawbtnToggle').length > 1) {
-    $('.btn_md_next').attr('disabled', false)
-} else if ($('.drawbtnToggle').length < 1) {
-    $('.btn_md_next').attr('disabled', true)
+// 貓掌
+$('.drawdraw').click(function () {
+    // console.log($(this).css('left'));
+    // const drawtoleft = $(this).css('left');
+    const drawtoleft = $(this).css('left');
+    $('.catPaw').css({
+        left: drawtoleft,
+        animation: 'catPaw 2.5s ease-in-out'
+    })
+    setTimeout(() => {
+        console.log($(this).css('transform'));
+        const drawtransform = $(this).css('transform')
+        console.log(this);
+        $(this).css({
+            transform: drawtransform,
+            animation:'drawUp 1.4s ease-in forwards'
+        })
+    }, 1125);
+    setTimeout(() => {
+        window.location.href = "draw19.html"
+    }, 3000);
+    // console.log($('.catPaw').offsetTop);
+})
 
-}
+// $('.drawdraw').click(function () {
+//     // console.log('paw');
+//     $('.catPaw').css('animation','catPaw 2.5s ease-in-out')
+// })
+
+// FIXME:
+// 沒按不能下一步
+$('.wantbtn').click(function () {
+    if ($('.drawbtnToggle').length >= 1) {
+        console.log('hi');
+        $('.btn_md_next').attr('disabled', false)
+    } else if ($('.drawbtnToggle').length < 1) {
+        console.log('no');
+        $('.btn_md_next').attr('disabled', true)
+    }
+})
+
 
 // clearAll 清除
 $('.clearAll_ba').click(function () {
@@ -247,33 +281,33 @@ let prevStat = ''; // '', 'left', 'right'
 let drawcounter = 0;
 // 搖動次數
 
-const handler = (e) => {
-    //let drawcounter = 0
-    // $('#info').html(e.offsetX) //游標在瀏覽器的 X軸
+// const handler = (e) => {
+//     //let drawcounter = 0
+//     // $('#info').html(e.offsetX) //游標在瀏覽器的 X軸
 
-    let currentStat; //當前狀態
-    if (e.offsetX > windowWidth) {
-        currentStat = 'right';
-        $('.drawImgWrap img').attr('src', '../imgs/draw/draw-r.png')
-        if (prevStat === 'left') {
-            drawcounter++;
-        }
-        prevStat = currentStat;
-    } else if (e.offsetX < windowWidth) {
-        currentStat = 'left';
-        $('.drawImgWrap img').attr('src', '../imgs/draw/draw-l.png')
-        if (prevStat === 'right') {
-            drawcounter++;
-        }
-        prevStat = currentStat;
-        // 讓前一狀態等於當前狀態
-    }
-    // console.log({drawcounter});
-    if (drawcounter > 10) {
-        // console.log('next');
-        window.location.href = "draw18.html"
-    }
-}
+//     let currentStat; //當前狀態
+//     if (e.offsetX > windowWidth) {
+//         currentStat = 'right';
+//         $('.drawImgWrap img').attr('src', '../imgs/draw/draw-r.png')
+//         if (prevStat === 'left') {
+//             drawcounter++;
+//         }
+//         prevStat = currentStat;
+//     } else if (e.offsetX < windowWidth) {
+//         currentStat = 'left';
+//         $('.drawImgWrap img').attr('src', '../imgs/draw/draw-l.png')
+//         if (prevStat === 'right') {
+//             drawcounter++;
+//         }
+//         prevStat = currentStat;
+//         // 讓前一狀態等於當前狀態
+//     }
+//     // console.log({drawcounter});
+//     if (drawcounter > 10) {
+//         // console.log('next');
+//         window.location.href = "draw18.html"
+//     }
+// }
 
 
 // $('body').click(function () {
@@ -289,16 +323,21 @@ window.addEventListener('mouseup', function(){
     window.removeEventListener('mousemove', handler);
 })
 */
+// FIXME: 籤筒會超過範圍
 let dragDiv = document.querySelector('.drag');
-let dragTitle = dragDiv.querySelector('.drag-title') || dragDiv;
+let dragTitle = document.querySelector('.drag-title') || dragDiv;
 let dropArea = document.querySelector('.drop-area');
-let area = {
-    left: dropArea.offsetLeft,
-    right: dropArea.offsetLeft + dropArea.offsetWidth - dragDiv.offsetWidth,
-    top: dropArea.offsetTop,
-    bottom: dropArea.offsetTop + dropArea.offsetHeight - dragDiv.offsetHeight,
-};
-area.middle = (area.left + area.right) / 2;
+// console.log(dropArea);
+// console.log(dropArea.offsetLeft);
+let area;
+if (dropArea) {
+    area = {
+        left: dropArea.offsetLeft,
+        right: dropArea.offsetLeft + dropArea.offsetWidth - dragDiv.offsetWidth,
+        top: dropArea.offsetTop,
+        bottom: dropArea.offsetTop + dropArea.offsetHeight - dragDiv.offsetHeight,
+    };
+    area.middle = (area.left + area.right) / 2;
 
 let startX = 0;
 let startY = 0;
@@ -318,15 +357,20 @@ function move(e) {
     //計算出拖曳物件最左上角座標
     x = e.clientX - startX;
     y = e.clientY - startY;
+    // console.log('x1: ', x);
     x = Math.max(Math.min(x, area.right), area.left);
     y = Math.max(Math.min(y, area.bottom), area.top);
+    // console.log('area.left: ', area.left);
+    // console.log('Math.min(x, area.right): ', Math.min(x, area.right));
+    // console.log('x2: ', x);
     dragDiv.style.left = x + 'px';
     dragDiv.style.top = y + 'px';
-    // console.log({x, y, area})
+    // console.log({x, y, area});
 
     let currentStat; //當前狀態
     if (x > area.middle) {
         currentStat = 'right';
+        // TODO: 做六張圖隨機
         $('.drawImgWrap img').attr('src', '../imgs/draw/draw-r.png')
         if (prevStat === 'left') {
             drawcounter++;
@@ -334,6 +378,7 @@ function move(e) {
         prevStat = currentStat;
     } else if (x <= area.middle) {
         currentStat = 'left';
+        // TODO: 做六張圖隨機
         $('.drawImgWrap img').attr('src', '../imgs/draw/draw-l.png')
         if (prevStat === 'right') {
             drawcounter++;
@@ -351,4 +396,6 @@ function move(e) {
 function stop() {
     document.removeEventListener('mousemove', move);
     document.removeEventListener('mouseup', stop)
+}
+
 }
