@@ -352,7 +352,6 @@ orderaddress3_yu.on("blur", function () {
   }
 });
 
-
 orderaddress3_yu.on("focus", function () {
   // console.log("this.value", this.value);
   // console.log("this.value", !this.value);
@@ -364,8 +363,7 @@ orderaddress3_yu.on("focus", function () {
   }
 });
 
-
-//email 
+//email
 
 //emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
 // ^\w+：@ 之前必須以一個以上的文字&數字開頭，例如 abc
@@ -417,11 +415,16 @@ email_yu.on("blur", function () {
   const field = $(this).closest(".field"); //定義field
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
-  if (!/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g.test(this.value) || !this.value) {
+  if (
+    !/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g.test(
+      this.value
+    ) ||
+    !this.value
+  ) {
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
 
-    $( email_yu).css({
+    $(email_yu).css({
       outline: "2px solid #963C38",
       border: "0px solid transparent",
     });
@@ -429,7 +432,7 @@ email_yu.on("blur", function () {
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
 
-    $( email_yu).css({
+    $(email_yu).css({
       outline: "2px solid #e5a62a",
       border: "0px solid transparent",
     });
@@ -440,7 +443,7 @@ email_yu.on("focus", function () {
   // console.log("this.value", this.value);
   // console.log("this.value", !this.value);
   if (!this.value) {
-    $( email_yu).css({
+    $(email_yu).css({
       outline: "2px solid #e5a62a",
       border: "0px solid transparent",
     });
@@ -663,32 +666,26 @@ $("#btnAutoInput-yu").click(function () {
 
 const rdbtn_yu = $("#rdbtn-yu");
 
-$(rdbtn_yu).click(function(){
-  console.log("123");
-  // $(rdbtn_yu).toggleClass("familyinputFocus-yu");
-})
-
-
 $(rdbtn_yu).click(function () {
   if ($(".familyinput-yu").css("height", "0px")) {
     $(".familyinput-yu").css("height", "60px");
-    $(rdbtn_yu).addClass(".focus_ba");
     $(rdbtn_yu).toggleClass("familyinputFocus-yu");
-    console.log("baj");
+    $(".tohomebtn").removeClass("familyinputFocus-yu");
   } else {
     $(".familyinput-yu").css("height", "0px");
-    $(rdbtn_yu).removeClass(".focus_ba");
-    $(rdbtn_yu).removeClass("familyinputFocus-yu");
+    $(rdbtn_yu).toggleClass("familyinputFocus-yu");
+    $(".tohomebtn").toggleClass("familyinputFocus-yu");
   }
 });
 
 $(".tohomebtn").click(function () {
   if ($(".familyinput-yu").css("height", "60px")) {
     $(".familyinput-yu").css("height", "0px");
-    $(".tohomebtn").addClass(".focus_ba");
+    $(rdbtn_yu).toggleClass("familyinputFocus-yu");
+    $(".tohomebtn").toggleClass("familyinputFocus-yu");
   } else {
-    $(rdbtn_yu).removeClass(".focus_ba");
-    $(rdbtn_yu).removeClass("familyinputFocus-yu");
+    $(rdbtn_yu).toggleClass("familyinputFocus-yu");
+    $(".tohomebtn").toggleClass("familyinputFocus-yu");
   }
 });
 
