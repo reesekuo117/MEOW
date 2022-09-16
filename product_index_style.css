@@ -319,6 +319,13 @@ button {
 .product_card .card {
     border-radius: 8px;
 }
+.card_under small{
+    
+}
+.icon_star{
+    color: #E5A62A;
+    padding-right: 4px;
+}
 /* ----------------------桌機卡片輪播結束--------------------- */
 .otherp{
     margin: 28px 0 120px;
