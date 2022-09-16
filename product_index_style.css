@@ -319,16 +319,19 @@ button {
 .product_card .card {
     border-radius: 8px;
 }
-.card_under small{
-    
+.card_under small .icon_fire{
+    margin-right: 4px;
 }
 .icon_star{
     color: #E5A62A;
     padding-right: 4px;
 }
+.icon_fire{
+    color: var(--color-orange);
+}
 /* ----------------------桌機卡片輪播結束--------------------- */
 .otherp{
-    margin: 28px 0 120px;
+    margin: 28px 0 0 0;
 }
 .otherp h4{
     color: var(--color-text87);
