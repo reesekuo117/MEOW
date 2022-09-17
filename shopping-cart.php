@@ -282,15 +282,15 @@ $pageName =''; //頁面名稱
                         <span id="total-price" ></span>
                         元
                 </div>
-                <div>
+                <!-- <div> -->
                     <!-- 如果使用者還未登入 -->
-                    < ?php if(empty($_SESSION["user"])) : ? >  
+                    <!-- < ?php if(empty($_SESSION["user"])) : ? >   -->
                         <!-- 跳出提示框提醒用戶先登入會員 -->
-                        <div class="alert alert-danger" role="alert">
+                        <!-- <div class="alert alert-danger" role="alert">
                             請先登入會員，再結帳
-                        </div>
+                        </div> -->
                     <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
-                </div>
+                <!-- </div> -->
                 <div class=" d-md-flex justify-content-md-end">
                     <!-- a href="#buy1.php" -->
                     <a href="shopping-cart-productdetails-index.html" class="btn unique-nextbutton-yu">
@@ -386,15 +386,7 @@ $pageName =''; //頁面名稱
                     <span id="total-price" ></span>
                     元
             </div>
-            <div>
-                <!-- 如果使用者還未登入 -->
-                < ?php if(empty($_SESSION["user"])) : ? >  
-                    <!-- 跳出提示框提醒用戶先登入會員 -->
-                    <div class="alert alert-danger" role="alert">
-                        請先登入會員，再結帳
-                    </div>
-                <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
-            </div>
+            
             <div class=" d-md-flex justify-content-md-end">
                 <a href="shopping-cart-travellist-index.html" class="btn unique-nextbutton-yu">
                     <button class=" unique-btn-yu  me-md-2" type="button">
@@ -416,8 +408,6 @@ $pageName =''; //頁面名稱
             <img src="/imgs/icon/返回32x32.png" alt="">
         </div>
         <!-- 手機獨家商品 旅遊行程分頁標籤 -->
-        <!-- href="#uniqui-yu" data-toggle="tab" -->
-        <!-- href="#travel-yu" data-toggle="tab" role="button -->
         <div  class=" mdpagination-yu btn-group myTab nav nav-tabs" >
             <a href="#mduniqui-yu" data-toggle="tab" class="px-0 m-auto btn active"  role="button">獨家商品</a>
             <a href="#mdtravel-yu" data-toggle="tab" class=" px-0 m-auto btn"  role="button">旅遊行程</a>
@@ -612,20 +602,6 @@ $pageName =''; //頁面名稱
         }
         });
     });
-
-        // function CheckAll() {
-        // var ck = document.form.elements["c1[]"]; 
-        // var ckAll = document.form.allbox; 
-        // if (!ck) { //當沒有checkbox時 
-        // ckAll.checked = false; 
-        //  } else if (!ck.length) { //當只有一個checkbox時 
-        // ck.checked = ckAll.checked; 
-        //   } else { //當有兩個以上的checkbox時 
-        // for (var i=0;i<ck.length;i++) 
-        // ck[i].checked = ckAll.checked; 
-        // }
-        // }
-
         //獨家商品清單全選 
         document.getElementById('select-all-1-yu').onclick = function() {
         var checkboxes = document.getElementsByName('vehicle-1-yu');
@@ -641,13 +617,6 @@ $pageName =''; //頁面名稱
         checkbox.checked = this.checked;
         }
     }
-
-
-
-
-    // $(function () {
-    //         $('#myTab li:eq(1) a').tab('show');
-    //     });
 
 
     </script>

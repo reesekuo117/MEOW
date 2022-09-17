@@ -608,7 +608,7 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="test" onkeyup="value=value.replace(/[\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))"maxlength="50" required/>
+                            <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="test"  required/>
                             <i class="right fa-regular fa-circle-check"></i>
                             <i class="wrong fa-solid fa-triangle-exclamation">
                                 <small>請輸入正確姓名</small>
@@ -620,10 +620,10 @@
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="test" maxlength="10" onkeyup="value=value.replace(/[^\d]/g,'')" required/>
+                            <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="test" required/>
                             <i class="right fa-regular fa-circle-check"></i>
                             <i class="wrong fa-solid fa-triangle-exclamation">
-                                <small>請輸入正確連絡電話</small>
+                                <small>請輸入正確姓名</small>
                             </i>
                         </div>
                         <div class="receiver-deliver-yu p-3">
@@ -672,7 +672,7 @@
                             <input class="receiveremail-yu" type="email " id="useremail-yu" name="test" />
                             <i class="right fa-regular fa-circle-check"></i>
                             <i class="wrong fa-solid fa-triangle-exclamation">
-                                <small>請輸入正確連絡電話</small>
+                                <small>請輸入正確姓名</small>
                             </i>
                         </div>
                         <div class="field2 receiver-address-yu p-3">
@@ -771,6 +771,7 @@
                                     <div class=" usercreditcardinput-yu">
                                         <label class="pt-1 m-0"  for="">
                                             信用卡卡號
+                                            <span style="color: #963c38">*</span>
                                         </label>
                                         <br>
                                         <div class="  d-flex justify-content-start align-items-start"> 
@@ -792,6 +793,7 @@
                                     <div class="usercreditcardinput-yu  mt-3">
                                         <label class=" m-0"  for="" > 
                                             有效 / 月年
+                                            <span style="color: #963c38">*</span>
                                         </label>
                                         <br>
                                         <div class=" d-flex justify-content-start align-items-start "> 
@@ -806,6 +808,7 @@
                                     <div class="usercreditcardinput-yu  mt-3">
                                         <label class="m-0"  for="">
                                             背面末三碼
+                                            <span style="color: #963c38">*</span>
                                         </label>
                                         <br>
                                         <div class=" d-flex justify-content-start align-items-start "> 

@@ -1,6 +1,6 @@
-*{
+/* *{
     border: 1px solid #000;
-}
+} */
 .line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
@@ -108,7 +108,17 @@
     margin: auto 0;
 }  
 
+/* -------#input狀態----------- */
 
+.fa-regular {
+    visibility: hidden;
+    color: #e5a62a;
+  }
+  .fa-solid {
+    visibility: hidden;
+    color: #963c38;
+  }
+  
 
 /* ---------桌機表單的寬度------(每一個表單都要用) */
 #myTabContent-yu {
@@ -468,170 +478,123 @@
 
 
 
-/* 桌機信用卡樣式 */
-.gridContainer {
-    height: 17rem;
-    display: flex;
-}
-
-.viacreditCard {
-    grid-area: card;
-    width: 260px;
-    height: 161px;
-    color: rgb(255, 255, 255);
-  /* background: linear-gradient(to right, #fab937 60%, #e9a00e 90%); */
-    background: linear-gradient(135deg , #4484dd 40%, #063069 90%);
-    box-shadow:  6px 6px 0 #432A0F;
-    margin: 28px;
+/* -----------信用卡----------- */
+.visacard-yu {
+    height: 275px;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .usercreditcardinput-yu input {
     border-radius: 8px;
-    justify-self: right;
-    align-self: start;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template: repeat(4, 1fr)/19px repeat(4, 1fr) 19px;
-    grid-template-areas: ". . . visa visa ."
-    ". chip . visa visa . "
-    ". no no no no ."
-    ". name name name year .";
-}
-
-.viacreditCard .creditCatd > * {
-    overflow: hidden;
-}
-
-.viacreditCard .visaLogo {
-    grid-area: visa;
-    overflow: hidden;
-    justify-self: right;
-}
-
-.viacreditCard .visaLogo svg {
-    height: 42px;
-}
-
-.viacreditCard .chipLogo {
-    grid-area: chip;
-    overflow: hidden;
-    width: 38px;
+    border: 2px solid #432a0f;
+    height: 48px;
+    width: 75px;
+  }
+  .creditcardnumber-yu {
+    position: absolute;
+    top: 160px;
+    left: 25px;
+  }
+  .creditcardnumber-yu input {
+    border: 0;
+    width: 60px;
+    height: 40px;
+    margin-left: 8px;
+    background-color: #e5a72a00;
+  }
+  .creditcarddate-yu {
+    position: absolute;
+    top: 220px;
+    left: 34px;
+  }
+  .creditcarddate-yu input {
+    width: 30px;
     height: 30px;
-    justify-self: left;
-    margin-top: 10px;
-}
-
-.viacreditCard ul {
-  grid-area: no;
-}
-
-.viacreditCard ul li {
-  display: inline-block;
-  font-size: 18px;
-  letter-spacing: 2px;
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  text-shadow: 0px 0px 2pxrgba(67, 42, 15, 0.341);
-  word-spacing: 3.7px;
-}
-
-.viacreditCard .viacreditCardnameyu {
-  grid-area: name;
-  justify-self: left;
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: 12.8px;
-  font-weight: lighter;
-  letter-spacing: 1.3px;
-  padding-bottom: 5px;
-  font-weight: 300;
-  text-shadow: 0px 0px 2px rgba(67, 42, 15, 0.341);
-}
-
-.viacreditCard .viacreditCardyearyu {
-  grid-area: year;
-  justify-self: right;
-  font-size: 14px;
-  font-weight: lighter;
-  font-family: "Roboto Condensed", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2.4px;
-  padding-bottom: 5px;
-  text-shadow: 0px 0px 2px rgba(67, 42, 15, 0.341);
-}
-
-form {
-  margin: 0;
-  padding: 0;
-  grid-area: form;
-  overflow: visible;
-  width: 200px;
-  display: grid;
-  grid-template-areas: ". ."
- "fheading fheading"
- "fname fname"
- "fcno fcno"
- "fyear fcvv"
- "btn btn"
- ". .";
-}
-
-form input {
-  position: relative;
-  margin-top: -12px;
-  border: 0;
-  border-bottom: 1px solid rgba(67, 42, 15, 0.486);
-  height: 40px;
-  padding: 12px 0 0 0;
-  font-size: 16px;
-  background: none;
-  width: 100%;
-  outline: none;
-  color:#432A0F;
-}
-
-
-/* form input:focus + h6 {
-  color: red;
-} */
-
-h6 {
-  grid-area: fheading;
-  font-size: 20px;
-}
-
-.inputCon {
-  min-width: 0;
-  min-height: 0;
-  position: relative;
-  color:#432A0F;
-}
-
-.inputCon:after {
-  position: absolute;
-  content: attr(data-top);
-  top: -14px;
-  left: 0;
-  height: 10px;
-  font-size: 12px;
-  letter-spacing: .5px;
-}
-
-#paymentFormname {
-  grid-area: fname;
-}
-
-#paymentFormcardNum {
-  grid-area: fcno;
-}
-
-#paymentFormvalidYear {
-  grid-area: fyear;
-  margin-right: 13px;
-}
-
-#paymentFormcvv {
-  grid-area: fcvv;
-  margin-left: 13px;
-}
+    margin-left: px;
+    background-color: #e5a62a;
+    border: 0;
+  }
+  /* ----------信用卡背面------- */
+  .creditcardcvc-yu {
+    /* border: 1px solid #000; */
+    /* position: absolute; */
+    position: relative;
+    /* top: 462px; */
+    top: -158px;
+    left: 360px;
+  }
+  .creditcardcvc-yu input {
+    border: 0;
+    width: 40px;
+    height: 30px;
+    background-color: #e5a72a00;
+  }
+  .creditcard-style-yu {
+    width: 450px;
+    height: 290px;
+    overflow: hidden;
+    /* border: 1px solid #000; */
+  }
+  .creditcard-yu {
+    width: 450px;
+    height: 290px;
+    position: relative;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    transition: 3s;
+    transform-origin: center;
+  }
+  /* .grid-central-yu{
+      display: grid;
+      place-items: canter;
+  } */
+  .frontcredidcard-yu {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform-origin: center;
+  }
+  
+  .backcreadidcard-yu {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transform-origin: center;
+  }
+  .creditcard-yu:hover {
+    animation: mouseenter-yu 2s cubic-bezier(0.37, -0.37, 0.64, 1.34) forwards;
+    animation: mouseleave-yu 2s cubic-bezier(0.37, -0.37, 0.64, 1.34) forwards;
+    transform-origin: center;
+  }
+  @keyframes mouseenter-yu {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(180deg);
+    }
+  }
+  @keyframes mouseleave-yu {
+    0% {
+      transform: rotateY(180deg);
+    }
+    50% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
 
 
 /*------------ 桌機前往付款按鈕 -------------*/

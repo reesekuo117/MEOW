@@ -332,6 +332,15 @@
     box-shadow: 4px 4px #432A0F;
 }
 
+/* -------------單價------------- */
+#onepriceYu input{
+    text-align: center;
+    width: 55px;
+    height: 30px;
+    color:#432A0F;
+    border: none;
+    background-color: #fff;
+}
 /* -------------數量增加按鈕------------- */
 #myform input.qtyminus {
     width: 30px;
@@ -341,6 +350,7 @@
     border: none;
     background-color: rgba(67, 42, 15, 0.38);
 }
+
 #myform input.qtyplus {
     width: 30px;
     height: 30px;
@@ -436,6 +446,24 @@
 .price-uniqui-yu{
     color: var(--color-red);
 }
+#totalPriceYu h6::before{
+    content:"NT$";
+}
+#totalPriceYu input{
+    background-color: #fff;
+    outline: none;
+    border: 1px solid #000;
+    width: 80px;
+    text-align: center;
+}
+.freightprice-yu h6::before{
+    content: "NT$";
+}
 
+.price-uniqui-yu h6::before{
+    content: "NT$";
+}
 
-
+#minus-yu .disabled{
+    background-color: var(--color-text38);
+}

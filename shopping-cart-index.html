@@ -201,11 +201,11 @@
             <div class="tab-pane in active " id="uniqui-yu" >
                 <div class=" px-0 col-auto justify-content-around text-center">
                     <div id="form-yu">
-                        <table class="table ">
+                        <table id="#tabYu" class="table ">
                             <thead class=" thead" >
                                 <tr class=" checkall-yu" >
                                     <th scope="col" class="m-auto checkbox-yu ">
-                                            <input class="mx-1" type="checkbox" id="select-all-1-yu"aria-label="Checkbox for following text input">
+                                            <input name="ckbox" class="mx-1" type="checkbox" id="check1AllYu"aria-label="Checkbox for following text input">
                                             <label class="mb-0  ">
                                                 <h6 class="mb-0 ">全選</h6>
                                             </label>
@@ -238,7 +238,7 @@
                                 <tr class="">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu">
-                                            <input class=" mx-2" type="checkbox" name="vehicle-1-yu" aria-label="Checkbox for following text input">
+                                            <input id="checkboxInputYu" class=" mx-2" type="checkbox" name="oneCheck1Yu" aria-label="Checkbox for following text input" checked>
                                         </div>
                                     </th>
                                     <!-- 商品照片 -->
@@ -266,92 +266,36 @@
                                         </div>
                                     </td>
                                     <!-- 單價 -->
-                                    <td class="price-yu" >
-                                            <p>
-                                                707
-                                            </p>
+                                    <td id="onepriceYu" class="price-yu h6" >
+                                        <input class="onePriceinputYu" nams="priceYu"  value='707' disabled>
                                     </td>
                                     <!-- 數量 -->
-                                    <td>
+                                    <td class="">
                                         <form id='myform' method='POST' action='#'>
-                                            <label for=""> </label>
-                                            <input type='button' value='-' class='qtyminus' field='quantity' />
-                                            <input type='text' name='quantity' value='0' class='qty-yu' />
-                                            <input type='button' value='+' class='qtyplus' field='quantity' />
+
+                                            <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
+
+                                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 qty-yu numberTotalYu'>
+                                                1
+                                            </span>
+                                            
+                                            <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
                                         </form>
                                     </td>
                                     <!-- 小計 -->
-                                    <td class="prive-yu">
-                                        707
+                                    <td name="tpriceYu" id="totalprice_yu" class="total_price_yu h6 p-2">
+                                        
                                     </td>
                                     <!-- 刪除 -->
                                     <th scope="col" class="form-delete-yu">
-                                        <i class="fa-solid fa-trash-can"></i>
+                                        <i onclick="javascript:return del();"  id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
                                     </th>
                                 </tr>
-                                <tr>
-                                    <th scope=" col">
-                                        <div class="row m-auto p-1 checkbox-yu">
-                                            <input class=" mx-2" type="checkbox" name="vehicle-1-yu" aria-label="Checkbox for following text input">
-                                        </div>
-                                    </th>
-                                    <!-- 商品照片 -->
-                                    <td>
-                                        <img src="imgs/購物車-商品(測試用).png" alt="">
-                                    </td>
-                                    <!-- 商品名稱 -->
-                                    <td>
-                                        <h6 class="m-0">
-                                            台北霞海城隍廟獨家聯名
-                                            <br>
-                                            -七夕月老供品組-甜作之盒
-                                        </h6>
-                                    </td>
-                                    <!-- 商品規格 -->
-                                    <td>
-                                        <!-- <div class="btn-group">
-                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Small button
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                ...
-                                            </ul>
-                                        </div> -->
-                                        <div class="">
-                                            <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
-                                            <select class="form-select-yu" id="autosizing-yu"  >
-                                                <option value="0">甜作之盒單入組</option>
-                                                <option value="1">甜作之盒&棉布御守單入組</option>
-                                                <option value="2">棉布御守</option>
-                                        </select>
-                                        </div>
-                                    </td>
-                                    <!-- 單價 -->
-                                    <td class="price-yu">
-                                        707
-                                    </td>
-                                    <!-- 數量 -->
-                                    <td>
-                                        <form id='myform' method='POST' action='#'>
-                                            <label for=""> </label>
-                                            <input type='button' value='-' class='qtyminus' field='quantity' />
-                                            <input type='text' name='quantity' value='0' class='qty-yu' />
-                                            <input type='button' value='+' class='qtyplus' field='quantity' />
-                                        </form>
-                                    </td>
-                                    <!-- 小計 -->
-                                    <td  class="price-yu">
-                                        707
-                                    </td>
-                                    <!-- 刪除 -->
-                                    <th scope="col" class="form-delete-yu">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </th>
-                                </tr>
-                                <tr>
+                                <!-- ---------------------------------------- -->
+                                <tr class="">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu">
-                                            <input class=" mx-2" type="checkbox" name="vehicle-1-yu" aria-label="Checkbox for following text input">
+                                            <input id="checkboxInputYu" class=" mx-2" type="checkbox" name="oneCheck1Yu" aria-label="Checkbox for following text input" checked>
                                         </div>
                                     </th>
                                     <!-- 商品照片 -->
@@ -368,43 +312,40 @@
                                     </td>
                                     <!-- 商品規格 -->
                                     <td>
-                                        <!-- <div class="btn-group">
-                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Small button
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                ...
-                                            </ul>
-                                        </div> -->
                                         <div class="">
-                                            <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
+                                            <!-- <td><?= $v["uniquiname"] ?></td>
+                                            <td class="price" data-val="<?= $v["price"] ?>"></td> -->
                                             <select class="form-select-yu" id="autosizing-yu"  >
-                                                <option value="0">甜作之盒單入組</option>
-                                                <option value="1">甜作之盒&棉布御守單入組</option>
-                                                <option value="2">棉布御守</option>
-                                        </select>
+                                                    <option value="0">甜作之盒單入組</option>
+                                                    <option value="1">甜作之盒&棉布御守單入組</option>
+                                                    <option value="2">棉布御守</option>
+                                            </select>
                                         </div>
                                     </td>
                                     <!-- 單價 -->
-                                    <td  class="price-yu">
-                                        707
+                                    <td id="onepriceYu" class="price-yu h6" >
+                                        <input class="onePriceinputYu" nams="priceYu"  value='707' disabled>
                                     </td>
                                     <!-- 數量 -->
-                                    <td>
+                                    <td class="">
                                         <form id='myform' method='POST' action='#'>
-                                            <label for=""> </label>
-                                            <input type='button' value='-' class='qtyminus' field='quantity' />
-                                            <input type='text' name='quantity' value='0' class='qty-yu' />
-                                            <input type='button' value='+' class='qtyplus' field='quantity' />
+
+                                            <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
+
+                                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 qty-yu numberTotalYu'>
+                                                1
+                                            </span>
+                                            
+                                            <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
                                         </form>
                                     </td>
                                     <!-- 小計 -->
-                                    <td class="price-yu">
-                                        707
+                                    <td name="tpriceYu" id="totalprice_yu" class="total_price_yu h6 p-2">
+                                        
                                     </td>
                                     <!-- 刪除 -->
                                     <th scope="col" class="form-delete-yu">
-                                        <i class="fa-solid fa-trash-can"></i>
+                                        <i onclick="javascript:return del();"  id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
                                     </th>
                                 </tr>
                             </tbody>
@@ -412,11 +353,20 @@
                     </div>
                 </div>
                 <div class="h6 alert alert-succes totalprice-uniqui-yu "  role="alert">
-                        <span >訂單金額:  <span  class="price-yu"></span> 1000</span>
-                        <span>運費金額:  <span  class="price-yu"></span>60</span>
-                        <span id="total-price-yu" class="price-uniqui-yu">總金額: </span>
-                        <span id="total-price" ></span>
-                        元
+                        <span class="d-flex " name="TotalPriceYu" id="totalPriceYu">
+                            訂單金額: 
+                            <h6   class="price-yu">
+                                <span id="TotalpriceYu"  type="text" ></span>
+                            </h6>
+                        </span>
+                        <span  class="freightprice-yu d-flex">
+                            運費金額:
+                            <h6>60</h6>
+                        </span>
+                        <span id="total-amount" class=" d-flex  price-uniqui-yu">
+                            總金額: 
+                            <h6></h6> 
+                        </span>
                 </div>
                 <div>
                     <!-- 如果使用者還未登入 -->
@@ -446,7 +396,7 @@
                             <thead class="thead" >
                                 <tr>
                                     <th scope="col" class="m-auto checkbox-yu">
-                                        <input id="select-all-2-yu" class="mx-1 " type="checkbox" aria-label="Checkbox for following text input">
+                                        <input  id="check2AllYu" class="mx-1 " type="checkbox" aria-label="Checkbox for following text input">
                                             <label class="mb-0" for="">
                                                 <h6 class="mb-0 ">
                                                     全選
@@ -477,7 +427,7 @@
                                 <tr class="">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu ">
-                                            <input class=" mx-2 " type="checkbox" name="vehicle-2-yu" aria-label="Checkbox for following text input">
+                                            <input class=" mx-2 " type="checkbox" name="oneCheck2Yu" aria-label="Checkbox for following text input">
                                         </div>
                                     </th>
                                     <!-- 行程照片 -->
@@ -498,9 +448,9 @@
                                     <td>
                                         <form id='myform' method='POST' action='#'>
                                             <label for=""> </label>
-                                            <input type='button' value='-' class='qtyminus' field='quantity' />
+                                            <input name="minusplusname" type='button' value='-' class='qtyminus' field='quantity' />
                                             <input type='text' name='quantity' value='0' class='qty-yu' />
-                                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                                            <input name="minusplusname" type='button' value='+' class='qtyplus' field='quantity' />
                                         </form>
                                     </td>
                                     <!-- 小計 -->
@@ -509,7 +459,7 @@
                                     </td>
                                     <!-- 刪除 -->
                                     <th scope="col" class="form-delete-yu">
-                                        <i class="fa-solid fa-trash-can"></i>
+                                        <i  class=" fa-solid fa-trash-can"></i>
                                     </th>
                                 </tr>
                             </tbody>
@@ -518,7 +468,7 @@
                 </div>
                 <div class="h6 alert alert-succes totalprice-uniqui-yu "  role="alert">
                     <span >訂單金額:  NT$1500</span>
-                    <span id="total-price-yu" class="price-uniqui-yu">總金額: </span>
+                    <span id="total-amount" class="price-uniqui-yu">總金額: </span>
                     <span id="total-price" ></span>
                     元
             </div>
@@ -708,24 +658,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- footer-md ----------------------------------->
     <footer class="footer-md d-none d-md-block ">
         <div class="text-white text-center py-1">
@@ -767,120 +699,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script>
-        // nav
-        let lastScroll = 0;
-        $(window).scroll(function(){
-        let scrollNow =  $(window).scrollTop();
-        //console.log('lastScroll:', lastScroll);
-        //console.log('scrollNow', scrollNow);
-        if(scrollNow > lastScroll){
-        $('header').addClass('hidden')
-        }
-        else{
-        $('header').removeClass('hidden')
-        }
-        lastScroll = scrollNow;
-        })
-        //漢堡
-        $('#menuToggle input').click(function(){
-            $('#menu').css('transform','translate(0%, 0)')
-            //  console.log($('#menu').css('transform'))
-            if($('#menu').css('transform') == ('matrix(1, 0, 0, 1, 0, 0)')) {
-            //console.log('hi');
-            $('#menu').css('transform','translate(-500%, 0)')
-            }
-        })
-        $('#menu a').click(function(){
-            $('#menu').css('transform','translate(-1000%, 0)');
-            // console.log('HEREEEEEEE', $('#menuToggle input').prop('checked'));
-            $('#menuToggle input').prop('checked',false)
-        })
-        //TOP
-        $('.back-button').click(function(){
-            $('html, body').animate({scrollTop:0},10)
-        })
-    </script>
+    <script src="shopping-cart-index.js"></script>
 
-
-    <script>
-    //數量增加按鈕
-    $(function() {
-    // This button will increment the value
-    $('.qtyplus').click(function(e) {
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    fieldName = $(this).attr('field');
-    // Get its current value
-    var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-    // If is not undefined
-    if (!isNaN(currentVal)) {
-      // Increment
-        $('input[name=' + fieldName + ']').val(currentVal + 1);
-    } else {
-      // Otherwise put a 0 there
-        $('input[name=' + fieldName + ']').val(0);
-    }
-    });
-
-    // This button will decrement the value till 0
-        $(".qtyminus").click(function(e) {
-        // Stop acting like a button
-        e.preventDefault();
-        // Get the field name
-        fieldName = $(this).attr('field');
-        // Get its current value
-        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-        // If it isn't undefined or its greater than 0
-        if (!isNaN(currentVal) && currentVal > 0) {
-        // Decrement one
-            $('input[name=' + fieldName + ']').val(currentVal - 1);
-        } else {
-        // Otherwise put a 0 there
-            $('input[name=' + fieldName + ']').val(0);
-        }
-        });
-    });
-
-        // function CheckAll() {
-        // var ck = document.form.elements["c1[]"]; 
-        // var ckAll = document.form.allbox; 
-        // if (!ck) { //當沒有checkbox時 
-        // ckAll.checked = false; 
-        //  } else if (!ck.length) { //當只有一個checkbox時 
-        // ck.checked = ckAll.checked; 
-        //   } else { //當有兩個以上的checkbox時 
-        // for (var i=0;i<ck.length;i++) 
-        // ck[i].checked = ckAll.checked; 
-        // }
-        // }
-
-        //獨家商品清單全選 
-        document.getElementById('select-all-1-yu').onclick = function() {
-        var checkboxes = document.getElementsByName('vehicle-1-yu');
-        for (var checkbox of checkboxes) {
-        checkbox.checked = this.checked;
-        }
-    }
-
-        //旅遊行程清單全選 
-        document.getElementById('select-all-2-yu').onclick = function() {
-        var checkboxes = document.getElementsByName('vehicle-2-yu');
-        for (var checkbox of checkboxes) {
-        checkbox.checked = this.checked;
-        }
-    }
-
-
-
-
-    // $(function () {
-    //         $('#myTab li:eq(1) a').tab('show');
-    //     });
-
-
-    </script>
-    
 </body>
 </html>
