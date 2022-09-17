@@ -202,8 +202,8 @@ p {
 
 /* 登入 註冊列表樣式 --------------------------------*/
 .btntitle-re {
-    /* box-shadow:none; */
-    /* outline-style: none; */
+    box-shadow:none;
+    outline-style: none;
     /* width: 165px; */
     /* height: 41px; */
     background-color: #F5DFC2;
