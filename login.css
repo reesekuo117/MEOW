@@ -39,8 +39,8 @@
 
 /* 登入 註冊列表樣式 --------------------------------*/
 .btntitle-re {
-    /* box-shadow:none; */
-    /* outline-style: none; */
+    box-shadow:none;
+    outline-style: none;
     /* width: 165px; */
     /* height: 41px; */
     background-color: #F5DFC2;
@@ -54,7 +54,7 @@
     list-style: none;
 }
 .btntitle-re a {
-    /* list-style: none; */
+    list-style: none;
     font-size: 20px;
     color: #432A0F;
 }
@@ -91,9 +91,9 @@
 }
 /* --------------------------------------------- */
 .logininput-re {
-    /* border: none; */
+    border: none;
     box-shadow: none;
-    /* outline-style: none; */
+    outline-style: none;
     border: 2px solid var(--color-brown-dark);
     border-radius: 8px;
     /* width: 330px; */
@@ -139,7 +139,7 @@
 .loginmodal-re {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
