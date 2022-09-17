@@ -25,4 +25,4 @@ if (!isset($title)) {
 
 </head>
 
-<body>
+<body class="body_ba">

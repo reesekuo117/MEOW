@@ -95,7 +95,7 @@
     </div>
 </header>
 <!-- header-xs ----------------------------------->
-<header class="header-xs d-md-none">
+<header class="header-xs d-md-none header-xs_ba">
     <div class="container-fluid">
         <!-- hamberger -->
         <div class="row justify-content-between">

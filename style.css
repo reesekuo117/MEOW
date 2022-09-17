@@ -85,7 +85,7 @@ header .navbar {
 
 /* header-xs  */
 .header-xs {
-    background-color: var(--color-orange);
+    /* background-color: var(--color-orange); */
     height: 72px;
     padding: 0 20px;
     z-index: 999;

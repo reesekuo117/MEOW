@@ -3,7 +3,7 @@
 }
 
 header .navbar_ba {
-    background-color: transparent;
+    background-color: transparent !important;
     width: 100%;
     height: 100px;
     padding: 0 80px;
@@ -22,6 +22,13 @@ header .navbar_ba {
         url(./imgs/index/grain2.png)center -500px / 160% no-repeat,
         url(./imgs/index/bg0.png) center center / 100%, var(--color-orange);
     /* background-color: var(--color-orange); */
+}
+
+.header-xs_ba {
+    background-color: transparent !important;
+    height: 72px;
+    padding: 0 20px;
+    z-index: 999;
 }
 
 .bg1_ba {
@@ -133,32 +140,6 @@ header .navbar_ba {
     transform: scale(0.8);
 }
 
-/* .js-type-writer {
-    color: var(--color-text100);
-    text-align: center;
-}
-
-.js-type-writer>span {
-    border-right: .05em solid white;
-    animation: caret 1s steps(1) infinite;
-}
-
-.js-type-writer2 {
-    color: var(--color-text100);
-    text-align: center;
-}
-
-.js-type-writer2>span {
-    border-right: .05em solid white;
-    animation: caret 1s steps(1) infinite;
-}
-
-@keyframes caret {
-    50% {
-        border-color: transparent;
-    }
-} */
-
 .outline-white {
     z-index: 5;
     text-shadow:
@@ -213,6 +194,20 @@ header .navbar_ba {
 
 /* ----------------------------- 崩潰 section1 結束 ------------------------------- */
 
+.section2_ba {
+    width: 100%;
+    overflow: hidden;
+    /* border: #ff5b00 1px solid; */
+}
+
+.section2_title {
+    margin-top: 575px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    /* border: #ff5b00 1px solid; */
+}
+
 .bg2_ba {
     /* border: #ff5b00 1px solid; */
     overflow: hidden;
@@ -225,7 +220,7 @@ header .navbar_ba {
     /* border: #ff5b00 1px solid; */
     width: 100%;
     height: 230vh;
-    background: url(./imgs/index/meow-temple.png) center 20% / 88% no-repeat;
+    background: url(./imgs/index/meow-temple.png) center 30% / 88% no-repeat;
 }
 
 .cloud {
@@ -328,9 +323,6 @@ header .navbar_ba {
     border: var(--color-brown-dark) 2px solid;
     border-radius: 8px;
     transition: .3s;
-    /* width: 560px;
-    height: 76px; */
-    /* align-items: center; */
     margin: 0 auto;
     padding: 20px 184px;
     background-color: var(--color-yellow);
@@ -761,4 +753,274 @@ header .navbar_ba {
     50% {
         transform: translateY(-50px);
     }
+}
+
+/* ----------------------------- mobile ----------------------------------- */
+
+.index_m_ba {
+    overflow: hidden;
+    /* height: 300vh; */
+}
+
+.msection1_ba {
+    width: 100%;
+    height: 100vh;
+    /* border: #ff5b00 1px solid; */
+    background: url(./imgs/index/bg_m.png) center -80px / cover no-repeat;
+}
+
+.moonOld_m {
+    left: 50%;
+    top: 320px;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.center_m {
+    left: 50%;
+    /* border: #2600ff 1px solid; */
+    /* transform: translateX(38%); */
+}
+
+.meowMeow_m {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 550px;
+    text-align: center;
+    /* border: #ff5b00 1px solid; */
+    white-space: nowrap;
+}
+
+.m_title_ba {
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000000,
+        0 2px 0 #000000,
+        2px -1px 0 #000000,
+        2px 0 0 #000000,
+        2px 2px 0 #000000,
+        0 -1px 0 #000000,
+        -1px 2px 0 #000000,
+        -1px 0 0 #000000;
+}
+
+/* ----------------------------- mobile section2 ----------------------------------- */
+
+.msection2_ba {
+    width: 100%;
+    height: 100vh;
+    background: url(./imgs/index/bg3.png) center center / cover no-repeat;
+    /* border: #ff00ff 1px solid; */
+}
+
+.cloudm03 {
+    top: -3%;
+    right: -55%;
+    animation: cloudmB ease-in-out 8s infinite;
+}
+
+.cloudm04 {
+    top: 0%;
+    right: 10%;
+    animation: cloudmA ease-in-out 6s infinite;
+    filter: blur(2px);
+    mix-blend-mode: screen;
+}
+
+.indexbtn_m {
+    width: 311px;
+    height: 41px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 0 32px;
+    background-color: var(--color-yellow);
+    text-align: center;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn01_m_ba {
+    /* margin-top: 50px; */
+    padding-top: 8px;
+}
+
+.index_m_ba .btn-l:hover {
+    box-shadow: none;
+}
+
+.section2_m_title {
+    margin-top: 50px;
+    padding-top: 100px;
+}
+
+.meowTemple_m {
+    width: 100%;
+    height: 50vh;
+    background: url(./imgs/index/meow-temple.png) center center / 170% no-repeat;
+}
+
+.cloudm06 {
+    top: 70%;
+    left: -15%;
+    animation: cloudmA ease-in-out 15s infinite;
+    z-index: 2;
+}
+
+.cloudm07 {
+    top: 71%;
+    right: -15%;
+    animation: cloudmB ease-in-out 13s infinite;
+    z-index: 3;
+    filter: blur(2px);
+}
+
+.cloudm08 {
+    top: 85%;
+    left: 5%;
+    animation: cloudmB ease-in-out 11s infinite;
+    z-index: 3;
+}
+
+.cloudm01 {
+    top: 100%;
+    left: -50%;
+    animation: cloudA ease-in-out 10s infinite;
+}
+
+.cloudm02 {
+    top: 92%;
+    left: 10%;
+    animation: cloudB ease-in-out 7s infinite;
+    filter: blur(3px);
+    mix-blend-mode: screen;
+}
+
+@keyframes cloudmA {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(50px);
+    }
+
+}
+
+@keyframes cloudmB {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-20px);
+    }
+
+}
+
+/* ----------------------------- mobile section3 ----------------------------------- */
+
+.msection3_ba {
+    width: 100%;
+    /* height: 300vh; */
+    /* border: #ff5b00 1px solid; */
+    color: white;
+}
+
+.firstCatImg,
+.thirdCatImg {
+    width: 144px;
+}
+
+.secondCatImg {
+    width: 180px;
+}
+
+.firstCatContent,
+.secondCatContent,
+.thirdCatContent {
+    width: 171px;
+}
+
+/* ----------------------------- mobile section4 ----------------------------------- */
+
+.msection4_ba {
+    width: 100%;
+    /* height: 300vh; */
+    /* border: #ff5b00 1px solid; */
+    color: white;
+}
+
+.msection4Content,
+.msection5Content {
+    width: 308px;
+}
+
+.msection4Img {
+    width: 330px;
+}
+
+.msection4Card,
+.msection5Card {
+    height: 320px;
+    /* border: #ff5b00 1px solid; */
+}
+
+/* ----------------------------- mobile section5 ----------------------------------- */
+
+.msection5_ba {
+    width: 100%;
+    /* height: 300vh; */
+    /* border: #ff5b00 1px solid; */
+    color: white;
+}
+
+.msection5Photo {
+    width: 100%;
+    height: 80vh;
+}
+
+.msection5FirstPhoto {
+    top: 0%;
+    right: 50px;
+    width: 168px;
+}
+
+.msection5FirstPhoto img {
+    transform: rotate(8deg);
+}
+
+.msection5SecondPhoto {
+    width: 168px;
+    left: 50px;
+    top: 18%;
+}
+
+.msection5SecondPhoto img {
+    transform: rotate(-15deg);
+}
+
+.msection5ThirdPhoto {
+    width: 168px;
+    right: 50px;
+    top: 36%;
+}
+
+.msection5ThirdPhoto img {
+    transform: rotate(10deg);
+}
+
+/* ----------------------------- mobile section6 ----------------------------------- */
+
+.msection6_ba {
+    width: 100%;
+    height: 100vh;
+    /* border: #ff5b00 1px solid; */
+    color: white;
 }

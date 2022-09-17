@@ -238,7 +238,7 @@ $('.drawdraw').click(function () {
         console.log(this);
         $(this).css({
             transform: drawtransform,
-            animation:'drawUp 1.4s ease-in forwards'
+            animation: 'drawUp 1.4s ease-in forwards'
         })
     }, 1125);
     setTimeout(() => {
@@ -339,63 +339,78 @@ if (dropArea) {
     };
     area.middle = (area.left + area.right) / 2;
 
-let startX = 0;
-let startY = 0;
+    let startX = 0;
+    let startY = 0;
 
-dragTitle.addEventListener('mousedown', dragStart);
+    dragTitle.addEventListener('mousedown', dragStart);
 
-function dragStart(e) {
-    e.preventDefault();
-    //記錄點擊相對被點擊物件的座標
-    startX = e.clientX - dragDiv.offsetLeft;
-    startY = e.clientY - dragDiv.offsetTop;
-    document.addEventListener('mousemove', move);
-    document.addEventListener('mouseup', stop);
-}
-
-function move(e) {
-    //計算出拖曳物件最左上角座標
-    x = e.clientX - startX;
-    y = e.clientY - startY;
-    // console.log('x1: ', x);
-    x = Math.max(Math.min(x, area.right), area.left);
-    y = Math.max(Math.min(y, area.bottom), area.top);
-    // console.log('area.left: ', area.left);
-    // console.log('Math.min(x, area.right): ', Math.min(x, area.right));
-    // console.log('x2: ', x);
-    dragDiv.style.left = x + 'px';
-    dragDiv.style.top = y + 'px';
-    // console.log({x, y, area});
-
-    let currentStat; //當前狀態
-    if (x > area.middle) {
-        currentStat = 'right';
-        // TODO: 做六張圖隨機
-        $('.drawImgWrap img').attr('src', '../imgs/draw/draw-r.png')
-        if (prevStat === 'left') {
-            drawcounter++;
-        }
-        prevStat = currentStat;
-    } else if (x <= area.middle) {
-        currentStat = 'left';
-        // TODO: 做六張圖隨機
-        $('.drawImgWrap img').attr('src', '../imgs/draw/draw-l.png')
-        if (prevStat === 'right') {
-            drawcounter++;
-        }
-        prevStat = currentStat;
-        // 讓前一狀態等於當前狀態
-    }
-    if (drawcounter > 8) {
-        // console.log('next');
-        window.location.href = "draw18.html"
+    function dragStart(e) {
+        e.preventDefault();
+        //記錄點擊相對被點擊物件的座標
+        startX = e.clientX - dragDiv.offsetLeft;
+        startY = e.clientY - dragDiv.offsetTop;
+        document.addEventListener('mousemove', move);
+        document.addEventListener('mouseup', stop);
     }
 
+    function move(e) {
+        //計算出拖曳物件最左上角座標
+        x = e.clientX - startX;
+        y = e.clientY - startY;
+        // console.log('x1: ', x);
+        x = Math.max(Math.min(x, area.right), area.left);
+        y = Math.max(Math.min(y, area.bottom), area.top);
+        // console.log('area.left: ', area.left);
+        // console.log('Math.min(x, area.right): ', Math.min(x, area.right));
+        // console.log('x2: ', x);
+        dragDiv.style.left = x + 'px';
+        dragDiv.style.top = y + 'px';
+        // console.log({x, y, area});
+
+        let currentStat; //當前狀態
+        if (x > area.middle) {
+            currentStat = 'right';
+            // TODO: 做六張圖隨機
+            $('.drawImgWrap img').attr('src', '../imgs/draw/draw-r.png')
+            if (prevStat === 'left') {
+                drawcounter++;
+            }
+            prevStat = currentStat;
+        } else if (x <= area.middle) {
+            currentStat = 'left';
+            // TODO: 做六張圖隨機
+            $('.drawImgWrap img').attr('src', '../imgs/draw/draw-l.png')
+            if (prevStat === 'right') {
+                drawcounter++;
+            }
+            prevStat = currentStat;
+            // 讓前一狀態等於當前狀態
+        }
+        if (drawcounter > 8) {
+            // console.log('next');
+            window.location.href = "draw18.html"
+        }
+
+    }
+
+    function stop() {
+        document.removeEventListener('mousemove', move);
+        document.removeEventListener('mouseup', stop)
+    }
+
 }
 
-function stop() {
-    document.removeEventListener('mousemove', move);
-    document.removeEventListener('mouseup', stop)
-}
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.jadeSay').offset().top - $(window).height() * 3 / 4)) {
+        $('.jadeSay').css({
+            width: '700px',
+        })
 
-}
+    }
+    else {
+        $('.jadeSay').css({
+            width: '0px',
+        })
+    }
+
+})

@@ -7,7 +7,9 @@ $pageName = 'home'; //頁面名稱
 
 <link rel="stylesheet" href="./index.css">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+<?php
+header("Refresh:180");
+?>
 
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 <div class="body_ba">

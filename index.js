@@ -1,4 +1,3 @@
-
 var typed = new Typed('.moonOldSay', {
     strings: ["我好想要去放假...", "", "最近真的太忙了..."],
     typeSpeed: 150,
@@ -7,6 +6,22 @@ var typed = new Typed('.moonOldSay', {
 });
 
 var typed = new Typed('.meowSay', {
+    strings: ["就交給我們吧喵！", "", "我們會替人們找到幸福的！"],
+    typeSpeed: 150,
+    backSpeed: 100,
+    loop: true,
+});
+
+// mobile
+
+var typed = new Typed('.moonOldSay_m', {
+    strings: ["我好想要去放假...", "", "最近真的太忙了..."],
+    typeSpeed: 150,
+    backSpeed: 100,
+    loop: true,
+});
+
+var typed = new Typed('.meowSay_m', {
     strings: ["就交給我們吧喵！", "", "我們會替人們找到幸福的！"],
     typeSpeed: 150,
     backSpeed: 100,
@@ -80,4 +95,38 @@ $(window).scroll(function () {
 
 })
 
+// 三貓手機
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.firstCat').offset().top - $(window).height() * 1 / 2)) {
+        $('.firstCatImg img').attr('src', './imgs/index/7.png')
+
+    }
+    else {
+        $('.firstCatImg img').attr('src', './imgs/index/8.png')
+    }
+
+})
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.secondCat').offset().top - $(window).height() * 1 / 2)) {
+        $('.secondCatImg img').attr('src', './imgs/index/9.png')
+
+    }
+    else {
+        $('.secondCatImg img').attr('src', './imgs/index/10.png')
+    }
+
+})
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.thirdCat').offset().top - $(window).height() * 1 / 2)) {
+        $('.thirdCatImg img').attr('src', './imgs/index/11.png')
+
+    }
+    else {
+        $('.thirdCatImg img').attr('src', './imgs/index/12.png')
+    }
+
+})
 
