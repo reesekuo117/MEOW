@@ -117,9 +117,12 @@ button {
 }
 .midicon a {
     text-decoration: none;
+    color: var(--color-text87);
+}
+.midicon:hover a {
+    text-decoration: none;
     color: var(--color-orange);
 }
-
 /* ----------------------中間選單結束--------------------- */
 .product_brand .pb_pc{
     position: relative;
@@ -305,7 +308,7 @@ button {
 /* ----------------------喵獨家結束--------------------- */
 
 .product_card {
-    margin: 80px auto 50px;
+    margin: 80px auto 0px;
     /* padding: 100px 0 100px; */
 }
 

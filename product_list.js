@@ -40,6 +40,15 @@ function slideTwo() {
 sliderOne.addEventListener('input', slideOne)
 sliderTwo.addEventListener('input', slideTwo)
 
+
+// 手機版篩選
+$('.tsort_mb').click(function(){
+    console.log('hello');
+    // $('.travel_cate_mb').removeClass('d-none').addClass('d-block')
+    $('.timesort_mb').toggleClass('d-none')
+})
+
+
 // 愛心
 
 $('.icon_heart').click(function(){
@@ -47,5 +56,7 @@ $('.icon_heart').click(function(){
     // $(this).find('.heart_line').toggleClass('color')
     $(this).toggleClass('color')
 });
-
+$('.icon_heart_mb').click(function(){
+    $(this).find('.heart_line').toggleClass('color')
+});
 // 按收藏後真的進入收藏頁面&沒登入會跳出提示窗

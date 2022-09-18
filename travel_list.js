@@ -1,5 +1,5 @@
 // 手機版篩選
-$('.travel_sortbtn_mb > button').click(function(){
+$('.travel_sortbtn_mb  button').click(function(){
     console.log('hello');
     // $('.travel_cate_mb').removeClass('d-none').addClass('d-block')
     $('.travel_cate_mb').toggleClass('d-none')

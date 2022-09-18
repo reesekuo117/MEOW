@@ -97,6 +97,41 @@
 .product_sort a:focus {
     color: var(--color-text87);
 }
+.sort_mb{
+    background-color: var(--color-lightcreamy);
+}
+.tsort_mb{
+    border: 2px solid var(--color-text60);
+    border-radius: 8px;
+    padding: 4px;
+    background-color: var(--color-lightcreamy);
+    color: var(--color-text87);
+}
+.tsort_mb:hover{
+    background-color: var(--color-yellow);
+    color: var(--color-text87);
+
+}
+/* .timesort_mb .d-flex{
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+} */
+.timesort_mb{
+    background-color: var(--color-lightcreamy);
+    width: 30%;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+    padding-bottom: 4px;
+}
+.timesort_mb a{
+    text-decoration: none;
+    color: var(--color-text87);
+}
+.timesort_mb a:hover{
+    color: var(--color-orange);
+}
+/* -----------------------------排序結束-------------------------------- */
 
 .product_section {
     display: flex;
@@ -234,7 +269,7 @@
     pointer-events: auto;
 }
 
-/* ---------------------------------------------------------------- */
+/* -------------------------------卡片--------------------------------- */
 .product_list .row{
     justify-content: center;
     align-items: center;
@@ -242,7 +277,9 @@
 .card {
     border-radius: 8px;
     margin: 24px auto;
-
+}
+.p_card_mb{
+    margin-top: 24px;
 }
 .p_img{
     position: relative;
@@ -251,7 +288,9 @@
     background-color: #888;
     opacity: 1;
 } */
-
+.p_img_mb{
+    width: 300px;
+}
 .card:hover .p_img::after{
     content: "";
     display: block;
@@ -269,10 +308,19 @@
     padding: 8px;
     margin: 0 auto;
 }
+.card-body_mb{
+    padding: 12px;
+}
+.card_title{
+    padding-bottom: 20px;
+}
+.card_title_mb{
+    padding-bottom: 8px;
+}
 .icon_heart {
     position: absolute;
     right: 15px;
-    bottom: 115px;
+    bottom: 135px;
     cursor: pointer;
     opacity: 0;
 }
@@ -286,7 +334,26 @@
     stroke: #432A0F;
     fill: #CD562F;
 }
-
+.p_img_mb{
+    position: relative;
+}
+.icon_heart_mb{
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    cursor: pointer;
+}
+/* .icon_heart_mb.color .heart_line {
+    stroke: #432A0F;
+    fill: #CD562F;
+} */
+.color{
+    stroke: #432A0F;
+    fill: #CD562F;
+}
+.icon_fivestar i{
+    color: var(--color-yellow);
+}
 .pl_row {
     margin: 36px auto;
 }
@@ -315,6 +382,19 @@
 .card_title{
     margin: 0 auto;
 }
+.card_small{
+    margin-bottom: 20px;
+}
+.card_small_mb{
+    padding-bottom: 8px;
+}
+.card_small small{
+    color: var(--color-text60);
+}
+.card_intro_mb p{
+    margin: 0;
+    padding-bottom: 10px;
+}
 .card-text span{
     color: var(--color-text60);
 }
@@ -333,7 +413,13 @@
 .row .price::before{
     content:"NT$ ";
 }
-
+.icon_fire{
+    width: 18px;
+    margin: 0;
+}
+.icon_fire i{
+    color: var(--color-orange);
+}
 /* ------------------頁數按鈕----------------- */
 .pages{
     margin: 3rem;

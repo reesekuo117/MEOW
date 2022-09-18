@@ -4,13 +4,13 @@ html{
 .pd_head{
     margin: 80px;
 }
-h2,h5,h6{
+.product_detail_07 h2,.product_detail_07 h4,.product_detail_07 h5,.product_detail_07 h6{
     color: var(--color-text87);
 }
-p,small{
+.product_detail_07 p,.product_detail_07 small{
     color: var(--color-text100);
 }
-.xs{
+.product_detail_07 .xs{
     color: var(--color-text60);
 }
 /* ------------------------輪播------------------------ */
@@ -105,8 +105,6 @@ p,small{
     display: flex;
 
 }
-
-
 .price h2::before{
     content: "NT$ ";
     
@@ -117,7 +115,7 @@ p,small{
 .fire p{
     line-height: 24px;
 }
-select{
+.product_detail_07 select{
     height: 48px;
     border-radius: 8px;
     border: 1px solid var(--color-text87);
@@ -170,6 +168,50 @@ select{
     border: 2px solid var(--color-text87);
 }
 /* 小換大和商品標題結束 */
+/* 手機輪播牆 */
+.goback{
+    height: 26px;
+    position: absolute;
+    top: 10;
+    left: 10;
+    z-index: 2;
+}
+.goback button{
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background-color: transparent;
+}
+.carousel-indicators{
+    bottom: 0!important;
+}
+.pb_headtitle_mb .icon_fivestar{
+    padding: 0;
+}
+.pb_headtitle_mb .icon_fire{
+    color: #CD562F;
+}
+.pb_headtitle_mb h4::before{
+    content: "NT$ ";
+}
+
+/* 手機輪播牆結束 */
+/* 手機上方列 */
+.pdnav_mb{
+    background-color: var(--color-lightcreamy);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.pdnav_mb a{
+    text-decoration: none;
+}
+.pdnav_mb small:hover{
+    color: #CD562F;
+    
+}
+/* 桌機下方列 */
 .undernav{
     width: 100%;
     padding: 20px 0; 

@@ -307,6 +307,9 @@
     margin: 0;
     padding-bottom: 10px;
 }
+.card-text span{
+    color: var(--color-text60);
+}
 .p_img{
     position: relative;
 }

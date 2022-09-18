@@ -25,7 +25,7 @@
 
         function moveX(nowPage){
             // $('.img-demo img').eq(nowPage).css('opacity','1').siblings().not('.icon_heart').css('opacity','0')
-            // 因為icon_heart也是那五張圖的平輩，但是它不能被調整透明度，所以將他寫在siblings之間
+            // 當demo的那一張(eq)圖片透明度1時，他的平輩透明度是0，但也是平輩的愛心透明度不改變（因為icon_heart也是那五張圖的平輩，但是它不能被調整透明度，所以將他寫在siblings之間）
 
             $('.img-demo img').css('opacity','0').eq(nowPage).css('opacity','1')
         }

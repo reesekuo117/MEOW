@@ -5,7 +5,7 @@ $pageName ='獨家商品'; //頁面名稱
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./product_index_style.css">
-<link rel="stylesheet" href="./product_index.js">
+<!-- <link rel="stylesheet" href="./product_index.js"> -->
 <?php include __DIR__. '/parts/navbar.php'; ?>
 
 <div class="product_07">
@@ -705,5 +705,5 @@ $pageName ='獨家商品'; //頁面名稱
 </div>
 
 <?php include __DIR__. '/parts/scripts.php'; ?>
-<!-- <script src="./product_index.js"></script> -->
+<script src="./product_index.js"></script>
 <?php include __DIR__. '/parts/html-foot.php'; ?>
