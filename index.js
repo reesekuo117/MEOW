@@ -130,3 +130,48 @@ $(window).scroll(function () {
 
 })
 
+// 卷軸手機
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.leftReelm').offset().top - $(window).height() * 2 / 3)) {
+        $('.leftReelm').css({
+            transform: 'translateX(-520px) scale(1)',
+        })
+
+    }
+    else {
+        $('.leftReelm').css({
+            transform: 'translateX(-30px) scale(1)',
+        })
+    }
+
+})
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.rightReelm').offset().top - $(window).height() * 2 / 3)) {
+        $('.rightReelm').css({
+            transform: 'translateX(520px) scale(1)',
+        })
+
+    }
+    else {
+        $('.rightReelm').css({
+            transform: 'translateX(30px)scale(1)',
+        })
+    }
+
+})
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= ($('.middleReelm').offset().top - $(window).height() * 2 / 3)) {
+        $('.middleReelm').css({
+            width: '956px',
+        })
+
+    }
+    else {
+        $('.middleReelm').css({
+            width: '0px',
+        })
+    }
+
+})

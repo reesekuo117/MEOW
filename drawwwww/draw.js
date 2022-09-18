@@ -209,6 +209,20 @@ $('.interestbtn').click(function () {
     }
 })
 
+$('.facebtn').click(function () {
+    if ($('.facebtnToggle').length > 5) {
+        alert('超過五項囉喵')
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
+})
+
+$('.musclebtn').click(function () {
+    if ($('.musclebtnToggle').length > 5) {
+        alert('超過五項囉喵')
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
+})
+
 $('.personalitybtn').click(function () {
     if ($('.personalitybtnToggle').length > 5) {
         alert('超過五項囉喵')
@@ -247,20 +261,137 @@ $('.drawdraw').click(function () {
     // console.log($('.catPaw').offsetTop);
 })
 
-// $('.drawdraw').click(function () {
-//     // console.log('paw');
-//     $('.catPaw').css('animation','catPaw 2.5s ease-in-out')
-// })
 
-// FIXME:
 // 沒按不能下一步
 $('.wantbtn').click(function () {
     if ($('.drawbtnToggle').length >= 1) {
-        console.log('hi');
-        $('.btn_md_next').attr('disabled', false)
+        // console.log('hi');
+        $('.btn_md_next').removeClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', 'draw08.html')
+
     } else if ($('.drawbtnToggle').length < 1) {
-        console.log('no');
-        $('.btn_md_next').attr('disabled', true)
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $('.btn_md_next').addClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', '#')
+
+    }
+})
+
+$('.facebtn').click(function () {
+    if ($('.drawbtnToggle').length >= 1 &&
+        $('.musclebtnToggle').length >= 1 &&
+        $('.facebtnToggle').length >= 1) {
+        // console.log('hi');
+        $('.btn_md_next').removeClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', 'draw09.html')
+
+    } else if ($('.drawbtnToggle').length < 1 ||
+        $('.musclebtnToggle').length < 1 ||
+        $('.facebtnToggle').length < 1) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $('.btn_md_next').addClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', '#')
+
+    }
+})
+
+$('.musclebtn').click(function () {
+    if ($('.drawbtnToggle').length >= 1 &&
+        $('.musclebtnToggle').length >= 1 &&
+        $('.facebtnToggle').length >= 1) {
+        // console.log('hi');
+        $('.btn_md_next').removeClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', 'draw09.html')
+
+    } else if ($('.drawbtnToggle').length < 1 ||
+        $('.musclebtnToggle').length < 1 ||
+        $('.facebtnToggle').length < 1) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $('.btn_md_next').addClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', '#')
+
+    }
+})
+
+$('.heightbtn').click(function () {
+    if ($('.drawbtnToggle').length >= 1 &&
+        $('.musclebtnToggle').length >= 1 &&
+        $('.facebtnToggle').length >= 1) {
+        // console.log('hi');
+        $('.btn_md_next').removeClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', 'draw09.html')
+
+    } else if ($('.drawbtnToggle').length < 1 ||
+        $('.musclebtnToggle').length < 1 ||
+        $('.facebtnToggle').length < 1) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $('.btn_md_next').addClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', '#')
+
+    }
+})
+
+$('.howOldbtn').click(function () {
+    if ($('.howOldbtnToggle').length >= 1) {
+        // console.log('hi');
+        $('.btn_md_next').removeClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', 'draw10.html')
+
+    } else if ($('.howOldbtnToggle').length < 1) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $('.btn_md_next').addClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', '#')
+
+    }
+})
+
+$('.interestbtn').click(function () {
+    if ($('.interestbtnToggle').length >= 1) {
+        // console.log('hi');
+        $('.btn_md_next').removeClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', 'draw11.html')
+
+    } else if ($('.interestbtnToggle').length < 1) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $('.btn_md_next').addClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', '#')
+
+    }
+})
+
+$('.personalitybtn').click(function () {
+    if ($('.personalitybtnToggle').length >= 1) {
+        // console.log('hi');
+        $('.btn_md_next').removeClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', 'draw12.html')
+
+    } else if ($('.personalitybtnToggle').length < 1) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $('.btn_md_next').addClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', '#')
+
+    }
+})
+
+$('.horobtn').click(function () {
+    if ($('.horobtnToggle').length >= 1) {
+        // console.log('hi');
+        $('.btn_md_next').removeClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', 'draw15.html')
+
+    } else if ($('.horobtnToggle').length < 1) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $('.btn_md_next').addClass('btn_disabled_ba')
+        $('.btn_md_next a').attr('href', '#')
+
     }
 })
 

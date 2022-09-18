@@ -13,6 +13,33 @@
     z-index: 5;
 }
 
+/* .drawSection01,
+.drawSection02,
+.drawSection03,
+.drawSection04,
+.drawSection05,
+.drawSection06,
+.drawSection07,
+.drawSection08,
+.drawSection09,
+.drawSection10,
+.drawSection11,
+.drawSection12,
+.drawSection13,
+.drawSection14,
+.drawSection15,
+.drawSection16,
+.drawSection17,
+.drawSection18,
+.drawSection19,
+.drawSection20,
+.drawSection21,
+.drawSection22,
+.drawSection23 {
+    overflow: hidden;
+} */
+
+
 .drawSection01 {
     width: 100%;
     height: calc(100vh - 100px);
@@ -588,8 +615,6 @@
 
 .drawSection07Cat {
     box-sizing: content-box;
-    /* left: 20%; */
-    /* top: 20%; */
     transform: translateY(40px);
 }
 
@@ -644,6 +669,27 @@ button[disabled] {
 
 button[disabled]:hover {
     box-shadow: none
+}
+
+.btn_disabled_ba {
+    cursor: not-allowed;
+    opacity: .6;
+    background-color: white;
+    color: var(--color-brown-dark);
+    border: var(--color-brown-dark) 2px solid;
+}
+
+.btn_disabled_ba:hover {
+    box-shadow: none
+}
+
+.btn_md_next a {
+    color: var(--color-brown-dark);
+}
+
+.btn_disabled_ba a {
+    color: var(--color-brown-dark);
+    cursor: not-allowed;
 }
 
 /*------------------ draw08 ----------------*/
@@ -1660,7 +1706,7 @@ button[disabled]:hover {
 .jadeTophand {
     top: 510px;
     /* top: 36px; */
-    right: 666px;
+    right: 470px;
     z-index: 5;
     animation: jadeTophand 1s ease-in-out forwards;
 }
@@ -1672,17 +1718,16 @@ button[disabled]:hover {
     }
 
     100% {
-        top: 36px;
+        top: 20px;
     }
 }
 
 .jadeDownhand {
     top: 600px;
     /* top: 690px; */
-    right: 666px;
+    right: 470px;
     z-index: 5;
     animation: jadeDownhand 1s ease-in-out forwards;
-
 }
 
 @keyframes jadeDownhand {
@@ -1703,7 +1748,6 @@ button[disabled]:hover {
     top: 88px;
     right: 500px;
     animation: drawCard 1s ease-in-out forwards;
-
 }
 
 
@@ -1740,4 +1784,151 @@ button[disabled]:hover {
     transform-origin: center;
     /* text-overflow: ellipsis; */
     white-space: nowrap;
+}
+
+/* ====================== 手機 ============================= */
+
+.body_draw01m {
+    background: url(../imgs/draw/drawbg.png);
+    text-align: center;
+    color: var(--color-brown-dark);
+}
+
+.mdrawSection01 {
+    width: 100%;
+    height: calc(100vh - 72px)
+}
+
+.mdrawSection01 h4 {
+    padding-top: 36px;
+}
+
+.mdrawSection01 h6 {
+    padding-top: 12px;
+}
+
+.mdrawSection01 small {
+    padding-top: 12px;
+    color: var(--color-text60);
+}
+
+.mdrawSection01 .musicBlack {
+    transform: scale(1);
+    width: 144px;
+    margin-top: 12px;
+}
+
+.mdrawSection01 .sound-icon {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.onOff h3 {
+    color: white;
+    margin: 0;
+}
+
+.mdrawSection01 .musicOn,
+.mdrawSection01 .musicOff {
+    transition: .2s;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--color-orange);
+    margin: 4px 15px;
+}
+
+.musicOn:hover,
+.musicOff:hover {
+    outline: 5px rgba(250, 128, 114, 0.757) solid;
+}
+
+/* ====================== 手機 23 ============================= */
+
+.mdrawSection23 {
+    width: 100%;
+    height: 150vh;
+}
+
+.mdrawSection23 .musicSwitch {
+    top: 10px;
+    right: 14px;
+}
+
+.mdrawSection23 .lightfix {
+    overflow: hidden;
+    width: 100%;
+    height: 480px;
+    border: 1px rgb(130, 114, 250) solid;
+
+}
+
+.mdrawSection23 .light_ba {
+    /* overflow: hidden; */
+    top: -20%;
+    left: -60px;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+    background: url(../imgs/draw/light.png) center center / cover no-repeat;
+    animation: rotate360 60s infinite linear;
+    z-index: 0;
+    mix-blend-mode: multiply;
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg) scale(2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(2);
+    }
+}
+
+.mdrawSection23 .grain_ba {
+    /* border: 1px salmon solid; */
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 110vh;
+    background: url(../imgs/draw/grain1.png) center center / 125% no-repeat;
+}
+
+
+.mdrawSection23 .drawCard {
+    /* overflow: hidden; */
+    transform-origin: center;
+    width: 300px;
+    height: 400px;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: none;
+    margin-top: 72px;
+}
+
+.mdrawSection23 h6 {
+    margin-top: 12px;
+}
+
+.jadeSaym {
+    margin-top: 50px;
+    overflow: hidden;
+    width: 310px;
+    height: 250px;
+    transition: .3s;
+}
+
+.jadeSaymBorder {
+    overflow: hidden;
+    border: transparent 20px solid;
+    border-image: url(../imgs/draw/jadeSay.png) 35 stretch;
+}
+
+.recommendm_ba {
+    margin-top: 48px;
 }
