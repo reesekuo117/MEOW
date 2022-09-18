@@ -27,7 +27,8 @@
         }
     })
 
-
+//關於月老
+//桌機
     $(window).scroll(function () {
       if ($(window).scrollTop() >= ($('.section1_lb').offset().top - $(window).height() * 2 / 3)) {
         $('.section1-content_lb').css({
@@ -56,6 +57,53 @@
         })
       }
     })
+    //mb
+
+    // $(window).scroll(function () {
+    //     if ($(window).scrollTop() >= ($('.    mb-title_lb').offset().top - $(window).height() * 2/ 5)) {
+    //       $('.mb-title_lb ').css({
+    //         transform: 'translateY(0px)',
+    //         opacity: 1,
+    //       })
+    //     }
+    //     else {
+    //       $('.mb-title_lb').css({
+    //         transform: 'translateY(30px)',
+    //         opacity: 0,
+    //       })
+    //     }
+    //   })
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= ($('.mb-section1_lb').offset().top - $(window).height() * 1 / 3)) {
+          $('.mb-section1-top_lb').css({
+            transform: 'translateX(0px)',
+            opacity: 1,
+          })
+        }
+        else {
+          $('.mb-section1-top_lb').css({
+            transform: 'translateX(-30px)',
+            opacity: 0,
+          })
+        }
+      })
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= ($('.mb-section1-bottom_lb').offset().top - $(window).height() * 1 / 3)) {
+          $('.mb-section1-bottom_lb').css({
+            transform: 'translateX(0px)',
+            opacity: 1,
+          })
+        }
+        else {
+          $('.mb-section1-bottom_lb').css({
+            transform: 'translateX(30px)',
+            opacity: 0,
+          })
+        }
+      })
+
+
 
 
     //廟照片滑動
@@ -150,65 +198,65 @@
 
 
 
-    // $(window).scroll(function () {
-    //   if ($(window).scrollTop() >= ($('.step1_lb').offset().top - $(window).height() * 1 / 3)) {
-    //     $('.step2_lb').css({
-    //       transform: 'translateX(0px)',
-    //       opacity: 1,
-    //     })
-    //   }
-    //   else {
-    //     $('.step2_lb').css({
-    //       transform: 'translateX(100px)',
-    //       opacity: 0,
-    //     })
-    //   }
-    // })
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= ($('.step1_lb').offset().top - $(window).height() * 1 / 3)) {
+        $('.step2_lb').css({
+          transform: 'translateY(0px)',
+          opacity: 1,
+        })
+      }
+      else {
+        $('.step2_lb').css({
+          transform: 'translateY(50px)',
+          opacity: 0,
+        })
+      }
+    })
 
-    // $(window).scroll(function () {
-    //   if ($(window).scrollTop() >= ($('.step2_lb').offset().top - $(window).height() * 1 / 3)) {
-    //     $('.step3_lb').css({
-    //       transform: 'translateX(100px)',
-    //       opacity: 1,
-    //     })
-    //   }
-    //   else {
-    //     $('.step3_lb').css({
-    //       transform: 'translateX(0px)',
-    //       opacity: 0,
-    //     })
-    //   }
-    // })
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= ($('.step2_lb').offset().top - $(window).height() * 1 / 3)) {
+        $('.step3_lb').css({
+          transform:'translateY(0px)',
+          opacity: 1,
+        })
+      }
+      else {
+        $('.step3_lb').css({
+          transform: 'translateY(50px)',
+          opacity: 0,
+        })
+      }
+    })
 
-    // $(window).scroll(function () {
-    //   if ($(window).scrollTop() >= ($('.step3_lb').offset().top - $(window).height() * 1 / 3)) {
-    //     $('.step4_lb').css({
-    //       transform: 'translateX(0px)',
-    //       opacity: 1,
-    //     })
-    //   }
-    //   else {
-    //     $('.step4_lb').css({
-    //       transform: 'translateX(100px)',
-    //       opacity: 0,
-    //     })
-    //   }
-    // })
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= ($('.step3_lb').offset().top - $(window).height() * 1 / 3)) {
+        $('.step4_lb').css({
+          transform: 'translateY(0px)',
+          opacity: 1,
+        })
+      }
+      else {
+        $('.step4_lb').css({
+          transform: 'translateY(50px)',
+          opacity: 0,
+        })
+      }
+    })
 
-    // $(window).scroll(function () {
-    //   if ($(window).scrollTop() >= ($('.step4_lb').offset().top - $(window).height() * 1 / 3)) {
-    //     $('.step5_lb').css({
-    //       transform: 'translateX(100px)',
-    //       opacity: 1,
-    //     })
-    //   }
-    //   else {
-    //     $('.step5_lb').css({
-    //       transform: 'translateX(0px)',
-    //       opacity: 0,
-    //     })
-    //   }
-    // })
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= ($('.step4_lb').offset().top - $(window).height() * 1 / 3)) {
+        $('.step5_lb').css({
+          transform: 'translateY(0px)',
+          opacity: 1,
+        })
+      }
+      else {
+        $('.step5_lb').css({
+          transform: 'translateY(50px)',
+          opacity: 0,
+        })
+      }
+    })
 
     $(window).resize(function() {
         const windowWidth = $(window).width();
@@ -280,39 +328,6 @@
         }
     })
 
-
-
-    // $(window).scroll(function () {
-    //   if ($(window).scrollTop() >= ($('.cp-cat-move').offset().top - $(window).height() * 2/ 3)) {
-    //     $('.left-cat-animation_lb').css({
-    //       transform: 'translateX(45px)',
-    //       opacity: 1,
-    //     });
-    //     $('.right-cat-animation_lb').css({
-    //       transform: 'translateX(90px)',
-    //       opacity: 1,
-    //     });
-
-    //     setTimeout(function(){
-    //        $('.heart-animation_lb').css({
-    //         opacity:1}); 
-    //     },1300);
-
-    //   }
-    //   else {
-    //     $('.left-cat-animation_lb').css({
-    //       transform: 'translateX(-30px)',
-    //       opacity: 1,
-    //     });
-    //     $('.right-cat-animation_lb').css({
-    //       transform: 'translateX(100px)',
-    //       opacity: 1,
-    //     });
-    //     $('.heart-animation_lb').css({
-    //         opacity:0,
-    //     })
-    //   }
-    // })
 
 
 
@@ -495,6 +510,93 @@
             }
         }
     };
+
+
+    // const mbscrollLink = document.querySelectorAll(
+    //     '.mbnavbar_lb a[href^="#"]'
+    // );
+    // const mbsection = document.querySelectorAll(".mbtargetScrollSection");
+    // const mbsections = {};
+    // let mbidentCounter = 0;
+
+    // scrollLink.forEach((item) => {
+    //     item.addEventListener("click", (e) => {
+    //         const hash = e.currentTarget.hash;
+    //         // console.log({hash})
+
+
+    //         let targetBlock = document.querySelector(e.currentTarget.hash);
+    //         console.log({
+    //             targetBlock,
+    //             top: targetBlock.offsetTop
+    //         });
+    //         e.preventDefault();
+    //         // console.log(targetBlock.offsetTop);
+
+    //         window.scrollTo({
+    //             top: $(targetBlock).offset().top - ((e.currentTarget.hash === "#moonold_lb") ? 400 : 50),
+    //             behavior: "smooth",
+    //         });
+    //     });
+    // });
+
+    // $(function() {
+    //     setTimeout(() => {
+    //         for (let i = 0; i < mbsection.length; i++) {
+    //             mbsections[mbsection[i].id] = $(mbsection[i]).offset().top;
+    //             // console.log(section[i].id,  $(section[i]).offset().top);
+    //         }
+    //     }, 3000);
+    // })
+
+
+    // window.onscroll = () => {
+    //     let scrollPosition =
+    //         document.documentElement.scrollTop || document.body.scrollTop;
+    //     // let scrollPosition = window.pageYOffset;
+    //     for (mbidentCounter in mbsections) {
+    //         if (mbsections[mbidentCounter] <= (scrollPosition + $(window).height() * 1 / 3) || (mbsections[0] <= scrollPosition)) {
+    //             // console.log(identCounter, sections[identCounter], scrollPosition);
+    //             document.querySelector(".mbactive_lb").removeAttribute("class");
+    //             document
+    //                 .querySelector("a[href*=" + mbidentCounter + "]")
+    //                 .setAttribute("class", "mbactive_lb");
+    //         }
+    //     }
+    // };
+
+
+
+
+
+
+
+
+    $('#mbTemCard-c01').click(function() {
+        $('#c01-mbdetail-card').removeClass('d-none');
+         $('#c01-mbdetail-card').css({
+            transform: 'translateY(-580px)',
+            opacity: 1,
+        })
+    });
+
+    $('.prepage_lb').click(function () {
+        $('.mbdetail-card_lb').addClass('d-none')
+        
+    });
+    $('#mbTemCard-c06').click(function() {
+        $('#c06-mbdetail-card').removeClass('d-none');
+         $('#c06-mbdetail-card').css({
+            transform: 'translateY(-580px)',
+            opacity: 1,
+        })
+    });
+
+    $('.prepage_lb').click(function () {
+        $('.mbdetail-card_lb').addClass('d-none')
+        
+    });
+
 
 
     // 愛心變色(卡片)

@@ -50,7 +50,7 @@ $pageName = '月老文化'; //頁面名稱
     <div class="container mbnavbar_lb p-0 d-md-none">
         <div class="row m-0">
             <ul class="w-100 mb-0 list-unstyled d-flex justify-content-center links-group_lb">
-                <li class="mx-1 my-1 active">
+                <li class="mx-1 my-1 ">
                     <a class=" mbactive_lb" href="#mbmoonold_lb">
                         <p class="s_lb mb-0 py-1">關於月老</p>
                     </a>
@@ -66,12 +66,12 @@ $pageName = '月老文化'; //頁面名稱
                     </a>
                 </li>
                 <li class="mx-1 my-1">
-                    <a href="#givebk_lb">
+                    <a href="#mbsection4_lb ">
                         <p class="s_lb mb-0 py-1">如何還願</p>
                     </a>
                 </li>
                 <li class="mx-1 my-1">
-                    <a href="#selected-temple_lb">
+                    <a href="#mbselected-temple_lb">
                         <p class="s_lb mb-0 py-1">精選月老廟</p>
                     </a>
                 </li>
@@ -155,34 +155,39 @@ $pageName = '月老文化'; //頁面名稱
         </div>
     </div>
     <!-- 關於月老-mb -->
-    <div class="container d-md-none mt-4" id="mbmoonold_lb">
+    <div class="container d-md-none mt-4 mbtargetScrollSection mb-section1_lb" id="mbmoonold_lb">
         <h1 class="text-center mb-title_lb pt-4">關於月老</h1>
-        <p class="mt-3 mb-p_lb">
-            月下老人，簡稱月老，是道教的神祇之一，為掌管男女姻緣之神。形象常被塑造成白鬍長鬚，臉泛紅光的慈祥老者；左持姻緣簿，右拄拐杖。
-        </p>
-        <div class="mbleft_pic_lb">
-            <img class="w-100" src="./imgs/culture/section1-1.png" alt="">
-        </div>
-        <p class="mt-2 mb-p_lb">
+        <div class="mb-section1-top_lb">
+            <p class="mt-3 mb-p_lb">
+                月下老人，簡稱月老，是道教的神祇之一，為掌管男女姻緣之神。形象常被塑造成白鬍長鬚，臉泛紅光的慈祥老者；左持姻緣簿，右拄拐杖。
+            </p>
+            <div class="mbleft_pic_lb">
+                <img class="w-100" src="./imgs/culture/section1-1.png" alt="">
+            </div>
+        
+            <p class="mt-2 mb-p_lb">
             傳說唐代韋固曾在客棧遇到一位老人，在夜光下翻著簿子，好奇請問，才知是姻緣簿，又問他自己將來婚配為誰？老人回說為店北頭賣菜瞎老太太三歲的小女兒。韋固一氣之下，派僕人刺殺小女兒，誰知僕人心虛只刺傷她的額頭。
             <br>
             十多年後，該女被刺史收為義女，並將其許配給韋固，新婚之後發現妻子額上常貼花黃是因幼年被刺，這才知月下老人所配的姻緣奇準無比，其神蹟從此廣為流傳
-        </p>
-        <div class="mbright_pic_lb">
-            <img class="w-100" src="./imgs/culture/section1-2.png" alt="">
+            </p>
         </div>
-        <p class="mt-2 mb-p_lb">
-            直到現今對月老的形象便是左手拿著姻緣簿，右手拄著拐杖，將姻緣簿中有姻緣關係的未婚男女以紅絲線綁住，使得有情人終成眷屬，因此不少到了適婚年齡的民眾們，便會前去參拜月老，求取姻緣。
-            <br>
-            傳統民間信仰中，月老是一個專門掌管人們姻緣的神。然而最初的月下老人其實只負責保管姻緣簿，並無幫人媒合的神力在。但百姓相傳月老有著成人之美，撒嬌一下便會幫忙協助撮合。
-        </p>
+        <div class="mb-section1-bottom_lb">
+            <div class="mbright_pic_lb">
+                <img class="w-100" src="./imgs/culture/section1-2.png" alt="">
+            </div>
+            <p class="mt-2 mb-p_lb">
+                直到現今對月老的形象便是左手拿著姻緣簿，右手拄著拐杖，將姻緣簿中有姻緣關係的未婚男女以紅絲線綁住，使得有情人終成眷屬，因此不少到了適婚年齡的民眾們，便會前去參拜月老，求取姻緣。
+                <br>
+                傳統民間信仰中，月老是一個專門掌管人們姻緣的神。然而最初的月下老人其實只負責保管姻緣簿，並無幫人媒合的神力在。但百姓相傳月老有著成人之美，撒嬌一下便會幫忙協助撮合。
+            </p>
+        </div>
     </div>
 
 
 
     <!--參拜流程-->
-    <div class="section2_box position-relative mt-4">
-        <div class="container targetScrollSection section2_lb" id="byebye_lb">
+    <div class="section2_box position-relative mt-4  ">
+        <div class="container mbtargetScrollSection targetScrollSection section2_lb" id="byebye_lb">
             <div class="parallaxbg_lb d-md-none"></div>
             <h1 class="text-center mt-md-5 mb-title_lb d-md-none pt-4">參拜流程</h1>
             <h1 class="text-center mt-md-5 d-none d-md-block ">參拜流程</h1>
@@ -197,9 +202,10 @@ $pageName = '月老文化'; //頁面名稱
                         <br>
                         準備供品
                     </h4>
-                    <p class="wcard-p_lb">
-                        備香、金紙與2份供品一份給廟宇主神，一份給月老。給月老供品需要「雙數」及「甜食」。
+                    <p class="wcard-p_lb text-cneter">
+                        備香、金紙與2份供品一份給廟宇主神，一份給月老。
                         <br>
+                        給月老供品需要「雙數」及「甜食」。
                         月老喜歡吃甜甜、軟軟的食物，供品可以準備巧克力、糖果、甜麻糬等。此外，也可以準備諧音特殊的供品，例如：花生（花生好事）、紅棗（早日實現）、枸杞（人氣爆棚）、桂圓（圓圓滿滿）、鮮花水果（開花結果），以及網路上很夯的求姻緣組合「筷子＋來一客泡麵＝（桃花快來）」等。
                     </p>
                 </div>
@@ -425,7 +431,7 @@ $pageName = '月老文化'; //頁面名稱
     </section>
 
     <!-- 參拜月老禁忌-mb -->
-    <div class="d-md-none mt-5" id="mbnotice_lb">
+    <div class="d-md-none  mbtargetScrollSection" id="mbnotice_lb">
         <h1 class="text-center mb-title_lb pt-4">參拜月老禁忌</h1>
         <div class="scroll-snap_lb mt-4">
             <div class="col">
@@ -488,10 +494,10 @@ $pageName = '月老文化'; //頁面名稱
 
     <!-- 如何還願-pc -->
     <section class="position-relative">
-        <div class="s4-bg-1_lb position-absolute">
+        <div class="s4-bg-1_lb position-absolute d-none">
             <img class="w-100" src="./imgs/culture/s4-bg-1.png" alt="">
         </div>
-        <div class="s3-rightbg position-absolute">
+        <div class="s3-rightbg position-absolute d-none">
             <img src="./imgs/culture/s3-rightbg.png" alt="">
         </div>
         <div class="container section4_lb position-relative targetScrollSection d-none d-md-block" id="givebk_lb">
@@ -515,7 +521,7 @@ $pageName = '月老文化'; //頁面名稱
     </section>
 
     <!-- 如何還願-mb -->
-    <div class="container mbsection4_lb  d-md-none position-relative">
+    <div id="mbsection4_lb" class="container mbsection4_lb  d-md-none position-relative mbtargetScrollSection">
         <div class="mb-devotion-title  position-absolute">
             <img class="w-100" src="./imgs/culture/Devotion title.png" alt="">
         </div>
@@ -1025,7 +1031,7 @@ $pageName = '月老文化'; //頁面名稱
         </div>
     </div>
     <!--全台精選月老廟-mb-->
-    <div class="container mbselected-temple_lb  d-md-none p-0">
+    <div id="mbselected-temple_lb" class=" container mbtargetScrollSection mbselected-temple_lb  d-md-none p-0">
         <h1 class="text-center mb-title_lb py-4">全台精選月老廟</h1>
         <div class="row d-flex justify-content-center m-0">
             <div class="form-group mr-4 my-auto">
@@ -1047,12 +1053,12 @@ $pageName = '月老文化'; //頁面名稱
         </div>
         <div class="temScroll-snap_lb">
             <div class="col p-0">
-                <div class="mbTemCard pt-3">
-                    <div class="mx-auto mbTemImg-wrap">
+                <div id="mbTemCard-c01" class="mbTemCard pt-3">
+                    <div class="mx-auto c01-mbTemImg-wrap">
                     </div>
-                    <h6 class="text-center mt-3 text-white">台北市霞海城隍廟</h6>
+                    <h6 class="text-center mt-3 text-white">霞海城隍廟</h6>
                     <p class="xs mbdetail-info_lb mb-0 text-white">
-                        <span class="ml-3">台北市大同區迪化街一段61號台北市大同區迪化街一段61號
+                        <span class="ml-3">台北市大同區迪化街一段61號
                         </span>
                         <span class="ml-3">06:17 - 07:47</span>
                     </p>
@@ -1060,19 +1066,19 @@ $pageName = '月老文化'; //頁面名稱
             </div>
             <div class="col p-0">
                 <div class="mbTemCard pt-3">
-                    <div class="mx-auto mbTemImg-wrap">
+                    <div id="mbTemCard-c06"   class="mx-auto c06-mbTemImg-wrap">
                     </div>
-                    <h6 class="text-center mt-3 text-white">台北市霞海城隍廟</h6>
+                    <h6 class="text-center mt-3 text-white">龍山寺</h6>
                     <p class="xs mbdetail-info_lb mb-0 text-white">
-                        <span class="ml-3">台北市大同區迪化街一段61號台北市大同區迪化街一段61號
+                        <span class="ml-3">台北市萬華區廣州街211號
                         </span>
-                        <span class="ml-3">06:17 - 07:47</span>
+                        <span class="ml-3">07:00 - 21:30</span>
                     </p>
                 </div>
             </div>
         </div>
         <div class="position-relative">
-            <div class="mbdetail-card_lb ">
+            <div id="c01-mbdetail-card" class="mbdetail-card_lb d-none">
                 <div class="prepage_lb pl-2 pt-3">
                     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
@@ -1082,18 +1088,18 @@ $pageName = '月老文化'; //頁面名稱
                     <div class="col-7 p-0 pl-3">
                         <h6 class="m-0 text-white">台北市霞海城隍廟</h6>
                         <p class="xs mbdetail-info_lb mb-0 text-white">
-                            <span class="ml-1">台北市大同區迪化街一段61號大同區迪化街一段61號
+                            <span class="ml-1">台北市大同區迪化街一段61號
                             </span>
                             <span class="ml-1">06:17 - 07:47</span>
                         </p>
                     </div>
                     <div class="col-3 p-0 mx-2">
-                        <div class="mx-auto mbDetailTemImg-wrap">
+                        <div class="mx-auto c01-mbDetailTemImg-wrap">
                             <!-- <img class="w-100" src="./imgs/culture/temple/C01_1.jpeg" alt=""> -->
                         </div>
                     </div>
                 </div>
-                <div class="mbTemCard-bottom_lb px-3 ">
+                <div  class="mbTemCard-bottom_lb px-3">
 
                     <div class="text-center pb-2">
                         <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
@@ -1113,13 +1119,60 @@ $pageName = '月老文化'; //頁面名稱
                     </small>
 
 
-                    <div class="text-center pb-2">
+                    <div class="text-center py-2">
                         <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
                     </div>
                     <small class="mt-3 temnoticetext_lb">
                         1. 需先向主神觀世音菩薩說明來意後，再依序參拜
                         <br>
                         2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
+                        </p>
+                </div>
+            </div>
+            <div id="c06-mbdetail-card"  class="mbdetail-card_lb d-none">
+                <div class="prepage_lb pl-2 pt-3">
+                    <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
+                    </svg>
+                </div>
+                <div class="row mbTemCard-top_lb py-3 m-0">
+                    <div class="col-7 p-0 pl-3">
+                        <h6 class="m-0 text-white">龍山寺</h6>
+                        <p class="xs mbdetail-info_lb mb-0 text-white">
+                            <span class="ml-1">台北市萬華區廣州街211號
+                            </span>
+                            <span class="ml-1">07:00 - 21:30</span>
+                        </p>
+                    </div>
+                    <div class="col-3 p-0 mx-2">
+                        <div class="mx-auto c06-mbDetailTemImg-wrap">
+                            <!-- <img class="w-100" src="./imgs/culture/temple/C01_1.jpeg" alt=""> -->
+                        </div>
+                    </div>
+                </div>
+                <div  class="mbTemCard-bottom_lb px-3">
+
+                    <div class="text-center pb-2">
+                        <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
+                    </div>
+                    <small class=" mt-3 steptext_lb ">
+                    1. 前殿:釋迦牟尼佛、藥師佛與阿彌陀佛<br>
+                    2. 正殿:先向外拜天公，再向內拜觀世音菩薩、文殊菩薩、普賢菩薩<br>
+                    3. 後殿中央:天上聖母<br>
+                    4. 後殿右方:水仙尊王、城隍爺、龍爺、福德正神<br>
+                    5. 後殿左方:註生娘娘、池頭夫人、十二婆者<br>
+                    6. 後殿右側:文昌帝君、大魁星君、紫陽夫子、華陀仙師<br>
+                    7. 後殿左側:關聖帝君、三官大帝、地藏王菩薩、月老神君<br>
+                    8. 向月老稟明生辰八字、姓名、住址、理想對象類型及條件，擲三次聖筊後可索取一條紅線，並在月老香爐上過火
+                    </small>
+
+
+                    <div class="text-center pb-2">
+                        <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
+                    </div>
+                    <small class="mt-3 temnoticetext_lb">
+                    1. 需先向主神觀世音菩薩說明來意後，再依序參拜 <br>
+                    2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
                         </p>
                 </div>
             </div>

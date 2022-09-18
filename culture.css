@@ -106,6 +106,10 @@ height: 164px;
   width: 300px;
   margin: 0 auto;
 }
+.mb-title_lb ,.mb-section1_lb,.mb-section1-top_lb,.mb-section1-bottom_lb{
+  transition: .5s;
+}
+
 
 .title_lb {
   color: var(--color-text100);
@@ -394,6 +398,13 @@ height: 164px;
   .wcard-p_lb{
     padding: 0 20px;
   }
+  @media (max-width: 768px) {
+
+    .wcard-p_lb{
+      text-align: center;
+    }
+    
+  }
   .img-wrap_lb{
     width: 250px;
     margin: 0 auto;
@@ -481,7 +492,13 @@ height: 164px;
 .section3_lb{
   margin-top: 150px;
   overflow: hidden;
-
+}
+@media (max-width: 768px) {
+  .section3_lb{
+    margin-top: 80px;
+    overflow: hidden;
+  }
+  
 }
 
 .s3-leftcloud_lb{
@@ -583,7 +600,7 @@ height: 164px;
   color: var(--color-text100);
 }
 .mb-content_lb{
-  font-size: 20px;
+  font-size: 18px;
   color: var(--color-text87);
 }
 
@@ -716,7 +733,7 @@ margin-top: -170px;
 
 .c06-tem-wrap_lb{
   border-radius: 8px;
-  background: url(./imgs/culture/temple/C01_6.jpeg);
+  background: url(./imgs/culture/temple/C06_1.jpg);
   background-size: cover;
   width: 300px;
   height: 170px;
@@ -724,7 +741,7 @@ margin-top: -170px;
 }
 .c01-tem-wrap_lb{
   border-radius: 8px;
-  background: url(./imgs/culture/temple/C01_1.jpeg);
+  background: url(./imgs/culture/temple/C01_1.jpg);
   background-size: cover;
   width: 300px;
   height: 170px;
@@ -775,14 +792,14 @@ margin-top: -170px;
 .sidebar_lb a.active_lb {
 color: #CD562F;
 }
-.mbnavbar_lb a.active_lb {
+.mbnavbar_lb a.mbactive_lb {
 color: #CD562F;
 }
 
 /* 預設關於月老一開始就是紅色 */
-.mbnavbar_lb a:focus  {
+/* .mbnavbar_lb a:focus  {
 color: #CD562F;
-}
+} */
 
 /* 地圖地標 */
 .landmark_lb{
@@ -886,12 +903,20 @@ color: #CD562F;
   border-radius: 8px;
   background-color: var(--color-orange);
 }
-.mbTemImg-wrap{
+.c01-mbTemImg-wrap{
   width: 120px;
   height: 120px;
   border-radius: 50%;
   overflow: hidden;
-  background: url(./imgs/culture/temple/C01_1.jpeg) center center no-repeat;
+  background: url(./imgs/culture/temple/C01_1.jpg) center center no-repeat;
+  background-size: cover;
+}
+.c06-mbTemImg-wrap{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: url(./imgs/culture/temple/C06_1.jpg) center center no-repeat;
   background-size: cover;
 }
 .mbdetail-card_lb{
@@ -901,18 +926,29 @@ color: #CD562F;
   transition: 0.5s;
   /* z-index: 100; */
   /* transform-origin: 0% 0%; */
-  transform: translateY(600px);
+  transform: translateY(550px);
+  transition: .5s;
 
 }
 
-.mbDetailTemImg-wrap{  
+.c01-mbDetailTemImg-wrap{  
   width: 120px;
   height: 120px;
   /* width: 100%;
   height: 100%; */
   border-radius: 50%;
   overflow: hidden;
-  background: url(./imgs/culture/temple/C01_1.jpeg) center center no-repeat;
+  background: url(./imgs/culture/temple/C01_1.jpg) center center no-repeat;
+  background-size: cover;
+}
+.c06-mbDetailTemImg-wrap{  
+  width: 120px;
+  height: 120px;
+  /* width: 100%;
+  height: 100%; */
+  border-radius: 50%;
+  overflow: hidden;
+  background: url(./imgs/culture/temple/C06_1.jpg) center center no-repeat;
   background-size: cover;
 }
 
@@ -963,6 +999,8 @@ color: #CD562F;
   background-color: var(--color-orange);
   /* border: 1px solid red; */
 }
+
+
 .mbTemCard-bottom_lb{
 border-radius: 8px 8px 0 0;
   height: 443px;
