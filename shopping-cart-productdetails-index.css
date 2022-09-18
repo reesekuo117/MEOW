@@ -282,6 +282,16 @@
 #listinfo-details-yu .tbody {
   border: none;
 }
+.priceNT-yu h6.NTYu::before{
+  content: "訂單金額:NT$";
+}
+.priceNT-yu h6.FreightYu::before{
+  content: "運費金額: NT$";
+}
+.priceNT-yu h6#total-price-yu::before{
+  content: "總金額:NT$";
+}
+
 /* ----- 桌機下拉詳細訂單表格總價---------*/
 .listinfo-details-totalprice-yu {
   padding-top: 0;

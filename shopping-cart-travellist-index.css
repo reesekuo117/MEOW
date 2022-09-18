@@ -269,7 +269,9 @@
     align-items: flex-end;
 }
 
-
+.listinfo-details-totalprice-yu h6#total-price-yu::before{
+    content: "訂單金額:NT$";
+}
 .section-1-yu{
     background-color: #FFFCF7;
     margin-bottom: 60px;

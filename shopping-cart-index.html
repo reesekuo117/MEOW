@@ -266,8 +266,10 @@
                                         </div>
                                     </td>
                                     <!-- 單價 -->
-                                    <td id="onepriceYu" class="price-yu h6" >
-                                        <input class="onePriceinputYu" nams="priceYu"  value='707' disabled>
+                                    <td id="onepriceYu" class="price-yu m-0" >
+                                        <h6 class="onePriceinputYu " nams="priceYu">
+                                            707
+                                        </h6>
                                     </td>
                                     <!-- 數量 -->
                                     <td class="">
@@ -283,8 +285,10 @@
                                         </form>
                                     </td>
                                     <!-- 小計 -->
-                                    <td name="tpriceYu" id="totalprice_yu" class="total_price_yu h6 p-2">
-                                        
+                                    <td name="tpriceYu"  class="total_price_yu h6 p-2" >
+                                        <h6 id="totalprice_yu" class="AllTotalPriceYu" nams="priceYu">
+                                            707
+                                        </h6>
                                     </td>
                                     <!-- 刪除 -->
                                     <th scope="col" class="form-delete-yu">
@@ -324,7 +328,9 @@
                                     </td>
                                     <!-- 單價 -->
                                     <td id="onepriceYu" class="price-yu h6" >
-                                        <input class="onePriceinputYu" nams="priceYu"  value='707' disabled>
+                                        <h6 class="onePriceinputYu" nams="priceYu">
+                                            707
+                                        </h6>
                                     </td>
                                     <!-- 數量 -->
                                     <td class="">
@@ -340,8 +346,10 @@
                                         </form>
                                     </td>
                                     <!-- 小計 -->
-                                    <td name="tpriceYu" id="totalprice_yu" class="total_price_yu h6 p-2">
-                                        
+                                    <td name="tpriceYu" id="totalprice_yu" class="total_price_yu h6 p-2" >
+                                        <h6 class="AllTotalPriceYu" nams="priceYu">
+                                            707
+                                        </h6>
                                     </td>
                                     <!-- 刪除 -->
                                     <th scope="col" class="form-delete-yu">
@@ -441,25 +449,28 @@
                                         </h6>
                                     </td>
                                     <!-- 單價 -->
-                                    <td class="price-yu">
-                                        1500
+                                    <td id="onepriceYu" class="price-yu h6" >
+                                        <h6 class="onePriceinputYu" nams="priceYu">
+                                            1500
+                                        </h6>
                                     </td>
                                     <!-- 數量 -->
                                     <td>
                                         <form id='myform' method='POST' action='#'>
-                                            <label for=""> </label>
                                             <input name="minusplusname" type='button' value='-' class='qtyminus' field='quantity' />
                                             <input type='text' name='quantity' value='0' class='qty-yu' />
                                             <input name="minusplusname" type='button' value='+' class='qtyplus' field='quantity' />
                                         </form>
                                     </td>
-                                    <!-- 小計 -->
-                                    <td class="price-yu">
-                                        1500
+                                   <!-- 小計 -->
+                                    <td name="tpriceYu"  class="total_price_yu p-2" >
+                                        <h6 id="totalprice_yu" class="AllTotalPriceYu m-0" nams="priceYu">
+                                            1500
+                                        </h6>
                                     </td>
                                     <!-- 刪除 -->
                                     <th scope="col" class="form-delete-yu">
-                                        <i  class=" fa-solid fa-trash-can"></i>
+                                        <i onclick="javascript:return del();"  id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
                                     </th>
                                 </tr>
                             </tbody>

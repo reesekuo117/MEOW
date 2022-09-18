@@ -1,8 +1,8 @@
 
 /*-----------------購物車訂單的進度條 ----------------- */
-/* *{
+*{
     border: 1px solid #000;
-    } */
+    }
 .line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
@@ -229,7 +229,7 @@
     border: none;
 }
 #uniqui-yu .tbody td{
-    padding: 2rem;
+    padding: 1rem;
 }
 /* -------- 旅遊行程表格外觀設定--------- */
 #travel-yu .table .thead th{
@@ -258,7 +258,7 @@
 }
 #travel-yu .tbody th , .tbody td{
     border: none;
-    padding: 2rem;
+    padding: 1rem;
 }
 /* ---------規格下拉選單外觀 ---------------*/
 .form-select-yu{
@@ -333,16 +333,31 @@
 }
 
 /* -------------單價------------- */
-#onepriceYu input{
-    text-align: center;
-    width: 55px;
+h6.onePriceinputYu{
     height: 30px;
+    text-align: center;
     color:#432A0F;
-    border: none;
-    background-color: #fff;
+}
+h6.onePriceinputYu::before{
+    content: "NT$";
+}
+
+/* ---------小計------------ */
+h6.AllTotalPriceYu{
+    border: 1px solid #000;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    color:#432A0F;
+    
+}
+h6.AllTotalPriceYu::before{
+    content: "NT$";
 }
 /* -------------數量增加按鈕------------- */
+
 #myform input.qtyminus {
+    
     width: 30px;
     height: 30px;
     border-radius: 100%;
