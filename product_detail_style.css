@@ -148,7 +148,7 @@ html{
     color: #fff;
 
 }
-.buy{
+.pd_head .buy{
     width: 400px;
     height: 45px;
     color: var(--color-text87);
@@ -158,7 +158,7 @@ html{
     border: 2px solid var(--color-text87);
     margin-bottom: 16px;
 }
-.cart{
+.pd_head .cart{
     width: 400px;
     height: 45px;
     color: var(--color-text87);
@@ -242,10 +242,15 @@ button:hover{
 .btns .favorite{
     background-color: var(--color-creamy-light);
 }
-
-.btns .buy{
-    margin: 0;
+.undernav .btns .cart{
+    background-color: var(--color-creamy-light);
 }
+.undernav .btns .buy{
+    margin: 0;
+    background-color: var(--color-yellow);
+
+}
+
 /* -----------------------下方列結束-------------------- */
 .links{
     flex-direction: column;
@@ -296,7 +301,7 @@ button:hover{
     background-color: var(--color-yellow);
     border-radius: 8px;
 }
-.cd{
+.cd .row{
     margin-top: 12px;
     border-bottom: 1px solid var(--color-text60);
 }
@@ -321,7 +326,42 @@ button:hover{
     background-color: #fff;
     border: 2px solid var(--color-text87);
 }
+.cd_mb i{
+    color: var(--color-yellow);
+}
+.cd_mb .detail_comment{
+    margin-top: 12px;
+    border-bottom: 1px solid var(--color-text60);
+}
 /* -----------------------評價結束-------------------- */
+.pd_footer_mb{
+    width: 100%;
+    background-color: var(--color-orange);
+    position: fixed;
+    bottom: 0;
+}
+
+.pd_footer_mb .buy{
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-creamy-light);
+    border: 2px solid var(--color-text87);
+    margin-bottom: 16px;
+}
+.pd_footer_mb .cart{
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-creamy-light);
+    border: 2px solid var(--color-text87);
+}
+.footercolor{
+    fill: var(--color-yellow);
+}
+/* 桌機板瀏覽其他商品卡片 */
 .otherp{
     margin: 28px 0 120px;
 }

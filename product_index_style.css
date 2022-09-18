@@ -440,6 +440,9 @@ button {
 .carousel_mb{
     overflow: hidden;
 }
+.carousel_mb .price h4::before{
+    content: "NT$ ";
+}
 .visuallyhidden {
     position: absolute;
     z-index: -1;

@@ -102,7 +102,7 @@
         const productDiv = $('.product_q');
 
         plusBtn.on('click', function(){
-            // 可以用function也可以用箭頭函式，用箭頭函不能用this
+            // 可以用function也可以用箭頭函式，用箭頭不能用this
             let num = +productDiv.html();
             // +productDiv.html()→將.people裡面的文字轉換為數值，原生的用法是將.html()改成.innerText()
             productDiv.html(num+1);
@@ -132,8 +132,12 @@ $('.icon_heart').click(function(e){
 });
 
 //下方列愛心變色
-$('.favorite > .icon_heart_nav').click(function(){
+$('.favorite').click(function(){
     $('.icon_heart_nav > svg').toggleClass('color')
+});
+// 手機footer愛心變色
+$('.icon_heart_mb').click(function(){
+    $('.heart_line').toggleClass('footercolor')
 });
         // ----------------愛心變色結束-------------------
 
@@ -163,14 +167,20 @@ $(function(){
 
 $(window).scroll(function () {
         const nowScroll = $(window).scrollTop();
-        // console.log(' now scroll', nowScroll);
+        console.log(' now scroll', nowScroll);
 
         for(let i = 0; i < 4; i++){
             if(nowScroll >= sectionsOffsetTop[i]-30){
                 $('.links a').eq(i).css('color','var(--color-orange)').siblings().css('color','var(--color-text87)')
             }
+            if(nowScroll >= sectionsOffsetTop[i]){
+                console.log('hi', sectionsOffsetTop);
+                $('.pdnav_mb a').eq(i).css('color', 'var(--color-orange)').siblings().css('color', 'var(--color-text87)')
+
+            }
         }
 
+        
         // if(nowScroll >= sectionsOffsetTop[0]){
         //     $('.links a').eq(0).css('color','red').siblings().css('color','black')
         // }
@@ -181,6 +191,42 @@ $(window).scroll(function () {
 
     }
 )
+
+const sectionsOffsetTopMB = [];
+$(function(){
+    for(let i = 0; i < 4; i ++){
+        sectionsOffsetTopMB.push($('.details > div').eq(i).offset().top)
+    }
+})
+$(window).scroll(function () {
+    const nowScroll = $(window).scrollTop();
+    console.log('now scroll', nowScroll);
+
+    for(let i = 0; i < 4; i++){
+        if(nowScroll >= sectionsOffsetTopMB[i]){
+            // console.log('hi', sectionsOffsetTopMB);
+            $('.pdnav_mb a').eq(i).css('color', 'var(--color-orange)').siblings().css('color', 'var(--color-text87)')
+
+    //     }
+    // if ($(window).scrollTop() >= nowScroll) {
+    // $('.pdnav_mb').css({
+    //     transform: 'translateY(0px)',
+    //     opacity: 1,
+    //     })
+    // } else {
+    // $('.pdnav_mb').css({
+    //     transform: 'translateY(-70px)',
+    //     opacity: 0,
+    // })
+        }
+    }
+})
+//往下滑消失，上滑才出現
+
+
+
+
+
         // ----------------側邊攔變色結束-------------------
 
 

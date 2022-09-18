@@ -4,18 +4,24 @@ html{
 .pd_head{
     margin: 80px;
 }
-/* 要再改 */
-h2,h5,h6{
-    color: var(--color-text87);
-}
-p,small{
+
+.travel_detail_07 h2,.travel_detail_07 h5{
     color: var(--color-text100);
 }
-.xs{
+.travel_detail_07 p,.travel_detail_07 h6{
+    color: var(--color-text87);
+}
+.travel_detail_07 small, .travel_detail_07 .xs{
     color: var(--color-text60);
 }
-/* ------------------------輪播牆------------------------ */
+.intro_bg small, .tnotice_info small{
+    color: var(--color-text87);
 
+}
+/* ------------------------輪播牆------------------------ */
+ol.carousel-indicators{
+    bottom: 0;
+}
 .carousel-item img{
     aspect-ratio: 16/9;
 }
@@ -49,10 +55,18 @@ p,small{
 .travel_head .col-md-3{
     text-align: center;
 }
+
 .price h2::before{
     content: "NT$ ";
 }
 .price h2::after{
+    content: "/人";
+    font-size: 14px;
+}
+.price_mb h4::before{
+    content: "NT$ ";
+}
+.price_mb h4::after{
     content: "/人";
     font-size: 14px;
 }
@@ -95,7 +109,7 @@ p,small{
 .people{
     margin: 4px;
 }
-.buy{
+.travel_head .buy{
     width: 250px;
     height: 45px;
     color: var(--color-text87);
@@ -105,7 +119,7 @@ p,small{
     border: 2px solid var(--color-text87);
     margin-bottom: 16px;
 }
-.favorite{
+.travel_head .favorite{
     width: 250px;
     height: 45px;
     color: var(--color-text87);
@@ -114,7 +128,20 @@ p,small{
     background-color: var(--color-creamy-light);
     border: 2px solid var(--color-text87);
 }
-
+/* 手機版中間列 */
+.tdnav_mb{
+    background-color: var(--color-lightcreamy);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.tdnav_mb a{
+    text-decoration: none;
+}
+.tdnav_mb small:hover{
+    color: #CD562F;
+    
+}
 /* 商品標題結束 */
 /* 訂購行程 */
 .purchase_travel .container{
@@ -156,6 +183,13 @@ p,small{
 .total h6{
     margin: 12px;
 }
+.purchase_travel .buy_btn button{
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid var(--color-text87);
+    background-color: var(--color-yellow);
+}
 /* 訂購行程結束 */
 /* 下方列 */
 .undernav{
@@ -189,8 +223,10 @@ button:hover{
     background-color: var(--color-creamy-light);
 }
 
-.btns .buy{
+.undernav .btns .buy{
     margin: 0;
+    background-color: var(--color-yellow);
+
 }
 /* -----------------------下方列結束-------------------- */
 /* 側邊攔 */
@@ -249,11 +285,17 @@ select{
     background-color: var(--color-yellow);
     border-radius: 8px;
 }
-.cd{
+.cd .row{
     margin-top: 12px;
     border-bottom: 1px solid var(--color-text60);
 }
-
+.cd_mb i{
+    color: var(--color-yellow);
+}
+.cd_mb .detail_comment{
+    margin-top: 12px;
+    border-bottom: 1px solid var(--color-text60);
+}
 .profile_img{
     width: 100px;
     margin: 0 auto;
@@ -274,7 +316,51 @@ select{
     background-color: #fff;
     border: 2px solid var(--color-text87);
 }
+.choiceandbuy_mb{
+    background-color: var(--color-creamy-light);
+    padding: 24px;
+    margin-top: 24px;
+
+}
+.choiceandbuy_mb .buy_btn button{
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-yellow);
+    border: 2px solid var(--color-text87);
+    margin-bottom: 16px;
+}
 /* -----------------------評價結束-------------------- */
+.td_footer_mb{
+    width: 100%;
+    background-color: var(--color-orange);
+    position: fixed;
+    bottom: 0;
+}
+.td_footer_mb .favorite{
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-creamy-light);
+    border: 2px solid var(--color-text87);
+}
+.td_footer_mb .buy{
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-creamy-light);
+    border: 2px solid var(--color-text87);
+    margin-bottom: 16px;
+}
+
+.footercolor{
+    fill: var(--color-yellow);
+}
+
+/* 桌機板瀏覽其他行程卡片 */
 .otherp{
     margin: 28px 0 120px;
 }
