@@ -8,23 +8,21 @@ $output = [
     'postData' => $_POST,
 ];
 
-if(empty($_POST['signup_email']) or empty($_POST['signup_password']) or empty($_POST['signup_again'])){
-    $output['error'] = '請輸入正確的帳號密碼!';
-    echo json_encode($output, JSON_UNESCAPED_UNICODE);
-    exit;
-}
+// if(empty($_POST['signup_email']) or empty($_POST['signup_password']) or empty($_POST['signup_again'])){
+//     $output['error'] = '請輸入正確的帳號密碼!';
+//     echo json_encode($output, JSON_UNESCAPED_UNICODE);
+//     exit;
+// }
 
-$sql = "INSERT INTO `member`(
-        -- `email`, 
-        -- `password`, 
-        `picture`, 
-        `name`, 
-        `mobile`, 
-        `birthday`, 
-        `address_city`, 
-        `address_region`, 
-        `address`, 
-        -- `created_at`
+$sql = "INSERT INTO `review`(
+        -- `sid`, 
+        -- `members_id`, 
+        `target_type`, 
+        `collect_id`, 
+        `star`, 
+        `content`, 
+        `tags_sid`, 
+        `created_at`,
     ) VALUES (
         -- ?,
         -- ?,
@@ -33,23 +31,18 @@ $sql = "INSERT INTO `member`(
         ?,
         ?,
         ?,
-        ?,
-        ?,
-        -- NOW()
+        NOW()
     )";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     // $_POST['signup_email'],
     // $_POST['signup_password'],
-    $picture, 
-    $name, 
-    $mobile, 
-    $birthday, 
-    $address_city, 
-    $address_region, 
-    $address, 
-    $created_at,
+    $_POST[''],
+    $_POST[''],
+    $_POST[''],
+    $_POST[''],
+    $_POST[''],
 ]);
 
 if($stmt->rowCount()){

@@ -1,10 +1,11 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
-$pageName ='member'; //頁面名稱
+$pageName ='會員中心'; //頁面名稱
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./reese.css">
+<link rel="stylesheet" href="./reese.js">
 <?php include __DIR__. '/parts/navbar.php'; ?>
 <div class="background-re">
 <div class="container-re">
@@ -12,7 +13,7 @@ $pageName ='member'; //頁面名稱
         <div class=" d-none d-md-block col-md-3">
             <div class="picturewarp-re mx-auto my-4 position-relative">
                 <img class="w-100" src="./imgs/member/picture01.png" alt="">
-                <div class="pictureicon-re position-absolute">
+                <div class="pictureicon-re position-absolute" onclick="document.getElementById('pictureChange_re').style.display='block'" style="width:auto;">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="4" y="8" width="24" height="17.3333" rx="4" stroke="#432A0F" stroke-width="2.66667"/>
                         <path d="M6.82947 20.6949C6.47686 21.3413 6.71507 22.1512 7.36153 22.5039C8.00799 22.8565 8.81791 22.6183 9.17053 21.9718L6.82947 20.6949ZM18.1818 21.3333L17.0113 21.9718C17.2383 22.388 17.6692 22.6523 18.1431 22.6661C18.617 22.6799 19.0625 22.441 19.3133 22.0387L18.1818 21.3333ZM22.8685 22.0387C23.2581 22.6636 24.0804 22.8544 24.7053 22.4648C25.3302 22.0753 25.521 21.2529 25.1315 20.628L22.8685 22.0387ZM9.17053 21.9718L13.0909 14.7844L10.7499 13.5075L6.82947 20.6949L9.17053 21.9718ZM13.0909 14.7844L17.0113 21.9718L19.3523 20.6949L15.432 13.5075L13.0909 14.7844ZM19.3133 22.0387L21.0909 19.1871L18.8279 17.7764L17.0503 20.628L19.3133 22.0387ZM21.0909 19.1871L22.8685 22.0387L25.1315 20.628L23.3539 17.7764L21.0909 19.1871ZM21.0909 19.1871L21.0909 19.1871L23.3539 17.7764C22.31 16.1018 19.8719 16.1018 18.8279 17.7764L21.0909 19.1871ZM13.0909 14.7844L13.0909 14.7844L15.432 13.5075C14.4213 11.6545 11.7606 11.6545 10.7499 13.5075L13.0909 14.7844Z" fill="#432A0F"/>
@@ -25,11 +26,59 @@ $pageName ='member'; //頁面名稱
                 <li class="text-20-re mb-2" data-val="modify-password">修改密碼</li>
                 <li class="text-20-re mb-2" data-val="my-favorites" onclick="/*addToCartRe(event)*/">我的最愛</li>
                 <li class="text-20-re mb-2" data-val="member-order">查詢訂單</li>
-                <li class="signupbutton "><input class="btn-re btn200-re phonewidth330-re" type="submit" value="登出"></li>
+                <li class="signupbutton "><input class="btn-re btn200-re phonewidth330-re" type="submit" value="登出"><a href="re-logout.php"></a></li>
             </ul>
         </div>
+<!-- 會員頭像------------------------------------------------------------ -->
+        <div id="pictureChange_re" class="pictureChange_re">
+            <form name="" class="pictureChangePage_re pictureChangePage-animate_re col-12 col-md-6" method="post">
+                <h4 class="text-center position-relative">選擇喜歡的頭像<br>或上傳一張你的美照吧～
+                    <div class="picturePageClose-re d-inline-block position-absolute" onclick="document.getElementById('pictureChange_re').style.display='none'">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                            <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </h4>
+                <div class="d-flex flex-wrap justify-content-center my-3">
+                    <div class="picturewarpChange-re col-6 col-md-4">
+                        <img class="w-100" src="./imgs/member/picture01.png" alt="">
+                        <!-- <input id=""  name="" type="checkbox" value="" /> -->
+                    </div>
+                    <div class="picturewarpChange-re col-6 col-md-4">
+                        <img class="w-100" src="./imgs/member/picture02.png" alt="">
+                        <!-- <input id=""  name="" type="checkbox" value="" /> -->
+                    </div>
+                    <div class="picturewarpChange-re col-6 col-md-4">
+                        <img class="w-100" src="./imgs/member/picture03.png" alt="">
+                        <!-- <input id=""  name="" type="checkbox" value="" /> -->
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <!-- <button class="btn-re col-6 col-md-3 mx-1" type="button" onclick="document.getElementById('pictureChange_re').style.display='none'"></button> -->
+                    <div></div>
+                    <label class="btn-re col-6 col-md-3 mx-1 mb-0 text-center">
+                    <input type="file" id="mypicture-re" name="mypicture-re" style="display:none;"><span class="picturetext-re">新增頭像</span></label>
+                    <button class="btn-re col-6 col-md-3 mx-1" type="button" onclick="document.getElementById('pictureChange_re').style.display='none'">儲存</button>
+                </div>
+            </form>
+        </div>
+<!-- ------------------------------------------------------------ -->
         <div class="allright-re col-12 col-md-9 p-0">
         <div class="tab_con_re">
+< ?php
+if(! isset($_GET['id'])){
+    header('Location: member.php');
+    exit;
+}
+$id = intval($_GET['id']);
+$userid = "SELECT * FROM member WHERE sid=$id";
+$r = $pdo->query($userid)->fetch();
+if(empty($r)){
+    header('Location: index_.php');
+    exit;
+}
+? >
 <!-- p1-member----------------------------------------------------------------------------------------------------------- -->
             <div id="member-page-re" class="item_re" style="display: block;">
                 <div class="divination-re d-none d-md-block">
@@ -47,7 +96,7 @@ $pageName ='member'; //頁面名稱
                 <div class="col-12 d-md-none">
                     <div class="picturewarp-re mx-auto my-4 position-relative">
                         <img class="w-100" src="./imgs/member/picture01.png" alt="">
-                        <div class="pictureicon-re position-absolute">
+                        <div class="pictureicon-re position-absolute" onclick="document.getElementById('pictureChange_re').style.display='block'" style="width:auto;">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="4" y="8" width="24" height="17.3333" rx="4" stroke="#432A0F" stroke-width="2.66667"/>
                                 <path d="M6.82947 20.6949C6.47686 21.3413 6.71507 22.1512 7.36153 22.5039C8.00799 22.8565 8.81791 22.6183 9.17053 21.9718L6.82947 20.6949ZM18.1818 21.3333L17.0113 21.9718C17.2383 22.388 17.6692 22.6523 18.1431 22.6661C18.617 22.6799 19.0625 22.441 19.3133 22.0387L18.1818 21.3333ZM22.8685 22.0387C23.2581 22.6636 24.0804 22.8544 24.7053 22.4648C25.3302 22.0753 25.521 21.2529 25.1315 20.628L22.8685 22.0387ZM9.17053 21.9718L13.0909 14.7844L10.7499 13.5075L6.82947 20.6949L9.17053 21.9718ZM13.0909 14.7844L17.0113 21.9718L19.3523 20.6949L15.432 13.5075L13.0909 14.7844ZM19.3133 22.0387L21.0909 19.1871L18.8279 17.7764L17.0503 20.628L19.3133 22.0387ZM21.0909 19.1871L22.8685 22.0387L25.1315 20.628L23.3539 17.7764L21.0909 19.1871ZM21.0909 19.1871L21.0909 19.1871L23.3539 17.7764C22.31 16.1018 19.8719 16.1018 18.8279 17.7764L21.0909 19.1871ZM13.0909 14.7844L13.0909 14.7844L15.432 13.5075C14.4213 11.6545 11.7606 11.6545 10.7499 13.5075L13.0909 14.7844Z" fill="#432A0F"/>
@@ -60,27 +109,28 @@ $pageName ='member'; //頁面名稱
                     <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">會員資料</h5>
                     <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
-                <form id="form_member_re" name='form_member_re' class="padding225-re" method="post" onsubmit=" checkFormMember(); return false;">  
+                <form id="form_member_re" name='form_member_re' class="padding225-re" method="post" onsubmit=" checkFormMember(); return false;"> 
+                <input type="hidden" name="sid" value="<?= $r['sid'] ?>">
                 <!-- novalidate 不要驗證表單 -->
                 <!-- https://www.wfublog.com/2021/04/html5-validator.html -->
                     <div class="mb-3">
                         <label for="name" class="form-label-re text-18-re">姓名<span style="color:#963C38">*</span></label><br>
-                        <input id="member_name_re" class="input-re noline-re" type="text" placeholder=" 請輸入姓名" class="form-control" id="name" name="name" required>
+                        <input id="member_name_re" name="member_name_re" class="input-re noline-re" type="text" placeholder=" 請輸入姓名" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="mobile" class="form-label-re text-18-re">聯絡電話<span style="color:#963C38">*</span></label><br>
-                        <input id="member_phone_re" class="input-re noline-re" type="text" placeholder=" 請輸入聯絡電話" class="form-control" id="mobile" name="mobile" required>
+                        <input id="member_phone_re" name="member_phone_re" class="input-re noline-re" type="text" placeholder=" 請輸入聯絡電話" class="form-control" required>
                         <!-- 手機驗證<input type="text" required="required" maxlength="11" pattern="09\d{2}-\d{6}"/> -->
                     </div>
                     <div class="mb-3">
                         <label for="birthday" class="form-label-re text-18-re">出生日期</label><br>
-                        <input id="member_birthday_re" class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control" id="birthday" name="birthday">
+                        <input id="member_birthday_re" name="member_birthday_re" class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control">
                     </div>
                     <div class="">
                         <label for="address" class="form-label-re text-18-re">通訊地址</label><br>
                         <div class="address-re d-flex flex-wrap">
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_city" id="member_city_re">
+                                <select class="select-re" name="address_city_re" id="member_city_re">
                                     <option class="option-re text-16-re" value="0">臺北市</option>
                                     <option value="1">新北市</option>
                                     <option value="2">基隆市</option>
@@ -103,32 +153,32 @@ $pageName ='member'; //頁面名稱
                                 </select>
                             </div>
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_region" id="member_district_re">
+                                <select class="select-re" name="address_region_re" id="member_district_re">
                                     <option class="option-re text-16-re" value="0">中正區</option>
                                     <option value="1">板橋區</option>
                                     <option value="2">仁愛區</option>
                                 </select>
                             </div>
                             <div class="col-12 col-md-4 d-inline-block p-0">
-                                <input id="member_address_re" class="input-re addressarea-re col-12 col-md-4 noline-re" type="text" placeholder=" 請輸入詳細地址" class="form-control right-0" id="address" name="address">
+                                <input id="member_address_re" name="member_address_re" class="input-re addressarea-re col-12 col-md-4 noline-re" type="text" placeholder=" 請輸入詳細地址" class="form-control right-0">
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label-re text-18-re">信箱帳號<span style="color:#963C38">*</span></label><br>
-                        <input id="member_email_re" class="inputdisabled-re col-8 noline-re" type="text" class="form-control" id="email" name="email" disabled="disabled">
+                        <input id="member_email_re" class="inputdisabled-re col-8 noline-re" type="text" class="form-control" disabled="disabled">
                     </div>
                     <div id="member_msgContainer"></div>
                     <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
                 </form>
             </div>
 <!-- p2-password--------------------------------------------------------------------------------------------------------- -->
-            <div class="item_re">
+            <div id="password-page-re" class="item_re">
                 <!-- phone -->
                 <div class="col-12 d-md-none">
                     <div class="picturewarp-re mx-auto my-4 position-relative">
                         <img class="w-100" src="./imgs/member/picture01.png" alt="">
-                        <div class="pictureicon-re position-absolute">
+                        <div class="pictureicon-re position-absolute" onclick="document.getElementById('pictureChange_re').style.display='block'" style="width:auto;">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="4" y="8" width="24" height="17.3333" rx="4" stroke="#432A0F" stroke-width="2.66667"/>
                                 <path d="M6.82947 20.6949C6.47686 21.3413 6.71507 22.1512 7.36153 22.5039C8.00799 22.8565 8.81791 22.6183 9.17053 21.9718L6.82947 20.6949ZM18.1818 21.3333L17.0113 21.9718C17.2383 22.388 17.6692 22.6523 18.1431 22.6661C18.617 22.6799 19.0625 22.441 19.3133 22.0387L18.1818 21.3333ZM22.8685 22.0387C23.2581 22.6636 24.0804 22.8544 24.7053 22.4648C25.3302 22.0753 25.521 21.2529 25.1315 20.628L22.8685 22.0387ZM9.17053 21.9718L13.0909 14.7844L10.7499 13.5075L6.82947 20.6949L9.17053 21.9718ZM13.0909 14.7844L17.0113 21.9718L19.3523 20.6949L15.432 13.5075L13.0909 14.7844ZM19.3133 22.0387L21.0909 19.1871L18.8279 17.7764L17.0503 20.628L19.3133 22.0387ZM21.0909 19.1871L22.8685 22.0387L25.1315 20.628L23.3539 17.7764L21.0909 19.1871ZM21.0909 19.1871L21.0909 19.1871L23.3539 17.7764C22.31 16.1018 19.8719 16.1018 18.8279 17.7764L21.0909 19.1871ZM13.0909 14.7844L13.0909 14.7844L15.432 13.5075C14.4213 11.6545 11.7606 11.6545 10.7499 13.5075L13.0909 14.7844Z" fill="#432A0F"/>
@@ -141,22 +191,23 @@ $pageName ='member'; //頁面名稱
                     <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">會員資料</h5>
                     <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
-                <form name='form_forget_re' class="padding225-re" onsubmit=" checkForm(); return false;">  
+                <form name='form_forget_re' class="padding225-re" method="post" onsubmit=" checkFormPassword(); return false;">  
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">舊密碼<span style="color:#963C38">*</span></label><br>
-                        <input class="input-re noline-re" type="password" placeholder=" 請輸入舊密碼" required>
+                        <input id="oldpassword_re" name="oldpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入舊密碼" required>
                     </div>
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">新密碼<span style="color:#963C38">*</span></label><br>
-                        <input class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
+                        <input id="newpassword_re" name="newpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
                     </div>
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">請再次確認新密碼<span style="color:#963C38">*</span></label><br>
-                        <input class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
+                        <input id="againpassword_re" name="againpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
                     </div>
                     <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
                 </form>
             </div>
+
 <!-- p3-like------------------------------------------------------------------------------------------------------------- -->
             <div id="like-page-re" class="item_re">
                 <div>
@@ -596,11 +647,11 @@ $pageName ='member'; //頁面名稱
                             <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div>
                         </div> -->
                         <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="出貨超快速" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="ＣＰ值超高" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="商品超可愛" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="商品品質爆表" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="服務態度超好" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
+                            <label><input id="tag-re-1" type="checkbox" name="tag-re" value="出貨超快速" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                            <label><input id="tag-re-2" type="checkbox" name="tag-re" value="ＣＰ值超高" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                            <label><input id="tag-re-3" type="checkbox" name="tag-re" value="商品超可愛" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                            <label><input id="tag-re-4" type="checkbox" name="tag-re" value="商品品質爆表" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                            <label><input id="tag-re-5" type="checkbox" name="tag-re" value="服務態度超好" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                         </div>
                         <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
                     </div>
@@ -742,199 +793,241 @@ $pageName ='member'; //頁面名稱
 </div>
 </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>
+<script src="./reese.js"></script>
 <script>
-
-    const my_pages = $(".tab_con_re .item_re");
-    const myHashChange =  function(){
-        const hash = location.hash;
-        switch(hash) {
-            case '#member-data':
-                my_pages.eq(0).show().siblings().hide();
-                break;
-            case '#modify-password':
-                my_pages.eq(1).show().siblings().hide();
-                break;
-            case '#my-favorites':
-                my_pages.eq(2).show().siblings().hide();
-                break;
-            case '#member-order':
-                my_pages.eq(3).show().siblings().hide();
-                break;
-        }
-    };
-    window.addEventListener('hashchange', myHashChange);
-
-    // #member-data, #modify-password, #my-favorites, #member-order
-    // 側邊欄切換
-    $(function(){
-		
-        /*
-        //點擊上部的li，當前li添加current類，移除其他
-		$(".tab_list_re li").click(function(){
-			$(this).addClass("current_re").siblings().removeClass("current_re");
-			//點擊的同時，得到當前li的索引號
-			var index = $(this).index();
-			//讓下部裡面相應索引號的item顯示，其餘的item隱藏
-			$(".tab_con_re .item_re").eq(index).show().siblings().hide();
-		})
-        */
-        $(".tab_list_re li").click(function(){
-            const dataVal = $(this).attr('data-val')
-            location.href = '#' + dataVal;
-        });
-        myHashChange();
-	})
-    //手機會員/修改頁面
-    $(function(){
-		$(".tab_phonelist_re h5").click(function(){
-			$(this).addClass("current_re").siblings().removeClass("current_re");
-			var index = $(this).index();
-			$(".tab_con_re .item_re").eq(index).show().siblings().hide();
-		})
-	})
-    // like標籤切換
-    $(function(){
-    let $li = $('ul.tab-liketitle-re li');
-        $($li. eq(0) .addClass('active-re').find('a').attr('href')).siblings('.tab-inner-re').hide();
-    
-        $li.click(function(){
-            $($(this).find('a'). attr ('href')).show().siblings ('.tab-inner-re').hide();
-            $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
-        });
-    });
-
-    // order標籤切換
-    $(function(){
-    let $li = $('ul.ordertab-title-re li');
-        $($li. eq(0) .addClass('active-re').find('a').attr('href')).siblings('.ordertab-inner-re').hide();
-    
-        $li.click(function(){
-            $($(this).find('a'). attr ('href')).show().siblings ('.ordertab-inner-re').hide();
-            $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
-        });
-    });
-    // 查詢訂單
-    $('.orderbtn-re').click(function(){
-        $('.slide-re').slideToggle('normal');
-        $('.slide2-re').slideUp('normal');
-    })
-    $('.orderbtn02-re').click(function(){
-        $('.rightslide01-re').slideToggle('normal');
-        $('.rightslide02-re').slideUp('normal');
-    })
-    // 給予評價
-    $('#evaluation-btn-re').click(function(){
-        $('.slide-re').slideUp('normal');
-        $('.slide2-re').slideDown('normal');
-    })
-    $('#evaluation02-btn-re').click(function(){
-        $('.rightslide01-re').slideUp('normal');
-        $('.rightslide02-re').slideDown('normal');
-    })
-    // 關閉所以明細
-    $('.ordercross-re svg').click(function(){
-        $('.slide-re').slideUp('normal');
-        $('.slide2-re').slideUp('normal');
-    })
-    $('.ordercross02-re').click(function(){
-        $('.rightslide01-re').slideUp('normal');
-        $('.rightslide02-re').slideUp('normal');
-    })
-    // 星星
-    $('.star-re').click(function(){
-        console.log('hi',$(this).index());
-        for(let i = 0; i < 5; i++ ){
-            const color = ($(this).index() >= i)? '#E5A62A' : 'none';
-            // let color1 ;
-            // if($(this).index() >= i){
-            //     color1 = yellow
-            // }
-            // else{
-            //     color1 = none 
-            // }
-            $('.star-re').eq(i).css('fill',color)
-        }
-        // if($(this).index() === 0){
-        //     $('.star-re').eq(0).css('fill','#E5A62A')
-        //     $('.star-re').eq(1).css('fill','none')
-        //     $('.star-re').eq(2).css('fill','none')
-        //     $('.star-re').eq(3).css('fill','none')
-        //     $('.star-re').eq(4).css('fill','none')
-        // }
-    })
-    $('.rightstar-re').click(function(){
-        console.log('hi',$(this).index());
-        for(let i = 0; i < 5; i++ ){
-            const color = ($(this).index() >= i)? '#E5A62A' : 'none';
-            $('.rightstar-re').eq(i).css('fill',color)
-        }
-    })
-    //
-    
-    
-    // 
-    let districtArray = [
-        ['中正區', '大同區', '中山區', '萬華區', '信義區', '松山區', '大安區', '南港區', '北投區', '內湖區', '士林區', '文山區'],
-        ['板橋區', '新莊區', '泰山區', '林口區', '淡水區', '金山區', '八里區', '萬里區', '石門區', '三芝區', '瑞芳區', '汐止區', '平溪區', '貢寮區', '雙溪區', '深坑區', '石碇區', '新店區', '坪林區', '烏來區', '中和區', '永和區', '土城區', '三峽區', '樹林區', '鶯歌區', '三重區', '蘆洲區', '五股區'],
-        ['仁愛區', '中正區', '信義區', '中山區', '安樂區', '暖暖區', '七堵區'],
-    ];
-    $('#member_city_re').change(function () {
-        const cityNumber = $(this).val();
-        const districtData = districtArray[cityNumber];
-        // 用迴圈會更方便
-        // $('#district option').eq(0).text(districtData[0])
-        // $('#district option').eq(1).text(districtData[1])
-        // $('#district option').eq(2).text(districtData[2])
-        // 迴圈 一直要做重複的動作，裡面的索引值可能會改變
-        // 1.自己寫規則，for 迴圈，次數自己決定
-        // 2.用陣列的方法來寫迴圈，次數就是陣列的資料數量
-        //console.log('districtData:', districtData.length);
-        $('#member_district_re').empty();
-        $(districtData).each(function (index, item) {
-        console.log('JQ item:', item);
-        console.log('JQ index:', index);
-        $('#member_district_re').append(`<option value="${index}">${item}</option>`)
-        })
-    });
-    // 欄位錯誤狀態
-    const msgc_signup2 = $('#member_msgContainer');
-            function genAlert3(msg3, type='danger'){
-                const a = $(`
-                <div class="alert alert-${type}" role="alert">
-                    ${msg3}
-                </div>
-                `);
-                msgc_signup2.append(a);
-            }
-            $('#member-page-re').click(function(){
-                $('.alert').remove();
-            })
-    // 會員資料欄位檢查
-    function checkFormMember(){
-        console.log('checkFormMember');
-        let isPass = true;
-        if (!$('#member_name_re').val()) {
-            genAlert3('請填寫正確資料');
-            return;
-        }else if (!$('#member_phone_re').val()) {
-            genAlert3('請填寫正確資料');
-            return;
-        }
-        if(isPass){
-            $.post(
-                're-member-api.php', 
-                $(document.form_member_re).serialize(),
-                function(data){
-                    console.log('checkFormMember data',data);
-                    if(data.success){
-                        genAlert('修改成功', 'success');
-                    }else{
-                        genAlert(data.error);
-                    }
-            }, 'json');
-        }
+    const my_pages_re = $(".tab_con_re .item_re");
+const myHashChange =  function(){
+    const hash = location.hash;
+    switch(hash) {
+        case '#member-data':
+            my_pages_re.eq(0).show().siblings().hide();
+            break;
+        case '#modify-password':
+            my_pages_re.eq(1).show().siblings().hide();
+            break;
+        case '#my-favorites':
+            my_page_re.eq(2).show().siblings().hide();
+            break;
+        case '#member-order':
+            my_pages_re.eq(3).show().siblings().hide();
+            break;
     }
+};
+window.addEventListener('hashchange', myHashChange);
 
+// #member-data, #modify-password, #my-favorites, #member-order
+// 側邊欄切換
+$(function(){
+    
+    /*
+    //點擊上部的li，當前li添加current類，移除其他
+    $(".tab_list_re li").click(function(){
+        $(this).addClass("current_re").siblings().removeClass("current_re");
+        //點擊的同時，得到當前li的索引號
+        var index = $(this).index();
+        //讓下部裡面相應索引號的item顯示，其餘的item隱藏
+        $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+    })
+    */
+    $(".tab_list_re li").click(function(){
+        const dataVal = $(this).attr('data-val')
+        location.href = '#' + dataVal;
+    });
+    myHashChange();
+})
+//手機會員/修改頁面
+$(function(){
+    $(".tab_phonelist_re h5").click(function(){
+        $(this).addClass("current_re").siblings().removeClass("current_re");
+        var index = $(this).index();
+        $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+    })
+})
+// 會員頭像
+let picture_re = document.getElementById('pictureChange_re');
+window.onclick = function(event) {
+    if (event.target == picture_re) {
+        picture_re.style.display = "none";
+    }
+}
+// like標籤切換
+$(function(){
+let $li = $('ul.tab-liketitle-re li');
+    $($li. eq(0) .addClass('active-re').find('a').attr('href')).siblings('.tab-inner-re').hide();
+
+    $li.click(function(){
+        $($(this).find('a'). attr ('href')).show().siblings ('.tab-inner-re').hide();
+        $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
+    });
+});
+// order標籤切換
+$(function(){
+let $li = $('ul.ordertab-title-re li');
+    $($li. eq(0) .addClass('active-re').find('a').attr('href')).siblings('.ordertab-inner-re').hide();
+
+    $li.click(function(){
+        $($(this).find('a'). attr ('href')).show().siblings ('.ordertab-inner-re').hide();
+        $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
+    });
+});
+// 查詢訂單
+$('.orderbtn-re').click(function(){
+    $('.slide-re').slideToggle('normal');
+    $('.slide2-re').slideUp('normal');
+})
+$('.orderbtn02-re').click(function(){
+    $('.rightslide01-re').slideToggle('normal');
+    $('.rightslide02-re').slideUp('normal');
+})
+// 給予評價
+$('#evaluation-btn-re').click(function(){
+    $('.slide-re').slideUp('normal');
+    $('.slide2-re').slideDown('normal');
+})
+$('#evaluation02-btn-re').click(function(){
+    $('.rightslide01-re').slideUp('normal');
+    $('.rightslide02-re').slideDown('normal');
+})
+// 關閉所以明細
+$('.ordercross-re svg').click(function(){
+    $('.slide-re').slideUp('normal');
+    $('.slide2-re').slideUp('normal');
+})
+$('.ordercross02-re').click(function(){
+    $('.rightslide01-re').slideUp('normal');
+    $('.rightslide02-re').slideUp('normal');
+})
+// 星星
+$('.star-re').click(function(){
+    console.log('hi',$(this).index());
+    for(let i = 0; i < 5; i++ ){
+        const color = ($(this).index() >= i)? '#E5A62A' : 'none';
+        // let color1 ;
+        // if($(this).index() >= i){
+        //     color1 = yellow
+        // }
+        // else{
+        //     color1 = none 
+        // }
+        $('.star-re').eq(i).css('fill',color)
+    }
+    // if($(this).index() === 0){
+    //     $('.star-re').eq(0).css('fill','#E5A62A')
+    //     $('.star-re').eq(1).css('fill','none')
+    //     $('.star-re').eq(2).css('fill','none')
+    //     $('.star-re').eq(3).css('fill','none')
+    //     $('.star-re').eq(4).css('fill','none')
+    // }
+})
+$('.rightstar-re').click(function(){
+    console.log('hi',$(this).index());
+    for(let i = 0; i < 5; i++ ){
+        const color = ($(this).index() >= i)? '#E5A62A' : 'none';
+        $('.rightstar-re').eq(i).css('fill',color)
+    }
+})
+//
+
+
+// 
+let districtArray = [
+    ['中正區', '大同區', '中山區', '萬華區', '信義區', '松山區', '大安區', '南港區', '北投區', '內湖區', '士林區', '文山區'],
+    ['板橋區', '新莊區', '泰山區', '林口區', '淡水區', '金山區', '八里區', '萬里區', '石門區', '三芝區', '瑞芳區', '汐止區', '平溪區', '貢寮區', '雙溪區', '深坑區', '石碇區', '新店區', '坪林區', '烏來區', '中和區', '永和區', '土城區', '三峽區', '樹林區', '鶯歌區', '三重區', '蘆洲區', '五股區'],
+    ['仁愛區', '中正區', '信義區', '中山區', '安樂區', '暖暖區', '七堵區'],
+];
+$('#member_city_re').change(function () {
+    const cityNumber = $(this).val();
+    const districtData = districtArray[cityNumber];
+    // 用迴圈會更方便
+    // $('#district option').eq(0).text(districtData[0])
+    // $('#district option').eq(1).text(districtData[1])
+    // $('#district option').eq(2).text(districtData[2])
+    // 迴圈 一直要做重複的動作，裡面的索引值可能會改變
+    // 1.自己寫規則，for 迴圈，次數自己決定
+    // 2.用陣列的方法來寫迴圈，次數就是陣列的資料數量
+    //console.log('districtData:', districtData.length);
+    $('#member_district_re').empty();
+    $(districtData).each(function (index, item) {
+    console.log('JQ item:', item);
+    console.log('JQ index:', index);
+    $('#member_district_re').append(`<option value="${index}">${item}</option>`)
+    })
+});
+// 會員資料欄位錯誤狀態
+const msgc_member = $('#member_msgContainer');
+    function genAlert3(msg3, type='danger'){
+        const a = $(`
+        <div class="alert alert-${type}" role="alert">
+            ${msg3}
+        </div>
+        `);
+        msgc_member.append(a);
+    }
+    $('#member-page-re').click(function(){
+        $('.alert').remove();
+    })
+// 會員資料欄位檢查
+function checkFormMember(){
+    console.log('checkFormMember');
+    let isPass = true;
+    if (!$('#member_name_re').val()) {
+        genAlert3('請填寫正確會員資料');
+        return;
+    }else if (!$('#member_phone_re').val()) {
+        genAlert3('請填寫正確會員資料');
+        return;
+    }
+    if(isPass){
+        $.post(
+            're-member-api.php', 
+            $(document.form_member_re).serialize(),
+            function(data){
+                console.log('checkFormMember data',data);
+                if(data.success){
+                    genAlert('修改成功', 'success');
+                }else{
+                    genAlert(data.error);
+                }
+        }, 'json');
+    }
+}
+// 修改密碼欄位錯誤狀態
+const msgc_password = $('#password_msgContainer');
+    function genAlert4(msg4, type='danger'){
+        const a = $(`
+        <div class="alert alert-${type}" role="alert">
+            ${msg4}
+        </div>
+        `);
+        msgc_password.append(a);
+    }
+    $('#password-page-re').click(function(){
+        $('.alert').remove();
+    })
+// 修改密碼欄位檢查
+function checkFormPassword(){
+    console.log('checkFormPassword');
+    let isPass = true;
+    if (!$('#member_name_re').val()) {
+        genAlert4('請填寫正確會員資料');
+        return;
+    }else if (!$('#member_phone_re').val()) {
+        genAlert4('請填寫正確會員資料');
+        return;
+    }
+    if(isPass){
+        $.post(
+            're-changepassword-api.php', 
+            $(document.form_forget_re).serialize(),
+            function(data){
+                console.log('checkFormPassword data',data);
+                if(data.success){
+                    genAlert('修改成功', 'success');
+                }else{
+                    genAlert(data.error);
+                }
+        }, 'json');
+    }
+}
 </script>
-
 <?php include __DIR__. '/parts/html-foot.php'; ?>

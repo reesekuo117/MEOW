@@ -49,7 +49,7 @@ var $li = $('ul.tab-title li');
         $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
     });
 });
-// 欄位錯誤狀態
+// 登入欄位錯誤狀態
 const msgc_signin = $('#signin_msgContainer');
     function genAlert(msg1, type='danger'){
         const a = $(`
@@ -58,13 +58,13 @@ const msgc_signin = $('#signin_msgContainer');
         </div>
         `);
         msgc_signin.append(a);
-        setTimeout(()=>{
-            $(window).click(function(){
-                a.remove();
-            })
-        }, 2000);
+        // setTimeout(()=>{
+        //     $(window).click(function(){
+        //         a.remove();
+        //     })
+        // }, 2000);
     }
-// 欄位錯誤狀態
+// 註冊欄位錯誤狀態
 const msgc_signup = $('#signup_msgContainer');
     function genAlert2(msg2, type='danger'){
         const a = $(`

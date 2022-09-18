@@ -327,7 +327,7 @@ p {
     to {transform: scale(1)}
 }
 /* left-------------------------------------------------------------------- */
-
+/* 頭像--------------------------------------------------------------------- */
 .picturewarp-re {
     width: 250px;
     height: 250px;
@@ -345,9 +345,55 @@ p {
 .pictureicon-re>svg {
     margin: 3px 0 0 4px;
 }
-/* .current_re {
-    background-color: var(--color-yellow);
-} */
+/* 變更頭像 --------------------------------------*/
+.pictureChange_re {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 100px;
+    /* display: inline-block; */
+    position: absolute;
+}
+.pictureChangePage_re {
+    background-color: var(--color-lightcreamy);
+    margin: 5% auto 15% auto;
+    border: 2px solid var(--color-brown-dark);
+    box-shadow: 2px 2px var(--color-brown-dark);
+    border-radius: 8px;
+    padding: 20px;
+}
+.picturePageClose-re {
+    right: 0px;
+    top: 0px;
+}
+.picturewarpChange-re {
+    border-radius: 50%;
+}
+.picturetext-re {
+    line-height: 35px;
+    
+}
+.pictureChangePage-animate_re {
+    -webkit-animation: pictureChangePage-animate_re 0.6s;
+    animation: pictureChangePage-animate_re 0.6s
+}
+
+@-webkit-keyframes pictureChangePage-animate_re {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes pictureChangePage-animate_re {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
 /* right--------------------------------------- */
 .tab_con_re .item_re{
 	display: none;
@@ -420,6 +466,9 @@ p {
     /* background-color: var(--color-ivory); */
     border-radius: 8px;
     box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+.btn-re:focus {
+    outline-style: none;
 }
 /* -------------------------- */
 @media (max-width: 767px) {
@@ -541,6 +590,7 @@ p {
 
 .liketitle-re {
     padding: 0 10px;
+    border-radius: 8px 8px 0 0;
 }
 .liketitle-re .activetext-re {
     color: var(--color-text100);
@@ -798,7 +848,6 @@ thead tr th.thpadding-re {
 table .inside-orderlisttable-re {
     border-collapse:collapse;
 }
-
 @media only screen and (max-width: 768px) {
     table.inside-orderlisttable-re {
         width: 100%;
@@ -841,11 +890,9 @@ table .inside-orderlisttable-re {
     table.inside-orderlisttable-re th {
         display: block;
         text-align: right;
-        /* padding: auto auto; */
     }
     table.inside-orderlisttable-re td {
         display: block;
-        /* min-height: 1.25em; */
         text-align: left;
         padding: auto 10px;
     }
@@ -878,7 +925,7 @@ table .inside-orderlisttable-re {
     font-size: 16px;
     color: var(--color-text100);
 }
-/* tag------------------------------------------------------------- */
+/* tag------------------------------------------------------------------------- */
 #tagall-re input[type="checkbox"] {
     display: none; }
 #tagall-re input:checked + .tagbutton-re {
@@ -900,7 +947,7 @@ table .inside-orderlisttable-re {
     flex-wrap: nowrap;
     white-space: nowrap;
 }
-/* 求籤------------------------------------------------------------- */
+/* 求籤-------------------------------------------------------------------------- */
 .divination-re {
     position: fixed;
     right: 15%;
@@ -984,13 +1031,10 @@ table .inside-orderlisttable-re {
     top: 20%;
     right: 0%;
 }
-.divinationcatCardXS-re {
-}
 .divinationlikeicon-re {
     right: 8%;
     top: 5%;
 }
-
 .opacity0{
     opacity: 0;
 }

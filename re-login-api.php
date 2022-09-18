@@ -30,12 +30,12 @@ if(password_verify($_POST['signin_password'], $row['password'])){
     // 密碼正確
     $output['success'] = true;
     $output['user'] = [
-        // 'id' => $row['id'],
+        'id' => $row['id'],
         'email' => $row['email'],
         'password' => $row['password'],
     ];
     $_SESSION['user'] = [
-        // 'id' => $row['id'],
+        'id' => $row['id'],
         'email' => $row['email'],
         'password' => $row['password'],
     ];
