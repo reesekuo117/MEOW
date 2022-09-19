@@ -1,8 +1,8 @@
 
 /*-----------------購物車訂單的進度條 ----------------- */
-*{
+/* *{
     border: 1px solid #000;
-    }
+    } */
 .line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
@@ -344,7 +344,7 @@ h6.onePriceinputYu::before{
 
 /* ---------小計------------ */
 h6.AllTotalPriceYu{
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     height: 30px;
     width: 100px;
     text-align: center;
