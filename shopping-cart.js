@@ -62,22 +62,45 @@ qtyplus.on("click", function () {
   // numChanged();
 });
 
-qtyminus.on("click", function () {
-  let num = +numbertotal_yu.html();
-  if (num > 1) {
-    numbertotal_yu.html(num - 1);
+qtyminus.on("click" , function(){
+  let num = +$(this).next().text().trim();
+  if( num >1 ){
+    $(this).next().text( num - 1 );
+    console.log(
+      "要修改的h6",
+      $(this).closest("td").next().find("h6").text().trim()
+    );
+    console.log(
+      "要乘數量的h6",
+      $(this).closest("td").prev().find("h6").text().trim()
+    );
+    //   修改小計
+    const total =
+      $(this).closest("td").prev().find("h6").text().trim() * (num - 1);
+
+    $(this).closest("td").next().find("h6").text(total);
   }
-  num = +numbertotal_yu.html();
-  //為了知道值到底是多少，所以要呼叫num = +numbertotal_yu.html();
-  numChanged();
 });
 
-function numChanged() {
-  let num = +numbertotal_yu.html();
-  totalPriceYu.html(num * priceUnit);
-}
-numChanged();
-// 一進來就計算人數*金額
+
+
+
+// qtyminus.on("click", function () {
+//   let num = +numbertotal_yu.html();
+//   if (num > 1) {
+//     numbertotal_yu.html(num - 1);
+//   }
+//   num = +numbertotal_yu.html();
+//   //為了知道值到底是多少，所以要呼叫num = +numbertotal_yu.html();
+//   numChanged();
+// });
+
+// function numChanged() {
+//   let num = +numbertotal_yu.html();
+//   totalPriceYu.html(num * priceUnit);
+// }
+// numChanged();
+// // 一進來就計算人數*金額
 
 //全選的checkbox
 //獨家商品清單全選
@@ -118,7 +141,7 @@ document.getElementById("check2AllYu").onclick = function () {
 // setTotal();
 
 //訂單金額
-$("#checkboxInputYu").click(function () {
-  console.log("hihi");
-  $("#totalprice_yu").val === $("#TotalpriceYu").val($(this).val());
-});
+// $("#checkboxInputYu").click(function () {
+//   console.log("hihi");
+//   $("#totalprice_yu").val === $("#TotalpriceYu").val($(this).val());
+// });

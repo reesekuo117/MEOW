@@ -4,7 +4,7 @@ $pageName = ''; //頁面名稱
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
-<link rel="stylesheet" href="./shopping-cart-index.css">
+<link rel="stylesheet" href="./shopping-cart.css">
 <!-- <link rel="stylesheet" href="shopping-cart-index.js"> -->
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 
@@ -252,7 +252,7 @@ $pageName = ''; //頁面名稱
             </div>
             <div class=" d-md-flex justify-content-md-end">
                 <!-- a href="#buy1.php" -->
-                <a href="shopping-cart-productdetails-index.html" class="btn unique-nextbutton-yu">
+                <a href="shopping-cart-productdetails-index.php" class="btn unique-nextbutton-yu">
                     <button class=" unique-btn-yu  me-md-2" type="button">
                         <p class="m-0 text-center">
                             下一步
@@ -501,7 +501,7 @@ $pageName = ''; //頁面名稱
             </div>
             <!-- 未登入 -->
             <div class=" d-flex justify-content-center">
-                <a href="shopping-cart-productdetails-index.html" class="btn mdunique-nextbutton-yu">
+                <a href="shopping-cart-productdetails-index.php" class="btn mdunique-nextbutton-yu">
                     <button class=" mdunique-btn-yu " type="button">
                         <p class="m-0 text-center">
                             下一步
@@ -542,7 +542,9 @@ $pageName = ''; //頁面名稱
             </div>
             <div>
                 <h6 class="text-center px-5">1件商品合計 </h6>
-                <h6 class="text-center px-5">總金額: <span>NT$1500</span> </h6>
+                <h6 class=" mdTotalPriceYu text-center px-5">
+                    1500
+                </h6>
             </div>
             <!-- 未登入 -->
             <div class=" d-flex justify-content-center">
@@ -563,6 +565,6 @@ $pageName = ''; //頁面名稱
 
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 
-<script src="shopping-cart-index.js"></script>
+<script src="./shopping-cart.js"></script>
 
 <?php include __DIR__ . '/parts/html-foot.php'; ?>
