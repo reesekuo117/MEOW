@@ -84,30 +84,33 @@
 .sort {
     margin: 30px;
 }
-
+.product_sort{
+    height: 70px;
+}
 .product_sort a {
     /* padding: 8px; */
-    margin: 8px;
+    margin: 8px 0;
     text-decoration: none;
-    color: var(--color-text60);
+    color: var(--color-text87);
+
 }
 .product_sort a:hover {
-    color: var(--color-text87);
+    color: var(--color-orange);
 }
 .product_sort a:focus {
-    color: var(--color-text87);
+    color: var(--color-orange);
 }
 .sort_mb{
     background-color: var(--color-lightcreamy);
 }
-.tsort_mb{
+.psort_mb{
     border: 2px solid var(--color-text60);
     border-radius: 8px;
     padding: 4px;
     background-color: var(--color-lightcreamy);
     color: var(--color-text87);
 }
-.tsort_mb:hover{
+.psort_mb:hover{
     background-color: var(--color-yellow);
     color: var(--color-text87);
 
@@ -301,6 +304,9 @@
     bottom: 0;
     /* 直接在div下陰影 */
     
+}
+.product_list .card-body small{
+    color: var(--color-text60);
 }
 .card-body{
     position: relative;

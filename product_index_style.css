@@ -307,10 +307,7 @@ button {
 
 /* ----------------------喵獨家結束--------------------- */
 
-.product_card {
-    margin: 80px auto 0px;
-    /* padding: 100px 0 100px; */
-}
+
 
 .card_title {
     margin: 30px auto;
@@ -347,8 +344,9 @@ button {
     text-decoration: none;
     color: var(--color-text87);
 }
+
 .carousel_card {
-	margin: 24px auto 24px;
+	margin: 24px auto 50px;
 	padding: 0 80px;
 }
 .carousel_card .carousel-item {
@@ -439,6 +437,10 @@ button {
 /* ---------------------------手機卡片輪播---------------------------- */
 .carousel_mb{
     overflow: hidden;
+    padding: 50px 0 50px;
+}
+.carousel_mb .pit_mb {
+    text-align: left;
 }
 .carousel_mb .price h4::before{
     content: "NT$ ";
