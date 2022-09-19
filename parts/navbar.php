@@ -8,7 +8,7 @@
 ?>
 <!-- header-md ----------------------------------->
 <header class="d-none d-md-block">
-    <div class="navbar navbar_ba">
+    <div class="navbar navbar_ba draw16">
         <div class="container-fluid p-0">
             <div class="row justify-content-between w-100 m-0">
                 <!-- nav-left -->
@@ -46,7 +46,7 @@
                             <a href="culture.php">月老文化</a>
                         </div>
                         <div class="nav-menu">
-                            <a href="">線上求籤</a>
+                            <a href="draw01.php">線上求籤</a>
                         </div>
                         <div class="nav-menu">
                             <a href="product_index.php">獨家商品</a>
@@ -111,7 +111,7 @@
                                 <a href="culture.php">月老文化</a>
                             </li>
                             <li class="text-center">
-                                <a href="">線上求籤</a>
+                                <a href="#">線上求籤</a>
                             </li>
                             <li class="text-center">
                                 <a href="product_index.php">獨家商品</a>
