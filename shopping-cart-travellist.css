@@ -181,15 +181,38 @@
 .panel-body-yu{
     padding: 24px 12px;
 }
+.panel-body-yu .OnnPriceYu::before{
+    content: "NT$";
+}
+.littlePriceYu{
+    color: #432A0F;
+}
+.panel-body-yu .littlePriceYu::before{
+    content: "NT$";
+}
+.panel-body-yu .table .thead h6{
+    color: #432A0F;
+}
+.panel-body-yu .tbody td , h6{
+    color: #432A0F;
+}
 .listinfo-number-yu{
     color: #432A0F;
     padding: 24px 12px;
     margin: 0;
 }
-#mdsection-1-yu .listinfo-number-yu::before{
-    content: "總金額:NT$";
+.mdsection-1-yu .listinfo-number-yu::before{
+    content: "總金額:";
 }
-.listinfo-number-yu span {
+.listinfoYu{
+    padding: 24px 12px;
+    margin: 0;
+    color: var(--color-red);
+}
+.mdsection-1-yu h6.listinfoYu::before{
+    content: "NT$";
+}
+.listinfo-number-yu {
     font-family: 'gensen-R';
     font-size: 20px;
     line-height: 140%;
@@ -360,6 +383,9 @@
     background-color: #FFFCF7;
     margin-bottom: 60px;
 }
+.receiver-list-yu label{
+    color: #432A0F;
+}
 .receiver-list-yu input , .form-group select{
     border-radius: 8px;
     border: 2px solid #432A0F;
@@ -431,7 +457,12 @@
     background-color: #FFFCF7;
     margin-bottom: 60px;
 }
-
+.section-3-yu label{
+    color: #432A0F;
+}
+.section-3-yu input{
+    border: 1px solid #432A0F;
+}
 /* ---手機付款方式mdsection-3-yu------- */
 .mdsection-3-yu{
     background-color: #FFFCF7;

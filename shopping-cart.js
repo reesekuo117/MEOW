@@ -21,7 +21,7 @@ const priceUnit = 707; //一定要寫死嗎
 const qtyminus = $("input.qtyminus");
 const qtyplus = $("input.qtyplus");
 const numbertotal_yu = $("#numbertotal_yu");
-const totalPriceYu = $("#totalprice_yu");
+
 const littlePrice = $("h6.littlePriceYu");
 console.log("littlePrice", littlePrice);
 
