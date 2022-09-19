@@ -22,7 +22,7 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
             </div>
             <ul class="tab_list_re m-0 p-0 text-center">
-                <li class="text-20-re mb-2 " data-val="member-data">會員資料</li>
+                <li class="text-20-re mb-2 current_re" data-val="member-data">會員資料</li>
                 <li class="text-20-re mb-2" data-val="modify-password">修改密碼</li>
                 <li class="text-20-re mb-2" data-val="my-favorites" onclick="/*addToCartRe(event)*/">我的最愛</li>
                 <li class="text-20-re mb-2" data-val="member-order">查詢訂單</li>
