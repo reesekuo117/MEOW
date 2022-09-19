@@ -51,9 +51,16 @@ $('.rightCat').mouseleave(function () {
 
 // 卷軸
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.leftReel').offset().top - $(window).height() * 2 / 3)) {
+
+    if ($(window).scrollTop() >= ($('.leftReel').offset().top - window.screen.height * 2 / 3)) {
         $('.leftReel').css({
             transform: 'translateX(-500px) scale(1)',
+        })
+        $('.rightReel').css({
+            transform: 'translateX(500px) scale(1)',
+        })
+        $('.middleReel').css({
+            width: '956px',
         })
 
     }
@@ -61,39 +68,45 @@ $(window).scroll(function () {
         $('.leftReel').css({
             transform: 'translateX(-30px) scale(1)',
         })
-    }
-
-})
-
-$(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.rightReel').offset().top - $(window).height() * 2 / 3)) {
-        $('.rightReel').css({
-            transform: 'translateX(500px) scale(1)',
-        })
-
-    }
-    else {
         $('.rightReel').css({
             transform: 'translateX(30px)scale(1)',
         })
-    }
-
-})
-
-$(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.middleReel').offset().top - $(window).height() * 2 / 3)) {
-        $('.middleReel').css({
-            width: '956px',
-        })
-
-    }
-    else {
         $('.middleReel').css({
             width: '0px',
         })
     }
 
 })
+
+// $(window).scroll(function () {
+//     if ($(window).scrollTop() >= ($('.rightReel').offset().top - window.screen.height * 2 / 3)) {
+//         $('.rightReel').css({
+//             transform: 'translateX(500px) scale(1)',
+//         })
+
+//     }
+//     else {
+//         $('.rightReel').css({
+//             transform: 'translateX(30px)scale(1)',
+//         })
+//     }
+
+// })
+
+// $(window).scroll(function () {
+//     if ($(window).scrollTop() >= ($('.middleReel').offset().top - window.screen.height * 2 / 3)) {
+//         $('.middleReel').css({
+//             width: '956px',
+//         })
+
+//     }
+//     else {
+//         $('.middleReel').css({
+//             width: '0px',
+//         })
+//     }
+
+// })
 
 // 三貓手機
 

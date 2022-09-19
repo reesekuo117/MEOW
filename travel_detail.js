@@ -39,7 +39,7 @@
         const totalDiv = $('.total_price');
 
         plusBtn.on('click', function(){
-            // 可以用function也可以用箭頭函式，用箭頭函不能用this
+            // 可以用function也可以用箭頭函式，用箭頭函式不能用this
             let num = +peopleDiv.html();
             // +peopleDiv.html()→將.people裡面的文字轉換為數值，原生的用法是將.html()改成.innerText()
             peopleDiv.html(num+1);
@@ -77,7 +77,7 @@
         $('.favorite').click(function(){
             $(this).find('.icon_heart_nav > svg').toggleClass('color')
         });
-                // ----------------愛心變色結束-------------------
+        // ----------------愛心變色結束-------------------
 
 // ??按收藏後真的進入收藏頁面&沒登入會跳出提示窗→包PHP用session判斷
 
@@ -91,8 +91,19 @@ const sectionsOffsetTop = [];
 // sectionsOffsetTop.push($('.details > div').eq(2).offset().top)
 // sectionsOffsetTop.push($('.details > div').eq(3).offset().top)
 $(function(){
+    sectionsOffsetTop.length = 0;
     for(let i = 0; i < 5; i ++){
+        // console.log('hi',$('.details > div').eq(i).offset().top);
         sectionsOffsetTop.push($('.details > div').eq(i).offset().top)
+    }
+})
+
+$(window).resize(function(){
+    sectionsOffsetTop.length = 0;
+    for(let i = 0; i < 5; i ++){
+        // console.log('hi',$('.details > div').eq(i).offset().top);
+        sectionsOffsetTop.push($('.details > div').eq(i).offset().top)
+        // 手機版多了一區才會讓迴圈壞掉
     }
 })
 
@@ -104,11 +115,16 @@ $(function(){
 
 $(window).scroll(function () {
         const nowScroll = $(window).scrollTop();
-        // console.log(' now scroll', nowScroll);
+        console.log(' now scroll123', nowScroll);
 
         for(let i = 0; i < 5; i++){
-            if(nowScroll >= sectionsOffsetTop[i]-30){
+            if(nowScroll >= sectionsOffsetTop[i]){
                 $('.links a').eq(i).css('color','var(--color-orange)').siblings().css('color','var(--color-text87)')
+            }
+            if(nowScroll >= sectionsOffsetTop[i] && $(window).width() < 768){
+                console.log('hihi i',sectionsOffsetTop[i]-30);
+                $('.tdnav_mb a small').eq(i).css('color','var(--color-orange)').closest('div').siblings().find('small').css('color','var(--color-text87)')
+                // 結構不一樣(多了small)所以找法不一樣，最接近的直系血親的平輩的small
             }
         }
 
@@ -123,6 +139,15 @@ $(window).scroll(function () {
     }
 )
         // ----------------側邊攔變色結束-------------------
+
+        $('.td_footer_mb .buy').click(function(){
+            // e.preventDefault();
+            $('.choiceandbuy_mb').toggleClass('hidden_choicemb')
+            $("html, body").animate({ scrollTop: $(document).height() }, 500);
+        });
+
+
+
 
         // ----------------卡片輪播牆???-------------------
 // $(function() {

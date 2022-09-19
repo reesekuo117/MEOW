@@ -20,7 +20,7 @@
   /* border:1px solid red; */
   position: relative;
   overflow: hidden;
-  background:url(./imgs/culture/台中樂成宮.jpeg)center center/ cover no-repeat;
+  background:url(./imgs/culture/out.jpg)center center/ cover no-repeat;
   height: 966px;
 }
 .temp_bg::after{
@@ -153,15 +153,14 @@ height: 164px;
   margin-top: 110px;
   overflow: hidden;
 }
-.tmp-pic1_lb{
-  transition: .5S;
+.tmp-pic1_lb,.tmp-pic2_lb,.tmp-pic3_lb {
+  transition: .5s;
 }
-.tmp-pic2_lb{
-  transition: .5S;
+.tmp-pic1_lb>img,.tmp-pic2_lb>img,.tmp-pic3_lb>img{
+  border-radius: 10px;
 }
-.tmp-pic3_lb{
-  transition: .5S;
-}
+
+
 .s1-bg{
   width: 800px;
   right: 80px;
@@ -495,7 +494,7 @@ height: 164px;
 }
 @media (max-width: 768px) {
   .section3_lb{
-    margin-top: 80px;
+    margin-top: 40px;
     overflow: hidden;
   }
   
@@ -538,6 +537,9 @@ height: 164px;
   align-items: center;
   z-index: 1;
   transform: translateY(100px);
+}
+.ban-card{
+  transition: .5s;
 }
 .ban-card:hover .face_lb.face1_lb{
   transform: translateY(0px);
@@ -617,6 +619,7 @@ height: 164px;
 .section4_lb{
   padding-top: 150px;
   margin: 70px auto 200px;
+  transition: .5s;
 }
 .devotion-title{
   width: 500px;
@@ -640,6 +643,7 @@ height: 164px;
   color: var(--color-text87);
   bottom: 300px;
   left: 250px;
+  transition: .5s;
 }
 .mb-devo-content{
   font-size: 16px;

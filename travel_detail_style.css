@@ -55,7 +55,11 @@ ol.carousel-indicators{
 .travel_head .col-md-3{
     text-align: center;
 }
-
+.detail_title .intro_bg{
+    margin: 40px auto;
+    background-color: var(--color-creamy-light);
+    padding: 24px;
+}
 .price h2::before{
     content: "NT$ ";
 }
@@ -130,6 +134,8 @@ ol.carousel-indicators{
 }
 /* 手機版中間列 */
 .tdnav_mb{
+    height: 50px;
+    line-height: 50px;
     background-color: var(--color-lightcreamy);
     position: sticky;
     top: 0;
@@ -244,10 +250,10 @@ button:hover{
     color: var(--color-orange);
 }
 /* 側邊欄結束 */
-.intro_bg {
+.detail_box .intro_bg {
     margin: 40px auto;
     background-color: var(--color-creamy-light);
-    padding: 24px;
+    padding: 20px;
 }
 .intro_bg h5{
     position: relative;
@@ -320,7 +326,13 @@ select{
     background-color: var(--color-creamy-light);
     padding: 24px;
     margin-top: 24px;
+    transition: .5s;
 
+}
+.choiceandbuy_mb.hidden_choicemb{
+    height: 0;
+    padding: 0;
+    overflow: hidden;
 }
 .choiceandbuy_mb .buy_btn button{
     height: 45px;
@@ -331,12 +343,14 @@ select{
     border: 2px solid var(--color-text87);
     margin-bottom: 16px;
 }
+
 /* -----------------------評價結束-------------------- */
 .td_footer_mb{
     width: 100%;
     background-color: var(--color-orange);
     position: fixed;
     bottom: 0;
+    z-index: 5;
 }
 .td_footer_mb .favorite{
     height: 45px;

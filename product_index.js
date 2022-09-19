@@ -1,8 +1,8 @@
 //  品牌聯名浮動
 $(window).scroll(function () {
-    // console.log('second offsetTop:', $('.second-test > .second').offset().top);
-    // console.log('first scrollTop:', $('.second').scrollTop());
-    if ($(window).scrollTop() >= ($('.brand_2').offset().top - $(window).height() * 2 / 3)) {
+    // console.log('brand_2 offsetTop:', $('.brand_2').offset().top);
+    // console.log('brand_2 offsetTop:', $('.brand_2').offset().top);
+    if ($(window).scrollTop() >= ($('.brand_2').offset().top - window.screen.height * 2 / 3)) {
         $('.brand_2').css({
             transform: 'translateY(0px)',
             opacity: 1,
@@ -20,7 +20,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     // console.log('second offsetTop:', $('.second-test > .second').offset().top);
     // console.log('first scrollTop:', $('.second').scrollTop());
-    if ($(window).scrollTop() >= ($('.brand_3').offset().top - $(window).height() * 2 / 3)) {
+    if ($(window).scrollTop() >= ($('.brand_3').offset().top - window.screen.height * 2 / 3)) {
         $('.brand_3').css({
             transform: 'translateY(0px)',
             opacity: 1,
@@ -39,7 +39,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     // console.log('second offsetTop:', $('.second-test > .second').offset().top);
     // console.log('first scrollTop:', $('.second').scrollTop());
-    if ($(window).scrollTop() >= ($('.young_1').offset().top - $(window).height() * 2 / 5)) {
+    if ($(window).scrollTop() >= ($('.young_1').offset().top - window.screen.height * 2 / 5)) {
         $('.young_1').css({
             transform: 'translateY(0px)',
             opacity: 1,
@@ -57,7 +57,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     // console.log('second offsetTop:', $('.second-test > .second').offset().top);
     // console.log('first scrollTop:', $('.second').scrollTop());
-    if ($(window).scrollTop() >= ($('.young_2').offset().top - $(window).height() * 4 / 5)) {
+    if ($(window).scrollTop() >= ($('.young_2').offset().top - window.screen.height * 4 / 5)) {
         $('.young_2').css({
             transform: 'translateY(0px)',
             opacity: 1,
@@ -75,7 +75,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     // console.log('second offsetTop:', $('.second-test > .second').offset().top);
     // console.log('first scrollTop:', $('.second').scrollTop());
-    if ($(window).scrollTop() >= ($('.young_3').offset().top - $(window).height() * 3 / 5)) {
+    if ($(window).scrollTop() >= ($('.young_3').offset().top - window.screen.height * 3 / 5)) {
         $('.young_3').css({
             transform: 'translateY(0px)',
             opacity: 1,
@@ -94,7 +94,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     // console.log('second offsetTop:', $('.second-test > .second').offset().top);
     // console.log('first scrollTop:', $('.second').scrollTop());
-    if ($(window).scrollTop() >= ($('.meow_1').offset().top - $(window).height() * 2 / 3)) {
+    if ($(window).scrollTop() >= ($('.meow_1').offset().top -window.screen.height * 2 / 3)) {
         $('.meow_1').css({
             transform: 'translateY(0px)',
             opacity: 1,
@@ -112,7 +112,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
     // console.log('second offsetTop:', $('.second-test > .second').offset().top);
     // console.log('first scrollTop:', $('.second').scrollTop());
-    if ($(window).scrollTop() >= ($('.meow_2').offset().top - $(window).height() * 3 / 5)) {
+    if ($(window).scrollTop() >= ($('.meow_2').offset().top - window.screen.height * 3 / 5)) {
         $('.meow_2').css({
             transform: 'translateY(0px)',
             opacity: 1,

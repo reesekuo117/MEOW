@@ -203,6 +203,8 @@ html{
     position: sticky;
     top: 0;
     z-index: 2;
+    transition: .5s;
+
 }
 .pdnav_mb a{
     text-decoration: none;
@@ -210,6 +212,10 @@ html{
 .pdnav_mb small:hover{
     color: #CD562F;
     
+}
+.hidden {
+    /* transform: translateY(-100px); */
+    opacity: 0;
 }
 /* 桌機下方列 */
 .undernav{
@@ -339,6 +345,7 @@ button:hover{
     background-color: var(--color-orange);
     position: fixed;
     bottom: 0;
+    z-index: 5;
 }
 
 .pd_footer_mb .buy{
@@ -446,6 +453,8 @@ button:hover{
 .otherp .carousel-control-next i {
 	margin-right: -3px;
 }
+
+
 .carousel-indicators {
 	bottom: -50px;
 }

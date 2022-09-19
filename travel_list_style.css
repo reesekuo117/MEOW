@@ -95,24 +95,26 @@
     /* padding: 8px; */
     margin: 8px;
     text-decoration: none;
-    color: var(--color-text60);
+    color: var(--color-text87);
 }
 .travel_sort a:hover {
-    color: var(--color-text87);
-}
-.travel_sort a:focus {
-    color: var(--color-text87);
-}
-
-/* .travel_section {
-    display: flex;
-} */
-.travel_cate{
-    padding-bottom: 20px;
-}
-.form-check:hover{
     color: var(--color-orange);
 }
+.travel_sort a:focus {
+    color: var(--color-orange);
+}
+
+.travel_section input[type=checkbox]:checked {
+    background: var(--color-yellow);
+    color: #fff;
+}
+
+.travel_cate{
+    padding-bottom: 20px;
+    color: var(--color-text87);
+
+}
+
 .aside .col{
     width: 200px;
     display: flex;
@@ -120,7 +122,15 @@
     position: sticky;
     top: 10%;
 }
+
+.form-check:hover{
+    color: var(--color-orange);
+}
 /* 手機版排序 */
+.travel_cate_mb{
+    color: var(--color-text87);
+
+}
 .travel_sortbtn_mb button{
     border: 2px solid var(--color-text60);
     border-radius: 8px;
