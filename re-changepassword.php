@@ -7,7 +7,11 @@ $output = [
     'code' => 0,
     'postData' => $_POST,
 ];
-
+if(empty($_POST['oldpassword_re']) or empty($_POST['newpassword_re'])or empty($_POST['againpassword_re'])){
+    $output['error'] = '請輸入正確的帳號密碼!';
+    echo json_encode($output, JSON_UNESCAPED_UNICODE);
+    exit;
+}
 $sql = "UPDATE `member` SET 
     -- `email`=?,
     `password`=?,
@@ -23,7 +27,7 @@ $sql = "UPDATE `member` SET
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    $_POST['password'],
+    $_POST['newpassword_re'],
 ]);
 
 

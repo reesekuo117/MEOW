@@ -233,6 +233,11 @@ p {
 .active-re {
     background-color: #E5A62A;
 }
+.current_re {
+    background-color: #E5A62A;
+    border-radius: 50%;
+
+}
 /* --------------------------------------------- */
 .loginbtn-re {
     /* box-shadow:none; */
@@ -327,6 +332,9 @@ p {
     to {transform: scale(1)}
 }
 /* left-------------------------------------------------------------------- */
+.tab_list_re li {
+    cursor: pointer;
+}
 /* 頭像--------------------------------------------------------------------- */
 .picturewarp-re {
     width: 250px;
