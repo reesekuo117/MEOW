@@ -186,6 +186,9 @@
     padding: 24px 12px;
     margin: 0;
 }
+#mdsection-1-yu .listinfo-number-yu::before{
+    content: "總金額:NT$";
+}
 .listinfo-number-yu span {
     font-family: 'gensen-R';
     font-size: 20px;
@@ -440,7 +443,6 @@
     background-color: #FFFCF7;
     /* background-color: #ae7512; */
     margin-bottom: 20px;
-    height: 100%;
 }
 .mdcreditcard-numberbox{
     width: 80%;

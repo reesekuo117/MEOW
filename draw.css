@@ -1,0 +1,2002 @@
+.body_draw01 {
+    overflow: hidden;
+    background: url(./imgs/draw/drawbg.png);
+    text-align: center;
+    color: var(--color-brown-dark);
+}
+
+button:focus{
+    outline-style: none;
+}
+
+.d-none-ba{
+    display: none !important; 
+}
+
+.youcantseeme {
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    z-index: 5;
+}
+
+.drawSection01 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.sound-icon {
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sound-wave {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sound-wave .bar {
+    display: block;
+    width: 5px;
+    margin-right: 1px;
+    height: 90px;
+    background: var(--color-orange);
+    animation: sound 0ms -800ms linear infinite alternate;
+    transition: height 0.8s;
+    border-radius: 8px;
+}
+
+@keyframes sound {
+    0% {
+        opacity: .35;
+        height: 6px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 46px;
+    }
+}
+
+.bar:nth-child(1) {
+    height: 2px;
+    animation-duration: 474ms;
+}
+
+.bar:nth-child(2) {
+    height: 10px;
+    animation-duration: 433ms;
+}
+
+.bar:nth-child(3) {
+    height: 18px;
+    animation-duration: 407ms;
+}
+
+.bar:nth-child(4) {
+    height: 26px;
+    animation-duration: 458ms;
+}
+
+.bar:nth-child(5) {
+    height: 30px;
+    animation-duration: 400ms;
+}
+
+.bar:nth-child(6) {
+    height: 32px;
+    animation-duration: 427ms;
+}
+
+.bar:nth-child(7) {
+    height: 34px;
+    animation-duration: 441ms;
+}
+
+.bar:nth-child(8) {
+    height: 36px;
+    animation-duration: 419ms;
+}
+
+.bar:nth-child(9) {
+    height: 40px;
+    animation-duration: 487ms;
+}
+
+.bar:nth-child(10) {
+    height: 46px;
+    animation-duration: 442ms;
+}
+
+.bar:nth-child(11) {
+    height: 2px;
+    animation-duration: 474ms;
+}
+
+.bar:nth-child(12) {
+    height: 10px;
+    animation-duration: 433ms;
+}
+
+.bar:nth-child(13) {
+    height: 18px;
+    animation-duration: 407ms;
+}
+
+.bar:nth-child(14) {
+    height: 26px;
+    animation-duration: 458ms;
+}
+
+.bar:nth-child(15) {
+    height: 30px;
+    animation-duration: 400ms;
+}
+
+.bar:nth-child(16) {
+    height: 32px;
+    animation-duration: 427ms;
+}
+
+.bar:nth-child(17) {
+    height: 34px;
+    animation-duration: 441ms;
+}
+
+.bar:nth-child(18) {
+    height: 36px;
+    animation-duration: 419ms;
+}
+
+.bar:nth-child(19) {
+    height: 40px;
+    animation-duration: 487ms;
+}
+
+.bar:nth-child(20) {
+    height: 46px;
+    animation-duration: 442ms;
+}
+
+.drawSection01 h1 {
+    padding-top: 60px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection01 h4 {
+    margin-top: 40px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection01 h5 {
+    margin-top: 8px;
+    color: var(--color-text60);
+}
+
+.musicBlack {
+    /* border: 1px salmon solid; */
+    margin-top: -100px;
+    transform: scale(.5);
+}
+
+.onOff h1 {
+    color: white;
+    padding-top: 0;
+    margin: 0;
+}
+
+.musicOn,
+.musicOff {
+    transition: .2s;
+    color: white;
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    background-color: var(--color-orange);
+    margin: 20px;
+}
+
+.musicOn:hover,
+.musicOff:hover {
+    outline: 5px rgba(250, 128, 114, 0.757) solid;
+
+}
+
+/*------------------ draw02 ----------------*/
+
+.drawSection02 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.drawSection02 h1 {
+    padding-top: 60px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection02 .row {
+    margin-top: 12px;
+}
+
+.drawSection02 .btn-l {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'gensen-M';
+    font-size: 16px;
+    line-height: 125%;
+    background-color: var(--color-yellow);
+    border: 2px var(--color-brown-dark) solid;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.selectCatFunction svg {
+    margin-top: -32px;
+}
+
+.selectCatFunction img {
+    margin-top: -48px;
+    transform: scale(.8);
+}
+
+.selectCatFunction .btn-l {
+    height: 56px;
+    width: 280px;
+    margin-top: 40px;
+}
+
+.catDialogue1 {
+    text-align: left;
+    width: 248px;
+    height: 96px;
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.catDialogue2 {
+    text-align: left;
+    width: 248px;
+    height: 96px;
+    top: 428px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.catDialogue3 {
+    text-align: left;
+    width: 248px;
+    height: 96px;
+    top: 456px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.backto {
+    top: 72px;
+    left: 384px;
+}
+
+/* .backto:hover svg{
+    fill: var(--color-brown-dark);
+} */
+
+.musicSwitch {
+    z-index: 10;
+    top: 72px;
+    right: 384px;
+}
+
+.secretSection02LeftCat {
+    transition: .3s;
+    transform-origin: center center;
+    overflow: hidden;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.secretSection02MidCat {
+    transition: .3s;
+    transform-origin: center center;
+    overflow: hidden;
+    top: 197px;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.secretSection02RightCat {
+    transition: .3s;
+    transform-origin: center center;
+    overflow: hidden;
+    top: 215px;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.drawSection02 a {
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+/*------------------ draw03 ----------------*/
+
+.drawSection03 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.drawSection03 h1 {
+    padding-top: 60px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection03 h2 {
+    line-height: 20%;
+}
+
+.drawSection03 img {
+    transform: scale(0.7);
+}
+
+.temple01Img {
+    width: 350px;
+    height: 350px;
+    text-align: center;
+}
+
+.temple01Img {
+    transform: translateY(20px);
+}
+
+.temple05Img {
+    transform: translateY(20px);
+}
+
+.row {
+    margin-top: -50px;
+}
+
+.drawSection03 a {
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+.body_draw04 {
+    overflow: hidden;
+    background: url(./imgs/draw/drawbgblack.png);
+    text-align: center;
+    color: white;
+}
+
+/*------------------ draw04 ----------------*/
+
+.drawSection04 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+button a {
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+button a:hover {
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+.drawSection04 h1 {
+    padding-top: 180px;
+    color: var(--color-white);
+}
+
+.drawSection04 h5 {
+    margin-top: 56px;
+    color: var(--color-white);
+}
+
+.drawSection04 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.btn-xl:hover {
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+
+/*------------------ draw05 ----------------*/
+
+.drawSection05 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.drawSection05 h1 {
+    padding-top: 220px;
+    color: var(--color-white);
+}
+
+.drawSection05 .notbtn {
+    margin-top: 0px;
+    color: #6F6F6F;
+}
+
+.drawSection05 .container h5 {
+    margin-top: 56px;
+    color: var(--color-white);
+}
+
+.drawSection05 .stepCircleActive h5 {
+    margin: 0;
+    color: var(--color-white);
+}
+
+.drawSection05 .stepCircle h5 {
+    margin: 0;
+    color: var(--color-text60);
+}
+
+.drawSection05 .stepActive h5 {
+    color: var(--color-white);
+}
+
+.drawSection05 .stepUnActive h5 {
+    color: #6F6F6F;
+}
+
+.drawSection05 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.step_ba {
+    top: 60px;
+    width: 850px;
+    height: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.stepCircleActive {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-yellow);
+}
+
+.stepCircle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(229, 167, 42, 0.3);
+}
+
+.stepline_ba {
+    width: 80px;
+    height: 2px;
+    background-color: #6F6F6F;
+}
+
+/*------------------ draw06 ----------------*/
+
+.drawSection06 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.drawSection06 h1 {
+    padding-top: 220px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection06 h5 {
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection06 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.drawSection06 .stepCircleActive h5 {
+    margin: 0;
+    color: var(--color-white);
+}
+
+.drawSection06 .stepCircle h5 {
+    margin: 0;
+    color: var(--color-text60);
+}
+
+.drawSection06 .stepActive h5 {
+    color: var(--color-brown-dark);
+}
+
+.drawSection06 .stepUnActive h5 {
+    color: var(--color-text60);
+}
+
+.drawSection06 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 96px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+/*------------------ draw07 ----------------*/
+
+.drawSection07 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.drawSection07 h1 {
+    padding-top: 120px;
+    color: var(--color-brown-dark);
+}
+
+.multipleChoice {
+    color: var(--color-text60);
+}
+
+.clearAll_ba {
+    top: 26%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    /* border: 1px salmon solid; */
+    width: 7%;
+    text-decoration: none;
+    color: var(--color-brown-dark);
+}
+
+.clearAll_ba:hover {
+    color: var(--color-orange);
+}
+
+.drawSection07btnGroup {
+    height: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.drawSection07btnGroup1 {
+    top: 180px;
+    width: 1600px;
+}
+
+.drawSection07btnGroup2 {
+    top: 300px;
+    width: 2000px;
+}
+
+.drawSection07btnGroup3 {
+    top: 450px;
+    width: 1800px;
+}
+
+.drawSection07btnGroup4 {
+    top: 600px;
+    width: 1400px;
+}
+
+.drawSection07btnGroup5 {
+    top: 700px;
+    width: 540px;
+}
+
+.wantbtn {
+    width: 200px;
+    height: 88px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 100px;
+    transition: .3s;
+    margin: 96px auto;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wantbtn:hover {
+    background-color: var(--color-yellow);
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+
+.drawSection07Cat {
+    box-sizing: content-box;
+    transform: translateY(40px);
+}
+
+.eye {
+    position: absolute;
+    left: 500px;
+    top: 200px;
+}
+
+.eye-white {
+    position: absolute;
+    top: -42.5px;
+    left: -42.5px;
+    width: 85px;
+    height: 85px;
+    background-color: white;
+    border-radius: 50%;
+    border: 7px solid black;
+}
+
+.eye-black {
+    position: absolute;
+    top: -25px;
+    left: -10px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.btn_md_next {
+    width: 137px;
+    height: 41px;
+    border-radius: 8px;
+    background-color: var(--color-yellow);
+    transition: .3s;
+    right: 240px;
+    bottom: 60px;
+    margin: auto auto;
+}
+
+.btn_md_next:hover {
+    box-shadow: 2px 2px 0px var(--color-brown-dark);
+}
+
+button[disabled] {
+    opacity: .6;
+    background-color: white;
+    color: var(--color-brown-dark);
+    border: var(--color-brown-dark) 2px solid;
+}
+
+button[disabled]:hover {
+    box-shadow: none
+}
+
+.btn_disabled_ba {
+    cursor: not-allowed;
+    opacity: .6;
+    background-color: white;
+    color: var(--color-brown-dark);
+    border: var(--color-brown-dark) 2px solid;
+}
+
+.btn_disabled_ba:hover {
+    box-shadow: none
+}
+
+.btn_md_next a {
+    color: var(--color-brown-dark);
+}
+
+.btn_disabled_ba a {
+    color: var(--color-brown-dark);
+    cursor: not-allowed;
+}
+
+/*------------------ draw08 ----------------*/
+
+.drawSection08 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.heightCatImgWrap {
+    width: 145px;
+}
+
+.muscleCatImgWrap {
+    width: 277px;
+}
+
+.faceCatImgWrap {
+    width: 198px;
+}
+
+.presshere-left{
+    width: 20%;
+    height: 100%;
+    /* border: 1px salmon solid; */
+    cursor: pointer;
+}
+
+.presshere-right{
+    top: 0;
+    right:0%;
+    width: 20%;
+    height: 100%;
+    /* border: 1px salmon solid; */
+    cursor: pointer;
+}
+
+.drawSection08 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection08 h4 {
+    color: var(--color-text60);
+}
+
+.heightbtnGroup {
+    margin-top: 120px;
+}
+
+.heightbtn {
+    cursor: pointer;
+    width: 126px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.heightbtn:hover {
+    background-color: var(--color-yellow);
+}
+
+.drawbtnToggle {
+    background-color: var(--color-yellow);
+}
+
+.heightbtnToggle {
+    background-color: var(--color-yellow);
+}
+
+.heightbtn h5 {
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.heightbtnGroup .row {
+    margin-top: 40px;
+}
+
+.heightbtnGroup {
+    margin-top: 120px;
+}
+
+.musclebtn {
+    cursor: pointer;
+    width: 100px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.musclebtn:hover {
+    background-color: var(--color-yellow);
+}
+
+.musclebtnToggle {
+    background-color: var(--color-yellow);
+}
+
+.musclebtn h5 {
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.musclebtnGroup .row {
+    margin-top: 24px;
+}
+
+.musclebtnGroup {
+    margin-top: 68px;
+}
+
+.facebtn {
+    cursor: pointer;
+    width: 100px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.facebtn:hover {
+    background-color: var(--color-yellow);
+}
+
+.facebtnToggle {
+    background-color: var(--color-yellow);
+}
+
+.facebtn h5 {
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.facebtnGroup .row {
+    margin-top: 24px;
+}
+
+.facebtnGroup {
+    margin-top: 68px;
+}
+
+/*------------------ draw09 ----------------*/
+
+.drawSection09 {
+    padding-top: 60px;
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.drawSection09 h1 {
+    padding-top: 132px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection09 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection09 .btn-xl {
+    margin: 150px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.white-box_ba {
+    /* top: 80px; */
+    margin-top: 60px;
+    padding-top: 60px;
+    width: 800px;
+    height: 700px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.howOldbtn {
+    cursor: pointer;
+    width: 126px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 16px;
+}
+
+.howOldbtn:hover {
+    background-color: var(--color-yellow);
+}
+
+.howOldbtnToggle {
+    background-color: var(--color-yellow);
+}
+
+.howOldbtn h5 {
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.drawSection09 .row {
+    margin-top: 40px;
+}
+
+.drawSection09 img {
+    transform: scale(.7);
+    Transform-style: preserve-3d;
+    perspective: 900px;
+}
+
+@keyframes flip {
+    0% {
+        transform: scale(.7) rotateY(0deg);
+    }
+
+    100% {
+        transform: scale(.7) rotateY(180deg);
+    }
+}
+
+@keyframes flip_back {
+    0% {
+        transform: scale(.7) rotateY(180deg);
+    }
+
+    100% {
+        transform: scale(.7) rotateY(0deg);
+    }
+}
+
+.oldCat {
+    top: 0;
+    right: 22%;
+}
+
+.youngCat {
+    top: 60%;
+    left: 22%;
+}
+
+.drawSection09 h4 {
+    color: var(--color-text60);
+    /* left: 0; */
+}
+
+/*------------------ draw10 ----------------*/
+
+.drawSection10 {
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding-top: 60px;
+}
+
+.drawSection10 h1 {
+    padding-top: 20px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection10 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection10 .btn-xl {
+    margin: 150px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.interestbtnGroup {
+    margin-top: 60px;
+}
+
+.interestbtn {
+    cursor: pointer;
+    width: 126px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 8px;
+}
+
+.interestbtn:hover {
+    background-color: var(--color-yellow);
+}
+
+.interestbtnToggle {
+    background-color: var(--color-yellow);
+}
+
+.interestbtn h5 {
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.drawSection10 .row {
+    margin-top: 28px;
+}
+
+.drawSection10 img {
+    transform: scale(0.7);
+    Transform-style: preserve-3d;
+    perspective: 900px;
+}
+
+.skakeBoadCat {
+    top: -5%;
+    right: 15%;
+}
+
+.yogaCat {
+    top: 55%;
+    left: 18%;
+}
+
+.drawSection10 h4 {
+    color: var(--color-text60);
+}
+
+/*------------------ draw11 ----------------*/
+
+.drawSection11 {
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding-top: 60px;
+}
+
+.drawSection11 h1 {
+    padding-top: 20px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection11 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection11 .btn-xl {
+    margin: 150px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.personalitybtnGroup {
+    margin-top: 60px;
+}
+
+.personalitybtn {
+    width: 126px;
+    height: 41px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 50px;
+    margin: 0 8px;
+}
+
+.personalitybtn:hover {
+    background-color: var(--color-yellow);
+}
+
+.personalitybtnToggle {
+    background-color: var(--color-yellow);
+}
+
+.personalitybtn h5 {
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.drawSection11 .row {
+    margin-top: 28px;
+}
+
+.drawSection11 img {
+    transform: scale(0.7);
+    Transform-style: preserve-3d;
+    perspective: 900px;
+}
+
+.happyCat {
+    top: -3%;
+    right: 18%;
+}
+
+.quietCat {
+    top: 40%;
+    left: 20%;
+}
+
+.drawSection11 h4 {
+    color: var(--color-text60);
+}
+
+/*------------------ draw12 ----------------*/
+
+.drawSection12 {
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding-top: 60px;
+}
+
+.drawSection12 h1 {
+    padding-top: 0px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection12 h5 {
+    margin-top: 12px;
+    color: var(--color-text60);
+}
+
+.drawSection12 .btn-xl {
+    margin: 150px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.horobtnGroup {
+    margin-top: 16px;
+}
+
+.horobtn {
+    cursor: pointer;
+    width: 140px;
+    height: 140px;
+    border: 2px var(--color-brown-dark) solid;
+    background-color: white;
+    border-radius: 100px;
+    margin: 0 12px;
+}
+
+.horobtn:hover {
+    background-color: var(--color-yellow);
+}
+
+.horobtnToggle {
+    background-color: var(--color-yellow);
+}
+
+.horobtn h5 {
+    color: var(--color-brown-dark);
+    margin: 0;
+}
+
+.drawSection12 .row {
+    margin-top: 28px;
+}
+
+.drawSection12 .lionCat img {
+    transform: scale(0.7);
+    Transform-style: preserve-3d;
+    perspective: 900px;
+}
+
+.lionCat {
+    top: 65%;
+    left: 15%;
+}
+
+.drawSection12 h4 {
+    color: var(--color-text60);
+}
+
+.horoImgWrap {
+    width: 60px;
+    height: 60px;
+
+}
+
+.horoImgWrap img {
+    transform: scale(1);
+    /* animation: infinite; */
+}
+
+
+@keyframes flip_horo {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes flip_horo_back {
+    0% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+/*------------------ draw15 ----------------*/
+
+.drawSection15 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.drawSection15 h1 {
+    padding-top: 100px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection15 h5 {
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection15 .btn-l {
+    width: 200px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 0 auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.page15Cat {
+    width: 120px;
+}
+
+.drawSection15 a {
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+/*------------------ draw16 ----------------*/
+
+.drawSection16 h1 {
+    padding-top: 220px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection16 h5 {
+    margin-top: 120px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection16 .btn-xl {
+    cursor: pointer;
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 120px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.page16cat {
+    width: 220px;
+    position: absolute;
+    right: 0;
+}
+
+.drawSection16 .stepActive h5 {
+    color: var(--color-brown-dark);
+}
+
+.drawSection16 .stepUnActive h5 {
+    color: var(--color-text60);
+}
+
+/*------------------ draw17 ----------------*/
+
+.drawSection17 h1 {
+    padding-top: 80px;
+    /* color: var(--color-brown-dark); */
+}
+
+.drawSection17 {
+    user-select: none;
+}
+
+.drawImgWrap {
+    cursor: pointer;
+    left: 40%;
+}
+
+.drop-area {
+    height: 100vh;
+    /* border: 1px salmon solid; */
+}
+
+
+.drawSection17 .btn_md_next {
+    width: 190px;
+    background-color: transparent;
+    color: #6F6F6F;
+    border: 1px transparent solid;
+
+}
+
+.drawSection17 .btn_md_next:hover {
+    color: #909090;
+    border: 1px transparent solid;
+    box-shadow: none;
+}
+
+/*------------------ draw18 ----------------*/
+
+.drawSection18 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.drawSection18 h1 {
+    padding-top: 80px;
+}
+
+.drawdrawGroup {
+    top: 20%;
+    width: 100%;
+    height: 100vh;
+    background: url(./imgs/draw/manydraws.png) center center / 70% no-repeat;
+    /* transform: scale(.8); */
+    /* border: #ff5b00 1px solid; */
+}
+
+.drawdraw {
+    -webkit-filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(6px 6px 3px rgba(0, 0, 0, 0.2));
+    cursor: pointer;
+}
+
+.drawdraw img {
+    width: 80%;
+}
+
+.draw01 {
+    top: 13%;
+    left: 15%;
+    transform: rotate(-7deg);
+}
+
+.draw02 {
+    top: 13%;
+    left: 30%;
+    transform: rotate(-22deg);
+}
+
+.draw03 {
+    top: 13%;
+    left: 45%;
+    transform: rotate(2deg);
+}
+
+.draw04 {
+    top: 13%;
+    right: 40%;
+    transform: rotate(-11deg);
+}
+
+.draw05 {
+    top: 13%;
+    right: 30%;
+    transform: rotate(-24deg);
+}
+
+.draw06 {
+    top: 13%;
+    right: 15%;
+    transform: rotate(12deg);
+    /* border: 1px salmon solid; */
+
+}
+
+.catPaw {
+    /* border: 1px salmon solid; */
+    top: -860%;
+    left: 50%;
+    transform: translateX(-40%);
+    /* animation: catPaw 2.5s ease-in-out infinite; */
+
+}
+
+.catPawAni {
+    animation: catPaw 3s ease-in-out infinite;
+}
+
+@keyframes catPaw {
+
+    0%,
+    100% {
+        transform: translateY(-100px) scale(1) translateX(-40%);
+    }
+
+    45% {
+        transform: translateY(650px) scale(1) translateX(-40%);
+    }
+
+    50% {
+        transform: translateY(650px) scale(0.9) translateX(-40%);
+    }
+}
+
+@keyframes drawUp {
+    0% {
+        top: 13%;
+    }
+
+    100% {
+        top: -100%;
+    }
+}
+
+.catPawImg {
+    width: 250px;
+}
+
+/*------------------ draw19 ----------------*/
+
+.drawSection19 h1 {
+    padding-top: 220px;
+    color: white;
+}
+
+.drawSection19 h5 {
+    margin-top: 160px;
+    color: white;
+}
+
+.drawSection19 .btn-xl {
+    width: 560px;
+    height: 76px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 160px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+/*------------------ draw20 ----------------*/
+
+.drawSection20 h1 {
+    padding-top: 100px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection20 h5 {
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection20 .btn-l {
+    width: 200px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 0 auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.drawSection20 a {
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+.moonBlockGroup {
+    width: 100%;
+    height: 700px;
+    /* border: 1px salmon solid; */
+    animation: moonBlockGroup 2s .8s ease-in-out forwards;
+}
+
+@keyframes moonBlockGroup {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-300px);
+    }
+}
+
+.drawSection20 .moonBlockL {
+    left: 30%;
+    top: 20%;
+    /* transform: translate(0%, 0%); */
+    transform-origin: right center;
+    animation: moonBlockL1 .5s ease-out forwards;
+}
+
+.drawSection20 .moonBlockR {
+    right: 30%;
+    top: 20%;
+    transform: translate(0%, 0%);
+    animation: moonBlockL2 .5s ease-out forwards;
+}
+
+@keyframes moonBlockL1 {
+    0% {
+        top: -80%;
+        left: 40%;
+        transform: rotate(0)
+    }
+
+    90% {
+        top: 30%;
+        left: 40%;
+        transform: rotate(0)
+    }
+
+    100% {
+        top: 15%;
+        left: 30%;
+        transform: rotate(-22deg)
+    }
+}
+
+@keyframes moonBlockL2 {
+    0% {
+        top: -80%;
+        right: 30%;
+        transform: rotate(0)
+    }
+
+    90% {
+        top: 40%;
+        right: 30%;
+        transform: rotate(0)
+    }
+
+    100% {
+        top: 30%;
+        right: 25%;
+        transform: rotate(13deg)
+    }
+}
+
+.moonBlockContent {
+    width: 480px;
+    height: 400px;
+    top: 120px;
+    right: 600px;
+    /* border: 1px salmon solid; */
+    opacity: 0;
+    animation: moonBlockContent 2s .8s ease-in-out forwards;
+
+}
+
+@keyframes moonBlockContent {
+    0% {
+        opacity: 0;
+        right: 600px;
+    }
+
+    100% {
+        opacity: 1;
+        right: 480px;
+    }
+}
+
+.moonBlockContent h3 {
+    margin-top: 76px;
+}
+
+.moonBlockContent p {
+    margin-top: 76px;
+}
+
+.drawSection20 .btn-xl {
+    width: 280px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 60px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+/*------------------ draw21 ----------------*/
+
+.drawSection21 h1 {
+    padding-top: 100px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection21 h5 {
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection21 .btn-l {
+    width: 200px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 0 auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.drawSection21 a {
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+.drawSection21 .btn-xl {
+    width: 280px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 60px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.drawSection21 .moonBlockL {
+    left: 30%;
+    top: 20%;
+    /* transform: translate(0%, 0%); */
+    transform-origin: right center;
+    animation: moonBlockL1 .5s ease-out forwards;
+}
+
+.drawSection21 .moonBlockR {
+    right: 30%;
+    top: 20%;
+    transform: translate(0%, 0%);
+    animation: moonBlockL2 .5s ease-out forwards;
+}
+
+/*------------------ draw22 ----------------*/
+
+.drawSection22 h1 {
+    padding-top: 100px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection22 h5 {
+    margin-top: 56px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection22 .btn-l {
+    width: 200px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 0 auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.drawSection22 a {
+    color: var(--color-brown-dark);
+    text-decoration: none;
+}
+
+.drawSection22 .btn-xl {
+    width: 280px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 60px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.drawSection22 .moonBlockL {
+    left: 30%;
+    top: 20%;
+    /* transform: translate(0%, 0%); */
+    transform-origin: right center;
+    animation: moonBlockL1 .5s ease-out forwards;
+}
+
+.drawSection22 .moonBlockR {
+    right: 30%;
+    top: 20%;
+    transform: translate(0%, 0%);
+    animation: moonBlockL2 .5s ease-out forwards;
+}
+
+/*------------------ draw23 ----------------*/
+
+.body_draw23 {
+    /* overflow: hidden; */
+    background: url(./imgs/draw/drawBigbg.png);
+    text-align: center;
+    color: var(--color-brown-dark);
+}
+
+.drawSection23 h1 {
+    padding-top: 100px;
+    color: var(--color-brown-dark);
+}
+
+.drawSection23 {
+    /* border: 1px salmon solid; */
+    overflow: hidden;
+
+    height: 200vh;
+    background: url();
+}
+
+.lightfix {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    /* border: 1px rgb(130, 114, 250) solid; */
+
+}
+
+.light_ba {
+    /* overflow: hidden; */
+    top: -20%;
+    left: -133px;
+    width: 2186px;
+    height: 2186px;
+    border-radius: 2186px;
+    background: url(./imgs/draw/light.png) center center / cover no-repeat;
+    animation: rotate360 60s infinite linear;
+    mix-blend-mode: multiply;
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg) scale(2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(2);
+    }
+}
+
+.grain_ba {
+    /* border: 1px salmon solid; */
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background: url(./imgs/draw/grain1.png) center center / 125% no-repeat;
+}
+
+.drawJadeImg {
+    width: 844px;
+    top: 3%;
+}
+
+.jadeTophand {
+    top: 510px;
+    /* top: 36px; */
+    right: 470px;
+    z-index: 5;
+    animation: jadeTophand 1s ease-in-out forwards;
+}
+
+
+@keyframes jadeTophand {
+    0% {
+        top: 510px;
+    }
+
+    100% {
+        top: 20px;
+    }
+}
+
+.jadeDownhand {
+    top: 600px;
+    /* top: 690px; */
+    right: 470px;
+    z-index: 5;
+    animation: jadeDownhand 1s ease-in-out forwards;
+}
+
+@keyframes jadeDownhand {
+    0% {
+        top: 600px;
+    }
+
+    100% {
+        top: 690px;
+    }
+}
+
+.drawCard {
+    overflow: hidden;
+    transform-origin: center;
+    width: 500px;
+    height: 0px;
+    top: 88px;
+    right: 500px;
+    animation: drawCard 1s ease-in-out forwards;
+}
+
+
+@keyframes drawCard {
+    0% {
+        height: 0px;
+        top: 600px;
+
+
+    }
+
+    100% {
+        height: 700px;
+        top: 72px;
+
+    }
+}
+
+.jadeSay {
+    margin-top: -100px;
+    overflow: hidden;
+    width: 50px;
+    height: 200px;
+    transition: .3s;
+}
+
+.jadeSayBorder {
+    overflow: hidden;
+    border: transparent 20px solid;
+    border-image: url(./imgs/draw/jadeSay.png) 30 stretch;
+}
+
+.jadeSaycontent {
+    transform-origin: center;
+    /* text-overflow: ellipsis; */
+    white-space: nowrap;
+}
+
+/* ====================== 手機 ============================= */
+
+.body_draw01m {
+    background: url(./imgs/draw/drawbg.png);
+    text-align: center;
+    color: var(--color-brown-dark);
+}
+
+.mdrawSection01 {
+    width: 100%;
+    height: calc(100vh - 72px)
+}
+
+.mdrawSection01 h4 {
+    padding-top: 36px;
+}
+
+.mdrawSection01 h6 {
+    padding-top: 12px;
+}
+
+.mdrawSection01 small {
+    padding-top: 12px;
+    color: var(--color-text60);
+}
+
+.mdrawSection01 .musicBlack {
+    transform: scale(1);
+    width: 144px;
+    margin-top: 12px;
+}
+
+.mdrawSection01 .sound-icon {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.onOff h3 {
+    color: white;
+    margin: 0;
+}
+
+.mdrawSection01 .musicOn,
+.mdrawSection01 .musicOff {
+    transition: .2s;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--color-orange);
+    margin: 4px 15px;
+}
+
+.musicOn:hover,
+.musicOff:hover {
+    outline: 5px rgba(250, 128, 114, 0.757) solid;
+}
+
+/* ====================== 手機 23 ============================= */
+
+.mdrawSection23 {
+    width: 100%;
+    height: 150vh;
+}
+
+.mdrawSection23 .musicSwitch {
+    top: 10px;
+    right: 14px;
+}
+
+.mdrawSection23 .lightfix {
+    overflow: hidden;
+    width: 100%;
+    height: 480px;
+    border: 1px rgb(130, 114, 250) solid;
+
+}
+
+.mdrawSection23 .light_ba {
+    /* overflow: hidden; */
+    top: -20%;
+    left: -60px;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+    background: url(./imgs/draw/light.png) center center / cover no-repeat;
+    animation: rotate360 60s infinite linear;
+    z-index: 0;
+    mix-blend-mode: multiply;
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg) scale(2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(2);
+    }
+}
+
+.mdrawSection23 .grain_ba {
+    /* border: 1px salmon solid; */
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 110vh;
+    background: url(./imgs/draw/grain1.png) center center / 125% no-repeat;
+}
+
+
+.mdrawSection23 .drawCard {
+    /* overflow: hidden; */
+    transform-origin: center;
+    width: 300px;
+    height: 400px;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: none;
+    margin-top: 72px;
+}
+
+.mdrawSection23 h6 {
+    margin-top: 12px;
+}
+
+.jadeSaym {
+    margin-top: 50px;
+    overflow: hidden;
+    width: 310px;
+    height: 250px;
+    transition: .3s;
+}
+
+.jadeSaymBorder {
+    overflow: hidden;
+    border: transparent 20px solid;
+    border-image: url(./imgs/draw/jadeSay.png) 35 stretch;
+}
+
+.recommendm_ba {
+    margin-top: 48px;
+}

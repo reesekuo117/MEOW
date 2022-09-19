@@ -190,6 +190,12 @@
 .panel-body-yu {
   padding: 24px 12px;
 }
+.panel-body-yu .OnePriceYu::before{
+  content: "NT$";
+}
+.panel-body-yu .LittlePriceYu{
+  content: "NT$";
+}
 .listinfo-number-yu {
   color: #432a0f;
   padding: 24px 12px;
@@ -218,6 +224,9 @@
 .listinfo-yu label {
   margin: 0;
   padding: 0 12px 12px 12px;
+}
+.MdlistPriceYu{
+  
 }
 /* ----------桌機下拉詳細訂單明細---------- */
 .panel-title-yu {
