@@ -1,34 +1,3 @@
-// nav
-let lastScroll = 0;
-$(window).scroll(function () {
-  let scrollNow = $(window).scrollTop();
-  //console.log('lastScroll:', lastScroll);
-  //console.log('scrollNow', scrollNow);
-  if (scrollNow > lastScroll) {
-    $("header").addClass("hidden");
-  } else {
-    $("header").removeClass("hidden");
-  }
-  lastScroll = scrollNow;
-});
-//漢堡
-$("#menuToggle input").click(function () {
-  $("#menu").css("transform", "translate(0%, 0)");
-  //  console.log($('#menu').css('transform'))
-  if ($("#menu").css("transform") == "matrix(1, 0, 0, 1, 0, 0)") {
-    //console.log('hi');
-    $("#menu").css("transform", "translate(-500%, 0)");
-  }
-});
-$("#menu a").click(function () {
-  $("#menu").css("transform", "translate(-1000%, 0)");
-  // console.log('HEREEEEEEE', $('#menuToggle input').prop('checked'));
-  $("#menuToggle input").prop("checked", false);
-});
-//TOP
-$(".back-button").click(function () {
-  $("html, body").animate({ scrollTop: 0 }, 10);
-});
 
 //-------------------------訂購人地址--------------------------
 let districtArray1 = [
