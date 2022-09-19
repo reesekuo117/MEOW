@@ -1,10 +1,10 @@
     <!-- footer-md ----------------------------------->
-    <footer class="footer-md d-none d-md-block ">
+    <footer class="footer-md d-none d-md-block d-none-ba">
         <div class="text-white text-center py-1">
             <p class="mb-0"><span class="font-weight-light"> © </span><small>2022 MoonOldMeow</small></p>
         </div>
     </footer>
-    <div class="back-button d-none d-md-block">
+    <div class="back-button d-none d-md-block d-none-ba">
         <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M26 45.5C36.7696 45.5 45.5 36.7696 45.5 26C45.5 15.2304 36.7696 6.5 26 6.5C15.2304 6.5 6.5 15.2304 6.5 26C6.5 36.7696 15.2304 45.5 26 45.5ZM33.4521 31.4129C34.0484 32.0837 35.0755 32.1441 35.7463 31.5479C36.417 30.9516 36.4774 29.9245 35.8812 29.2537L28.4291 20.8701C27.1363 19.4157 24.8637 19.4157 23.5709 20.8701L16.1188 29.2537C15.5226 29.9245 15.583 30.9516 16.2537 31.5479C16.9245 32.1441 17.9516 32.0837 18.5479 31.4129L26 23.0293L33.4521 31.4129Z" fill="#AE5D29"/>
         </svg>
