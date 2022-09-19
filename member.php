@@ -22,14 +22,14 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
             </div>
             <ul class="tab_list_re m-0 p-0 text-center">
-                <li class="current_re text-20-re mb-2" data-val="member-data">會員資料</li>
+                <li class="text-20-re mb-2 " data-val="member-data">會員資料</li>
                 <li class="text-20-re mb-2" data-val="modify-password">修改密碼</li>
                 <li class="text-20-re mb-2" data-val="my-favorites" onclick="/*addToCartRe(event)*/">我的最愛</li>
                 <li class="text-20-re mb-2" data-val="member-order">查詢訂單</li>
-                <li class="signupbutton "><input class="btn-re btn200-re phonewidth330-re" type="submit" value="登出"><a href="re-logout.php"></a></li>
+                <li class="signupbutton"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="登出"><a href="re-logout.php"></a></li>
             </ul>
         </div>
-<!-- 會員頭像------------------------------------------------------------ -->
+<!-- 會員頭像----------------------------------------------------- -->
         <div id="pictureChange_re" class="pictureChange_re">
             <form name="" class="pictureChangePage_re pictureChangePage-animate_re col-12 col-md-6" method="post">
                 <h4 class="text-center position-relative">選擇喜歡的頭像<br>或上傳一張你的美照吧～
@@ -66,20 +66,20 @@ $pageName ='會員中心'; //頁面名稱
 <!-- ------------------------------------------------------------ -->
         <div class="allright-re col-12 col-md-9 p-0">
         <div class="tab_con_re">
-< ?php
-if(! isset($_GET['id'])){
-    header('Location: member.php');
-    exit;
-}
-$id = intval($_GET['id']);
-$userid = "SELECT * FROM member WHERE sid=$id";
-$r = $pdo->query($userid)->fetch();
-if(empty($r)){
-    header('Location: index_.php');
-    exit;
-}
-? >
-<!-- p1-member----------------------------------------------------------------------------------------------------------- -->
+<!-- p1-member-------------------------------------------------------------------------------------- -->
+    < ?php
+    if(! isset($_GET['id'])){
+        header('Location: member.php');
+        exit;
+    }
+    $id = intval($_GET['id']);
+    $userid = "SELECT * FROM member WHERE sid=$id";
+    $r = $pdo->query($userid)->fetch();
+    if(empty($r)){
+        header('Location: index_.php');
+        exit;
+    }
+    ? >
             <div id="member-page-re" class="item_re" style="display: block;">
                 <div class="divination-re d-none d-md-block">
                     <svg width="187" height="218" viewBox="0 0 187 218" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -115,22 +115,22 @@ if(empty($r)){
                 <!-- https://www.wfublog.com/2021/04/html5-validator.html -->
                     <div class="mb-3">
                         <label for="name" class="form-label-re text-18-re">姓名<span style="color:#963C38">*</span></label><br>
-                        <input id="member_name_re" name="member_name_re" class="input-re noline-re" type="text" placeholder=" 請輸入姓名" class="form-control" required>
+                        <input id="member_name_re" name="member_name_re" class="input-re noline-re" type="text" placeholder=" 請輸入姓名" class="form-control" required value="<?=htmlentities($r['name']) ?>">
                     </div>
                     <div class="mb-3">
                         <label for="mobile" class="form-label-re text-18-re">聯絡電話<span style="color:#963C38">*</span></label><br>
-                        <input id="member_phone_re" name="member_phone_re" class="input-re noline-re" type="text" placeholder=" 請輸入聯絡電話" class="form-control" required>
+                        <input id="member_phone_re" name="member_phone_re" class="input-re noline-re" type="text" placeholder=" 請輸入聯絡電話" class="form-control" required value="<?=htmlentities($r['mobile']) ?>">
                         <!-- 手機驗證<input type="text" required="required" maxlength="11" pattern="09\d{2}-\d{6}"/> -->
                     </div>
                     <div class="mb-3">
                         <label for="birthday" class="form-label-re text-18-re">出生日期</label><br>
-                        <input id="member_birthday_re" name="member_birthday_re" class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control">
+                        <input id="member_birthday_re" name="member_birthday_re" class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control" value="<?=htmlentities($r['birthday']) ?>">
                     </div>
                     <div class="">
                         <label for="address" class="form-label-re text-18-re">通訊地址</label><br>
                         <div class="address-re d-flex flex-wrap">
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_city_re" id="member_city_re">
+                                <select class="select-re" name="address_city_re" id="member_city_re" value="<?=htmlentities($r['address_city']) ?>">
                                     <option class="option-re text-16-re" value="0">臺北市</option>
                                     <option value="1">新北市</option>
                                     <option value="2">基隆市</option>
@@ -153,14 +153,14 @@ if(empty($r)){
                                 </select>
                             </div>
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_region_re" id="member_district_re">
+                                <select class="select-re" name="address_region_re" id="member_district_re" value="<?=htmlentities($r['address_region']) ?>">
                                     <option class="option-re text-16-re" value="0">中正區</option>
                                     <option value="1">板橋區</option>
                                     <option value="2">仁愛區</option>
                                 </select>
                             </div>
                             <div class="col-12 col-md-4 d-inline-block p-0">
-                                <input id="member_address_re" name="member_address_re" class="input-re addressarea-re col-12 col-md-4 noline-re" type="text" placeholder=" 請輸入詳細地址" class="form-control right-0">
+                                <input id="member_address_re" name="member_address_re" class="input-re addressarea-re col-12 col-md-4 noline-re" type="text" placeholder=" 請輸入詳細地址" class="form-control right-0" value="<?=htmlentities($r['address']) ?>">
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,8 @@ if(empty($r)){
                     <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
                 </form>
             </div>
-<!-- p2-password--------------------------------------------------------------------------------------------------------- -->
+<!-- p2-password------------------------------------------------------------------------------------ -->
+
             <div id="password-page-re" class="item_re">
                 <!-- phone -->
                 <div class="col-12 d-md-none">
@@ -198,7 +199,7 @@ if(empty($r)){
                     </div>
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">新密碼<span style="color:#963C38">*</span></label><br>
-                        <input id="newpassword_re" name="newpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
+                        <input id="newpassword_re" name="newpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required value="<?=htmlentities($r['password']) ?>">
                     </div>
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">請再次確認新密碼<span style="color:#963C38">*</span></label><br>
@@ -208,7 +209,39 @@ if(empty($r)){
                 </form>
             </div>
 
-<!-- p3-like------------------------------------------------------------------------------------------------------------- -->
+<!-- p3-like---------------------------------------------------------------------------------------- -->
+    < ?php
+    $perPage = 10;  //每頁最多有幾筆
+    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    //取得資料的總筆數  
+    $t_sql = "SELECT COUNT(1) FROM love";   
+    $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
+
+    //計算總頁數
+    $totalPages = ceil($totalRows/$perPage);  //ceil無條件進位
+
+    $rows = []; //預設
+    //有資料才執行 >0
+    if($totalRows > 0){
+        if($page<1){
+            //header('Location: member.php#my-favorites?page=1');
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$totalPages){
+            header('Location: ?page='. $totalPages);
+            exit;
+        }
+        //$page<1 ? ($page=1) : null;  //三元運算子
+        //$page>$totalPages ? ($page=$totalPages) : null; 
+
+        //TODO:取得該頁面的資料
+        $sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        // ORDER BY `sid` DESC 降冪 講義41頁
+        // LIMIT %s, %s ==> [索引][筆數]
+        $rows = $pdo->query($sql)->fetchAll();
+    }
+    ? >
             <div id="like-page-re" class="item_re">
                 <div>
                     <ul class="tab-liketitle-re liketitle-all-re d-flax p-0">
@@ -514,7 +547,7 @@ if(empty($r)){
                     </div>
                 </div>
             </div>
-<!-- p4-orderlist-------------------------------------------------------------------------------------------------------- -->
+<!-- p4-orderlist----------------------------------------------------------------------------------- -->
             <div id="orderlist-page-re" class="item_re">
                 <ul class="ordertab-title-re liketitle-all-re d-flax p-0">
                     <li class="col-6 d-inline-block liketitle-re text-20-re text-center active-re"><a class="active activetext-re" href="#tab05-re">獨家商品</a></li><li class="col-6 d-inline-block liketitle-re text-20-re text-center "><a href="#tab06-re">旅遊行程</a></li>
@@ -795,7 +828,8 @@ if(empty($r)){
 <?php include __DIR__. '/parts/scripts.php'; ?>
 <script src="./reese.js"></script>
 <script>
-    const my_pages_re = $(".tab_con_re .item_re");
+// 側邊欄切換
+const my_pages_re = $(".tab_con_re .item_re");
 const myHashChange =  function(){
     const hash = location.hash;
     switch(hash) {
@@ -814,18 +848,15 @@ const myHashChange =  function(){
     }
 };
 window.addEventListener('hashchange', myHashChange);
-
 // #member-data, #modify-password, #my-favorites, #member-order
-// 側邊欄切換
 $(function(){
-    
     /*
     //點擊上部的li，當前li添加current類，移除其他
     $(".tab_list_re li").click(function(){
         $(this).addClass("current_re").siblings().removeClass("current_re");
         //點擊的同時，得到當前li的索引號
         var index = $(this).index();
-        //讓下部裡面相應索引號的item顯示，其餘的item隱藏
+        //讓裡面相應索引號的item顯示，其餘的item隱藏
         $(".tab_con_re .item_re").eq(index).show().siblings().hide();
     })
     */
@@ -835,6 +866,13 @@ $(function(){
     });
     myHashChange();
 })
+$(".tab_list_re li").click(function(){
+        $(this).addClass("current_re").siblings().removeClass("current_re");
+    });
+// $(".tab_list_re li").click(function(){
+//         $(this).addClass("active-re").siblings().removeClass("active-re");
+//     });
+
 //手機會員/修改頁面
 $(function(){
     $(".tab_phonelist_re h5").click(function(){
