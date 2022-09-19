@@ -7,18 +7,18 @@ $output = [
     'code' => 0,
     'postData' => $_POST,
 ];
-if(empty($_POST['member_name_re']) or empty($_POST['member_phone_re'])){
-    $output['error'] = '請輸入正確的帳號密碼!';
-    echo json_encode($output, JSON_UNESCAPED_UNICODE);
-    exit;
-}
+// if(empty($_POST['member_name_re']) or empty($_POST['member_phone_re'])){
+//     $output['error'] = '請輸入正確的姓名電話!';
+//     echo json_encode($output, JSON_UNESCAPED_UNICODE);
+//     exit;
+// }
 if(strtotime($_POST['member_birthday_re'])===false){
     $birthday = null;
 }else {
     $birthday = date('Y-m-d', strtotime($_POST['member_birthday_re']));
 }
 
-$sql = "UPDATE `member` SET 
+$user_id = "UPDATE `member` SET 
     `name`=?,
     `mobile`=?,
     `birthday`=?,
@@ -27,7 +27,7 @@ $sql = "UPDATE `member` SET
     `address`=? 
     WHERE `id`=?";
 
-$stmt = $pdo->prepare($sql);
+$stmt = $pdo->prepare($user_id);
 $stmt->execute([
     $_POST['member_name_re'],
     $_POST['member_phone_re'],
