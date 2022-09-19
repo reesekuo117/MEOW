@@ -5,7 +5,7 @@ $pageName ='會員中心'; //頁面名稱
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./reese.css">
-<link rel="stylesheet" href="./reese.js">
+
 <?php include __DIR__. '/parts/navbar.php'; ?>
 <div class="background-re">
 <div class="container-re">
@@ -22,11 +22,15 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
             </div>
             <ul class="tab_list_re m-0 p-0 text-center">
-                <li class="text-20-re mb-2 current_re" data-val="member-data">會員資料</li>
-                <li class="text-20-re mb-2" data-val="modify-password">修改密碼</li>
-                <li class="text-20-re mb-2" data-val="my-favorites" onclick="/*addToCartRe(event)*/">我的最愛</li>
-                <li class="text-20-re mb-2" data-val="member-order">查詢訂單</li>
-                <li class="signupbutton"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="登出"><a href="re-logout.php"></a></li>
+                <li class="tablist-meowli01_re text-20-re py-2 col-6 mx-auto" data-val="member-data">
+                    <img class="tablist-meowsvg01_re d-none" src="./imgs/member/cate.png" alt="">會員資料</li>
+                <li class="tablist-meowli02_re text-20-re py-2 col-6 mx-auto" data-val="modify-password">
+                    <img class="tablist-meowsvg02_re d-none" src="./imgs/member/cate.png" alt="">修改密碼</li>
+                <li class="tablist-meowli03_re text-20-re py-2 col-6 mx-auto" data-val="my-favorites">
+                    <img class="tablist-meowsvg03_re d-none" src="./imgs/member/cate.png" alt="">我的最愛</li>
+                <li class="tablist-meowli04_re text-20-re py-2 col-6 mx-auto" data-val="member-order">
+                    <img class="tablist-meowsvg04_re d-none" src="./imgs/member/cate.png" alt="">查詢訂單</li>
+                <label class="signupbutton my-2"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="登出"><a href="re-logout.php"></a></label>
             </ul>
         </div>
 <!-- 會員頭像----------------------------------------------------- -->
@@ -67,19 +71,22 @@ $pageName ='會員中心'; //頁面名稱
         <div class="allright-re col-12 col-md-9 p-0">
         <div class="tab_con_re">
 <!-- p1-member-------------------------------------------------------------------------------------- -->
-    < ?php
-    if(! isset($_GET['id'])){
-        header('Location: member.php');
-        exit;
-    }
-    $id = intval($_GET['id']);
-    $userid = "SELECT * FROM member WHERE sid=$id";
-    $r = $pdo->query($userid)->fetch();
-    if(empty($r)){
-        header('Location: index_.php');
-        exit;
-    }
-    ? >
+    <?php
+    // if(! isset($_GET['id'])){
+    //     header('Location: member.php');
+    //     exit;
+    // }
+    $member_id = $_SESSION['user']['id'];
+    $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+    $r_re = $pdo->query($user_id)->fetch();
+    echo $member_id;
+    var_dump($r_re);
+    // if(empty($r_re)){
+    //     header('Location: index_.php');
+    //     exit;
+    // }
+    // 如果沒有資料會拿到ture轉到首頁
+    ?>
             <div id="member-page-re" class="item_re" style="display: block;">
                 <div class="divination-re d-none d-md-block">
                     <svg width="187" height="218" viewBox="0 0 187 218" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -109,64 +116,109 @@ $pageName ='會員中心'; //頁面名稱
                     <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">會員資料</h5>
                     <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
-                <form id="form_member_re" name='form_member_re' class="padding225-re" method="post" onsubmit=" checkFormMember(); return false;"> 
-                <input type="hidden" name="sid" value="<?= $r['sid'] ?>">
+                <form id="form_member_re" name='form_member_re' class="padding225-re" method="post" onsubmit="checkFormMember(); return false;"> 
+                <input type="hidden" name="id" value="<?= $r_re['id'] ?>">
                 <!-- novalidate 不要驗證表單 -->
                 <!-- https://www.wfublog.com/2021/04/html5-validator.html -->
                     <div class="mb-3">
                         <label for="name" class="form-label-re text-18-re">姓名<span style="color:#963C38">*</span></label><br>
-                        <input id="member_name_re" name="member_name_re" class="input-re noline-re" type="text" placeholder=" 請輸入姓名" class="form-control" required value="<?=htmlentities($r['name']) ?>">
+                        <input id="member_name_re" name="member_name_re" class="input-re noline-re" type="text" placeholder=" 請輸入姓名" class="form-control" required value="<?=htmlentities($r_re['name']) ?>">
                     </div>
                     <div class="mb-3">
                         <label for="mobile" class="form-label-re text-18-re">聯絡電話<span style="color:#963C38">*</span></label><br>
-                        <input id="member_phone_re" name="member_phone_re" class="input-re noline-re" type="text" placeholder=" 請輸入聯絡電話" class="form-control" required value="<?=htmlentities($r['mobile']) ?>">
+                        <input id="member_phone_re" name="member_phone_re" class="input-re noline-re" type="text" placeholder=" 請輸入聯絡電話" class="form-control" required value="<?=htmlentities($r_re['mobile']) ?>">
                         <!-- 手機驗證<input type="text" required="required" maxlength="11" pattern="09\d{2}-\d{6}"/> -->
                     </div>
                     <div class="mb-3">
                         <label for="birthday" class="form-label-re text-18-re">出生日期</label><br>
-                        <input id="member_birthday_re" name="member_birthday_re" class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control" value="<?=htmlentities($r['birthday']) ?>">
+                        <input id="member_birthday_re" name="member_birthday_re" class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control" value="<?=htmlentities($r_re['birthday']) ?>">
                     </div>
                     <div class="">
                         <label for="address" class="form-label-re text-18-re">通訊地址</label><br>
                         <div class="address-re d-flex flex-wrap">
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_city_re" id="member_city_re" value="<?=htmlentities($r['address_city']) ?>">
-                                    <option class="option-re text-16-re" value="0">臺北市</option>
-                                    <option value="1">新北市</option>
-                                    <option value="2">基隆市</option>
-                                    <option value="3">宜蘭縣</option>
-                                    <option value="4">桃園市</option>
-                                    <option value="5">新竹市</option>
-                                    <option value="6">新竹縣</option>
-                                    <option value="7">苗栗縣</option>
-                                    <option value="8">彰化縣</option>
-                                    <option value="9">臺中市</option>
-                                    <option value="10">南投縣</option>
-                                    <option value="11">雲林縣</option>
-                                    <option value="12">嘉義市</option>
-                                    <option value="13">嘉義縣</option>
-                                    <option value="14">臺南市</option>
-                                    <option value="15">高雄市</option>
-                                    <option value="16">屏東縣</option>
-                                    <option value="17">花蓮縣</option>
-                                    <option value="18">臺東縣</option>
+                                <select class="select-re" name="address_city_re" id="member_city_re" value="<?=htmlentities($r_re['address_city_re']) ?>">
+                                    <option class="option-re text-16-re" value="5">臺北市</option>
+                                    <option value="6">新北市</option>
+                                    <option value="7">基隆市</option>
+                                    <option value="8">宜蘭縣</option>
+                                    <option value="9">桃園市</option>
+                                    <option value="10">新竹市</option>
+                                    <option value="11">新竹縣</option>
+                                    <option value="12">苗栗縣</option>
+                                    <option value="13">彰化縣</option>
+                                    <option value="14">臺中市</option>
+                                    <option value="15">南投縣</option>
+                                    <option value="16">雲林縣</option>
+                                    <option value="17">嘉義市</option>
+                                    <option value="18">嘉義縣</option>
+                                    <option value="19">臺南市</option>
+                                    <option value="20">高雄市</option>
+                                    <option value="21">屏東縣</option>
+                                    <option value="22">花蓮縣</option>
+                                    <option value="23">臺東縣</option>
                                 </select>
                             </div>
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_region_re" id="member_district_re" value="<?=htmlentities($r['address_region']) ?>">
-                                    <option class="option-re text-16-re" value="0">中正區</option>
-                                    <option value="1">板橋區</option>
-                                    <option value="2">仁愛區</option>
+                                <select class="select-re" name="address_region_re" id="member_district_re" value="<?=htmlentities($r_re['address_region_re']) ?>">
+                                    <option class="option-re text-16-re" value="24">中正區</option>
+                                    <option value="25">大同區</option>
+                                    <option value="26">中山區</option>
+                                    <option value="27">萬華區</option>
+                                    <option value="28">信義區</option>
+                                    <option value="29">松山區</option>
+                                    <option value="30">大安區</option>
+                                    <option value="31">南港區</option>
+                                    <option value="32">北投區</option>
+                                    <option value="33">內湖區</option>
+                                    <option value="34">士林區</option>
+                                    <option value="35">文山區</option>
+                                    <option value="36">板橋區</option>
+                                    <option value="37">新莊區</option>
+                                    <option value="38">泰山區</option>
+                                    <option value="39">林口區</option>
+                                    <option value="40">淡水區</option>
+                                    <option value="41">金山區</option>
+                                    <option value="42">八里區</option>
+                                    <option value="43">萬里區</option>
+                                    <option value="44">石門區</option>
+                                    <option value="45">三芝區</option>
+                                    <option value="46">瑞芳區</option>
+                                    <option value="47">汐止區</option>
+                                    <option value="48">平溪區</option>
+                                    <option value="49">貢寮區</option>
+                                    <option value="50">雙溪區</option>
+                                    <option value="51">深坑區</option>
+                                    <option value="52">石碇區</option>
+                                    <option value="53">新店區</option>
+                                    <option value="54">坪林區</option>
+                                    <option value="55">烏來區</option>
+                                    <option value="56">中和區</option>
+                                    <option value="57">永和區</option>
+                                    <option value="58">土城區</option>
+                                    <option value="59">三峽區</option>
+                                    <option value="60">樹林區</option>
+                                    <option value="61">鶯歌區</option>
+                                    <option value="62">三重區</option>
+                                    <option value="63">蘆洲區</option>
+                                    <option value="64">五股區</option>
+                                    <option value="65">仁愛區</option>
+                                    <option value="66">中正區</option>
+                                    <option value="67">信義區</option>
+                                    <option value="68">中山區</option>
+                                    <option value="69">安樂區</option>
+                                    <option value="70">暖暖區</option>
+                                    <option value="71">七堵區</option>
                                 </select>
                             </div>
                             <div class="col-12 col-md-4 d-inline-block p-0">
-                                <input id="member_address_re" name="member_address_re" class="input-re addressarea-re col-12 col-md-4 noline-re" type="text" placeholder=" 請輸入詳細地址" class="form-control right-0" value="<?=htmlentities($r['address']) ?>">
+                                <input id="member_address_re" name="member_address_re" class="input-re addressarea-re col-12 col-md-4 noline-re" type="text" placeholder=" 請輸入詳細地址" class="form-control right-0" value="<?=htmlentities($r_re['address']) ?>">
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label-re text-18-re">信箱帳號<span style="color:#963C38">*</span></label><br>
-                        <input id="member_email_re" class="inputdisabled-re col-8 noline-re" type="text" class="form-control" disabled="disabled">
+                        <input id="member_email_re" class="inputdisabled-re col-8 noline-re" type="text" class="form-control" disabled="disabled" value="<?=htmlentities($r_re['email']) ?>">
                     </div>
                     <div id="member_msgContainer"></div>
                     <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
@@ -192,14 +244,15 @@ $pageName ='會員中心'; //頁面名稱
                     <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">會員資料</h5>
                     <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
-                <form name='form_forget_re' class="padding225-re" method="post" onsubmit=" checkFormPassword(); return false;">  
+                <form name='form_forget_re' class="padding225-re" method="post" onsubmit=" checkFormPassword(); return false;"> 
+                <input type="hidden" name="id" value="<?= $r_re['id'] ?>">
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">舊密碼<span style="color:#963C38">*</span></label><br>
                         <input id="oldpassword_re" name="oldpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入舊密碼" required>
                     </div>
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">新密碼<span style="color:#963C38">*</span></label><br>
-                        <input id="newpassword_re" name="newpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required value="<?=htmlentities($r['password']) ?>">
+                        <input id="newpassword_re" name="newpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
                     </div>
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">請再次確認新密碼<span style="color:#963C38">*</span></label><br>
@@ -680,11 +733,11 @@ $pageName ='會員中心'; //頁面名稱
                             <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div>
                         </div> -->
                         <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
-                            <label><input id="tag-re-1" type="checkbox" name="tag-re" value="出貨超快速" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
-                            <label><input id="tag-re-2" type="checkbox" name="tag-re" value="ＣＰ值超高" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
-                            <label><input id="tag-re-3" type="checkbox" name="tag-re" value="商品超可愛" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
-                            <label><input id="tag-re-4" type="checkbox" name="tag-re" value="商品品質爆表" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
-                            <label><input id="tag-re-5" type="checkbox" name="tag-re" value="服務態度超好" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
+                            <label><input id="tag-re-1" type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                            <label><input id="tag-re-2" type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                            <label><input id="tag-re-3" type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                            <label><input id="tag-re-4" type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                            <label><input id="tag-re-5" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                         </div>
                         <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
                     </div>
@@ -810,11 +863,11 @@ $pageName ='會員中心'; //頁面名稱
                             <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品品質爆表</div>
                             <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div> -->
                             
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="出貨超快速" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="ＣＰ值超高" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="商品超可愛" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="商品品質爆表" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="服務態度超好" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
+                            <label><input id="tag-re" type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                            <label><input id="tag-re" type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                            <label><input id="tag-re" type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                            <label><input id="tag-re" type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                            <label><input id="tag-re" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                         </div>
                         <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
                     </div>
@@ -826,7 +879,7 @@ $pageName ='會員中心'; //頁面名稱
 </div>
 </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>
-<script src="./reese.js"></script>
+
 <script>
 // 側邊欄切換
 const my_pages_re = $(".tab_con_re .item_re");
@@ -850,25 +903,50 @@ const myHashChange =  function(){
 window.addEventListener('hashchange', myHashChange);
 // #member-data, #modify-password, #my-favorites, #member-order
 $(function(){
-    /*
+    
     //點擊上部的li，當前li添加current類，移除其他
-    $(".tab_list_re li").click(function(){
-        $(this).addClass("current_re").siblings().removeClass("current_re");
-        //點擊的同時，得到當前li的索引號
-        var index = $(this).index();
-        //讓裡面相應索引號的item顯示，其餘的item隱藏
-        $(".tab_con_re .item_re").eq(index).show().siblings().hide();
-    })
-    */
+    // $(".tab_list_re li").click(function(){
+    //     $(this).addClass("current_re").siblings().removeClass("current_re");
+    //     //點擊的同時，得到當前li的索引號
+    //     var index = $(this).index();
+    //     //讓裡面相應索引號的item顯示，其餘的item隱藏
+    //     $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+    // })
+    
     $(".tab_list_re li").click(function(){
         const dataVal = $(this).attr('data-val')
         location.href = '#' + dataVal;
     });
     myHashChange();
 })
-$(".tab_list_re li").click(function(){
-        $(this).addClass("current_re").siblings().removeClass("current_re");
-    });
+// 
+$('.tab_list_re li.tablist-meowli01_re').click(function() {
+    $('.tablist-meowsvg01_re').removeClass('d-none');
+    $('.tablist-meowsvg02_re').addClass('d-none');
+    $('.tablist-meowsvg03_re').addClass('d-none');
+    $('.tablist-meowsvg04_re').addClass('d-none');
+    })
+$('.tab_list_re li.tablist-meowli02_re').click(function() {
+    $('.tablist-meowsvg01_re').addClass('d-none');
+    $('.tablist-meowsvg02_re').removeClass('d-none');
+    $('.tablist-meowsvg03_re').addClass('d-none');
+    $('.tablist-meowsvg04_re').addClass('d-none');
+    })
+$('.tab_list_re li.tablist-meowli03_re').click(function() {
+    $('.tablist-meowsvg01_re').addClass('d-none');
+    $('.tablist-meowsvg02_re').addClass('d-none');
+    $('.tablist-meowsvg03_re').removeClass('d-none');
+    $('.tablist-meowsvg04_re').addClass('d-none');
+    })
+$('.tab_list_re li.tablist-meowli04_re').click(function() {
+    $('.tablist-meowsvg01_re').addClass('d-none');
+    $('.tablist-meowsvg02_re').addClass('d-none');
+    $('.tablist-meowsvg03_re').addClass('d-none');
+    $('.tablist-meowsvg04_re').removeClass('d-none');
+    })
+// $(".tab_list_re li").click(function(){
+//         $(this).addClass("current_re").siblings().removeClass("current_re");
+//     });
 // $(".tab_list_re li").click(function(){
 //         $(this).addClass("active-re").siblings().removeClass("active-re");
 //     });
@@ -959,7 +1037,7 @@ $('.star-re').click(function(){
 })
 $('.rightstar-re').click(function(){
     console.log('hi',$(this).index());
-    for(let i = 0; i < 5; i++ ){
+    for(let i = 0; i <5; i++ ){
         const color = ($(this).index() >= i)? '#E5A62A' : 'none';
         $('.rightstar-re').eq(i).css('fill',color)
     }
@@ -1008,13 +1086,13 @@ const msgc_member = $('#member_msgContainer');
 function checkFormMember(){
     console.log('checkFormMember');
     let isPass = true;
-    if (!$('#member_name_re').val()) {
-        genAlert3('請填寫正確會員資料');
-        return;
-    }else if (!$('#member_phone_re').val()) {
-        genAlert3('請填寫正確會員資料');
-        return;
-    }
+    // if (!$('#member_name_re').val()) {
+    //     genAlert3('請填寫正確會員資料');
+    //     return;
+    // }else if (!$('#member_phone_re').val()) {
+    //     genAlert3('請填寫正確會員資料');
+    //     return;
+    // }
     if(isPass){
         $.post(
             're-member-api.php', 
@@ -1022,9 +1100,9 @@ function checkFormMember(){
             function(data){
                 console.log('checkFormMember data',data);
                 if(data.success){
-                    genAlert('修改成功', 'success');
+                    genAlert3('修改成功', 'success');
                 }else{
-                    genAlert(data.error);
+                    genAlert3(data.error);
                 }
         }, 'json');
     }
@@ -1046,11 +1124,17 @@ const msgc_password = $('#password_msgContainer');
 function checkFormPassword(){
     console.log('checkFormPassword');
     let isPass = true;
-    if (!$('#member_name_re').val()) {
-        genAlert4('請填寫正確會員資料');
+    if (!$('#oldpassword_re').val()) {
+        genAlert4('請填寫正確資料');
         return;
-    }else if (!$('#member_phone_re').val()) {
-        genAlert4('請填寫正確會員資料');
+    }else if (!$('#newpassword_re').val()) {
+        genAlert4('請填寫正確資料');
+        return;
+    }else if (!$('#againpassword_re').val()) {
+        genAlert4('請填寫正確資料');
+        return;
+    }else if (!$('#newpassword_re').val() === $('#againpassword_re').val()) {
+        genAlert4('請填寫正確資料');
         return;
     }
     if(isPass){
@@ -1060,12 +1144,14 @@ function checkFormPassword(){
             function(data){
                 console.log('checkFormPassword data',data);
                 if(data.success){
-                    genAlert('修改成功', 'success');
+                    genAlert4('修改成功', 'success');
                 }else{
-                    genAlert(data.error);
+                    genAlert4(data.error);
                 }
         }, 'json');
     }
 }
+
+
 </script>
 <?php include __DIR__. '/parts/html-foot.php'; ?>

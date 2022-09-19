@@ -235,7 +235,7 @@ p {
 }
 .current_re {
     background-color: #E5A62A;
-    border-radius: 50%;
+    border-radius: 8px;
     /* color: #E5A62A; */
 
 }

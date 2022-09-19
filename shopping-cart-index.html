@@ -238,7 +238,13 @@
                                 <tr class="">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu">
-                                            <input id="checkboxInputYu" class=" mx-2" type="checkbox" name="oneCheck1Yu" aria-label="Checkbox for following text input" checked>
+                                            <input 
+                                            id="checkboxInputYu" 
+                                            class=" mx-2" 
+                                            type="checkbox" 
+                                            name="oneCheck1Yu" 
+                                            aria-label="Checkbox for following text input" 
+                                            checked>
                                         </div>
                                     </th>
                                     <!-- 商品照片 -->
@@ -286,7 +292,7 @@
                                     </td>
                                     <!-- 小計 -->
                                     <td name="tpriceYu"  class="total_price_yu h6 p-2" >
-                                        <h6 id="totalprice_yu" class="AllTotalPriceYu" nams="priceYu">
+                                        <h6 id="totalprice_yu" class="littlePriceYu" nams="priceYu">
                                             707
                                         </h6>
                                     </td>
@@ -347,7 +353,7 @@
                                     </td>
                                     <!-- 小計 -->
                                     <td name="tpriceYu" id="totalprice_yu" class="total_price_yu h6 p-2" >
-                                        <h6 class="AllTotalPriceYu" nams="priceYu">
+                                        <h6 class="littlePriceYu" nams="priceYu">
                                             707
                                         </h6>
                                     </td>
@@ -360,20 +366,20 @@
                         </table>
                     </div>
                 </div>
+                <!-- 修改總金額 -->
                 <div class="h6 alert alert-succes totalprice-uniqui-yu "  role="alert">
-                        <span class="d-flex " name="TotalPriceYu" id="totalPriceYu">
-                            訂單金額: 
+                        <span class="d-flex " name="TotalPriceYu">
                             <h6   class="price-yu">
-                                <span id="TotalpriceYu"  type="text" ></span>
+                                <span id="TotalpriceYu"  type="text" >
+                                    1414
+                                </span>
                             </h6>
                         </span>
                         <span  class="freightprice-yu d-flex">
-                            運費金額:
                             <h6>60</h6>
                         </span>
                         <span id="total-amount" class=" d-flex  price-uniqui-yu">
-                            總金額: 
-                            <h6></h6> 
+                            <h6>1474</h6> 
                         </span>
                 </div>
                 <div>
@@ -435,7 +441,7 @@
                                 <tr class="">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu ">
-                                            <input class=" mx-2 " type="checkbox" name="oneCheck2Yu" aria-label="Checkbox for following text input">
+                                            <input class=" mx-2 " type="checkbox" name="oneCheck2Yu" aria-label="Checkbox for following text input" checked>
                                         </div>
                                     </th>
                                     <!-- 行程照片 -->
@@ -455,16 +461,21 @@
                                         </h6>
                                     </td>
                                     <!-- 數量 -->
-                                    <td>
+                                    <td class="">
                                         <form id='myform' method='POST' action='#'>
-                                            <input name="minusplusname" type='button' value='-' class='qtyminus' field='quantity' />
-                                            <input type='text' name='quantity' value='0' class='qty-yu' />
-                                            <input name="minusplusname" type='button' value='+' class='qtyplus' field='quantity' />
+
+                                            <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
+
+                                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 qty-yu numberTotalYu'>
+                                                1
+                                            </span>
+                                            
+                                            <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
                                         </form>
                                     </td>
                                     <!-- 小計 -->
-                                    <td name="tpriceYu"  class="total_price_yu p-2" >
-                                        <h6 id="totalprice_yu" class="AllTotalPriceYu m-0" nams="priceYu">
+                                    <td name="tpriceYu" id="totalprice_yu" class="total_price_yu h6 p-2" >
+                                        <h6 class="littlePriceYu" nams="priceYu">
                                             1500
                                         </h6>
                                     </td>
@@ -477,12 +488,11 @@
                         </table>
                     </div>
                 </div>
-                <div class="h6 alert alert-succes totalprice-uniqui-yu "  role="alert">
-                    <span >訂單金額:  NT$1500</span>
-                    <span id="total-amount" class="price-uniqui-yu">總金額: </span>
-                    <span id="total-price" ></span>
-                    元
-            </div>
+                <div class="h6 alert alert-succes totalprice-travel-yu "  role="alert">
+                    <span id="total-amount" class=" d-flex price-travel-yu">
+                        <h6>1500</h6> 
+                    </span>
+                </div>
             <div>
                 <!-- 如果使用者還未登入 -->
                 <?php if(empty($_SESSION["user"])) : ?>  
@@ -510,7 +520,7 @@
     <section class=" d-block d-md-none">
         <!-- 返回icon -->
         <div class="mdicon-back-yu">
-            <img src="/imgs/icon/返回32x32.png" alt="">
+            <img src="imgs/shopping-cart/icon-32_32.png" alt="">
         </div>
         <!-- 手機獨家商品 旅遊行程分頁標籤 -->
         <!-- href="#uniqui-yu" data-toggle="tab" -->
@@ -576,13 +586,18 @@
                             <option value="2">棉布御守</option>
                         </select>
                         <!-- 單價 -->
-                        <h5 class="price-yu">707</h5>
+                        <h5 class="mdprice-yu">
+                            707
+                        </h5>
                         <!-- 數量 -->
                         <form class="d-flex" id='myform' method='POST' action='#'>
-                            <label for=""> </label>
-                            <input type='button' value='-' class='qtyminus' field='quantity'/>
-                            <input type='text' name='quantity' value='0' class='qty-yu' />
-                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                            <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
+
+                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
+                                1
+                            </span>
+
+                            <input id="plus-yu"  type='button' value='+' class='qtyplus' field='quantity' />
                         </form>
                     </div>
                 </div>
@@ -602,19 +617,28 @@
                             <option value="2">棉布御守</option>
                         </select>
                         <!-- 單價 -->
-                        <h5 class="price-yu">707</h5>
+                        <h5 class="mdprice-yu">
+                            707
+                        </h5>
                         <!-- 數量 -->
                         <form class="d-flex" id='myform' method='POST' action='#'>
-                            <label for=""> </label>
-                            <input type='button' value='-' class='qtyminus' field='quantity'/>
-                            <input type='text' name='quantity' value='0' class='qty-yu' />
-                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                            <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
+
+                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
+                                1
+                            </span>
+
+                            <input id="plus-yu"  type='button' value='+' class='qtyplus' field='quantity' />
                         </form>
                     </div>
                 </div>
                 <div>
-                    <h6 class="text-center px-5">2 件商品合計 </h6>
-                    <h6 class="text-center px-5">總金額: <span class="price-yu">1414</span> </h6>
+                    <h6 class=" MDtotalItemsYu text-center px-5">
+                        2 
+                    </h6>
+                    <h6 class=" MDtatalpriceYu text-center px-5">
+                        1414
+                    </h6>
                 </div>
                 <!-- 未登入 -->
                 <div class=" d-flex justify-content-center">
@@ -641,10 +665,20 @@
                                 大稻埕霞海城廟深度漫步文化之旅
                             </p>
                         </div>
-                        <!-- 數量 -->
-                        <p>X1</p>
                         <!-- 單價 -->
-                        <h5>$707</h5>
+                        <h5 class="mdprice-yu">
+                            1500
+                        </h5>
+                        <!-- 數量 -->
+                        <form class="d-flex" id='myform' method='POST' action='#'>
+                            <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
+
+                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
+                                1
+                            </span>
+
+                            <input id="plus-yu"  type='button' value='+' class='qtyplus' field='quantity' />
+                        </form>
                     </div>
                 </div>
                 <div>
@@ -711,6 +745,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="shopping-cart-index.js"></script>
+
+    <script>
+        // nav
+        let lastScroll = 0;
+    $(window).scroll(function(){
+    let scrollNow =  $(window).scrollTop();
+    //console.log('lastScroll:', lastScroll);
+    //console.log('scrollNow', scrollNow);
+    if(scrollNow > lastScroll){
+    $('header').addClass('hidden')
+    }
+    else{
+    $('header').removeClass('hidden')
+    }
+    lastScroll = scrollNow;
+    })
+    //漢堡
+    $('#menuToggle input').click(function(){
+    $('#menu').css('transform','translate(0%, 0)')
+    //  console.log($('#menu').css('transform'))
+    if($('#menu').css('transform') == ('matrix(1, 0, 0, 1, 0, 0)')) {
+    //console.log('hi');
+    $('#menu').css('transform','translate(-500%, 0)')
+    }
+    })
+    $('#menu a').click(function(){
+    $('#menu').css('transform','translate(-1000%, 0)');
+    // console.log('HEREEEEEEE', $('#menuToggle input').prop('checked'));
+    $('#menuToggle input').prop('checked',false)
+    })
+    //TOP
+    $('.back-button').click(function(){
+    $('html, body').animate({scrollTop:0},10)
+    })
+
+
+    </script>
 
 </body>
 </html>

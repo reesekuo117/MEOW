@@ -12,29 +12,22 @@ if(empty($_POST['oldpassword_re']) or empty($_POST['newpassword_re'])or empty($_
     echo json_encode($output, JSON_UNESCAPED_UNICODE);
     exit;
 }
-$sql = "UPDATE `member` SET 
-    -- `email`=?,
+
+$user_id = "UPDATE `member` SET 
     `password`=?,
-    -- `picture`=?,
-    -- `name`=?,
-    -- `mobile`=?,
-    -- `birthday`=?,
-    -- `address_city`=?,
-    -- `address_region`=?,
-    -- `address`=? 
-    -- `created_at`=? 
     WHERE `id`=?";
 
-$stmt = $pdo->prepare($sql);
+$stmt = $pdo->prepare($user_id);
 $stmt->execute([
     $_POST['newpassword_re'],
+    $_POST['id'],
 ]);
 
 
 if($stmt->rowCount()){
     $output['success'] = true;
 } else {
-    $output['error'] = '資料未修改';
+    $output['error'] = '密碼未修改成功';
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
