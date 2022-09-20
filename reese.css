@@ -303,6 +303,7 @@ p {
 
 .closeicon-re {
     margin-left: -7%;
+    cursor: pointer;
     /* margin-top: 1%; */
 }
 .loginmodal-re {
@@ -341,6 +342,7 @@ p {
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    overflow: hidden;
 }
 .pictureicon-re {
     width: 40px;

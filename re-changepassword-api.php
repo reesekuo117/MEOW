@@ -19,7 +19,8 @@ $user_id = "UPDATE `member` SET
 
 $stmt = $pdo->prepare($user_id);
 $stmt->execute([
-    $_POST['newpassword_re'],
+    // $_POST['newpassword_re'],
+    password_hash($_POST['newpassword_re'], PASSWORD_DEFAULT),
     $_POST['id'],
 ]);
 
