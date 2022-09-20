@@ -75,8 +75,8 @@ button {
 }
 
 .btn:hover {
-    outline: 2px solid #432A0F;
-    box-shadow: 4px 4px 0px 0px #432A0F;
+    /* outline: 2px solid #432A0F; */
+    box-shadow: 2px 2px 0px 0px #432A0F;
 }
 
 .btn:focus {

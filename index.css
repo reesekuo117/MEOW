@@ -471,7 +471,7 @@ header .navbar_ba {
 .btn03_ba {
     z-index: 3;
     word-wrap: break-word;
-    padding: 20px 170px;
+    padding: 20px 160px;
 }
 
 .cartCat img {
@@ -517,6 +517,10 @@ header .navbar_ba {
 .yusoulCat {
     top: 50%;
     left: 5%;
+}
+
+.otherp .carousel-control-prev i, .otherp .carousel-control-next i{
+    color: var(--color-brown-dark) ! important;
 }
 
 /* ----------------------------- 還好崩潰的 section4 結束 ------------------------------- */
