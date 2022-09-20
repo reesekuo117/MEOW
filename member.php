@@ -2,13 +2,14 @@
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName ='會員中心'; //頁面名稱
 
-    // if(! isset($_GET['id'])){
-    //     header('Location: member.php');
+    // if(empty($_SESSION['user'])){
+    //     header('Location: login.php');
     //     exit;
     // }
-    $member_id = $_SESSION['user']['id'];
-    $user_id = "SELECT * FROM `member` WHERE id=$member_id";
-    $r_re = $pdo->query($user_id)->fetch();
+    // $member_id = $_SESSION['user']['id'];
+    // $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+    // $r_re = $pdo->query($user_id)->fetch();
+
     // echo $member_id;
     // var_dump($r_re);
 
@@ -32,7 +33,7 @@ $pageName ='會員中心'; //頁面名稱
     <div class="tab row m-0">
         <div class=" d-none d-md-block col-md-3">
             <div class="picturewarp-re mx-auto my-4 position-relative">
-                <img class="w-100" src="<?= $r_re['picture'] ?>" alt="">
+                <img id="blah_md_re" class="w-100" src="<?= $r_re['picture'] ?>" alt="">
                 <div class="pictureicon-re position-absolute" onclick="document.getElementById('pictureChange_re').style.display='block'" style="width:auto;">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="4" y="8" width="24" height="17.3333" rx="4" stroke="#432A0F" stroke-width="2.66667"/>
@@ -50,7 +51,7 @@ $pageName ='會員中心'; //頁面名稱
                     <img class="tablist-meowsvg03_re d-none" src="./imgs/member/cate.png" alt="">我的最愛</li>
                 <li class="tablist-meowli04_re text-20-re py-2 col-6 mx-auto" data-val="member-order">
                     <img class="tablist-meowsvg04_re d-none" src="./imgs/member/cate.png" alt="">查詢訂單</li>
-                <label class="signupbutton my-2"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="登出"><a href="re-logout.php"></a></label>
+                <label class="signupbutton my-2"><input class="btn-re btn200-re phonewidth330-re" type="button" value="登出" onclick="location.href='re-logout.php'"></label>
             </ul>
         </div>
 <!-- 會員頭像----------------------------------------------------- -->
@@ -94,7 +95,9 @@ $pageName ='會員中心'; //頁面名稱
         <div class="tab_con_re">
 <!-- p1-member-------------------------------------------------------------------------------------- -->
     <?php
-
+        $member_id = $_SESSION['user']['id'];
+        $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+        $r_re = $pdo->query($user_id)->fetch();
     ?>
             <div id="member-page-re" class="item_re" style="display: block;">
                 <div class="divination-re d-none d-md-block">
@@ -111,7 +114,7 @@ $pageName ='會員中心'; //頁面名稱
                 <!-- xs -->
                 <div class="col-12 d-md-none">
                     <div class="picturewarp-re mx-auto my-4 position-relative">
-                        <img class="w-100" src="./imgs/member/picture01.png" alt="">
+                        <img id="blah_xs01_re" class="w-100" src="<?= $r_re['picture'] ?>" alt="">
                         <div class="pictureicon-re position-absolute" onclick="document.getElementById('pictureChange_re').style.display='block'" style="width:auto;">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="4" y="8" width="24" height="17.3333" rx="4" stroke="#432A0F" stroke-width="2.66667"/>
@@ -239,7 +242,7 @@ $pageName ='會員中心'; //頁面名稱
                 <!-- phone -->
                 <div class="col-12 d-md-none">
                     <div class="picturewarp-re mx-auto my-4 position-relative">
-                        <img class="w-100" src="./imgs/member/picture01.png" alt="">
+                        <img id="blah_xs02_re" class="w-100" src="<?= $r_re['picture'] ?>" alt="">
                         <div class="pictureicon-re position-absolute" onclick="document.getElementById('pictureChange_re').style.display='block'" style="width:auto;">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="4" y="8" width="24" height="17.3333" rx="4" stroke="#432A0F" stroke-width="2.66667"/>
