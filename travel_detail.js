@@ -103,7 +103,7 @@ $(window).resize(function(){
     for(let i = 0; i < 5; i ++){
         // console.log('hi',$('.details > div').eq(i).offset().top);
         sectionsOffsetTop.push($('.details > div').eq(i).offset().top)
-        // 手機版多了一區才會讓迴圈壞掉
+        // 多了一區手機版div才會讓迴圈壞掉
     }
 })
 
@@ -122,20 +122,11 @@ $(window).scroll(function () {
                 $('.links a').eq(i).css('color','var(--color-orange)').siblings().css('color','var(--color-text87)')
             }
             if(nowScroll >= sectionsOffsetTop[i] && $(window).width() < 768){
-                console.log('hihi i',sectionsOffsetTop[i]-30);
+                console.log('hihi i',sectionsOffsetTop[i]);
                 $('.tdnav_mb a small').eq(i).css('color','var(--color-orange)').closest('div').siblings().find('small').css('color','var(--color-text87)')
-                // 結構不一樣(多了small)所以找法不一樣，最接近的直系血親的平輩的small
+                // 結構不一樣(手機板多了一個small的div)所以找法不一樣，改成找最接近的直系血親的平輩的small
             }
         }
-
-        // if(nowScroll >= sectionsOffsetTop[0]){
-        //     $('.links a').eq(0).css('color','red').siblings().css('color','black')
-        // }
-
-        // if(nowScroll >= sectionsOffsetTop[1]){
-        //     $('.links a').eq(1).css('color','red').siblings().css('color','black')
-        // }
-
     }
 )
         // ----------------側邊攔變色結束-------------------

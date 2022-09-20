@@ -199,6 +199,7 @@ html{
 /* 手機輪播牆結束 */
 /* 手機上方列 */
 .pdnav_mb{
+    height: 50px;
     background-color: var(--color-lightcreamy);
     position: sticky;
     top: 0;
@@ -209,13 +210,12 @@ html{
 .pdnav_mb a{
     text-decoration: none;
 }
+.pdnav_mb a small{
+    line-height: 25px;
+}
 .pdnav_mb small:hover{
     color: #CD562F;
     
-}
-.hidden {
-    /* transform: translateY(-100px); */
-    opacity: 0;
 }
 /* 桌機下方列 */
 .undernav{

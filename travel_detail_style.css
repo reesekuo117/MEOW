@@ -135,7 +135,6 @@ ol.carousel-indicators{
 /* 手機版中間列 */
 .tdnav_mb{
     height: 50px;
-    line-height: 50px;
     background-color: var(--color-lightcreamy);
     position: sticky;
     top: 0;
@@ -144,7 +143,11 @@ ol.carousel-indicators{
 .tdnav_mb a{
     text-decoration: none;
 }
-.tdnav_mb small:hover{
+.tdnav_mb a small{
+    line-height: 50px;
+
+}
+.tdnav_mb a:hover small{
     color: #CD562F;
     
 }
@@ -464,12 +467,7 @@ select{
 	margin: 4px;
 	border: none;
 }
-.carousel-indicators li {	
-	/* background: #ababab; */
-}
-.carousel-indicators li.active {	
-	/* background: rgb(85, 85, 85); */
-}
+
 .thumb-wrapper .img-box .icon_heart{
     position: absolute;
     bottom: 10px;
