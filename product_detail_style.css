@@ -272,9 +272,9 @@ button:hover{
     color: var(--color-orange);
 }
 .intro_bg {
-    margin: 40px auto;
+    margin: 40px auto 0;
     background-color: var(--color-creamy-light);
-    padding: 24px;
+    padding: 50px 24px 50px ;
 }
 .intro_bg h5{
     position: relative;

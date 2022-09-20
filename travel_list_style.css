@@ -268,36 +268,55 @@
 }
 .card_row {
     border-radius: 8px;
-    background-color: var(--color-lightcreamy);
+    /* background-color: var(--color-lightcreamy); */
 }
-.t_card_mb{
+@media screen and (min-width:768px){
+    .card_row{
+        background-color: var(--color-lightcreamy);
+    }
+}
+@media screen and (max-width:768px){
+    .card_row{
+        background-color: #fff;
+        box-shadow: 0px 0px 8px var(--color-text38);
+    }
+}
+/* .t_card_mb{
     margin-top: 24px;
-}
+} */
 .t_img{
     position: relative;
-    width: 400px;
-}
-.t_img_mb{
-    width: 300px;
+    /* width: 400px; */
 }
 .card-body{
     position: relative;
     box-sizing: border-box;
-    padding: 40px;
+    /* padding: 30px; */
     margin: 0 auto;
 }
-.card-body_mb{
-    padding: 12px;
+@media screen and (min-width:768px){
+    .card-body{
+        padding: 30px;
+    }
 }
+@media screen and (max-width:768px){
+    .card-body{
+        padding: 20px 20px 10px;
+    }
+}
+/* .card-body_mb{
+    padding: 12px;
+} */
 .card-body .row{
     flex-direction: column;
 }
 .card_title{
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
+    position: relative;
 }
-.card_title_mb{
+/* .card_title_mb{
     padding-bottom: 8px;
-}
+} */
 .card_title a{
     text-decoration: none;
 }
@@ -305,7 +324,7 @@
     color: var(--color-text100);
 }
 .card_small{
-    margin-bottom: 20px;
+    margin: 12px 0;
 }
 .card_small_mb{
     padding-bottom: 8px;
@@ -323,21 +342,52 @@
 .p_img{
     position: relative;
 }
-.icon_heart_pc{
+@media screen and (min-width:768px){
+    .icon_heart{
+        position: absolute;
+        left: 95%;
+        bottom: 10%;
+        stroke: #432A0F;
+        cursor: pointer;
+
+    }
+}
+@media screen and (max-width:768px){
+.icon_heart{
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 0;
+    bottom: 200%;
+    stroke: #fff;
     cursor: pointer;
+
+    }
 }
-.t_img_mb{
+@media screen and (min-width:768px){
+    .icon_fivestar{
+        width: 92px;
+        height: 18px;
+        background: url(./imgs/product/fivestar.png);
+
+    }
+}
+@media screen and (max-width:768px){
+.icon_fivestar{
+    width: 18px;
+    height: 18px;
+    background: url(./imgs/product/star.png);
+    
+
+    }
+}
+/* .t_img_mb{
     position: relative;
-}
-.icon_heart_mb{
+} */
+/* .icon_heart_mb{
     position: absolute;
     right: 20px;
-    bottom: 15px;
+    bottom: 10px;
     cursor: pointer;
-}
+} */
 .icon_fivestar i{
     color: var(--color-yellow);
 }
