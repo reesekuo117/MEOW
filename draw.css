@@ -5,6 +5,10 @@
     color: var(--color-brown-dark);
 }
 
+.bodyBlack_ba{
+    background-color: #F2DFCC;
+}
+
 button:focus{
     outline-style: none;
 }
@@ -1979,7 +1983,8 @@ button[disabled]:hover {
 
 .mdrawSection23 {
     width: 100%;
-    /* height: 150vh; */
+    height: 280vh;
+    overflow: hidden;
 }
 
 .mdrawSection23 .musicSwitch {
