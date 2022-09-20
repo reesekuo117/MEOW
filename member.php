@@ -44,7 +44,7 @@ $pageName ='會員中心'; //頁面名稱
             </div>
             <ul class="tab_list_re m-0 p-0 text-center">
                 <li class="tablist-meowli01_re text-20-re py-2 col-6 mx-auto" data-val="member-data">
-                    <img class="tablist-meowsvg01_re d-none" src="./imgs/member/cate.png" alt="">會員資料</li>
+                    <img class="tablist-meowsvg01_re" src="./imgs/member/cate.png" alt="">會員資料</li>
                 <li class="tablist-meowli02_re text-20-re py-2 col-6 mx-auto" data-val="modify-password">
                     <img class="tablist-meowsvg02_re d-none" src="./imgs/member/cate.png" alt="">修改密碼</li>
                 <li class="tablist-meowli03_re text-20-re py-2 col-6 mx-auto" data-val="my-favorites">
@@ -94,11 +94,6 @@ $pageName ='會員中心'; //頁面名稱
         <div class="allright-re col-12 col-md-9 p-0">
         <div class="tab_con_re">
 <!-- p1-member-------------------------------------------------------------------------------------- -->
-    <?php
-        // $member_id = $_SESSION['user']['id'];
-        // $user_id = "SELECT * FROM `member` WHERE id=$member_id";
-        // $r_re = $pdo->query($user_id)->fetch();
-    ?>
             <div id="member-page-re" class="item_re" style="display: block;">
                 <div class="divination-re d-none d-md-block">
                     <svg width="187" height="218" viewBox="0 0 187 218" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -276,7 +271,7 @@ $pageName ='會員中心'; //頁面名稱
             </div>
 
 <!-- p3-like---------------------------------------------------------------------------------------- -->
-    < ?php
+    <?php
     $perPage = 10;  //每頁最多有幾筆
     $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
     //取得資料的總筆數  
@@ -307,7 +302,7 @@ $pageName ='會員中心'; //頁面名稱
         // LIMIT %s, %s ==> [索引][筆數]
         $rows = $pdo->query($sql)->fetchAll();
     }
-    ? >
+    ?>
             <div id="like-page-re" class="item_re">
                 <div>
                     <ul class="tab-liketitle-re liketitle-all-re d-flax p-0">

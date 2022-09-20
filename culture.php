@@ -1,5 +1,5 @@
 <?php
-// require __DIR__. '/parts/meow_db.php';  // /開頭
+require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName = '月老文化'; //頁面名稱
 ?>
 
@@ -66,7 +66,7 @@ $pageName = '月老文化'; //頁面名稱
                     </a>
                 </li>
                 <li class="mx-1 my-1">
-                    <a href="#mbsection4_lb ">
+                    <a href="#mbsection4_lb">
                         <p class="s_lb mb-0 py-1">如何還願</p>
                     </a>
                 </li>
@@ -185,10 +185,10 @@ $pageName = '月老文化'; //頁面名稱
 
 
     <!--參拜流程-->
-    <div class="section2_box position-relative mt-4  ">
+    <div class="section2_box position-relative pt-5">
         <div class="container mbtargetScrollSection targetScrollSection section2_lb" id="byebye_lb">
             <div class="parallaxbg_lb d-md-none"></div>
-            <h1 class="text-center mt-md-5 mb-title_lb d-md-none pt-4">參拜流程</h1>
+            <h1 class="text-center  mb-title_lb d-md-none pt-5">參拜流程</h1>
             <h1 class="text-center mt-md-5 d-none d-md-block ">參拜流程</h1>
             <!-- <svg id="rdLine-1" class="d-none " width="522" height="333" viewBox="0 0 522 333" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M520 2C449 4.16667 290.4 38.5 224 158.5C157.6 278.5 48.3333 323.833 2 331.5" stroke="#CD562F" stroke-width="3" stroke-linecap="round"/>
@@ -429,8 +429,8 @@ $pageName = '月老文化'; //頁面名稱
     </section>
 
     <!-- 參拜月老禁忌-mb -->
-    <div class="d-md-none mbtargetScrollSection" id="mbnotice_lb">
-        <h1 class="text-center mb-title_lb pt-4">參拜月老禁忌</h1>
+    <div class="mbnotice_lb py-5 d-md-none mbtargetScrollSection " id="mbnotice_lb">
+        <h1 class="text-center mb-title_lb pt-5">參拜月老禁忌</h1>
         <div class="scroll-snap_lb mt-4">
             <div class="col">
                 <div class="mb-ban-card text-center px-3 py-2">
@@ -519,10 +519,12 @@ $pageName = '月老文化'; //頁面名稱
     </section>
 
     <!-- 如何還願-mb -->
-    <div id="mbsection4_lb" class="container mbsection4_lb  d-md-none position-relative mbtargetScrollSection">
+    <div id="mbsection4_lb" class="container mbsection4_lb position-relative  d-md-none  mbtargetScrollSection">
+       
         <div class="mb-devotion-title  position-absolute">
-            <img class="w-100" src="./imgs/culture/Devotion title.png" alt="">
+                <img class="w-100" src="./imgs/culture/Devotion title.png" alt="">
         </div>
+     
         <div class="mb-devotion-bg ">
             <img class="w-100" src="./imgs/culture/devotion bg.png" alt="">
             <h3 class="mb-devo-content text-center position-absolute">
@@ -534,10 +536,11 @@ $pageName = '月老文化'; //頁面名稱
                 <br>
                 給後續香客嚐喜氣~
             </h3>
-        </div>
-        <div class="mb-cp-cat position-absolute">
+            <div class="mb-cp-cat position-absolute">
             <img class="w-100" src="./imgs/culture/cp cat.png" alt="">
         </div>
+        </div>
+       
 
     </div>
 
@@ -1076,7 +1079,7 @@ $pageName = '月老文化'; //頁面名稱
             </div>
         </div>
         <div class="position-relative">
-            <div id="c01-mbdetail-card" class="mbdetail-card_lb d-none">
+            <div id="c01-mbdetail-card" class="mbdetail-card_lb hidden_lb ">
                 <div class="prepage_lb pl-2 pt-3">
                     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
