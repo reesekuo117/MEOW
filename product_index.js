@@ -138,7 +138,7 @@ $(window).scroll(function () {
     });
 
 // 手機版卡片
-const cardsContainer = document.querySelector(".card-carousel");
+const cardsContainer = document.querySelectorAll(".card-carousel");
 const cardsController = document.querySelector(".card-carousel + .card-controller")
 
 class DraggingEvent {
@@ -458,4 +458,5 @@ class CardCarousel extends DraggingEvent {
     }
 }
 
-const carousel = new CardCarousel(cardsContainer)
+const carousel = new CardCarousel(cardsContainer[0])
+const carousel2 = new CardCarousel(cardsContainer[1])

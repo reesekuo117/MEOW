@@ -6,6 +6,31 @@
     margin: 0;
     padding: 0;
   } */
+
+
+  /*-------- 表單欄位底色不要換色------- */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+/* 一建帶入 */
+.AllinputValueYu{
+    /* border: 1px solid #000; */
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: 20px;
+}
+
 .line-box-yu {
   /* margin-top: 88px auto 0 auto; */
   margin: 0 auto;
@@ -94,7 +119,7 @@
   justify-content: space-evenly;
 }
 
-/* 購物車訂單桌機的進度條circle */
+/* ---------購物車訂單桌機的進度條circle------------- */
 .circle-1-yu {
   padding: 0 24px;
   align-items: center;
@@ -118,17 +143,64 @@
   margin: auto 0;
 }
 
-/* -------#input狀態----------- */
+/* -------填寫欄位的驗證input----------- */
 
-.fa-regular {
+.section-1-yu .fa-regular,
+.section-2-yu .fa-regular {
   visibility: hidden;
+  margin: 0 4px;
   color: #e5a62a;
+  /* border: 1px solid #000; */
 }
-.fa-solid {
+.section-1-yu .fa-solid,
+.section-2-yu .fa-solid {
   visibility: hidden;
+  margin: 0 4px;
   color: #963c38;
+  /* border: 1px solid #000; */
+}
+.section-1-yu .fa-solid small,
+.section-2-yu .fa-solid small {
+  line-height: 0%;
 }
 
+/* ----------信用卡輸入的input狀態------------ */
+
+.usercdinputYu .fa-regular {
+  visibility: hidden;
+  margin: 0 6px;
+  color: #e5a62a;
+  /* border: 1px solid #000; */
+}
+
+.usercdinputYu .fa-solid {
+  visibility: hidden;
+  margin: 0 0px;
+  color: #963c38;
+  /* border: 1px solid #000; */
+}
+
+.usercdinputYu .fa-solid small {
+  line-height: 0%;
+}
+
+.usercreditcardinput-yu .fa-regular {
+  visibility: hidden;
+  margin: 0 6px;
+  color: #e5a62a;
+  /* border: 1px solid #000; */
+}
+
+.usercreditcardinput-yu .fa-solid {
+  visibility: hidden;
+  margin: 0 0px;
+  color: #963c38;
+  /* border: 1px solid #000; */
+}
+
+.usercreditcardinput-yu .fa-solid small {
+  line-height: 0%;
+}
 /* ---------桌機表單的寬度------(每一個表單都要用) */
 #myTabContent-yu {
   max-width: 1450px;
@@ -536,7 +608,7 @@ input.receiverphone-yu {
 
 .unique-nextbutton-yu .unique-btn-yu:hover {
   outline: none;
-  box-shadow: 4px 4px 0px 0px #432a0f;
+  box-shadow: 2px 2px 0px 0px #432a0f;
 }
 .receiver-email-yu input {
   width: 520px;
@@ -792,7 +864,7 @@ input.receiverphone-yu {
 }
 .unique-nextbutton-yu .unique-btn-yu:hover {
   outline: none;
-  box-shadow: 4px 4px 0px 0px #432a0f;
+  box-shadow: 2px 2px 0px 0px #432a0f;
 }
 .unique-btn-yu:active {
   /* background-color: #E5A62A;
@@ -804,6 +876,18 @@ input.receiverphone-yu {
 .unique-btn-yu:focus {
   box-shadow: none;
   background-color: #e5a62a;
+}
+
+.btn_disabled_ba {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: white;
+  color: var(--color-brown-dark);
+  border: var(--color-brown-dark) 2px solid;
+}
+
+.btn_disabled_ba:hover {
+  box-shadow: none !important;
 }
 
 /*------------ 手機前往付款按鈕 -------------*/

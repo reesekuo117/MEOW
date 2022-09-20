@@ -64,16 +64,6 @@ const msgc_signin = $('#signin_msgContainer');
         //     })
         // }, 2000);
     }
-// 註冊欄位錯誤狀態
-const msgc_signup = $('#signup_msgContainer');
-    function genAlert2(msg2, type='danger'){
-        const a = $(`
-        <div class="alert alert-${type}" role="alert">
-            ${msg2}
-        </div>
-        `);
-        msgc_signup.append(a);
-    }
     $('#loginCard_re').click(function(){
         $('.alert').remove();
     })
@@ -103,6 +93,19 @@ function checkFormSignin() {
         'json'
     );
 }
+// 註冊欄位錯誤狀態
+const msgc_signup = $('#signup_msgContainer');
+    function genAlert2(msg2, type='danger'){
+        const a = $(`
+        <div class="alert alert-${type}" role="alert">
+            ${msg2}
+        </div>
+        `);
+        msgc_signup.append(a);
+    }
+    $('#loginCard_re').click(function(){
+        $('.alert').remove();
+    })
 //註冊頁面欄位檢查
 function checkFormSignup(){
     //TODO: 檢查欄位資料格式是不是符合

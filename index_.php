@@ -6,6 +6,7 @@ $pageName = 'home'; //頁面名稱
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 
 <link rel="stylesheet" href="./index.css">
+<link rel="stylesheet" href="product_index_style.css">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <?php
 header("Refresh:180");
@@ -243,6 +244,279 @@ header("Refresh:180");
                 <div class="row">
                     <h1 class="m-auto">快讓月老喵幫你加持！</h1>
                     <!-- TODO: 07卡片 -->
+                    <div class="otherp d-md-block d-none">
+                        <div class="container">
+                            <!-- https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=thumbnail-carousel-with-content -->
+                            <div class="row">
+                                <div class="col mx-auto">
+                                    <div id="myCarousel" class="carousel carousel_card slide" data-ride="carousel"
+                                        data-interval="0">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-around align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i class="fa-solid fa-star"></i></span>
+                                                                            </div>4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire">
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Carousel controls -->
+                                        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                                            <i class="fa-solid fa-caret-left"></i>
+                                        </a>
+                                        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                                            <i class="fa-solid fa-caret-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -604,7 +878,8 @@ header("Refresh:180");
                 <p>
                     ＊每日運勢占卜＊<br>
                     ＊商品、行程不定期優惠＊<br>
-                    ＊生日好禮大放送＊
+                    ＊生日好禮大放送＊<br>
+                    ＊歡慶開幕免運中＊
                 </p>
             </div>
 
@@ -625,7 +900,7 @@ header("Refresh:180");
 
             <div type="button" class="position-absolute btn indexbtn_m btn02_m_ba mx-auto">
                 <div class="btn-l">
-                    馬上成為月老喵的一員！
+                    馬上成為月老喵的一員123！
                 </div>
             </div>
 
@@ -635,10 +910,14 @@ header("Refresh:180");
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 <!-- 打字 js -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<!-- jQ -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<!-- jQ
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+ integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+ crossorigin="anonymous"></script> -->
 <!-- 我的 -->
 <script src="index.js"></script>
+<script src="product_index.js"></script>
+
 <!-- bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <!-- AOS -->

@@ -190,6 +190,8 @@
             </div>
         </div>
     <!-- 訂單明細 -->
+    <!-- 記得這邊的action要連到另一隻php -->
+    <form  name="desktop_form" action="next.php" method="post">
         <div id="myTabContent-yu" class="container">
             <!-- 訂單明細 -->
             <div class="listinfo-yu">
@@ -284,20 +286,21 @@
                     <h6 id="total-price"></h6>
                 </div>
             </div>
-             <!-- 訂購人資料 -->
-             <div class="section-1-yu">
+            <!-- 訂購人資料 -->
+            <div class="section-1-yu position-relative">
                 <div class="section-1-title-yu">
                     <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
                 </div>
                 <!-- 訂購人填寫資料 -->
-                <form id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu" method="post" action="">
+                <div class="AllinputValueYu"></div>
+                <div id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu" method="post" action="">
                     <div class="field order-name-yu p-3 ">
                         <label for="name" class="">
                             姓名
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="ordername-yu" type="text" placeholder="請輸入姓名 " id="name-yu" name="test" required/>
+                        <input class="ordername-yu requiredYu" type="text" placeholder="請輸入姓名 " id="name-yu" name="name" required/>
                         <i class="right fa-regular fa-circle-check"></i>
                         <i class="wrong fa-solid fa-triangle-exclamation">
                             <small>請輸入正確姓名</small>
@@ -309,7 +312,7 @@
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="orderphone-yu" type="text" placeholder="請輸入聯絡電話" id="mobile-yu" name="test"  required/>
+                        <input class="orderphone-yu  requiredYu" type="text" placeholder="請輸入聯絡電話" id="mobile-yu" name="phone"  required/>
                         <i class="right fa-regular fa-circle-check"></i>
                         <i class="wrong fa-solid fa-triangle-exclamation">
                             <small>請輸入正確的聯絡電話</small>
@@ -323,7 +326,7 @@
                         <br/>
                         <div class="d-flex align-items-center">
                             <div class="form-group m-0">
-                                <select class="orderaddress1-yu" name="test" id="city1-yu"required>
+                                <select class="orderaddress1-yu" name="address" id="city1-yu"required>
                                     <option class="" value="0">臺北市</option>
                                     <option value="1">新北市</option>
                                     <option value="2">基隆市</option>
@@ -346,13 +349,13 @@
                                 </select>
                             </div>
                             <div class="form-group m-0">
-                                <select class="orderaddress2-yu"name="test"id="district1-yu">
+                                <select class="orderaddress2-yu"name="address"id="district1-yu">
                                     <option class="" value="0">中正區</option>
                                     <option value="1">板橋區</option>
                                     <option value="2">仁愛區</option>
                                 </select>
                             </div>
-                            <input class="orderaddress3-yu" name="test" placeholder=" 請輸入詳細地址" id="address-yu" name="address"/>
+                            <input class="orderaddress3-yu  requiredYu" name="address" placeholder=" 請輸入詳細地址" id="address-yu" name="address"/>
                             <i class="right fa-regular fa-circle-check"></i>
                             <i class="wrong fa-solid fa-triangle-exclamation">
                                 <small>請輸入正確的地址</small>
@@ -364,13 +367,13 @@
                             Email<span style="color: #963c38">*</span>
                         </label>
                         <br />
-                        <input type="email" class="email-yu"  id="email-yu" name="email"  />
+                        <input type="email" class="email-yu  requiredYu"  id="email-yu" name="email"  />
                         <i class="right fa-regular fa-circle-check"></i>
                             <i class="wrong fa-solid fa-triangle-exclamation">
                                 <small>請輸入正確的Email</small>
                             </i>
                     </div>
-                </form>
+                </div>
             </div>
             <!-- 旅客代表人資料 -->
             <section class="section-2-yu ">
@@ -390,7 +393,7 @@
                             <span style="color: #963c38">*</span>
                         </label>
                         <br />
-                        <input class="receivername-yu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="test" required/>
+                        <input class="receivername-yu  requiredYu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="receivername" required/>
                         <i class="right fa-regular fa-circle-check"></i>
                         <i class="wrong fa-solid fa-triangle-exclamation">
                             <small>請輸入正確姓名</small>
@@ -402,10 +405,10 @@
                             <span style="color: #963c38">*</span>
                         </label>
                         <br />
-                        <input class="receiverphone-yu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="test" required/>
+                        <input class="receiverphone-yu  requiredYu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="receiverphone" required/>
                         <i class="right fa-regular fa-circle-check"></i>
                         <i class="wrong fa-solid fa-triangle-exclamation">
-                            <small>請輸入正確姓名</small>
+                            <small>請輸入正確聯絡電話</small>
                         </i>
                     </div>
                     <div class="field2 receiver-idnumber-yu p-3">
@@ -414,7 +417,7 @@
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="userBirthdayYu" type="birthday" id="" name="birthday" placeholder="年 / 月 / 日" />
+                        <input class="userBirthdayYu  requiredYu"  type="birthday" id="userbirthday-yu" name="receiverbirthday" placeholder="年 / 月 / 日" />
                         <i class="right fa-regular fa-circle-check"></i>
                         <i class="wrong fa-solid fa-triangle-exclamation">
                             <small>請輸入出生年月日</small>
@@ -426,7 +429,7 @@
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input type="text" class="userIDyu" id="userid-yu" name="idnumber" />
+                        <input type="text" class="userIDyu  requiredYu" id="userid-yu" name="receiveridnumber" />
                         <i class="right fa-regular fa-circle-check"></i>
                         <i class="wrong fa-solid fa-triangle-exclamation">
                             <small>請輸入身分證字號</small>
@@ -438,16 +441,16 @@
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="receiveremail-yu" type="email " id="useremail-yu" name="test" />
+                        <input class="receiveremail-yu  requiredYu" type="email " id="useremail-yu" name="receiveremail" />
                         <i class="right fa-regular fa-circle-check"></i>
                         <i class="wrong fa-solid fa-triangle-exclamation">
-                            <small>請輸入正確姓名</small>
+                            <small>請輸入正確的email</small>
                         </i>
                     </div>
                 </div>
             </section>
             <!-- 付款方式 -->
-            <section class="section-3-yu">
+            <section id="section-3-yu" class="section-3-yu">
                 <div class="section-3-title-yu">
                     <h3 class="listinfo-title-yu m-0">付款方式</h3>
                 </div>
@@ -462,14 +465,19 @@
                                 <div class="creditcard-yu  position-relative">
                                     <div class="frontcreditcard-yu">
                                         <div class=" card-group-yu ">
+                                            <!-- 信用卡正面 -->
                                             <div class="frontcreditcardsimg-yu d-flex justify-content-center filter1-yu">
                                                 <img src="imgs/shopping-cart/信用卡的前面png.png" alt="">
                                             </div>
-                                            <div class="creditcardnumber-yu d-flex" id="creditcardnumber-yu">
-                                                <input id="creditcardnumber1-yu" class="text-center" type="text"name="test" placeholder="0000" maxlength="4">
-                                                <input id="creditcardnumber2-yu" class="text-center"  type="text"name="test" placeholder="0000" maxlength="4">
-                                                <input id="creditcardnumber3-yu" class="text-center"  type="text"name="test" placeholder="0000" maxlength="4">
-                                                <input id="creditcardnumber4-yu" class="text-center"  type="text"name="test" placeholder="0000" maxlength="4">
+                                            <div class=" creditcardnumber-yu d-flex" id="creditcardnumber-yu">
+
+                                                <input id="creditcardnumber1-yu" class=" text-center" type="text"name="test" placeholder="0000" maxlength="4">
+
+                                                <input id="creditcardnumber2-yu" class=" text-center"  type="text"name="test" placeholder="0000" maxlength="4">
+
+                                                <input id="creditcardnumber3-yu" class=" text-center"  type="text"name="test" placeholder="0000" maxlength="4">
+
+                                                <input id="creditcardnumber4-yu" class=" text-center"  type="text"name="test" placeholder="0000" maxlength="4">
                                             </div>
                                             <div class="creditcarddate-yu d-flex" id="creditcarddate-yu">
                                                 <input class="text-center"  type="text"name="test" placeholder="月" maxlength="2" id="creditcardmonth-yu" >
@@ -492,27 +500,33 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="creadidcardform-yu py-2 col-4">
+                            <!-- -------------信用卡輸入input----------- -->
+                            <div class="creadidcardform-yu py-2 col-6">
                                 <div class="pt-1">
                                     <div class=" usercreditcardinput-yu">
                                         <label class="pt-1 m-0"  for="">
                                             信用卡卡號
                                         </label>
                                         <br>
-                                        <div class="  d-flex justify-content-start align-items-start"> 
-                                            <div class=" mx-1 ">
-                                                <input class=" text-center m-0" type="" name="test"id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyPress="autoTab()" onkeyUp="autoTab()">
+                                        <div class=" usercdinputYu  d-flex justify-content-start align-items-start"> 
+                                            <div class=" field3 mx-1 ">
+                                                <input class="usercdnumber3  usercdnumber4  requiredYu text-center m-0" type="" name="test"id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyPress="autoTab()" onkeyUp="autoTab()">
                                             </div>
-                                            <div class=" mx-1">
-                                                <input class="text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
+                                            <div class=" field3 mx-1">
+                                                <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
                                                 <!-- onkeyup="value=value.replace(/[^\d]/g,'') " -->
                                             </div>
-                                            <div class="mx-1">
-                                                <input class="text-center m-0" type="" name="test"placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" >
+                                            <div class=" field3 mx-1">
+                                                <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="test"placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" >
                                             </div>
-                                            <div class="mx-1">
-                                                <input class=" text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu">
+                                            <div class=" field3 mx-1  d-flex align-items-center">
+                                                <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu">
+                                                <i class="right fa-regular fa-circle-check"></i>
+                                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                                    <small>請輸入正確的信用卡卡號</small>
+                                                </i>
                                             </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="usercreditcardinput-yu  mt-3">
@@ -521,22 +535,30 @@
                                         </label>
                                         <br>
                                         <div class=" d-flex justify-content-start align-items-start "> 
-                                            <div class=" mx-1 ">
-                                                <input class="text-center m-0" type="" name="test" placeholder="月 " maxlength="2" id="usercreditcardmonth-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>12)value=12">
+                                            <div class="field3 mx-1 ">
+                                                <input class=" usercdMonthYu  requiredYu text-center m-0" type="" name="test" placeholder="月 " maxlength="2" id="usercreditcardmonth-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>12)value=12">
                                             </div>
-                                            <div class=" mx-1">
-                                                <input class="text-center m-0" type="" name="test"placeholder="年" maxlength="2" id="usercreditcardyear-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>29)value=29">
+                                            <div class="field3 mx-1">
+                                                <input class=" usercdYearYu  requiredYu text-center m-0" type="" name="test"placeholder="年" maxlength="2" id="usercreditcardyear-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>29)value=29">
+                                                <i class="right fa-regular fa-circle-check"></i>
+                                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                                    <small>請輸入正確的信用卡卡號</small>
+                                                </i>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="usercreditcardinput-yu  mt-3">
+                                    <div class=" usercreditcardinput-yu  mt-3">
                                         <label class="m-0"  for="">
                                             背面末三碼
                                         </label>
                                         <br>
                                         <div class=" d-flex justify-content-start align-items-start "> 
-                                            <div class="mx-1 ">
-                                                <input class="text-center m-0" type="" name="test" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                            <div class=" field3  mx-1 ">
+                                                <input class=" cardCVC text-center  requiredYu m-0" type="" name="test" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                <i class="right fa-regular fa-circle-check"></i>
+                                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                                    <small>請輸入正確的信用卡後三碼</small>
+                                                </i>
                                             </div>
                                         </div>
                                     </div>
@@ -552,18 +574,18 @@
             </section>
             <div class=" d-md-flex justify-content-md-end">
                 <!-- a href="#buy1.php" -->
-                <a href="shopping-cart-creditcard-travel.html" class="btn unique-nextbutton-yu">
-                    <button class=" unique-btn-yu  me-md-2 que-btn-yu" type="submit"  name=ok value="送出"
-                    onclick="if(confirm('您確定送出嗎?')) return true;else return false">
+                <div href="" class="btn unique-nextbutton-yu p-0">
+                    <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="button"  name=ok value="送出">
                         <p class="m-0 text-center">
-                            前往付款
+                            確認訂購
                         </p>
                     </button>
-                </a>
+                </div>
             </div>
         </div>
+    </form>
+        
     </section>
-
 
     <!-- ------------------手機 ------------------------>
     <section class=" d-block d-md-none">
@@ -785,7 +807,7 @@
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class=""type="text"placeholder="年/月/日 "class=""id=""name=""required/>
+                        <input class=""type="text"placeholder="年/月/日 "class=""id=""name="" required/>
                     </div>
                     <div class="mdorder-email-yu p-3">
                         <label for="email" class=""
@@ -939,7 +961,7 @@
                 <a href="shopping-cart-creditcard-travel.html" class="btn mdunique-nextbutton-yu">
                     <button class=" mdunique-btn-yu  me-md-2" type="button">
                         <p class="m-0 text-center">
-                            前往付款
+                            確認訂購
                         </p>
                     </button>
                 </a>

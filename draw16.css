@@ -1,3 +1,7 @@
-.draw16{
+.draw16_none{
     display: none !important; 
+}
+
+.bodyBlack_ba{
+    background-color: #2c2924;
 }

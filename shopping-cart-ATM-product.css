@@ -134,6 +134,7 @@
 
 /*-----------手機 桌機查詢訂單感謝您的訂購，月老喵愛您 -----*/
 .checkout-yu h6{
+    color: #432A0F;
     transform:scale(1);
     transition: 2s;
     animation: checkouth6-yumove 2s 1 alternate;
@@ -166,10 +167,11 @@
     height: 41px;
     border-radius: 8px;
     box-shadow:none;
+    color: #432A0F;
 }
 .unique-nextbutton-yu .unique-btn-yu:hover{
     outline: none;
-    box-shadow: 4px 4px 0px 0px #432A0F;
+    box-shadow: 2px 2px 0px 0px #432A0F;
 }
 .unique-btn-yu:active {
     /* background-color: #E5A62A;
@@ -255,6 +257,9 @@
 #myTabContent-yu .listinfo-yu .ListOderPriceYu::before{
     content: "訂單金額:NT$";
 }
+.note-time-yu{
+    color: #432A0F;
+}
 
 /*-----手機訂單明細 ------  */
 .mdlistinfo-yu{
@@ -281,6 +286,7 @@
 }
 .panel-body-yu{
     padding: 24px 12px;
+    color: #432A0F;
 }
 .listinfo-yu label {
     margin: 0;
@@ -362,7 +368,6 @@
 }
 #listinfo-details-yu .tbody{
     border: none;
-
 }
 .panel-body-yu .onePriceYu::before{
     content: "NT$";
@@ -374,6 +379,7 @@
 .checkoutlist-yu{
     display: flex;
     justify-content: space-around;
+    color: #432A0F;
 }
 .liststylenone-yu{
     padding-top: 12px;
@@ -474,7 +480,12 @@
     justify-content: end;
     align-items: flex-end;
 }
-
+.oderListPriceYu{
+    color: #432A0F;
+}
+.price-uniqui-yu{
+    color: #432A0F;
+}
 .listinfo-details-totalprice-yu .oderListPriceYu::before{
     content: "訂單金額: NT$";
 }

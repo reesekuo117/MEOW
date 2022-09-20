@@ -669,27 +669,39 @@ window.onscroll = () => {
 };
 
 
-$("#mbTemCard-c01").click(function () {
-  $("#c01-mbdetail-card").removeClass("d-none");
-  $("#c01-mbdetail-card").css({
-    transform: "translateY(-580px)",
-    opacity: 1,
-  });
+
+$('#mbTemCard-c01').click(function(){
+  // e.preventDefault();
+  $('#c01-mbdetail-card').toggleClass('hidden_lb')
+  $("html, body").animate({ scrollTop: $(document).height() }, 500);
+  // $('.footer-xs').css('visibility', 'hidden');
+  // setTimeout(() => {
+  //   $('.footer-xs').css('visibility', 'visible');
+  // }, 2000);
 });
 
-$(".prepage_lb").click(function () {
-  $(".mbdetail-card_lb").addClass("d-none");
-});
-$("#mbTemCard-c06").click(function () {
-  $("#c06-mbdetail-card").removeClass("d-none");
-  $("#c06-mbdetail-card").css({
-    transform: "translateY(-580px)",
-    opacity: 1,
-  });
-});
+
+// $("#mbTemCard-c01").click(function () {
+//   $("#c01-mbdetail-card").removeClass("d-none");
+//   $("#c01-mbdetail-card").css({
+//     transform: "translateY(-580px)",
+//     opacity: 1,
+//   });
+// });
+
+// $(".prepage_lb").click(function () {
+//   $(".mbdetail-card_lb").addClass("d-none");
+// });
+// $("#mbTemCard-c06").click(function () {
+//   $("#c06-mbdetail-card").removeClass("d-none");
+//   $("#c06-mbdetail-card").css({
+//     transform: "translateY(-580px)",
+//     opacity: 1,
+//   });
+// });
 
 $(".prepage_lb").click(function () {
-  $(".mbdetail-card_lb").addClass("d-none");
+  $(".mbdetail-card_lb").addClass("hidden_lb ");
 });
 
 // 愛心變色(卡片)

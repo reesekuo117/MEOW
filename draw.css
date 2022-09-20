@@ -5,6 +5,10 @@
     color: var(--color-brown-dark);
 }
 
+.bodyBlack_ba{
+    background-color: #F2DFCC;
+}
+
 button:focus{
     outline-style: none;
 }
@@ -1063,6 +1067,7 @@ button[disabled]:hover {
 }
 
 .personalitybtn {
+    cursor: pointer;
     width: 126px;
     height: 41px;
     border: 2px var(--color-brown-dark) solid;
@@ -1217,6 +1222,10 @@ button[disabled]:hover {
     height: calc(100vh - 100px);
 }
 
+.drawSection15 button {
+    cursor: pointer;
+}
+
 .drawSection15 h1 {
     padding-top: 100px;
     color: var(--color-brown-dark);
@@ -1308,11 +1317,11 @@ button[disabled]:hover {
 
 
 .drawSection17 .btn_md_next {
+    cursor: pointer;
     width: 190px;
     background-color: transparent;
     color: #6F6F6F;
     border: 1px transparent solid;
-
 }
 
 .drawSection17 .btn_md_next:hover {
@@ -1325,7 +1334,7 @@ button[disabled]:hover {
 
 .drawSection18 {
     width: 100%;
-    height: calc(100vh - 100px);
+    height: 100vh;
 }
 
 .drawSection18 h1 {
@@ -1333,7 +1342,7 @@ button[disabled]:hover {
 }
 
 .drawdrawGroup {
-    top: 20%;
+    top: 10%;
     width: 100%;
     height: 100vh;
     background: url(./imgs/draw/manydraws.png) center center / 70% no-repeat;
@@ -1391,7 +1400,7 @@ button[disabled]:hover {
 
 .catPaw {
     /* border: 1px salmon solid; */
-    top: -860%;
+    top: -80%;
     left: 50%;
     transform: translateX(-40%);
     /* animation: catPaw 2.5s ease-in-out infinite; */
@@ -1434,6 +1443,11 @@ button[disabled]:hover {
 
 /*------------------ draw19 ----------------*/
 
+.drawSection19 {
+    width: 100%;
+    height: 100vh;
+}
+
 .drawSection19 h1 {
     padding-top: 220px;
     color: white;
@@ -1445,6 +1459,7 @@ button[disabled]:hover {
 }
 
 .drawSection19 .btn-xl {
+    cursor: pointer;
     width: 560px;
     height: 76px;
     border: var(--color-brown-dark) 2px solid;
@@ -1455,7 +1470,29 @@ button[disabled]:hover {
     text-align: center;
 }
 
+.result01{
+    /* border: 1px salmon solid; */
+    width: 280px;
+    height: 72px;
+    margin-top: 162px;
+
+}
+
+.result02{
+    /* border: 1px salmon solid; */
+    width: 200px;
+    height: 72px;
+    margin-top: 162px;
+    /* top: 0; */
+    right: 674px;
+}
+
 /*------------------ draw20 ----------------*/
+
+.drawSection20 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
 
 .drawSection20 h1 {
     padding-top: 100px;
@@ -1468,6 +1505,7 @@ button[disabled]:hover {
 }
 
 .drawSection20 .btn-l {
+    cursor: pointer;
     width: 200px;
     height: 57px;
     border: var(--color-brown-dark) 2px solid;
@@ -1587,6 +1625,7 @@ button[disabled]:hover {
 }
 
 .drawSection20 .btn-xl {
+    cursor: pointer;
     width: 280px;
     height: 57px;
     border: var(--color-brown-dark) 2px solid;
@@ -1599,6 +1638,11 @@ button[disabled]:hover {
 
 /*------------------ draw21 ----------------*/
 
+.drawSection21 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
 .drawSection21 h1 {
     padding-top: 100px;
     color: var(--color-brown-dark);
@@ -1610,6 +1654,7 @@ button[disabled]:hover {
 }
 
 .drawSection21 .btn-l {
+    cursor: pointer;
     width: 200px;
     height: 57px;
     border: var(--color-brown-dark) 2px solid;
@@ -1626,6 +1671,7 @@ button[disabled]:hover {
 }
 
 .drawSection21 .btn-xl {
+    cursor: pointer;
     width: 280px;
     height: 57px;
     border: var(--color-brown-dark) 2px solid;
@@ -1653,6 +1699,11 @@ button[disabled]:hover {
 
 /*------------------ draw22 ----------------*/
 
+.drawSection22 {
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
 .drawSection22 h1 {
     padding-top: 100px;
     color: var(--color-brown-dark);
@@ -1664,6 +1715,7 @@ button[disabled]:hover {
 }
 
 .drawSection22 .btn-l {
+    cursor: pointer;
     width: 200px;
     height: 57px;
     border: var(--color-brown-dark) 2px solid;
@@ -1680,6 +1732,7 @@ button[disabled]:hover {
 }
 
 .drawSection22 .btn-xl {
+    cursor: pointer;
     width: 280px;
     height: 57px;
     border: var(--color-brown-dark) 2px solid;
@@ -1717,6 +1770,22 @@ button[disabled]:hover {
 .drawSection23 h1 {
     padding-top: 100px;
     color: var(--color-brown-dark);
+}
+
+.drawSection23 .recommendm_ba {
+    margin-top: 72px;
+}
+
+.drawSection23 .btn-xl {
+    cursor: pointer;
+    width: 280px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 60px 40px;
+    background-color: var(--color-yellow);
+    text-align: center;
 }
 
 .drawSection23 {
@@ -1823,14 +1892,11 @@ button[disabled]:hover {
     0% {
         height: 0px;
         top: 600px;
-
-
     }
 
     100% {
         height: 700px;
         top: 72px;
-
     }
 }
 
@@ -1850,7 +1916,6 @@ button[disabled]:hover {
 
 .jadeSaycontent {
     transform-origin: center;
-    /* text-overflow: ellipsis; */
     white-space: nowrap;
 }
 
@@ -1918,7 +1983,8 @@ button[disabled]:hover {
 
 .mdrawSection23 {
     width: 100%;
-    height: 150vh;
+    height: 280vh;
+    overflow: hidden;
 }
 
 .mdrawSection23 .musicSwitch {
@@ -1930,8 +1996,7 @@ button[disabled]:hover {
     overflow: hidden;
     width: 100%;
     height: 480px;
-    border: 1px rgb(130, 114, 250) solid;
-
+    /* border: 1px rgb(130, 114, 250) solid; */
 }
 
 .mdrawSection23 .light_ba {
@@ -1997,6 +2062,40 @@ button[disabled]:hover {
     border-image: url(./imgs/draw/jadeSay.png) 35 stretch;
 }
 
-.recommendm_ba {
+.mdrawSection23 .recommendm_ba {
     margin-top: 48px;
+}
+
+.card-carousel{
+    margin-left: -114px !important;
+    /* left: 50%;
+    transform: translateX(-50%); */
+}
+
+.btn-mobile{
+    width: 311px;
+    height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'gensen-M';
+    font-size: 16px;
+    line-height: 125%;
+    background-color: var(--color-yellow);
+    border: 2px var(--color-brown-dark) solid;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.drawSection02 .btn-l {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'gensen-M';
+    font-size: 16px;
+    line-height: 125%;
+    background-color: var(--color-yellow);
+    border: 2px var(--color-brown-dark) solid;
+    border-radius: 8px;
+    transition: .2s;
 }
