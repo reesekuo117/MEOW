@@ -462,7 +462,7 @@ window.addEventListener('mouseup', function(){
 //     $('body').addClass('d-none-ba')
 // })
 
-$('.navoff_ba').parentsUntil('body').addClass('d-none-ba')
+// $('.navoff_ba').parentsUntil('.navbar').addClass('d-none-ba')
 
 // FIXME: 籤筒會超過範圍
 let dragDiv = document.querySelector('.drag');
@@ -542,7 +542,7 @@ if (dropArea) {
 }
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.jadeSay').offset().top - $(window).height() * 3 / 4)) {
+    if ($(window).scrollTop() >= ($('.jadeSay').offset().top - window.screen.height * 3 / 4)) {
         $('.jadeSay').css({
             width: '700px',
         })
@@ -555,3 +555,13 @@ $(window).scroll(function () {
     }
 
 })
+
+
+// console.log($('.drawCard').html());
+const randDrawArr = [64, 74, 75, 81, 92];
+
+var randDraw = Math.floor(Math.random()*randDrawArr.length);
+var drawValue = randDrawArr[randDraw];
+// console.log(drawValue)
+
+$('.drawCard').html('<img class="w-100 " src="./imgs/draw/draw'+drawValue+'.png" alt=""></img>')
