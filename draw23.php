@@ -6,6 +6,7 @@ $pageName = 'draw20'; //頁面名稱
 <?php include __DIR__. '/parts/html-head.php'; ?>
 
 <link rel="stylesheet" href="draw.css">
+<link rel="stylesheet" href="product_index_style.css">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <?php include __DIR__. '/parts/navbar.php'; ?>
@@ -70,13 +71,314 @@ $pageName = 'draw20'; //頁面名稱
                         </div>
                     </div>
                 </div>
+                <h2 class="recommendm_ba">月老喵誠心推薦</h2>
+
+                <!-- 桌機卡片 -->
+                <div class="otherp d-md-block d-none">
+                    <div class="container">
+                        <!-- https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=thumbnail-carousel-with-content -->
+                        <div class="row">
+                            <div class="col mx-auto">
+                                <div id="myCarousel" class="carousel carousel_card slide" data-ride="carousel"
+                                    data-interval="0">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <a href="">
+                                                        <div class="thumb-wrapper mx-3">
+                                                            <div class="img-box">
+                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                    alt="">
+                                                                <div class="icon_heart">
+                                                                    <svg class="heart_line" width="32" height="32"
+                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                            stroke-width="2.66667" />
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-content">
+                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                <div
+                                                                    class="card_under d-flex justify-content-around align-items-center">
+                                                                    <small class="xs card-text d-flex pr-1">
+                                                                        <div class="icon_star">
+                                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                                        </div>4.7(50)
+                                                                    </small>
+                                                                    <small class="xs card-text d-flex">
+                                                                        <div class="icon_fire">
+                                                                            <span><i class="fa-solid fa-fire"></i></span>
+                                                                        </div>
+                                                                        3K個已訂購
+                                                                    </small>
+                                                                    <h5 class="m-0 ml-auto">850</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <a href="">
+                                                        <div class="thumb-wrapper mx-3">
+                                                            <div class="img-box">
+                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                    alt="">
+                                                                <div class="icon_heart">
+                                                                    <svg class="heart_line" width="32" height="32"
+                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                            stroke-width="2.66667" />
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-content">
+                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                <div
+                                                                    class="card_under d-flex justify-content-between align-items-center">
+                                                                    <small class="xs card-text d-flex pr-1">
+                                                                        <div class="icon_star">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-star"></i></span>
+                                                                        </div> 4.7(50)
+                                                                    </small>
+                                                                    <small class="xs card-text d-flex">
+                                                                        <div class="icon_fire ">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-fire"></i></span>
+                                                                        </div>
+                                                                        3K個已訂購
+                                                                    </small>
+                                                                    <h5 class="m-0 ml-auto">850</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <a href="">
+                                                        <div class="thumb-wrapper mx-3">
+                                                            <div class="img-box">
+                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                    alt="">
+                                                                <div class="icon_heart">
+                                                                    <svg class="heart_line" width="32" height="32"
+                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                            stroke-width="2.66667" />
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-content">
+                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                <div
+                                                                    class="card_under d-flex justify-content-between align-items-center">
+                                                                    <small class="xs card-text d-flex pr-1">
+                                                                        <div class="icon_star">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-star"></i></span>
+                                                                        </div> 4.7(50)
+                                                                    </small>
+                                                                    <small class="xs card-text d-flex">
+                                                                        <div class="icon_fire ">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-fire"></i></span>
+                                                                        </div>
+                                                                        3K個已訂購
+                                                                    </small>
+                                                                    <h5 class="m-0 ml-auto">850</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <a href="">
+                                                        <div class="thumb-wrapper mx-3">
+                                                            <div class="img-box">
+                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                    alt="">
+                                                                <div class="icon_heart">
+                                                                    <svg class="heart_line" width="32" height="32"
+                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                            stroke-width="2.66667" />
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-content">
+                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                <div
+                                                                    class="card_under d-flex justify-content-between align-items-center">
+                                                                    <small class="xs card-text d-flex pr-1">
+                                                                        <div class="icon_star">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-star"></i></span>
+                                                                        </div> 4.7(50)
+                                                                    </small>
+                                                                    <small class="xs card-text d-flex">
+                                                                        <div class="icon_fire ">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-fire"></i></span>
+                                                                        </div>
+                                                                        3K個已訂購
+                                                                    </small>
+                                                                    <h5 class="m-0 ml-auto">850</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <a href="">
+                                                        <div class="thumb-wrapper mx-3">
+                                                            <div class="img-box">
+                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                    alt="">
+                                                                <div class="icon_heart">
+                                                                    <svg class="heart_line" width="32" height="32"
+                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                            stroke-width="2.66667" />
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-content">
+                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                <div
+                                                                    class="card_under d-flex justify-content-between align-items-center">
+                                                                    <small class="xs card-text d-flex pr-1">
+                                                                        <div class="icon_star">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-star"></i></span>
+                                                                        </div> 4.7(50)
+                                                                    </small>
+                                                                    <small class="xs card-text d-flex">
+                                                                        <div class="icon_fire ">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-fire"></i></span>
+                                                                        </div>
+                                                                        3K個已訂購
+                                                                    </small>
+                                                                    <h5 class="m-0 ml-auto">850</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <a href="">
+                                                        <div class="thumb-wrapper mx-3">
+                                                            <div class="img-box">
+                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                    alt="">
+                                                                <div class="icon_heart">
+                                                                    <svg class="heart_line" width="32" height="32"
+                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                            stroke-width="2.66667" />
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-content">
+                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                <div
+                                                                    class="card_under d-flex justify-content-between align-items-center">
+                                                                    <small class="xs card-text d-flex pr-1">
+                                                                        <div class="icon_star">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-star"></i></span>
+                                                                        </div> 4.7(50)
+                                                                    </small>
+                                                                    <small class="xs card-text d-flex">
+                                                                        <div class="icon_fire ">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-fire"></i></span>
+                                                                        </div>
+                                                                        3K個已訂購
+                                                                    </small>
+                                                                    <h5 class="m-0 ml-auto">850</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Carousel controls -->
+                                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                                        <i class="fa-solid fa-caret-left"></i>
+                                    </a>
+                                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                                        <i class="fa-solid fa-caret-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="drawSection23btngroup">
+                    <a href="product_index.php">
+                        <button class="btn-xl">
+                            <h4>
+                                看更多商品
+                            </h4>
+                        </button>
+                    </a>
+                    <a href="travel_index.php">
+                        <button class="btn-xl">
+                            <h4>
+                                看更多行程
+                            </h4>
+                        </button>
+                    </a>
+                </div>
+
+                
+
+
+
+
+            </div>
+
+        </div>
             </div>
         </div>
 
     </div>
 
     <div class="body_draw01m d-md-none">
-        <div class="mdrawSection23 position-relative">
+        <div class="mdrawSection23 position-relative flex-row justify-content-center">
             <a id="musicSwitch" class="position-absolute musicSwitch" href="#">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -119,20 +421,320 @@ $pageName = 'draw20'; //頁面名稱
 
             <h4 class="recommendm_ba">月老喵誠心推薦</h4>
 
-            <!-- TODO: 07卡片 -->
-
-
-
+                <!-- https://codepen.io/WillyW/details/wZebow -->
+                <!-- https://codepen.io/rblinzler/pen/abVGzNM -->
+                <!-- 手機卡片 -->
+            <div class="carousel_mb d-block d-md-none pb-5">
+                <div class="card-carousel ">
+                    <div class="card" id="1">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                        <p class="mb-2">霞海城隍廟 X 護手霜禮盒</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="2">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                            <p class="mb-2">霞海城隍聯名 X 姻緣簿茶蜜組</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="3">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                            <p class="mb-2">霞海城隍廟 X 扣式真皮中夾禮盒</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="4">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                            <p class="mb-2">霞海城隍廟聯名 X 月老牽線絹印組</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="5">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                            <p class="mb-2">月老喵療癒你盥洗組</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
+            </div>
+            <button class="btn-mobile">
+                <div class="btn-l">
+                    看更多行程
+                </div>
+            </button>
+            <div class="carousel_mb d-block d-md-none pb-5">
+                <div class="card-carousel ">
+                    <div class="card" id="6">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                        <p class="mb-2">霞海城隍廟 X 護手霜禮盒</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="7">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                            <p class="mb-2">霞海城隍聯名 X 姻緣簿茶蜜組</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="8">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                            <p class="mb-2">霞海城隍廟 X 扣式真皮中夾禮盒</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="9">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                            <p class="mb-2">霞海城隍廟聯名 X 月老牽線絹印組</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="10">
+                        <div class="image-container"></div>
+                        <div class="pit_mb">
+                            <p class="mb-2">月老喵療癒你盥洗組</p>
+                        </div>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                            <small class="xs d-flex">
+                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                （5）
+                            </small>
+                            </div>
+                            <div class="fire justify-content-center align-items-center mr-2">
+                            <small class="xs d-flex">
+                                <div class="icon_fire xs">
+                                    <i class="fa-solid fa-fire pr-1"></i>
+                                </div>
+                                已賣出3K + 個
+                            </small>
+                            </div>
+                            <div class="price">
+                                <h4>707</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
+            </div>
+            <button class="btn-mobile">
+                <div class="btn-l">
+                    看更多商品
+                </div>
+            </button>
         </div>
     </div>
 
     </div>
+
+    <footer class="footer-md d-none d-md-block">
+        <div class="text-white text-center py-1">
+            <p class="mb-0">
+                <span class="font-weight-light"> © </span>
+                <small>2022 MoonOldMeow</small>
+            </p>
+        </div>
+    </footer>
 
 
 
 <?php include __DIR__. '/parts/scripts.php'; ?>
     <!-- 我的 -->
 <script src="draw.js"></script>
+    <!-- 卡片 -->
+<script src="product_index.js"></script>
 <!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

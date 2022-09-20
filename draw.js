@@ -558,10 +558,10 @@ $(window).scroll(function () {
 
 
 // console.log($('.drawCard').html());
-const randDrawArr = [64, 74, 75, 81, 92];
+const randDrawArr = [9, 12, 57, 63, 64, 74, 75, 81, 92, 95];
 
-var randDraw = Math.floor(Math.random()*randDrawArr.length);
-var drawValue = randDrawArr[randDraw];
+const randDraw = Math.floor(Math.random()*randDrawArr.length);
+const drawValue = randDrawArr[randDraw];
 // console.log(drawValue)
 
 $('.drawCard').html('<img class="w-100 " src="./imgs/draw/draw'+drawValue+'.png" alt=""></img>')

@@ -478,7 +478,7 @@ header .navbar_ba {
     transform: scale(0.6) translateX(-250px);
 }
 
-.row {
+.body_ba .row {
     text-align: center;
 }
 

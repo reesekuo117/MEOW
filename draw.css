@@ -1768,6 +1768,22 @@ button[disabled]:hover {
     color: var(--color-brown-dark);
 }
 
+.drawSection23 .recommendm_ba {
+    margin-top: 72px;
+}
+
+.drawSection23 .btn-xl {
+    cursor: pointer;
+    width: 280px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 60px 40px;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
 .drawSection23 {
     /* border: 1px salmon solid; */
     overflow: hidden;
@@ -1963,7 +1979,7 @@ button[disabled]:hover {
 
 .mdrawSection23 {
     width: 100%;
-    height: 150vh;
+    /* height: 150vh; */
 }
 
 .mdrawSection23 .musicSwitch {
@@ -1975,8 +1991,7 @@ button[disabled]:hover {
     overflow: hidden;
     width: 100%;
     height: 480px;
-    border: 1px rgb(130, 114, 250) solid;
-
+    /* border: 1px rgb(130, 114, 250) solid; */
 }
 
 .mdrawSection23 .light_ba {
@@ -2042,6 +2057,40 @@ button[disabled]:hover {
     border-image: url(./imgs/draw/jadeSay.png) 35 stretch;
 }
 
-.recommendm_ba {
+.mdrawSection23 .recommendm_ba {
     margin-top: 48px;
+}
+
+.card-carousel{
+    margin-left: -114px !important;
+    /* left: 50%;
+    transform: translateX(-50%); */
+}
+
+.btn-mobile{
+    width: 311px;
+    height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'gensen-M';
+    font-size: 16px;
+    line-height: 125%;
+    background-color: var(--color-yellow);
+    border: 2px var(--color-brown-dark) solid;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.drawSection02 .btn-l {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'gensen-M';
+    font-size: 16px;
+    line-height: 125%;
+    background-color: var(--color-yellow);
+    border: 2px var(--color-brown-dark) solid;
+    border-radius: 8px;
+    transition: .2s;
 }

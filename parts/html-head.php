@@ -26,4 +26,4 @@ if (!isset($title)) {
 
 </head>
 
-<body class="body_ba">
+<body class="body_ba bodyBlack_ba">
