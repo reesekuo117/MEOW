@@ -70,28 +70,12 @@ $("#city1-yu").change(function () {
 
 //-----------------------------input:radio 能取消點選------------------------------------------
 $(document).ready(function () {
-    $("#btnAutoInput-yu").click(function () {
-    $(
-        "input:text[name=listinfo-title-radio-yu]:checked"
-    )[0].checked = false;
-    });
+  $("#btnAutoInput-yu").click(function () {
+    $("input:text[name=listinfo-title-radio-yu]:checked")[0].checked = false;
+  });
 });
 
 //--------------------------------同訂購人 取值------------------------------------------
-$("#username-yu").val("")
-//姓名
-$("#btnAutoInput-yu").click(function () {
-$("#username-yu").val ($("#name-yu").val()) ;
-});
-//電話
-$("#btnAutoInput-yu").click(function () {
-$("#usermobile-yu").val ($("#mobile-yu").val()) ;
-});
-//email
-$("#btnAutoInput-yu").click(function () {
-$("#useremail-yu").val ($("#email-yu").val()) ;
-});
-
 
 // -----------------訂購人表單驗證---------------------------
 
@@ -373,8 +357,6 @@ email_yu.on("focus", function () {
   }
 });
 
-
-
 //-----------旅客代表人資料----------------
 //姓名
 const receivername_yu = $(".receivername-yu");
@@ -438,7 +420,6 @@ receivername_yu.on("focus", function () {
   }
 });
 
-
 //-------電話--------------
 const receiverphone_yu = $(".receiverphone-yu");
 
@@ -476,7 +457,7 @@ receiverphone_yu.on("blur", function () {
   const field = $(this).closest(".field2"); //定義field
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
-  if  (!/^09\d{8}$/.test(this.value)) {
+  if (!/^09\d{8}$/.test(this.value)) {
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
 
@@ -505,7 +486,6 @@ receiverphone_yu.on("focus", function () {
     });
   }
 });
-
 
 //-------------email-----------------
 const receiveremail_yu = $(".receiveremail-yu");
@@ -561,7 +541,6 @@ receiveremail_yu.on("blur", function () {
       outline: "2px solid #963C38",
       border: "0px solid transparent",
     });
-
   } else {
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
@@ -572,7 +551,6 @@ receiveremail_yu.on("blur", function () {
     });
   }
 });
-
 
 receiveremail_yu.on("focus", function () {
   // console.log("this.value", this.value);
@@ -585,7 +563,6 @@ receiveremail_yu.on("focus", function () {
   }
 });
 
-
 //-------------出生年月日-------------------
 const userBirthdayYu = $(".userBirthdayYu");
 
@@ -596,7 +573,7 @@ userBirthdayYu.on("input", function () {
   const ri = field.find("i.right");
   console.log({ field, wi, ri });
   console.log(!this.value);
-  if  (/^09\d{10}$/.test(this.value)) {
+  if (!/^\d/g.test(this.value)) {
     // wrong
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
@@ -621,7 +598,7 @@ userBirthdayYu.on("blur", function () {
   const field = $(this).closest(".field2"); //定義field
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
-  if  (/^\d{10}$/.test(this.value)) {
+  if (!/^\d/g.test(this.value)) {
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
 
@@ -651,7 +628,6 @@ userBirthdayYu.on("focus", function () {
   }
 });
 
-
 //-------------身分證-------------------
 const userIDyu = $(".userIDyu");
 
@@ -662,6 +638,7 @@ userIDyu.on("input", function () {
   const ri = field.find("i.right");
   console.log({ field, wi, ri });
   console.log(!this.value);
+
   if (!this.value) {
     // wrong
     wi.css("visibility", "visible");
@@ -717,56 +694,447 @@ userIDyu.on("focus", function () {
   }
 });
 
+//------------3信用卡輸入欄位驗證--------------
+const usercdnumber3 = $(".usercdnumber3");
+
+usercdnumber3.on("input", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3");
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  console.log({ field, wi, ri });
+  console.log(!this.value);
+  if (!/^\d$/.test(this.value) || this.value.length >= 4) {
+    // wrong
+    $(cusercdnumber3).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    // right
+    $(usercdnumber3).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+usercdnumber3.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  if (!/^\d$/.test(this.value) || this.value.length >= 4) {
+    $(usercdnumber3).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    $(usercdnumber3).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+usercdnumber3.on("focus", function () {
+  if (!this.value) {
+    $(usercdnumber3).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+//------------4信用卡輸入欄位驗證--------------
+const usercdnumber4 = $(".usercdnumber4");
+
+usercdnumber4.on("input", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3");
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  console.log({ field, wi, ri });
+  console.log(!this.value);
+  if (!this.value) {
+    // wrong
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+
+    $(cusercdnumber4).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    // right
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+
+    $(usercdnumber4).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+usercdnumber4.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  if (!this.value) {
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+
+    $(usercdnumber4).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+
+    $(usercdnumber4).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+usercdnumber4.on("focus", function () {
+  if (!this.value) {
+    $(usercdnumber4).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+// -----有效年月---------
+// 月
+const usercdMonthYu = $(".usercdMonthYu");
+
+usercdMonthYu.on("input", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3");
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  console.log({ field, wi, ri });
+  console.log(!this.value);
+  if (!/^\d/g.test(this.value)) {
+    // wrong
+    $(usercdMonthYu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    // right
+    $(usercdMonthYu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+usercdMonthYu.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  if (!/^\d/g.test(this.value)) {
+    $(usercdMonthYu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    $(usercdMonthYu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+usercdMonthYu.on("focus", function () {
+  // console.log("this.value", this.value);
+  // console.log("this.value", !this.value);
+  if (!this.value) {
+    $(usercdMonthYu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+// 年
+const usercdYearYu = $(".usercdYearYu");
+
+usercdYearYu.on("input", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3");
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  console.log({ field, wi, ri });
+  console.log(!this.value);
+  if (!/^\d/g.test(this.value)) {
+    // wrong
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+
+    $(usercdYearYu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    // right
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+    $(usercdYearYu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+usercdYearYu.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  if (!/^\d/g.test(this.value)) {
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+    $(usercdYearYu).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+    $(usercdYearYu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+usercdYearYu.on("focus", function () {
+  // console.log("this.value", this.value);
+  // console.log("this.value", !this.value);
+  if (!this.value) {
+    $(usercdYearYu).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+//CVC
+const cardCVC = $(".cardCVC");
+
+cardCVC.on("input", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3");
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  console.log({ field, wi, ri });
+  console.log(!this.value);
+  if (!/^\d/g.test(this.value)) {
+    // wrong
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+
+    $(cardCVC).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    // right
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+    $(cardCVC).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+cardCVC.on("blur", function () {
+  console.log(this.value);
+  const field = $(this).closest(".field3"); //定義field
+  const wi = field.find("i.wrong");
+  const ri = field.find("i.right");
+  if (!/^\d/g.test(this.value)) {
+    wi.css("visibility", "visible");
+    ri.css("visibility", "hidden");
+    $(cardCVC).css({
+      outline: "2px solid #963C38",
+      border: "0px solid transparent",
+    });
+  } else {
+    ri.css("visibility", "visible");
+    wi.css("visibility", "hidden");
+    $(cardCVC).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+cardCVC.on("focus", function () {
+  // console.log("this.value", this.value);
+  // console.log("this.value", !this.value);
+  if (!this.value) {
+    $(cardCVC).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
 //----------信用卡動態--------
 
 $(".creditcard-yu").mouseenter(function () {
-    $(".creditcard-yu").css(
-      "animation",
-      "mouseenter-yu 2s cubic-bezier(.37,-0.37,.64,1.34) forwards"
-    );
+  $(".creditcard-yu").css(
+    "animation",
+    "mouseenter-yu 2s cubic-bezier(.37,-0.37,.64,1.34) forwards"
+  );
+});
+$(".creditcard-yu").mouseleave(function () {
+  $(".creditcard-yu").css(
+    "animation",
+    " mouseleave-yu 2s cubic-bezier(.37,-0.37,.64,1.34) forwards"
+  );
+});
+
+//-------------信用卡number--------------
+//keyup paste 印在另一邊
+$("#usercreditcardnumber1-yu").bind("keyup paste", function () {
+  $("#creditcardnumber1-yu").val($(this).val());
+});
+$("#usercreditcardnumber2-yu").bind("keyup paste", function () {
+  $("#creditcardnumber2-yu").val($(this).val());
+});
+$("#usercreditcardnumber3-yu").bind("keyup paste", function () {
+  $("#creditcardnumber3-yu").val($(this).val());
+});
+$("#usercreditcardnumber4-yu").bind("keyup paste", function () {
+  $("#creditcardnumber4-yu").val($(this).val());
+});
+
+//信用卡年月
+$("#usercreditcardmonth-yu").bind("keyup paste", function () {
+  $("#creditcardmonth-yu").val($(this).val());
+});
+$("#usercreditcardyear-yu").bind("keyup paste", function () {
+  $("#creditcardyear-yu").val($(this).val());
+});
+
+//cvc
+$("#usercreditcardid-yu").bind("keyup paste", function () {
+  $("#creditcardid-yu").val($(this).val());
+});
+
+//信用卡下拉
+$('input[type="radio"]').click(function () {
+  if ($("#creditcard-radio-yu").prop("checked")) {
+    console.log("hi");
+    $(".visacard-yu").css("height", "275px");
+  } else {
+    $(".visacard-yu").css("height", "0px");
+  }
+});
+
+// 一健帶入 要用迴圈
+//#字號是因為回圈內的是id名稱
+$(".AllinputValueYu").click(function () {
+  const fields = ["name-yu", "mobile-yu", "email-yu", "address-yu"];
+
+  $("#name-yu").val("皮卡丘");
+  $("#mobile-yu").val("0924568756");
+  $("#email-yu").val("elena456@gmail.com");
+  $("#address-yu").val(" 復興南路一段390號2樓");
+
+  fields.forEach(function (el) {
+    $("#" + el).trigger("input");
   });
-  $(".creditcard-yu").mouseleave(function () {
-    $(".creditcard-yu").css(
-      "animation",
-      " mouseleave-yu 2s cubic-bezier(.37,-0.37,.64,1.34) forwards"
-    );
+});
+
+//同訂購人帶入
+$("#btnAutoInput-yu").click(function () {
+  const fields = [
+    "username-yu",
+    "usermobile-yu",
+    "userbirthday-yu",
+    "userid-yu",
+    "useremail-yu",
+  ];
+
+  $("#username-yu").val($("#name-yu").val());
+  $("#usermobile-yu").val($("#mobile-yu").val());
+  $("#useremail-yu").val($("#email-yu").val());
+  $("#userbirthday-yu").val("82/05/23");
+  $("#userid-yu").val("A22145687");
+
+  fields.forEach(function (el) {
+    $("#" + el).trigger("input");
   });
-  
-  //-------------信用卡number--------------
-  //keyup paste 印在另一邊
-  $("#usercreditcardnumber1-yu").bind("keyup paste", function () {
-    $("#creditcardnumber1-yu").val($(this).val());
-  });
-  $("#usercreditcardnumber2-yu").bind("keyup paste", function () {
-    $("#creditcardnumber2-yu").val($(this).val());
-  });
-  $("#usercreditcardnumber3-yu").bind("keyup paste", function () {
-    $("#creditcardnumber3-yu").val($(this).val());
-  });
-  $("#usercreditcardnumber4-yu").bind("keyup paste", function () {
-    $("#creditcardnumber4-yu").val($(this).val());
-  });
-  
-  //信用卡年月
-  $("#usercreditcardmonth-yu").bind("keyup paste", function () {
-    $("#creditcardmonth-yu").val($(this).val());
-  });
-  $("#usercreditcardyear-yu").bind("keyup paste", function () {
-    $("#creditcardyear-yu").val($(this).val());
-  });
-  
-  //cvc
-  $("#usercreditcardid-yu").bind("keyup paste", function () {
-    $("#creditcardid-yu").val($(this).val());
-  });
-  
-  //信用卡下拉
-  $('input[type="radio"]').click(function () {
-    if ($("#creditcard-radio-yu").prop("checked")) {
-      console.log("hi");
-      $(".visacard-yu").css("height", "275px");
-    } else {
-      $(".visacard-yu").css("height", "0px");
+});
+
+// 確認訂購按鈕
+$(".Allsubmit").click(function (event) {
+  let isPass = true;
+  if (!$(".cardCVC").val()) {
+    console.log("123:", $(".cardCVC").val());
+    // 不送
+    alert("沒填完");
+    event.preventDefault();
+    // $(".Allsubmit").addClass("btn_disabled_ba");
+    // $("a").attr("href", "#section-3-yu");
+  } else {
+    console.log("fff");
+    // 送
+    // $(".Allsubmit").removeClass("btn_disabled_ba");
+    $("a").attr("href", "shopping-cart-creditcard-travel.html");
+    confirm("您確定送出嗎?");
+
+    document.desktop_form.submit();
+  }
+});
+
+// $(".cardCVC").click
+
+// function(){
+//   if($(".cardCVC").val()){
+//     $(".Allsubmit").addClass("btn_disabled_ba");
+//   } else{
+//     $(".Allsubmit").removeClass("btn_disabled_ba");
+//   }
+// }
+
+// if ($(".cardCVC").val() == "") {
+//   console.log("add");
+//   $(".Allsubmit").addClass("btn_disabled_ba");
+// } else {
+//   console.log("rem");
+//   $(".Allsubmit").removeClass("btn_disabled_ba");
+// }
+
+// function(){
+//   if($(".cardCVC").val()){
+//     $(".Allsubmit").addClass("btn_disabled_ba");
+//   } else{
+//     $(".Allsubmit").removeClass("btn_disabled_ba");
+//   }
+// }
+
+function checkFormPass() {
+  const Allsubmit = $(".Allsubmit ");
+  let isPass = true;
+  $(".requiredYu").each(function () {
+    if (!$(this).val()) {
+      isPass = false;
     }
   });
-  
+  if (isPass) {
+    Allsubmit.removeClass("btn_disabled_ba");
+  } else {
+    Allsubmit.addClass("btn_disabled_ba");
+  }
+}
+
+$(".requiredYu").on("input", checkFormPass);

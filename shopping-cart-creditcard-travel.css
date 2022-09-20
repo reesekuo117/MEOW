@@ -145,6 +145,7 @@
 
 /*-----------手機 桌機查詢訂單感謝您的訂購，月老喵愛您 -----*/
 .checkout-yu h6{
+    color: #432A0F;
     transform:scale(1);
     transition: 2s;
     animation: checkouth6-yumove 2s 1 alternate;
@@ -180,7 +181,7 @@
 }
 .unique-nextbutton-yu .unique-btn-yu:hover{
     outline: none;
-    box-shadow: 4px 4px 0px 0px #432A0F;
+    box-shadow: 2px 2px 0px 0px #432A0F;
 }
 .unique-btn-yu:active {
     /* background-color: #E5A62A;
@@ -277,6 +278,9 @@
 .panel-body-yu{
     padding: 24px 12px;
 }
+.panel-body-yu .thead th h6{
+    color: #432A0F;
+}
 .listinfo-number-yu{
     color: #432A0F;
     padding: 24px 12px;
@@ -293,6 +297,9 @@
     padding: 0  12px 12px 12px;
 }
 /* ----------下拉詳細訂單明細---------- */
+.panel-title-yu a{
+    color: #432A0F;
+}
 .panel-title-yu{
     cursor: pointer;
     padding: 0 0 12px 12px;
@@ -318,6 +325,15 @@
 .listinfo-detalis-title-yu svg{
     padding-bottom: 4px;
 }
+.onepriceYu{
+    color: #432A0F;
+}
+.allPriceYu{
+    color: #432A0F;
+}
+.orderTotalPriceYu{
+    color: #432A0F;
+}
 .panel-body-yu .onepriceYu::before{
     content: "NT$";
 }
@@ -326,6 +342,9 @@
 }
 .orderTotalPriceYu::before{
     content: "訂單金額: NT$";
+}
+.price-uniqui-yu{
+    color: #432A0F;
 }
 .panel-body-yu .price-uniqui-yu::before{
 content:"總金額:NT$" ;
@@ -361,6 +380,7 @@ content:"總金額:NT$" ;
 } */
 #listinfo-details-yu tbody td{
     padding: 2rem 2rem 0rem 2rem;
+    color: #432A0F;
 }
 #listinfo-detalis-yu .table td{
     vertical-align: middle;
@@ -383,11 +403,13 @@ content:"總金額:NT$" ;
 
 /*---------訂單明細-------- */
 .checkoutlist-yu{
+    color: #432A0F;
     display: flex;
     justify-content: space-around;
 }
 .liststylenone-yu{
     padding-top: 12px;
+    color: #432A0F;
 }
 .liststylenone-yu li{
     list-style: none;
