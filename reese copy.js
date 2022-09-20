@@ -1,71 +1,43 @@
-// 側邊欄切換
-const my_pages_re = $(".tab_con_re .item_re");
+const my_pages = $(".tab_con_re .item_re");
 const myHashChange =  function(){
     const hash = location.hash;
     switch(hash) {
         case '#member-data':
-            my_pages_re.eq(0).show().siblings().hide();
+            my_pages.eq(0).show().siblings().hide();
             break;
         case '#modify-password':
-            my_pages_re.eq(1).show().siblings().hide();
+            my_pages.eq(1).show().siblings().hide();
             break;
         case '#my-favorites':
-            my_page_re.eq(2).show().siblings().hide();
+            my_pages.eq(2).show().siblings().hide();
             break;
         case '#member-order':
-            my_pages_re.eq(3).show().siblings().hide();
+            my_pages.eq(3).show().siblings().hide();
             break;
     }
 };
 window.addEventListener('hashchange', myHashChange);
+
 // #member-data, #modify-password, #my-favorites, #member-order
+// 側邊欄切換
 $(function(){
+    
+    /*
+    //點擊上部的li，當前li添加current類，移除其他
+    $(".tab_list_re li").click(function(){
+        $(this).addClass("current_re").siblings().removeClass("current_re");
+        //點擊的同時，得到當前li的索引號
+        var index = $(this).index();
+        //讓下部裡面相應索引號的item顯示，其餘的item隱藏
+        $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+    })
+    */
     $(".tab_list_re li").click(function(){
         const dataVal = $(this).attr('data-val')
         location.href = '#' + dataVal;
     });
     myHashChange();
-    //點擊上部的li，當前li添加current類，移除其他
-    // $(".tab_list_re li").click(function(){
-    //     $(this).addClass("current_re").siblings().removeClass("current_re");
-    //     //點擊的同時，得到當前li的索引號
-    //     var index = $(this).index();
-    //     //讓裡面相應索引號的item顯示，其餘的item隱藏
-    //     $(".tab_con_re .item_re").eq(index).show().siblings().hide();
-    // })
 })
-// 列表按鈕貓掌
-$('.tab_list_re li.tablist-meowli01_re').click(function() {
-    $('.tablist-meowsvg01_re').removeClass('d-none');
-    $('.tablist-meowsvg02_re').addClass('d-none');
-    $('.tablist-meowsvg03_re').addClass('d-none');
-    $('.tablist-meowsvg04_re').addClass('d-none');
-    })
-$('.tab_list_re li.tablist-meowli02_re').click(function() {
-    $('.tablist-meowsvg01_re').addClass('d-none');
-    $('.tablist-meowsvg02_re').removeClass('d-none');
-    $('.tablist-meowsvg03_re').addClass('d-none');
-    $('.tablist-meowsvg04_re').addClass('d-none');
-    })
-$('.tab_list_re li.tablist-meowli03_re').click(function() {
-    $('.tablist-meowsvg01_re').addClass('d-none');
-    $('.tablist-meowsvg02_re').addClass('d-none');
-    $('.tablist-meowsvg03_re').removeClass('d-none');
-    $('.tablist-meowsvg04_re').addClass('d-none');
-    })
-$('.tab_list_re li.tablist-meowli04_re').click(function() {
-    $('.tablist-meowsvg01_re').addClass('d-none');
-    $('.tablist-meowsvg02_re').addClass('d-none');
-    $('.tablist-meowsvg03_re').addClass('d-none');
-    $('.tablist-meowsvg04_re').removeClass('d-none');
-    })
-// $(".tab_list_re li").click(function(){
-//         $(this).addClass("current_re").siblings().removeClass("current_re");
-//     });
-// $(".tab_list_re li").click(function(){
-//         $(this).addClass("active-re").siblings().removeClass("active-re");
-//     });
-
 //手機會員/修改頁面
 $(function(){
     $(".tab_phonelist_re h5").click(function(){
@@ -81,31 +53,6 @@ window.onclick = function(event) {
         picture_re.style.display = "none";
     }
 }
-// 會員頭像預覽顯示
-function readURL_re(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            $('#blah_re').attr('src', e.target.result);
-            console.log('e.target.result',e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-// 會員頭像
-const blah_re = $('#blah_re'); // selected avatar 被選擇的頭像
-$('.picturewarpChange-re').on('click', function(event){
-    const src = $(this).find('img')[0].src;
-    blah_re[0].src = src;
-})
-function saveAvatar() {
-    const picture_re = blah_re[0].src;
-    $.post('re-picture-api.php', {picture_re}, function(data){
-        console.log(data);
-        document.getElementById('pictureChange_re').style.display='none';
-    }, 'json')
-}
-
 // like標籤切換
 $(function(){
 let $li = $('ul.tab-liketitle-re li');
@@ -177,7 +124,7 @@ $('.star-re').click(function(){
 })
 $('.rightstar-re').click(function(){
     console.log('hi',$(this).index());
-    for(let i = 0; i <5; i++ ){
+    for(let i = 0; i < 5; i++ ){
         const color = ($(this).index() >= i)? '#E5A62A' : 'none';
         $('.rightstar-re').eq(i).css('fill',color)
     }
@@ -209,7 +156,7 @@ $('#member_city_re').change(function () {
     $('#member_district_re').append(`<option value="${index}">${item}</option>`)
     })
 });
-// 會員資料欄位錯誤狀態
+// 欄位錯誤狀態
 const msgc_member = $('#member_msgContainer');
     function genAlert3(msg3, type='danger'){
         const a = $(`
@@ -226,13 +173,13 @@ const msgc_member = $('#member_msgContainer');
 function checkFormMember(){
     console.log('checkFormMember');
     let isPass = true;
-    // if (!$('#member_name_re').val()) {
-    //     genAlert3('請填寫正確會員資料');
-    //     return;
-    // }else if (!$('#member_phone_re').val()) {
-    //     genAlert3('請填寫正確會員資料');
-    //     return;
-    // }
+    if (!$('#member_name_re').val()) {
+        genAlert3('請填寫正確資料');
+        return;
+    }else if (!$('#member_phone_re').val()) {
+        genAlert3('請填寫正確資料');
+        return;
+    }
     if(isPass){
         $.post(
             're-member-api.php', 
@@ -240,59 +187,10 @@ function checkFormMember(){
             function(data){
                 console.log('checkFormMember data',data);
                 if(data.success){
-                    genAlert3('修改成功', 'success');
+                    genAlert('修改成功', 'success');
                 }else{
-                    genAlert3(data.error);
+                    genAlert(data.error);
                 }
         }, 'json');
     }
 }
-// 修改密碼欄位錯誤狀態
-const msgc_password = $('#password_msgContainer');
-    function genAlert4(msg4, type='danger'){
-        const a = $(`
-        <div class="alert alert-${type}" role="alert">
-            ${msg4}
-        </div>
-        `);
-        msgc_password.append(a);
-    }
-    $('#password-page-re').click(function(){
-        $('.alert').remove();
-    })
-// 修改密碼欄位檢查
-function checkFormPassword(){
-    console.log('checkFormPassword');
-    let isPass = true;
-    if (!$('#oldpassword_re').val()) {
-        genAlert4('請填寫正確資料');
-        return;
-    }else if (!$('#newpassword_re').val()) {
-        genAlert4('請填寫正確資料');
-        return;
-    }else if (!$('#againpassword_re').val()) {
-        genAlert4('請填寫正確資料');
-        return;
-    }else if (!$('#newpassword_re').val() === $('#againpassword_re').val()) {
-        genAlert4('請填寫正確資料');
-        return;
-    }else if (!$('#newpassword_re').val() != $('#oldpassword_re').val()) {
-        genAlert4('與現在密碼重複 請輸入正確資料');
-        return;
-    }
-    if(isPass){
-        $.post(
-            're-changepassword-api.php', 
-            $(document.form_forget_re).serialize(),
-            function(data){
-                console.log('checkFormPassword data',data);
-                if(data.success){
-                    genAlert4('修改成功', 'success');
-                }else{
-                    genAlert4(data.error);
-                }
-        }, 'json');
-    }
-}
-
-

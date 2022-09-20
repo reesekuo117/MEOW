@@ -303,6 +303,7 @@ p {
 
 .closeicon-re {
     margin-left: -7%;
+    cursor: pointer;
     /* margin-top: 1%; */
 }
 .loginmodal-re {
