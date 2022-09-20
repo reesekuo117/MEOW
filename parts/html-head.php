@@ -21,7 +21,6 @@ if (!isset($title)) {
 
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./login.css">
-    <!-- <link rel="stylesheet" href="./main.js"> -->
 
 </head>
 

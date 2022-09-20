@@ -94,15 +94,25 @@ function readURL_re(input) {
 }
 // 會員頭像
 const blah_re = $('#blah_re'); // selected avatar 被選擇的頭像
+const blah_md_re = $('#blah_md_re'); // selected avatar 被選擇的頭像
+const blah_xs01_re = $('#blah_xs01_re'); // selected avatar 被選擇的頭像
+const blah_xs02_re = $('#blah_xs02_re'); // selected avatar 被選擇的頭像
+
 $('.picturewarpChange-re').on('click', function(event){
     const src = $(this).find('img')[0].src;
     blah_re[0].src = src;
+
 })
 function saveAvatar() {
     const picture_re = blah_re[0].src;
     $.post('re-picture-api.php', {picture_re}, function(data){
         console.log(data);
         document.getElementById('pictureChange_re').style.display='none';
+        if(data.success){
+            blah_md_re[0].src = picture_re;
+            blah_xs01_re[0].src = picture_re;
+            blah_xs02_re[0].src = picture_re;
+        }
     }, 'json')
 }
 
