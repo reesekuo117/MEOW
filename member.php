@@ -9,8 +9,9 @@ $pageName ='會員中心'; //頁面名稱
     $member_id = $_SESSION['user']['id'];
     $user_id = "SELECT * FROM `member` WHERE id=$member_id";
     $r_re = $pdo->query($user_id)->fetch();
-    echo $member_id;
-    var_dump($r_re);
+    // echo $member_id;
+    // var_dump($r_re);
+
     // if(empty($r_re)){
     //     header('Location: index_.php');
     //     exit;
@@ -63,22 +64,23 @@ $pageName ='會員中心'; //頁面名稱
                         </svg>
                     </div>
                 </h4>
-                <div class="d-flex flex-wrap justify-content-center my-3">
-                    <div class="picturewarpChange-re col-6 col-md-2">
+                <p class="text-center py-2 mb-0 text-14-re">選擇預設頭像</p>
+                <div class="d-flex flex-wrap justify-content-center my-2">
+                    <div class="picturewarpChange-re col-4 col-md-2">
                         <img class="w-100" src="./imgs/member/picture01.png" alt="">
                         <!-- <input id=""  name="" type="checkbox" value="" /> -->
                     </div>
-                    <div class="picturewarpChange-re col-6 col-md-2">
+                    <div class="picturewarpChange-re col-4 col-md-2">
                         <img class="w-100" src="./imgs/member/picture02.png" alt="">
                         <!-- <input id=""  name="" type="checkbox" value="" /> -->
                     </div>
-                    <div class="picturewarpChange-re col-6 col-md-2">
+                    <div class="picturewarpChange-re col-4 col-md-2">
                         <img class="w-100" src="./imgs/member/picture03.png" alt="">
                         <!-- <input id=""  name="" type="checkbox" value="" /> -->
                     </div>
-                    <div class="col-6 col-md-8">
-                        <img class="w-100" id="blah_re" src="./imgs/member/picture01.png" alt="">
-                    </div>
+                </div>
+                <div class="picturewarp-re col-12 col-md-8 mx-auto">
+                    <img class="w-100" id="blah_re" src="<?= $r_re['picture'] ?>" alt="">
                 </div>
                 <div class="d-flex justify-content-center">
                     <label class="btn-re col-6 col-md-3 mx-1 mb-0 text-center">
