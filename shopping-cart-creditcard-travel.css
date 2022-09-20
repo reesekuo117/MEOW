@@ -318,7 +318,18 @@
 .listinfo-detalis-title-yu svg{
     padding-bottom: 4px;
 }
-
+.panel-body-yu .onepriceYu::before{
+    content: "NT$";
+}
+.panel-body-yu .allPriceYu::before{
+    content: "NT$";
+}
+.orderTotalPriceYu::before{
+    content: "訂單金額: NT$";
+}
+.panel-body-yu .price-uniqui-yu::before{
+content:"總金額:NT$" ;
+}
 
 /* ----------手機下拉詳細訂單明細---------- */
 .mdpanel-title-yu{

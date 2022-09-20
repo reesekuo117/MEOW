@@ -199,13 +199,19 @@ html{
 /* 手機輪播牆結束 */
 /* 手機上方列 */
 .pdnav_mb{
+    height: 50px;
     background-color: var(--color-lightcreamy);
     position: sticky;
     top: 0;
     z-index: 2;
+    transition: .5s;
+
 }
 .pdnav_mb a{
     text-decoration: none;
+}
+.pdnav_mb a small{
+    line-height: 25px;
 }
 .pdnav_mb small:hover{
     color: #CD562F;
@@ -339,6 +345,7 @@ button:hover{
     background-color: var(--color-orange);
     position: fixed;
     bottom: 0;
+    z-index: 5;
 }
 
 .pd_footer_mb .buy{
@@ -446,6 +453,8 @@ button:hover{
 .otherp .carousel-control-next i {
 	margin-right: -3px;
 }
+
+
 .carousel-indicators {
 	bottom: -50px;
 }

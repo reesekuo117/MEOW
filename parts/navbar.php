@@ -249,6 +249,7 @@
         </div>
     </div>
 </div>
+<script src="./main.js"></script>
 <script>
     // // nav
     // let lastScroll = 0;

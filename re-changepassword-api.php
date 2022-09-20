@@ -14,7 +14,7 @@ if(empty($_POST['oldpassword_re']) or empty($_POST['newpassword_re'])or empty($_
 }
 
 $user_id = "UPDATE `member` SET 
-    `password`=?,
+    `password`=?
     WHERE `id`=?";
 
 $stmt = $pdo->prepare($user_id);

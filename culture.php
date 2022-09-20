@@ -134,7 +134,7 @@ $pageName = '月老文化'; //頁面名稱
             </div>
             <div class="pic-group_lb">
                 <div class="row tmp-pic1_lb">
-                    <div class="offset-3 col-3 text-center">
+                    <div class="offset-3 col-3 text-center tmp-pic1_lb">
                         <img class="w-100" src="./imgs/culture/temple group1.png" alt="">
                         <p class="py-1 m-0 s-title_lb">台灣祀典武廟</p>
                     </div>
@@ -146,7 +146,7 @@ $pageName = '月老文化'; //頁面名稱
                     </div>
                 </div>
                 <div class="row mt-2 tmp-pic3_lb">
-                    <div class="offset-3 col-3 text-center">
+                    <div class="offset-3 col-3 text-center tmp-pic3_lb">
                         <img class="w-100" src="./imgs/culture/temple group3.png" alt="">
                         <p class="py-1 m-0 s-title_lb">鹿港天后宮</p>
                     </div>
@@ -155,7 +155,7 @@ $pageName = '月老文化'; //頁面名稱
         </div>
     </div>
     <!-- 關於月老-mb -->
-    <div class="container d-md-none mt-4 mbtargetScrollSection mb-section1_lb" id="mbmoonold_lb">
+    <div class="container d-md-none pt-4 mbtargetScrollSection mb-section1_lb" id="mbmoonold_lb">
         <h1 class="text-center mb-title_lb pt-4">關於月老</h1>
         <div class="mb-section1-top_lb">
             <p class="mt-3 mb-p_lb">
@@ -171,7 +171,7 @@ $pageName = '月老文化'; //頁面名稱
             十多年後，該女被刺史收為義女，並將其許配給韋固，新婚之後發現妻子額上常貼花黃是因幼年被刺，這才知月下老人所配的姻緣奇準無比，其神蹟從此廣為流傳
             </p>
         </div>
-        <div class="mb-section1-bottom_lb">
+        <div class="mb-section1-bottom_lb mt-5">
             <div class="mbright_pic_lb">
                 <img class="w-100" src="./imgs/culture/section1-2.png" alt="">
             </div>
@@ -182,7 +182,6 @@ $pageName = '月老文化'; //頁面名稱
             </p>
         </div>
     </div>
-
 
 
     <!--參拜流程-->
@@ -338,7 +337,6 @@ $pageName = '月老文化'; //頁面名稱
         </div>
     </div>
 
-
     <!-- 參拜月老禁忌-pc -->
     <section class=" section3_lb  position-relative">
         <div class="s3-leftcloud_lb position-absolute">
@@ -431,7 +429,7 @@ $pageName = '月老文化'; //頁面名稱
     </section>
 
     <!-- 參拜月老禁忌-mb -->
-    <div class="d-md-none  mbtargetScrollSection" id="mbnotice_lb">
+    <div class="d-md-none mbtargetScrollSection" id="mbnotice_lb">
         <h1 class="text-center mb-title_lb pt-4">參拜月老禁忌</h1>
         <div class="scroll-snap_lb mt-4">
             <div class="col">

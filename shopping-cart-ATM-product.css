@@ -252,7 +252,9 @@
     margin-bottom: 40px;
     background-color: #FFFCF7;
 }
-
+#myTabContent-yu .listinfo-yu .ListOderPriceYu::before{
+    content: "訂單金額:NT$";
+}
 
 /*-----手機訂單明細 ------  */
 .mdlistinfo-yu{
@@ -283,6 +285,13 @@
 .listinfo-yu label {
     margin: 0;
     padding: 0  12px 12px 12px;
+}
+
+.note-yu ul.orderListpriceYu::before{
+    content: "交易金額:NT$";
+}
+.mdTotalPriceYu::after{
+    content:"總金額:NT$";
 }
 /* ----------下拉詳細訂單明細---------- */
 .panel-title-yu{
@@ -355,7 +364,12 @@
     border: none;
 
 }
-
+.panel-body-yu .onePriceYu::before{
+    content: "NT$";
+}
+.panel-body-yu .littlePriceYu::before{
+    content: "NT$";
+}
 /*---------訂單明細-------- */
 .checkoutlist-yu{
     display: flex;
@@ -461,3 +475,9 @@
     align-items: flex-end;
 }
 
+.listinfo-details-totalprice-yu .oderListPriceYu::before{
+    content: "訂單金額: NT$";
+}
+.listinfo-details-totalprice-yu .price-uniqui-yu::before{
+    content: "總金額:NT$";
+}

@@ -42,7 +42,7 @@ sliderTwo.addEventListener('input', slideTwo)
 
 
 // 手機版篩選
-$('.tsort_mb').click(function(){
+$('.psort_mb').click(function(){
     console.log('hello');
     // $('.travel_cate_mb').removeClass('d-none').addClass('d-block')
     $('.timesort_mb').toggleClass('d-none')

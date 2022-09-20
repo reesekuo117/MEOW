@@ -57,12 +57,16 @@ $pageName ='會員中心'; //頁面名稱
                         <img class="w-100" src="./imgs/member/picture03.png" alt="">
                         <!-- <input id=""  name="" type="checkbox" value="" /> -->
                     </div>
+                    <div class="col-6 col-md-4">
+                        <img class="w-100" id="blah_re" src="http://placehold.it/180" alt="">
+                    </div>
                 </div>
                 <div class="d-flex justify-content-center">
                     <!-- <button class="btn-re col-6 col-md-3 mx-1" type="button" onclick="document.getElementById('pictureChange_re').style.display='none'"></button> -->
                     <div></div>
                     <label class="btn-re col-6 col-md-3 mx-1 mb-0 text-center">
-                    <input type="file" id="mypicture-re" name="mypicture-re" style="display:none;"><span class="picturetext-re">新增頭像</span></label>
+                    <input type="file" id="mypicture-re" name="mypicture-re" style="display:none;" onchange="readURL_re(this);"><span class="picturetext-re">新增頭像</span></label>
+                    <input type="hidden">
                     <button class="btn-re col-6 col-md-3 mx-1" type="button" onclick="document.getElementById('pictureChange_re').style.display='none'">儲存</button>
                 </div>
             </form>
@@ -903,7 +907,11 @@ const myHashChange =  function(){
 window.addEventListener('hashchange', myHashChange);
 // #member-data, #modify-password, #my-favorites, #member-order
 $(function(){
-    
+    $(".tab_list_re li").click(function(){
+        const dataVal = $(this).attr('data-val')
+        location.href = '#' + dataVal;
+    });
+    myHashChange();
     //點擊上部的li，當前li添加current類，移除其他
     // $(".tab_list_re li").click(function(){
     //     $(this).addClass("current_re").siblings().removeClass("current_re");
@@ -912,14 +920,8 @@ $(function(){
     //     //讓裡面相應索引號的item顯示，其餘的item隱藏
     //     $(".tab_con_re .item_re").eq(index).show().siblings().hide();
     // })
-    
-    $(".tab_list_re li").click(function(){
-        const dataVal = $(this).attr('data-val')
-        location.href = '#' + dataVal;
-    });
-    myHashChange();
 })
-// 
+// 列表按鈕貓掌
 $('.tab_list_re li.tablist-meowli01_re').click(function() {
     $('.tablist-meowsvg01_re').removeClass('d-none');
     $('.tablist-meowsvg02_re').addClass('d-none');
@@ -964,6 +966,17 @@ let picture_re = document.getElementById('pictureChange_re');
 window.onclick = function(event) {
     if (event.target == picture_re) {
         picture_re.style.display = "none";
+    }
+}
+// 會員頭像顯示
+function readURL_re(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#blah_re').attr('src', e.target.result);
+            console.log('e.target.result',e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
     }
 }
 // like標籤切換
@@ -1151,6 +1164,7 @@ function checkFormPassword(){
         }, 'json');
     }
 }
+
 
 
 </script>

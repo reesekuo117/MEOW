@@ -154,11 +154,19 @@ const sectionsOffsetTop = [];
 // sectionsOffsetTop.push($('.details > div').eq(2).offset().top)
 // sectionsOffsetTop.push($('.details > div').eq(3).offset().top)
 $(function(){
+    sectionsOffsetTop.length = 0;
+    //先清空?
     for(let i = 0; i < 4; i ++){
         sectionsOffsetTop.push($('.details > div').eq(i).offset().top)
     }
 })
 
+$(window).resize(function(){
+    sectionsOffsetTop.length = 0;
+    for(let i = 0; i < 4; i ++){
+        sectionsOffsetTop.push($('.details > div').eq(i).offset().top)
+    }
+})
 
 // console.log('sectionsOffsetTop array:',sectionsOffsetTop);
 // console.log('sectionsOffsetTop array:',sectionsOffsetTop[0]);
@@ -170,59 +178,50 @@ $(window).scroll(function () {
         console.log(' now scroll', nowScroll);
 
         for(let i = 0; i < 4; i++){
-            if(nowScroll >= sectionsOffsetTop[i]-30){
+            if(nowScroll >= sectionsOffsetTop[i]){
                 $('.links a').eq(i).css('color','var(--color-orange)').siblings().css('color','var(--color-text87)')
             }
-            if(nowScroll >= sectionsOffsetTop[i]){
-                console.log('hi', sectionsOffsetTop);
-                $('.pdnav_mb a').eq(i).css('color', 'var(--color-orange)').siblings().css('color', 'var(--color-text87)')
-
-            }
-        }
-
-        
-        // if(nowScroll >= sectionsOffsetTop[0]){
-        //     $('.links a').eq(0).css('color','red').siblings().css('color','black')
-        // }
-
-        // if(nowScroll >= sectionsOffsetTop[1]){
-        //     $('.links a').eq(1).css('color','red').siblings().css('color','black')
-        // }
-
-    }
-)
-
-const sectionsOffsetTopMB = [];
-$(function(){
-    for(let i = 0; i < 4; i ++){
-        sectionsOffsetTopMB.push($('.details > div').eq(i).offset().top)
-    }
-})
-$(window).scroll(function () {
-    const nowScroll = $(window).scrollTop();
-    console.log('now scroll', nowScroll);
-
-    for(let i = 0; i < 4; i++){
-        if(nowScroll >= sectionsOffsetTopMB[i]){
-            // console.log('hi', sectionsOffsetTopMB);
-            $('.pdnav_mb a').eq(i).css('color', 'var(--color-orange)').siblings().css('color', 'var(--color-text87)')
-
-    //     }
-    // if ($(window).scrollTop() >= nowScroll) {
-    // $('.pdnav_mb').css({
-    //     transform: 'translateY(0px)',
-    //     opacity: 1,
-    //     })
-    // } else {
-    // $('.pdnav_mb').css({
-    //     transform: 'translateY(-70px)',
-    //     opacity: 0,
-    // })
+            // 手機需要多寫這條，不然會相衝
+            if(nowScroll >= sectionsOffsetTop[i] && $(window).width() < 768){
+                console.log('hihi i',sectionsOffsetTop[i]);
+                $('.pdnav_mb a small').eq(i).css('color','var(--color-orange)').closest('div').siblings().find('small').css('color','var(--color-text87)')
         }
     }
 })
+
+
+// $(window).scroll(function () {
+//     const nowScroll = $(window).scrollTop();
+//     console.log('mobile now  scroll', nowScroll);
+//     console.log('sectionsOffsetTop', sectionsOffsetTop);  
+
+//     for(let i = 0; i < 4; i++){
+//         if(nowScroll >= sectionsOffsetTop[i]){
+//             console.log('mobile nav',  $('.pdnav_mb').eq(i));
+//             $('.pdnav_mb a').eq(i).css('color', 'var(--color-orange)').siblings().css('color', 'var(--color-text87)')
+//             }
+//         }
+//     })
+
 //往下滑消失，上滑才出現
+// let lastScroll = 0;
 
+// $(window).scroll(function () {
+//     let scrollNow = $(window).scrollTop();
+
+//     console.log('lastScroll:', lastScroll);
+//     console.log('scrollNow', scrollNow);
+
+//     if (scrollNow > lastScroll) {
+//         $('.pdnav_mb').addClass('hidden')
+//     }
+//     else {
+//         $('.pdnav_mb').removeClass('hidden')
+//     }
+
+//     lastScroll = scrollNow;
+
+// })
 
 
 

@@ -427,10 +427,10 @@ $pageName ='獨家商品'; //頁面名稱
 
                                                                 <div
                                                                     class="card_under d-flex justify-content-around align-items-center">
-                                                                    <small class="xs card-text d-flex">
+                                                                    <small class="xs card-text d-flex pr-1">
                                                                         <div class="icon_star">
                                                                             <span><i class="fa-solid fa-star"></i></span>
-                                                                        </div> 4.7(50)
+                                                                        </div>4.7(50)
                                                                     </small>
                                                                     <small class="xs card-text d-flex">
                                                                         <div class="icon_fire">
@@ -466,7 +466,7 @@ $pageName ='獨家商品'; //頁面名稱
 
                                                                 <div
                                                                     class="card_under d-flex justify-content-between align-items-center">
-                                                                    <small class="xs card-text d-flex">
+                                                                    <small class="xs card-text d-flex pr-1">
                                                                         <div class="icon_star">
                                                                             <span><i
                                                                                     class="fa-solid fa-star"></i></span>
@@ -507,7 +507,7 @@ $pageName ='獨家商品'; //頁面名稱
 
                                                                 <div
                                                                     class="card_under d-flex justify-content-between align-items-center">
-                                                                    <small class="xs card-text d-flex">
+                                                                    <small class="xs card-text d-flex pr-1">
                                                                         <div class="icon_star">
                                                                             <span><i
                                                                                     class="fa-solid fa-star"></i></span>
@@ -552,7 +552,7 @@ $pageName ='獨家商品'; //頁面名稱
 
                                                                 <div
                                                                     class="card_under d-flex justify-content-between align-items-center">
-                                                                    <small class="xs card-text d-flex">
+                                                                    <small class="xs card-text d-flex pr-1">
                                                                         <div class="icon_star">
                                                                             <span><i
                                                                                     class="fa-solid fa-star"></i></span>
@@ -593,7 +593,7 @@ $pageName ='獨家商品'; //頁面名稱
 
                                                                 <div
                                                                     class="card_under d-flex justify-content-between align-items-center">
-                                                                    <small class="xs card-text d-flex">
+                                                                    <small class="xs card-text d-flex pr-1">
                                                                         <div class="icon_star">
                                                                             <span><i
                                                                                     class="fa-solid fa-star"></i></span>
@@ -634,7 +634,7 @@ $pageName ='獨家商品'; //頁面名稱
 
                                                                 <div
                                                                     class="card_under d-flex justify-content-between align-items-center">
-                                                                    <small class="xs card-text d-flex">
+                                                                    <small class="xs card-text d-flex pr-1">
                                                                         <div class="icon_star">
                                                                             <span><i
                                                                                     class="fa-solid fa-star"></i></span>
@@ -674,27 +674,142 @@ $pageName ='獨家商品'; //頁面名稱
                 <!-- https://codepen.io/WillyW/details/wZebow -->
                 <!-- https://codepen.io/rblinzler/pen/abVGzNM -->
                 <!-- 手機卡片 -->
-                <div class="container carousel_mb d-block d-md-none">
+                <div class="container carousel_mb d-block d-md-none pb-5">
                     <div class="card-carousel">
                         <div class="card" id="1">
                             <div class="image-container"></div>
-                            <p>霞海城隍廟 X 護手霜禮盒</p>
+                            <div class="pit_mb">
+                            <p class="mb-2">霞海城隍廟 X 護手霜禮盒</p>
+                            </div>
+                            <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                                <div class="star">
+                                <small class="xs d-flex">
+                                    <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    （5）
+                                </small>
+                                </div>
+                                <div class="fire justify-content-center align-items-center mr-2">
+                                <small class="xs d-flex">
+                                    <div class="icon_fire xs">
+                                        <i class="fa-solid fa-fire pr-1"></i>
+                                    </div>
+                                    已賣出3K + 個
+                                </small>
+                                </div>
+                                <div class="price">
+                                    <h4>707</h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="card" id="2">
                             <div class="image-container"></div>
-                            <p>霞海城隍聯名 X 姻緣簿茶蜜組</p>
+                            <div class="pit_mb">
+                                <p class="mb-2">霞海城隍聯名 X 姻緣簿茶蜜組</p>
+                            </div>
+                            <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                                <div class="star">
+                                <small class="xs d-flex">
+                                    <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    （5）
+                                </small>
+                                </div>
+                                <div class="fire justify-content-center align-items-center mr-2">
+                                <small class="xs d-flex">
+                                    <div class="icon_fire xs">
+                                        <i class="fa-solid fa-fire pr-1"></i>
+                                    </div>
+                                    已賣出3K + 個
+                                </small>
+                                </div>
+                                <div class="price">
+                                    <h4>707</h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="card" id="3">
                             <div class="image-container"></div>
-                            <p>霞海城隍廟 X 扣式真皮中夾禮盒</p>
+                            <div class="pit_mb">
+                                <p class="mb-2">霞海城隍廟 X 扣式真皮中夾禮盒</p>
+                            </div>
+                            <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                                <div class="star">
+                                <small class="xs d-flex">
+                                    <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    （5）
+                                </small>
+                                </div>
+                                <div class="fire justify-content-center align-items-center mr-2">
+                                <small class="xs d-flex">
+                                    <div class="icon_fire xs">
+                                        <i class="fa-solid fa-fire pr-1"></i>
+                                    </div>
+                                    已賣出3K + 個
+                                </small>
+                                </div>
+                                <div class="price">
+                                    <h4>707</h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="card" id="4">
                             <div class="image-container"></div>
-                            <p>霞海城隍廟聯名 X 月老牽線絹印組</p>
+                            <div class="pit_mb">
+                                <p class="mb-2">霞海城隍廟聯名 X 月老牽線絹印組</p>
+                            </div>
+                            <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                                <div class="star">
+                                <small class="xs d-flex">
+                                    <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    （5）
+                                </small>
+                                </div>
+                                <div class="fire justify-content-center align-items-center mr-2">
+                                <small class="xs d-flex">
+                                    <div class="icon_fire xs">
+                                        <i class="fa-solid fa-fire pr-1"></i>
+                                    </div>
+                                    已賣出3K + 個
+                                </small>
+                                </div>
+                                <div class="price">
+                                    <h4>707</h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="card" id="5">
                             <div class="image-container"></div>
-                            <p>月老喵療癒你盥洗組</p>
+                            <div class="pit_mb">
+                                <p class="mb-2">月老喵療癒你盥洗組</p>
+                            </div>
+                            <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                                <div class="star">
+                                <small class="xs d-flex">
+                                    <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    （5）
+                                </small>
+                                </div>
+                                <div class="fire justify-content-center align-items-center mr-2">
+                                <small class="xs d-flex">
+                                    <div class="icon_fire xs">
+                                        <i class="fa-solid fa-fire pr-1"></i>
+                                    </div>
+                                    已賣出3K + 個
+                                </small>
+                                </div>
+                                <div class="price">
+                                    <h4>707</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
