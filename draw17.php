@@ -7,6 +7,8 @@ $pageName = 'draw02'; //頁面名稱
 
 <link rel="stylesheet" href="draw.css">
 <link rel="stylesheet" href="re.css">
+<link rel="stylesheet" href="draw16.css">
+
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <?php include __DIR__. '/parts/navbar.php'; ?>

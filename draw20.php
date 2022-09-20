@@ -1,6 +1,6 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
-$pageName = 'draw02'; //頁面名稱
+$pageName = 'draw20'; //頁面名稱
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -11,41 +11,14 @@ $pageName = 'draw02'; //頁面名稱
 <?php include __DIR__. '/parts/navbar.php'; ?>
 
     <div class="body_draw01 d-none d-md-block">
-        
-    <div class="drawSection16 position-relative">
-        <a id="backtodraw15" class="position-absolute backto d-none" href="draw15.php">
+    <div class="drawSection20 position-relative ">
+        <a id="backtodraw19" class="position-absolute backto d-none" href="draw12.php">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M18.8518 3.47604C19.1413 3.9464 18.9946 4.56235 18.5243 4.8518L6.9082 12.0001L18.5243 19.1485C18.9946 19.4379 19.1413 20.0539 18.8518 20.5242C18.5624 20.9946 17.9464 21.1413 17.4761 20.8518L5.86001 13.7035C4.59094 12.9225 4.59093 11.0778 5.86001 10.2968L17.4761 3.14848C17.9464 2.85903 18.5624 3.00569 18.8518 3.47604Z"
                     fill="#432A0F" fill-opacity="0.38" />
             </svg>
         </a>
-        <div class="step_ba position-absolute d-flex align-items-center justify-content-between">
-            <div class="stepUnActive d-flex align-items-center">
-                <div class="stepCircle align-items-center">
-                    <h5 class="mt-2">1</h5>
-                </div>
-                <h5 class="ml-2 mt-2">自我介紹</h5>
-            </div>
-
-            <div class="stepline_ba"></div>
-
-            <div class="stepUnActive d-flex align-items-center">
-                <div class="stepCircle align-items-center">
-                    <h5 class="mt-2">2</h5>
-                </div>
-                <h5 class="ml-2 mt-2">誠心祈求</h5>
-            </div>
-
-            <div class="stepline_ba"></div>
-
-            <div class="stepActive d-flex align-items-center">
-                <div class="stepCircleActive align-items-center">
-                    <h5 class="mt-2">3</h5>
-                </div>
-                <h5 class="ml-2 mt-2">求籤</h5>
-            </div>
-        </div>
         <a id="musicSwitch" class="position-absolute musicSwitch" href="#">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -58,30 +31,34 @@ $pageName = 'draw02'; //頁面名稱
         </a>
         <a class="position-absolute youcantseeme" href="draw01.php"></a>
 
-        <div class="container flex-row position-relative">
-            <h1 class="">求籤注意事項</h1>
-            <h5>
-                小玉已經向月老轉達你的心願了，
-                <br>
-                請從籤筒抽出一支籤號，
-                <br>
-                之後再進行擲筊，
-                <br>
-                出現聖筊才表示這是你的專屬詩籤喔！
-            </h5>
-            <div class="page16cat">
-                <img class="w-100" src="./imgs/draw/54.png" alt="">
+        <div class="container">
+            <h1 class=""></h1>
+            <div class="moonBlockGroup m-auto position-relative">
+                <div class="moonBlockL position-absolute">
+                    <img class="moonBlock1" src="./imgs/draw/moonBlock1.png" alt="">
+                </div>
+                <div class="moonBlockR position-absolute">
+                    <img class="moonBlock2" src="./imgs/draw/moonBlock2.png" alt="">
+                </div>
+            </div>
+            <div class="moonBlockContent position-absolute flex-row">
+                <h3>笑筊</h3>
+                <p>
+                    月老笑你不夠虔誠，<br>
+                    請在心中懺悔並重抽一支籤。
+                </p>
+                <a href="draw17.php">
+                    <button class="btn-xl">
+                        <h4>
+                            重抽一支籤
+                        </h4>
+                    </button>
+                </a>
             </div>
 
-            <a href="draw17.php">
-                <button class="btn-xl navoff_ba">
-                    <h4>
-                        我知道了
-                    </h4>
-                </button>
-            </a>
         </div>
     </div>
+
     </div>
 
 

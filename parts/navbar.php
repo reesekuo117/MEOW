@@ -7,8 +7,8 @@
 // }
 ?>
 <!-- header-md ----------------------------------->
-<header class="d-none d-md-block">
-    <div class="navbar navbar_ba draw16">
+<header class="d-none d-md-block draw16_none">
+    <div class="navbar navbar_ba">
         <div class="container-fluid p-0">
             <div class="row justify-content-between w-100 m-0">
                 <!-- nav-left -->

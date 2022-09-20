@@ -210,7 +210,7 @@
 .mdtravel-backgroundimg-yu{
     overflow: hidden;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     background-image: url(imgs/travel/手機旅遊首頁\(底圖\)-mobile.png);
 }
 .mdcloud_1-yu{

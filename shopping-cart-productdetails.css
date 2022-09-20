@@ -151,6 +151,9 @@
 .largerCheckbox-yu {
   margin-right: 4px;
 }
+.mdcardColorYu{
+  color: #432A0F;
+}
 .mdcardlist-yu {
   overflow: hidden;
   /* border: 1px solid #000; */
@@ -193,7 +196,7 @@
 .panel-body-yu .OnePriceYu::before{
   content: "NT$";
 }
-.panel-body-yu .LittlePriceYu{
+.panel-body-yu .LittlePriceYu::before{
   content: "NT$";
 }
 .listinfo-number-yu {
@@ -202,21 +205,52 @@
   margin: 0;
 }
 
-/* 手機結帳明細 */
+/* ----------手機結帳明細--------------- */
 .mdsection-1-yu {
   background-color: #fffcf7;
   margin-bottom: 20px;
 }
+.listinfo-number-yu{
+  color: #432A0F;
+  padding: 24px 12px;
+  margin: 0;
+}
+.mdsection-1-yu .listinfo-number-yu::before{
+  content: "總金額:";
+}
+.mdsection-1-yu h6.listinfoYu::before{
+  content: "NT$";
+}
+.listinfoYu{
+  padding: 24px 12px;
+  margin: 0;
+  color: var(--color-red);
+}
 
 /* 手機mdlistinfo-number-yu */
 .mdlistinfo-number-yu {
-  color: #432a0f;
+  color: #963c38;
   padding: 8px 12px;
   margin: 0;
 }
-
-.listinfo-number-yu span {
-  font-family: "gensen-R";
+.mdsection-1-yu .listinfo-number-yu{
+  color: #963c38;
+  padding: 24px 12px;
+  margin: 0;
+}
+.mdsection-1-yu .listinfo-number-yu::before{
+  content: "總金額:";
+}
+.mdsection-1-yu .listinfoYu{
+  padding: 24px 12px;
+  margin: 0;
+  color: var(--color-red);
+}
+.mdsection-1-yu h6.listinfoYu::before{
+  content: "NT$";
+}
+.listinfo-number-yu {
+  font-family: 'gensen-R';
   font-size: 20px;
   line-height: 140%;
   color: var(--color-red);
@@ -293,9 +327,6 @@
 }
 .priceNT-yu h6.NTYu::before{
   content: "訂單金額:NT$";
-}
-.priceNT-yu h6.FreightYu::before{
-  content: "運費金額: NT$";
 }
 .priceNT-yu h6#total-price-yu::before{
   content: "總金額:NT$";

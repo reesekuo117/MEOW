@@ -409,7 +409,6 @@ h6.littlePriceYu::before{
 }
 .unique-nextbutton-yu .unique-btn-yu{
     /* border: 1px solid #432A0F; */
-    margin: 40px;
     background-color: #E5A62A;
     font-family: 'gensen-M';
     font-size: 14px;
@@ -421,7 +420,7 @@ h6.littlePriceYu::before{
 }
 .unique-nextbutton-yu .unique-btn-yu:hover{
     outline: none;
-    box-shadow: 4px 4px 0px 0px #432A0F;
+    box-shadow: 2px 2px 0px 0px #432A0F;
 }
 .unique-btn-yu:active {
     /* background-color: #E5A62A;
@@ -484,25 +483,12 @@ h6.MDtatalpriceYu::before{
 .price-uniqui-yu{
     color: var(--color-red);
 }
-#TotalPriceYu h6::before{
+.totalprice-uniqui-yu .price-yu::before{
     content:"訂單金額: NT$";
 }
-#totalPriceYu input{
-    background-color: #fff;
-    outline: none;
-    border: 1px solid #000;
-    width: 80px;
-    text-align: center;
-}
-
-.freightprice-yu::before{
-    content: "運費金額:NT$";
-}
-
 .price-uniqui-yu::before{
     content: "總金額:NT$";
 }
-
 #minus-yu .disabled{
     background-color: var(--color-text38);
 }
