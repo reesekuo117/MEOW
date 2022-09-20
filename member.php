@@ -2,13 +2,13 @@
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName ='會員中心'; //頁面名稱
 
-    // if(empty($_SESSION['user'])){
-    //     header('Location: login.php');
-    //     exit;
-    // }
-    // $member_id = $_SESSION['user']['id'];
-    // $user_id = "SELECT * FROM `member` WHERE id=$member_id";
-    // $r_re = $pdo->query($user_id)->fetch();
+    if(empty($_SESSION['user'])){
+        header('Location: index_.php');
+        exit;
+    }
+    $member_id = $_SESSION['user']['id'];
+    $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+    $r_re = $pdo->query($user_id)->fetch();
 
     // echo $member_id;
     // var_dump($r_re);
@@ -95,9 +95,9 @@ $pageName ='會員中心'; //頁面名稱
         <div class="tab_con_re">
 <!-- p1-member-------------------------------------------------------------------------------------- -->
     <?php
-        $member_id = $_SESSION['user']['id'];
-        $user_id = "SELECT * FROM `member` WHERE id=$member_id";
-        $r_re = $pdo->query($user_id)->fetch();
+        // $member_id = $_SESSION['user']['id'];
+        // $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+        // $r_re = $pdo->query($user_id)->fetch();
     ?>
             <div id="member-page-re" class="item_re" style="display: block;">
                 <div class="divination-re d-none d-md-block">

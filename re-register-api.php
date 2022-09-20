@@ -17,7 +17,7 @@ if(empty($_POST['signup_email']) or empty($_POST['signup_password']) or empty($_
 $sql = "INSERT INTO `member`(
         `email`, 
         `password`, 
-        -- `picture`, 
+        `picture`, 
         -- `name`, 
         -- `mobile`, 
         -- `birthday`, 
@@ -28,7 +28,7 @@ $sql = "INSERT INTO `member`(
     ) VALUES (
         ?,
         ?,
-        -- ?,
+        './imgs/member/picture01.png',
         -- ?,
         -- ?,
         -- ?,
