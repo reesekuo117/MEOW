@@ -1,6 +1,12 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
-$pageName ='home'; //頁面名稱
+$pageName ='旅遊行程'; //頁面名稱
+$sql = "SELECT * FROM travel"; //資料表中的travel
+
+//row 自己定義的名稱
+//$stmt = $pdo->query($sql); + $row = $stmt->fetchAll(); 合併寫在一起
+$rows = $pdo->query($sql)->fetchAll(); //拿到所有的資料
+
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -8,7 +14,7 @@ $pageName ='home'; //頁面名稱
 <?php include __DIR__. '/parts/navbar.php'; ?>
 <div class="travel_search d-flex">
         <div class="search_bar">
-            <h3>旅遊交友行程</h3>
+            <h3>旅遊行程</h3>
             <!-- <div class="input_search d-flex">
                         <input type="text" placeholder="請輸入關鍵字搜尋">
                         
