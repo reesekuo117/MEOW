@@ -16,6 +16,13 @@ html{
 .product_detail_07 button:focus{
     outline-style: none;
 }
+.product_detail_07 button a{
+    text-decoration: nonce;
+}
+.product_detail_07 button a .icon_buy{
+    text-decoration: nonce;
+    color: var(--color-text100);
+}
 /* ------------------------輪播------------------------ */
 .img-demo{
     position: relative;

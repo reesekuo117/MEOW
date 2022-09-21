@@ -53,7 +53,9 @@ $pageName ='獨家商品'; //頁面名稱
                         好想和另一半長長久久？ <br>
                         你的心願我們都聽到了！<br>
                     </h1>
-                    <button class="pc_btn btn-l d-none d-md-block">看更多熱門商品！</button>
+                    <button class="pc_btn btn-l d-none d-md-block">
+                        <a href="product_list.php">看更多熱門商品！</a> 
+                    </button>
                 </div>
             </div>
 

@@ -5,6 +5,9 @@ $pageName ='home'; //頁面名稱
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./travel_index_style.css">
+<?php
+header("Refresh:180");
+?>
 <?php include __DIR__. '/parts/navbar.php'; ?>
     
 
@@ -197,7 +200,7 @@ $pageName ='home'; //頁面名稱
                 </div>
                 <div id="move3-yu">
                     <div class=" mdtravel-frame2-yu position-relative ">
-                        <img class="position-absolute mdtravel3-img-yu w-75 " src="/imgs/travel/手機版旅遊首頁(照片3).png" alt="">
+                        <img class="position-absolute mdtravel3-img-yu w-75 " src="imgs/travel/手機版旅遊首頁(照片3).png" alt="">
                     </div>
                     <div class="mdtravel-frame2-p-yu">
                         <p class="my-4 text-center justify-content-center">
