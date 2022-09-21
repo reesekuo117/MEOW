@@ -197,7 +197,7 @@ $pageName ='home'; //頁面名稱
                 </div>
                 <div id="move3-yu">
                     <div class=" mdtravel-frame2-yu position-relative ">
-                        <img class="position-absolute mdtravel3-img-yu w-75 " src="imgs/travel/手機版旅遊首頁(照片3).png" alt="">
+                        <img class="position-absolute mdtravel3-img-yu w-75 " src="/imgs/travel/手機版旅遊首頁(照片3).png" alt="">
                     </div>
                     <div class="mdtravel-frame2-p-yu">
                         <p class="my-4 text-center justify-content-center">
@@ -205,7 +205,7 @@ $pageName ='home'; //頁面名稱
                         </p>
                     </div>
                     <div class=" friend-btn-yu d-grid gap-2 d-flex justify-content-md-center">
-                        <a href="travel_list.php" class="morebutton-yu">
+                        <a href="#" class="morebutton-yu">
                             <button class=" btn " type="button">
                                 <p class="m-0 text-center">
                                     看更多交友聯誼
@@ -260,7 +260,7 @@ $pageName ='home'; //頁面名稱
                     </p>
                 </div>
                 <div class=" friend-btn-yu d-grid gap-2 d-flex justify-content-md-center">
-                    <a href="travel_list.php" class="morebutton-yu">
+                    <a href="#" class="morebutton-yu">
                         <button class=" btn " type="button">
                             <p class="m-0 text-center">
                                 看更多文化之旅
@@ -276,4 +276,88 @@ $pageName ='home'; //頁面名稱
 
 
 <?php include __DIR__. '/parts/scripts.php'; ?>
+
+
+<script></script>
+
+        // #move3-yu
+        $(window).scroll(function () {
+        if ($(window).scrollTop() >= ($('#move3-yu').offset().top - window.screen.height * 1/2)) {
+            $('#move3-yu').css({
+                opacity: 1,
+                transform: "translateY(0px)",
+            })
+
+        }
+        else {
+            $('#move3-yu').css({
+                opacity: 0,
+                transform: "translateY(100px)",
+            })
+        }
+
+        })
+
+        // #move4-yu
+        $(window).scroll(function () {
+        if ($(window).scrollTop() >= ($('#move4-yu').offset().top - window.screen.height * 1/2)) {
+            $('#move4-yu').css({
+                opacity: 1,
+                transform: "translateY(0px)",
+            })
+
+        }
+        else {
+            $('#move4-yu').css({
+                opacity: 0,
+                transform: "translateY(100px)",
+            })
+        }
+
+        })
+
+        // #move5-yu 
+        $(window).scroll(function () {
+        if ($(window).scrollTop() >= ($('#move5-yu ').offset().top - window.screen.height * 1/2)) {
+            $('#move5-yu ').css({
+                opacity: 1,
+                transform: "translatex(0px)",
+            })
+
+        }
+        else {
+            $('#move5-yu ').css({
+                opacity: 0,
+                transform: "translatex(300px)",
+            })
+        }
+
+        })
+
+        // #move6-yu 
+        $(window).scroll(function () {
+        if ($(window).scrollTop() >= ($('#move6-yu ').offset().top - window.screen.height * 1/2)) {
+            $('#move6-yu ').css({
+                opacity: 1,
+                transform: "translatex(0px)",
+            })
+
+        }
+        else {
+            $('#move6-yu ').css({
+                opacity: 0,
+                transform: "translatex(-200px)",
+            })
+        }
+
+        })
+
+
+
+
+    </script>
+
+
+
+
 <?php include __DIR__. '/parts/html-foot.php'; ?>
