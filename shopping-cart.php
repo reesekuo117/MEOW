@@ -74,8 +74,8 @@ header("Refresh:180");
                                             </label>
                                         
                                     </th>
-                                    <!-- <th scope="col" src="imgs/small/< ?= $v['product_id'] ?>.jpg" alt="< ?= $v['productname'] ?>"> 
-                                            <h6 class="mb-0 ">商品照片</h6> -->
+                                    <th> 
+                                        <h6 class="mb-0 ">商品照片</h6>
                                     </th>
                                     <th scope="col">
                                         <h6 class="mb-0 ">商品名稱</h6>
@@ -277,9 +277,9 @@ header("Refresh:180");
                                                 </h6>
                                             </label>
                                     </th>
-                                    <!-- <th scope="col" src="imgs/small/< ?= $v['product_id'] ?>.jpg" alt="< ?= $v['productname'] ?>"> 
+                                    <th> 
                                         <h6 class="mb-0 ">行程照片</h6>
-                                    </th> -->
+                                    </th>
                                     <th scope="col">
                                         <h6 class="mb-0 ">行程名稱</h6>
                                     </th>
