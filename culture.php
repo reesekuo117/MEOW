@@ -1,8 +1,25 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName = '月老文化'; //頁面名稱
-$sql = "SELECT * FROM `temple`";
-$rows = $pdo->query($sql)->fetchAll();
+
+$area = isset($_GET['area']) ? intval($_GET['areas']):0; //用戶指定哪個區域
+
+//取得廟宇資料表
+$sql = "SELECT * FROM `temple` WHERE 1";
+$temps = $pdo->query($sql)->fetchAll();
+
+// echo json_encode([
+//     '$temps' => $temps,
+// ]);
+// exit;
+// ? >
+
+//取得地區資料
+$a_sql = "SELECT * FROM `address` WHERE parent=0";
+$areas = $pdo->query($a_sql)->fetchAll();
+
+
+
 ?>
 
 
@@ -931,8 +948,42 @@ $rows = $pdo->query($sql)->fetchAll();
                         </div>
                     </div>
                 </div>
-
+            <!--  -->
+            <?php foreach ($temps as $t) : ?>
                 <div class="info-card_lb  mt-5" id="c01-info-card_lb">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="title-box_lb">
+                                <h5 class="templetag_lb">#<?= $t['hashtag'] ?></h5>
+                                <h2 class="templename_lb"><?= $t['name'] ?></h2>
+                                <p class="detail-info_lb mb-0">
+                                    <span class="ml-3">地址</span>：<?= $t['address'] ?><br>
+                                    <span class="ml-3">開放時間</span>： <?= $t['opening_hours'] ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 p-0 c01-tem-wrap_lb">
+                            <img class="w-100" src="./imgs/culture/temple/<?= $t['img'] ?>.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 cardhead_lb">
+                        </div>
+                        <div class="col-8">
+                            <div class="mt-4">
+                                <h6 class="step_lb my-auto px-3 py-1">參拜步驟</h6>
+                                <p class="mt-3 steptext_lb"><?= $t['step'] ?></p>
+                            </div>
+                            <div class="mt-4">
+                                <h6 class="temnotice_lb my-auto px-3 py-1"> 注意事項</h6>
+                                <p class="mt-3 temnoticetext_lb"><?= $t['notice'] ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+
+                <div id="c01-info-card_lb" class="info-card_lb  mt-5" >
                     <div class="row ">
                         <div class="col-4">
                             <div class="title-box_lb">
@@ -944,7 +995,9 @@ $rows = $pdo->query($sql)->fetchAll();
                                 </p>
                             </div>
                         </div>
-                        <div class="col-4 p-0 c01-tem-wrap_lb"></div>
+                        <div class="col-4 p-0 c01-tem-wrap_lb">
+                            <img src="./imgs/culture/temple/C01_1.jpg" alt="">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-8 cardhead_lb">
@@ -1183,7 +1236,7 @@ $rows = $pdo->query($sql)->fetchAll();
             </div>
         </div>
     </div>
-
+<!-- 月老喵誠心推薦 -->
     <div class="container d-none d-md-block recommand_lb">
         <h2 class="text-center cul-text100">月老喵誠心推薦</h2>
         <div class="otherp">
