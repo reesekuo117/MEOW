@@ -79,7 +79,7 @@ $pageName ='home'; //頁面名稱
                             給自己一個認識更多人的機會吧！
                         </h3>
                         <div class=" friend-btn-yu d-grid gap-2 d-md-flex justify-content-md-center">
-                            <a href="#" class="morebutton-yu">
+                            <a href="travel_list.php" class="morebutton-yu">
                                 <button class=" btn me-md-2" type="button">
                                     <p class="m-0 text-center">
                                         看更多交友聯誼
@@ -124,7 +124,7 @@ $pageName ='home'; //頁面名稱
                             體驗在地風情
                         </h3>
                         <div class=" friend-btn-yu d-grid gap-2 d-md-flex justify-content-md-center">
-                            <a href="#" class="morebutton-yu">
+                            <a href="travel_list.php" class="morebutton-yu">
                                 <button class=" btn me-md-2" type="button">
                                     <p class="m-0 text-center">
                                         看更多文化之旅
@@ -205,7 +205,7 @@ $pageName ='home'; //頁面名稱
                         </p>
                     </div>
                     <div class=" friend-btn-yu d-grid gap-2 d-flex justify-content-md-center">
-                        <a href="#" class="morebutton-yu">
+                        <a href="travel_list.php" class="morebutton-yu">
                             <button class=" btn " type="button">
                                 <p class="m-0 text-center">
                                     看更多交友聯誼
@@ -260,7 +260,7 @@ $pageName ='home'; //頁面名稱
                     </p>
                 </div>
                 <div class=" friend-btn-yu d-grid gap-2 d-flex justify-content-md-center">
-                    <a href="#" class="morebutton-yu">
+                    <a href="travel_list.php" class="morebutton-yu">
                         <button class=" btn " type="button">
                             <p class="m-0 text-center">
                                 看更多文化之旅
