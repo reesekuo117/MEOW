@@ -4,6 +4,12 @@ html{
 .pd_head{
     margin: 80px;
 }
+/* -------輪播牆大小------- */
+.travel_detail_07 .container-fluid{
+    max-width: 1600px;
+}
+
+
 
 .travel_detail_07 h2,.travel_detail_07 h5{
     color: var(--color-text100);
