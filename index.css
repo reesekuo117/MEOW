@@ -24,6 +24,11 @@ header .navbar_ba {
     /* background-color: var(--color-orange); */
 }
 
+.section1_ba button a {
+    text-decoration: none;
+    color: var(--color-brown-dark);
+}
+
 .header-xs_ba {
     background-color: transparent !important;
     height: 72px;
@@ -1341,4 +1346,118 @@ header .navbar_ba {
     position: absolute;
     top: calc(-10% - 3px);
     left: calc(-10% - 3px);
+}
+
+/* 桌機旅遊卡片 */
+
+.carousel-inner{
+    width: 110%;
+}
+
+.otherp{
+    margin: 28px 0 120px;
+}
+.otherp h4{
+    color: var(--color-text87);
+}
+.otherp .container{
+    /* background-color: var(--color-creamy-light); */
+    padding-top: 24px;
+}
+.otherp a{
+    text-decoration: none;
+    color: var(--color-text87);
+}
+.carousel {
+	margin: 24px auto 24px;
+	padding: 0 80px;
+}
+.carousel .carousel-item {
+	text-align: center;
+	overflow: hidden;
+}
+
+.carousel .carousel-item img {
+	max-width: 100%;
+	display: inline-block;
+}
+.img-box{
+    position: relative;
+}
+.img-box:hover::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(45, 45, 45, 0.176); */
+    position: absolute;
+    bottom: 0;
+    /* 直接在div下陰影 */
+}
+
+.carousel .thumb-wrapper {
+	margin: 5px;
+	text-align: left;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.1); 
+    border-radius: 8px;
+    overflow: hidden;
+}
+.carousel .thumb-content {
+	padding: 10px;
+	font-size: 13px;
+}
+.otherp .carousel-control-prev,.otherp .carousel-control-next {
+	height: 44px;
+	width: 44px;
+	background: none;	
+	margin: auto 0;
+
+}
+.otherp .carousel-control-prev i,.otherp .carousel-control-next i {
+	font-size: 36px;
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	margin: -19px 0 0 0;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	color: var(--color-orange);
+	text-shadow: none;
+	font-weight: bold;
+}
+.otherp .carousel-control-prev i {
+	margin-left: -3px;
+}
+.otherp .carousel-control-next i {
+	margin-right: -3px;
+}
+.carousel-indicators {
+	bottom: -50px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 4px;
+	border: none;
+}
+
+.thumb-wrapper .img-box .icon_heart{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+.card_under h5::before{
+    content: "NT$";
+}
+.card_under small{
+    color: var(--color-text38);
+}
+.back-button{
+    bottom: 40px;
+    z-index: 2;
 }
