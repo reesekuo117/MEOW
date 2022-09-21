@@ -478,8 +478,12 @@ header .navbar_ba {
     transform: scale(0.6) translateX(-250px);
 }
 
-.body_ba .row {
+.body_ba .row_ba {
     text-align: center;
+}
+
+.row_07{
+    margin: 0;
 }
 
 .cloud13 {
@@ -579,6 +583,10 @@ header .navbar_ba {
     z-index: 3;
     /* word-wrap: break-word; */
     padding: 20px 140px;
+}
+
+.section5_ba .row_ba{
+    margin-top: 100px;
 }
 
 /* ----------------------------- 還好崩潰的 section5 結束 ------------------------------- */

@@ -19,7 +19,36 @@ $pageName ='會員中心'; //頁面名稱
     // }
     // 如果沒有資料會拿到ture轉到首頁
 
+    $perPage = 10;  //每頁最多有幾筆
+    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    //取得資料的總筆數  
+    $t_sql = "SELECT COUNT(1) FROM love";   
+    $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
 
+    //計算總頁數
+    $totalPages = ceil($totalRows/$perPage);  //ceil無條件進位
+
+    $rows = []; //預設
+    //有資料才執行 >0
+    if($totalRows > 0){
+        if($page<1){
+            //header('Location: member.php#my-favorites?page=1');
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$totalPages){
+            header('Location: ?page='. $totalPages);
+            exit;
+        }
+        //$page<1 ? ($page=1) : null;  //三元運算子
+        //$page>$totalPages ? ($page=$totalPages) : null; 
+
+        //TODO:取得該頁面的資料
+        $sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        // ORDER BY `sid` DESC 降冪 講義41頁
+        // LIMIT %s, %s ==> [索引][筆數]
+        $rows = $pdo->query($sql)->fetchAll();
+    }
 
 
 ?>
@@ -271,38 +300,6 @@ $pageName ='會員中心'; //頁面名稱
             </div>
 
 <!-- p3-like---------------------------------------------------------------------------------------- -->
-    <?php
-    $perPage = 10;  //每頁最多有幾筆
-    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-    //取得資料的總筆數  
-    $t_sql = "SELECT COUNT(1) FROM love";   
-    $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
-
-    //計算總頁數
-    $totalPages = ceil($totalRows/$perPage);  //ceil無條件進位
-
-    $rows = []; //預設
-    //有資料才執行 >0
-    if($totalRows > 0){
-        if($page<1){
-            //header('Location: member.php#my-favorites?page=1');
-            header('Location: ?page=1');
-            exit;
-        }
-        if($page>$totalPages){
-            header('Location: ?page='. $totalPages);
-            exit;
-        }
-        //$page<1 ? ($page=1) : null;  //三元運算子
-        //$page>$totalPages ? ($page=$totalPages) : null; 
-
-        //TODO:取得該頁面的資料
-        $sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
-        // ORDER BY `sid` DESC 降冪 講義41頁
-        // LIMIT %s, %s ==> [索引][筆數]
-        $rows = $pdo->query($sql)->fetchAll();
-    }
-    ?>
             <div id="like-page-re" class="item_re">
                 <div>
                     <ul class="tab-liketitle-re liketitle-all-re d-flax p-0">

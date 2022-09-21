@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
-$pageName = 'home'; //頁面名稱
+$pageName = '月老喵'; //頁面名稱
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -222,7 +222,7 @@ header("Refresh:180");
                 <img class="" src="./imgs/index/13.png" alt="">
             </div>
             <div class="container">
-                <div class="row">
+                <div class="row_ba d-flex">
                     <div class="col-6 flex-row justify-content-center">
                         <h1>線上求籤還不夠！</h1>
                         <h6>身邊朋友都出雙入對，過得甜甜蜜蜜，身為單身狗的你是不是常常被閃瞎，狗糧都快吃飽啦？好險近年過節都能用防疫當藉口，躲在家裡偷偷流眼淚⋯⋯但是疫情期間就無法親自拜月老求紅線，理想對象到底要迷路到什麼時候？<br><br>
@@ -241,19 +241,19 @@ header("Refresh:180");
                     </div>
 
                 </div>
-                <div class="row">
+                <div class="row_ba">
                     <h1 class="m-auto">快讓月老喵幫你加持！</h1>
                     <!-- TODO: 07卡片 -->
                     <div class="otherp d-md-block d-none">
                         <div class="container">
                             <!-- https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=thumbnail-carousel-with-content -->
-                            <div class="row">
+                            <div class="row_07 d-flex">
                                 <div class="col mx-auto">
                                     <div id="myCarousel" class="carousel carousel_card slide" data-ride="carousel"
                                         data-interval="0">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <div class="row">
+                                                <div class="row_07 d-flex">
                                                     <div class="col-md-4">
                                                         <a href="">
                                                             <div class="thumb-wrapper mx-3">
@@ -378,7 +378,7 @@ header("Refresh:180");
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
-                                                <div class="row">
+                                                <div class="row_07 d-flex">
                                                     <div class="col-md-4">
                                                         <a href="">
                                                             <div class="thumb-wrapper mx-3">
@@ -537,8 +537,7 @@ header("Refresh:180");
                 <img src="./imgs/index/cloud_10.png" alt="">
             </div>
             <div class="container">
-                <div class="row">
-
+                <div class="row_ba d-flex">
                     <div class="col-6">
                         <div class="catPhotoGroup position-absolute">
                             <div class="catPhoto1 position-absolute" data-aos="flip-left"
@@ -571,7 +570,7 @@ header("Refresh:180");
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row_ba d-flex">
                     <h1 class="m-auto">熱門旅遊都在等你！</h1>
                     <!-- TODO: 07卡片 -->
                 </div>
@@ -628,7 +627,7 @@ header("Refresh:180");
                     <img src="./imgs/index/28.png" alt="">
                 </div>
             </div>
-            <div class="row reel">
+            <div class="row_ba reel">
                 <div class="middleReel position-absolute d-flex justify-content-center ">
                     <img src="./imgs/index/卷軸中.png" alt="">
                 </div>
@@ -640,13 +639,15 @@ header("Refresh:180");
                 </div>
             </div>
             <div class="container position-relative">
-                <div data-aos="fade-up" data-aos-anchor-placement="center-center" class="row">
+                <div data-aos="fade-up" data-aos-anchor-placement="center-center" class="row_ba d-flex">
                     <h1 class="m-auto welfare position-absolute">會員獨享福利</h1>
                 </div>
                 <div class="memberContent text-align">
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊每日運勢占卜＊</h4>
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊商品、行程不定期優惠＊</h4>
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊生日好禮大放送＊</h4>
+                    <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊歡慶開幕免運中＊</h4>
+                    
                 </div>
             </div>
 
@@ -856,7 +857,7 @@ header("Refresh:180");
 
         <div class="msection6_ba position-relative text-align">
 
-            <div class="row reelm mt-3">
+            <div class="row_ba reelm mt-3">
                 <div class="middleReelm position-absolute d-flex justify-content-center ">
                     <img src="./imgs/index/卷軸中.png" alt="">
                 </div>
@@ -869,7 +870,7 @@ header("Refresh:180");
             </div>
 
             <div class="section2_m_title">
-                <h4 data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="m_title_ba">
+                <h4 data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="m_title_ba mt-5">
                     會員獨享福利
                 </h4>
             </div>
@@ -900,7 +901,7 @@ header("Refresh:180");
 
             <div type="button" class="position-absolute btn indexbtn_m btn02_m_ba mx-auto">
                 <div class="btn-l">
-                    馬上成為月老喵的一員123！
+                    馬上成為月老喵的一員！
                 </div>
             </div>
 
