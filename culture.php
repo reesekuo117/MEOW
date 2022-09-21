@@ -1,7 +1,11 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName = '月老文化'; //頁面名稱
+$sql = "SELECT * FROM `temple`";
+$rows = $pdo->query($sql)->fetchAll();
 ?>
+
+
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./culture.css">
