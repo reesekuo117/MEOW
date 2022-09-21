@@ -13,11 +13,11 @@ if(empty($_POST['oldpassword_re']) or empty($_POST['newpassword_re'])or empty($_
     exit;
 }
 
-$user_id = "UPDATE `member` SET 
+$sql = "UPDATE `member` SET 
     `password`=?
     WHERE `id`=?";
 
-$stmt = $pdo->prepare($user_id);
+$stmt = $pdo->prepare($sql);
 $stmt->execute([
     // $_POST['newpassword_re'],
     password_hash($_POST['newpassword_re'], PASSWORD_DEFAULT),

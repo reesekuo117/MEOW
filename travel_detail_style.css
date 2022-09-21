@@ -1,102 +1,115 @@
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-.pd_head{
-    margin: 80px;
+.pd_head {
+  margin: 80px;
+}
+/* -------輪播牆大小------- */
+.travel_detail_07 .container-fluid {
+  max-width: 1200px;
 }
 
-.travel_detail_07 h2,.travel_detail_07 h5{
-    color: var(--color-text100);
+.carousel-inner {
+  max-height: 500px;
+  margin-top: 40px;
 }
-.travel_detail_07 p,.travel_detail_07 h6{
-    color: var(--color-text87);
+
+.travel_detail_07 h2,
+.travel_detail_07 h5 {
+  color: var(--color-text100);
 }
-.travel_detail_07 small, .travel_detail_07 .xs{
-    color: var(--color-text60);
+.travel_detail_07 p,
+.travel_detail_07 h6 {
+  color: var(--color-text87);
 }
-.intro_bg small, .tnotice_info small{
-    color: var(--color-text87);
+.travel_detail_07 small,
+.travel_detail_07 .xs {
+  color: var(--color-text60);
 }
-.travel_detail_07 button:focus{
-    outline-style: none;
+.intro_bg small,
+.tnotice_info small {
+  color: var(--color-text87);
+}
+.travel_detail_07 button:focus {
+  outline-style: none;
 }
 /* ------------------------輪播牆------------------------ */
-ol.carousel-indicators{
-    bottom: 0;
+ol.carousel-indicators {
+  bottom: 0;
 }
-.carousel-item img{
-    aspect-ratio: 16/9;
+.carousel-item img {
+  aspect-ratio: 16/9;
 }
-.top_carousel .carousel-control-prev i,.top_carousel .carousel-control-next i{
-    color: #fff;
-    margin: 0;
-    font-size: 30px;
+.top_carousel .carousel-control-prev i,
+.top_carousel .carousel-control-next i {
+  color: #fff;
+  margin: 0;
+  font-size: 30px;
 }
-.color{
-    stroke: #432A0F;
-    fill: #CD562F;
+.color {
+  stroke: #432a0f;
+  fill: #cd562f;
 }
-.icon_fivestar{
-    color: var(--color-yellow);
-    padding: 0 4px;
+.icon_fivestar {
+  color: var(--color-yellow);
+  padding: 0 4px;
 }
-.star .icon_fivestar{
-    color: var(--color-yellow);
-    padding-left:  0;
+.star .icon_fivestar {
+  color: var(--color-yellow);
+  padding-left: 0;
 }
 
 /* 輪播結束 */
-.detail_title .row{
-    justify-content: center;
-    align-items: center;
+.detail_title .row {
+  justify-content: center;
+  align-items: center;
 }
-.evaluation{
-    display: flex;
-
+.evaluation {
+  display: flex;
 }
-.travel_head .col-md-3{
-    text-align: center;
+.travel_head .col-md-3 {
+  text-align: center;
 }
-.detail_title .intro_bg{
-    margin: 40px auto;
-    background-color: var(--color-creamy-light);
-    padding: 24px;
+.detail_title .intro_bg {
+  margin: 40px auto;
+  background-color: var(--color-creamy-light);
+  padding: 24px;
 }
-.price h2::before{
-    content: "NT$ ";
+.price h2::before {
+  content: "NT$ ";
 }
-.price h2::after{
-    content: "/人";
-    font-size: 14px;
+.price h2::after {
+  content: "/人";
+  font-size: 14px;
 }
-.price_mb h4::before{
-    content: "NT$ ";
+.price_mb h4::before {
+  content: "NT$ ";
 }
-.price_mb h4::after{
-    content: "/人";
-    font-size: 14px;
+.price_mb h4::after {
+  content: "/人";
+  font-size: 14px;
 }
-.fire p{
-    line-height: 24px;
+.fire p {
+  line-height: 24px;
 }
-.number{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+.number {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
-.quantity{
-    padding: 4 8px;
-    margin: 0 8px;
+.quantity {
+  padding: 4 8px;
+  margin: 0 8px;
 }
-.minus{
-    background-color: var(--color-text87);
-    border-radius: 50%;
-    border: none;
-    color: #fff;
+.minus {
+  background-color: var(--color-text87);
+  border-radius: 50%;
+  border: none;
+  color: #fff;
 }
-.minus.disabled{
-    background-color: var(--color-text38);
+.minus.disabled {
+  background-color: var(--color-text38);
 }
 
 /* .disable{
@@ -105,386 +118,384 @@ ol.carousel-indicators{
     border: none;
     color: #fff;
 } */
-.plus{
-    background-color: var(--color-text87);
-    border-radius: 50%;
-    border: none;
-    color: #fff;
-
+.plus {
+  background-color: var(--color-text87);
+  border-radius: 50%;
+  border: none;
+  color: #fff;
 }
-.people{
-    margin: 4px;
+.people {
+  margin: 4px;
 }
-.travel_head .buy{
-    width: 250px;
-    height: 45px;
-    color: var(--color-text87);
-    text-align: center;
-    border-radius: 8px;
-    background-color: var(--color-yellow);
-    border: 2px solid var(--color-text87);
-    margin-bottom: 16px;
+.travel_head .buy {
+  width: 250px;
+  height: 45px;
+  color: var(--color-text87);
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--color-yellow);
+  border: 2px solid var(--color-text87);
+  margin-bottom: 16px;
 }
-.travel_head .favorite{
-    width: 250px;
-    height: 45px;
-    color: var(--color-text87);
-    text-align: center;
-    border-radius: 8px;
-    background-color: var(--color-creamy-light);
-    border: 2px solid var(--color-text87);
+.travel_head .favorite {
+  width: 250px;
+  height: 45px;
+  color: var(--color-text87);
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--color-creamy-light);
+  border: 2px solid var(--color-text87);
 }
 /* 手機版中間列 */
-.tdnav_mb{
-    height: 50px;
-    background-color: var(--color-lightcreamy);
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    /* transition: .5s; */
+.tdnav_mb {
+  height: 50px;
+  background-color: var(--color-lightcreamy);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  /* transition: .5s; */
 }
-.tdnav_mb a{
-    text-decoration: none;
+.tdnav_mb a {
+  text-decoration: none;
 }
-.tdnav_mb a small{
-    line-height: 50px;
-
+.tdnav_mb a small {
+  line-height: 50px;
 }
-.tdnav_mb a:hover small{
-    color: #CD562F;
-    
+.tdnav_mb a:hover small {
+  color: #cd562f;
 }
 /* 商品標題結束 */
 /* 訂購行程 */
-.purchase_travel .container{
-    margin: 40px auto;
-    background-color: var(--color-creamy-light);
-    padding: 24px;
+.purchase_travel .container {
+  margin: 40px auto;
+  background-color: var(--color-creamy-light);
+  padding: 24px;
 }
-.purchase_travel .row{
-    padding-top: 16px;
+.purchase_travel .row {
+  padding-top: 16px;
 }
-.purchase_travel h5::after{
-    content: "";
-    border-bottom: 1.5px solid var(--color-text60);
-    width: 100%;
-    position: absolute;
-    bottom: -6px;
-    left: 0;
+.purchase_travel h5::after {
+  content: "";
+  border-bottom: 1.5px solid var(--color-text60);
+  width: 100%;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
 }
-.purchase_travel h5{
-    position: relative;
-    border-bottom: 1.5px solid var(--color-text60);
-    /* box-shadow: 0px 3px 0px var(--color-text87); */
+.purchase_travel h5 {
+  position: relative;
+  border-bottom: 1.5px solid var(--color-text60);
+  /* box-shadow: 0px 3px 0px var(--color-text87); */
 }
-.signup .form-check{
-    text-indent: 1rem;
-    padding: 4px;
+.signup .form-check {
+  text-indent: 1rem;
+  padding: 4px;
 }
 /* .number{
     margin-top: 32px;
 } */
-.choice{
-    margin-bottom: 12px;
+.choice {
+  margin-bottom: 12px;
 }
-.total{
-    /* padding: 12px; */
-    border-top: 1px solid var(--color-text60);
-    width: 250px;
+.total {
+  /* padding: 12px; */
+  border-top: 1px solid var(--color-text60);
+  width: 250px;
 }
-.total h6{
-    margin: 12px;
+.total h6 {
+  margin: 12px;
 }
-.purchase_travel .buy_btn button{
-    width: 200px;
-    height: 40px;
-    border-radius: 8px;
-    border: 2px solid var(--color-text87);
-    background-color: var(--color-yellow);
+.purchase_travel .buy_btn button {
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid var(--color-text87);
+  background-color: var(--color-yellow);
 }
 /* 訂購行程結束 */
 /* 下方列 */
-.undernav{
-    width: 100%;
-    padding: 20px 0; 
-    background-color: var(--color-lightcreamy);
-    /* margin: 16px 0; */
-    position: fixed;
-    left: 0px;
-    bottom: 0;
-    z-index: 3;
-    transform: translateY(40px);
-    opacity: 0;
+.undernav {
+  width: 100%;
+  padding: 20px 0;
+  background-color: var(--color-lightcreamy);
+  /* margin: 16px 0; */
+  position: fixed;
+  left: 0px;
+  bottom: 0;
+  z-index: 3;
+  transform: translateY(40px);
+  opacity: 0;
 }
-.left_title h2::before{
-    content: "NT$";
+.left_title h2::before {
+  content: "NT$";
 }
-.left_title h2{
-    margin-bottom: 0;
+.left_title h2 {
+  margin-bottom: 0;
 }
-button:hover{
-    box-shadow: 2px 2px 0px var(--color-brown-dark);
+button:hover {
+  box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
-.undernav .btns button{
-    width: 200px;
-    height: 40px;
-    border-radius: 8px;
-    border: 2px solid var(--color-text87);
+.undernav .btns button {
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid var(--color-text87);
 }
-.btns .favorite{
-    background-color: var(--color-creamy-light);
+.btns .favorite {
+  background-color: var(--color-creamy-light);
 }
 
-.undernav .btns .buy{
-    margin: 0;
-    background-color: var(--color-yellow);
-
+.undernav .btns .buy {
+  margin: 0;
+  background-color: var(--color-yellow);
 }
 /* -----------------------下方列結束-------------------- */
 /* 側邊攔 */
-.links{
-    flex-direction: column;
-    position: sticky;
-    top: 10px;
+.links {
+  flex-direction: column;
+  position: sticky;
+  top: 10px;
 }
-.links a{
-    padding: 4px 0;
-    text-decoration: none;
-    color: var(--color-text87);
+.links a {
+  padding: 4px 0;
+  text-decoration: none;
+  color: var(--color-text87);
 }
-.links a:hover, .links a:focus{
-    color: var(--color-orange);
+.links a:hover,
+.links a:focus {
+  color: var(--color-orange);
 }
 /* 側邊欄結束 */
 .detail_box .intro_bg {
-    margin: 40px auto 0;
-    background-color: var(--color-creamy-light);
-    padding: 50px 24px;
+  margin: 40px auto 0;
+  background-color: var(--color-creamy-light);
+  padding: 50px 24px;
 }
-.intro_bg h5{
-    position: relative;
-    border-bottom: 1.5px solid var(--color-text60);
-    /* box-shadow: 0px 3px 0px var(--color-text87); */
+.intro_bg h5 {
+  position: relative;
+  border-bottom: 1.5px solid var(--color-text60);
+  /* box-shadow: 0px 3px 0px var(--color-text87); */
 }
-.intro_bg h5::after{
-    content: "";
-    border-bottom: 1.5px solid var(--color-text60);
-    width: 100%;
-    position: absolute;
-    bottom: -6px;
-    left: 0;
+.intro_bg h5::after {
+  content: "";
+  border-bottom: 1.5px solid var(--color-text60);
+  width: 100%;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
 }
-.intro_img{
-    margin: 16px 0 0;
+.intro_img {
+  margin: 16px 0 0;
 }
-#intro p{
-    padding-top: 16px;
+#intro p {
+  padding-top: 16px;
 }
 /* -----------------------商品介紹結束-------------------- */
-#comment .row{
-    padding: 8px;
+#comment .row {
+  padding: 8px;
 }
-select{
-    height: 48px;
-    border-radius: 8px;
-    border: 1px solid var(--color-text87);
+select {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid var(--color-text87);
 }
-.c_star{
-    padding: 8px 0;
+.c_star {
+  padding: 8px 0;
 }
-.c_star h3{
-    padding: 16px 25px;
-    background-color: var(--color-yellow);
-    border-radius: 8px;
+.c_star h3 {
+  padding: 16px 25px;
+  background-color: var(--color-yellow);
+  border-radius: 8px;
 }
-.cd .row{
-    margin-top: 12px;
-    border-bottom: 1px solid var(--color-text60);
+.cd .row {
+  margin-top: 12px;
+  border-bottom: 1px solid var(--color-text60);
 }
-.cd_mb i{
-    color: var(--color-yellow);
+.cd_mb i {
+  color: var(--color-yellow);
 }
-.cd_mb .detail_comment{
-    margin-top: 12px;
-    border-bottom: 1px solid var(--color-text60);
+.cd_mb .detail_comment {
+  margin-top: 12px;
+  border-bottom: 1px solid var(--color-text60);
 }
-.profile_img{
-    width: 100px;
-    margin: 0 auto;
+.profile_img {
+  width: 100px;
+  margin: 0 auto;
 }
-.name{
-    margin: 0px;
+.name {
+  margin: 0px;
 }
-.star_date .icon_fivestar{
-    padding-left: 0;
+.star_date .icon_fivestar {
+  padding-left: 0;
 }
-.c_tags{
-    margin: 8px 0;
+.c_tags {
+  margin: 8px 0;
 }
-.tags{
-    margin: 0 4px;
-    padding: 8px 16px;
-    border-radius: 50px;
-    background-color: #fff;
-    border: 2px solid var(--color-text87);
+.tags {
+  margin: 0 4px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background-color: #fff;
+  border: 2px solid var(--color-text87);
 }
-.choiceandbuy_mb{
-    background-color: var(--color-creamy-light);
-    padding: 24px;
-    margin-top: 24px;
-    /* transition: .5s; */
-
+.choiceandbuy_mb {
+  background-color: var(--color-creamy-light);
+  padding: 24px;
+  margin-top: 24px;
+  /* transition: .5s; */
 }
 /* .choiceandbuy_mb.hidden_choicemb{
     height: 0;
     padding: 0;
     overflow: hidden;
 } */
-.choiceandbuy_mb .buy_btn button{
-    height: 45px;
-    color: var(--color-text87);
-    text-align: center;
-    border-radius: 8px;
-    background-color: var(--color-yellow);
-    border: 2px solid var(--color-text87);
-    margin-bottom: 16px;
+.choiceandbuy_mb .buy_btn button {
+  height: 45px;
+  color: var(--color-text87);
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--color-yellow);
+  border: 2px solid var(--color-text87);
+  margin-bottom: 16px;
 }
 
 /* -----------------------評價結束-------------------- */
-.td_footer_mb{
-    width: 100%;
-    background-color: var(--color-orange);
-    position: fixed;
-    bottom: 0;
-    z-index: 5;
+.td_footer_mb {
+  width: 100%;
+  background-color: var(--color-orange);
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
 }
-.td_footer_mb .favorite{
-    height: 45px;
-    color: var(--color-text87);
-    text-align: center;
-    border-radius: 8px;
-    background-color: var(--color-creamy-light);
-    border: 2px solid var(--color-text87);
+.td_footer_mb .favorite {
+  height: 45px;
+  color: var(--color-text87);
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--color-creamy-light);
+  border: 2px solid var(--color-text87);
 }
-.td_footer_mb .buy{
-    height: 45px;
-    color: var(--color-text87);
-    text-align: center;
-    border-radius: 8px;
-    background-color: var(--color-creamy-light);
-    border: 2px solid var(--color-text87);
-    margin-bottom: 16px;
+.td_footer_mb .buy {
+  height: 45px;
+  color: var(--color-text87);
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--color-creamy-light);
+  border: 2px solid var(--color-text87);
+  margin-bottom: 16px;
 }
 
-.footercolor{
-    fill: var(--color-yellow);
+.footercolor {
+  fill: var(--color-yellow);
 }
 
 /* 桌機板瀏覽其他行程卡片 */
-.otherp{
-    margin: 28px 0 120px;
+.otherp {
+  margin: 28px 0 120px;
 }
-.otherp h4{
-    color: var(--color-text87);
+.otherp h4 {
+  color: var(--color-text87);
 }
-.otherp .container{
-    background-color: var(--color-creamy-light);
-    padding-top: 24px;
+.otherp .container {
+  background-color: var(--color-creamy-light);
+  padding-top: 24px;
 }
-.otherp a{
-    text-decoration: none;
-    color: var(--color-text87);
+.otherp a {
+  text-decoration: none;
+  color: var(--color-text87);
 }
 .carousel {
-	margin: 24px auto 24px;
-	padding: 0 80px;
+  margin: 24px auto 24px;
+  padding: 0 80px;
 }
 .carousel .carousel-item {
-	text-align: center;
-	overflow: hidden;
+  text-align: center;
+  overflow: hidden;
 }
 
 .carousel .carousel-item img {
-	max-width: 100%;
-	display: inline-block;
+  max-width: 100%;
+  display: inline-block;
 }
-.img-box{
-    position: relative;
+.img-box {
+  position: relative;
 }
-.img-box:hover::after{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    /* background-color: rgba(45, 45, 45, 0.176); */
-    position: absolute;
-    bottom: 0;
-    /* 直接在div下陰影 */
+.img-box:hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(45, 45, 45, 0.176); */
+  position: absolute;
+  bottom: 0;
+  /* 直接在div下陰影 */
 }
 
 .carousel .thumb-wrapper {
-	margin: 5px;
-	text-align: left;
-	background: #fff;
-	box-shadow: 0px 2px 2px rgba(0,0,0,0.1); 
-    border-radius: 8px;
-    overflow: hidden;
+  margin: 5px;
+  text-align: left;
+  background: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 .carousel .thumb-content {
-	padding: 10px;
-	font-size: 13px;
+  padding: 10px;
+  font-size: 13px;
 }
-.otherp .carousel-control-prev,.otherp .carousel-control-next {
-	height: 44px;
-	width: 44px;
-	background: none;	
-	margin: auto 0;
-
+.otherp .carousel-control-prev,
+.otherp .carousel-control-next {
+  height: 44px;
+  width: 44px;
+  background: none;
+  margin: auto 0;
 }
-.otherp .carousel-control-prev i,.otherp .carousel-control-next i {
-	font-size: 36px;
-	position: absolute;
-	top: 50%;
-	display: inline-block;
-	margin: -19px 0 0 0;
-	z-index: 1;
-	left: 0;
-	right: 0;
-	color: var(--color-orange);
-	text-shadow: none;
-	font-weight: bold;
+.otherp .carousel-control-prev i,
+.otherp .carousel-control-next i {
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  margin: -19px 0 0 0;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  color: var(--color-orange);
+  text-shadow: none;
+  font-weight: bold;
 }
 .otherp .carousel-control-prev i {
-	margin-left: -3px;
+  margin-left: -3px;
 }
 .otherp .carousel-control-next i {
-	margin-right: -3px;
+  margin-right: -3px;
 }
 .carousel-indicators {
-	bottom: -50px;
+  bottom: -50px;
 }
-.carousel-indicators li, .carousel-indicators li.active {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	margin: 4px;
-	border: none;
+.carousel-indicators li,
+.carousel-indicators li.active {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 4px;
+  border: none;
 }
 
-.thumb-wrapper .img-box .icon_heart{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    z-index: 2;
-    cursor: pointer;
+.thumb-wrapper .img-box .icon_heart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  cursor: pointer;
 }
-.card_under h5::before{
-    content: "NT$";
+.card_under h5::before {
+  content: "NT$";
 }
-.card_under small{
-    color: var(--color-text38);
+.card_under small {
+  color: var(--color-text38);
 }
-.back-button{
-    bottom: 40px;
-    z-index: 2;
+.back-button {
+  bottom: 40px;
+  z-index: 2;
 }

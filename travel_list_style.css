@@ -266,6 +266,9 @@
 }
 
 /* -------------------------行程卡片-------------------------- */
+.travel_list .container{ 
+    justify-content: flex-start;
+}
 .travel_list .row{
     flex-direction: column;
 }

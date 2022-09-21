@@ -19,35 +19,83 @@ $pageName ='會員中心'; //頁面名稱
     // }
     // 如果沒有資料會拿到ture轉到首頁
 
-    $perPage = 10;  //每頁最多有幾筆
-    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-    //取得資料的總筆數  
-    $t_sql = "SELECT COUNT(1) FROM love";   
-    $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
+    $perPage = 4; //每頁最多有幾筆
+    $page = isset($_GET['page']) ? intval($_GET['page']) : 1; //取得資料的總筆數  
+
+    $p_sql = "SELECT COUNT(1) FROM love where target_type=0";   
+    $t_sql = "SELECT COUNT(1) FROM love where target_type=1";   
+    $f_sql = "SELECT COUNT(1) FROM love where target_type=2";   
+    $d_sql = "SELECT COUNT(1) FROM love where target_type=3"; 
+
+    $p_totalRows = $pdo->query($p_sql)->fetch(PDO::FETCH_NUM)[0]; //PDO::FETCH_NUM—數字索引陣列形式
+    $t_totalRows = $pdo->query($p_sql)->fetch(PDO::FETCH_NUM)[0];
+    $f_totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+    $d_totalRows = $pdo->query($d_sql)->fetch(PDO::FETCH_NUM)[0];
 
     //計算總頁數
-    $totalPages = ceil($totalRows/$perPage);  //ceil無條件進位
+    $p_totalPages = ceil($p_totalRows/$perPage);  //ceil無條件進位
+    $t_totalPages = ceil($t_totalRows/$perPage);  //ceil無條件進位
+    $f_totalPages = ceil($f_totalRows/$perPage);  //ceil無條件進位
+    $d_totalPages = ceil($d_totalRows/$perPage);  //ceil無條件進位
 
     $rows = []; //預設
+
+    //收藏商品
     //有資料才執行 >0
-    if($totalRows > 0){
+    if($p_totalRows > 0){
         if($page<1){
             //header('Location: member.php#my-favorites?page=1');
             header('Location: ?page=1');
             exit;
         }
-        if($page>$totalPages){
-            header('Location: ?page='. $totalPages);
+        if($page>$p_totalPages){
+            header('Location: ?page='. $p_totalPages);
             exit;
         }
         //$page<1 ? ($page=1) : null;  //三元運算子
         //$page>$totalPages ? ($page=$totalPages) : null; 
 
         //TODO:取得該頁面的資料
-        $sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        $p_sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
         // ORDER BY `sid` DESC 降冪 講義41頁
         // LIMIT %s, %s ==> [索引][筆數]
-        $rows = $pdo->query($sql)->fetchAll();
+        $rows = $pdo->query($p_sql)->fetchAll();
+    }
+    if($t_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$t_totalPages){
+            header('Location: ?page='. $t_totalPages);
+            exit;
+        }
+        $t_sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        $rows = $pdo->query($t_sql)->fetchAll();
+    }
+    if($f_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$f_totalPages){
+            header('Location: ?page='. $f_totalPages);
+            exit;
+        }
+        $f_sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        $rows = $pdo->query($f_sql)->fetchAll();
+    }
+    if($d_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$d_totalPages){
+            header('Location: ?page='. $d_totalPages);
+            exit;
+        }
+        $d_sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        $rows = $pdo->query($d_sql)->fetchAll();
     }
 
 
@@ -55,7 +103,6 @@ $pageName ='會員中心'; //頁面名稱
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./reese.css">
 <!-- <link rel="stylesheet" href="./reese.js"> -->
-
 <?php include __DIR__. '/parts/navbar.php'; ?>
 <div class="background-re">
 <div class="container-re">
@@ -123,7 +170,7 @@ $pageName ='會員中心'; //頁面名稱
         <div class="allright-re col-12 col-md-9 p-0">
         <div class="tab_con_re">
 <!-- p1-member-------------------------------------------------------------------------------------- -->
-            <div id="member-page-re" class="item_re" style="display: block;">
+            <div id="member-page-re position-relative" class="item_re" style="display: block;">
                 <div class="divination-re d-none d-md-block">
                     <svg width="187" height="218" viewBox="0 0 187 218" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <rect width="187" height="218" fill="url(#pattern0-466769)"/>
@@ -169,7 +216,7 @@ $pageName ='會員中心'; //頁面名稱
                         <label for="birthday" class="form-label-re text-18-re">出生日期</label><br>
                         <input id="member_birthday_re" name="member_birthday_re" class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control" value="<?=htmlentities($r_re['birthday']) ?>">
                     </div>
-                    <div class="">
+                    <div>
                         <label for="address" class="form-label-re text-18-re">通訊地址</label><br>
                         <div class="address-re d-flex flex-wrap">
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
@@ -257,7 +304,7 @@ $pageName ='會員中心'; //頁面名稱
                         <input id="member_email_re" class="inputdisabled-re col-8 noline-re" type="text" class="form-control" disabled="disabled" value="<?=htmlentities($r_re['email']) ?>">
                     </div>
                     <div id="member_msgContainer"></div>
-                    <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
+                    <div class="position-absolute fixedbtn_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
                 </form>
             </div>
 <!-- p2-password------------------------------------------------------------------------------------ -->
@@ -295,7 +342,7 @@ $pageName ='會員中心'; //頁面名稱
                         <input id="againpassword_re" name="againpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
                     </div>
                     <div id="password_msgContainer"></div>
-                    <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
+                    <div class="position-absolute fixedbtn_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
                 </form>
             </div>
 
@@ -309,7 +356,8 @@ $pageName ='會員中心'; //頁面名稱
     <!-- p3-P------------------------------------------------------------------ -->
                 <div id="tab01-re" class="tab-inner-re ">
                     <div class="row mx-0 likehight-re">
-                        <div class="col-6 col-md-3 px-2 pb-2">
+                    <?php foreach($rows as $r): ?>
+                        <div class="col-6 col-md-3 px-2 pb-3">
                             <div class="card-re">
                                 <div class="position-relative ">
                                     <div class="cardimg-re">
@@ -337,6 +385,7 @@ $pageName ='會員中心'; //頁面名稱
                                 </div>
                             </div>
                         </div>
+                    <?php endforeach ?>
                         <div class="col-6 col-md-3 px-2 pb-3">
                             <div class="card-re">
                                 <div class="position-relative ">
@@ -454,19 +503,47 @@ $pageName ='會員中心'; //頁面名稱
                     </div> 
                     <div class="pagebtngroup-re text-center mb-3">
                         <button type="button" class="pagebtn-re ">
-                        <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.12603 11.3113C0.572142 10.9122 0.572141 10.0878 1.12603 9.68867L13.4396 0.816415C14.1011 0.339827 15.0242 0.812491 15.0242 1.62775L15.0242 19.3723C15.0242 20.1875 14.1011 20.6602 13.4396 20.1836L1.12603 11.3113Z" fill="#432A0F" fill-opacity="0.38"/>
-                        </svg>
+                            <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.12603 11.3113C0.572142 10.9122 0.572141 10.0878 1.12603 9.68867L13.4396 0.816415C14.1011 0.339827 15.0242 0.812491 15.0242 1.62775L15.0242 19.3723C15.0242 20.1875 14.1011 20.6602 13.4396 20.1836L1.12603 11.3113Z" fill="#432A0F" fill-opacity="0.38"/>
+                            </svg>
                         </button>
-                        <button type="button" class="pagebtn-re">1</button>
+                        <?php for($i=$page - 2; $i<=$page + 2; $i++): 
+                            if($i>=1 and $i <= $p_totalPages) : ?>
+                            <button type="button" class="pagebtn-re" <?= $page==$i ? 'active' : '' ?>>
+                                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                            </button>
+                        <?php endif; endfor; ?>
+                        <!-- <button type="button" class="pagebtn-re">1</button>
                         <button type="button" class="pagebtn-re">2</button>
-                        <button type="button" class="pagebtn-re">3</button>
+                        <button type="button" class="pagebtn-re">3</button> -->
                         <button type="button" class="pagebtn-re">
-                        <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.9062 9.68867C14.4601 10.0878 14.4601 10.9122 13.9062 11.3113L1.59262 20.1836C0.931172 20.6602 0.00803278 20.1875 0.00803282 19.3722L0.00803359 1.62775C0.00803363 0.812489 0.931174 0.339829 1.59262 0.816417L13.9062 9.68867Z" fill="#432A0F" fill-opacity="0.38"/>
-                        </svg>
+                            <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.9062 9.68867C14.4601 10.0878 14.4601 10.9122 13.9062 11.3113L1.59262 20.1836C0.931172 20.6602 0.00803278 20.1875 0.00803282 19.3722L0.00803359 1.62775C0.00803363 0.812489 0.931174 0.339829 1.59262 0.816417L13.9062 9.68867Z" fill="#432A0F" fill-opacity="0.38"/>
+                            </svg>
                         </button>
                     </div>
+                    <ul class="pagebtngroup-re text-center mb-3">
+                        <li class="pagebtn-re <?= $page==1 ? 'disabled' : '' ?>">
+                            <a href="?page=<?= $page-1 ?>">
+                                <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.12603 11.3113C0.572142 10.9122 0.572141 10.0878 1.12603 9.68867L13.4396 0.816415C14.1011 0.339827 15.0242 0.812491 15.0242 1.62775L15.0242 19.3723C15.0242 20.1875 14.1011 20.6602 13.4396 20.1836L1.12603 11.3113Z" fill="#432A0F" fill-opacity="0.38"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <?php for($i=$page - 2; $i<=$page + 2; $i++): 
+                            if($i>=1 and $i <= $p_totalPages) : ?>
+                        <li class="pagebtn-re" <?= $page==$i ? 'active' : '' ?>>
+                            <a href="?page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                        <?php endif; endfor; ?>
+                        <li class="pagebtn-re" <?= $page==$p_totalPages ? 'disabled' : '' ?>>
+                            <a href="?page=<?= $page+1 ?>">
+                                <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.9062 9.68867C14.4601 10.0878 14.4601 10.9122 13.9062 11.3113L1.59262 20.1836C0.931172 20.6602 0.00803278 20.1875 0.00803282 19.3722L0.00803359 1.62775C0.00803363 0.812489 0.931174 0.339829 1.59262 0.816417L13.9062 9.68867Z" fill="#432A0F" fill-opacity="0.38"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
     <!-- p3-T------------------------------------------------------------------ -->
                 <div id="tab02-re" class="tab-inner-re">

@@ -5,9 +5,12 @@ $pageName = 'home'; //頁面名稱
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./travel_detail_style.css">
+<?php
+header("Refresh:180");
+?>
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 <div class="travel_detail_07">
-    <div class="travel_carousel">
+    <div class="travel_carousel container-fluid">
         <div id="carouselExampleIndicators" class="carousel slide m-0 px-0" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -19,7 +22,7 @@ $pageName = 'home'; //頁面名稱
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./imgs/travel/T01_4.jpg" class="d-block w-100" alt="...">
+                    <img src="./imgs/travel/T01_1 5.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="./imgs/travel/T01_3.jpg" class="d-block w-100" alt="...">

@@ -1,11 +1,23 @@
 *{
-    /* outline: 1px solid #000; */
+    outline: 1px solid #000;
 }
 header .navbar {
     /* background-color: transparent!important; */
 }
+header .navbar_ba {
+    background-color: transparent !important;
+    width: 100%;
+    height: 100px;
+    padding: 0 80px;
+}
+.body_re {
+    /* background:
+        url(./imgs/index/grain2.png)center -500px / 160% no-repeat,
+        url(./imgs/index/bg0.png) center center / 100%, var(--color-orange); */
+    background: url(./imgs/member/bg.png)  center center / cover no-repeat;
+}
 .background-re {
-    background: url(./imgs/member/bg-member.jpg)  center center / cover no-repeat;
+    /* background: url(./imgs/member/bg-member.jpg)  center center / cover no-repeat; */
     /* background: url(./imgs/member/background.png);
     background-repeat: no-repeat;
     background-size: cover; */
@@ -31,6 +43,11 @@ header .navbar {
         /* height: 733.55px; */
         min-height: calc(100vh - 314px);
     }
+    .fixedbtn_re {
+        right: 10%;
+        bottom: 10px;
+    }
+
 }
 .noline-re {
     outline:none;
@@ -411,6 +428,7 @@ p {
 }
 .padding225-re {
     padding: 0 22.5px;
+    margin-bottom: 60px;
 }
 /* pagebtn-re --------------------------------- */
 

@@ -18,7 +18,7 @@ if(strtotime($_POST['member_birthday_re'])===false){
     $birthday = date('Y-m-d', strtotime($_POST['member_birthday_re']));
 }
 
-$user_id = "UPDATE `member` SET 
+$sql = "UPDATE `member` SET 
     `name`=?,
     `mobile`=?,
     `birthday`=?,
@@ -27,7 +27,7 @@ $user_id = "UPDATE `member` SET
     `address`=? 
     WHERE `id`=?";
 
-$stmt = $pdo->prepare($user_id);
+$stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['member_name_re'],
     $_POST['member_phone_re'],
@@ -46,3 +46,4 @@ if($stmt->rowCount()){
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
+
