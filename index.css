@@ -662,14 +662,14 @@ header .navbar_ba {
 }
 
 .welfare {
-    top: 450px;
+    top: 360px;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 500px;
 }
 
 .memberContent {
-    margin-top: 550px;
+    margin-top: 480px;
     color: var(--color-brown-dark);
 }
 
@@ -1089,4 +1089,248 @@ header .navbar_ba {
     top: 600px;
     /* margin-top: 80px; */
     padding-top: 8px;
+}
+
+/* -------------------- 07卡片 ------------------------- */
+
+.card_title {
+    margin: 30px auto;
+    text-align: center;
+    color: var(--color-text87);
+
+}
+
+.product_card .card {
+    border-radius: 8px;
+}
+.card_under small .icon_fire{
+    margin-right: 4px;
+}
+.icon_star{
+    color: #E5A62A;
+    padding-right: 4px;
+}
+.icon_fire{
+    color: var(--color-orange);
+}
+/* ----------------------桌機卡片輪播結束--------------------- */
+.otherp{
+    margin: 28px 0 0 0;
+}
+.otherp h4{
+    color: var(--color-text87);
+}
+.otherp .container{
+    /* background-color: var(--color-lightcreamy); */
+    padding-top: 24px;
+}
+.otherp a{
+    text-decoration: none;
+    color: var(--color-text87);
+}
+
+.carousel_card {
+	margin: 24px auto 50px;
+	padding: 0 80px;
+}
+.carousel_card .carousel-item {
+	text-align: center;
+	overflow: hidden;
+}
+
+.carousel_card .carousel-item img {
+	max-width: 100%;
+	display: inline-block;
+}
+.img-box{
+    position: relative;
+}
+.img-box:hover::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(45, 45, 45, 0.176); */
+    position: absolute;
+    bottom: 0;
+    /* 直接在div下陰影 */
+}
+
+.carousel_card .thumb-wrapper {
+	margin: 5px;
+	text-align: left;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.1); 
+    border-radius: 8px;
+    overflow: hidden;
+}
+.carousel_card .thumb-content {
+	padding: 10px;
+	font-size: 13px;
+}
+.otherp .carousel-control-prev,.otherp .carousel-control-next {
+	height: 44px;
+	width: 44px;
+	background: none;	
+	margin: auto 0;
+
+}
+.otherp .carousel-control-prev i,.otherp .carousel-control-next i {
+	font-size: 36px;
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	margin: -19px 0 0 0;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	color: var(--color-orange);
+	text-shadow: none;
+	font-weight: bold;
+}
+.otherp .carousel-control-prev i {
+	margin-left: -3px;
+}
+.otherp .carousel-control-next i {
+	margin-right: -3px;
+}
+.carousel-indicators {
+	bottom: -50px;
+}
+.thumb-wrapper .img-box .icon_heart{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+.card_under h5::before{
+    content: "NT$";
+}
+.card_under small{
+    color: var(--color-text38);
+}
+.back-button{
+    bottom: 40px;
+    z-index: 2;
+}
+.color{
+    stroke: #432A0F;
+    fill: #CD562F;
+}
+/* ---------------------------手機卡片輪播---------------------------- */
+.carousel_mb{
+    overflow: hidden;
+    padding: 50px 0 50px;
+}
+.carousel_mb .pit_mb {
+    text-align: left;
+}
+.carousel_mb .price h4::before{
+    content: "NT$ ";
+}
+.visuallyhidden {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    opacity: 0;
+
+}
+/* .carousel_test{
+    overflow: hidden;
+    padding: 20px;
+    margin-top: 2em;
+
+} */
+.card-carousel {
+    --card-width: 80%;
+    --card-max-width: 280px;
+    --card-height: 350px;
+    --carousel-min-width: 600px;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: var(--card-height);
+    min-width: var(--carousel-min-width);
+    transition: filter .3s ease;
+}
+
+@media screen and (max-width: 640px) {
+    .card-carousel {
+        margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+    }
+}
+
+.card-carousel.smooth-return {
+    transition: all .2s ease;
+}
+
+.card-carousel .card {
+    /* background: whitesmoke; */
+    width: var(--card-width);
+    max-width: var(--card-max-width);
+    text-align: center;
+    /* padding: 1em; */
+    min-width: 250px;
+    height: var(--card-height);
+    position: absolute;
+    margin: 0 auto;
+    transition: inherit;
+    border-radius: 8px;
+    filter: brightness(.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    box-shadow: 0px 3px 6px 0px var(--color-text38);
+
+}
+
+.card.highlight {
+    filter: brightness(1)
+}
+
+
+.card:nth-of-type(1) .image-container {
+    background-image: url("./imgs/product/P20_4.jpg");
+}
+
+.card:nth-of-type(2) .image-container {
+    background-image: url("./imgs/product/P19_1.jpg")
+}
+
+.card:nth-of-type(3) .image-container {
+    background-image: url("./imgs/product/P24_2.jpg")
+}
+
+.card:nth-of-type(4) .image-container {
+    background-image: url("./imgs/product/P30_1.jpg")
+}
+
+.card:nth-of-type(5) .image-container {
+    background-image: url("./imgs/product/P60_1.jpg")
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    margin-bottom: 1rem;
+    /* border-radius: 8px; */
+    padding: 1em;
+
+
+}
+.image-container::after {
+    content: "";
+    display: block;
+    width: 120%;
+    height: 120%;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(-10% - 3px);
+    left: calc(-10% - 3px);
 }

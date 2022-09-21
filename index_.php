@@ -6,7 +6,8 @@ $pageName = '月老喵'; //頁面名稱
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 
 <link rel="stylesheet" href="./index.css">
-<link rel="stylesheet" href="product_index_style.css">
+<!-- <link rel="stylesheet" href="product_index_style.css"> -->
+<!-- <link rel="stylesheet" href="travel_list_style.css"> -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <?php
 header("Refresh:180");
@@ -22,44 +23,28 @@ header("Refresh:180");
             <h1 class="outline-white position-absolute meowMeow">
                 <span class="meowSay h1"></span>
             </h1>
-            <svg class="slide-down-r position-absolute" width="50" height="63" viewBox="0 0 50 63" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 4L25 25L46 4" stroke="white" stroke-width="8" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                <path d="M4 38L25 59L46 38" stroke="white" stroke-width="8" stroke-linecap="round"
-                    stroke-linejoin="round" />
+            <svg class="slide-down-r position-absolute" width="50" height="63" viewBox="0 0 50 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4L25 25L46 4" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4 38L25 59L46 38" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <svg class="slide-down-l position-absolute" width="50" height="63" viewBox="0 0 50 63" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 4L25 25L46 4" stroke="white" stroke-width="8" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                <path d="M4 38L25 59L46 38" stroke="white" stroke-width="8" stroke-linecap="round"
-                    stroke-linejoin="round" />
+            <svg class="slide-down-l position-absolute" width="50" height="63" viewBox="0 0 50 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4L25 25L46 4" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4 38L25 59L46 38" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <div class="bg1_ba d-flex">
                 <div class="left position-relative">
                     <div class="cloud-left position-absolute">
                         <img class="cloud-left-animation" src="./imgs/index/cloud-l.png" alt="">
-                        <svg class="svg1 position-absolute" width="465" height="948" viewBox="0 0 465 948" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path class="path" d="M462 100L390 7" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M458 183L283 11" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M361 179L133 3" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M133 118L3 43" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M312 368L247 352" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M377 428L62 384" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M326 601L37 721" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M292 689L52 826" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M377 709L247 826" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
+                        <svg class="svg1 position-absolute" width="465" height="948" viewBox="0 0 465 948" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="path" d="M462 100L390 7" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M458 183L283 11" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M361 179L133 3" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M133 118L3 43" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M312 368L247 352" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M377 428L62 384" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M326 601L37 721" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M292 689L52 826" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M377 709L247 826" stroke="white" stroke-width="6" stroke-linecap="round" />
                         </svg>
                     </div>
                     <div class="flower-left position-absolute">
@@ -69,25 +54,16 @@ header("Refresh:180");
                 <div class="right position-relative">
                     <div class="cloud-right position-absolute">
                         <img class="cloud-right-animation" src="./imgs/index/cloud-r.png" alt="">
-                        <svg class="svg2 position-absolute" width="465" height="829" viewBox="0 0 465 829" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg class="svg2 position-absolute" width="465" height="829" viewBox="0 0 465 829" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path class="path" d="M3 100L75 7" stroke="white" stroke-width="6" stroke-linecap="round" />
-                            <path class="path" d="M7 183L182 11" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M104 179L332 3" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M332 118L462 43" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M153 368L218 352" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M88 428L403 384" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M139 601L428 721" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M173 689L413 826" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
-                            <path class="path" d="M88 709L218 826" stroke="white" stroke-width="6"
-                                stroke-linecap="round" />
+                            <path class="path" d="M7 183L182 11" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M104 179L332 3" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M332 118L462 43" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M153 368L218 352" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M88 428L403 384" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M139 601L428 721" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M173 689L413 826" stroke="white" stroke-width="6" stroke-linecap="round" />
+                            <path class="path" d="M88 709L218 826" stroke="white" stroke-width="6" stroke-linecap="round" />
                         </svg>
                     </div>
                     <div class="flower-right position-absolute">
@@ -105,12 +81,10 @@ header("Refresh:180");
                 </h1>
             </div>
 
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud01">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud01">
                 <img src="./imgs/index/cloud_9.png" alt="">
             </div>
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud02">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud02">
                 <img src="./imgs/index/cloud_10.png" alt="">
             </div>
             <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud03">
@@ -119,8 +93,7 @@ header("Refresh:180");
             <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud04">
                 <img src="./imgs/index/cloud_10.png" alt="">
             </div>
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud05">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud05">
                 <img src="./imgs/index/cloud_9.png" alt="">
             </div>
             <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud06">
@@ -132,8 +105,7 @@ header("Refresh:180");
             <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud08">
                 <img src="./imgs/index/cloud_2.png" alt="">
             </div>
-            <div data-aos="fade-left" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud08-1">
+            <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud08-1">
                 <img src="./imgs/index/cloud_10.png" alt="">
             </div>
 
@@ -149,15 +121,12 @@ header("Refresh:180");
         </div>
         <div class="section3_ba position-relative">
             <div class="position-absolute cloud09">
-                <img data-aos="fade-up" data-aos-anchor-placement="center-bottom" src="./imgs/index/cloud_11.png"
-                    alt="">
+                <img data-aos="fade-up" data-aos-anchor-placement="center-bottom" src="./imgs/index/cloud_11.png" alt="">
             </div>
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud10">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud10">
                 <img src="./imgs/index/cloud_9.png" alt="">
             </div>
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud11">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud11">
                 <img src="./imgs/index/cloud_10.png" alt="">
             </div>
 
@@ -165,8 +134,7 @@ header("Refresh:180");
                 <img src="./imgs/index/cloud_10.png" alt="">
             </div>
             <div class="container-fluid">
-                <div data-aos="fade-up" data-aos-anchor-placement="center-bottom"
-                    class="leftCat flex-row position-absolute">
+                <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="leftCat flex-row position-absolute">
                     <h2 class="text-align">斬桃花高手 —— 小黑</h2>
                     <h6 class="text-align">「感情破壞」戲法人人會變，巧妙各有不同，<br>
                         讓本喵變一齣感情大魔術，<br>
@@ -186,8 +154,7 @@ header("Refresh:180");
                             <img src="./imgs/index/10.png" alt="">
                         </div>
                 </div>
-                <div data-aos="fade-up" data-aos-anchor-placement="center-bottom"
-                    class="rightCat flex-row position-absolute">
+                <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="rightCat flex-row position-absolute">
                     <h2 class="text-align">幸福美滿導師 —— 金寶</h2>
                     <h6 class="text-align">願天下有情人終成眷屬，<br>
                         望世間眷屬全是有情人。<br>
@@ -204,12 +171,10 @@ header("Refresh:180");
 
         </div>
         <div class="section4_ba position-relative">
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud13">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud13">
                 <img src="./imgs/index/cloud_9.png" alt="">
             </div>
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud14">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud14">
                 <img src="./imgs/index/cloud_10.png" alt="">
             </div>
             <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud15">
@@ -249,8 +214,7 @@ header("Refresh:180");
                             <!-- https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=thumbnail-carousel-with-content -->
                             <div class="row_07 d-flex">
                                 <div class="col mx-auto">
-                                    <div id="myCarousel" class="carousel carousel_card slide" data-ride="carousel"
-                                        data-interval="0">
+                                    <div id="myCarousel" class="carousel carousel_card slide" data-ride="carousel" data-interval="0">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="row_07 d-flex">
@@ -258,23 +222,17 @@ header("Refresh:180");
                                                         <a href="">
                                                             <div class="thumb-wrapper mx-3">
                                                                 <div class="img-box">
-                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                        alt="">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
                                                                     <div class="icon_heart">
-                                                                        <svg class="heart_line" width="32" height="32"
-                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                                stroke-width="2.66667" />
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                                         </svg>
                                                                     </div>
                                                                 </div>
                                                                 <div class="thumb-content">
                                                                     <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
-                                                                    <div
-                                                                        class="card_under d-flex justify-content-around align-items-center">
+                                                                    <div class="card_under d-flex justify-content-around align-items-center">
                                                                         <small class="xs card-text d-flex pr-1">
                                                                             <div class="icon_star">
                                                                                 <span><i class="fa-solid fa-star"></i></span>
@@ -297,33 +255,25 @@ header("Refresh:180");
                                                         <a href="">
                                                             <div class="thumb-wrapper mx-3">
                                                                 <div class="img-box">
-                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                        alt="">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
                                                                     <div class="icon_heart">
-                                                                        <svg class="heart_line" width="32" height="32"
-                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                                stroke-width="2.66667" />
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                                         </svg>
                                                                     </div>
                                                                 </div>
                                                                 <div class="thumb-content">
                                                                     <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
-                                                                    <div
-                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
                                                                         <small class="xs card-text d-flex pr-1">
                                                                             <div class="icon_star">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-star"></i></span>
+                                                                                <span><i class="fa-solid fa-star"></i></span>
                                                                             </div> 4.7(50)
                                                                         </small>
                                                                         <small class="xs card-text d-flex">
                                                                             <div class="icon_fire ">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
                                                                             </div>
                                                                             3K個已訂購
                                                                         </small>
@@ -338,33 +288,25 @@ header("Refresh:180");
                                                         <a href="">
                                                             <div class="thumb-wrapper mx-3">
                                                                 <div class="img-box">
-                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                        alt="">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
                                                                     <div class="icon_heart">
-                                                                        <svg class="heart_line" width="32" height="32"
-                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                                stroke-width="2.66667" />
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                                         </svg>
                                                                     </div>
                                                                 </div>
                                                                 <div class="thumb-content">
                                                                     <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
-                                                                    <div
-                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
                                                                         <small class="xs card-text d-flex pr-1">
                                                                             <div class="icon_star">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-star"></i></span>
+                                                                                <span><i class="fa-solid fa-star"></i></span>
                                                                             </div> 4.7(50)
                                                                         </small>
                                                                         <small class="xs card-text d-flex">
                                                                             <div class="icon_fire ">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
                                                                             </div>
                                                                             3K個已訂購
                                                                         </small>
@@ -383,33 +325,25 @@ header("Refresh:180");
                                                         <a href="">
                                                             <div class="thumb-wrapper mx-3">
                                                                 <div class="img-box">
-                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                        alt="">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
                                                                     <div class="icon_heart">
-                                                                        <svg class="heart_line" width="32" height="32"
-                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                                stroke-width="2.66667" />
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                                         </svg>
                                                                     </div>
                                                                 </div>
                                                                 <div class="thumb-content">
                                                                     <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
-                                                                    <div
-                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
                                                                         <small class="xs card-text d-flex pr-1">
                                                                             <div class="icon_star">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-star"></i></span>
+                                                                                <span><i class="fa-solid fa-star"></i></span>
                                                                             </div> 4.7(50)
                                                                         </small>
                                                                         <small class="xs card-text d-flex">
                                                                             <div class="icon_fire ">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
                                                                             </div>
                                                                             3K個已訂購
                                                                         </small>
@@ -424,33 +358,25 @@ header("Refresh:180");
                                                         <a href="">
                                                             <div class="thumb-wrapper mx-3">
                                                                 <div class="img-box">
-                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                        alt="">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
                                                                     <div class="icon_heart">
-                                                                        <svg class="heart_line" width="32" height="32"
-                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                                stroke-width="2.66667" />
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                                         </svg>
                                                                     </div>
                                                                 </div>
                                                                 <div class="thumb-content">
                                                                     <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
-                                                                    <div
-                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
                                                                         <small class="xs card-text d-flex pr-1">
                                                                             <div class="icon_star">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-star"></i></span>
+                                                                                <span><i class="fa-solid fa-star"></i></span>
                                                                             </div> 4.7(50)
                                                                         </small>
                                                                         <small class="xs card-text d-flex">
                                                                             <div class="icon_fire ">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
                                                                             </div>
                                                                             3K個已訂購
                                                                         </small>
@@ -465,33 +391,25 @@ header("Refresh:180");
                                                         <a href="">
                                                             <div class="thumb-wrapper mx-3">
                                                                 <div class="img-box">
-                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                        alt="">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
                                                                     <div class="icon_heart">
-                                                                        <svg class="heart_line" width="32" height="32"
-                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                                stroke-width="2.66667" />
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                                         </svg>
                                                                     </div>
                                                                 </div>
                                                                 <div class="thumb-content">
                                                                     <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
-                                                                    <div
-                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
                                                                         <small class="xs card-text d-flex pr-1">
                                                                             <div class="icon_star">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-star"></i></span>
+                                                                                <span><i class="fa-solid fa-star"></i></span>
                                                                             </div> 4.7(50)
                                                                         </small>
                                                                         <small class="xs card-text d-flex">
                                                                             <div class="icon_fire ">
-                                                                                <span><i
-                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
                                                                             </div>
                                                                             3K個已訂購
                                                                         </small>
@@ -522,12 +440,10 @@ header("Refresh:180");
 
         </div>
         <div class="section5_ba position-relative">
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud13">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud13">
                 <img src="./imgs/index/cloud_9.png" alt="">
             </div>
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloud14">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud14">
                 <img src="./imgs/index/cloud_10.png" alt="">
             </div>
             <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloud15">
@@ -540,16 +456,13 @@ header("Refresh:180");
                 <div class="row_ba d-flex">
                     <div class="col-6">
                         <div class="catPhotoGroup position-absolute">
-                            <div class="catPhoto1 position-absolute" data-aos="flip-left"
-                                data-aos-anchor-placement="top-bottom">
+                            <div class="catPhoto1 position-absolute" data-aos="flip-left" data-aos-anchor-placement="top-bottom">
                                 <img class="" src="./imgs/index/2.png" alt="">
                             </div>
-                            <div class="catPhoto2 position-absolute" data-aos="flip-right"
-                                data-aos-anchor-placement="top-center">
+                            <div class="catPhoto2 position-absolute" data-aos="flip-right" data-aos-anchor-placement="top-center">
                                 <img class="" src="./imgs/index/3.png" alt="">
                             </div>
-                            <div class="catPhoto3 position-absolute" data-aos="flip-left"
-                                data-aos-anchor-placement="center-center">
+                            <div class="catPhoto3 position-absolute" data-aos="flip-left" data-aos-anchor-placement="center-center">
                                 <img class="" src="./imgs/index/1.png" alt="">
                             </div>
                         </div>
@@ -570,9 +483,236 @@ header("Refresh:180");
                         </div>
                     </div>
                 </div>
-                <div class="row_ba d-flex">
+                <div class="row_ba flex">
                     <h1 class="m-auto">熱門旅遊都在等你！</h1>
                     <!-- TODO: 07卡片 -->
+                    <div class="otherp d-md-block d-none">
+                        <div class="container">
+                            <!-- https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=thumbnail-carousel-with-content -->
+                            <div class="row_07 d-flex">
+                                <div class="col mx-auto">
+                                    <div id="myCarousel" class="carousel carousel_card slide" data-ride="carousel" data-interval="0">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active"></div>
+                                                <div class="row_07 d-flex">
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div class="card_under d-flex justify-content-around align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i class="fa-solid fa-star"></i></span>
+                                                                            </div>4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire">
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="row_07 d-flex">
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Carousel controls -->
+                                        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                                            <i class="fa-solid fa-caret-left"></i>
+                                        </a>
+                                        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                                            <i class="fa-solid fa-caret-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -614,16 +754,13 @@ header("Refresh:180");
                 </div>
             </div>
             <div class="memberCat">
-                <div class="memberCat1 position-absolute" data-aos="fade-left"
-                    data-aos-anchor-placement="center-bottom">
+                <div class="memberCat1 position-absolute" data-aos="fade-left" data-aos-anchor-placement="center-bottom">
                     <img src="./imgs/index/26.png" alt="">
                 </div>
-                <div class="memberCat2 position-absolute" data-aos="fade-right"
-                    data-aos-anchor-placement="center-bottom">
+                <div class="memberCat2 position-absolute" data-aos="fade-right" data-aos-anchor-placement="center-bottom">
                     <img src="./imgs/index/27.png" alt="">
                 </div>
-                <div class="memberCat3 position-absolute" data-aos="fade-right"
-                    data-aos-anchor-placement="center-bottom">
+                <div class="memberCat3 position-absolute" data-aos="fade-right" data-aos-anchor-placement="center-bottom">
                     <img src="./imgs/index/28.png" alt="">
                 </div>
             </div>
@@ -647,7 +784,7 @@ header("Refresh:180");
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊商品、行程不定期優惠＊</h4>
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊生日好禮大放送＊</h4>
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊歡慶開幕免運中＊</h4>
-                    
+
                 </div>
             </div>
 
@@ -678,12 +815,10 @@ header("Refresh:180");
         </div>
 
         <div class="msection2_ba position-relative text-align">
-            <div data-aos="fade-left" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloudm03">
+            <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloudm03">
                 <img src="./imgs/index/cloudm_9.png" alt="">
             </div>
-            <div data-aos="fade-left" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloudm04">
+            <div data-aos="fade-left" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloudm04">
                 <img src="./imgs/index/cloudm_10.png" alt="">
             </div>
 
@@ -703,12 +838,10 @@ header("Refresh:180");
             <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloudm08">
                 <img src="./imgs/index/cloudm_2.png" alt="">
             </div>
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloudm01">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloudm01">
                 <img src="./imgs/index/cloudm_9.png" alt="">
             </div>
-            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom"
-                class="position-absolute cloud cloudm02">
+            <div data-aos="fade-right" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloudm02">
                 <img src="./imgs/index/cloudm_10.png" alt="">
             </div>
 
@@ -826,16 +959,13 @@ header("Refresh:180");
             </div>
 
             <div class="msection5Photo position-relative">
-                <div class="msection5FirstPhoto position-absolute mt-5" data-aos="flip-right"
-                    data-aos-anchor-placement="center-bottom">
+                <div class="msection5FirstPhoto position-absolute mt-5" data-aos="flip-right" data-aos-anchor-placement="center-bottom">
                     <img class="w-100" src="./imgs/index/3.png" alt="">
                 </div>
-                <div class="msection5SecondPhoto position-absolute mt-5" data-aos="flip-left"
-                    data-aos-anchor-placement="center-bottom">
+                <div class="msection5SecondPhoto position-absolute mt-5" data-aos="flip-left" data-aos-anchor-placement="center-bottom">
                     <img class="w-100" src="./imgs/index/2.png" alt="">
                 </div>
-                <div class="msection5ThirdPhoto position-absolute mt-5" data-aos="flip-right"
-                    data-aos-anchor-placement="center-bottom">
+                <div class="msection5ThirdPhoto position-absolute mt-5" data-aos="flip-right" data-aos-anchor-placement="center-bottom">
                     <img class="w-100" src="./imgs/index/1.png" alt="">
                 </div>
             </div>
@@ -885,12 +1015,10 @@ header("Refresh:180");
             </div>
 
             <div class="memberCatm">
-                <div class="memberCat1m position-absolute" data-aos="fade-left"
-                    data-aos-anchor-placement="center-bottom">
+                <div class="memberCat1m position-absolute" data-aos="fade-left" data-aos-anchor-placement="center-bottom">
                     <img src="./imgs/index/26.png" alt="">
                 </div>
-                <div class="memberCat2m position-absolute" data-aos="fade-right"
-                    data-aos-anchor-placement="center-bottom">
+                <div class="memberCat2m position-absolute" data-aos="fade-right" data-aos-anchor-placement="center-bottom">
                     <img src="./imgs/index/27.png" alt="">
                 </div>
                 <div class="memberCat3m position-absolute" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
