@@ -115,14 +115,14 @@ $(window).resize(function(){
 
 $(window).scroll(function () {
         const nowScroll = $(window).scrollTop();
-        console.log(' now scroll123', nowScroll);
+        // console.log(' now scroll123', nowScroll);
 
         for(let i = 0; i < 5; i++){
             if(nowScroll >= sectionsOffsetTop[i]){
                 $('.links a').eq(i).css('color','var(--color-orange)').siblings().css('color','var(--color-text87)')
             }
-            if(nowScroll >= sectionsOffsetTop[i] && $(window).width() < 768){
-                console.log('hihi i',sectionsOffsetTop[i]);
+            if(nowScroll >= sectionsOffsetTop[i]-50 && $(window).width() < 768){
+                // console.log('hihi i',sectionsOffsetTop[i]);
                 $('.tdnav_mb a small').eq(i).css('color','var(--color-orange)').closest('div').siblings().find('small').css('color','var(--color-text87)')
                 // 結構不一樣(手機板多了一個small的div)所以找法不一樣，改成找最接近的直系血親的平輩的small
             }
@@ -132,13 +132,21 @@ $(window).scroll(function () {
         // ----------------側邊攔變色結束-------------------
 
         $('.td_footer_mb .buy').click(function(){
-            // e.preventDefault();
-            $('.choiceandbuy_mb').toggleClass('hidden_choicemb')
-            $("html, body").animate({ scrollTop: $(document).height() }, 500);
+            // $('.choiceandbuy_mb').toggleClass('hidden_choicemb');
+            // console.log($(document).height());
+            $("html, body").animate({ scrollTop: $(document).height() }, 0);
+            // $("html, body").animate({ scrollTop: $(document).height() }, 200);
+            // 視窗移動到$(document).height()整個視窗的底端
+            
+            // setTimeout(() => {
+            //     console.log($(window).scrollTop())
+            // }, 1000)
         });
 
-
-
+        // $(document).on('scroll', () => {
+        //     console.log($(document).scrollTop());
+        //     console.log($(window).height());
+        // });
 
         // ----------------卡片輪播牆???-------------------
 // $(function() {

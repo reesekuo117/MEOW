@@ -202,7 +202,7 @@ $pageName ='home'; //頁面名稱
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col px-2">
-                    <a href="#intro_mb"><small>行程介紹</small></a>
+                    <a href="#intro"><small>行程介紹</small></a>
                 </div>
                 <div class="col px-2">
                     <a href="#notice"><small>購買須知</small></a>
@@ -1022,7 +1022,7 @@ $pageName ='home'; //頁面名稱
         </div>
     </div>
     <!-- 手機版下方列 -->
-    <div class="choiceandbuy_mb d-md-none hidden_choicemb">
+    <div class="choiceandbuy_mb d-md-none">
         <div class="signup">
             <h6>報名場次</h6>
             <div class="form-check">

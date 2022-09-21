@@ -182,7 +182,7 @@ $(window).scroll(function () {
                 $('.links a').eq(i).css('color','var(--color-orange)').siblings().css('color','var(--color-text87)')
             }
             // 手機需要多寫這條，不然會相衝
-            if(nowScroll >= sectionsOffsetTop[i] && $(window).width() < 768){
+            if(nowScroll >= sectionsOffsetTop[i]-50 && $(window).width() < 768){
                 console.log('hihi i',sectionsOffsetTop[i]);
                 $('.pdnav_mb a small').eq(i).css('color','var(--color-orange)').closest('div').siblings().find('small').css('color','var(--color-text87)')
         }

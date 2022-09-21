@@ -21,9 +21,9 @@ function slideOne() {
     let sliderOnePercentage = sliderOne.attributes.min.nodeValue;
     // console.log(sliderOnePercentage);
     let sliderMovementOne = sliderOne.value - sliderOnePercentage;
-    console.log(sliderMovementOne);
-    console.log(sliderMovementOne /2900  * 5.862);
-    SliderValOne.style.left = `${sliderMovementOne /2900 * 70}px`;
+    // console.log(sliderMovementOne);
+    // console.log(sliderMovementOne /2900  * 5.862);
+    // SliderValOne.style.left = `${sliderMovementOne /2900 * 70}px`;
 }
 
 function slideTwo() {
@@ -32,9 +32,9 @@ function slideTwo() {
     }
     SliderValTwo.textContent = `NT$${sliderTwo.value}`
 
-    let sliderTwoPercentage = sliderTwo.attributes.max.nodeValue;
-    let sliderMovementTwo = Math.abs(sliderTwo.value - sliderTwoPercentage);
-    SliderValTwo.style.right = `${sliderMovementTwo /2900 * 40 }%`;
+    // let sliderTwoPercentage = sliderTwo.attributes.max.nodeValue;
+    // let sliderMovementTwo = Math.abs(sliderTwo.value - sliderTwoPercentage);
+    // SliderValTwo.style.right = `${sliderMovementTwo /2900 * 40 }%`;
 }
 
 sliderOne.addEventListener('input', slideOne)
