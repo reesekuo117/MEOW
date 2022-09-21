@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
-$pageName = ''; //頁面名稱
+$pageName = '購物車'; //頁面名稱
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -74,8 +74,8 @@ header("Refresh:180");
                                             </label>
                                         
                                     </th>
-                                    <!-- <th scope="col" src="imgs/small/< ?= $v['product_id'] ?>.jpg" alt="< ?= $v['productname'] ?>"> -->
-                                        <h6 class="mb-0 ">商品照片</h6>
+                                    <!-- <th scope="col" src="imgs/small/< ?= $v['product_id'] ?>.jpg" alt="< ?= $v['productname'] ?>"> 
+                                            <h6 class="mb-0 ">商品照片</h6> -->
                                     </th>
                                     <th scope="col">
                                         <h6 class="mb-0 ">商品名稱</h6>
@@ -277,9 +277,9 @@ header("Refresh:180");
                                                 </h6>
                                             </label>
                                     </th>
-                                    <!-- <th scope="col" src="imgs/small/< ?= $v['product_id'] ?>.jpg" alt="< ?= $v['productname'] ?>"> -->
+                                    <!-- <th scope="col" src="imgs/small/< ?= $v['product_id'] ?>.jpg" alt="< ?= $v['productname'] ?>"> 
                                         <h6 class="mb-0 ">行程照片</h6>
-                                    </th>
+                                    </th> -->
                                     <th scope="col">
                                         <h6 class="mb-0 ">行程名稱</h6>
                                     </th>

@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
-$pageName = ''; //頁面名稱
+$pageName = '購物車行程'; //頁面名稱
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -443,7 +443,7 @@ header("Refresh:180");
             <div class=" d-md-flex justify-content-md-end">
                 <!-- a href="#buy1.php" -->
                 <div href="" class="btn unique-nextbutton-yu p-0">
-                    <a href="./shopping-cart-creditcard-travel.php">
+                    <a href="shopping-cart-creditcard-travel.php">
                         <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="button"  name=ok value="送出">
                                 <p class="m-0 text-center">
                                     確認訂購

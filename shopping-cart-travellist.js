@@ -1089,7 +1089,7 @@ $(".Allsubmit").click(function (event) {
     console.log("fff");
     // 送
     // $(".Allsubmit").removeClass("btn_disabled_ba");
-    $("a").attr("href", "shopping-cart-creditcard-travel.html");
+    $("a").attr("href", "shopping-cart-creditcard-travel.php");
     confirm("您確定送出嗎?");
 
     document.desktop_form.submit();

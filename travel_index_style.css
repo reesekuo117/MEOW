@@ -112,6 +112,7 @@
     transform: translate(20rem, 13rem);
 }
 .cloud5-yu{
+    z-index: 999999;
     transform: translate(-8rem, 43rem);
     position: absolute;
     animation: c-5move 4s infinite ease-in-out;
@@ -128,6 +129,7 @@
     }
 }
 .cloud6-yu{
+    z-index: 999999;
     transform: translate(75rem, 4rem);
     z-index: 9999;
     position: absolute;
@@ -158,6 +160,7 @@
 /* ----------------------------------輪播牆-2----------------- */
 
 .cloud8-yu{
+    z-index: 999999;
     transform: translate(7rem, 12rem);
     position: absolute;
     animation: c-8move 4s infinite ease-in-out;
@@ -175,6 +178,7 @@
 }
 
 .cloud9-yu{
+    z-index: 999999;
     transform: translate(100rem, 40rem);
     position: absolute;
     animation: c-9move 4s infinite ease-in-out;

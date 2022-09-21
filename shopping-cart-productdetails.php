@@ -1,6 +1,6 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
-$pageName =''; //頁面名稱
+$pageName ='購物車商品'; //頁面名稱
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -540,7 +540,7 @@ header("Refresh:180");
                     <div class=" d-md-flex justify-content-md-end">
                         <!-- a href="#buy1.php" -->
                         <div class="btn unique-nextbutton-yu p-0">
-                            <a href="./shopping-cart-ATM-product.php">
+                            <a href="shopping-cart-ATM-product.php">
                                 <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="button"  name=ok value="送出">
                                     <p class="m-0 text-center">
                                         確認訂購
@@ -1028,7 +1028,7 @@ header("Refresh:180");
                 </div>
                 <div class=" d-flex justify-content-center">
                     <!-- a href="#buy1.php" -->
-                    <a href="./shopping-cart-ATM-product.php" class="btn mdunique-nextbutton-yu">
+                    <a href="shopping-cart-ATM-product.php" class="btn mdunique-nextbutton-yu">
                         <button class=" mdunique-btn-yu  me-md-2" type="button" type="submit"  name=ok value="送出"
                         onclick="if(confirm('您確定送出嗎?')) return true;else return false">
                             <p class="m-0 text-center">
