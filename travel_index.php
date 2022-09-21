@@ -278,7 +278,7 @@ $pageName ='home'; //頁面名稱
 <?php include __DIR__. '/parts/scripts.php'; ?>
 
 
-<script></script>
+<script>
 
         // #move3-yu
         $(window).scroll(function () {
@@ -351,10 +351,6 @@ $pageName ='home'; //頁面名稱
         }
 
         })
-
-
-
-
     </script>
 
 
