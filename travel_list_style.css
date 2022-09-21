@@ -18,9 +18,7 @@
 .search_bar h3{
     padding-bottom: 8px;
 }
-.search_btn button{
-    margin-top: 8px;
-}
+
 .search_bar h3 {
     color: white;
     text-align: center;
@@ -32,13 +30,23 @@
     margin: 0 auto;
     text-align: center;
 }
-.search_btn button{
+
+
+.search_btn button {
+    outline: none;
     color: #fff;
+    border-radius: 30px;
+    border: 1px solid #432A0F;
+    background-color: #E5A62A;
+    padding: 4px 16px;
+    margin-top: 8px;
+}
+.search_btn button:focus{
+    outline: none;
 }
 .search_btn button:hover{
     color: var(--color-text87);
 }
-
 /* input{
     border-radius: 8px;
     margin: 0 0 8px;
@@ -79,12 +87,7 @@
     color: white;
 }
 
-.search_btn button {
-    border-radius: 30px;
-    border: 1px solid #432A0F;
-    background-color: #E5A62A;
-    padding: 4px 16px;
-}
+
 
 /* -----------------------------搜尋結束-------------------------------- */
 .sort {

@@ -16,7 +16,9 @@ html{
 }
 .intro_bg small, .tnotice_info small{
     color: var(--color-text87);
-
+}
+.travel_detail_07 button:focus{
+    outline-style: none;
 }
 /* ------------------------輪播牆------------------------ */
 ol.carousel-indicators{

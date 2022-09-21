@@ -1,11 +1,13 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
-$pageName = ''; //頁面名稱
+$pageName = '購物車'; //頁面名稱
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./shopping-cart.css">
-<!-- <link rel="stylesheet" href="shopping-cart-index.js"> -->
+<?php
+header("Refresh:180");
+?>
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 
     <!-- ------------------桌機----------------------- -->
@@ -25,9 +27,6 @@ $pageName = ''; //頁面名稱
                         </div>
                         <div class=" pageline-yu "></div>
                     </span>
-
-                    <!-- <span class="pageline"></span> -->
-
                     
                     <span class="row circle-2-yu">
                         <div class="circle">
@@ -76,7 +75,8 @@ $pageName = ''; //頁面名稱
                                         
                                     </th>
                                     <!-- <th scope="col" src="imgs/small/< ?= $v['product_id'] ?>.jpg" alt="< ?= $v['productname'] ?>"> 
-                                    </th>-->
+                                            <h6 class="mb-0 ">商品照片</h6> -->
+                                    </th>
                                     <th scope="col">
                                         <h6 class="mb-0 ">商品名稱</h6>
                                     </th>
@@ -231,26 +231,30 @@ $pageName = ''; //頁面名稱
                 </div>
                 <!-- 修改總金額 -->
                 <div class="h6 alert alert-succes totalprice-uniqui-yu "  role="alert">
-                    <h6 class="d-flex price-yu">
-                        1414
-                    </h6>
-                    <h6 id="total-amount" class=" d-flex  price-uniqui-yu">
-                        1414
-                    </h6> 
+                        <span class="d-flex " name="TotalPriceYu">
+                            <h6   class="price-yu">
+                                <span id="TotalpriceYu"  type="text" >
+                                    1414
+                                </span>
+                            </h6>
+                        </span>
+                        <span id="total-amount" class=" d-flex  price-uniqui-yu">
+                            <h6>1414</h6> 
+                        </span>
                 </div>
                 <div>
                     <!-- 如果使用者還未登入 -->
                     <!-- < ?php if(empty($_SESSION["user"])) : ?>   -->
                         <!-- 跳出提示框提醒用戶先登入會員 -->
-                        <!-- <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-danger" role="alert">
                             請先登入會員，再結帳
-                        </div> -->
+                        </div>
                     <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
                 </div>
                 <div class=" d-md-flex justify-content-md-end">
                     <!-- a href="#buy1.php" -->
-                    <a href="shopping-cart-productdetails.html" class="btn unique-nextbutton-yu">
-                        <button class=" unique-btn-yu " type="button">
+                    <a href="./shopping-cart-productdetails.php" class="btn unique-nextbutton-yu">
+                        <button class=" unique-btn-yu  me-md-2" type="button">
                             <p class="m-0 text-center">
                                 下一步
                             </p>
@@ -274,6 +278,7 @@ $pageName = ''; //頁面名稱
                                             </label>
                                     </th>
                                     <!-- <th scope="col" src="imgs/small/< ?= $v['product_id'] ?>.jpg" alt="< ?= $v['productname'] ?>"> 
+                                        <h6 class="mb-0 ">行程照片</h6>
                                     </th> -->
                                     <th scope="col">
                                         <h6 class="mb-0 ">行程名稱</h6>
@@ -352,13 +357,13 @@ $pageName = ''; //頁面名稱
                 <!-- 如果使用者還未登入 -->
                 <!-- < ?php if(empty($_SESSION["user"])) : ?>   -->
                     <!-- 跳出提示框提醒用戶先登入會員 -->
-                    <!-- <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger" role="alert">
                         請先登入會員，再結帳
-                    </div> -->
+                    </div>
                 <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
             </div>
             <div class=" d-md-flex justify-content-md-end">
-                <a href="shopping-cart-travellist.html" class="btn unique-nextbutton-yu">
+                <a href="./shopping-cart-travellist.php" class="btn unique-nextbutton-yu">
                     <button class=" unique-btn-yu  me-md-2" type="button">
                         <p class="m-0 text-center">
                             下一步
@@ -497,7 +502,7 @@ $pageName = ''; //頁面名稱
                 </div>
                 <!-- 未登入 -->
                 <div class=" d-flex justify-content-center">
-                    <a href="shopping-cart-productdetails-index.html" class="btn mdunique-nextbutton-yu">
+                    <a href="./shopping-cart-productdetails.php" class="btn mdunique-nextbutton-yu">
                         <button class=" mdunique-btn-yu " type="button">
                             <p class="m-0 text-center">
                                 下一步
@@ -542,7 +547,7 @@ $pageName = ''; //頁面名稱
                 </div>
                 <!-- 未登入 -->
                 <div class=" d-flex justify-content-center">
-                    <a href="shopping-cart-travellist-index.html" class="btn mdunique-nextbutton-yu">
+                    <a href="./shopping-cart-travellist.php" class="btn mdunique-nextbutton-yu">
                         <button class=" mdunique-btn-yu " type="button">
                             <p class="m-0 text-center">
                                 下一步
@@ -554,6 +559,7 @@ $pageName = ''; //頁面名稱
         </div>
         
     </section>
+
 
 
 

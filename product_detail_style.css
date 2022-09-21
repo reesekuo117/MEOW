@@ -13,6 +13,9 @@ html{
 .product_detail_07 .xs{
     color: var(--color-text60);
 }
+.product_detail_07 button:focus{
+    outline-style: none;
+}
 /* ------------------------輪播------------------------ */
 .img-demo{
     position: relative;

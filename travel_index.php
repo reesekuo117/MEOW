@@ -6,6 +6,8 @@ $pageName ='home'; //頁面名稱
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./travel_index_style.css">
 <?php include __DIR__. '/parts/navbar.php'; ?>
+    
+
     <!-- 桌機輪播牆 -->
     <div class=" d-none d-md-block ">
         <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel">
@@ -77,7 +79,7 @@ $pageName ='home'; //頁面名稱
                             給自己一個認識更多人的機會吧！
                         </h3>
                         <div class=" friend-btn-yu d-grid gap-2 d-md-flex justify-content-md-center">
-                            <a href="#" class="morebutton-yu">
+                            <a href="travel_list.php" class="morebutton-yu">
                                 <button class=" btn me-md-2" type="button">
                                     <p class="m-0 text-center">
                                         看更多交友聯誼
@@ -95,18 +97,18 @@ $pageName ='home'; //頁面名稱
                 </div>
 
                 <!-------- 第二章輪播牆 --------->
-                <div class=" overflow-hidden  carousel-item position-relative">
+                <div class=" carousel-item position-relative">
                     <div class="cloud5-yu ">
-                        <img class="" src="/MEOW/imgs/travel/cloud_8.png" alt="">
+                        <img class="" src="imgs/travel/cloud_8.png" alt="">
                     </div>
                     <div class="cloud6-yu">
-                        <img src="/MEOW/imgs/travel/cloud_9.png" alt="">
+                        <img src="imgs/travel/cloud_9.png" alt="">
                     </div>
                     <div class="cloud8-yu">
-                        <img src="/MEOW/imgs/travel/cloud_11.png" alt="">
+                        <img src="imgs/travel/cloud_11.png" alt="">
                     </div>
                     <div class="cloud9-yu">
-                        <img src="/MEOW/imgs/travel/cloud_13.png" alt="">
+                        <img src="imgs/travel/cloud_13.png" alt="">
                     </div>
                     <div class="cat-photo-yu">
                         <img src="/MEOW/imgs/travel/cat.png" alt="">
@@ -122,17 +124,17 @@ $pageName ='home'; //頁面名稱
                             體驗在地風情
                         </h3>
                         <div class=" friend-btn-yu d-grid gap-2 d-md-flex justify-content-md-center">
-                            <a href="#" class="morebutton-yu">
+                            <a href="travel_list.php" class="morebutton-yu">
                                 <button class=" btn me-md-2" type="button">
                                     <p class="m-0 text-center">
-                                        看更多交友聯誼
+                                        看更多文化之旅
                                     </p>
                                 </button>
                             </a>
                         </div>
                     </div>
                     <div>
-                        <div>
+                        <div></div>
                             <img class="photo2-img-yu" src="imgs/travel/桌機版旅遊首頁(照片)2.png" alt="">
                         </div>
                         <img class="background2-img-yu" src="imgs/travel/桌機版旅遊首頁(底圖)2.png" class="d-block  " alt="...">
@@ -195,7 +197,7 @@ $pageName ='home'; //頁面名稱
                 </div>
                 <div id="move3-yu">
                     <div class=" mdtravel-frame2-yu position-relative ">
-                        <img class="position-absolute mdtravel3-img-yu w-75 " src="imgs/travel/手機版旅遊首頁(照片3).png" alt="">
+                        <img class="position-absolute mdtravel3-img-yu w-75 " src="/imgs/travel/手機版旅遊首頁(照片3).png" alt="">
                     </div>
                     <div class="mdtravel-frame2-p-yu">
                         <p class="my-4 text-center justify-content-center">
@@ -269,46 +271,18 @@ $pageName ='home'; //頁面名稱
             </section>
         </div>
     </div>
+
+
+
+
 <?php include __DIR__. '/parts/scripts.php'; ?>
+
+
 <script>
-        // nav
-        let lastScroll = 0;
-        $(window).scroll(function(){
-        let scrollNow =  $(window).scrollTop();
-        //console.log('lastScroll:', lastScroll);
-        //console.log('scrollNow', scrollNow);
-        if(scrollNow > lastScroll){
-        $('header').addClass('hidden')
-        }
-        else{
-        $('header').removeClass('hidden')
-        }
-        lastScroll = scrollNow;
-        })
-        //漢堡
-        $('#menuToggle input').click(function(){
-            $('#menu').css('transform','translate(0%, 0)')
-            //  console.log($('#menu').css('transform'))
-            if($('#menu').css('transform') == ('matrix(1, 0, 0, 1, 0, 0)')) {
-            //console.log('hi');
-            $('#menu').css('transform','translate(-500%, 0)')
-            }
-        })
-        $('#menu a').click(function(){
-            $('#menu').css('transform','translate(-1000%, 0)');
-            // console.log('HEREEEEEEE', $('#menuToggle input').prop('checked'));
-            $('#menuToggle input').prop('checked',false)
-        })
-        //TOP
-        $('.back-button').click(function(){
-            $('html, body').animate({scrollTop:0},10)
-        })
-
-
 
         // #move3-yu
         $(window).scroll(function () {
-        if ($(window).scrollTop() >= ($('#move3-yu').offset().top - $(window).height() * 1/2)) {
+        if ($(window).scrollTop() >= ($('#move3-yu').offset().top - window.screen.height * 1/2)) {
             $('#move3-yu').css({
                 opacity: 1,
                 transform: "translateY(0px)",
@@ -326,7 +300,7 @@ $pageName ='home'; //頁面名稱
 
         // #move4-yu
         $(window).scroll(function () {
-        if ($(window).scrollTop() >= ($('#move4-yu').offset().top - $(window).height() * 1/2)) {
+        if ($(window).scrollTop() >= ($('#move4-yu').offset().top - window.screen.height * 1/2)) {
             $('#move4-yu').css({
                 opacity: 1,
                 transform: "translateY(0px)",
@@ -344,7 +318,7 @@ $pageName ='home'; //頁面名稱
 
         // #move5-yu 
         $(window).scroll(function () {
-        if ($(window).scrollTop() >= ($('#move5-yu ').offset().top - $(window).height() * 1/2)) {
+        if ($(window).scrollTop() >= ($('#move5-yu ').offset().top - window.screen.height * 1/2)) {
             $('#move5-yu ').css({
                 opacity: 1,
                 transform: "translatex(0px)",
@@ -362,7 +336,7 @@ $pageName ='home'; //頁面名稱
 
         // #move6-yu 
         $(window).scroll(function () {
-        if ($(window).scrollTop() >= ($('#move6-yu ').offset().top - $(window).height() * 1/2)) {
+        if ($(window).scrollTop() >= ($('#move6-yu ').offset().top - window.screen.height * 1/2)) {
             $('#move6-yu ').css({
                 opacity: 1,
                 transform: "translatex(0px)",
@@ -377,9 +351,9 @@ $pageName ='home'; //頁面名稱
         }
 
         })
-
-
-
-
     </script>
+
+
+
+
 <?php include __DIR__. '/parts/html-foot.php'; ?>

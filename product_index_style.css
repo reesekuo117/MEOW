@@ -11,6 +11,10 @@ html {
 .product_07 .row{
     margin: 0;
 }
+.product_07 button:focus{
+    outline-style: none;
+    transition: .3s;
+}
 /* .product_head{
     background: url(./imgs/product/P19_2.jpg) center center / cover;
     width: 100%;
