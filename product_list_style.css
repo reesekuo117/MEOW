@@ -277,11 +277,12 @@
     justify-content: center;
     align-items: center;
 }
-.card {
+.product_list .card {
     border-radius: 8px;
     margin: 24px auto;
     border: 0;
     box-shadow: 0px 0px 8px var(--color-text38);
+    overflow: hidden;
 }
 .p_card_mb{
     margin-top: 24px;

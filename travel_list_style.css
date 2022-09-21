@@ -269,6 +269,7 @@
 .card_row {
     border-radius: 8px;
     /* background-color: var(--color-lightcreamy); */
+    overflow: hidden;
 }
 @media screen and (min-width:768px){
     .card_row{
@@ -423,13 +424,14 @@
     justify-content: space-between;
     align-items: center;
 }
-.row .price{
+.card_under .price{
     justify-content: flex-end;
+    align-self: baseline;
 }
-.row .price::before{
+.card_under .price::before{
     content:"NT$ ";
 }
-.row .price::after{
+.card_under .price::after{
     content:"/人";
     font-size: 14px;
 }

@@ -1,11 +1,11 @@
 <?php
-require __DIR__. '/parts/meow_db.php';  // /開頭
-$pageName ='home'; //頁面名稱
+require __DIR__ . '/parts/meow_db.php';  // /開頭
+$pageName = 'home'; //頁面名稱
 ?>
 
-<?php include __DIR__. '/parts/html-head.php'; ?>
+<?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./product_list_style.css">
-<?php include __DIR__. '/parts/navbar.php'; ?>
+<?php include __DIR__ . '/parts/navbar.php'; ?>
 <div class="product_list_07">
     <div class="product_search d-flex">
         <div class="search_bar">
@@ -98,32 +98,32 @@ $pageName ='home'; //頁面名稱
                         <small class="mb-0">獨家商品</small>
                     </a>
                 </div>
-                
+
             </div>
         </div>
     </div>
     <div class="timesort_mb d-none d-md-none ">
         <!-- <div class="d-flex"> -->
-            <div class="col">
-                <a href="#">
-                    <p>最新上架</p>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#">
-                    <p>熱門程度</p>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#">
-                    <p>價格高 → 低</p>
-                </a>
-            </div>
-            <div class="col">
-                <a href="#">
-                    <p>價格低 → 高</p>
-                </a>
-            </div>
+        <div class="col py-1">
+            <a href="#">
+                <small>最新上架</small>
+            </a>
+        </div>
+        <div class="col py-1">
+            <a href="#">
+                <small>熱門程度</small>
+            </a>
+        </div>
+        <div class="col py-1">
+            <a href="#">
+                <small>價格高 → 低</small>
+            </a>
+        </div>
+        <div class="col py-1">
+            <a href="#">
+                <small>價格低 → 高</small>
+            </a>
+        </div>
         <!-- </div> -->
     </div>
 
@@ -134,7 +134,7 @@ $pageName ='home'; //頁面名稱
                 <div class="col">
                     <div class="cate_filter">
                         <div class="product_cate">
-                    <!-- 用a連結記得JQ要加e.preventDefault(); -->
+                            <!-- 用a連結記得JQ要加e.preventDefault(); -->
                             <a href="#">
                                 <h5>－品牌聯名</h5>
                             </a>
@@ -169,10 +169,8 @@ $pageName ='home'; //頁面名稱
                                 </div>
                                 <div class="filter-range-content">
                                     <div class="filter-range-track"></div>
-                                    <input class="filter-range filter-range-1" type="range" min="100" max="3000"
-                                        value="100" id="slider-1" step="100">
-                                    <input class="filter-range filter-range-2" type="range" min="100" max="3000"
-                                        value="3000" id="slider-2" step="100">
+                                    <input class="filter-range filter-range-1" type="range" min="100" max="3000" value="100" id="slider-1" step="100">
+                                    <input class="filter-range filter-range-2" type="range" min="100" max="3000" value="3000" id="slider-2" step="100">
                                 </div>
                             </div>
                         </div>
@@ -186,411 +184,354 @@ $pageName ='home'; //頁面名稱
                 <div class="row d-flex">
                     <div class="col-md-4">
                         <div class="card">
+                            <a href="#">
+                                <div class="p_img">
+                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                            <div class="card-body">
                                 <a href="#">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <div class="card_title">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </a>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        
-                                            <div class="icon_heart">
-                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                                </svg>
-                                            </div>
-                                            
-                                    <div class="row card_under justify-content-between align-items-center">
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_star">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span>4.7(50)</span>
-                                        </small>
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_fire">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            <span>3K個已訂購</span>
-                                        </small>
-                                        <h5 class="card-text price">
-                                            2280
+                                    <div class="card_title">
+                                        <h5 class="card-text">
+                                            霞海城隍廟 X 扣式真皮中夾禮盒
                                         </h5>
                                     </div>
+                                </a>
+                                <div class="icon_heart">
+                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                    </svg>
                                 </div>
+                                <div class="row card_under justify-content-between align-items-baseline">
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span>4.7(50)</span>
+                                    </small>
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_fire">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        <span>3K個已訂購</span>
+                                    </small>
+                                    <h4 class="card-text price">
+                                        2280
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card">
+                            <a href="#">
+                                <div class="p_img">
+                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                            <div class="card-body">
                                 <a href="#">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <div class="card_title">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </a>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                            <div class="icon_heart">
-                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                                </svg>
-                                            </div>
-                                            
-                                    
-                                    <div class="row card_under justify-content-between align-items-center">
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_star">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div> 4.7(50)
-                                        </small>
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_fire">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            3K個已訂購
-                                        </small>
-                                        <h5 class="card-text price">
-                                            2280
+                                    <div class="card_title">
+                                        <h5 class="card-text">
+                                            霞海城隍廟 X 扣式真皮中夾禮盒
                                         </h5>
                                     </div>
+                                </a>
+                                <div class="icon_heart">
+                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                    </svg>
                                 </div>
+                                <div class="row card_under justify-content-between align-items-baseline">
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </div> 4.7(50)
+                                    </small>
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_fire">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        3K個已訂購
+                                    </small>
+                                    <h4 class="card-text price">
+                                        2280
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card">
+                            <a href="#">
+                                <div class="p_img">
+                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                            <div class="card-body">
                                 <a href="#">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <div class="card_title">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </a>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        
-                                            <div class="icon_heart">
-                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                                </svg>
-                                            </div>
-                                            
-                                    
-                                    <div class="row card_under justify-content-between align-items-center">
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_star">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div> 4.7(50)
-                                        </small>
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_fire">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            3K個已訂購
-                                        </small>
-                                        <h5 class="card-text price">
-                                            2280
+                                    <div class="card_title">
+                                        <h5 class="card-text">
+                                            霞海城隍廟 X 扣式真皮中夾禮盒
                                         </h5>
                                     </div>
+                                </a>
+                                <div class="icon_heart">
+                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                    </svg>
                                 </div>
+                                <div class="row card_under justify-content-between align-items-baseline">
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </div> 4.7(50)
+                                    </small>
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_fire">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        3K個已訂購
+                                    </small>
+                                    <h4 class="card-text price">
+                                        2280
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card">
+                            <a href="#">
+                                <div class="p_img">
+                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                            <div class="card-body">
                                 <a href="#">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <div class="card_title">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </a>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        
-                                            <div class="icon_heart">
-                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                                </svg>
-                                            </div>
-                                            
-                                    
-                                    <div class="row card_under justify-content-between align-items-center">
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_star">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div> 4.7(50)
-                                        </small>
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_fire">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            3K個已訂購
-                                        </small>
-                                        <h5 class="card-text price">
-                                            2280
+                                    <div class="card_title">
+                                        <h5 class="card-text">
+                                            霞海城隍廟 X 扣式真皮中夾禮盒
                                         </h5>
                                     </div>
+                                </a>
+                                <div class="icon_heart">
+                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                    </svg>
                                 </div>
+                                <div class="row card_under justify-content-between align-items-baseline">
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </div> 4.7(50)
+                                    </small>
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_fire">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        3K個已訂購
+                                    </small>
+                                    <h4 class="card-text price">
+                                        2280
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card">
+                            <a href="#">
+                                <div class="p_img">
+                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                            <div class="card-body">
                                 <a href="#">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <div class="card_title">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </a>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        
-                                            <div class="icon_heart">
-                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                                </svg>
-                                            </div>
-                                            
-                                    
-                                    <div class="row card_under justify-content-between align-items-center">
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_star">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div> 4.7(50)
-                                        </small>
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_fire">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            3K個已訂購
-                                        </small>
-                                        <h5 class="card-text price">
-                                            2280
+                                    <div class="card_title">
+                                        <h5 class="card-text">
+                                            霞海城隍廟 X 扣式真皮中夾禮盒
                                         </h5>
                                     </div>
+                                </a>
+                                <div class="icon_heart">
+                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                    </svg>
                                 </div>
+                                <div class="row card_under justify-content-between align-items-baseline">
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </div> 4.7(50)
+                                    </small>
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_fire">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        3K個已訂購
+                                    </small>
+                                    <h4 class="card-text price">
+                                        2280
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card">
+                            <a href="#">
+                                <div class="p_img">
+                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                            <div class="card-body">
                                 <a href="#">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <div class="card_title">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </a>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        
-                                            <div class="icon_heart">
-                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                                </svg>
-                                            </div>
-                                            
-                                    <div class="row card_under justify-content-between align-items-center">
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_star">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div> 4.7(50)
-                                        </small>
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_fire">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            3K個已訂購
-                                        </small>
-                                        <h5 class="card-text price">
-                                            2280
+                                    <div class="card_title">
+                                        <h5 class="card-text">
+                                            霞海城隍廟 X 扣式真皮中夾禮盒
                                         </h5>
                                     </div>
+                                </a>
+                                <div class="icon_heart">
+                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                    </svg>
                                 </div>
+                                <div class="row card_under justify-content-between align-items-baseline">
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </div> 4.7(50)
+                                    </small>
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_fire">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        3K個已訂購
+                                    </small>
+                                    <h4 class="card-text price">
+                                        2280
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card">
+                            <a href="#">
+                                <div class="p_img">
+                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                            <div class="card-body">
                                 <a href="#">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <div class="card_title">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </a>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        
-                                            <div class="icon_heart">
-                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                                </svg>
-                                            </div>
-                                            
-                                    <div class="row card_under justify-content-between align-items-center">
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_star">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div> 4.7(50)
-                                        </small>
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_fire">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            3K個已訂購
-                                        </small>
-                                        <h5 class="card-text price">
-                                            2280
+                                    <div class="card_title">
+                                        <h5 class="card-text">
+                                            霞海城隍廟 X 扣式真皮中夾禮盒
                                         </h5>
                                     </div>
+                                </a>
+                                <div class="icon_heart">
+                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                    </svg>
                                 </div>
+                                <div class="row card_under justify-content-between align-items-baseline">
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </div> 4.7(50)
+                                    </small>
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_fire">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        3K個已訂購
+                                    </small>
+                                    <h4 class="card-text price">
+                                        2280
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card">
+                            <a href="#">
+                                <div class="p_img">
+                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                            <div class="card-body">
                                 <a href="#">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <div class="card_title">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </a>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        
-                                            <div class="icon_heart">
-                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                                </svg>
-                                            </div>
-
-                                    <div class="row card_under justify-content-between align-items-center">
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_star">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div> 4.7(50)
-                                        </small>
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_fire">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            3K個已訂購
-                                        </small>
-                                        <h5 class="card-text price">
-                                            2280
+                                    <div class="card_title">
+                                        <h5 class="card-text">
+                                            霞海城隍廟 X 扣式真皮中夾禮盒
                                         </h5>
                                     </div>
+                                </a>
+                                <div class="icon_heart">
+                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                    </svg>
                                 </div>
+                                <div class="row card_under justify-content-between align-items-baseline">
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </div> 4.7(50)
+                                    </small>
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_fire">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        3K個已訂購
+                                    </small>
+                                    <h4 class="card-text price">
+                                        2280
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card">
+                            <a href="#">
+                                <div class="p_img">
+                                    <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
+                                </div>
+                            </a>
+                            <div class="card-body">
                                 <a href="#">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="#">
-                                        <div class="card_title">
-                                            <h5 class="card-text">
-                                                霞海城隍廟 X 扣式真皮中夾禮盒
-                                            </h5>
-                                        </div>
-                                    </a>
-                                        <!-- 按收藏後真的進入收藏頁面&沒登入會跳出提示窗 -->
-                                        
-                                            <div class="icon_heart">
-                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" 
-                                                        stroke-width="2.66667" />
-                                                </svg>
-                                            </div>
-                                            
-                                    <div class="row card_under justify-content-between align-items-center">
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_star">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div> 4.7(50)
-                                        </small>
-                                        <small class="xs card-text d-flex">
-                                            <div class="icon_fire">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            3K個已訂購
-                                        </small>
-                                        <h5 class="card-text price">
-                                            2280
+                                    <div class="card_title">
+                                        <h5 class="card-text">
+                                            霞海城隍廟 X 扣式真皮中夾禮盒
                                         </h5>
                                     </div>
+                                </a>
+                                <div class="icon_heart">
+                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                    </svg>
                                 </div>
+                                <div class="row card_under justify-content-between align-items-baseline">
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </div> 4.7(50)
+                                    </small>
+                                    <small class="xs card-text d-flex align-items-center">
+                                        <div class="icon_fire">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        3K個已訂購
+                                    </small>
+                                    <h4 class="card-text price">
+                                        2280
+                                    </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -854,8 +795,8 @@ $pageName ='home'; //頁面名稱
             </div>
         </div>
     </div>
-    
+
 </div>
-<?php include __DIR__. '/parts/scripts.php'; ?>
+<?php include __DIR__ . '/parts/scripts.php'; ?>
 <script src="./product_list.js"></script>
-<?php include __DIR__. '/parts/html-foot.php'; ?>
+<?php include __DIR__ . '/parts/html-foot.php'; ?>
