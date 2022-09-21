@@ -1,11 +1,13 @@
 /* *{
     outline: 1px solid #432A0F;
 } */
-.row {
+.product_list_07 .row {
     margin: 0;
     box-sizing: border-box;
 }
-
+.product_list_07 button:focus{
+    outline-style: none;
+}
 .product_search {
     width: 100%;
     height: 530px;
