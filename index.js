@@ -111,7 +111,7 @@ $(window).scroll(function () {
 // 三貓手機
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.firstCat').offset().top - $(window).height() * 1 / 2)) {
+    if ($(window).scrollTop() >= ($('.firstCat').offset().top - window.screen.height * 1 / 2)) {
         $('.firstCatImg img').attr('src', './imgs/index/7.png')
 
     }
@@ -122,7 +122,7 @@ $(window).scroll(function () {
 })
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.secondCat').offset().top - $(window).height() * 1 / 2)) {
+    if ($(window).scrollTop() >= ($('.secondCat').offset().top - window.screen.height * 1 / 2)) {
         $('.secondCatImg img').attr('src', './imgs/index/9.png')
 
     }
@@ -133,7 +133,7 @@ $(window).scroll(function () {
 })
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.thirdCat').offset().top - $(window).height() * 1 / 2)) {
+    if ($(window).scrollTop() >= ($('.thirdCat').offset().top - window.screen.height * 1 / 2)) {
         $('.thirdCatImg img').attr('src', './imgs/index/11.png')
 
     }
@@ -145,7 +145,7 @@ $(window).scroll(function () {
 
 // 卷軸手機
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.leftReelm').offset().top - $(window).height() * 2 / 3)) {
+    if ($(window).scrollTop() >= ($('.leftReelm').offset().top - window.screen.height * 2 / 3)) {
         $('.leftReelm').css({
             transform: 'translateX(-520px) scale(1)',
         })
@@ -160,7 +160,7 @@ $(window).scroll(function () {
 })
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.rightReelm').offset().top - $(window).height() * 2 / 3)) {
+    if ($(window).scrollTop() >= ($('.rightReelm').offset().top - window.screen.height * 2 / 3)) {
         $('.rightReelm').css({
             transform: 'translateX(520px) scale(1)',
         })
@@ -175,7 +175,7 @@ $(window).scroll(function () {
 })
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.middleReelm').offset().top - $(window).height() * 2 / 3)) {
+    if ($(window).scrollTop() >= ($('.middleReelm').offset().top - window.screen.height * 2 / 3)) {
         $('.middleReelm').css({
             width: '956px',
         })

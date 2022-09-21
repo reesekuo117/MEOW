@@ -1,6 +1,6 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
-$pageName = 'draw02'; //頁面名稱
+$pageName = '線上求籤'; //頁面名稱
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
