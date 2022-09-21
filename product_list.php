@@ -184,13 +184,13 @@ $pageName = 'home'; //頁面名稱
                 <div class="row d-flex">
                     <div class="col-md-4">
                         <div class="card">
-                            <a href="#">
+                            <a href="product_detail.php">
                                 <div class="p_img">
                                     <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
                                 </div>
                             </a>
                             <div class="card-body">
-                                <a href="#">
+                                <a href="product_detail.php">
                                     <div class="card_title">
                                         <h5 class="card-text">
                                             霞海城隍廟 X 扣式真皮中夾禮盒
@@ -224,13 +224,13 @@ $pageName = 'home'; //頁面名稱
                     </div>
                     <div class="col-md-4">
                         <div class="card">
-                            <a href="#">
+                            <a href="product_detail.php">
                                 <div class="p_img">
                                     <img src="./imgs/product/P24_2.jpg" class="card-img-top" alt="...">
                                 </div>
                             </a>
                             <div class="card-body">
-                                <a href="#">
+                                <a href="product_detail.php">
                                     <div class="card_title">
                                         <h5 class="card-text">
                                             霞海城隍廟 X 扣式真皮中夾禮盒
