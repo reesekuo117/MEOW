@@ -1,6 +1,6 @@
-*{
-    outline: 1px solid rgb(0, 0, 0);
-}
+/* *{
+    outline: 1px solid rgb(255, 0, 0);
+} */
 .row {
     margin: 0;
     box-sizing: border-box;
@@ -292,12 +292,13 @@
     margin-top: 24px;
 } */
 
-.t_img{
-    position: relative;
+.t_img img{
+    /* position: relative; */
     /* width: 400px; */
+    height: 261px;
 }
 .card-body{
-    position: relative;
+    /* position: relative; */
     box-sizing: border-box;
     /* padding: 30px; */
     margin: 0 auto;
@@ -308,7 +309,25 @@
         padding: 20px 20px 10px;
     }
     .t_card{
+        /* width: 100px; */
+        width: 100%;
+    }
+    .mdpriceYu{
+        width: 100%;
+        /* border: 1px solid #000; */
+    }
+    .travel_dateYu{
         width: 100px;
+        /* border: 1px solid #CD562F; */
+    }
+    .webkitlineYu{
+        overflow: hidden;
+        /* border: 1px solid #000; */
+        width: 100%; 
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 }
 /* .card-body_mb{
@@ -331,14 +350,6 @@
     color: var(--color-text100);
     /* border: 1px solid #000; */
 }
-
-@media screen and (max-width:768px) {
-    .mdpriceYu{
-        width: 100%;
-        border: 1px solid #000;
-    }
-}
-
 .card_small{
     margin: 12px 0;
 }
@@ -348,16 +359,28 @@
 .card_small small{
     color: var(--color-text60);
 }
-.card_intro p{
-    /* height: 68px;
-    overflow: hidden;
-    border: 1px solid #000;
-    width: 630px; */
-    /* text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical; */
+
+@media screen and (min-width:768px) {
+    .card-body .card_title{
+        margin-top:40px;
+    }
+    .card_intro{
+        padding-top: 12px;
+    }
+    .card_intro p{
+
+        height: 68px;
+        overflow: hidden;
+        /* border: 1px solid #000; */
+        width: 630px; 
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
 }
+
+
 .card_intro_mb p{
     margin: 0;
     padding-bottom: 10px;
@@ -430,6 +453,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    width: 100%;
 
 }
 .travel_list a{
@@ -440,7 +464,7 @@
     padding-bottom: 32px;
 }
 .card-body{
-    padding: 0 40px;
+    padding: 0 70px;
 }
 
 @media screen and (max-width:768px) {

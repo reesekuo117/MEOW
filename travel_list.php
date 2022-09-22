@@ -355,14 +355,17 @@ header("Refresh:180");
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
                                         </svg>
                                         <!-- 資料庫還沒進去 -->
-                                        <small>
-                                            出發日期：2022/01/23
+                                        <small class="travel_dateYu">
+                                            出發日期：2022/11/23
                                             <!-- < ?= $r['travel_date']  ?> -->
                                         </small>
                                     </div>
                                 </div>
                                 <div class="card_intro card-text">
-                                    <p><?= $r['travel_introduction'] ?></p>
+                                    <p class=" webkitlineYu ">
+                                    台北大稻埕、迪化街商圈過去曾為北部最繁華、熱鬧的港口之一，走過百年歷史的大稻埕地區，留下許多紅磚洋樓、閩南式矮房、華麗巴洛克建築等古蹟，而今大稻埕美食多位在迪化街上，老宅改建的雜貨店、餐廳酒吧等都是值得一訪的景點。在此幫大家整理好迪化街必逛景點及年貨大街等資訊，想來趟台北古蹟之旅，不妨考慮到大稻埕與迪化街來個一日散步吧！
+                                        <!-- < ?= $r['travel_introduction'] ?> -->
+                                    </p>
                                 </div>
                                 <div class="card_small d-md-flex d-none  ">
                                     <div class="icon_location">
@@ -380,7 +383,8 @@ header("Refresh:180");
                                             <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
                                         </svg>
-                                        <small> 出發日期：
+                                        <small >
+                                            出發日期：
                                             <!-- < ?= $r['travel_date']  ?>  -->
                                         </small>
                                     </div>
@@ -415,14 +419,68 @@ header("Refresh:180");
     <div class="container">
         <div class="row">
         <nav aria-label="Page navigation example">
-                    <ul class="pagination">
+                    <ul class="pagination d-none d-md-flex ">
                         <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
                             <a class="page-link" href="?page=<?= $page == 1 ?>">
                             <!-- 怎麼到第一頁 -->
                                 <i class="fa-solid fa-angles-left"></i>
                             </a>
                         </li>
-                        <?php for ($i = $page - 3; $i <= $page + 3; $i++) :
+                        <?php 
+                        // $beginPage;
+                        // $endPage;
+                        // $pagesOptional = 3;
+
+                        // if($totalPages <= $pagesOptional){
+                        //     $beginPage = 1;
+                        //     $endPage = $totalPages;
+                        // } else if ( $page-1 < $pagesOptional ){
+                        //     $beginPage = 1;
+                        //     $endPage = $pagesOptional * 2 + 1;
+                        // } else if ($totalPages - $page < $pagesOptional ){
+                        //     $eginPage = $totalPages
+                        // }
+                        
+                        
+                        for ($i = $page - 2; $i <= $page + 2; $i++) :
+                            if ($i >= 1 and $i <= $totalPages) :
+                        ?>
+                                <li class="page-item <?= $page == $i ? 'active' : '' ?>">
+                                    <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                                </li>
+                        <?php endif;
+                        endfor; ?>
+                        <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?page=<?= $totalPages ?>"> 
+                            <!-- 怎麼到最後一頁 -->
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="pagination d-flex d-md-none ">
+                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?page=<?= $page == 1 ?>">
+                            <!-- 怎麼到第一頁 -->
+                                <i class="fa-solid fa-angles-left"></i>
+                            </a>
+                        </li>
+                        <?php 
+                        // $beginPage;
+                        // $endPage;
+                        // $pagesOptional = 3;
+
+                        // if($totalPages <= $pagesOptional){
+                        //     $beginPage = 1;
+                        //     $endPage = $totalPages;
+                        // } else if ( $page-1 < $pagesOptional ){
+                        //     $beginPage = 1;
+                        //     $endPage = $pagesOptional * 2 + 1;
+                        // } else if ($totalPages - $page < $pagesOptional ){
+                        //     $eginPage = $totalPages
+                        // }
+                        
+                        
+                        for ($i = $page - 1; $i <= $page + 1; $i++) :
                             if ($i >= 1 and $i <= $totalPages) :
                         ?>
                                 <li class="page-item <?= $page == $i ? 'active' : '' ?>">

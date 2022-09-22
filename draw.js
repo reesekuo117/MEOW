@@ -5,54 +5,125 @@
 //     $(this).find('svg').attr('fill','#432A0F')
 // })
 
-function playAudio() {
-    console.log('music');
-    const audio = document.createElement("audio");
-    audio.src = "/MEOW/music/Kawaii.mp3";
-    audio.play();
-}
+// 音樂
 
-function setCookie(music, value, exdays) {
-    var exdate = new Date();
-    exdate.setDate(exdate.getDate() + exdays);
-    var c_value = escape(value) +
-        ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
-    document.cookie = music + "=" + c_value;
-}
-
-function getCookie(music) {
-    var i, x, y, ARRcookies = document.cookie.split(";");
-    for (i = 0; i < ARRcookies.length; i++) {
-        x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
-        y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
-        x = x.replace(/^\s+|\s+$/g, "");
-        if (x == music) {
-            return unescape(y);
-        }
+window.onload=function(){
+    // var bgm_text=document.queryselector('.bgm_text');
+    var bgm_btn_play = document.querySelector('.bgm_btn_play');
+    var bgm_btn_stop = document.querySelector('.bgm_btn_stop');
+    var bgm = document.getElementById('bgm');
+    //播放暂停
+    bgm_btn_play.onclick=function(){
+        bgm.play();
     }
-}
-
-var song = document.getElementsByTagName('audio')[0];
-var played = false;
-var tillPlayed = getCookie('timePlayed');
-function update() {
-    if (!played) {
-        if (tillPlayed) {
-            song.currentTime = tillPlayed;
-            song.play();
-            played = true;
-        }
-        else {
-            song.play();
-            played = true;
-        }
+    bgm_btn_stop.onclick=function(){
+        bgm.pause();
     }
 
-    else {
-        setCookie('timePlayed', song.currentTime);
+    if(localStorage.getItem('bgm_gds')!=null){
+        bgm.setAttribute('value')
+        bgm.setAttribute('value',localstorage.getItem('bgm_gds'));
+        bgm.innerHTML=' <source src="bgm/'+localStorage.getItem('bgm_gds')+'.mp3" type="audio/mpeg">';
+        // bgm_text.innerHTML='当前播放第'+localStorage.getItem('bgm_gds')+'首歌曲';
+    }else{
+        bgm.setAttribute('value', 1);
+        bgm.innerHTML='<source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">';
+        // bgm_text.innerHTML='当前播放第1首歌曲';
     }
+
+    setTimeout(function(){
+        if(localStorage.getItem('bgm_time')!=null){
+            bgm.currentTime = localStorage.getItem('bgm_time');
+            bgm.play();
+            // 音量逐漸變大
+            // bgm.volume = 0;
+            // v = 0;
+            // var t = setInterval(function () {
+            //     v+=0.005;
+            //     if(v<=1){
+            //         bgm.volume = v;
+            //     }else{
+            //         clearInterval(t);
+            //     }
+            // },25);
+        }
+
+        // 每 100ms 週期執行播放進度紀錄
+        window.setInterval(function () {
+            // 檢查瀏覽器是否支援 localStorage
+            if(typeof(Storage)!=='undefined'){
+                localStorage.setItem('bgm_time', bgm.currentTime);
+            }else{
+                var doc_body = document.querySelector('body');
+                doc_body.innerHTML = "抱歉瀏覽器過舊"
+            }
+        }, 100);
+        // 初始化後就啟動 bgm
+        bgm.play();
+        // bgm.volume = 0;
+        // v = 0;
+        // var t = setInterval(function () {
+        //     v+=0.005;
+        //     if(v<=1){
+        //         bgm.volume = v;
+        //     }else{
+        //         clearInterval(t);
+        //     }
+        // },25)
+    },1000)
+
 }
-setInterval(update, 1000);
+
+
+
+// function playAudio() {
+//     console.log('music');
+//     const audio = document.createElement("audio");
+//     audio.src = "/MEOW/music/Kawaii.mp3";
+//     audio.play();
+// }
+
+// function setCookie(music, value, exdays) {
+//     var exdate = new Date();
+//     exdate.setDate(exdate.getDate() + exdays);
+//     var c_value = escape(value) +
+//         ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+//     document.cookie = music + "=" + c_value;
+// }
+
+// function getCookie(music) {
+//     var i, x, y, ARRcookies = document.cookie.split(";");
+//     for (i = 0; i < ARRcookies.length; i++) {
+//         x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+//         y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+//         x = x.replace(/^\s+|\s+$/g, "");
+//         if (x == music) {
+//             return unescape(y);
+//         }
+//     }
+// }
+
+// var song = document.getElementsByTagName('audio')[0];
+// var played = false;
+// var tillPlayed = getCookie('timePlayed');
+// function update() {
+//     if (!played) {
+//         if (tillPlayed) {
+//             song.currentTime = tillPlayed;
+//             song.play();
+//             played = true;
+//         }
+//         else {
+//             song.play();
+//             played = true;
+//         }
+//     }
+
+//     else {
+//         setCookie('timePlayed', song.currentTime);
+//     }
+// }
+// setInterval(update, 1000);
 
 $('.drawSection02LeftCat').mouseenter(function () {
     $('.secretSection02LeftCat').css({
