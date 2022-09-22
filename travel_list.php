@@ -17,11 +17,13 @@ $rows = [];  // 預設值
 // 有資料才執行
 if ($totalRows > 0) {
     if ($page < 1) {
-        header('Location: ?page=1');
+        header('Location: ?page=1');//設定擋頭
+        //?page=1 總頁數的第1頁  轉向到相同的頁面 
         exit;
     }
     if ($page > $totalPages) {
         header('Location: ?page=' . $totalPages);
+        //?page= 輸入第幾頁 只要輸入大於的頁數就會自動跳轉到最後一頁
         exit;
     }
     // 取得該頁面的資料
@@ -392,7 +394,7 @@ header("Refresh:180");
                                 <div class="card_small d-flex align-items-center">
                                     <small class="xs card-text d-flex align-items-center pr-2">
                                         <div class="icon_fivestar"></div>
-                                        <span>4.7</span>
+                                        <span>4</span>
                                     </small>
                                     <small class="xs card-text d-flex align-items-center">
                                         <div class="icon_fire">
@@ -451,7 +453,7 @@ header("Refresh:180");
                         <?php endif;
                         endfor; ?>
                         <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                            <a class="page-link" href="?page=<?= $totalPages ?>"> 
+                            <a class="page-link" href="?page=<?= $totalPages ?>" onclick="return false'"> 
                             <!-- 怎麼到最後一頁 -->
                                 <i class="fa-solid fa-angles-right"></i>
                             </a>
