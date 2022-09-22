@@ -339,6 +339,16 @@
 .card_small small{
     color: var(--color-text60);
 }
+.card_intro p{
+    height: 68px;
+    overflow: hidden;
+    border: 1px solid #000;
+    width: 630px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
 .card_intro_mb p{
     margin: 0;
     padding-bottom: 10px;

@@ -5,6 +5,54 @@
 //     $(this).find('svg').attr('fill','#432A0F')
 // })
 
+function playAudio() {
+    console.log('music');
+    const audio = document.createElement("audio");
+    audio.src = "/MEOW/music/Kawaii.mp3";
+    audio.play();
+}
+
+function setCookie(music, value, exdays) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value = escape(value) +
+        ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+    document.cookie = music + "=" + c_value;
+}
+
+function getCookie(music) {
+    var i, x, y, ARRcookies = document.cookie.split(";");
+    for (i = 0; i < ARRcookies.length; i++) {
+        x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+        y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+        x = x.replace(/^\s+|\s+$/g, "");
+        if (x == music) {
+            return unescape(y);
+        }
+    }
+}
+
+var song = document.getElementsByTagName('audio')[0];
+var played = false;
+var tillPlayed = getCookie('timePlayed');
+function update() {
+    if (!played) {
+        if (tillPlayed) {
+            song.currentTime = tillPlayed;
+            song.play();
+            played = true;
+        }
+        else {
+            song.play();
+            played = true;
+        }
+    }
+
+    else {
+        setCookie('timePlayed', song.currentTime);
+    }
+}
+setInterval(update, 1000);
 
 $('.drawSection02LeftCat').mouseenter(function () {
     $('.secretSection02LeftCat').css({
@@ -560,8 +608,8 @@ $(window).scroll(function () {
 // console.log($('.drawCard').html());
 const randDrawArr = [9, 12, 57, 63, 64, 74, 75, 81, 92, 95];
 
-const randDraw = Math.floor(Math.random()*randDrawArr.length);
+const randDraw = Math.floor(Math.random() * randDrawArr.length);
 const drawValue = randDrawArr[randDraw];
 // console.log(drawValue)
 
-$('.drawCard').html('<img class="w-100 " src="./imgs/draw/draw'+drawValue+'.png" alt=""></img>')
+$('.drawCard').html('<img class="w-100 " src="./imgs/draw/draw' + drawValue + '.png" alt=""></img>')
