@@ -12,11 +12,15 @@ $temps = $pdo->query($sql)->fetchAll();
 //     '$temps' => $temps,
 // ]);
 // exit;
-// ? >
+
 
 //取得地區資料
 $a_sql = "SELECT * FROM `address` WHERE parent=0";
 $areas = $pdo->query($a_sql)->fetchAll();
+// echo json_encode([
+//     '$areas' => $areas,
+// ]);
+// exit;
 
 
 
@@ -930,25 +934,31 @@ $areas = $pdo->query($a_sql)->fetchAll();
                         <div class="row d-flex justify-content-center">
                             <div class="form-group mr-4 my-auto">
                                 <select class="select_lb" name="area_lb" id="area_lb">
+                                    <?php foreach($areas as $a):  ?>
+                                     <option value="<?= $a['city'] ?>"><?= $a['city'] ?></option>
+                                     <?php endforeach; ?>
                                     <!-- 改option樣式 -->
-                                    <option selected="selected" class="selectnorth_lb" value="0">北部</option>
+                                    <!-- <option selected="selected" class="selectnorth_lb" value="0">北部</option>
                                     <option value="1">中部</option>
-                                    <option value="2">南部</option>
+                                    <option value="2">南部</option> -->
                                 </select>
                             </div>
                             <div class="form-group my-auto">
                                 <select class="select_lb" name="item_lb" id="item_lb">
-                                    <!-- 改option樣式 -->
-                                    <option value="1">幸福美滿</option>
-                                    <option selected="selected" value="0">祈求姻緣</option>
+                                    <?php foreach($temps as $t):  ?>
+                                     <option value="<?= $t['category_tag'] ?>"><?= $t['category_tag'] ?></option>
+                                     <?php endforeach; ?>
 
-                                    <option value="2">斬桃花、小三</option>
+                                    <!-- 改option樣式 -->
+                                    <!-- <option selected="selected" value="0">祈求姻緣</option>
+                                    <option value="1">幸福美滿</option>
+                                    <option value="2">斬桃花、小三</option> -->
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!--  -->
+            <!-- 廟宇卡片 -->
             <?php foreach ($temps as $t) : ?>
                 <div class="info-card_lb  mt-5" id="c01-info-card_lb">
                     <div class="row">
