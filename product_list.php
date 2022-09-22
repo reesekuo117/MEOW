@@ -283,29 +283,29 @@ if ($totalRows > 0) {
                 <div class="btn"><a href="">9</a></div>
                 <div class="btn"><a href=""><i class="fa-solid fa-angles-right"></i></a></div> -->
                 <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?= $page == 1 ?>">
-                        <!-- 怎麼到第一頁 -->
-                            <i class="fa-solid fa-angles-left"></i>
-                        </a>
-                    </li>
-                    <?php for ($i = $page - 3; $i <= $page + 3; $i++) :
-                        if ($i >= 1 and $i <= $totalPages) :
-                    ?>
-                            <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-                            </li>
-                    <?php endif;
-                    endfor; ?>
-                    <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?= $page === 10 ?>"> 
-                        <!-- 怎麼到最後一頁 -->
-                            <i class="fa-solid fa-angles-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+                    <ul class="pagination">
+                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?page=<?= $page == 1 ?>">
+                            <!-- 怎麼到第一頁 -->
+                                <i class="fa-solid fa-angles-left"></i>
+                            </a>
+                        </li>
+                        <?php for ($i = $page - 3; $i <= $page + 3; $i++) :
+                            if ($i >= 1 and $i <= $totalPages) :
+                        ?>
+                                <li class="page-item <?= $page == $i ? 'active' : '' ?>">
+                                    <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                                </li>
+                        <?php endif;
+                        endfor; ?>
+                        <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?page=<?= $page === 10 ?>"> 
+                            <!-- 怎麼到最後一頁 -->
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
