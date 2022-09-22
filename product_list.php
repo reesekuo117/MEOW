@@ -2,24 +2,31 @@
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = 'product_list'; //頁面名稱
 $perPage = 9;  // 每頁最多有幾筆
-$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-// $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0;
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶沒有指定第幾頁，預設就會出現第一頁
+$cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要指定哪個分類，intval($_GET['cate']是變成整數的意思，0表示所有產品
 // $lowp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
 // $highp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
 
 $qsp = []; // query string parameters
 
-// 取得分類資料
-// $cates = $pdo->query("SELECT * FROM product WHERE product_category");
+// 取得商品分類資料
+$cates = $pdo->query("SELECT * FROM product_category WHERE 1") //1表示全部，也等於true
+    ->fetchAll();
+//     echo json_encode([
+//     'cates' => $cates,
 
-// $where = ' WHERE 1 '; //
-// if($cate){
-//     $where .= "AND product_category=$cate ";
-// }
+// ]);
+// exit;
+
+
+$where = ' WHERE 1 '; // 起頭，1是true
+if($cate){
+    $where .= "AND category_sid=$cate ";
+}
 
 
 // 取得資料的總筆數
-$t_sql = "SELECT COUNT(1) FROM product";
+$t_sql = "SELECT COUNT(1) FROM product $where";
 // $t_sql = "SELECT * FROM `product` WHERE 1";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 
@@ -38,7 +45,8 @@ if ($totalRows > 0) {
         exit;
     }
     // 取得該頁面的資料
-        $sql = sprintf("SELECT * FROM `product` $where ORDER BY `sid` ASC LIMIT %s, %s", ($page - 1) * $perPage,
+        $sql = sprintf("SELECT * FROM `product` $where ORDER BY `sid` ASC LIMIT %s, %s",
+        ($page - 1) * $perPage,
         $perPage
     );
     $rows = $pdo->query($sql)->fetchAll();
@@ -186,13 +194,21 @@ if ($totalRows > 0) {
                 <div class="col">
                     <div class="cate_filter">
                         <div class="product_cate">
-                            <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                            
-                            <a type="button" href="">
-                                <h5>－品牌聯名</h5>
+                            <a type="button" href="?">
+                                <h5>－全部商品</h5>
                             </a>
                         </div>
+                    <?php foreach($cates as $c):
+                        $btnStyle = $c['sid'] == $cate ? '.btncolor_focus' : '.btncolor_default' ?>
                         <div class="product_cate">
+                            <!-- 用a連結記得JQ要加e.preventDefault(); -->
+                            <a type="button" href="?cate=<?= $c['sid'] ?>">
+                                <h5>－<?= $c['category_name'] ?></h5>
+                            </a>
+                            
+                        </div>
+                        <?php endforeach ?>
+                        <!-- <div class="product_cate">
                             <a href="#">
                                 <h5>－文創商品</h5>
                             </a>
@@ -206,8 +222,8 @@ if ($totalRows > 0) {
                             <a href="#">
                                 <h5>－月老喵獨家</h5>
                             </a>
-                        </div>
-                        
+                        </div> -->
+                            
                     </div>
                     <!-- TODO:價格篩選怎麼寫 -->
                     <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
@@ -233,7 +249,7 @@ if ($totalRows > 0) {
             </div>
 
 
-            <div class="product_list">
+            <div class="product_list w-100">
                 <!-- --------------------卡片---------------------- -->
                 <div class="row">
                     <?php foreach ($rows as $r) : ?>
@@ -268,7 +284,7 @@ if ($totalRows > 0) {
                                         <div class="icon_fire">
                                             <i class="fa-solid fa-fire"></i>
                                         </div>
-                                        <span>3K個已訂購</span>
+                                        <span><?= $r['product_popular'] ?>K+個已訂購</span>
                                     </small>
                                     <h4 class="card-text price">
                                     <?= $r['product_price'] ?>
@@ -287,17 +303,26 @@ if ($totalRows > 0) {
     <div class="pages">
         <div class="container">
             <div class="row">
-                <!-- <div class="btn"><a href=""><i class="fa-solid fa-angles-left"></i></a></div>
-                <div class="btn"><a href="">1</a></div>
-                <div class="btn"><a href="">2</a></div>
-                <div class="btn"><a href="">3</a></div>
-                <div class="btn"><a href="">4</a></div>
-                <div class="btn"><a href="">5</a></div>
-                <div class="btn"><a href="">6</a></div>
-                <div class="btn"><a href="">7</a></div>
-                <div class="btn"><a href="">8</a></div>
-                <div class="btn"><a href="">9</a></div>
-                <div class="btn"><a href=""><i class="fa-solid fa-angles-right"></i></a></div> -->
+                <?php // 固定成 1 + 2 * $pageOptional 頁
+                // 宣告
+                $beginPage;
+                $endPage;
+                $pagesOptional = 1;
+                if ($totalPages <= $pagesOptional){
+                    $beginPage = 1;
+                    $endpage = $totalPages;
+                } else if ($page - 1 < $pagesOptional){
+                    $beginPage = 1;
+                    $endpage = $pagesOptional * 1 + 1;
+                } else if ($totalPages-$page < $pagesOptional){
+                    // $beginPage = $totalPages - ($pagesOptional *2 +1);
+                    $beginPage = $totalPages - ($pagesOptional * 1);
+                    $endPage = $totalPages;
+                } else {
+                    $beginPage = $page - $pagesOptional;
+                    $endpage = $page + $pagesOptional;
+                }
+                ?>
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
