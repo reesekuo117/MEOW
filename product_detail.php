@@ -15,11 +15,11 @@ $pageName ='home'; //頁面名稱
                         <div class="col">
                             <!-- https://codepen.io/RetinaInc/details/MWEygq -->
                             <div class="img-demo d-flex justify-content-center">
-                                <img class="p1" src="./imgs/product/P04_1.jpg" alt="">
-                                <img class="p2" src="./imgs/product/P04_2.jpg" alt="">
-                                <img class="p3" src="./imgs/product/P04_3.webp" alt="">
-                                <img class="p4" src="./imgs/product/P04_4.webp" alt="">
-                                <img class="p5" src="./imgs/product/P04_5.webp" alt="">
+                                <img class="p1" src="./imgs/product/P04_1_b.jpg" alt="">
+                                <img class="p2" src="./imgs/product/P04_2_b.jpg" alt="">
+                                <img class="p3" src="./imgs/product/P04_3_b.jpg" alt="">
+                                <img class="p4" src="./imgs/product/P04_4_b.jpg" alt="">
+                                <img class="p5" src="./imgs/product/P04_5_b.jpg" alt="">
 
                                 <div class="icon_heart">
                                     <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -42,19 +42,19 @@ $pageName ='home'; //頁面名稱
                         <div class="col">
                             <div class="img-selector-area d-flex">
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/P04_1.jpg" alt="">
+                                    <img src="./imgs/product/small/P04_1_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/P04_2.jpg" alt="">
+                                    <img src="./imgs/product/small/P04_2_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/P04_3.webp" alt="">
+                                    <img src="./imgs/product/small/P04_3_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/P04_4.webp" alt="">
+                                    <img src="./imgs/product/small/P04_4_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/P04_5.webp" alt="">
+                                    <img src="./imgs/product/small/P04_5_s.jpg" alt="">
                                 </div>
                             </div>
                         </div>
