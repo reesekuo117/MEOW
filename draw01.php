@@ -12,10 +12,9 @@ $pageName = '線上求籤'; //頁面名稱
 
 <div class="body_draw01 d-none d-md-flex">
     <div class="drawSection01">
-        <audio id="bgm" value="1" controls>
-        <!-- hidden="hidden" -->
+        <!-- <audio id="bgm" value="1" controls>
             <source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">
-        </audio>
+        </audio> -->
         <div class="container flex-row ">
             <h1 class="">歡迎來月老喵線上求籤！</h1>
             <h4>
