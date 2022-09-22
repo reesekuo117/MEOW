@@ -317,7 +317,7 @@ header("Refresh:180");
                     <div class="card_row d-block d-md-flex align-items-center ">
                         <div class="t_img col col-md-4 px-0">
                             <a href="#">
-                                <img class="w-100" src="imgs/"<?= $r['travelcard_img'] ?> alt="...">
+                                <img class="w-100" src="imgs/travel/small/ <?= $r['travelcard_img'] ?>" alt="...">
                             </a>
                         </div>
                         <div class="card-body col-md-8">

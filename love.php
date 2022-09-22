@@ -19,62 +19,101 @@ $pageName ='會員中心'; //頁面名稱
     // }
     // 如果沒有資料會拿到ture轉到首頁
 
-    //int isset(mixed var); 說明: 若參數var存在則傳回true，否則傳回false
-    //intval -- 取得變量的整數值
-    $perPage = 8;  //每頁最多有幾筆
-    $page = isset($_GET['page']) ? intval($_GET['page']) : 1; //使用者決定看第幾頁
+    $perPage = 4; //每頁最多有幾筆
+    $page = isset($_GET['page']) ? intval($_GET['page']) : 1; //取得資料的總筆數  
     $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0;
 
-    // $qsp = []; //query string parameters 查詢字串的參數
+    $qsp = []; //query string parameters 查詢字串的參數
 
     // 取得分類資料
-    $cates = $pdo->query("SELECT * FROM love_type WHERE 1")
-    ->fetchAll();
+    $cates = $pdo->query("SELECT * FROM love_type WHERE sid")
+        ->fetchAll();
 
-    // $where = 'where 1';  //起頭
-    // if($cate){
-    //     $where .= " AND love_type_sid=$cate ";
-    //     $qsp['cate'] = $cate;
-    // } // .= 相加.
+    // -------------------------------商品
+    $where = 'where 1';  //起頭
+    if($cate){
+        $where .= " AND love_type=$cate ";
+        $qsp['cate'] = $cate;
+    } // .= 相加.
 
-    //取得資料的總筆數  
-    $p_sql = "SELECT COUNT(1) FROM product";   
-    $totalRows = $pdo->query($p_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
+    $p_sql = "SELECT COUNT(1) FROM love where target_type=1";   
+    $t_sql = "SELECT COUNT(1) FROM love where target_type=2";   
+    $f_sql = "SELECT COUNT(1) FROM love where target_type=3";   
+    $d_sql = "SELECT COUNT(1) FROM love where target_type=4"; 
+
+    $p_totalRows = $pdo->query($p_sql)->fetch(PDO::FETCH_NUM)[0]; //PDO::FETCH_NUM—數字索引陣列形式
+    $t_totalRows = $pdo->query($p_sql)->fetch(PDO::FETCH_NUM)[0];
+    $f_totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+    $d_totalRows = $pdo->query($d_sql)->fetch(PDO::FETCH_NUM)[0];
 
     //計算總頁數
-    $totalPages = ceil($totalRows/$perPage);  //ceil無條件進位
+    $p_totalPages = ceil($p_totalRows/$perPage);  //ceil無條件進位
+    $t_totalPages = ceil($t_totalRows/$perPage);  //ceil無條件進位
+    $f_totalPages = ceil($f_totalRows/$perPage);  //ceil無條件進位
+    $d_totalPages = ceil($d_totalRows/$perPage);  //ceil無條件進位
 
     $rows = []; //預設
+
+    //收藏商品
     //有資料才執行 >0
-    if($totalRows > 0){
-    if($page<1){
-        header('Location: ?page=1');
-        exit;
+    if($p_totalRows > 0){
+        if($page<1){
+            //header('Location: member.php#my-favorites?page=1');
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$p_totalPages){
+            header('Location: ?page='. $p_totalPages);
+            exit;
+        }
+        //$page<1 ? ($page=1) : null;  //三元運算子
+        //$page>$totalPages ? ($page=$totalPages) : null; 
+
+        //TODO:取得該頁面的資料
+        $p_sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        // ORDER BY `sid` DESC 降冪 講義41頁
+        // LIMIT %s, %s ==> [索引][筆數]
+        $rows = $pdo->query($p_sql)->fetchAll();
     }
-    if($page>$totalPages){
-        header('Location: ?page='. $totalPages);
-        exit;
+    if($t_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$t_totalPages){
+            header('Location: ?page='. $t_totalPages);
+            exit;
+        }
+        $t_sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        $rows = $pdo->query($t_sql)->fetchAll();
     }
-    // $page<1 ? ($page=1) : null;  //三元運算子
-    //$page>$totalPages ? ($page=$totalPages) : null; 
-
-    //TODO:取得該頁面的資料
-    //sql外層通常用雙引號 內層用單引號就不需要跳脫
-    $sql = sprintf("SELECT * FROM `product` ORDER BY `sid` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
-    // ORDER BY `sid` DESC 降冪 講義41頁
-    // LIMIT %s, %s ==> [索引][筆數]
-    $rows = $pdo->query($sql)->fetchAll();
+    if($f_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$f_totalPages){
+            header('Location: ?page='. $f_totalPages);
+            exit;
+        }
+        $f_sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        $rows = $pdo->query($f_sql)->fetchAll();
+    }
+    if($d_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$d_totalPages){
+            header('Location: ?page='. $d_totalPages);
+            exit;
+        }
+        $d_sql = sprintf("SELECT * FROM love ORDER BY `sid` DESC LIMIT %s, %s", ($page-1)*$perPage, $perPage); 
+        $rows = $pdo->query($d_sql)->fetchAll();
     }
 
 
-
-// json_encode判斷型別輸出JSON 數字型態
-// echo json_encode([ 
-//    '$rows' => $rows,
-// ]);
-// exit;
 ?>
-
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./reese.css">
 <!-- <link rel="stylesheet" href="./reese.js"> -->
@@ -483,7 +522,7 @@ $pageName ='會員中心'; //頁面名稱
                             </svg>
                         </button>
                         <?php for($i=$page - 2; $i<=$page + 2; $i++): 
-                            if($i>=1 and $i <= $totalPages) : ?>
+                            if($i>=1 and $i <= $p_totalPages) : ?>
                             <button type="button" class="pagebtn-re" <?= $page==$i ? 'active' : '' ?>>
                                 <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
                             </button>
@@ -498,20 +537,20 @@ $pageName ='會員中心'; //頁面名稱
                         </button>
                     </div>
                     <!-- <ul class="pagebtngroup-re text-center mb-3">
-                        <li class="pagebtn-re < ?= $page==1 ? 'disabled' : '' ?>">
+                        <li class="pagebtn-re <?= $page==1 ? 'disabled' : '' ?>">
                             <a href="?page=<?= $page-1 ?>">
                                 <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.12603 11.3113C0.572142 10.9122 0.572141 10.0878 1.12603 9.68867L13.4396 0.816415C14.1011 0.339827 15.0242 0.812491 15.0242 1.62775L15.0242 19.3723C15.0242 20.1875 14.1011 20.6602 13.4396 20.1836L1.12603 11.3113Z" fill="#432A0F" fill-opacity="0.38"/>
                                 </svg>
                             </a>
                         </li>
-                        < ?php for($i=$page - 2; $i<=$page + 2; $i++): 
+                        <?php for($i=$page - 2; $i<=$page + 2; $i++): 
                             if($i>=1 and $i <= $p_totalPages) : ?>
-                        <li class="pagebtn-re"  ?= $page==$i ? 'active' : '' ?>>
-                            <a href="?page=< ?= $i ?>">< ?= $i ?></a>
+                        <li class="pagebtn-re" <?= $page==$i ? 'active' : '' ?>>
+                            <a href="?page=<?= $i ?>"><?= $i ?></a>
                         </li>
-                        < ?php endif; endfor; ?>
-                        <li class="pagebtn-re" < ?= $page==$p_totalPages ? 'disabled' : '' ?>>
+                        <?php endif; endfor; ?>
+                        <li class="pagebtn-re" <?= $page==$p_totalPages ? 'disabled' : '' ?>>
                             <a href="?page=<?= $page+1 ?>">
                                 <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13.9062 9.68867C14.4601 10.0878 14.4601 10.9122 13.9062 11.3113L1.59262 20.1836C0.931172 20.6602 0.00803278 20.1875 0.00803282 19.3722L0.00803359 1.62775C0.00803363 0.812489 0.931174 0.339829 1.59262 0.816417L13.9062 9.68867Z" fill="#432A0F" fill-opacity="0.38"/>
