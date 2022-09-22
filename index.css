@@ -24,9 +24,9 @@ header .navbar_ba {
     /* background-color: var(--color-orange); */
 }
 
-.section1_ba button a {
-    text-decoration: none;
-    color: var(--color-brown-dark);
+.body_ba a {
+    text-decoration: none !important;
+    color: var(--color-brown-dark) !important;
 }
 
 .header-xs_ba {
@@ -981,11 +981,6 @@ header .navbar_ba {
     width: 330px;
 }
 
-.msection4Card,
-.msection5Card {
-    /* height: 320px; */
-    /* border: #ff5b00 1px solid; */
-}
 
 /* ----------------------------- mobile section5 ----------------------------------- */
 
@@ -1141,6 +1136,12 @@ header .navbar_ba {
 .carousel_card .carousel-item {
 	text-align: center;
 	overflow: hidden;
+    width: 100%;
+}
+
+.col-md-4{
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .carousel_card .carousel-item img {
