@@ -12,7 +12,9 @@ $pageName = '線上求籤'; //頁面名稱
 
 <div class="body_draw01 d-none d-md-flex">
     <div class="drawSection01">
-        <audio id="audioplayer" autobuffer="" loop="true" preload="auto" src="music/Kawaii.mp3">
+        <audio id="bgm" value="1" controls>
+        <!-- hidden="hidden" -->
+            <source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">
         </audio>
         <div class="container flex-row ">
             <h1 class="">歡迎來月老喵線上求籤！</h1>
@@ -50,14 +52,14 @@ $pageName = '線上求籤'; //頁面名稱
                 </div>
             </div>
             <div class="onOff d-flex justify-content-center ">
-                <!-- <a class="text-decoration-none" href="draw02.php"> -->
-                <button onclick="playAudio()" class="musicOn d-flex justify-content-center align-items-center">
+                <a class="text-decoration-none" href="draw02.php">
+                <button class="musicOn d-flex justify-content-center align-items-center bgm_btn_play">
                     <h1>開</h1>
                 </button>
-                <!-- </a> -->
+                </a>
 
                 <a class="text-decoration-none" href="draw02.php">
-                    <div class="musicOff d-flex justify-content-center align-items-center">
+                    <div class="musicOff d-flex justify-content-center align-items-center bgm_btn_stop">
                         <h1>關</h1>
 
                     </div>
