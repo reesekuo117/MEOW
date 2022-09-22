@@ -3,7 +3,19 @@ require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = 'product_list'; //頁面名稱
 $perPage = 9;  // 每頁最多有幾筆
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+// $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0;
+// $lowp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
+// $highp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
 
+$qsp = []; // query string parameters
+
+// 取得分類資料
+// $cates = $pdo->query("SELECT * FROM product WHERE product_category");
+
+// $where = ' WHERE 1 '; //
+// if($cate){
+//     $where .= "AND product_category=$cate ";
+// }
 
 
 // 取得資料的總筆數
@@ -26,7 +38,9 @@ if ($totalRows > 0) {
         exit;
     }
     // 取得該頁面的資料
-    $sql = sprintf("SELECT * FROM `product` ORDER BY `sid` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
+        $sql = sprintf("SELECT * FROM `product` $where ORDER BY `sid` ASC LIMIT %s, %s", ($page - 1) * $perPage,
+        $perPage
+    );
     $rows = $pdo->query($sql)->fetchAll();
 }
 
@@ -173,7 +187,8 @@ if ($totalRows > 0) {
                     <div class="cate_filter">
                         <div class="product_cate">
                             <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                            <a href="#">
+                            
+                            <a type="button" href="">
                                 <h5>－品牌聯名</h5>
                             </a>
                         </div>
@@ -192,6 +207,7 @@ if ($totalRows > 0) {
                                 <h5>－月老喵獨家</h5>
                             </a>
                         </div>
+                        
                     </div>
                     <!-- TODO:價格篩選怎麼寫 -->
                     <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
@@ -282,7 +298,7 @@ if ($totalRows > 0) {
                 <div class="btn"><a href="">8</a></div>
                 <div class="btn"><a href="">9</a></div>
                 <div class="btn"><a href=""><i class="fa-solid fa-angles-right"></i></a></div> -->
-                <nav aria-label="Page navigation example">
+            <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
                         <a class="page-link" href="?page=<?= $page == 1 ?>">
@@ -299,8 +315,8 @@ if ($totalRows > 0) {
                     <?php endif;
                     endfor; ?>
                     <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?= $page === 10 ?>"> 
-                        <!-- 怎麼到最後一頁 -->
+                        <a class="page-link" href="?page=<?=  $totalPages ?>"> 
+                        <!-- 用$totalPages到最後一頁 -->
                             <i class="fa-solid fa-angles-right"></i>
                         </a>
                     </li>
