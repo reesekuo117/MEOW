@@ -7,72 +7,72 @@
 
 // 音樂
 
-window.onload=function(){
-    // var bgm_text=document.queryselector('.bgm_text');
-    var bgm_btn_play = document.querySelector('.bgm_btn_play');
-    var bgm_btn_stop = document.querySelector('.bgm_btn_stop');
-    var bgm = document.getElementById('bgm');
-    //播放暂停
-    bgm_btn_play.onclick=function(){
-        bgm.play();
-    }
-    bgm_btn_stop.onclick=function(){
-        bgm.pause();
-    }
+// window.onload=function(){
+//     // var bgm_text=document.queryselector('.bgm_text');
+//     var bgm_btn_play = document.querySelector('.bgm_btn_play');
+//     var bgm_btn_stop = document.querySelector('.bgm_btn_stop');
+//     var bgm = document.getElementById('bgm');
+//     //播放暂停
+//     bgm_btn_play.onclick=function(){
+//         bgm.play();
+//     }
+//     bgm_btn_stop.onclick=function(){
+//         bgm.pause();
+//     }
 
-    if(localStorage.getItem('bgm_gds')!=null){
-        bgm.setAttribute('value')
-        bgm.setAttribute('value',localstorage.getItem('bgm_gds'));
-        bgm.innerHTML=' <source src="bgm/'+localStorage.getItem('bgm_gds')+'.mp3" type="audio/mpeg">';
-        // bgm_text.innerHTML='当前播放第'+localStorage.getItem('bgm_gds')+'首歌曲';
-    }else{
-        bgm.setAttribute('value', 1);
-        bgm.innerHTML='<source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">';
-        // bgm_text.innerHTML='当前播放第1首歌曲';
-    }
+//     if(localStorage.getItem('bgm_gds') != null){
+//         bgm.setAttribute('value',localstorage.getItem('bgm_gds'))
+//         // bgm.setAttribute('value',localstorage.getItem('bgm_gds'));
+//         bgm.innerHTML=' <source src="bgm/'+localStorage.getItem('bgm_gds')+'.mp3" type="audio/mpeg">';
+//         // bgm_text.innerHTML='当前播放第'+localStorage.getItem('bgm_gds')+'首歌曲';
+//     }else{
+//         bgm.setAttribute('value', 1);
+//         bgm.innerHTML='<source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">';
+//         // bgm_text.innerHTML='当前播放第1首歌曲';
+//     }
 
-    setTimeout(function(){
-        if(localStorage.getItem('bgm_time')!=null){
-            bgm.currentTime = localStorage.getItem('bgm_time');
-            bgm.play();
-            // 音量逐漸變大
-            // bgm.volume = 0;
-            // v = 0;
-            // var t = setInterval(function () {
-            //     v+=0.005;
-            //     if(v<=1){
-            //         bgm.volume = v;
-            //     }else{
-            //         clearInterval(t);
-            //     }
-            // },25);
-        }
+//     setTimeout(function(){
+//         if(localStorage.getItem('bgm_time')!=null){
+//             bgm.currentTime = localStorage.getItem('bgm_time');
+//             bgm.play();
+//             // 音量逐漸變大
+//             // bgm.volume = 0;
+//             // v = 0;
+//             // var t = setInterval(function () {
+//             //     v+=0.005;
+//             //     if(v<=1){
+//             //         bgm.volume = v;
+//             //     }else{
+//             //         clearInterval(t);
+//             //     }
+//             // },25);
+//         }
 
-        // 每 100ms 週期執行播放進度紀錄
-        window.setInterval(function () {
-            // 檢查瀏覽器是否支援 localStorage
-            if(typeof(Storage)!=='undefined'){
-                localStorage.setItem('bgm_time', bgm.currentTime);
-            }else{
-                var doc_body = document.querySelector('body');
-                doc_body.innerHTML = "抱歉瀏覽器過舊"
-            }
-        }, 100);
-        // 初始化後就啟動 bgm
-        bgm.play();
-        // bgm.volume = 0;
-        // v = 0;
-        // var t = setInterval(function () {
-        //     v+=0.005;
-        //     if(v<=1){
-        //         bgm.volume = v;
-        //     }else{
-        //         clearInterval(t);
-        //     }
-        // },25)
-    },1000)
+//         // 每 100ms 週期執行播放進度紀錄
+//         window.setInterval(function () {
+//             // 檢查瀏覽器是否支援 localStorage
+//             if(typeof(Storage)!=='undefined'){
+//                 localStorage.setItem('bgm_time', bgm.currentTime);
+//             }else{
+//                 var doc_body = document.querySelector('body');
+//                 doc_body.innerHTML = "抱歉瀏覽器過舊"
+//             }
+//         }, 100);
+//         // 初始化後就啟動 bgm
+//         bgm.play();
+//         // bgm.volume = 0;
+//         // v = 0;
+//         // var t = setInterval(function () {
+//         //     v+=0.005;
+//         //     if(v<=1){
+//         //         bgm.volume = v;
+//         //     }else{
+//         //         clearInterval(t);
+//         //     }
+//         // },25)
+//     },1000)
 
-}
+// }
 
 
 

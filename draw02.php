@@ -9,11 +9,9 @@ $pageName = '線上求籤'; //頁面名稱
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <?php include __DIR__. '/parts/navbar.php'; ?>
-        <audio id="bgm" value="1" controls>
-        <!-- hidden="hidden" -->
-
+        <!-- <audio id="bgm" value="1" controls>
             <source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">
-        </audio>
+        </audio> -->
     <div class="body_draw01 d-none d-md-block">
         <div class="drawSection02 position-relative">
             <a id="backtodraw01" class="position-absolute backto" href="draw01.php">
