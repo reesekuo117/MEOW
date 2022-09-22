@@ -315,5 +315,25 @@ function checkFormPassword(){
         }, 'json');
     }
 }
+// 最愛
+function addToCart_re(event) {
+    const btn = $(event.currentTarget);
+    //currentTarget 事件屬性返回其事件偵聽器觸發事件的元素
+    const qty = btn.closest('.card-body-re').find('select').val();
+    const sid = btn.attr('data-sid');
+    //使用attr叫出自定屬性 data-sid
+
+    // console.log(btn.closest('.card-body').find('select'));
+    console.log({sid, qty});
+
+    // $(selector).get(url,data,success(response,status,xhr),dataType)
+    $.get(
+        'handle-cart.php', 
+        {sid, qty}, 
+        function(data){
+            showCartCount(data);
+        }, 
+        'json');
+}
 
 

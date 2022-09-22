@@ -39,11 +39,16 @@ $pageName ='會員中心'; //頁面名稱
 
 
 
+    // $p_sql = "SELECT COUNT(1) FROM `love` Inner join product on product.id = love.collect_id WHERE love.member_id=$member_id";
+    // $t_sql = "SELECT COUNT(1) FROM `love` Inner join travel on travel.id = love.collect_id WHERE love.member_id=$member_id";
+    // $f_sql = "SELECT COUNT(1) FROM `love` Inner join forturn on forturn.id = love.collect_id WHERE love.member_id=$member_id";
+    // $d_sql = "SELECT COUNT(1) FROM `love` Inner join draw on draw.id = love.collect_id WHERE love.member_id=$member_id";
+
 /*
-    $p_sql = "SELECT COUNT(1) FROM product"; //取得資料的總筆數  
-    $t_sql = "SELECT COUNT(1) FROM travel"; //取得資料的總筆數  
-    $f_sql = "SELECT COUNT(1) FROM forturn"; //取得資料的總筆數  
-    $d_sql = "SELECT COUNT(1) FROM draw"; //取得資料的總筆數  
+    // $p_sql = "SELECT COUNT(1) FROM product"; //取得資料的總筆數  
+    // $t_sql = "SELECT COUNT(1) FROM travel"; //取得資料的總筆數  
+    // $f_sql = "SELECT COUNT(1) FROM forturn"; //取得資料的總筆數  
+    // $d_sql = "SELECT COUNT(1) FROM draw"; //取得資料的總筆數  
 
     $p_totalRows = $pdo->query($p_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
     $t_totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
@@ -116,8 +121,8 @@ $pageName ='會員中心'; //頁面名稱
         $d_sql = sprintf("SELECT * FROM `love` Inner join draw on draw.id = collect_id ORDER BY `id` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
         $rows = $pdo->query($d_sql)->fetchAll();
     }
-
 */
+
 
 
     $p_sql = "SELECT * FROM `love` Inner join product on product.id = love.collect_id WHERE love.member_id=$member_id";
@@ -126,6 +131,9 @@ $pageName ='會員中心'; //頁面名稱
     $d_sql = "SELECT * FROM `love` Inner join draw on draw.id = love.collect_id WHERE love.member_id=$member_id";
 
     $p_rows = $pdo->query($p_sql)->fetchAll();
+    $t_rows = $pdo->query($t_sql)->fetchAll();
+    $f_rows = $pdo->query($f_sql)->fetchAll();
+    $d_rows = $pdo->query($d_sql)->fetchAll();
 // json_encode判斷型別輸出JSON 數字型態
 // echo json_encode([ 
 //    '$rows' => $rows,
@@ -396,11 +404,11 @@ $pageName ='會員中心'; //頁面名稱
                                     <div class="cardimg-re">
                                         <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" class="card-img-top" alt="">
                                     </div>
-                                    <div class="position-absolute likeicon-re">
+                                    <button class="position-absolute likeicon-re" data-sid="<?= $r['sid']?>" onclick="addToCart_re(event)">
                                         <svg class="likeiconsvg-re" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path  fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
                                         </svg>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="card-body-re">
                                     <p class="card-title-re textphone-14-re mb-2"><?= $r['product_name'] ?></p>
@@ -531,30 +539,28 @@ $pageName ='會員中心'; //頁面名稱
                                 </div>
                             </div>
                         </div> -->
-
-
                     </div> 
-                    <div class="pagebtngroup-re text-center mb-3">
+                    <!-- <div class="pagebtngroup-re text-center mb-3">
                         <button type="button" class="pagebtn-re ">
                             <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.12603 11.3113C0.572142 10.9122 0.572141 10.0878 1.12603 9.68867L13.4396 0.816415C14.1011 0.339827 15.0242 0.812491 15.0242 1.62775L15.0242 19.3723C15.0242 20.1875 14.1011 20.6602 13.4396 20.1836L1.12603 11.3113Z" fill="#432A0F" fill-opacity="0.38"/>
                             </svg>
                         </button>
-                        <?php for($i=$page - 2; $i<=$page + 2; $i++): 
+                        < ?php for($i=$page - 2; $i<=$page + 2; $i++): 
                             if($i>=1 and $i <= $totalPages) : ?>
-                            <button type="button" class="pagebtn-re" <?= $page==$i ? 'active' : '' ?>>
-                                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                            <button type="button" class="pagebtn-re" < ?= $page==$i ? 'active' : '' ?>>
+                                <a class="page-link" href="?page=< ?= $i ?>">< ?= $i ?></a>
                             </button>
-                        <?php endif; endfor; ?>
-                        <!-- <button type="button" class="pagebtn-re">1</button>
+                        < ?php endif; endfor; ?>
+                        <button type="button" class="pagebtn-re">1</button>
                         <button type="button" class="pagebtn-re">2</button>
-                        <button type="button" class="pagebtn-re">3</button> -->
+                        <button type="button" class="pagebtn-re">3</button>
                         <button type="button" class="pagebtn-re">
                             <svg width="15" height="21" viewBox="0 0 15 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13.9062 9.68867C14.4601 10.0878 14.4601 10.9122 13.9062 11.3113L1.59262 20.1836C0.931172 20.6602 0.00803278 20.1875 0.00803282 19.3722L0.00803359 1.62775C0.00803363 0.812489 0.931174 0.339829 1.59262 0.816417L13.9062 9.68867Z" fill="#432A0F" fill-opacity="0.38"/>
                             </svg>
                         </button>
-                    </div>
+                    </div> -->
                     <!-- <ul class="pagebtngroup-re text-center mb-3">
                         <li class="pagebtn-re < ?= $page==1 ? 'disabled' : '' ?>">
                             <a href="?page=<?= $page-1 ?>">
@@ -581,7 +587,7 @@ $pageName ='會員中心'; //頁面名稱
     <!-- p3-T------------------------------------------------------------------ -->
                 <div id="tab02-re" class="tab-inner-re">
                 <div class="row mx-0 likehight-re">
-                    <?php foreach($rows as $r): ?>
+                    <?php foreach($t_rows as $r): ?>
                         <div class="col-6 col-md-3 px-2 pb-3">
                             <div class="card">
                                 <div class="position-relative">
@@ -610,7 +616,7 @@ $pageName ='會員中心'; //頁面名稱
                         </div>
                     <?php endforeach ?>
                     </div>
-                    <div class="pagebtngroup-re text-center mb-3">
+                    <!-- <div class="pagebtngroup-re text-center mb-3">
                         <button type="button" class="pagebtn-re ">
                         <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.12603 11.3113C0.572142 10.9122 0.572141 10.0878 1.12603 9.68867L13.4396 0.816415C14.1011 0.339827 15.0242 0.812491 15.0242 1.62775L15.0242 19.3723C15.0242 20.1875 14.1011 20.6602 13.4396 20.1836L1.12603 11.3113Z" fill="#432A0F" fill-opacity="0.38"/>
@@ -624,12 +630,12 @@ $pageName ='會員中心'; //頁面名稱
                             <path d="M13.9062 9.68867C14.4601 10.0878 14.4601 10.9122 13.9062 11.3113L1.59262 20.1836C0.931172 20.6602 0.00803278 20.1875 0.00803282 19.3722L0.00803359 1.62775C0.00803363 0.812489 0.931174 0.339829 1.59262 0.816417L13.9062 9.68867Z" fill="#432A0F" fill-opacity="0.38"/>
                         </svg>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
     <!-- p3-D------------------------------------------------------------------ -->
                 <div id="tab03-re" class="tab-inner-re">
                     <div class="row mb-3 mx-0 likehight-re">
-                        <?php foreach($rows as $r): ?>
+                        <?php foreach($f_rows as $r): ?>
                         <div class="col-12 col-md-4 likecard-re position-relative pb-3">
                             <img class="w-100" src="./imgs/love/<?= $r['img'] ?>" alt="">
                             <div class="position-absolute likeicon2-re">
@@ -639,24 +645,8 @@ $pageName ='會員中心'; //頁面名稱
                             </div>
                         </div>
                         <?php endforeach ?>
-                        <!-- <div class="col-12 col-md-4 likecard-re position-relative pb-3">
-                            <img class="w-100" src="./imgs/testre.jpg" alt="">
-                            <div class="position-absolute likeicon2-re">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 likecard-re position-relative pb-3">
-                            <img class="w-100" src="./imgs/testre.jpg" alt="">
-                            <div class="position-absolute likeicon2-re">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                </svg>
-                            </div>
-                        </div> -->
                     </div>
-                    <div class="pagebtngroup-re text-center mb-3">
+                    <!-- <div class="pagebtngroup-re text-center mb-3">
                         <button type="button" class="pagebtn-re ">
                         <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.12603 11.3113C0.572142 10.9122 0.572141 10.0878 1.12603 9.68867L13.4396 0.816415C14.1011 0.339827 15.0242 0.812491 15.0242 1.62775L15.0242 19.3723C15.0242 20.1875 14.1011 20.6602 13.4396 20.1836L1.12603 11.3113Z" fill="#432A0F" fill-opacity="0.38"/>
@@ -670,12 +660,12 @@ $pageName ='會員中心'; //頁面名稱
                             <path d="M13.9062 9.68867C14.4601 10.0878 14.4601 10.9122 13.9062 11.3113L1.59262 20.1836C0.931172 20.6602 0.00803278 20.1875 0.00803282 19.3722L0.00803359 1.62775C0.00803363 0.812489 0.931174 0.339829 1.59262 0.816417L13.9062 9.68867Z" fill="#432A0F" fill-opacity="0.38"/>
                         </svg>
                         </button>
-                    </div>
-                    
+                    </div> -->
                 </div>
     <!-- p3-F------------------------------------------------------------------ -->
                 <div id="tab04-re" class="tab-inner-re">
                     <div class="row mb-3 mx-0 likehight-re">
+                    <?php foreach($d_rows as $r): ?>
                     <div class="col-12 col-md-4 likecard-re position-relative pb-3">
                         <img class="w-100" src="./imgs/testre.jpg" alt="">
                         <div class="position-absolute likeicon2-re">
@@ -684,24 +674,11 @@ $pageName ='會員中心'; //頁面名稱
                             </svg>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 likecard-re position-relative pb-3">
-                        <img class="w-100" src="./imgs/testre.jpg" alt="">
-                        <div class="position-absolute likeicon2-re">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                            </svg>
-                        </div>
+                    <?php endforeach ?>
+
+
                     </div>
-                    <div class="col-12 col-md-4 likecard-re position-relative pb-3">
-                        <img class="w-100" src="./imgs/testre.jpg" alt="">
-                        <div class="position-absolute likeicon2-re">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                            </svg>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="pagebtngroup-re text-center mb-3">
+                    <!-- <div class="pagebtngroup-re text-center mb-3">
                         <button type="button" class="pagebtn-re ">
                         <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.12603 11.3113C0.572142 10.9122 0.572141 10.0878 1.12603 9.68867L13.4396 0.816415C14.1011 0.339827 15.0242 0.812491 15.0242 1.62775L15.0242 19.3723C15.0242 20.1875 14.1011 20.6602 13.4396 20.1836L1.12603 11.3113Z" fill="#432A0F" fill-opacity="0.38"/>
@@ -715,7 +692,7 @@ $pageName ='會員中心'; //頁面名稱
                             <path d="M13.9062 9.68867C14.4601 10.0878 14.4601 10.9122 13.9062 11.3113L1.59262 20.1836C0.931172 20.6602 0.00803278 20.1875 0.00803282 19.3722L0.00803359 1.62775C0.00803363 0.812489 0.931174 0.339829 1.59262 0.816417L13.9062 9.68867Z" fill="#432A0F" fill-opacity="0.38"/>
                         </svg>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 <!-- p4-orderlist----------------------------------------------------------------------------------- -->
