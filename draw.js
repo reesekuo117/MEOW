@@ -20,9 +20,9 @@ window.onload=function(){
         bgm.pause();
     }
 
-    if(localStorage.getItem('bgm_gds')!=null){
-        bgm.setAttribute('value')
-        bgm.setAttribute('value',localstorage.getItem('bgm_gds'));
+    if(localStorage.getItem('bgm_gds') != null){
+        bgm.setAttribute('value',localstorage.getItem('bgm_gds'))
+        // bgm.setAttribute('value',localstorage.getItem('bgm_gds'));
         bgm.innerHTML=' <source src="bgm/'+localStorage.getItem('bgm_gds')+'.mp3" type="audio/mpeg">';
         // bgm_text.innerHTML='当前播放第'+localStorage.getItem('bgm_gds')+'首歌曲';
     }else{
