@@ -2,7 +2,7 @@
     outline: 1px solid #432A0F;
 } */
 .product_list_07 .row {
-    margin: 0;
+    /* margin: 0; */
     box-sizing: border-box;
 }
 .product_list_07 button:focus{
@@ -289,7 +289,7 @@
     align-items: center;
 }
 .product_list .card {
-    width: 300px;
+    /* width: 300px; */
     border-radius: 8px;
     margin: 24px auto;
     border: 0;
@@ -323,11 +323,17 @@
 .product_list .card-body small{
     color: var(--color-text60);
 }
+/* .product_list .row{
+    margin: auto;
+} */
 .card-body{
     position: relative;
     box-sizing: border-box;
     padding: 8px;
-    margin: 0 auto;
+    margin: 0 12px;
+}
+.card-body .row{
+    margin: 0;
 }
 .card-body_mb{
     padding: 12px;
@@ -439,11 +445,28 @@
 .pages{
     margin: 3rem;
 }
-
+.pages nav li a{
+    padding: 10px 16px;
+    margin: 8px;
+    background-color: #fff;
+    border: 1px solid var(--color-text38);
+    border-radius: 4px;
+    color: var(--color-text38);
+}
+.pages nav li a:hover{
+    border: 1px solid var(--color-text87);
+    color: var(--color-text87);
+    background-color: #fff;
+}
+.pages .page-item.active .page-link{
+    border: 1px solid var(--color-text87);
+    color: #fff;
+    background-color: var(--color-orange);
+}
 .pages .row{
     justify-content: center;
 }
-.pages .row .btn{
+/* .pages .row .btn{
     padding: 4px 16px;
     margin: 4px;
     background-color: #fff;
@@ -459,7 +482,7 @@
 }
 .btn:focus, .btn:hover{
     border: 1px solid var(--color-text87);
-}
+} */
 
 /* ------------------未登入提醒視窗----------------- */
 .notlogin{
