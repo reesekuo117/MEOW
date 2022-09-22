@@ -203,7 +203,7 @@ let districtArray = [
 ];
 $('#member_city_re').change(function () {
     const cityNumber = $(this).val();
-    const districtData = districtArray[cityNumber];
+    const districtData = districtArray[cityNumber-5];
     // 用迴圈會更方便
     // $('#district option').eq(0).text(districtData[0])
     // $('#district option').eq(1).text(districtData[1])

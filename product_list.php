@@ -2,24 +2,35 @@
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = 'product_list'; //頁面名稱
 $perPage = 9;  // 每頁最多有幾筆
-$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-// $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0;
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶沒有指定第幾頁，預設就會出現第一頁
+if ($page < 1) {
+    header('Location: ?page=1');
+    exit;
+}
+$cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要指定哪個分類，intval($_GET['cate']是變成整數的意思，0表示所有產品
 // $lowp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
 // $highp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
 
 $qsp = []; // query string parameters
 
-// 取得分類資料
-// $cates = $pdo->query("SELECT * FROM product WHERE product_category");
+// 取得商品分類資料
+$cates = $pdo->query("SELECT * FROM product_category WHERE 1") //1表示全部，也等於true
+    ->fetchAll();
+//     echo json_encode([
+//     'cates' => $cates,
 
-// $where = ' WHERE 1 '; //
-// if($cate){
-//     $where .= "AND product_category=$cate ";
-// }
+// ]);
+// exit;
+
+
+$where = ' WHERE 1 '; // 起頭，1是true
+if ($cate) {
+    $where .= "AND category_sid=$cate ";
+}
 
 
 // 取得資料的總筆數
-$t_sql = "SELECT COUNT(1) FROM product";
+$t_sql = "SELECT COUNT(1) FROM product $where";
 // $t_sql = "SELECT * FROM `product` WHERE 1";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 
@@ -38,7 +49,9 @@ if ($totalRows > 0) {
         exit;
     }
     // 取得該頁面的資料
-        $sql = sprintf("SELECT * FROM `product` $where ORDER BY `sid` ASC LIMIT %s, %s", ($page - 1) * $perPage,
+    $sql = sprintf(
+        "SELECT * FROM `product` $where ORDER BY `sid` ASC LIMIT %s, %s",
+        ($page - 1) * $perPage,
         $perPage
     );
     $rows = $pdo->query($sql)->fetchAll();
@@ -186,13 +199,21 @@ if ($totalRows > 0) {
                 <div class="col">
                     <div class="cate_filter">
                         <div class="product_cate">
-                            <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                            
-                            <a type="button" href="">
-                                <h5>－品牌聯名</h5>
+                            <a type="button" href="?">
+                                <h5>－全部商品</h5>
                             </a>
                         </div>
-                        <div class="product_cate">
+                        <?php foreach ($cates as $c) :
+                            $btnStyle = $c['sid'] == $cate ? '.btncolor_focus' : '.btncolor_default' ?>
+                            <div class="product_cate">
+                                <!-- 用a連結記得JQ要加e.preventDefault(); -->
+                                <a type="button" href="?cate=<?= $c['sid'] ?>">
+                                    <h5>－<?= $c['category_name'] ?></h5>
+                                </a>
+
+                            </div>
+                        <?php endforeach ?>
+                        <!-- <div class="product_cate">
                             <a href="#">
                                 <h5>－文創商品</h5>
                             </a>
@@ -206,8 +227,8 @@ if ($totalRows > 0) {
                             <a href="#">
                                 <h5>－月老喵獨家</h5>
                             </a>
-                        </div>
-                        
+                        </div> -->
+
                     </div>
                     <!-- TODO:價格篩選怎麼寫 -->
                     <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
@@ -233,52 +254,52 @@ if ($totalRows > 0) {
             </div>
 
 
-            <div class="product_list">
+            <div class="product_list w-100">
                 <!-- --------------------卡片---------------------- -->
                 <div class="row">
                     <?php foreach ($rows as $r) : ?>
-                    <div class="col-12 col-md-4">
-                        <div class="card">
-                            <a href="product_detail.php">
-                                <div class="p_img">
-                                    <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" class="card-img-top" alt="...">
-                                </div>
-                            </a>
-                            <div class="card-body">
+                        <div class="col-12 col-md-4">
+                            <div class="card">
                                 <a href="product_detail.php">
-                                    <div class="card_title pb-1">
-                                        <h5 class="card-text" style="height: 56px;">
-                                        <?= $r['product_name'] ?>
-                                        </h5>
+                                    <div class="p_img">
+                                        <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" class="card-img-top" alt="...">
                                     </div>
                                 </a>
-                                <div class="icon_heart">
-                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                    </svg>
-                                </div>
-                                <div class="row card_under justify-content-between align-items-baseline">
-                                    <small class="xs card-text d-flex align-items-center">
-                                        <div class="icon_star">
-                                            <i class="fa-solid fa-star"></i>
+                                <div class="card-body">
+                                    <a href="product_detail.php">
+                                        <div class="card_title pb-1">
+                                            <h5 class="card-text" style="height: 56px;">
+                                                <?= $r['product_name'] ?>
+                                            </h5>
                                         </div>
-                                        <span><?= $r['product_comment'] ?></span>
-                                    </small>
-                                    <small class="xs card-text d-flex align-items-center">
-                                        <div class="icon_fire">
-                                            <i class="fa-solid fa-fire"></i>
-                                        </div>
-                                        <span>3K個已訂購</span>
-                                    </small>
-                                    <h4 class="card-text price">
-                                    <?= $r['product_price'] ?>
-                                    </h4>
+                                    </a>
+                                    <div class="icon_heart">
+                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                        </svg>
+                                    </div>
+                                    <div class="row card_under justify-content-between align-items-baseline">
+                                        <small class="xs card-text d-flex align-items-center">
+                                            <div class="icon_star">
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span><?= $r['product_comment'] ?></span>
+                                        </small>
+                                        <small class="xs card-text d-flex align-items-center">
+                                            <div class="icon_fire">
+                                                <i class="fa-solid fa-fire"></i>
+                                            </div>
+                                            <span><?= $r['product_popular'] ?>K+個已訂購</span>
+                                        </small>
+                                        <h4 class="card-text price">
+                                            <?= $r['product_price'] ?>
+                                        </h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php endforeach; ?>
-                    
+
                 </div>
             </div>
         </div>
@@ -287,26 +308,60 @@ if ($totalRows > 0) {
     <div class="pages">
         <div class="container">
             <div class="row">
-                <!-- <div class="btn"><a href=""><i class="fa-solid fa-angles-left"></i></a></div>
-                <div class="btn"><a href="">1</a></div>
-                <div class="btn"><a href="">2</a></div>
-                <div class="btn"><a href="">3</a></div>
-                <div class="btn"><a href="">4</a></div>
-                <div class="btn"><a href="">5</a></div>
-                <div class="btn"><a href="">6</a></div>
-                <div class="btn"><a href="">7</a></div>
-                <div class="btn"><a href="">8</a></div>
-                <div class="btn"><a href="">9</a></div>
-                <div class="btn"><a href=""><i class="fa-solid fa-angles-right"></i></a></div> -->
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?= $page == 1 ?>">
-                        <!-- 怎麼到第一頁 -->
-                            <i class="fa-solid fa-angles-left"></i>
+            <nav aria-label="Page navigation example" class="d-none d-md-block">
+                    <ul class="pagination">
+                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?page=<?= $page == 1 ?>">
+                                <i class="fa-solid fa-angles-left"></i>
+                            </a>
+                        </li>
+                        <?php for ($i = $page - 3; $i <= $page + 3; $i++) :
+                        if ($i >= 1 and $i <= $totalPages) :
+                            // $qsp['page']=$i;
+                    ?>
+                        <li class="page-item <?= $page == $i ? 'active' : '' ?>">
+                            <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php endif;
+                    endfor; ?>
+                    <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
+                        <a class="page-link" href="?page=<?= $totalPages ?>">
+                            <i class="fa-solid fa-angles-right"></i>
                         </a>
                     </li>
-                    <?php for ($i = $page - 3; $i <= $page + 3; $i++) :
+                    </ul>
+                </nav>
+                <nav aria-label="Page navigation example" class="d-md-none d-block">
+                    <ul class="pagination">
+                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?page=<?= $page == 1 ?>">
+                                <i class="fa-solid fa-angles-left"></i>
+                            </a>
+                        </li>
+                        <?php 
+                    // 固定成 1 + 2 * $pagesOptional 頁
+                    // 宣告
+                    $beginPage;
+                    $endPage;
+                    $pagesOptional = 1;
+                    if ($totalPages <= $pagesOptional) {
+                        $beginPage = 1;
+                        $endPage = $totalPages;
+                    } else if ($page-1 < $pagesOptional) {
+                        $beginPage = 1;
+                        $endPage = $pagesOptional * 2 + 1;
+                    } else if ($totalPages-$page < $pagesOptional) {
+                        // 註解一份 這裡要改
+                        // $beginPage = $totalPages-($pagesOptional * 2 + 1);
+                        $beginPage = $totalPages-($pagesOptional * 2);
+                        $endPage = $totalPages;
+                    } else {
+                        $beginPage = $page-$pagesOptional;
+                        $endPage = $page+$pagesOptional;
+                    }
+                    // 下面起始結束條件跟著修正即可 
+                    ?>
+                    <?php for ($i = $beginPage; $i <= $endPage; $i++) :
                         if ($i >= 1 and $i <= $totalPages) :
                     ?>
                             <li class="page-item <?= $page == $i ? 'active' : '' ?>">
@@ -315,13 +370,12 @@ if ($totalRows > 0) {
                     <?php endif;
                     endfor; ?>
                     <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?=  $totalPages ?>"> 
-                        <!-- 用$totalPages到最後一頁 -->
+                        <a class="page-link" href="?page=<?= $totalPages ?>">
                             <i class="fa-solid fa-angles-right"></i>
                         </a>
                     </li>
-                </ul>
-            </nav>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
