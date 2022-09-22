@@ -23,13 +23,13 @@ $pageName ='會員中心'; //頁面名稱
     //intval -- 取得變量的整數值
     $perPage = 8;  //每頁最多有幾筆
     $page = isset($_GET['page']) ? intval($_GET['page']) : 1; //使用者決定看第幾頁
-    $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0;
+    // $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0;
 
     // $qsp = []; //query string parameters 查詢字串的參數
 
     // 取得分類資料
-    $cates = $pdo->query("SELECT * FROM love_type WHERE 1")
-    ->fetchAll();
+    // $cates = $pdo->query("SELECT * FROM love_type WHERE 1")
+    // ->fetchAll();
 
     // $where = 'where 1';  //起頭
     // if($cate){
@@ -37,37 +37,95 @@ $pageName ='會員中心'; //頁面名稱
     //     $qsp['cate'] = $cate;
     // } // .= 相加.
 
-    //取得資料的總筆數  
-    $p_sql = "SELECT COUNT(1) FROM product";   
-    $totalRows = $pdo->query($p_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
+
+
+/*
+    $p_sql = "SELECT COUNT(1) FROM product"; //取得資料的總筆數  
+    $t_sql = "SELECT COUNT(1) FROM travel"; //取得資料的總筆數  
+    $f_sql = "SELECT COUNT(1) FROM forturn"; //取得資料的總筆數  
+    $d_sql = "SELECT COUNT(1) FROM draw"; //取得資料的總筆數  
+
+    $p_totalRows = $pdo->query($p_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
+    $t_totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
+    $f_totalRows = $pdo->query($f_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
+    $d_totalRows = $pdo->query($d_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
 
     //計算總頁數
-    $totalPages = ceil($totalRows/$perPage);  //ceil無條件進位
+    $p_totalPages = ceil($p_totalRows/$perPage);  //ceil無條件進位
+    $t_totalPages = ceil($t_totalRows/$perPage);  //ceil無條件進位
+    $f_totalPages = ceil($f_totalRows/$perPage);  //ceil無條件進位
+    $d_totalPages = ceil($d_totalRows/$perPage);  //ceil無條件進位
 
     $rows = []; //預設
     //有資料才執行 >0
-    if($totalRows > 0){
-    if($page<1){
-        header('Location: ?page=1');
-        exit;
+    if($p_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$p_totalPages){
+            header('Location: ?page='. $p_totalPages);
+            exit;
+        }
+        // $page<1 ? ($page=1) : null;  //三元運算子
+        //$page>$totalPages ? ($page=$totalPages) : null; 
+
+        //TODO:取得該頁面的資料
+        //sql外層通常用雙引號 內層用單引號就不需要跳脫
+        $p_sql = sprintf("SELECT * FROM `love` join product on product.id = love.collect_id ORDER BY `id` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
+        // ORDER BY `sid` DESC 降冪 講義41頁
+        // LIMIT %s, %s ==> [索引][筆數]
+        $rows = $pdo->query($p_sql)->fetchAll();
     }
-    if($page>$totalPages){
-        header('Location: ?page='. $totalPages);
-        exit;
+    // 行程
+    if($t_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$t_totalPages){
+            header('Location: ?page='. $t_totalPages);
+            exit;
+        }
+        $t_sql = sprintf("SELECT * FROM `love` Inner join travel on travel.id = collect_id ORDER BY `id` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
+        $rows = $pdo->query($t_sql)->fetchAll();
     }
-    // $page<1 ? ($page=1) : null;  //三元運算子
-    //$page>$totalPages ? ($page=$totalPages) : null; 
-
-    //TODO:取得該頁面的資料
-    //sql外層通常用雙引號 內層用單引號就不需要跳脫
-    $sql = sprintf("SELECT * FROM `product` ORDER BY `sid` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
-    // ORDER BY `sid` DESC 降冪 講義41頁
-    // LIMIT %s, %s ==> [索引][筆數]
-    $rows = $pdo->query($sql)->fetchAll();
+    // 詩籤
+    if($f_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$f_totalPages){
+            header('Location: ?page='. $f_totalPages);
+            exit;
+        }
+        $f_sql = sprintf("SELECT * FROM `love` Inner join forturn on forturn.id = collect_id ORDER BY `id` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
+        $rows = $pdo->query($f_sql)->fetchAll();
+    }
+    // 運勢
+    if($d_totalRows > 0){
+        if($page<1){
+            header('Location: ?page=1');
+            exit;
+        }
+        if($page>$d_totalPages){
+            header('Location: ?page='. $d_totalPages);
+            exit;
+        }
+        $d_sql = sprintf("SELECT * FROM `love` Inner join draw on draw.id = collect_id ORDER BY `id` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
+        $rows = $pdo->query($d_sql)->fetchAll();
     }
 
+*/
 
 
+    $p_sql = "SELECT * FROM `love` Inner join product on product.id = love.collect_id WHERE love.member_id=$member_id";
+    $t_sql = "SELECT * FROM `love` Inner join travel on travel.id = love.collect_id WHERE love.member_id=$member_id";
+    $f_sql = "SELECT * FROM `love` Inner join forturn on forturn.id = love.collect_id WHERE love.member_id=$member_id";
+    $d_sql = "SELECT * FROM `love` Inner join draw on draw.id = love.collect_id WHERE love.member_id=$member_id";
+
+    $p_rows = $pdo->query($p_sql)->fetchAll();
 // json_encode判斷型別輸出JSON 數字型態
 // echo json_encode([ 
 //    '$rows' => $rows,
@@ -331,7 +389,7 @@ $pageName ='會員中心'; //頁面名稱
     <!-- p3-P------------------------------------------------------------------ -->
                 <div id="tab01-re" class="tab-inner-re ">
                     <div class="row mx-0 likehight-re">
-                    <?php foreach($rows as $r): ?>
+                    <?php foreach($p_rows as $r): ?>
                         <div class="col-6 col-md-3 px-2 pb-3">
                             <div class="card-re">
                                 <div class="position-relative ">
@@ -523,10 +581,11 @@ $pageName ='會員中心'; //頁面名稱
     <!-- p3-T------------------------------------------------------------------ -->
                 <div id="tab02-re" class="tab-inner-re">
                 <div class="row mx-0 likehight-re">
+                    <?php foreach($rows as $r): ?>
                         <div class="col-6 col-md-3 px-2 pb-3">
                             <div class="card">
                                 <div class="position-relative">
-                                    <img src="./imgs/購物車-行程(測試用).png" class="card-img-top" alt="">
+                                    <img src="./imgs/tavel/cards/<?= $r['travelcard_img'] ?>" class="card-img-top" alt="">
                                     <div class="position-absolute likeicon-re">
                                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
@@ -534,9 +593,9 @@ $pageName ='會員中心'; //頁面名稱
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re text-16-re">台北霞海城隍廟獨家行程一日遊</p>
+                                    <p class="card-title-re text-16-re"><?= $r['travel_name'] ?></p>
                                     <div class="d-flex">
-                                        <p class="text-20-re price-re col-9 p-0 my-auto">5520</p>
+                                        <p class="text-20-re price-re col-9 p-0 my-auto"><?= $r['travel_price'] ?></p>
                                         <button class="btn-re btn200-re col-3 p-0"  onclick="addToCartRe(event)">
                                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
@@ -549,7 +608,7 @@ $pageName ='會員中心'; //頁面名稱
                                 </div>
                             </div>
                         </div>
-
+                    <?php endforeach ?>
                     </div>
                     <div class="pagebtngroup-re text-center mb-3">
                         <button type="button" class="pagebtn-re ">
@@ -570,7 +629,17 @@ $pageName ='會員中心'; //頁面名稱
     <!-- p3-D------------------------------------------------------------------ -->
                 <div id="tab03-re" class="tab-inner-re">
                     <div class="row mb-3 mx-0 likehight-re">
+                        <?php foreach($rows as $r): ?>
                         <div class="col-12 col-md-4 likecard-re position-relative pb-3">
+                            <img class="w-100" src="./imgs/love/<?= $r['img'] ?>" alt="">
+                            <div class="position-absolute likeicon2-re">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <?php endforeach ?>
+                        <!-- <div class="col-12 col-md-4 likecard-re position-relative pb-3">
                             <img class="w-100" src="./imgs/testre.jpg" alt="">
                             <div class="position-absolute likeicon2-re">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -585,15 +654,7 @@ $pageName ='會員中心'; //頁面名稱
                                     <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
                                 </svg>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-4 likecard-re position-relative pb-3">
-                            <img class="w-100" src="./imgs/testre.jpg" alt="">
-                            <div class="position-absolute likeicon2-re">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
-                                </svg>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="pagebtngroup-re text-center mb-3">
                         <button type="button" class="pagebtn-re ">
