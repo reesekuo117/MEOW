@@ -41,6 +41,19 @@ sliderOne.addEventListener('input', slideOne)
 sliderTwo.addEventListener('input', slideTwo)
 
 
+// 側邊欄篩選
+$('.product_cate > a').click(function(e){
+    e.preventDefault();
+    // $('.product_cate > a').eq(0).toggleClass('btncolor_active')
+    // $(this).find('.product_cate > a').toggleClass('btncolor_active')
+    console.log($(this).closest('div').siblings());
+    $(this).closest('div').addClass('btncolor_active').siblings().removeClass('btncolor_active');
+});
+// $('.product_cate > a').click(function(e){
+    // e.preventDefault();
+    // $(this).css('color', 'var(--color-orange)')
+// });
+
 // 手機版篩選
 $('.psort_mb').click(function(){
     console.log('hello');

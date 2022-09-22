@@ -27,12 +27,21 @@ $where = ' WHERE 1 '; // 起頭，1是true
 if ($cate) {
     $where .= "AND category_sid=$cate ";
 }
-
+// echo json_encode([
+//         'cate' => $cate,
+    
+//     ]);
+//     exit;
 
 // 取得資料的總筆數
 $t_sql = "SELECT COUNT(1) FROM product $where";
 // $t_sql = "SELECT * FROM `product` WHERE 1";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+// echo json_encode([
+//         'totalRows' => $totalRows,
+    
+//     ]);
+//     exit;
 
 // 計算總頁數
 $totalPages = ceil($totalRows / $perPage);
@@ -50,7 +59,8 @@ if ($totalRows > 0) {
     }
     // 取得該頁面的資料
     $sql = sprintf(
-        "SELECT * FROM `product` $where ORDER BY `sid` ASC LIMIT %s, %s",
+        "SELECT * FROM `product` %s ORDER BY `sid` ASC LIMIT %s, %s",
+        $where,
         ($page - 1) * $perPage,
         $perPage
     );
@@ -58,11 +68,11 @@ if ($totalRows > 0) {
 }
 
 // echo json_encode([
-//     'totalRows' => $totalRows,
-//     'totalPages' => $totalPages,
-//     'perPage' => $perPage,
-//     'page' => $page,
-//     'rows' => $rows,
+    // 'totalRows' => $totalRows,
+    // 'totalPages' => $totalPages,
+    // 'perPage' => $perPage,
+    // 'page' => $page,
+    // 'rows' => $rows,
 // ]);
 // exit;
 
@@ -198,37 +208,24 @@ if ($totalRows > 0) {
             <div class="aside d-none d-md-block pr-3">
                 <div class="col">
                     <div class="cate_filter">
-                        <div class="product_cate">
-                            <a type="button" href="?">
+                        <div class="product_cate btncolor_default">
+                            <a type="button" href="?" >
                                 <h5>－全部商品</h5>
                             </a>
                         </div>
                         <?php foreach ($cates as $c) :
-                            $btnStyle = $c['sid'] == $cate ? '.btncolor_focus' : '.btncolor_default' ?>
-                            <div class="product_cate">
-                                <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                                <a type="button" href="?cate=<?= $c['sid'] ?>">
-                                    <h5>－<?= $c['category_name'] ?></h5>
-                                </a>
+                            // $btnStyle = $c['sid'] == $cate ? 'btncolor_focus' : 'btncolor_default' 
+                        ?> 
+                            <!-- 用toggleclass -->
+                        <div class="product_cate btncolor_default">
+                            <!-- 用a連結記得JQ要加e.preventDefault(); -->
+                            <a type="button" href="?cate=<?= $c['sid'] ?>">
+                                <h5>－<?= $c['category_name'] ?></h5>
+                            </a>
 
-                            </div>
+                        </div>
                         <?php endforeach ?>
-                        <!-- <div class="product_cate">
-                            <a href="#">
-                                <h5>－文創商品</h5>
-                            </a>
-                        </div>
-                        <div class="product_cate">
-                            <a href="#">
-                                <h5>－甜蜜供品</h5>
-                            </a>
-                        </div>
-                        <div class="product_cate">
-                            <a href="#">
-                                <h5>－月老喵獨家</h5>
-                            </a>
-                        </div> -->
-
+                        
                     </div>
                     <!-- TODO:價格篩選怎麼寫 -->
                     <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
@@ -269,6 +266,8 @@ if ($totalRows > 0) {
                                     <a href="product_detail.php">
                                         <div class="card_title pb-1">
                                             <h5 class="card-text" style="height: 56px;">
+                                            <!-- ${product_name} -->
+
                                                 <?= $r['product_name'] ?>
                                             </h5>
                                         </div>
@@ -308,14 +307,14 @@ if ($totalRows > 0) {
     <div class="pages">
         <div class="container">
             <div class="row">
-            <nav aria-label="Page navigation example" class="d-none d-md-block">
+                <nav aria-label="Page navigation example" class="">
                     <ul class="pagination">
                         <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
                             <a class="page-link" href="?page=<?= $page == 1 ?>">
                                 <i class="fa-solid fa-angles-left"></i>
                             </a>
                         </li>
-                        <?php for ($i = $page - 3; $i <= $page + 3; $i++) :
+                        <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
                         if ($i >= 1 and $i <= $totalPages) :
                             // $qsp['page']=$i;
                     ?>
@@ -331,7 +330,7 @@ if ($totalRows > 0) {
                     </li>
                     </ul>
                 </nav>
-                <nav aria-label="Page navigation example" class="d-md-none d-block">
+                <!-- <nav aria-label="Page navigation example" class="d-md-none d-block">
                     <ul class="pagination">
                         <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
                             <a class="page-link" href="?page=<?= $page == 1 ?>">
@@ -375,7 +374,7 @@ if ($totalRows > 0) {
                         </a>
                     </li>
                     </ul>
-                </nav>
+                </nav> -->
             </div>
         </div>
     </div>
