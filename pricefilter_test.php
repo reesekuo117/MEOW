@@ -8,9 +8,8 @@ if ($page < 1) {
     exit;
 }
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要指定哪個分類，intval($_GET['cate']是變成整數的意思，0表示所有產品
-// $lowp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
-// $highp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
-// $hotp = isset($_GET['hotp']) ? intval($_GET['hotp']) : 0; // 熱門
+$stm = $con->prepare('select * from product');
+$stm->excute();
 
 $qsp = []; // query string parameters
 
@@ -23,21 +22,22 @@ $cates = $pdo->query("SELECT * FROM product_category WHERE 1") //1表示全部�
 // ]);
 // exit;
 
+
 $where = ' WHERE 1 '; // 起頭，1是true
 if ($cate) {
     $where .= "AND category_sid = $cate ";
     $qsp['cate'] = $cate;
 }
-// if ($lowp) {
-//     $where .= "AND product_price>=$lowp ";
-//     $qsp['lowp'] = $lowp;
-//     // lowp=5000，5000以上
-// }
-// if ($highp) {
-//     $where .= "AND product_price<=$highp ";
-//     $qsp['highp'] = $highp;
-//     // highp=5000，5000以下
-// }
+if ($lowp) {
+    $where .= "AND product_price>=$lowp ";
+    $qsp['lowp'] = $lowp;
+    // lowp=5000，5000以上
+}
+if ($highp) {
+    $where .= "AND product_price<=$highp ";
+    $qsp['highp'] = $highp;
+    // highp=5000，5000以下
+}
 
 // 取得資料的總筆數
 $t_sql = "SELECT COUNT(1) FROM product $where";
@@ -48,7 +48,6 @@ $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
     
 //     ]);
 //     exit;
-
 
 // 計算總頁數
 $totalPages = ceil($totalRows / $perPage);
@@ -74,53 +73,12 @@ if ($totalRows > 0) {
     $rows = $pdo->query($sql)->fetchAll();
 }
 
-
-// 取得商品熱門程度
-// $hotp = $pdo->query("SELECT `product_popular` FROM `product` GROUP BY `product_popular` DESC") 
-//    ->fetchAll();
-// 取得價格由低到高
-//$lowerp = $pdo->query("SELECT `product_price` FROM `product` GROUP BY `product_price` ASC") 
-//    ->fetchAll();
-
-//取得價格由高到低
-// $lowerp = $pdo->query("SELECT `product_price` FROM `product` GROUP BY `product_price` DESC") 
-//    ->fetchAll();
-$dataSql = "SELECT * FROM `product` GROUP BY ";
-$dataSort = '';
-// SQL語法前面都一樣，所以將一樣的部分"SELECT * FROM `product` GROUP BY "設定成變數
-// 但是GROUP BY之後的東西都不一樣，所以設變數空字串，在if內再給空字串不一樣的內容
-if(isset($_GET['sort'])){
-    if($_GET['sort'] === 'hotp'){
-        // 設定hotp變數和$dataSort的內容
-        $dataSort = "`product_popular` DESC";
-    }
-    
-    if($_GET['sort'] === 'lowerp'){
-        $dataSort = "`product_price` ASC";
-    }
-    
-    if($_GET['sort'] === 'higherp'){
-        $dataSort = "`product_price` DESC";
-    }
-    $sqlSearchStr = $dataSql.$dataSort;
-    // 將兩個變數的內容相加
-
-    if($dataSort != ''){
-        // 因為上面有定義過rows的內容，但又加上新的變數了，所以要將兩個結合，如果$dataSort的內容不是空字串，就要讓$rows執行用新條件$sqlSearchStr再重新執行一次
-        $rows = $pdo->query($sqlSearchStr)->fetchAll();
-    }
-}
-
-
-
 // echo json_encode([
-//     'totalRows' => $totalRows,
-//     'totalPages' => $totalPages,
-//     'perPage' => $perPage,
-//     'page' => $page,
-//     // 'rows' => $rows,
-//     // 'hotp' => $hotp,
-//     'pl_sql' => $pl_sql,
+    // 'totalRows' => $totalRows,
+    // 'totalPages' => $totalPages,
+    // 'perPage' => $perPage,
+    // 'page' => $page,
+    // 'rows' => $rows,
 // ]);
 // exit;
 
@@ -173,18 +131,17 @@ if(isset($_GET['sort'])){
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?sort=hotp">
-                        <!-- 先設定要連到哪裡，再往上設定變數 -->
+                    <a href="#">
                         <h5>熱門程度</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?sort=higherp">
+                    <a href="#">
                         <h5>價格高 → 低</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?sort=lowerp">
+                    <a href="#">
                         <h5>價格低 → 高</h5>
                     </a>
                 </div>
@@ -261,11 +218,11 @@ if(isset($_GET['sort'])){
                                 <h5>－全部商品</h5>
                             </a>
                         </div>
-                        <!-- 分類壞掉了QQ因為用e.preventDefault();才會壞掉 -->
+                        <!-- 分類壞掉了QQ -->
                         <?php foreach ($cates as $c): ?> 
                         <div class="product_cate btncolor_default">
                             <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                            <a type="button" href="?cate=<?= $qsp['cate']=$c['sid'] ?>">
+                            <a type="button" href="?cate=<?= $c['sid'] ?>">
                                 <h5>－<?= $c['category_name'] ?></h5>
                             </a>
                         </div>
@@ -274,6 +231,20 @@ if(isset($_GET['sort'])){
                     </div>
                     <!-- TODO:價格篩選怎麼寫 -->
                     <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
+                    <script>
+                        $(function(){
+                            $('.filter-range-content').slider({
+                                range: true,
+                                min:0,
+                                max:500,
+                                values:[ 100, 3000 ],
+                                slide: function(event , input){
+                                    $('')
+                                }
+                            })
+                        })
+                    </script>
+
                     <div class="price_filter">
                         <div class="filter-content__element">
                             <div class="filter-element-heading">
@@ -281,13 +252,13 @@ if(isset($_GET['sort'])){
                             </div>
                             <div class="filter-element-content">
                                 <div class="filter-range-values">
-                                    <span class="range-1-value">NT$0</span>
-                                    <span class="range-2-value">NT$8000</span>
+                                    <span class="range-1-value">NT$100</span>
+                                    <span class="range-2-value">NT$3000</span>
                                 </div>
                                 <div class="filter-range-content">
                                     <div class="filter-range-track"></div>
-                                    <input class="filter-range filter-range-1" type="range" min="0" max="8000" value="0" id="slider-1" step="100">
-                                    <input class="filter-range filter-range-2" type="range" min="0" max="8000" value="8000" id="slider-2" step="100">
+                                    <input class="filter-range filter-range-1" type="range" min="100" max="3000" value="100" id="slider-1" step="100">
+                                    <input class="filter-range filter-range-2" type="range" min="100" max="3000" value="3000" id="slider-2" step="100">
                                 </div>
                             </div>
                         </div>
@@ -301,7 +272,7 @@ if(isset($_GET['sort'])){
                 <div class="row">
                     <?php foreach ($rows as $r) : ?>
                         <div class="col-12 col-md-4">
-                            <div class="card" data-sid="<?= $r['id'] ?>">
+                            <div class="card">
                                 <a href="product_detail.php">
                                     <div class="p_img">
                                         <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" class="card-img-top" alt="...">
@@ -445,10 +416,6 @@ if(isset($_GET['sort'])){
     </div>
 
 </div>
-<script>
-    const productData = <?php echo json_encode($rows); ?>;
-    console.log('productData',productData);
-</script>
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 <script src="./product_list.js"></script>
 <?php include __DIR__ . '/parts/html-foot.php'; ?>
