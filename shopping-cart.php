@@ -1,6 +1,26 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = '購物車'; //頁面名稱
+
+//用戶是否有登入 購物車內是否有東西 如果有就執行 如果沒有就離開
+// if(empty($_SESSION["user"]) or empty($_SESSION["cart"]) ){
+//     header("Location: shoping-cart.php ");
+//     exit;
+// }
+
+// // 應該由資料表的資料計算總價
+// $total = 0;
+// foreach($_SESSION['cart'] as $k=>$v){
+//     $total += $v['price']*$v['qty'];
+// }
+
+//order 的sql
+// $o_sql = sprintf("INSERT INTO `orders`(
+//     `member_sid`, `amount`, `order_date`
+//     ) VALUES (%s, %s, NOW())", $_SESSION['user']['id'], $total);
+
+// $stmt = $pdo->query($o_sql);
+
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -60,6 +80,9 @@ header("Refresh:180");
         <!--  購物車商品清單 -->
         <!-- 已給 #myTabContent-yu{max-width: 1450px;} -->
         <div id="myTabContent-yu" class=" px-1 tab-content container">
+                <div class="alert alert-danger" role="alert">
+                    購物車內沒有商品
+                </div>
             <!-- 獨家商品 -->
             <div class="tab-pane in active " id="uniqui-yu" >
                 <div class=" px-0 col-auto justify-content-around text-center">
@@ -379,9 +402,9 @@ header("Refresh:180");
     <!-- ------------------手機 ------------------------>
     <section class=" d-block d-md-none">
         <!-- 返回icon -->
-        <div class="mdicon-back-yu">
+        <!-- <div class="mdicon-back-yu">
             <img src="imgs/shopping-cart/icon-32_32.png" alt="">
-        </div>
+        </div> -->
         <!-- 手機獨家商品 旅遊行程分頁標籤 -->
         <!-- href="#uniqui-yu" data-toggle="tab" -->
         <!-- href="#travel-yu" data-toggle="tab" role="button -->
@@ -481,7 +504,7 @@ header("Refresh:180");
                             707
                         </h5>
                         <!-- 數量 -->
-                        <form class="d-flex" id='myform' method='POST' action='#'>
+                        <div class="d-flex" id='myform' method='POST' action='#'>
                             <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
 
                             <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
@@ -489,7 +512,7 @@ header("Refresh:180");
                             </span>
 
                             <input id="plus-yu"  type='button' value='+' class='qtyplus' field='quantity' />
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -530,7 +553,7 @@ header("Refresh:180");
                             1500
                         </h5>
                         <!-- 數量 -->
-                        <form class="d-flex" id='myform' method='POST' action='#'>
+                        <div class="d-flex" id='myform' method='POST' action='#'>
                             <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
 
                             <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
@@ -538,7 +561,7 @@ header("Refresh:180");
                             </span>
 
                             <input id="plus-yu"  type='button' value='+' class='qtyplus' field='quantity' />
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div>

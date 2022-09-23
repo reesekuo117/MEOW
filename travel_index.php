@@ -13,7 +13,7 @@ header("Refresh:180");
 
     <!-- 桌機輪播牆 -->
     <div class=" d-none d-md-block ">
-        <div id="carouselExampleIndicators" class=" carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class=" carouselYu carousel slide position-relative " data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
@@ -137,21 +137,21 @@ header("Refresh:180");
                         </div>
                     </div>
                     <div>
-                        <div></div>
+                        <div>
                             <img class="photo2-img-yu" src="imgs/travel/桌機版旅遊首頁(照片)2.png" alt="">
                         </div>
                         <img class="background2-img-yu" src="imgs/travel/桌機版旅遊首頁(底圖)2.png" class="d-block  " alt="...">
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span span class="sr-only">Next</span>
-            </a>
+                <a class="carousel-control-prev " href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span span class="sr-only">Next</span>
+                </a>
         </div>
     </div>
 

@@ -2,25 +2,42 @@
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName = '月老文化'; //頁面名稱
 
-$area = isset($_GET['area']) ? intval($_GET['areas']):0; //用戶指定哪個區域
+$area = isset($_GET['area']) ? intval($_GET['area']):0; //用戶指定哪個區域
+$item = isset($_GET['item']) ? intval($_GET['item']):0; //用戶指定哪個項目
 
 //取得廟宇資料表
-$sql = "SELECT * FROM `temple` WHERE 1";
-$temps = $pdo->query($sql)->fetchAll();
-
-// echo json_encode([
+// $sql = "SELECT * FROM `temple` WHERE 1";
+// $temples = $pdo->query($sql)->fetchAll(); 
+ 
+// echo json_encode([ 
 //     '$temps' => $temps,
 // ]);
 // exit;
 
 
 //取得地區資料
-$a_sql = "SELECT * FROM `address` WHERE parent=0";
+$a_sql = "SELECT * FROM `address` WHERE parent=0 AND sid < 4";
 $areas = $pdo->query($a_sql)->fetchAll();
-// echo json_encode([
-//     '$areas' => $areas,
+ 
+// echo json_encode([ 
+//     'areas' => $areas,
 // ]);
 // exit;
+
+
+
+$temple_sql = "SELECT a.sid area_sid, t.* FROM
+(SELECT * FROM `address` WHERE sid<4) a
+JOIN (SELECT * FROM `address` WHERE sid>=5 AND sid<=23) b
+ON a.sid=b.parent
+JOIN temple t ON t.address_sid=b.sid";
+$temples = $pdo->query($temple_sql)->fetchAll();
+
+// var_dump([ 
+//     'temples' => $temples,
+// ]);
+// exit;
+
 
 
 
@@ -572,59 +589,59 @@ $areas = $pdo->query($a_sql)->fetchAll();
     <!------- 全台精選月老廟-pc ------->
     <div class="container-fluid targetScrollSection selected-temple_lb d-none d-md-block" id="selected-temple_lb">
         <div class="d-flex">
-            <div class="map-wrap  position-relative col-6">
+            <div class="map-wrap position-relative col-6">
                 <div id="north-group_lb" class="active">
-                    <div class="C01 landmark_lb d-inline-block text-center position-absolute" id="marriage_lb">
-                        <div class="loation_lb py-2 ">台北市</div>
-                        <div class="temname_lb px-2 py-2">霞海城隍廟</div>
+                    <div class="C01 landmark_lb d-inline-block text-center position-absolute" data-id="1">
+                        <h6 class="m-0 loation_lb py-2 ">台北市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">霞海城隍廟</p>
                     </div>
-                    <div class="C06 landmark_lb d-inline-block text-center position-absolute" id="marriage_lb">
-                        <div class="loation_lb py-2">台北市</div>
-                        <div class="temname_lb px-2 py-2">龍山寺</div>
+                    <div class="C06 landmark_lb d-inline-block text-center position-absolute" data-id="6">
+                        <h6 class="m-0 loation_lb py-2">台北市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">龍山寺</p>
                     </div>
-                    <div class="C07 landmark_lb d-inline-block text-center position-absolute">
-                        <div class="loation_lb py-2">台北市</div>
-                        <div class="temname_lb px-2 py-2">指南宮</div>
+                    <div class="C07 landmark_lb d-inline-block text-center position-absolute" data-id="7">
+                        <h6 class="m-0 loation_lb py-2">台北市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">指南宮</p>
                     </div>
-                    <div class="C10 landmark_lb d-inline-block text-center position-absolute" id="marriage_lb">
-                        <div class="loation_lb py-2">新北市</div>
-                        <div class="temname_lb px-2 py-2">兔兒神廟</div>
+                    <div class="C10 landmark_lb d-inline-block text-center position-absolute" data-id="10">
+                        <h6 class="m-0 loation_lb py-2">新北市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">兔兒神廟</p>
                     </div>
                 </div>
                 <div id="middle-group_lb" class="d-none">
-                    <div class="C03 landmark_lb d-inline-block text-center position-absolute">
-                        <div class="loation_lb py-2 ">台中市</div>
-                        <div class="temname_lb px-2 py-2">樂成宮</div>
+                    <div class="C03 landmark_lb d-inline-block text-center position-absolute" data-id="3">
+                        <h6 class="m-0 loation_lb py-2 ">台中市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">樂成宮</p>
                     </div>
-                    <div class="C04 landmark_lb d-inline-block text-center position-absolute">
-                        <div class="loation_lb py-2">彰化縣</div>
-                        <div class="temname_lb px-2 py-2">鹿港天后宮</div>
+                    <div class="C04 landmark_lb d-inline-block text-center position-absolute" data-id="4">
+                        <h6 class="m-0 loation_lb py-2">彰化縣</h6>
+                        <p class="m-0 temname_lb px-2 py-2">鹿港天后宮</p>
                     </div>
-                    <div class="C08 landmark_lb d-inline-block text-center position-absolute">
-                        <div class="loation_lb py-2">南投縣</div>
-                        <div class="temname_lb px-2 py-2">月下老人祠</div>
+                    <div class="C08 landmark_lb d-inline-block text-center position-absolute" data-id="8">
+                        <h6 class="m-0 loation_lb py-2">南投縣</h6>
+                        <p class="m-0 temname_lb px-2 py-2">月下老人祠</p>
                     </div>
                 </div>
                 <div id="south-group_lb" class="d-none">
-                    <div class="C02 landmark_lb d-inline-block text-center position-absolute">
-                        <div class="loation_lb py-2 ">台南市</div>
-                        <div class="temname_lb px-2 py-2">祀典武廟</div>
+                    <div class="C02 landmark_lb d-inline-block text-center position-absolute" data-id="2">
+                        <h6 class="m-0 loation_lb py-2 ">台南市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">祀典武廟</p>
                     </div>
-                    <div class="C05 landmark_lb d-inline-block text-center position-absolute">
-                        <div class="loation_lb py-2">台南市</div>
-                        <div class="temname_lb px-2 py-2">祀典大天后宮</div>
+                    <div class="C05 landmark_lb d-inline-block text-center position-absolute" data-id="5">
+                        <h6 class="m-0 loation_lb py-2">台南市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">祀典大天后宮</p>
                     </div>
-                    <div class="C09 landmark_lb d-inline-block text-center position-absolute">
-                        <div class="loation_lb py-2">台南市</div>
-                        <div class="temname_lb px-2 py-2">重慶寺</div>
+                    <div class="C09 landmark_lb d-inline-block text-center position-absolute" data-id="9">
+                        <h6 class="m-0 loation_lb py-2">台南市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">重慶寺</p>
                     </div>
-                    <div class="C11 landmark_lb d-inline-block text-center position-absolute">
-                        <div class="loation_lb py-2">台南市</div>
-                        <div class="temname_lb px-2 py-2">大觀音亭</div>
+                    <div class="C11 landmark_lb d-inline-block text-center position-absolute" data-id="11">
+                        <h6 class="m-0 loation_lb py-2">台南市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">大觀音亭</p>
                     </div>
-                    <div class="C12 landmark_lb d-inline-block text-center position-absolute">
-                        <div class="loation_lb py-2">高雄市</div>
-                        <div class="temname_lb px-2 py-2">關帝廟</div>
+                    <div class="C12 landmark_lb d-inline-block text-center position-absolute" data-id="12">
+                        <h6 class="m-0 loation_lb py-2">高雄市</h6>
+                        <p class="m-0 temname_lb px-2 py-2">關帝廟</p>
                     </div>
                 </div>
                 <svg class="mapsvg_lb" version="1.1" id="cf503461-00bd-459a-aeb5-062ebc913211" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
@@ -933,32 +950,22 @@ $areas = $pdo->query($a_sql)->fetchAll();
                     <div class="col-4">
                         <div class="row d-flex justify-content-center">
                             <div class="form-group mr-4 my-auto">
-                                <select class="select_lb" name="area_lb" id="area_lb">
-                                    <?php foreach($areas as $a):  ?>
-                                     <option value="<?= $a['city'] ?>"><?= $a['city'] ?></option>
-                                     <?php endforeach; ?>
+                                <select class="select_lb" name="area_lb" id="area_lb" onchange="getCate()">
                                     <!-- 改option樣式 -->
-                                    <!-- <option selected="selected" class="selectnorth_lb" value="0">北部</option>
-                                    <option value="1">中部</option>
-                                    <option value="2">南部</option> -->
+                                    <option selected="selected" class="selectnorth_lb" value="1">北部</option>
+                                    <option value="2">中部</option>
+                                    <option value="3">南部</option>
                                 </select>
                             </div>
                             <div class="form-group my-auto">
                                 <select class="select_lb" name="item_lb" id="item_lb">
-                                    <?php foreach($temps as $t):  ?>
-                                     <option value="<?= $t['category_tag'] ?>"><?= $t['category_tag'] ?></option>
-                                     <?php endforeach; ?>
-
-                                    <!-- 改option樣式 -->
-                                    <!-- <option selected="selected" value="0">祈求姻緣</option>
-                                    <option value="1">幸福美滿</option>
-                                    <option value="2">斬桃花、小三</option> -->
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
             <!-- 廟宇卡片 -->
+            <?php /*
             <?php foreach ($temps as $t) : ?>
                 <div class="info-card_lb  mt-5" id="c01-info-card_lb">
                     <div class="row">
@@ -992,8 +999,9 @@ $areas = $pdo->query($a_sql)->fetchAll();
                     </div>
                 </div>
             <?php endforeach; ?>
-
+*/ ?>
                 <div id="c01-info-card_lb" class="info-card_lb  mt-5" >
+                    <!--
                     <div class="row ">
                         <div class="col-4">
                             <div class="title-box_lb">
@@ -1044,7 +1052,9 @@ $areas = $pdo->query($a_sql)->fetchAll();
                         </div>
 
                     </div>
+            -->
                 </div>
+                <!--
                 <div id="c06-info-card_lb" class="mt-5 d-none info-card_lb">
                     <div class="row ">
                         <div class="col-4">
@@ -1095,6 +1105,7 @@ $areas = $pdo->query($a_sql)->fetchAll();
 
                     </div>
                 </div>
+            -->
             </div>
         </div>
     </div>
@@ -1497,6 +1508,178 @@ $areas = $pdo->query($a_sql)->fetchAll();
 
 
 <?php include __DIR__ . '/parts/scripts.php'; ?>
-<script src="./culture.js"></script>
+<!-- <script src="./culture.js"></script> -->
+<script>
 
+//把撈出的資料轉為字串
+const areas = <?= json_encode($areas); ?>;
+const temples = <?= json_encode($temples); ?>;
+
+const area_lb = $('#area_lb'); //區域
+const item_lb = $('#item_lb'); //選項
+console.log('item_lb', $('#item_lb'));
+
+//拿區域
+function getCate() {
+    const area_sid = area_lb.val()
+    console.log('area_sid',area_sid)
+
+//篩選廟 把重複篩掉
+console.log('temples',temples);
+    const t = temples.filter(el=>area_sid==el.area_sid);
+    console.log('t',t)
+    const t2 = t.map(el=>el.category_tag)
+    console.log('t2',t2)
+    const mySet = new Set(t2);
+
+
+    let str = '';
+    for(let i of mySet){
+        str += `<option value="${i}">${i}</option>`
+    }
+    item_lb.html(str);
+}
+
+getCate();
+
+$(".path_lb").eq(0).css({
+  fill: "#E5A62A",
+  "-webkit-transform": "translate(-5px,-5px)",
+});
+
+const northClicked = function () {
+  $(".path_lb").removeAttr("style");
+  $(".north").css({
+    fill: "#E5A62A",
+    "-webkit-transform": "translate(-5px,-5px)",
+  });
+  $("#north-group_lb").removeClass("d-none");
+  $("#middle-group_lb").addClass("d-none");
+  $("#south-group_lb").addClass("d-none");
+  $("#area_lb").val("1");
+
+  getCate();
+};
+
+$(".north").click(northClicked);
+
+const middleClicked = function () {
+  $(".path_lb").removeAttr("style");
+  $(".middle").css({
+    fill: "#E5A62A",
+    "-webkit-transform": "translate(-5px,-5px)",
+  });
+  $("#north-group_lb").addClass("d-none");
+  $("#middle-group_lb").removeClass("d-none");
+  $("#south-group_lb").addClass("d-none");
+  $("#area_lb").val("2");
+  getCate();
+};
+
+$(".middle").click(middleClicked);
+
+const southClicked = function () {
+  $(".path_lb").removeAttr("style");
+  $(".south").css({
+    fill: "#E5A62A",
+    "-webkit-transform": "translate(-5px,-5px)",
+  });
+  $("#north-group_lb").addClass("d-none");
+  $("#middle-group_lb").addClass("d-none");
+  $("#south-group_lb").removeClass("d-none");
+  $("#area_lb").val("3");
+  getCate();
+};
+$(".south").click(southClicked);
+
+
+$("#area_lb").on("change", function () {
+const val = $(this).val() - 1;
+    // console.log({val});
+const areas = [northClicked, middleClicked, southClicked];
+areas[val]();
+});
+
+//篩選filter 迴圈 if==
+
+// const [selectedItem]  = temples.filter(el=>{
+//         return el.sid==id;
+//         console.log(selectedItem);
+//     });
+
+
+
+//  area_lb.trigger('change'); 
+
+
+const card_tpl_func = ({hashtag,name,address,opening_hours,img,step,notice})=>{
+    return `
+        <div class="row">
+            <div class="col-4">
+                <div class="title-box_lb">
+                    <h5 class="templetag_lb">#${hashtag}</h5>
+                    <h2 class="templename_lb">${name}</h2>
+                    <p class="detail-info_lb mb-0">
+                        <span class="ml-3">地址</span>：${address}<br>
+                        <span class="ml-3">開放時間</span>： ${opening_hours}
+                    </p>
+                </div>
+            </div>
+            <div class="col-4 p-0 c01-tem-wrap_lb">
+                <img class="w-100" src="./imgs/culture/temple/${img}.jpg" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 cardhead_lb">
+            </div>
+            <div class="col-8">
+                <div class="mt-4">
+                    <h6 class="step_lb my-auto px-3 py-1">參拜步驟</h6>
+                    <p class="mt-3 steptext_lb">${step}</p>
+                </div>
+                <div class="mt-4">
+                    <h6 class="temnotice_lb my-auto px-3 py-1"> 注意事項</h6>
+                    <p class="mt-3 temnoticetext_lb">${notice}</p>
+                </div>
+            </div>
+        </div>`;
+};
+
+
+
+
+
+ //點擊地標出現廟宇卡片
+
+$('.landmark_lb').on('click', function(){
+
+    const id = $(this).attr('data-id');
+
+    const [item] = temples.filter(el=>{
+        return el.sid==id;
+    });
+    // console.log(item);
+    $('#c01-info-card_lb').html(card_tpl_func(item));
+    $(this).addClass('landmarkActive_lb').siblings().removeClass('landmarkActive_lb');
+});
+
+
+//預設一開始的廟
+const  mapDefault = function () {
+    const defaultId = $(this).attr('data-id');
+    const [item] = temples.filter(el=>{
+        return el.sid === '6';
+    });
+
+    $('#c01-info-card_lb').html(card_tpl_func(item));
+};
+
+mapDefault();
+
+
+
+
+
+
+</script>
 <?php include __DIR__ . '/parts/html-foot.php'; ?>
