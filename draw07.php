@@ -11,7 +11,7 @@ $pageName = '線上求籤'; //頁面名稱
 <?php include __DIR__. '/parts/navbar.php'; ?>
 
     <div class="body_draw01 d-none d-md-block">
-    <div class="drawSection07 flex-row position-relative justify-content-center">
+    <div class="drawSection07 flex-row position-relative justify-content-center" name="section07">
         <a id="backtodraw06" class="position-absolute backto d-none" href="draw06.html">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -51,10 +51,10 @@ $pageName = '線上求籤'; //頁面名稱
         </div>
         <div
             class="drawSection07btnGroup drawSection07btnGroup1 d-flex justify-content-between align-items-center mx-auto position-absolute">
-            <button class="wantbtn btn-round d-flex align-items-center my-0">
-                <h2 class="mx-auto mb-0">年齡</h2>
+            <button class="wantbtn btn-round d-flex align-items-center my-0" onclick="savedata()">
+                <h2 class="mx-auto mb-0" >年齡</h2>
             </button>
-            <button class="wantbtn btn-round d-flex align-items-center my-0">
+            <button class="wantbtn btn-round d-flex align-items-center my-0" onclick="savedata()">
                 <h2 class="mx-auto mb-0">外型</h2>
             </button>
         </div>
@@ -105,7 +105,7 @@ $pageName = '線上求籤'; //頁面名稱
         </a>
 
     </div>
-    <button class="btn_md_next btn_disabled_ba position-absolute disabled">
+    <button class="btn_md_next btn_disabled_ba position-absolute disabled" onclick="savedata()">
         <a class="m-0 disabled text-decoration-none" href="#">
             <p class="m-0">
                 下一步
