@@ -94,12 +94,11 @@
     margin: 8px 0;
     text-decoration: none;
     color: var(--color-text87);
-
 }
-.product_sort a:hover {
+.product_sort a .sort_active{
     color: var(--color-orange);
 }
-.product_sort a:focus {
+.product_sort a:hover {
     color: var(--color-orange);
 }
 .sort_mb{
@@ -439,13 +438,16 @@
     color: var(--color-text60);
 }
 .icon_star{
-    width: 20px;
+    /* width: 20px; */
     margin: 0;
     color: var(--color-yellow);
 }
 .icon_fire{
-    width: 18px;
+    /* width: 18px; */
     margin: 0;
+}
+.icon_fire i{
+    color: var(--color-orange);
 }
 .price{
     color: var(--color-text87);
@@ -453,13 +455,7 @@
 .row .price::before{
     content:"NT$ ";
 }
-.icon_fire{
-    width: 18px;
-    margin: 0;
-}
-.icon_fire i{
-    color: var(--color-orange);
-}
+
 /* ------------------頁數按鈕----------------- */
 .pages{
     margin: 3rem;

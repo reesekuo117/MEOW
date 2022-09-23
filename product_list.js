@@ -40,14 +40,18 @@ function slideTwo() {
 sliderOne.addEventListener('input', slideOne)
 sliderTwo.addEventListener('input', slideTwo)
 
-
+// 排序會亮
+$('.product_sort a').click(function(){
+    // e.preventDefault();
+    //為什麼加了preventDefault還會跳轉頁面
+    // console.log($(this).closest('div').siblings());
+    $(this).closest('div').find('a').addClass('sort_active').siblings().removeClass('sort_active');
+});
 // 側邊欄篩選
-$('.product_cate > a').click(function(e){
-    e.preventDefault();
-    // $('.product_cate > a').eq(0).toggleClass('btncolor_active')
-    // $(this).find('.product_cate > a').toggleClass('btncolor_active')
-    console.log($(this).closest('div').siblings());
-    $(this).closest('div').addClass('btncolor_active').siblings().removeClass('btncolor_active');
+$('.product_cate').click(function(){
+    // e.preventDefault();
+    // console.log($(this).closest('div').siblings());
+    $(this).addClass('btncolor_active').siblings().removeClass('btncolor_active');
 });
 // $('.product_cate > a').click(function(e){
     // e.preventDefault();

@@ -25,7 +25,8 @@ $cates = $pdo->query("SELECT * FROM product_category WHERE 1") //1表示全部�
 
 $where = ' WHERE 1 '; // 起頭，1是true
 if ($cate) {
-    $where .= "AND category_sid=$cate ";
+    $where .= "AND category_sid = $cate ";
+    $qsp['cate'] = $cate;
 }
 // echo json_encode([
 //         'cate' => $cate,
@@ -117,26 +118,26 @@ if ($totalRows > 0) {
                 <!-- <div class="col"></div> -->
                 <div class="col offset-1">
                     <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                    <p style="color: var(--color-text87);"><i class="fa-regular fa-hourglass-half px-1"></i>排序方式</p>
+                    <h5 style="color: var(--color-text87);"><i class="fa-regular fa-hourglass-half px-1"></i>排序方式</h5>
                 </div>
                 <div class="col">
                     <a href="#">
-                        <p>最新上架</p>
+                        <h5>最新上架</h5>
                     </a>
                 </div>
                 <div class="col">
                     <a href="#">
-                        <p>熱門程度</p>
+                        <h5>熱門程度</h5>
                     </a>
                 </div>
                 <div class="col">
                     <a href="#">
-                        <p>價格高 → 低</p>
+                        <h5>價格高 → 低</h5>
                     </a>
                 </div>
                 <div class="col">
                     <a href="#">
-                        <p>價格低 → 高</p>
+                        <h5>價格低 → 高</h5>
                     </a>
                 </div>
             </div>
@@ -154,26 +155,25 @@ if ($totalRows > 0) {
                 </div>
                 <div class="col px-1">
                     <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                    <a href="#">
+                    <a href="?cate=1">
                         <small class="mb-0">品牌聯名</small>
                     </a>
                 </div>
                 <div class="col px-1">
-                    <a href="#">
+                    <a href="?cate=2">
                         <small class="mb-0">文創商品</small>
                     </a>
                 </div>
                 <div class="col px-1">
-                    <a href="#">
+                    <a href="?cate=3">
                         <small class="mb-0">甜蜜供品</small>
                     </a>
                 </div>
                 <div class="col px-1">
-                    <a href="#">
+                    <a href="?cate=4">
                         <small class="mb-0">獨家商品</small>
                     </a>
                 </div>
-
             </div>
         </div>
     </div>
@@ -213,16 +213,13 @@ if ($totalRows > 0) {
                                 <h5>－全部商品</h5>
                             </a>
                         </div>
-                        <?php foreach ($cates as $c) :
-                            // $btnStyle = $c['sid'] == $cate ? 'btncolor_focus' : 'btncolor_default' 
-                        ?> 
-                            <!-- 用toggleclass -->
+                        <!-- 分類壞掉了QQ -->
+                        <?php foreach ($cates as $c): ?> 
                         <div class="product_cate btncolor_default">
                             <!-- 用a連結記得JQ要加e.preventDefault(); -->
                             <a type="button" href="?cate=<?= $c['sid'] ?>">
                                 <h5>－<?= $c['category_name'] ?></h5>
                             </a>
-
                         </div>
                         <?php endforeach ?>
                         
@@ -278,14 +275,14 @@ if ($totalRows > 0) {
                                         </svg>
                                     </div>
                                     <div class="row card_under justify-content-between align-items-baseline">
-                                        <small class="xs card-text d-flex align-items-center">
-                                            <div class="icon_star">
+                                        <small class="xs card-text d-flex align-items-center pr-0">
+                                            <div class="icon_star pr-1">
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
                                             <span><?= $r['product_comment'] ?></span>
                                         </small>
                                         <small class="xs card-text d-flex align-items-center">
-                                            <div class="icon_fire">
+                                            <div class="icon_fire pr-1">
                                                 <i class="fa-solid fa-fire"></i>
                                             </div>
                                             <span><?= $r['product_popular'] ?>K+個已訂購</span>
@@ -310,21 +307,23 @@ if ($totalRows > 0) {
                 <nav aria-label="Page navigation example" class="">
                     <ul class="pagination">
                         <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                            <a class="page-link" href="?page=<?= $page == 1 ?>">
+                            <a class="page-link" href="?<?php $qsp['page']=$page == 1;
+                            echo http_build_query($qsp); ?>">
                                 <i class="fa-solid fa-angles-left"></i>
                             </a>
                         </li>
                         <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
                         if ($i >= 1 and $i <= $totalPages) :
-                            // $qsp['page']=$i;
+                            $qsp['page']=$i;
                     ?>
                         <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                            <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                            <a class="page-link" href="?<?= http_build_query($qsp); ?>"><?= $i ?></a>
                         </li>
                     <?php endif;
                     endfor; ?>
                     <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?= $totalPages ?>">
+                        <a class="page-link" href="?<?php $qsp['page']=$page == $totalPages;
+                        echo http_build_query($qsp); ?>">
                             <i class="fa-solid fa-angles-right"></i>
                         </a>
                     </li>
