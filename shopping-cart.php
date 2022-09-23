@@ -1,6 +1,26 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = '購物車'; //頁面名稱
+
+//用戶是否有登入 購物車內是否有東西 如果有就執行 如果沒有就離開
+// if(empty($_SESSION["user"]) or empty($_SESSION["cart"]) ){
+//     header("Location: shoping-cart.php ");
+//     exit;
+// }
+
+// // 應該由資料表的資料計算總價
+// $total = 0;
+// foreach($_SESSION['cart'] as $k=>$v){
+//     $total += $v['price']*$v['qty'];
+// }
+
+//order 的sql
+// $o_sql = sprintf("INSERT INTO `orders`(
+//     `member_sid`, `amount`, `order_date`
+//     ) VALUES (%s, %s, NOW())", $_SESSION['user']['id'], $total);
+
+// $stmt = $pdo->query($o_sql);
+
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -60,6 +80,9 @@ header("Refresh:180");
         <!--  購物車商品清單 -->
         <!-- 已給 #myTabContent-yu{max-width: 1450px;} -->
         <div id="myTabContent-yu" class=" px-1 tab-content container">
+                <div class="alert alert-danger" role="alert">
+                    購物車內沒有商品
+                </div>
             <!-- 獨家商品 -->
             <div class="tab-pane in active " id="uniqui-yu" >
                 <div class=" px-0 col-auto justify-content-around text-center">
