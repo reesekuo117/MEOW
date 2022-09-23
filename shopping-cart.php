@@ -379,9 +379,9 @@ header("Refresh:180");
     <!-- ------------------手機 ------------------------>
     <section class=" d-block d-md-none">
         <!-- 返回icon -->
-        <div class="mdicon-back-yu">
+        <!-- <div class="mdicon-back-yu">
             <img src="imgs/shopping-cart/icon-32_32.png" alt="">
-        </div>
+        </div> -->
         <!-- 手機獨家商品 旅遊行程分頁標籤 -->
         <!-- href="#uniqui-yu" data-toggle="tab" -->
         <!-- href="#travel-yu" data-toggle="tab" role="button -->
@@ -481,7 +481,7 @@ header("Refresh:180");
                             707
                         </h5>
                         <!-- 數量 -->
-                        <form class="d-flex" id='myform' method='POST' action='#'>
+                        <div class="d-flex" id='myform' method='POST' action='#'>
                             <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
 
                             <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
@@ -489,7 +489,7 @@ header("Refresh:180");
                             </span>
 
                             <input id="plus-yu"  type='button' value='+' class='qtyplus' field='quantity' />
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -530,7 +530,7 @@ header("Refresh:180");
                             1500
                         </h5>
                         <!-- 數量 -->
-                        <form class="d-flex" id='myform' method='POST' action='#'>
+                        <div class="d-flex" id='myform' method='POST' action='#'>
                             <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
 
                             <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
@@ -538,7 +538,7 @@ header("Refresh:180");
                             </span>
 
                             <input id="plus-yu"  type='button' value='+' class='qtyplus' field='quantity' />
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div>

@@ -1,7 +1,7 @@
 /* *{
     outline: 1px solid rgb(255, 0, 0);
 } */
-.row {
+.pages .row {
     margin: 0;
     box-sizing: border-box;
 }
@@ -274,28 +274,25 @@
 }
 .card_row {
     border-radius: 8px;
-    /* background-color: var(--color-lightcreamy); */
+    background-color: #FFF6E9;
     overflow: hidden;
 }
-@media screen and (min-width:768px){
-    .card_row{
-        background-color: var(--color-lightcreamy);
-    }
+
+.webkitlineYu{
+    overflow: hidden;
+    /* border: 1px solid #000 !important; */
+    width: 85%;
+    padding-top: 12px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
-@media screen and (max-width:768px){
-    .card_row{
-        background-color: #fff;
-        box-shadow: 0px 0px 8px var(--color-text38);
-    }
-}
-/* .t_card_mb{
-    margin-top: 24px;
-} */
 
 .t_img img{
     /* position: relative; */
     /* width: 400px; */
-    height: 261px;
+    height: 100%;
 }
 .card-body{
     /* position: relative; */
@@ -313,8 +310,9 @@
         width: 100%;
     }
     .mdpriceYu{
+        padding-bottom: 12px;
         width: 100%;
-        /* border: 1px solid #000; */
+
     }
     .travel_dateYu{
         width: 100px;
@@ -329,6 +327,11 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
     }
+    .card_row {
+        background-color: #ffffff;
+        box-shadow: 0px 0px 8px var(--color-text38);
+    }
+    
 }
 /* .card-body_mb{
     padding: 12px;
@@ -350,36 +353,10 @@
     color: var(--color-text100);
     /* border: 1px solid #000; */
 }
-.card_small{
-    margin: 12px 0;
-}
-.card_small_mb{
-    padding-bottom: 8px;
-}
+
 .card_small small{
     color: var(--color-text60);
 }
-
-@media screen and (min-width:768px) {
-    .card-body .card_title{
-        margin-top:40px;
-    }
-    .card_intro{
-        padding-top: 12px;
-    }
-    .card_intro p{
-
-        height: 68px;
-        overflow: hidden;
-        /* border: 1px solid #000; */
-        width: 630px; 
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
-}
-
 
 .card_intro_mb p{
     margin: 0;
@@ -391,6 +368,7 @@
 .p_img{
     position: relative;
 }
+
 @media screen and (min-width:768px){
     .icon_heart{
         position: absolute;
@@ -399,6 +377,15 @@
         stroke: #432A0F;
         cursor: pointer;
 
+    }
+    .icon_fivestar{
+        width: 92px;
+        height: 18px;
+        background: url(./imgs/product/fivestar.png);
+
+    }
+    .price{
+        margin-bottom: 24px;
     }
 }
 @media screen and (max-width:768px){
@@ -411,14 +398,7 @@
 
     }
 }
-@media screen and (min-width:768px){
-    .icon_fivestar{
-        width: 92px;
-        height: 18px;
-        background: url(./imgs/product/fivestar.png);
 
-    }
-}
 @media screen and (max-width:768px){
 .icon_fivestar{
     width: 18px;
@@ -428,15 +408,6 @@
 
     }
 }
-/* .t_img_mb{
-    position: relative;
-} */
-/* .icon_heart_mb{
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-    cursor: pointer;
-} */
 .icon_fivestar i{
     color: var(--color-yellow);
 }
@@ -464,7 +435,7 @@
     padding-bottom: 32px;
 }
 .card-body{
-    padding: 0 70px;
+    padding: 12px 60px;
 }
 
 @media screen and (max-width:768px) {
@@ -479,6 +450,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
 }
 .card_under .price{
     justify-content: flex-end;
@@ -488,16 +460,10 @@
     content:"NT$ ";
 }
 .card_under .price::after{
-    content:"/人";
-    font-size: 14px;
+    content:" /人 ";
+    font-size: 8px;
 }
-.icon_fire{
-    width: 18px;
-    margin: 0;
-}
-.icon_fire i{
-    color: var(--color-orange);
-}
+
 /* -------------------上下頁按鈕------------------ */
 /* ------------------頁數按鈕----------------- */
 .pages{
