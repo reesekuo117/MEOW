@@ -9,7 +9,30 @@ $lowp = isset($_GET['lowp']) ? intval($_GET['lowp']):0;//低價
 $highp = isset($_GET['highp']) ? intval($_GET['highp']):0;//高價
 
 
-// 取得資料的總筆數
+// $cates = $pdo->query("SELECT * FROM travel WHERE sid=0")->fetchAll();
+
+
+//定義一個變數$where
+//如果有$cate這個分類的話不是0的話 就把條件加進來={  分類category_sid =$cate }
+$where = " WHERE 1 ";  //起頭 記得要空格
+if ($cate){
+    $where .=" AND category_sid =$cate ";
+}
+
+// if ($lowp){
+//     $where .=" AND price>=$lowp ";
+//     $qsp["lowp"] = $lowp;
+// }
+
+// if ($highp){
+//     $where .=" AND price>=$highp ";
+//     $qsp["highp"] = $highp;
+// }
+
+
+
+
+// 旅遊商品  取得資料的總筆數
 $t_sql = "SELECT COUNT(1) FROM travel";
 // $t_sql = "SELECT * FROM `product` WHERE 1";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
