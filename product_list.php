@@ -28,20 +28,10 @@ if ($cate) {
     $where .= "AND category_sid = $cate ";
     $qsp['cate'] = $cate;
 }
-// if ($lowp) {
-//     $where .= "AND product_price>=$lowp ";
-//     $qsp['lowp'] = $lowp;
-//     // lowp=5000，5000以上
-// }
-// if ($highp) {
-//     $where .= "AND product_price<=$highp ";
-//     $qsp['highp'] = $highp;
-//     // highp=5000，5000以下
-// }
+
 
 // 取得資料的總筆數
 $t_sql = "SELECT COUNT(1) FROM product $where";
-// $t_sql = "SELECT * FROM `product` WHERE 1";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 // echo json_encode([
 //         'totalRows' => $totalRows,
@@ -110,8 +100,6 @@ if(isset($_GET['sort'])){
         $rows = $pdo->query($sqlSearchStr)->fetchAll();
     }
 }
-
-
 
 // echo json_encode([
 //     'totalRows' => $totalRows,
@@ -225,8 +213,7 @@ if(isset($_GET['sort'])){
             </div>
         </div>
     </div>
-    <div class="timesort_mb d-none d-md-none ">
-        <!-- <div class="d-flex"> -->
+    <!-- <div class="timesort_mb d-none d-md-none ">
         <div class="col py-1">
             <a href="#">
                 <small>最新上架</small>
@@ -247,8 +234,7 @@ if(isset($_GET['sort'])){
                 <small>價格低 → 高</small>
             </a>
         </div>
-        <!-- </div> -->
-    </div>
+    </div> -->
 
     <div class="product_section">
         <div class="container d-flex">
@@ -322,7 +308,7 @@ if(isset($_GET['sort'])){
                                             <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                         </svg>
                                     </div>
-                                    <div class="row card_under justify-content-between align-items-baseline">
+                                    <div class="d-flex card_under justify-content-between align-items-baseline">
                                         <small class="xs card-text d-flex align-items-center pr-0">
                                             <div class="icon_star pr-1">
                                                 <i class="fa-solid fa-star"></i>
@@ -377,51 +363,6 @@ if(isset($_GET['sort'])){
                     </li>
                     </ul>
                 </nav>
-                <!-- <nav aria-label="Page navigation example" class="d-md-none d-block">
-                    <ul class="pagination">
-                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                            <a class="page-link" href="?page=<?= $page == 1 ?>">
-                                <i class="fa-solid fa-angles-left"></i>
-                            </a>
-                        </li>
-                        <?php 
-                    // 固定成 1 + 2 * $pagesOptional 頁
-                    // 宣告
-                    $beginPage;
-                    $endPage;
-                    $pagesOptional = 1;
-                    if ($totalPages <= $pagesOptional) {
-                        $beginPage = 1;
-                        $endPage = $totalPages;
-                    } else if ($page-1 < $pagesOptional) {
-                        $beginPage = 1;
-                        $endPage = $pagesOptional * 2 + 1;
-                    } else if ($totalPages-$page < $pagesOptional) {
-                        // 註解一份 這裡要改
-                        // $beginPage = $totalPages-($pagesOptional * 2 + 1);
-                        $beginPage = $totalPages-($pagesOptional * 2);
-                        $endPage = $totalPages;
-                    } else {
-                        $beginPage = $page-$pagesOptional;
-                        $endPage = $page+$pagesOptional;
-                    }
-                    // 下面起始結束條件跟著修正即可 
-                    ?>
-                    <?php for ($i = $beginPage; $i <= $endPage; $i++) :
-                        if ($i >= 1 and $i <= $totalPages) :
-                    ?>
-                            <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-                            </li>
-                    <?php endif;
-                    endfor; ?>
-                    <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?page=<?= $totalPages ?>">
-                            <i class="fa-solid fa-angles-right"></i>
-                        </a>
-                    </li>
-                    </ul>
-                </nav> -->
             </div>
         </div>
     </div>
