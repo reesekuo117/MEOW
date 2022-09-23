@@ -319,7 +319,8 @@ function checkFormPassword(){
 function addToCart_re(event) {
     const btn = $(event.currentTarget);
     //currentTarget 事件屬性返回其事件偵聽器觸發事件的元素
-    const qty = btn.closest('.card-body-re').find('select').val();
+    // const qty = btn.closest('.card-body-re').find('select').val();
+    const qty = '1';
     const sid = btn.attr('data-sid');
     //使用attr叫出自定屬性 data-sid
 
@@ -328,7 +329,7 @@ function addToCart_re(event) {
 
     // $(selector).get(url,data,success(response,status,xhr),dataType)
     $.get(
-        'handle-cart.php', 
+        're-cart-api.php', 
         {sid, qty}, 
         function(data){
             showCartCount(data);

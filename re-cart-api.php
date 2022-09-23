@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/parts/connect_db.php';
+require __DIR__ . '/parts/meow_db.php';
 if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = [];
 }
@@ -24,7 +24,7 @@ if(!empty($_GET['sid'])){
         }else{
             //新增
             //TODO:檢查資料表是不有這個商品
-            $row = $pdo->query("SELECT * FROM products WHERE sid=$sid")->fetch();
+            $row = $pdo->query("SELECT * FROM product WHERE id=$id")->fetch();
             if(! empty($row)){
                 $row['qty'] = $qty; //先把數量放進去
                 $_SESSION['cart'][$sid] = $row;
