@@ -315,26 +315,62 @@ function checkFormPassword(){
         }, 'json');
     }
 }
-// 最愛
-function addToCart_re(event) {
+// 最愛 商品
+function addToCartP_re(event) {
     const btn = $(event.currentTarget);
     //currentTarget 事件屬性返回其事件偵聽器觸發事件的元素
     // const qty = btn.closest('.card-body-re').find('select').val();
     const qty = '1';
     const sid = btn.attr('data-sid');
     //使用attr叫出自定屬性 data-sid
-
     // console.log(btn.closest('.card-body').find('select'));
     console.log({sid, qty});
-
     // $(selector).get(url,data,success(response,status,xhr),dataType)
     $.get(
-        're-cart-api.php', 
+        're-p-cart-api.php', 
         {sid, qty}, 
         function(data){
-            showCartCount(data);
+            // showCartCountP(data);
         }, 
         'json');
+}
+function removeItem_p(sid){
+    console.log('hi');
+    if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
+        location.href = `re-del.php?sid=${sid}`;
+    }
+}
+// 最愛 行程
+function addToCartT_re(event) {
+    const btn = $(event.currentTarget);
+    const qty = '1';
+    const sid = btn.attr('data-sid');
+    console.log({sid, qty});
+    $.get(
+        're-t-cart-api.php', 
+        {sid, qty}, 
+        function(data){
+            // showCartCountT(data);
+        }, 
+        'json');
+}
+function removeItem_t(sid){
+    console.log('hi');
+    if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
+        location.href = `re-p-del.php?sid=${sid}`;
+    }
+}
+function removeItem_d(sid){
+    console.log('hi');
+    if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
+        location.href = `re-del.php?sid=${sid}`;
+    }
+}
+function removeItem_f(sid){
+    console.log('hi');
+    if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
+        location.href = `re-t-del.php?sid=${sid}`;
+    }
 }
 
 

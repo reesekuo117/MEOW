@@ -563,7 +563,7 @@ scrollLink.forEach((item) => {
 
 
 
-//mbnavbar變色 參拜流程不會亮 桌機會壞掉
+//mbnavbar變色
 const mbscrollLink = document.querySelectorAll('.mbnavbar_lb a[href^="#"]');
 const mbsection = document.querySelectorAll(".mbtargetScrollSection");
 let mbsections = {};

@@ -269,10 +269,79 @@ $('.drawSection12 .horobtn').mouseleave(function () {
     $(this).find("img").css('animation', 'flip_horo_back .3s forwards');
 })
 
+// 回到上一步
+// const cacheData = localStorage.getItem('my-key');
+
+// if(cacheData){
+//     const cacheObj = JSON.parse(cacheData);
+//     document.section07.want01.value = cacheObj.want01
+// }
+
+// function savedata() {
+//     const Arr1 = [
+//         document.section07.want01.value
+//     ]
+
+// }
+
+// localStorage.setItem('my-key',JSON.stringify(obj))
+
+// location.href = "draw08.php"
+
+// $('.wantbtn').click(function () {
+// console.log($(this).value());
+    
+// })
+
+// 先把選項存成整列，在轉 Json放入 cookie
+// 存入 存成陣列 》轉 Json 〉放入cookies 
+// 讀取 抓 cookies 》json 轉 陣列
+
+// $('.wantbtn').click(function(){
+//     $(this).attr('data-value', 'want01');
+// })
+
+// const btnactive = $('.wantbtn').attr('data-value').val();
+// console.log(btnactive)
+
+// function savedata(event) {
+//     const btn = $(event.currentTarget);
+//     // const qty = btn.closest('.card-body').find('select').val();
+//     // const sid = btn.attr('data-sid');
+
+//     // console.log({
+//     //     sid,
+//     //     qty
+//     // });
+
+//     $.get(
+//         'ba-cart.php',
+//         {btnactive},
+//         function(data){
+//             console.log(data);
+//             // showCartCount(data);
+//         },
+//         'json');
+// }
+
+const btnSelected =[]
+
+function savedata(event){
+    btnSelected.push($(this));
+    console.log(btnSelected);
+}
+
 // 條件
 
 $('.wantbtn').click(function () {
     $(this).toggleClass('drawbtnToggle')
+    
+    const wantArray = [];
+   $('.drawbtnToggle h2').each((index,item)=>{
+    wantArray.push($(item).text())
+    });
+
+    localStorage.setItem('wantArray',wantArray);
 })
 
 // 興趣

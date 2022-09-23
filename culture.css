@@ -816,8 +816,13 @@ color: #CD562F;
   border-radius: 8px;
   width: 120px;
   overflow: hidden;
-  /* border: 1px solid red; */
-  box-shadow: 0px 2px 5px rgba(67, 42, 15, 0.38);
+  /* box-shadow: 0px 2px 5px rgba(67, 42, 15, 0.38); */
+}
+.landmarkActive_lb{
+ box-shadow: 2px 2px 3px var(--color-white);
+ /* transform: translateX(20px,-5px); */
+
+
 }
 .loation_lb {
   color: var(--color-white);
