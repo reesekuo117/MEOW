@@ -125,19 +125,21 @@ $pageName ='會員中心'; //頁面名稱
 
 
 
-    $p_sql = "SELECT * FROM `love` Inner join product on product.id = love.collect_id WHERE love.member_id=$member_id";
-    $t_sql = "SELECT * FROM `love` Inner join travel on travel.id = love.collect_id WHERE love.member_id=$member_id";
-    $f_sql = "SELECT * FROM `love` Inner join forturn on forturn.id = love.collect_id WHERE love.member_id=$member_id";
-    $d_sql = "SELECT * FROM `love` Inner join draw on draw.id = love.collect_id WHERE love.member_id=$member_id";
+    $p_sql = "SELECT * FROM `love` Inner join product on target_type = 1 and product.sid = love.collect_id WHERE love.member_id=$member_id";
+    $t_sql = "SELECT * FROM `love` Inner join travel on target_type = 2 and travel.sid = love.collect_id WHERE love.member_id=$member_id";
+    $f_sql = "SELECT * FROM `love` Inner join forturn on target_type = 3 and forturn.sid = love.collect_id WHERE love.member_id=$member_id";
+    $d_sql = "SELECT * FROM `love` Inner join draw on target_type = 4 and draw.sid = love.collect_id WHERE love.member_id=$member_id";
 
     $p_rows = $pdo->query($p_sql)->fetchAll();
     $t_rows = $pdo->query($t_sql)->fetchAll();
     $f_rows = $pdo->query($f_sql)->fetchAll();
     $d_rows = $pdo->query($d_sql)->fetchAll();
+
+
 //json_encode判斷型別輸出JSON 數字型態
 // echo json_encode([ 
-//     // '$rows' => $p_rows,
-//     // '$rows' => $t_rows,
+//     '$prows' => $p_rows,
+//     // '$trows' => $t_rows,
 // ]);
 // exit;
 ?>
