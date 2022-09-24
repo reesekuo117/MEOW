@@ -6,6 +6,20 @@
 //     exit;
 // }
 ?>
+<style>
+    .navbar .nav-link.active {
+        border-bottom: var(--color-white) 2px solid;
+    }
+
+    .header-xs #menu .nav-link.active {
+        color: var(--color-white);
+        background-color: var(--color-orange);
+        border-radius: 8px;
+        font-weight: 400;
+    }
+
+    /* 注意權重 */
+</style>
 <!-- header-md ----------------------------------->
 <header class="d-none d-md-block draw16_none">
     <div class="navbar navbar_ba">
@@ -41,18 +55,18 @@
                         </a>
                     </div>
                     <!-- menu -->
-                    <div class="d-flex mr-0 ml-0 ">
-                        <div class="nav-menu">
-                            <a href="culture.php">月老文化</a>
+                    <div class="d-flex mx-0">
+                        <div class="nav-menu mx-0">
+                            <a class="mx-0 nav-link <?= $pageName == '月老文化' ? 'active' : '' ?>" href="culture.php">月老文化</a>
                         </div>
                         <div class="nav-menu">
-                            <a href="draw01.php">線上求籤</a>
+                            <a class="nav-link <?= $pageName == '線上求籤' ? 'active' : '' ?>" href="draw01.php">線上求籤</a>
+                        </div>
+                        <div class="nav-menu  mx-0">
+                            <a class="nav-link <?= $pageName == '獨家商品' ? 'active' : '' ?>" href="product_index.php">獨家商品</a>
                         </div>
                         <div class="nav-menu">
-                            <a href="product_index.php">獨家商品</a>
-                        </div>
-                        <div class="nav-menu">
-                            <a href="travel_index.php">旅遊行程</a>
+                            <a class="nav-link <?= $pageName == '旅遊行程' ? 'active' : '' ?>" href="travel_index.php">旅遊行程</a>
                         </div>
                     </div>
                 </div>
@@ -108,16 +122,16 @@
                     <div class="checkbox-remove">
                         <ul id="menu">
                             <li class="text-center">
-                                <a href="culture.php">月老文化</a>
+                                <a class="nav-link <?= $pageName == '月老文化' ? 'active' : '' ?>" href="culture.php">月老文化</a>
                             </li>
                             <li class="text-center">
-                                <a href="#">線上求籤</a>
+                                <a class="nav-link <?= $pageName == '線上求籤' ? 'active' : '' ?>" href="draw01.php">線上求籤</a>
                             </li>
                             <li class="text-center">
-                                <a href="product_index.php">獨家商品</a>
+                                <a class="nav-link <?= $pageName == '獨家商品' ? 'active' : '' ?>" href="product_index.php">獨家商品</a>
                             </li>
-                            <li class="text-center">
-                                <a href="travel_index.php">旅遊行程</a>
+                            <li class="text-center d-flex justify-content-center">
+                                <a class="nav-link <?= $pageName == '旅遊行程' ? 'active' : '' ?>" href="travel_index.php">旅遊行程</a>
                             </li>
                         </ul>
                     </div>
