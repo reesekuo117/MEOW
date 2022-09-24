@@ -7,7 +7,7 @@ require __DIR__. '/parts/meow_db.php';
 
 if(isset($_GET['sid'])){
     $sid = intval($_GET['sid']);
-    $sql = "DELETE FROM love WHERE sid=$sid";
+    $sql = "DELETE FROM love WHERE target_type = 2 and collect_sid=$sid";
     $pdo->query($sql);
 }
 // 如果有sid執行刪除DELETE
