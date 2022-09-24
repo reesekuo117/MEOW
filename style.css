@@ -76,7 +76,7 @@ header .navbar {
   font-size: var(--font-h5-20);
   color: var(--color-white);
   line-height: 50px;
-  padding: 0 20px 0 0;
+  padding: 0 10px;
 }
 
 .nav-menu a:hover {
@@ -145,18 +145,18 @@ header .navbar {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span {
+#menuToggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(0px, 0px);
   background: var(--color-white);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3) {
+#menuToggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2) {
+#menuToggle input:checked~span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0px, 2px);
 }
 
@@ -177,12 +177,12 @@ header .navbar {
   font-weight: 600;
 }
 
-#menu > li > a {
+#menu>li>a {
   /* font-size: var(--font-p-16); */
   color: var(--color-text100);
 }
 
-#menuToggle input:checked ~ ul {
+#menuToggle input:checked~ul {
   transform: none;
 }
 
@@ -207,12 +207,12 @@ footer {
   height: 72px;
 }
 
-.footer-xs > ul {
+.footer-xs>ul {
   padding: 0 32px;
   margin: 0px;
 }
 
-.footer-xs > ul > li {
+.footer-xs>ul>li {
   list-style: none;
   margin: 18px 13px 18px 13px;
 }
