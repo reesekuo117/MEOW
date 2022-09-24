@@ -331,6 +331,21 @@
         background-color: #ffffff;
         box-shadow: 0px 0px 8px var(--color-text38);
     }
+    .icon_heart{
+        position: absolute;
+        right: 0;
+        bottom: 200%;
+        stroke: #fff;
+        cursor: pointer;
+    
+        }
+        .icon_fivestar{
+            width: 18px;
+            height: 18px;
+            background: url(./imgs/product/star.png);
+            
+        
+            }
     
 }
 /* .card-body_mb{
@@ -388,26 +403,13 @@
         margin-bottom: 24px;
     }
 }
+/* @media screen and (max-width:768px){
+
+} */
+/* 
 @media screen and (max-width:768px){
-.icon_heart{
-    position: absolute;
-    right: 0;
-    bottom: 200%;
-    stroke: #fff;
-    cursor: pointer;
 
-    }
-}
-
-@media screen and (max-width:768px){
-.icon_fivestar{
-    width: 18px;
-    height: 18px;
-    background: url(./imgs/product/star.png);
-    
-
-    }
-}
+} */
 .icon_fivestar i{
     color: var(--color-yellow);
 }
@@ -438,13 +440,13 @@
     padding: 12px 60px;
 }
 
-@media screen and (max-width:768px) {
+/* @media screen and (max-width:768px) {
     .card-body{
         /* margin: 0; */
-        padding: 16px 16px;
-    }
+        /* padding: 16px 16px;
+    } */
     
-}
+
 
 .card_under{
     flex-wrap: nowrap;
