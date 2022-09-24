@@ -327,7 +327,7 @@ function addToCartP_re(event) {
     console.log({sid, qty});
     // $(selector).get(url,data,success(response,status,xhr),dataType)
     $.get(
-        're-p-cart-api.php', 
+        're-cart-p-api.php', 
         {sid, qty}, 
         function(data){
             // showCartCountP(data);
@@ -337,7 +337,7 @@ function addToCartP_re(event) {
 function removeItem_p(sid){
     console.log('hi');
     if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
-        location.href = `re-del.php?sid=${sid}`;
+        location.href = `re-del-t.php?sid=${sid}`;
     }
 }
 // 最愛 行程
@@ -347,7 +347,7 @@ function addToCartT_re(event) {
     const sid = btn.attr('data-sid');
     console.log({sid, qty});
     $.get(
-        're-t-cart-api.php', 
+        're-cart-t-api.php', 
         {sid, qty}, 
         function(data){
             // showCartCountT(data);
@@ -357,20 +357,20 @@ function addToCartT_re(event) {
 function removeItem_t(sid){
     console.log('hi');
     if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
-        location.href = `re-p-del.php?sid=${sid}`;
+        location.href = `re-del-p.php?sid=${sid}`;
     }
 }
 function removeItem_d(sid){
     console.log('hi');
     if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
-        location.href = `re-del.php?sid=${sid}`;
+        location.href = `re-del-d.php?sid=${sid}`;
     }
 }
 function removeItem_f(sid){
     console.log('hi');
     if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
-        location.href = `re-t-del.php?sid=${sid}`;
+        location.href = `re-del-f.php?sid=${sid}`;
     }
 }
-
+console.log('帳號密碼','999@com/999');
 
