@@ -4,7 +4,7 @@ if(!isset($_SESSION['pcart'])){
     $_SESSION['pcart'] = [];
 }
 
-echo ($_GET['sid']);
+// echo ($_GET['sid']);
 
 $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
 $qty = isset($_GET['qty']) ? intval($_GET['qty']) : 0;
