@@ -60,13 +60,13 @@ header("Refresh:180");
         <!--  購物車商品清單 -->
         <!-- 已給 #myTabContent-yu{max-width: 1450px;} -->
         <div id="myTabContent-yu" class=" px-1 tab-content container">
-            <?php if (empty($_SESSION['cart'])) : ?>
+                <?php if (empty($_SESSION['pcart'])) : ?>
                     <div class="alert alert-danger" role="alert">
                         購物車內沒有商品
                     </div>
                 <?php else : ?>    
             <!-- 獨家商品 -->
-                <div class="tab-pane in active " id="uniqui-yu" >
+            <div class="tab-pane in active " id="uniqui-yu" >
                 <div class=" px-0 col-auto justify-content-around text-center">
                     <div id="form-yu">
                         <table id="#tabYu" class="table ">
@@ -79,6 +79,9 @@ header("Refresh:180");
                                             </label>
                                         
                                     </th>
+                                    <!-- <th> 
+                                        <h6 class="mb-0 ">ID</h6>
+                                    </th> -->
                                     <th> 
                                         <h6 class="mb-0 ">商品照片</h6>
                                     </th>
@@ -97,16 +100,16 @@ header("Refresh:180");
                                     <th scope="col" class="sub-total">
                                         <h6 class="mb-0 ">小計</h6>
                                     </th>
-                                    <th scope="col" class="sub-total">
+                                    <th scope="col" class="">
                                         <h6 class="mb-0 ">刪除</h6>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class=" tbody">
                             <?php
-                                $total = 0; 
-                                foreach($_SESSION["cart"] as $k => $v) :?>
-                                <tr class="">
+                                
+                                foreach($_SESSION["pcart"] as $k => $v) : $total += $v['pprice'] * $v['qty'];?>
+                                <tr data-sid="<?=$k ?>"  class="pcart-item">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu">
                                             <input 
@@ -118,110 +121,49 @@ header("Refresh:180");
                                             checked>
                                         </div>
                                     </th>
+                                    <!-- id -->
+                                    <!-- <td><?= $k ?></td> -->
                                     <!-- 商品照片 -->
                                     <td>
-                                        <img src="./imgs/product/cards/<?= $v['product_card_img'] ?>.jpg">
+                                        <img src="imgs/product/<?= $v['product_card_img'] ?>.jpg" class="card-img-top" >
+                                        <!-- <img src="imgs/product/small/< ?= $v['product_card_img'] ?>.jpg" class="card-img-top" alt="..."> -->
                                     </td>
                                     <!-- 商品名稱 -->
                                     <td>
                                         <h6 class="m-0">
-                                            台北霞海城隍廟獨家聯名
-                                            <br>
-                                            -七夕月老供品組-甜作之盒
+                                            <?= $v["product_name"] ?>
                                         </h6>
                                     </td>
                                     <!-- 商品規格 -->
                                     <td>
                                         <div class="">
                                             <select class="form-select-yu" id="autosizing-yu"  >
-                                                    <option value="0">甜作之盒單入組</option>
-                                                    <option value="1">甜作之盒&棉布御守單入組</option>
-                                                    <option value="2">棉布御守</option>
+                                                    <option value="0"><?=$v["product_size"] ?></option>
+                                                    <!-- <option value="1">< ?=$v["product_size"] ?></option>
+                                                    <option value="2">< ?=$v["product_size"] ?></option> -->
                                             </select>
                                         </div>
                                     </td>
                                     <!-- 單價 -->
-                                    <td id="onepriceYu" class="price-yu m-0" >
-                                        <h6 class="onePriceinputYu " nams="priceYu">
-                                            707
-                                        </h6>
+                                    <td id="onepriceYu" nams="priceYu" class="price-yu m-0 "  >
+                                    <h6 class="onePriceinputYu h6 pprice" data-val="<?= $v["product_price"] ?>">
+                                    </h6>
                                     </td>
                                     <!-- 數量 -->
                                     <td class="">
                                         <form id='myform' method='POST' action='#'>
 
-                                            <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
-
-                                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 qty-yu numberTotalYu'>
-                                                1
-                                            </span>
-                                            
-                                            <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
+                                                <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
+                                                <span id="numbertotal_yu" type='text' name='txt'value="<?= $i ?>" class= 'pprice px-1 qty-yu numberTotalYu'>
+                                                    <?= $i ?>
+                                                </span>
+                                                <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
                                         </form>
                                     </td>
                                     <!-- 小計 -->
                                     <td name="tpriceYu"  class="total_price_yu h6 p-2" >
-                                        <h6 id="totalprice_yu" class="littlePriceYu" nams="priceYu">
-                                            707
-                                        </h6>
-                                    </td>
-                                    <!-- 刪除 -->
-                                    <th scope="col" class="form-delete-yu">
-                                        <i onclick="javascript:return del();"  id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
-                                    </th>
-                                </tr>
-                                <!-- ---------------------------------------- -->
-                                <tr class="">
-                                    <th scope="col ">
-                                        <div class="row m-auto p-1 checkbox-yu">
-                                            <input id="checkboxInputYu" class=" mx-2" type="checkbox" name="oneCheck1Yu" aria-label="Checkbox for following text input" checked>
-                                        </div>
-                                    </th>
-                                    <!-- 商品照片 -->
-                                    <td>
-                                        <img src="imgs/購物車-商品(測試用).png" alt="">
-                                    </td>
-                                    <!-- 商品名稱 -->
-                                    <td>
-                                        <h6 class="m-0">
-                                            台北霞海城隍廟獨家聯名
-                                            <br>
-                                            -七夕月老供品組-甜作之盒
-                                        </h6>
-                                    </td>
-                                    <!-- 商品規格 -->
-                                    <td>
-                                        <div class="">
-                                            <select class="form-select-yu" id="autosizing-yu"  >
-                                                    <option value="0">甜作之盒單入組</option>
-                                                    <option value="1">甜作之盒&棉布御守單入組</option>
-                                                    <option value="2">棉布御守</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <!-- 單價 -->
-                                    <td id="onepriceYu" class="price-yu h6" >
-                                        <h6 class="onePriceinputYu" nams="priceYu">
-                                            707
-                                        </h6>
-                                    </td>
-                                    <!-- 數量 -->
-                                    <td class="">
-                                        <form id='myform' method='POST' action='#'>
-
-                                            <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
-
-                                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 qty-yu numberTotalYu'>
-                                                1
-                                            </span>
-                                            
-                                            <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
-                                        </form>
-                                    </td>
-                                    <!-- 小計 -->
-                                    <td name="tpriceYu" id="totalprice_yu" class="total_price_yu h6 p-2" >
-                                        <h6 class="littlePriceYu" nams="priceYu">
-                                            707
+                                        <h6 id="totalprice_yu" class="littlePriceYu sub-total" nams="priceYu">
+                                            <?= $v["product_price"] ?>
                                         </h6>
                                     </td>
                                     <!-- 刪除 -->
@@ -235,49 +177,39 @@ header("Refresh:180");
                     </div>
                 </div>
                 <!-- 修改總金額 -->
+                <!--  <span>總計: </span><span id="total-price" ></span> 元 -->
                 <div class="h6 alert alert-succes totalprice-uniqui-yu "  role="alert">
-                        <span class="d-flex " name="TotalPriceYu">
-                            <h6   class="price-yu">
-                                <span id="TotalpriceYu"  type="text" >
-                                    1414
-                                </span>
-                            </h6>
-                        </span>
-                        <span id="total-amount" class=" d-flex  price-uniqui-yu">
-                            <h6>1414</h6> 
+                        <span id="total-priceYu" class=" d-flex  price-uniqui-yu">
+                            
                         </span>
                 </div>
-                <div>
+                <div class=" d-md-flex justify-content-md-end">
                     <!-- 如果使用者還未登入 -->
                     <?php if(empty($_SESSION["user"])) : ?>  
-                <!-- 跳出提示框提醒用戶先登入會員 -->
+                        <!-- 跳出提示框提醒用戶先登入會員 -->
                         <div class="alert alert-danger" role="alert">
                             請先登入會員，再結帳
                         </div>
-                
-                </div>
-                <div class=" d-md-flex justify-content-md-end">
+                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
+                    <!-- a href="#buy1.php" -->
                     <?php else: ?>
-                        <a href="./shopping-cart-productdetails.php" class="btn unique-nextbutton-yu">
-                            <button class=" unique-btn-yu  me-md-2" type="button">
-                                <p class="m-0 text-center">
-                                    下一步
-                                </p>
-                            </button>
-                        </a>
+                    <a href="./shopping-cart-productdetails.php" class="btn unique-nextbutton-yu">
+                        <button class=" unique-btn-yu  me-md-2" type="button">
+                            <p class="m-0 text-center">
+                                下一步
+                            </p>
+                        </button>
+                    </a>
                     <?php endif; ?>
                 </div>
             <?php endif?>
-        </div>
-
-
-
-
-
-
-
+            </div>
 
             
+
+
+
+
             <!-- 旅遊行程 -->
             <div class="tab-pane fade" id="travel-yu">
                 <div class=" col-auto justify-content-around text-center">
@@ -314,12 +246,15 @@ header("Refresh:180");
                                 </tr>
                             </thead>
                             <tbody class=" tbody">
-                                <?php if (empty($_SESSION['cart'])) : ?>
+                                <?php if (empty($_SESSION['tcart'])) : $total += $v['price'] * $v['qty'];?>
                                     <div class="alert alert-danger" role="alert">
                                         購物車內沒有商品
                                     </div>
-                                <?php else : ?> 
-                                <tr class="">
+                                <?php else : ?>   
+                                    <?php
+                                
+                                foreach($_SESSION["tcart"] as $k => $v) :?>
+                                <tr data-sid="<?=$k ?>"  class="tcart-item">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu ">
                                             <input class=" mx-2 " type="checkbox" name="oneCheck2Yu" aria-label="Checkbox for following text input" checked>
@@ -365,6 +300,7 @@ header("Refresh:180");
                                         <i onclick="javascript:return del();"  id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
                                     </th>
                                 </tr>
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>
@@ -374,27 +310,26 @@ header("Refresh:180");
                         <h6>1500</h6> 
                     </span>
                 </div>
-                <div>
-                    <!-- 如果使用者還未登入 -->
-                    <?php if(empty($_SESSION["user"])) : ?>  
-                <!-- 跳出提示框提醒用戶先登入會員 -->
-                        <div class="alert alert-danger" role="alert">
-                            請先登入會員，再結帳
-                        </div>
-                
-                </div>
-                <div class=" d-md-flex justify-content-md-end">
-                    <?php else: ?>
-                        <a href="./shopping-cart-travellist.php" class="btn unique-nextbutton-yu">
-                            <button class=" unique-btn-yu  me-md-2" type="button">
-                                <p class="m-0 text-center">
-                                    下一步
-                                </p>
-                            </button>
-                        </a>
-                    <?php endif; ?>
-                </div>
-                <?php endif?>
+            <div class=" d-md-flex justify-content-md-end">
+            <!-- 如果使用者還未登入 -->
+                <?php if(empty($_SESSION["user"])) : ?>  
+                    <!-- 跳出提示框提醒用戶先登入會員 -->
+                    <div class="alert alert-danger" role="alert">
+                        請先登入會員，再結帳
+                    </div>
+                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
+                    <!-- a href="#buy1.php" -->
+                <?php else: ?>
+                <a href="./shopping-cart-travellist.php" class="btn unique-nextbutton-yu">
+                    <button class=" unique-btn-yu  me-md-2" type="button">
+                        <p class="m-0 text-center">
+                            下一步
+                        </p>
+                    </button>
+                </a>
+                <?php endif; ?>
+            </div>
+            <?php endif?>
             </div>
         </div>
         <!-- 獨家商品訂單下一步之後的填寫資料 -->
@@ -590,5 +525,77 @@ header("Refresh:180");
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 
 <script src="./shopping-cart.js"></script>
+
+
+<script>
+
+//價錢加,
+const dollarCommas = function(n){
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+};
+
+function removeItem(event) {
+        const tr = $(event.currentTarget).closest('tr');
+        const sid = tr.attr('data-sid');
+
+        $.get(
+            're-cart-p-api.php',
+            {sid}, 
+            function(data){
+                console.log(data);
+                showCartCount(data); // 購物車總數量
+                tr.remove();
+
+                // TODO: 更新小計, 總計, 
+                //TODO:總計,
+                
+                updatePrices();//刪除後要呼叫函式
+            }, 
+            'json');
+    }
+
+    function updateItem(event) {
+        const sid = $(event.currentTarget).closest('tr').attr('data-sid');
+        const qty = $(event.currentTarget).val();
+
+        $.get(
+            're-cart-p-api.php',
+            {sid, qty}, 
+            function(data){
+                console.log(data);
+                showCartCount(data); // 購物車總數量
+                // TODO: 更新小計, 總計, 總數量
+                // TODO: 更新小計, 總計
+                updatePrices(); //更新後就要呼叫函式
+            }, 
+            'json');
+    }
+
+    function updatePrices(){
+        let total = 0;  //總價歸零
+
+        $(".pcart-item").each(function(){
+            const tr = $(this);
+            const td_price = tr.find(".pprice");
+            const td_sub = tr.find(".sub-total");
+
+            const price = +td_price.attr("data-val");
+            const qty = +tr.find(".qty").val();
+
+            //td_price.html("$" +price); //+是轉型
+            //td_sub.html("$" +price * qty); 
+
+            td_price.html('$ ' + dollarCommas(price) );
+            td_sub.html('$ ' + dollarCommas(price * qty));
+            total += price * qty; //小計計算
+
+        });
+        //$("#total-price").html("$" + total);
+        $('#total-priceYu').html('$ ' + dollarCommas(total));
+    }
+    updatePrices(); // 一進頁面就要執行一次
+
+
+</script>
 
 <?php include __DIR__ . '/parts/html-foot.php'; ?>

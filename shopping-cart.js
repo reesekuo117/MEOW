@@ -56,8 +56,8 @@ qtyplus.on("click", function () {
   //   修改總金額
 
   // 拿到要改的dom
-  $("#total-amount").find("h6").text("1111");
-  // 拿到要改的數值
+  // $("#total-amount").find("h6").text("1111");
+  // // 拿到要改的數值
 
   // numChanged();
 });
