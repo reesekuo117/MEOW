@@ -1,26 +1,6 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
-$pageName = '購物車'; //頁面名稱
-
-//用戶是否有登入 購物車內是否有東西 如果有就執行 如果沒有就離開
-// if(empty($_SESSION["user"]) or empty($_SESSION["cart"]) ){
-//     header("Location: shoping-cart.php ");
-//     exit;
-// }
-
-// // 應該由資料表的資料計算總價
-// $total = 0;
-// foreach($_SESSION['cart'] as $k=>$v){
-//     $total += $v['price']*$v['qty'];
-// }
-
-//order 的sql
-// $o_sql = sprintf("INSERT INTO `orders`(
-//     `member_sid`, `amount`, `order_date`
-//     ) VALUES (%s, %s, NOW())", $_SESSION['user']['id'], $total);
-
-// $stmt = $pdo->query($o_sql);
-
+$pageName = 'cart'; //頁面名稱
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -80,11 +60,13 @@ header("Refresh:180");
         <!--  購物車商品清單 -->
         <!-- 已給 #myTabContent-yu{max-width: 1450px;} -->
         <div id="myTabContent-yu" class=" px-1 tab-content container">
-                <div class="alert alert-danger" role="alert">
-                    購物車內沒有商品
-                </div>
+            <?php if (empty($_SESSION['cart'])) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        購物車內沒有商品
+                    </div>
+                <?php else : ?>    
             <!-- 獨家商品 -->
-            <div class="tab-pane in active " id="uniqui-yu" >
+                <div class="tab-pane in active " id="uniqui-yu" >
                 <div class=" px-0 col-auto justify-content-around text-center">
                     <div id="form-yu">
                         <table id="#tabYu" class="table ">
@@ -121,6 +103,9 @@ header("Refresh:180");
                                 </tr>
                             </thead>
                             <tbody class=" tbody">
+                            <?php
+                                $total = 0; 
+                                foreach($_SESSION["cart"] as $k => $v) :?>
                                 <tr class="">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu">
@@ -135,7 +120,7 @@ header("Refresh:180");
                                     </th>
                                     <!-- 商品照片 -->
                                     <td>
-                                        <img src="imgs/購物車-商品(測試用).png" alt="">
+                                        <img src="./imgs/product/cards/<?= $v['product_card_img'] ?>.jpg">
                                     </td>
                                     <!-- 商品名稱 -->
                                     <td>
@@ -148,8 +133,6 @@ header("Refresh:180");
                                     <!-- 商品規格 -->
                                     <td>
                                         <div class="">
-                                            <!-- <td>< ?= $v["uniquiname"] ?></td>
-                                            <td class="price" data-val="< ?= $v["price"] ?>"></td> -->
                                             <select class="form-select-yu" id="autosizing-yu"  >
                                                     <option value="0">甜作之盒單入組</option>
                                                     <option value="1">甜作之盒&棉布御守單入組</option>
@@ -209,8 +192,6 @@ header("Refresh:180");
                                     <!-- 商品規格 -->
                                     <td>
                                         <div class="">
-                                            <!-- <td>< ?= $v["uniquiname"] ?></td>
-                                            <td class="price" data-val="< ?= $v["price"] ?>"></td> -->
                                             <select class="form-select-yu" id="autosizing-yu"  >
                                                     <option value="0">甜作之盒單入組</option>
                                                     <option value="1">甜作之盒&棉布御守單入組</option>
@@ -248,6 +229,7 @@ header("Refresh:180");
                                         <i onclick="javascript:return del();"  id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
                                     </th>
                                 </tr>
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>
@@ -267,24 +249,35 @@ header("Refresh:180");
                 </div>
                 <div>
                     <!-- 如果使用者還未登入 -->
-                    <!-- < ?php if(empty($_SESSION["user"])) : ?>   -->
-                        <!-- 跳出提示框提醒用戶先登入會員 -->
+                    <?php if(empty($_SESSION["user"])) : ?>  
+                <!-- 跳出提示框提醒用戶先登入會員 -->
                         <div class="alert alert-danger" role="alert">
                             請先登入會員，再結帳
                         </div>
-                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
+                
                 </div>
                 <div class=" d-md-flex justify-content-md-end">
-                    <!-- a href="#buy1.php" -->
-                    <a href="./shopping-cart-productdetails.php" class="btn unique-nextbutton-yu">
-                        <button class=" unique-btn-yu  me-md-2" type="button">
-                            <p class="m-0 text-center">
-                                下一步
-                            </p>
-                        </button>
-                    </a>
+                    <?php else: ?>
+                        <a href="./shopping-cart-productdetails.php" class="btn unique-nextbutton-yu">
+                            <button class=" unique-btn-yu  me-md-2" type="button">
+                                <p class="m-0 text-center">
+                                    下一步
+                                </p>
+                            </button>
+                        </a>
+                    <?php endif; ?>
                 </div>
-            </div>
+            <?php endif?>
+        </div>
+
+
+
+
+
+
+
+
+            
             <!-- 旅遊行程 -->
             <div class="tab-pane fade" id="travel-yu">
                 <div class=" col-auto justify-content-around text-center">
@@ -321,6 +314,11 @@ header("Refresh:180");
                                 </tr>
                             </thead>
                             <tbody class=" tbody">
+                                <?php if (empty($_SESSION['cart'])) : ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        購物車內沒有商品
+                                    </div>
+                                <?php else : ?> 
                                 <tr class="">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu ">
@@ -376,24 +374,27 @@ header("Refresh:180");
                         <h6>1500</h6> 
                     </span>
                 </div>
-            <div>
-                <!-- 如果使用者還未登入 -->
-                <!-- < ?php if(empty($_SESSION["user"])) : ?>   -->
-                    <!-- 跳出提示框提醒用戶先登入會員 -->
-                    <div class="alert alert-danger" role="alert">
-                        請先登入會員，再結帳
-                    </div>
-                <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
-            </div>
-            <div class=" d-md-flex justify-content-md-end">
-                <a href="./shopping-cart-travellist.php" class="btn unique-nextbutton-yu">
-                    <button class=" unique-btn-yu  me-md-2" type="button">
-                        <p class="m-0 text-center">
-                            下一步
-                        </p>
-                    </button>
-                </a>
-            </div>
+                <div>
+                    <!-- 如果使用者還未登入 -->
+                    <?php if(empty($_SESSION["user"])) : ?>  
+                <!-- 跳出提示框提醒用戶先登入會員 -->
+                        <div class="alert alert-danger" role="alert">
+                            請先登入會員，再結帳
+                        </div>
+                
+                </div>
+                <div class=" d-md-flex justify-content-md-end">
+                    <?php else: ?>
+                        <a href="./shopping-cart-travellist.php" class="btn unique-nextbutton-yu">
+                            <button class=" unique-btn-yu  me-md-2" type="button">
+                                <p class="m-0 text-center">
+                                    下一步
+                                </p>
+                            </button>
+                        </a>
+                    <?php endif; ?>
+                </div>
+                <?php endif?>
             </div>
         </div>
         <!-- 獨家商品訂單下一步之後的填寫資料 -->

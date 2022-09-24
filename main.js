@@ -149,11 +149,11 @@ function showCartCount(obj){
         count += +item.qty; //+是讓字串轉型態
 
     }
-    $("#cartCount").html(count);
+    $("#cartCountYu").html(count);
 }
 
 $.get(
-    "handle-cart.php",
+    "re-pcart-api.php",
     function(data){
         showCartCount(data);
     },
