@@ -5,8 +5,9 @@ $perPage = 6;  // 每頁最多有幾筆
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就會回到全部分類
 //$cate=用戶指定的分類
-
 // $cates = $pdo->query("SELECT * FROM travel WHERE sid=0")->fetchAll();
+
+
 
 //定義一個變數$where
 //如果有$cate這個分類的話不是0的話 就把條件加進來={  分類category_sid =$cate }

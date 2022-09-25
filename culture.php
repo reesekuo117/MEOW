@@ -6,12 +6,21 @@ $title = '月老文化'
 $area = isset($_GET['area']) ? intval($_GET['area']):0; //用戶指定哪個區域
 $item = isset($_GET['item']) ? intval($_GET['item']):0; //用戶指定哪個項目
 
+
+$qsp = []; // query string parameters
+
 //取得廟宇資料表
-// $sql = "SELECT * FROM `temple` WHERE 1";
-// $temples = $pdo->query($sql)->fetchAll(); 
- 
+$sql = "SELECT * FROM `temple` WHERE 1";
+$temples = $pdo->query($sql)->fetchAll(); 
+
+
 // echo json_encode([ 
-//     '$temps' => $temps,
+//     '$temps' => $temples,
+// ]);
+// exit;
+
+// var_dump([
+//     '$temps' => $temples,
 // ]);
 // exit;
 
@@ -19,7 +28,8 @@ $item = isset($_GET['item']) ? intval($_GET['item']):0; //用戶指定哪個項�
 //取得地區資料
 $a_sql = "SELECT * FROM `address` WHERE parent=0 AND sid < 4";
 $areas = $pdo->query($a_sql)->fetchAll();
- 
+
+
 // echo json_encode([ 
 //     'areas' => $areas,
 // ]);
@@ -38,7 +48,6 @@ $temples = $pdo->query($temple_sql)->fetchAll();
 //     'temples' => $temples,
 // ]);
 // exit;
-
 
 
 
@@ -966,8 +975,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                     </div>
                 </div>
 <!-- pc廟宇卡片 -->
-                <div id="c01-info-card_lb" class="info-card_lb  mt-5" >
-                </div>
+                <div id="c01-info-card_lb" class="info-card_lb  mt-5" ></div>
             </div>
         </div>
     </div>
@@ -976,7 +984,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
         <h1 class="text-center mb-title_lb py-4">全台精選月老廟</h1>
         <div class="row d-flex justify-content-center m-0">
             <div class="form-group mr-4 my-auto">
-                <select class="mbselect_lb" name="mbarea_lb" id="mbarea_lb">
+                <select class="mbselect_lb" name="mbarea_lb" id="mbarea_lb" onchange="mbgetCate()">
                     <!-- 改option樣式 -->
                     <option selected="selected" class="mbselectnorth_lb" value="1">北部</option>
                     <option value="2">中部</option>
@@ -992,35 +1000,42 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                 </select>
             </div>
         </div>
+        <!-- 手機廟卡片 -->
         <div class="temScroll-snap_lb">
-            <div class="col p-0">
-                <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="1">
-                    <div class="mx-auto c01-mbTemImg-wrap">
+            <div class="row flex-nowrap m-0">
+                <?php foreach ($temples as $t) : ?>
+                    <div class="p-0">
+                        <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="1">
+                            <div class="mx-auto c01-mbTemImg-wrap">
+                                <img class="w-100" src="./imgs/culture/temple/<?=$t['img']?>_s.jpg" alt="">
+                            </div>
+                            <h6 class="text-center mt-3 text-white"><?= $t['name'] ?></h6>
+                            <p class="xs mbdetail-info_lb mb-0 text-white">
+                                <span class="ml-3"><?= $t['address'] ?>
+                                </span>
+                                <span class="ml-3"><?= $t['opening_hours'] ?></span>
+                            </p>
+                        </div>
                     </div>
-                    <h6 class="text-center mt-3 text-white">霞海城隍廟</h6>
-                    <p class="xs mbdetail-info_lb mb-0 text-white">
-                        <span class="ml-3">台北市大同區迪化街一段61號
-                        </span>
-                        <span class="ml-3">06:17 - 07:47</span>
-                    </p>
-                </div>
+                    <!-- <div class="col p-0">
+                        <div class="mbTemCard pt-3">
+                            <div id="mbTemCard-c06"   class="mx-auto c06-mbTemImg-wrap">
+                            </div>
+                            <h6 class="text-center mt-3 text-white">龍山寺</h6>
+                            <p class="xs mbdetail-info_lb mb-0 text-white">
+                                <span class="ml-3">台北市萬華區廣州街211號
+                                </span>
+                                <span class="ml-3">07:00 - 21:30</span>
+                            </p>
+                        </div>
+                    </div> -->
+                <?php endforeach; ?>
             </div>
-            <div class="col p-0">
-                <div class="mbTemCard pt-3">
-                    <div id="mbTemCard-c06"   class="mx-auto c06-mbTemImg-wrap">
-                    </div>
-                    <h6 class="text-center mt-3 text-white">龍山寺</h6>
-                    <p class="xs mbdetail-info_lb mb-0 text-white">
-                        <span class="ml-3">台北市萬華區廣州街211號
-                        </span>
-                        <span class="ml-3">07:00 - 21:30</span>
-                    </p>
-                </div>
-            </div>
+            
         </div>
-        <div class="position-relative">
+        <div class="row position-relative">
             <div id="mbdetail-card" class="mbdetail-card_lb hidden_lb ">
-                <!-- <div class="prepage_lb pl-2 pt-3">
+                <div class="prepage_lb pl-2 pt-3">
                     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
                     </svg>
@@ -1068,71 +1083,71 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         <br>
                         2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
                         </p>
-                </div> -->
+                </div>
             </div> 
             
            <!-- <div id="c06-mbdetail-card"  class="mbdetail-card_lb d-none">
-                <div class="prepage_lb pl-2 pt-3">
-                    <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
-                    </svg>
-                </div>
-                <div class="row mbTemCard-top_lb py-3 m-0">
-                    <div class="col-7 p-0 pl-3">
-                        <h6 class="m-0 text-white">龍山寺</h6>
-                        <p class="xs mbdetail-info_lb mb-0 text-white">
-                            <span class="ml-1">台北市萬華區廣州街211號
-                            </span>
-                            <span class="ml-1">07:00 - 21:30</span>
-                        </p>
+                    <div class="prepage_lb pl-2 pt-3">
+                        <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
+                        </svg>
                     </div>
-                    <div class="col-3 p-0 mx-2">
-                        <div class="mx-auto c06-mbDetailTemImg-wrap">
+                    <div class="row mbTemCard-top_lb py-3 m-0">
+                        <div class="col-7 p-0 pl-3">
+                            <h6 class="m-0 text-white">龍山寺</h6>
+                            <p class="xs mbdetail-info_lb mb-0 text-white">
+                                <span class="ml-1">台北市萬華區廣州街211號
+                                </span>
+                                <span class="ml-1">07:00 - 21:30</span>
+                            </p>
+                        </div>
+                        <div class="col-3 p-0 mx-2">
+                            <div class="mx-auto c06-mbDetailTemImg-wrap">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div  class="mbTemCard-bottom_lb px-3">
+                    <div  class="mbTemCard-bottom_lb px-3">
 
-                    <div class="text-center pb-2">
-                        <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
+                        <div class="text-center pb-2">
+                            <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
+                        </div>
+                        <small class=" mt-3 steptext_lb ">
+                        1. 前殿:釋迦牟尼佛、藥師佛與阿彌陀佛<br>
+                        2. 正殿:先向外拜天公，再向內拜觀世音菩薩、文殊菩薩、普賢菩薩<br>
+                        3. 後殿中央:天上聖母<br>
+                        4. 後殿右方:水仙尊王、城隍爺、龍爺、福德正神<br>
+                        5. 後殿左方:註生娘娘、池頭夫人、十二婆者<br>
+                        6. 後殿右側:文昌帝君、大魁星君、紫陽夫子、華陀仙師<br>
+                        7. 後殿左側:關聖帝君、三官大帝、地藏王菩薩、月老神君<br>
+                        8. 向月老稟明生辰八字、姓名、住址、理想對象類型及條件，擲三次聖筊後可索取一條紅線，並在月老香爐上過火
+                        </small>
+
+
+                        <div class="text-center pb-2">
+                            <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
+                        </div>
+                        <small class="mt-3 temnoticetext_lb">
+                        1. 需先向主神觀世音菩薩說明來意後，再依序參拜 <br>
+                        2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
+                            </p>
                     </div>
-                    <small class=" mt-3 steptext_lb ">
-                    1. 前殿:釋迦牟尼佛、藥師佛與阿彌陀佛<br>
-                    2. 正殿:先向外拜天公，再向內拜觀世音菩薩、文殊菩薩、普賢菩薩<br>
-                    3. 後殿中央:天上聖母<br>
-                    4. 後殿右方:水仙尊王、城隍爺、龍爺、福德正神<br>
-                    5. 後殿左方:註生娘娘、池頭夫人、十二婆者<br>
-                    6. 後殿右側:文昌帝君、大魁星君、紫陽夫子、華陀仙師<br>
-                    7. 後殿左側:關聖帝君、三官大帝、地藏王菩薩、月老神君<br>
-                    8. 向月老稟明生辰八字、姓名、住址、理想對象類型及條件，擲三次聖筊後可索取一條紅線，並在月老香爐上過火
-                    </small>
-
-
-                    <div class="text-center pb-2">
-                        <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
-                    </div>
-                    <small class="mt-3 temnoticetext_lb">
-                    1. 需先向主神觀世音菩薩說明來意後，再依序參拜 <br>
-                    2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
-                        </p>
-                </div>
-            </div>
-        </div> -->
+            </div> -->
+        </div>
     </div>
+
 <!-- 月老喵誠心推薦 -->
-    <div class="container d-none d-md-block recommand_lb">
+    <div class="d-none d-md-block recommand_lb">
         <h2 class="text-center cul-text100">月老喵誠心推薦</h2>
         <div class="otherp">
             <div class="container">
-                <!-- <h4>瀏覽此商品的人，也看了...</h4> -->
                 <!-- https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=thumbnail-carousel-with-content -->
-                <div class="row">
+                <div class="row_07 d-flex">
                     <div class="col mx-auto">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                        <div id="myCarousel" class="carousel carousel_card slide d-flex " data-ride="carousel" data-interval="0">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <div class="row">
-                                        <div class="col col-md-4">
+                                    <div class="row_07 d-flex">
+                                        <div class="col-md-4">
                                             <a href="">
                                                 <div class="thumb-wrapper mx-3">
                                                     <div class="img-box">
@@ -1144,19 +1159,17 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                                         </div>
                                                     </div>
                                                     <div class="thumb-content">
-                                                        <h6>霞海城隍廟 X 護手霜禮盒123</h6>
+                                                        <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
-                                                        <div class="card_under d-flex justify-content-between align-items-center">
-                                                            <small class="xs card-text d-flex">
+                                                        <div class="card_under d-flex justify-content-around align-items-center">
+                                                            <small class="xs card-text d-flex pr-1">
                                                                 <div class="icon_star">
-                                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z" fill="#E5A62A" />
-                                                                    </svg>
-                                                                </div> 4.7(50)
+                                                                    <span><i class="fa-solid fa-star"></i></span>
+                                                                </div>4.7(50)
                                                             </small>
                                                             <small class="xs card-text d-flex">
-                                                            <div class="icon_fire ">
-                                                                    <img src="data:image/png;base64,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" alt="" style="width:18px;height:17px;">
+                                                                <div class="icon_fire">
+                                                                    <span><i class="fa-solid fa-fire"></i></span>
                                                                 </div>
                                                                 3K個已訂購
                                                             </small>
@@ -1167,7 +1180,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                             </a>
 
                                         </div>
-                                        <div class="col col-md-4">
+                                        <div class="col-md-4">
                                             <a href="">
                                                 <div class="thumb-wrapper mx-3">
                                                     <div class="img-box">
@@ -1182,16 +1195,14 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                                         <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
                                                         <div class="card_under d-flex justify-content-between align-items-center">
-                                                            <small class="xs card-text d-flex">
+                                                            <small class="xs card-text d-flex pr-1">
                                                                 <div class="icon_star">
-                                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z" fill="#E5A62A" />
-                                                                    </svg>
+                                                                    <span><i class="fa-solid fa-star"></i></span>
                                                                 </div> 4.7(50)
                                                             </small>
                                                             <small class="xs card-text d-flex">
                                                                 <div class="icon_fire ">
-                                                                    <img src="data:image/png;base64,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" alt="" style="width:18px;height:17px;">
+                                                                    <span><i class="fa-solid fa-fire"></i></span>
                                                                 </div>
                                                                 3K個已訂購
                                                             </small>
@@ -1202,7 +1213,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                             </a>
 
                                         </div>
-                                        <div class="col col-md-4">
+                                        <div class="col-md-4">
                                             <a href="">
                                                 <div class="thumb-wrapper mx-3">
                                                     <div class="img-box">
@@ -1217,16 +1228,14 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                                         <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
                                                         <div class="card_under d-flex justify-content-between align-items-center">
-                                                            <small class="xs card-text d-flex">
+                                                            <small class="xs card-text d-flex pr-1">
                                                                 <div class="icon_star">
-                                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z" fill="#E5A62A" />
-                                                                    </svg>
+                                                                    <span><i class="fa-solid fa-star"></i></span>
                                                                 </div> 4.7(50)
                                                             </small>
                                                             <small class="xs card-text d-flex">
                                                                 <div class="icon_fire ">
-                                                                    <img src="data:image/png;base64,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" alt="" style="width:18px;height:17px;">
+                                                                    <span><i class="fa-solid fa-fire"></i></span>
                                                                 </div>
                                                                 3K個已訂購
                                                             </small>
@@ -1240,8 +1249,8 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col col-md-4">
+                                    <div class="row_07 d-flex">
+                                        <div class="col-md-4">
                                             <a href="">
                                                 <div class="thumb-wrapper mx-3">
                                                     <div class="img-box">
@@ -1256,16 +1265,14 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                                         <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
                                                         <div class="card_under d-flex justify-content-between align-items-center">
-                                                            <small class="xs card-text d-flex">
+                                                            <small class="xs card-text d-flex pr-1">
                                                                 <div class="icon_star">
-                                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z" fill="#E5A62A" />
-                                                                    </svg>
+                                                                    <span><i class="fa-solid fa-star"></i></span>
                                                                 </div> 4.7(50)
                                                             </small>
                                                             <small class="xs card-text d-flex">
-                                                            <div class="icon_fire ">
-                                                                    <img src="data:image/png;base64,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" alt="" style="width:18px;height:17px;">
+                                                                <div class="icon_fire ">
+                                                                    <span><i class="fa-solid fa-fire"></i></span>
                                                                 </div>
                                                                 3K個已訂購
                                                             </small>
@@ -1276,7 +1283,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                             </a>
 
                                         </div>
-                                        <div class="col col-md-4">
+                                        <div class="col-md-4">
                                             <a href="">
                                                 <div class="thumb-wrapper mx-3">
                                                     <div class="img-box">
@@ -1291,16 +1298,14 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                                         <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
                                                         <div class="card_under d-flex justify-content-between align-items-center">
-                                                            <small class="xs card-text d-flex">
+                                                            <small class="xs card-text d-flex pr-1">
                                                                 <div class="icon_star">
-                                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z" fill="#E5A62A" />
-                                                                    </svg>
+                                                                    <span><i class="fa-solid fa-star"></i></span>
                                                                 </div> 4.7(50)
                                                             </small>
                                                             <small class="xs card-text d-flex">
                                                                 <div class="icon_fire ">
-                                                                    <img src="data:image/png;base64,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" alt="" style="width:18px;height:17px;">
+                                                                    <span><i class="fa-solid fa-fire"></i></span>
                                                                 </div>
                                                                 3K個已訂購
                                                             </small>
@@ -1311,7 +1316,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                             </a>
 
                                         </div>
-                                        <div class="col col-md-4">
+                                        <div class="col-md-4">
                                             <a href="">
                                                 <div class="thumb-wrapper mx-3">
                                                     <div class="img-box">
@@ -1326,16 +1331,14 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                                         <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
                                                         <div class="card_under d-flex justify-content-between align-items-center">
-                                                            <small class="xs card-text d-flex">
+                                                            <small class="xs card-text d-flex pr-1">
                                                                 <div class="icon_star">
-                                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M9.04894 2.92705C9.3483 2.00574 10.6517 2.00574 10.9511 2.92705L12.0206 6.21885C12.1545 6.63087 12.5385 6.90983 12.9717 6.90983H16.4329C17.4016 6.90983 17.8044 8.14945 17.0207 8.71885L14.2205 10.7533C13.87 11.0079 13.7234 11.4593 13.8572 11.8713L14.9268 15.1631C15.2261 16.0844 14.1717 16.8506 13.388 16.2812L10.5878 14.2467C10.2373 13.9921 9.7627 13.9921 9.41221 14.2467L6.61204 16.2812C5.82833 16.8506 4.77385 16.0844 5.0732 15.1631L6.14277 11.8713C6.27665 11.4593 6.12999 11.0079 5.7795 10.7533L2.97933 8.71885C2.19562 8.14945 2.59839 6.90983 3.56712 6.90983H7.02832C7.46154 6.90983 7.8455 6.63087 7.97937 6.21885L9.04894 2.92705Z" fill="#E5A62A" />
-                                                                    </svg>
+                                                                    <span><i class="fa-solid fa-star"></i></span>
                                                                 </div> 4.7(50)
                                                             </small>
                                                             <small class="xs card-text d-flex">
                                                                 <div class="icon_fire ">
-                                                                    <img src="data:image/png;base64,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" alt="" style="width:18px;height:17px;">
+                                                                    <span><i class="fa-solid fa-fire"></i></span>
                                                                 </div>
                                                                 3K個已訂購
                                                             </small>
@@ -1361,9 +1364,10 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                 </div>
             </div>
         </div>
-
     </div>
+
 </div>
+
 
 
 
@@ -1371,6 +1375,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
 
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 <!-- <script src="./culture.js"></script> -->
+
 <script>
 
 //把撈出的資料轉為字串
@@ -1380,29 +1385,35 @@ const temples = <?= json_encode($temples); ?>;
 //pc
 const area_lb = $('#area_lb'); //區域
 const item_lb = $('#item_lb'); //選項
+
 //mb
-const mbarea_lb = $('#mbarea_lb'); 
-const mbitem_lb = $('#mbitem_lb')
+// const mbarea_lb = $('#mbarea_lb'); 
+// const mbitem_lb = $('#mbitem_lb')
 
 //拿區域
 function getCate() {
-    const area_sid = area_lb.val()
+    const area_sid = area_lb.val();
+    // const mbarea_sid = mbarea_lb.val();
+    
     // console.log('area_sid',area_sid)
 
 //拿到區域後把重複的item篩掉
 //ES6 中如果希望「陣列（Array）」的元素不會重複，可以使用 Set；如果是希望物件（Object）的鍵不會重複，則可以使用 Map。
     console.log('temples',temples);
     const t = temples.filter(el=>area_sid==el.area_sid);
-    console.log('temple',t)
-    const t2 = t.map(el=>el.category_tag)
-    console.log('item',t2)
+    console.log('temple',t);
+    const t2 = t.map(el=>el.category_tag);
+   
+    console.log('item',t2);
     const mySet = new Set(t2);
-    console.log('new Set(t2)',new Set(t2))
+    console.log('new Set(t2)',new Set(t2));
+
+
 
     let str = '';
     for(let i of mySet){
         str += `<option value="${i}">${i}</option>`
-    }
+    };
 
     item_lb.html(str);
 
@@ -1419,7 +1430,6 @@ function getItem() {
 }
 
 getCate();
-
 
 
 
@@ -1531,7 +1541,7 @@ const card_tpl_func = ({hashtag,name,address,opening_hours,img,step,notice})=>{
         </div>`;
 };
 
-//預設一開始出現的廟
+//桌機預設一開始出現的廟
 const  mapDefault = function () {
 const defaultId = $(this).attr('data-id');
 const [item] = temples.filter(el=>{
@@ -1586,7 +1596,6 @@ const mbcard_tpl_func = ({name,address,opening_hours,img,step,notice})=>{
 };
 
 
-//手機卡片出不來
 $('.mbTemCard').on('click', function(){
 const mbid = $(this).attr('data-id');
 const [mbitem] = temples.filter(el=>{
@@ -1594,22 +1603,16 @@ const [mbitem] = temples.filter(el=>{
 });
 console.log('[mbitem]',[mbitem]);
 $('.mbdetail-card_lb').html(mbcard_tpl_func(mbitem));
-$('.mbdetail-card').toggleClass('hidden_lb')
-  $("html, body").animate({ scrollTop: $(document).height() }, 500);
+$('.mbdetail-card_lb').toggleClass('hidden_lb');
+$("html, body").animate({ scrollTop: $(document).height() }, 500);
+
 });
 
-
-
-
-// $('.mbTemCard').click(function(){
-//   // e.preventDefault();
-//   $('.mbdetail-card').toggleClass('hidden_lb')
-//   $("html, body").animate({ scrollTop: $(document).height() }, 500);
-//};
-
-//   $(".prepage_lb").click(function () {
-//   $(".mbdetail-card_lb").addClass("hidden_lb ");
-// });
+//TODO: mb返回鍵詳細卡片沒辦法收起來
+  $(".prepage_lb").click(function () {
+    console.log(hi);
+  $(".mbdetail-card_lb").addClass('d-none');
+});
 
 
 

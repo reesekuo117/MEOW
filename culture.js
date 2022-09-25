@@ -688,6 +688,7 @@ window.onscroll = () => {
 // $(".prepage_lb").click(function () {
 //   $(".mbdetail-card_lb").addClass("d-none");
 // });
+
 // $("#mbTemCard-c06").click(function () {
 //   $("#c06-mbdetail-card").removeClass("d-none");
 //   $("#c06-mbdetail-card").css({
