@@ -136,9 +136,9 @@ $pageName ='會員中心'; //頁面名稱
     $d_rows = $pdo->query($d_sql)->fetchAll();
 
 
-    $po_sql = "SELECT * FROM product_order";
+    // $po_sql = "SELECT * FROM product_order";
 
-    $po_rows = $pdo->query($sql)->fetchAll();
+    // $po_rows = $pdo->query($sql)->fetchAll();
 
 
 //json_encode判斷型別輸出JSON 數字型態
