@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = '獨家商品'; //頁面名稱
-$title = '獨家商品'
+$title = '獨家商品';
 
 $perPage = 9;  // 每頁最多有幾筆
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶沒有指定第幾頁，預設就會出現第一頁
@@ -101,6 +101,7 @@ if(isset($_GET['sort'])){
     ($page - 1) * $perPage,
     $perPage
     ) ;
+    // $qsp['sqlSearchStr'] = $sqlSearchStr;
     // 將兩個變數的內容相加
 
     if($dataSort != ''){
@@ -396,7 +397,7 @@ if(isset($_GET['sort'])){
 </div>
 <script>
     const productData = <?php echo json_encode($rows); ?>;
-    console.log('productData',productData);
+        console.log('productData',productData);
 </script>
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 <script src="./product_list.js"></script>
