@@ -1,8 +1,10 @@
 
 /*-----------------購物車訂單的進度條 ----------------- */
+
 /* *{
-    border: 1px solid #000;
-    } */
+    outline: 1px solid #000;
+}  */
+
 .line-box-yu{
     /* margin-top: 88px auto 0 auto; */
     margin: 0 auto;
@@ -98,7 +100,7 @@
 
 /* ---------桌機獨家商品 旅遊行程分頁標籤 ------------*/
 #myTabContent-yu{
-    max-width: 1450px;
+    max-width: 1400px;
 }
 .pagination-yu{
     font-size: var(--font-h5-20);
@@ -178,6 +180,9 @@
 }
 
 /* --------checkboox-yu (改大小)---------*/
+th .checkbox-yu{
+    width: 20px;
+}
 .checkbox-yu input[type="checkbox"] {
     accent-color: #E5A62A;
 }
@@ -200,6 +205,13 @@
     color: #432A0F;
 }
 /* -------- 獨家商品表格外觀設定--------- */
+.tbody .row{
+    
+}
+.imgsCardYu{
+    width: 30px;
+}
+
 #myTabContent-yu .tbody th{
     vertical-align: middle;
 } 
@@ -209,7 +221,9 @@
 #uniqui-yu .thead{
     background-color: var(--color-creamy);
     border: none;
-    height: 60px;
+    height: 50px;
+    /* min-width: 100px; */
+    min-width: 70px;
 }
 #uniqui-yu .table td{
     vertical-align: middle;
@@ -220,9 +234,11 @@
 }
 #uniqui-yu .table> thead > tr > th{
     border: none;
+    width: 100px;
 }
 #uniqui-yu .table > tbody > tr > td{
     border: none;
+    /* width: 250px; */
 }
 #uniqui-yu .thead th{
     border: none;
@@ -232,8 +248,16 @@
 }
 #uniqui-yu .tbody td{
     padding: 1rem;
+    width: 200px;
+}
+td .total_price_yu{
+    width: 20px;
 }
 /* -------- 旅遊行程表格外觀設定--------- */
+#travel-yu{
+    min-height: calc( 100vh - 50px );
+    /* width: 100%; */
+}
 #travel-yu .table .thead th{
     vertical-align: middle;
 }
@@ -241,10 +265,12 @@
     background-color: var(--color-creamy);
     border: none;
     height: 60px;
+    min-width: 70px;
 }
 #travel-yu .table td{
     vertical-align: middle;
     border: none;
+    width: 200px;
 }
 #travel-yu .table{
     margin-top:20px;
@@ -262,13 +288,18 @@
     border: none;
     padding: 1rem;
 }
+
+/* thead.formThwYu{
+    width: 60%;
+} */
+
 /* ---------規格下拉選單外觀 ---------------*/
 .form-select-yu{
     text-align: center;
     border: 2px solid #432A0F ;
     color: #432A0F;
     border-radius: 8px;
-    width: 70%;
+    width: 130px;
     height: 36px;
     font-family: 'gensen-M';
     font-size: 16px;
@@ -357,6 +388,7 @@ h6.littlePriceYu{
     width: 100px;
     text-align: center;
     color:#432A0F;
+    text-align: center;
     
 }
 
