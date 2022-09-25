@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
-$pageName = 'product_list'; //頁面名稱
+$pageName = '獨家商品'; //頁面名稱
+$title = '獨家商品'
+
 $perPage = 9;  // 每頁最多有幾筆
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶沒有指定第幾頁，預設就會出現第一頁
 if ($page < 1) {

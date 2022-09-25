@@ -1,6 +1,7 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName = '月老文化'; //頁面名稱
+$title = '月老文化'
 
 $area = isset($_GET['area']) ? intval($_GET['area']):0; //用戶指定哪個區域
 $item = isset($_GET['item']) ? intval($_GET['item']):0; //用戶指定哪個項目

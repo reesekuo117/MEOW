@@ -1,6 +1,8 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // 開頭
 $pageName ='獨家商品'; //頁面名稱
+$title = '獨家商品'
+
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
