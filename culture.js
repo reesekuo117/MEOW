@@ -421,15 +421,15 @@ $(window).scroll(function () {
 });
 
 //全台月老廟篩選
-let itemLbArray = [
-  ["祈求姻緣", "斬桃花、小三"],
-  ["祈求姻緣"],
-  ["祈求姻緣", "幸福美滿", "斬桃花、小三"],
-];
+// let itemLbArray = [
+//   ["祈求姻緣", "斬桃花、小三"],
+//   ["祈求姻緣"],
+//   ["祈求姻緣", "幸福美滿", "斬桃花、小三"],
+// ];
 
-$("#area_lb").change(function () {
-  const areaLbNumber = $(this).val();
-  const itemLbData = itemLbArray[areaLbNumber];
+// $("#area_lb").change(function () {
+//   const areaLbNumber = $(this).val();
+//   const itemLbData = itemLbArray[areaLbNumber];
   //   console.log('hi',document.querySelector('.middle'));
   // $('#north-group_lb').addClass('d-none');
   // $('#middle-group_lb').removeClass('d-none');
@@ -440,22 +440,22 @@ $("#area_lb").change(function () {
   //    "-webkit-transform":"translate(-5px,-5px)",
   // });
 
-  $("#item_lb").empty();
-  $(itemLbData).each(function (index, item) {
-    $("#item_lb").append(`<option value="${index}">${item}</option>`);
-  });
-});
+//   $("#item_lb").empty();
+//   $(itemLbData).each(function (index, item) {
+//     $("#item_lb").append(`<option value="${index}">${item}</option>`);
+//   });
+// });
 
 //手機月老廟篩選
-$("#mbarea_lb").change(function () {
-  const areaLbNumber = $(this).val();
-  const itemLbData = itemLbArray[areaLbNumber];
+// $("#mbarea_lb").change(function () {
+//   const areaLbNumber = $(this).val();
+//   const itemLbData = itemLbArray[areaLbNumber];
 
-  $("#mbitem_lb").empty();
-  $(itemLbData).each(function (index, item) {
-    $("#mbitem_lb").append(`<option value="${index}">${item}</option>`);
-  });
-});
+//   $("#mbitem_lb").empty();
+//   $(itemLbData).each(function (index, item) {
+//     $("#mbitem_lb").append(`<option value="${index}">${item}</option>`);
+//   });
+// });
 
 //當點擊哪一區地圖會變色加位移
 /*
@@ -470,68 +470,68 @@ $("#mbarea_lb").change(function () {
     });
     */
 //預設北部
-$(".path_lb").eq(0).css({
-  fill: "#E5A62A",
-  "-webkit-transform": "translate(-5px,-5px)",
-});
+// $(".path_lb").eq(0).css({
+//   fill: "#E5A62A",
+//   "-webkit-transform": "translate(-5px,-5px)",
+// });
 
 //點擊出現地標卡片
-const northClicked = function () {
-  $(".path_lb").removeAttr("style");
-  $(".north").css({
-    fill: "#E5A62A",
-    "-webkit-transform": "translate(-5px,-5px)",
-  });
-  $("#north-group_lb").removeClass("d-none");
-  $("#middle-group_lb").addClass("d-none");
-  $("#south-group_lb").addClass("d-none");
-  $("#area_lb").val("0");
-};
+// const northClicked = function () {
+//   $(".path_lb").removeAttr("style");
+//   $(".north").css({
+//     fill: "#E5A62A",
+//     "-webkit-transform": "translate(-5px,-5px)",
+//   });
+//   $("#north-group_lb").removeClass("d-none");
+//   $("#middle-group_lb").addClass("d-none");
+//   $("#south-group_lb").addClass("d-none");
+//   $("#area_lb").val("0");
+// };
 
-$(".north").click(northClicked);
+// $(".north").click(northClicked);
 
-const middleClicked = function () {
-  $(".path_lb").removeAttr("style");
-  $(".middle").css({
-    fill: "#E5A62A",
-    "-webkit-transform": "translate(-5px,-5px)",
-  });
-  $("#north-group_lb").addClass("d-none");
-  $("#middle-group_lb").removeClass("d-none");
-  $("#south-group_lb").addClass("d-none");
-  $("#area_lb").val("1");
-};
-$(".middle").click(middleClicked);
+// const middleClicked = function () {
+//   $(".path_lb").removeAttr("style");
+//   $(".middle").css({
+//     fill: "#E5A62A",
+//     "-webkit-transform": "translate(-5px,-5px)",
+//   });
+//   $("#north-group_lb").addClass("d-none");
+//   $("#middle-group_lb").removeClass("d-none");
+//   $("#south-group_lb").addClass("d-none");
+//   $("#area_lb").val("1");
+// };
+// $(".middle").click(middleClicked);
 
-const southClicked = function () {
-  $(".path_lb").removeAttr("style");
-  $(".south").css({
-    fill: "#E5A62A",
-    "-webkit-transform": "translate(-5px,-5px)",
-  });
-  $("#north-group_lb").addClass("d-none");
-  $("#middle-group_lb").addClass("d-none");
-  $("#south-group_lb").removeClass("d-none");
-  $("#area_lb").val("2");
-};
-$(".south").click(southClicked);
+// const southClicked = function () {
+//   $(".path_lb").removeAttr("style");
+//   $(".south").css({
+//     fill: "#E5A62A",
+//     "-webkit-transform": "translate(-5px,-5px)",
+//   });
+//   $("#north-group_lb").addClass("d-none");
+//   $("#middle-group_lb").addClass("d-none");
+//   $("#south-group_lb").removeClass("d-none");
+//   $("#area_lb").val("2");
+// };
+// $(".south").click(southClicked);
 
-$("#area_lb").on("change", function () {
-  const val = $(this).val();
-  //   console.log({val});
-  const areas = [northClicked, middleClicked, southClicked];
-  areas[val]();
-});
+// $("#area_lb").on("change", function () {
+//   const val = $(this).val();
+//   //   console.log({val});
+//   const areas = [northClicked, middleClicked, southClicked];
+//   areas[val]();
+// });
 
-$(".C01").click(function () {
-  $("#c01-info-card_lb").removeClass("d-none");
-  $("#c06-info-card_lb").addClass("d-none");
-});
+// $(".C01").click(function () {
+//   $("#c01-info-card_lb").removeClass("d-none");
+//   $("#c06-info-card_lb").addClass("d-none");
+// });
 
-$(".C06").click(function () {
-  $("#c06-info-card_lb").removeClass("d-none");
-  $("#c01-info-card_lb").addClass("d-none");
-});
+// $(".C06").click(function () {
+//   $("#c06-info-card_lb").removeClass("d-none");
+//   $("#c01-info-card_lb").addClass("d-none");
+// });
 
 //側邊欄滾到該區域會變色
 const scrollLink = document.querySelectorAll('.sidebar_lb a[href^="#"]');
@@ -614,7 +614,7 @@ $(window).resize(function(){
 })
 
 function changeLinkColor(){
-    console.log('changeLinkColor');
+    // console.log('changeLinkColor');
     let scrollPosition =
     document.documentElement.scrollTop || document.body.scrollTop;
   // let scrollPosition = window.pageYOffset;
@@ -670,15 +670,11 @@ window.onscroll = () => {
 
 
 
-$('#mbTemCard-c01').click(function(){
-  // e.preventDefault();
-  $('#c01-mbdetail-card').toggleClass('hidden_lb')
-  $("html, body").animate({ scrollTop: $(document).height() }, 500);
-  // $('.footer-xs').css('visibility', 'hidden');
-  // setTimeout(() => {
-  //   $('.footer-xs').css('visibility', 'visible');
-  // }, 2000);
-});
+// $('#mbTemCard-c01').click(function(){
+//   // e.preventDefault();
+//   $('#c01-mbdetail-card').toggleClass('hidden_lb')
+//   $("html, body").animate({ scrollTop: $(document).height() }, 500);
+// });
 
 
 // $("#mbTemCard-c01").click(function () {
@@ -700,9 +696,7 @@ $('#mbTemCard-c01').click(function(){
 //   });
 // });
 
-$(".prepage_lb").click(function () {
-  $(".mbdetail-card_lb").addClass("hidden_lb ");
-});
+
 
 // 愛心變色(卡片)
 

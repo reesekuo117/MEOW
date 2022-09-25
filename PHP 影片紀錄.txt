@@ -113,5 +113,7 @@ $a = isset($_GET['a']) ? intval( $_GET['a']):0;
 8/29 15-44 16分 products list建立
 -
 8/30 10-13 0分 同時分頁和分類 echo http_build_query($qsp);
+8/30 11-27 8分 handle-cart
+8/30 13:33 0分 商品頁加數量、加入購物車
 -
 8/31

@@ -958,154 +958,15 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                 </select>
                             </div>
                             <div class="form-group my-auto">
-                                <select class="select_lb" name="item_lb" id="item_lb">
+                                <select class="select_lb" name="item_lb" id="item_lb" onchange="getItem()">
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!-- 廟宇卡片 -->
-            <?php /*
-            <?php foreach ($temps as $t) : ?>
-                <div class="info-card_lb  mt-5" id="c01-info-card_lb">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="title-box_lb">
-                                <h5 class="templetag_lb">#<?= $t['hashtag'] ?></h5>
-                                <h2 class="templename_lb"><?= $t['name'] ?></h2>
-                                <p class="detail-info_lb mb-0">
-                                    <span class="ml-3">地址</span>：<?= $t['address'] ?><br>
-                                    <span class="ml-3">開放時間</span>： <?= $t['opening_hours'] ?>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-4 p-0 c01-tem-wrap_lb">
-                            <img class="w-100" src="./imgs/culture/temple/<?= $t['img'] ?>.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-8 cardhead_lb">
-                        </div>
-                        <div class="col-8">
-                            <div class="mt-4">
-                                <h6 class="step_lb my-auto px-3 py-1">參拜步驟</h6>
-                                <p class="mt-3 steptext_lb"><?= $t['step'] ?></p>
-                            </div>
-                            <div class="mt-4">
-                                <h6 class="temnotice_lb my-auto px-3 py-1"> 注意事項</h6>
-                                <p class="mt-3 temnoticetext_lb"><?= $t['notice'] ?></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-*/ ?>
+<!-- pc廟宇卡片 -->
                 <div id="c01-info-card_lb" class="info-card_lb  mt-5" >
-                    <!--
-                    <div class="row ">
-                        <div class="col-4">
-                            <div class="title-box_lb">
-                                <h5 class="templetag_lb">＃快速有效率</h5>
-                                <h2 class="templename_lb">台北霞海城隍廟</h2>
-                                <p class="detail-info_lb mb-0">
-                                    <span class="ml-3">地址</span>：台北市大同區迪化街一段61號<br>
-                                    <span class="ml-3">開放時間</span>： 06:17 - 07:47
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-4 p-0 c01-tem-wrap_lb">
-                            <img src="./imgs/culture/temple/C01_1.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-8 cardhead_lb">
-                        </div>
-                        <div class="col-8">
-                            <div class="mt-4">
-                                <h6 class="step_lb my-auto px-3 py-1">參拜步驟</h6>
-                                <p class="mt-3 steptext_lb ">
-                                    1. 購入金紙、線香、供品
-                                    <br>
-                                    2. 點三支香，先於天公稟明姓名、年齡、地址並作三拜禮
-                                    <br>
-                                    3. 對正殿城隍爺、月老以及眾神稟明姓名、年齡、地址以及心目中理想對象的類型和條件
-                                    <br>
-                                    4. 參拜義勇公(祈求趕走小人、諸事平安順利) - 城隍夫人(保佑家庭幸福）- 菩薩（保佑開啟智慧、心境平和）
-                                    <br>
-                                    5. 吃喜餅、喜糖沾喜氣，喝平安茶保平安
-                                    <br>
-                                    6. 將鉛錢、紅線在香爐中過火，並放至皮包中妥善保存
-                                </p>
-                            </div>
-                            <div class="mt-4">
-                                <h6 class="temnotice_lb my-auto px-3 py-1"> 注意事項</h6>
-                                <p class="mt-3 temnoticetext_lb">
-                                    1. 供品為第一次拜月老時才需要，之後參拜準備金紙及線香即可
-                                    <br>
-                                    2. 可幫家人代求，不可幫朋友代求
-                                    <br>
-                                    3. 鉛錢不可當場拆開
-                                    <br>
-                                    4. 供品可自行攜帶鮮花、水果或是甜品
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-            -->
                 </div>
-                <!--
-                <div id="c06-info-card_lb" class="mt-5 d-none info-card_lb">
-                    <div class="row ">
-                        <div class="col-4">
-                            <div class="title-box_lb">
-                                <h5 class="templetag_lb">＃全台最靈驗</h5>
-                                <h2 class="templename_lb">龍山寺</h2>
-                                <p class="detail-info_lb mb-0">
-                                    <span class="ml-3">地址</span>：台北市萬華區廣州街211號<br>
-                                    <span class="ml-3">開放時間</span>：07:00 - 21:30
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-4 p-0 c06-tem-wrap_lb"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-8 cardhead_lb">
-                        </div>
-                        <div class="col-8">
-                            <div class="mt-4">
-                                <h6 class="step_lb my-auto px-3 py-1">參拜步驟</h6>
-                                <p class="mt-3 steptext_lb ">
-                                    1. 前殿:釋迦牟尼佛、藥師佛與阿彌陀佛
-                                    <br>
-                                    2. 正殿:先向外拜天公，再向內拜觀世音菩薩、文殊菩薩、普賢菩薩
-                                    <br>
-                                    3. 後殿中央:天上聖母
-                                    <br>
-                                    4. 後殿右方:水仙尊王、城隍爺、龍爺、福德正神
-                                    <br>
-                                    5. 後殿左方:註生娘娘、池頭夫人、十二婆者
-                                    <br>
-                                    6. 後殿右側:文昌帝君、大魁星君、紫陽夫子、華陀仙師
-                                    <br>
-                                    7. 後殿左側:關聖帝君、三官大帝、地藏王菩薩、月老神君
-                                    <br>
-                                    8. 向月老稟明生辰八字、姓名、住址、理想對象類型及條件，擲三次聖筊後可索取一條紅線，並在月老香爐上過火
-                                </p>
-                            </div>
-                            <div class="mt-4">
-                                <h6 class="temnotice_lb my-auto px-3 py-1"> 注意事項</h6>
-                                <p class="mt-3 temnoticetext_lb">
-                                    1. 需先向主神觀世音菩薩說明來意後，再依序參拜
-                                    <br>
-                                    2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            -->
             </div>
         </div>
     </div>
@@ -1116,23 +977,23 @@ $temples = $pdo->query($temple_sql)->fetchAll();
             <div class="form-group mr-4 my-auto">
                 <select class="mbselect_lb" name="mbarea_lb" id="mbarea_lb">
                     <!-- 改option樣式 -->
-                    <option selected="selected" class="mbselectnorth_lb" value="0">北部</option>
-                    <option value="1">中部</option>
-                    <option value="2">南部</option>
+                    <option selected="selected" class="mbselectnorth_lb" value="1">北部</option>
+                    <option value="2">中部</option>
+                    <option value="3">南部</option>
                 </select>
             </div>
             <div class="form-group my-auto">
                 <select class="mbselect_lb" name="mbitem_lb" id="mbitem_lb">
                     <!-- 改option樣式 -->
-                    <option value="1">幸福美滿</option>
+                    <!-- <option value="1">幸福美滿</option>
                     <option selected="selected" value="0">祈求姻緣</option>
-                    <option value="2">斬桃花、小三</option>
+                    <option value="2">斬桃花、小三</option> -->
                 </select>
             </div>
         </div>
         <div class="temScroll-snap_lb">
             <div class="col p-0">
-                <div id="mbTemCard-c01" class="mbTemCard pt-3">
+                <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="1">
                     <div class="mx-auto c01-mbTemImg-wrap">
                     </div>
                     <h6 class="text-center mt-3 text-white">霞海城隍廟</h6>
@@ -1157,8 +1018,8 @@ $temples = $pdo->query($temple_sql)->fetchAll();
             </div>
         </div>
         <div class="position-relative">
-            <div id="c01-mbdetail-card" class="mbdetail-card_lb hidden_lb ">
-                <div class="prepage_lb pl-2 pt-3">
+            <div id="mbdetail-card" class="mbdetail-card_lb hidden_lb ">
+                <!-- <div class="prepage_lb pl-2 pt-3">
                     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
                     </svg>
@@ -1174,7 +1035,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                     </div>
                     <div class="col-3 p-0 mx-2">
                         <div class="mx-auto c01-mbDetailTemImg-wrap">
-                            <!-- <img class="w-100" src="./imgs/culture/temple/C01_1.jpeg" alt=""> -->
+                            <img class="w-100" src="./imgs/culture/temple/C01_1.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -1206,9 +1067,10 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         <br>
                         2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
                         </p>
-                </div>
-            </div>
-            <div id="c06-mbdetail-card"  class="mbdetail-card_lb d-none">
+                </div> -->
+            </div> 
+            
+           <!-- <div id="c06-mbdetail-card"  class="mbdetail-card_lb d-none">
                 <div class="prepage_lb pl-2 pt-3">
                     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
@@ -1225,7 +1087,6 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                     </div>
                     <div class="col-3 p-0 mx-2">
                         <div class="mx-auto c06-mbDetailTemImg-wrap">
-                            <!-- <img class="w-100" src="./imgs/culture/temple/C01_1.jpeg" alt=""> -->
                         </div>
                     </div>
                 </div>
@@ -1255,7 +1116,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         </p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 <!-- 月老喵誠心推薦 -->
     <div class="container d-none d-md-block recommand_lb">
@@ -1515,38 +1376,60 @@ $temples = $pdo->query($temple_sql)->fetchAll();
 const areas = <?= json_encode($areas); ?>;
 const temples = <?= json_encode($temples); ?>;
 
+//pc
 const area_lb = $('#area_lb'); //區域
 const item_lb = $('#item_lb'); //選項
-console.log('item_lb', $('#item_lb'));
+//mb
+const mbarea_lb = $('#mbarea_lb'); 
+const mbitem_lb = $('#mbitem_lb')
 
 //拿區域
 function getCate() {
     const area_sid = area_lb.val()
-    console.log('area_sid',area_sid)
+    // console.log('area_sid',area_sid)
 
-//篩選廟 把重複篩掉
-console.log('temples',temples);
+//拿到區域後把重複的item篩掉
+//ES6 中如果希望「陣列（Array）」的元素不會重複，可以使用 Set；如果是希望物件（Object）的鍵不會重複，則可以使用 Map。
+    console.log('temples',temples);
     const t = temples.filter(el=>area_sid==el.area_sid);
-    console.log('t',t)
+    console.log('temple',t)
     const t2 = t.map(el=>el.category_tag)
-    console.log('t2',t2)
+    console.log('item',t2)
     const mySet = new Set(t2);
-
+    console.log('new Set(t2)',new Set(t2))
 
     let str = '';
     for(let i of mySet){
         str += `<option value="${i}">${i}</option>`
     }
+
     item_lb.html(str);
+
+
+//如果該區域的廟(landmark)的category_tag不等於el.category_tag 就會隱藏
+function getItem() {
+    const item = item_lb.val();
+    const selected =mySet.filter(el=>item==el.category_tag);
+    // $('.landmark_lb').addClass('d-none').siblings().removeClass('d-none');
+
+
+}
+
 }
 
 getCate();
 
+
+
+
+
+//地圖預設：北部
 $(".path_lb").eq(0).css({
   fill: "#E5A62A",
   "-webkit-transform": "translate(-5px,-5px)",
 });
 
+//地圖北部被點擊
 const northClicked = function () {
   $(".path_lb").removeAttr("style");
   $(".north").css({
@@ -1557,12 +1440,12 @@ const northClicked = function () {
   $("#middle-group_lb").addClass("d-none");
   $("#south-group_lb").addClass("d-none");
   $("#area_lb").val("1");
-
   getCate();
 };
 
 $(".north").click(northClicked);
 
+//地圖中部被點擊
 const middleClicked = function () {
   $(".path_lb").removeAttr("style");
   $(".middle").css({
@@ -1578,6 +1461,7 @@ const middleClicked = function () {
 
 $(".middle").click(middleClicked);
 
+//地圖中部被點擊
 const southClicked = function () {
   $(".path_lb").removeAttr("style");
   $(".south").css({
@@ -1592,7 +1476,7 @@ const southClicked = function () {
 };
 $(".south").click(southClicked);
 
-
+//區域被改變時
 $("#area_lb").on("change", function () {
 const val = $(this).val() - 1;
     // console.log({val});
@@ -1600,18 +1484,19 @@ const areas = [northClicked, middleClicked, southClicked];
 areas[val]();
 });
 
-//篩選filter 迴圈 if==
+ //點擊地標出現廟宇卡片
+ $('.landmark_lb').on('click', function(){
 
-// const [selectedItem]  = temples.filter(el=>{
-//         return el.sid==id;
-//         console.log(selectedItem);
-//     });
+const id = $(this).attr('data-id');
+const [item] = temples.filter(el=>{
+    return el.sid==id;
+});
+console.log('[item]',item);
+$('.info-card_lb').html(card_tpl_func(item));
+$(this).addClass('landmarkActive_lb').siblings().removeClass('landmarkActive_lb');
+});
 
-
-
-//  area_lb.trigger('change'); 
-
-
+//pc廟宇卡片
 const card_tpl_func = ({hashtag,name,address,opening_hours,img,step,notice})=>{
     return `
         <div class="row">
@@ -1645,38 +1530,85 @@ const card_tpl_func = ({hashtag,name,address,opening_hours,img,step,notice})=>{
         </div>`;
 };
 
-
-
-
-
- //點擊地標出現廟宇卡片
-
-$('.landmark_lb').on('click', function(){
-
-    const id = $(this).attr('data-id');
-
-    const [item] = temples.filter(el=>{
-        return el.sid==id;
-    });
-    // console.log(item);
-    $('#c01-info-card_lb').html(card_tpl_func(item));
-    $(this).addClass('landmarkActive_lb').siblings().removeClass('landmarkActive_lb');
+//預設一開始出現的廟
+const  mapDefault = function () {
+const defaultId = $(this).attr('data-id');
+const [item] = temples.filter(el=>{
+    return el.sid === '6';
 });
 
-
-//預設一開始的廟
-const  mapDefault = function () {
-    const defaultId = $(this).attr('data-id');
-    const [item] = temples.filter(el=>{
-        return el.sid === '6';
-    });
-
-    $('#c01-info-card_lb').html(card_tpl_func(item));
+$('.info-card_lb').html(card_tpl_func(item));
 };
 
 mapDefault();
 
 
+
+
+
+//mb卡片
+const mbcard_tpl_func = ({name,address,opening_hours,img,step,notice})=>{
+    return `
+                <div class="prepage_lb pl-2 pt-3">
+                    <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="row mbTemCard-top_lb py-3 m-0">
+                    <div class="col-7 p-0 pl-3">
+                        <h6 class="m-0 text-white">${name}</h6>
+                        <p class="xs mbdetail-info_lb mb-0 text-white">
+                            <span class="ml-1">${address}
+                            </span>
+                            <span class="ml-1"> ${opening_hours}</span>
+                        </p>
+                    </div>
+                    <div class="col-3 p-0 mx-2">
+                        <div class="mx-auto c01-mbDetailTemImg-wrap">
+                            <img class="w-100" src="./imgs/culture/temple/${img}.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div  class="mbTemCard-bottom_lb px-3">
+
+                    <div class="text-center pb-2">
+                        <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
+                    </div>
+                    <small class=" mt-3 steptext_lb ">${step}</small>
+                    <div class="text-center py-2">
+                        <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
+                    </div>
+                    <small class="mt-3 temnoticetext_lb">
+                    ${notice}
+                        </p>
+                </div>`
+};
+
+
+//手機卡片出不來
+$('.mbTemCard').on('click', function(){
+const mbid = $(this).attr('data-id');
+const [mbitem] = temples.filter(el=>{
+    return el.sid == mbid;
+});
+console.log('[mbitem]',[mbitem]);
+$('.mbdetail-card_lb').html(mbcard_tpl_func(mbitem));
+$('.mbdetail-card').toggleClass('hidden_lb')
+  $("html, body").animate({ scrollTop: $(document).height() }, 500);
+});
+
+
+
+
+// $('.mbTemCard').click(function(){
+//   // e.preventDefault();
+//   $('.mbdetail-card').toggleClass('hidden_lb')
+//   $("html, body").animate({ scrollTop: $(document).height() }, 500);
+//};
+
+//   $(".prepage_lb").click(function () {
+//   $(".mbdetail-card_lb").addClass("hidden_lb ");
+// });
 
 
 
