@@ -59,7 +59,7 @@ header("Refresh:180");
 
         <!--  購物車商品清單 -->
         <!-- 已給 #myTabContent-yu{max-width: 1450px;} -->
-        <div id="myTabContent-yu" class=" px-1 tab-content container">
+        <div id="myTabContent-yu" class="px-1 tab-content container">
                 <?php if (empty($_SESSION['pcart'])) : ?>
                     <div class="alert alert-danger" role="alert">
                         購物車內沒有商品
@@ -67,11 +67,11 @@ header("Refresh:180");
                 <?php else : ?>    
             <!-- 獨家商品 -->
             <div class="tab-pane in active " id="uniqui-yu" >
-                <div class=" px-0 col-auto justify-content-around text-center">
+                <div class="px-0 col-auto justify-content-around text-center">
                     <div id="form-yu">
-                        <table id="#tabYu" class="table ">
-                            <thead class=" thead" >
-                                <tr class=" checkall-yu" >
+                        <table id="tabYu" class="table ">
+                            <thead class="thead" >
+                                <tr class="checkall-yu" >
                                     <th scope="col" class="m-auto checkbox-yu ">
                                             <input name="ckbox" class="mx-1" type="checkbox" id="check1AllYu"aria-label="Checkbox for following text input">
                                             <label class="mb-0  ">
@@ -82,36 +82,35 @@ header("Refresh:180");
                                     <!-- <th> 
                                         <h6 class="mb-0 ">ID</h6>
                                     </th> -->
-                                    <th> 
+                                    <th class="formThwYu"> 
                                         <h6 class="mb-0 ">商品照片</h6>
                                     </th>
-                                    <th scope="col">
+                                    <th scope="col"  class="formThwYu">
                                         <h6 class="mb-0 ">商品名稱</h6>
                                     </th>
-                                    <th scope="col">
+                                    <th scope="col"  class="formThwYu">
                                         <h6 class="mb-0 ">規格</h6>
                                     </th>
-                                    <th scope="col">
+                                    <th scope="col"  class="formThwYu">
                                         <h6 class="mb-0 ">單價</h6>
                                     </th>
-                                    <th scope="col">
+                                    <th scope="col"  class="formThwYu">
                                         <h6 class="mb-0 ">數量</h6>
                                     </th>
-                                    <th scope="col" class="sub-total">
+                                    <th scope="col" class="sub-total formThwYu">
                                         <h6 class="mb-0 ">小計</h6>
                                     </th>
-                                    <th scope="col" class="">
+                                    <th scope="col" class="formThwYu">
                                         <h6 class="mb-0 ">刪除</h6>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class=" tbody">
                             <?php
-                                
-                                foreach($_SESSION["pcart"] as $k => $v) : $total += $v['pprice'] * $v['qty'];?>
+                                foreach($_SESSION["pcart"] as $k => $v) :?>
                                 <tr data-sid="<?=$k ?>"  class="pcart-item">
-                                    <th scope="col ">
-                                        <div class="row m-auto p-1 checkbox-yu">
+                                    <th scope="col m-auto ">
+                                        <div class=" m-auto p-1 checkbox-yu">
                                             <input 
                                             id="checkboxInputYu" 
                                             class=" mx-2" 
@@ -122,11 +121,11 @@ header("Refresh:180");
                                         </div>
                                     </th>
                                     <!-- id -->
-                                    <!-- <td><?= $k ?></td> -->
+                                    <!-- <td>< ?= $k ?></td> -->
                                     <!-- 商品照片 -->
-                                    <td>
-                                        <img src="imgs/product/<?= $v['product_card_img'] ?>.jpg" class="card-img-top" >
-                                        <!-- <img src="imgs/product/small/< ?= $v['product_card_img'] ?>.jpg" class="card-img-top" alt="..."> -->
+                                    <td class="imgsCardYu">
+                                        <!-- <img src="imgs/product/< ?= $v['product_card_img'] ?>.jpg" class="card-img-top" > -->
+                                        <img class="w-100" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
                                     </td>
                                     <!-- 商品名稱 -->
                                     <td>
@@ -146,23 +145,26 @@ header("Refresh:180");
                                     </td>
                                     <!-- 單價 -->
                                     <td id="onepriceYu" nams="priceYu" class="price-yu m-0 "  >
-                                    <h6 class="onePriceinputYu h6 pprice" data-val="<?= $v["product_price"] ?>">
-                                    </h6>
+                                        <h6 class="onePriceinputYu h6 pprice" data-val="">
+                                            <?= $v["product_price"] ?>
+                                        </h6>
                                     </td>
                                     <!-- 數量 -->
                                     <td class="">
                                         <form id='myform' method='POST' action='#'>
 
-                                                <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
-                                                <span id="numbertotal_yu" type='text' name='txt'value="<?= $i ?>" class= 'pprice px-1 qty-yu numberTotalYu'>
-                                                    <?= $i ?>
-                                                </span>
-                                                <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
+                                            <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
+
+                                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 qty-yu numberTotalYu'>
+                                                1
+                                            </span>
+                                            
+                                            <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
                                         </form>
                                     </td>
                                     <!-- 小計 -->
                                     <td name="tpriceYu"  class="total_price_yu h6 p-2" >
-                                        <h6 id="totalprice_yu" class="littlePriceYu sub-total" nams="priceYu">
+                                        <h6 id="totalprice_yu" class="littlePriceYu mx-auto" nams="priceYu">
                                             <?= $v["product_price"] ?>
                                         </h6>
                                     </td>
@@ -212,10 +214,10 @@ header("Refresh:180");
 
             <!-- 旅遊行程 -->
             <div class="tab-pane fade" id="travel-yu">
-                <div class=" col-auto justify-content-around text-center">
+                <div class="tab-content container col-auto justify-content-around mx-auto">
                     <div id="travel-form-yu">
                         <table class="table">
-                            <thead class="thead" >
+                            <thead class="thead " >
                                 <tr>
                                     <th scope="col" class="m-auto checkbox-yu">
                                         <input  id="check2AllYu" class="mx-1 " type="checkbox" aria-label="Checkbox for following text input">
@@ -226,35 +228,35 @@ header("Refresh:180");
                                             </label>
                                     </th>
                                     <th> 
-                                        <h6 class="mb-0 ">行程照片</h6>
+                                        <h6 class="mb-0 mx-auto ">行程照片</h6>
                                     </th>
                                     <th scope="col">
-                                        <h6 class="mb-0 ">行程名稱</h6>
+                                        <h6 class="mb-0 mx-auto">行程名稱</h6>
                                     </th>
                                     <th scope="col">
-                                        <h6 class="mb-0 ">單價</h6>
+                                        <h6 class="mb-0 mx-auto">單價</h6>
                                     </th>
                                     <th scope="col">
-                                        <h6 class="mb-0 ">數量</h6>
+                                        <h6 class="mb-0 mx-auto">數量</h6>
                                     </th>
                                     <th scope="col" class="sub-total">
-                                        <h6 class="mb-0 ">小計</h6>
+                                        <h6 class="mb-0 mx-auto">小計</h6>
                                     </th>
                                     <th scope="col" class="sub-total">
-                                        <h6 class="mb-0 ">刪除</h6>
+                                        <h6 class="mb-0 mx-auto">刪除</h6>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class=" tbody">
-                                <?php if (empty($_SESSION['tcart'])) : $total += $v['price'] * $v['qty'];?>
+                                <?php if (empty($_SESSION['tcart'])) : ?>
                                     <div class="alert alert-danger" role="alert">
                                         購物車內沒有商品
                                     </div>
-                                <?php else : ?>   
-                                    <?php
+                                <?php else : ?>
+                                <?php
                                 
                                 foreach($_SESSION["tcart"] as $k => $v) :?>
-                                <tr data-sid="<?=$k ?>"  class="tcart-item">
+                                <tr data-sid=""  class="tcart-item">
                                     <th scope="col ">
                                         <div class="row m-auto p-1 checkbox-yu ">
                                             <input class=" mx-2 " type="checkbox" name="oneCheck2Yu" aria-label="Checkbox for following text input" checked>
@@ -312,7 +314,7 @@ header("Refresh:180");
                 </div>
             <div class=" d-md-flex justify-content-md-end">
             <!-- 如果使用者還未登入 -->
-                <?php if(empty($_SESSION["user"])) : ?>  
+                <?php if(empty($_SESSION["user"])) : ?>
                     <!-- 跳出提示框提醒用戶先登入會員 -->
                     <div class="alert alert-danger" role="alert">
                         請先登入會員，再結帳
@@ -329,7 +331,7 @@ header("Refresh:180");
                 </a>
                 <?php endif; ?>
             </div>
-            <?php endif?>
+            <?php endif ?>
             </div>
         </div>
         <!-- 獨家商品訂單下一步之後的填寫資料 -->
@@ -527,7 +529,7 @@ header("Refresh:180");
 <script src="./shopping-cart.js"></script>
 
 
-<script>
+<!-- <script>
 
 //價錢加,
 const dollarCommas = function(n){
@@ -596,6 +598,6 @@ function removeItem(event) {
     updatePrices(); // 一進頁面就要執行一次
 
 
-</script>
+</script> -->
 
 <?php include __DIR__ . '/parts/html-foot.php'; ?>

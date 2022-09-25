@@ -138,36 +138,3 @@ function checkFormSignup(){
         }, 'json');
     }
 }
-
-// 購物車 每一次加商品的時候就去呼叫他
-//按了加入購物車 會改變購物車數量
-// function showCartCount(obj){
-//     let count = 0;
-    
-//     for(let k in obj){
-//         const item= obj[k];
-//         count += +item.qty; //+是讓字串轉型態
-
-<<<<<<< HEAD
-    }
-    $("#cartCountYu").html(count);
-}
-
-$.get(
-    "re-pcart-api.php",
-    function(data){
-        showCartCount(data);
-    },
-    "json");
-=======
-//     }
-//     $("#cartCount").html(count);
-// }
-
-// $.get(
-//     "handle-cart.php",
-//     function(data){
-//         showCartCount(data);
-//     },
-//     "json");
->>>>>>> bab75ef5814679ba4432cf82a04789a36af5daa7

@@ -1,24 +1,31 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
-$pageName = 'travel_detail'; //頁面名稱
+$pageName = '旅遊行程'; //頁面名稱
+$title = '旅遊行程'
+
 
 // if(!isset($_GET['sid'])){
 //     header('Location: travel_list.php');
 //     exit;
 // }
 
-// $sid = intval($_GET['sid']);
-// $sql = "SELECT * FROM travel WHERE sid=$sid";
-// $rows = $pdo->query($sql)->fetch();
-// // $rows = [];  // 預設值
+$sid = intval($_GET['sid']);
+$sql = "SELECT * FROM travel WHERE sid=sid";
+$rows = $pdo->query($sql)->fetch();
+// echo json_encode([
+//     '$rows'=>$rows,
+// ]);
+// exit;
+// $t_sql = "SELECT COUNT(1) FROM travel";
+// $rows = [];  // 預設值
 
-// //如果沒有拿到資料
-//     if(empty($rows)){
-//         header('Location: travel_list.php');
-//         exit;
-//         }
+//如果沒有拿到資料
+    // if(empty($rows)){
+    //     header('Location: travel_list.php');
+    //     exit;
+    //     }
 
-    // $travel = $pdo->query("SELECT * FROM travel WHERE sid=sid")->fetchAll();
+    $travel = $pdo->query("SELECT * FROM travel WHERE sid=sid")->fetchAll();
     // $travelsid = $travel[0]['travel_sid'];
     // $travelname = $travrl[0]['travel_name']
 
@@ -47,7 +54,7 @@ header("Refresh:180");
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="imgs/travel/wall/<?=$r['travel_img'] ?>_1" class="d-block w-100" alt="...">
+                            <img src="imgs/travel/wall/<?=$r['travel_img'] ?>" class="d-block w-100" alt="...">
                         </div>
                         <!-- <div class="carousel-item">
                             <img src="imgs/travel/wall/T01_2.jpg.jpg" class="d-block w-100" alt="...">
