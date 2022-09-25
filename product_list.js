@@ -6,7 +6,6 @@ let SliderValOne = document.querySelector('.range-1-value')
 let SliderValTwo = document.querySelector('.range-2-value')
 
 // 篩選範圍怎麼跟資料庫連結
-
 let minGap = 100;
 let delArrayLength = 0;
 
@@ -28,6 +27,7 @@ function slideOne() {
 
     const delArray = productData.filter( (item)=>{
         return +item.product_price < sliderOne.value
+        // 選低價格的拉霸的值小於商品價格時
     });
 
     
@@ -35,7 +35,7 @@ function slideOne() {
     console.log('delArray',delArray);
 
     console.log('delArray.length',delArray.length);
-console.log('delArrayLength',delArrayLength);
+    console.log('delArrayLength',delArrayLength);
     if(delArray.length > delArrayLength){
         delArray.forEach(element => {
             console.log($(`.card[data-sid="${element.id}"]`).length);

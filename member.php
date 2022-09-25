@@ -136,15 +136,55 @@ $pageName ='會員中心'; //頁面名稱
     $d_rows = $pdo->query($d_sql)->fetchAll();
 
 
-    // $po_sql = "SELECT * FROM product_order";
+    $po_sql = "SELECT * FROM `product_order`WHERE member_id=$member_id";
+    $po_rows = $pdo->query($po_sql)->fetchAll();
+    // $polist_sql = "SELECT product.*, product_list.product_sid FROM  WHERE member_id=$member_id";
+
+    // 錯誤
+    // $polist_sql = "SELECT o.*, od.price, od.quantity, p.bookname FROM `orders` o
+    // JOIN order_details od ON o.sid = od.order_sid
+    // JOIN products p ON p.sid = od.product_sid
+    // WHERE o.sid = 11";
+
+    // $polist_sql = "SELECT po.*, pod.total, pod.quantity, p.product_name, p.product_card_img, ad.city FROM `product_order` po
+    // JOIN product_details pod ON po.sid = pod.order_sid
+    // JOIN product p ON p.sid = pod.product_sid
+    // JOIN address ad ON ad.sid = po.address_city
+    // JOIN address ad ON ad.sid = ad.parent AND ad.city = po.address_region
+    // -- JOIN (
+    // --     SELECT * FROM address join product_order on address_parent = address_sid WHERE po.address_region
+    // --     )
+    // WHERE member_id=$member_id";
+
+
+    $polist_sql = "
+    SELECT 
+        po.*, 
+        pod.total, 
+        pod.quantity, 
+        p.product_name, 
+        p.product_card_img, 
+        ad.city,
+        ad2.city region
+    FROM product_order po
+        JOIN product_details pod ON po.sid = pod.order_sid
+        JOIN product p ON p.sid = pod.product_sid
+        JOIN address ad ON ad.sid = po.address_city
+        JOIN address ad2 ON ad2.sid = po.address_region
+        WHERE member_id=$member_id";
+
+
+    $polist_rows = $pdo->query($polist_sql)->fetchAll();
 
     // $po_rows = $pdo->query($sql)->fetchAll();
 
 
 //json_encode判斷型別輸出JSON 數字型態
 // echo json_encode([ 
-//     '$prows' => $p_rows,
+//     // '$prows' => $p_rows,
 //     // '$trows' => $t_rows,
+//     // '$po_rows' => $po_rows,
+//     '$polist_rows' => $polist_rows,
 // ]);
 // exit;
 ?>
@@ -619,12 +659,13 @@ $pageName ='會員中心'; //頁面名稱
                                 <th class="col-12 col-md-2 text-20-re text-center thpadding-re">訂單備註</th>
                             </tr>
                         </thead>
+                        <?php foreach($po_rows as $r): ?>
                         <tbody class="col-8 p-0">
                             <tr class="orderlist-re col-12 p-0">
-                                <td class="text-16-re text-center">2022/09/07</td>
-                                <td class="text-16-re text-center">OR202209071200</td>
-                                <td class="text-16-re text-center price-re">520</td>
-                                <td class="text-16-re text-center">訂單完成</td>
+                                <td class="text-16-re text-center"><?= $r['created_at'] ?></td>
+                                <td class="text-16-re text-center">PO2022<?= $r['sid'] ?></td>
+                                <td class="text-16-re text-center price-re"><?= $r['price'] ?></td>
+                                <td class="text-16-re text-center"><?= $r['state'] ?></td>
                                 <td class="orderbtn-re text-center">
                                     查詢訂單
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -633,6 +674,7 @@ $pageName ='會員中心'; //頁面名稱
                                 </td>
                             </tr>
                         </tbody>
+                        <?php endforeach ?>
                     </table>
                     <div class="slide-re px-3 py-3">
                         <table class="inside-orderlisttable-re tablehover text-center w-100" >
@@ -647,18 +689,21 @@ $pageName ='會員中心'; //頁面名稱
                                     <!-- <th class="col-12 col-md-1 text-18-re text-center ordertitle-other2-re"></th> -->
                                 </tr>
                             </thead>
+                            <?php foreach($polist_rows as $r): ?>
                             <tbody class="col-9 p-0">
                                 <tr class="orderlist-re col-12 p-0">
-                                    <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/購物車-商品(測試用).png" alt=""></td>
-                                    <td class="productname-re text-16-re text-center m-0">台北霞海城隍廟獨家聯名--七夕月老供品組-甜作之盒</td>
-                                    <td class="text-16-re text-center ordertitle-other-re">紅</td>
-                                    <td class="ext-16-re text-center ordertitle-other-re price-re">520</td>
-                                    <td class="text-16-re text-center ordertitle-other-re">1</td>
-                                    <td class="ext-16-re text-center ordertitle-other-re price-re">520</td>
+                                    <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt=""></td>
+                                    <td class="productname-re text-16-re text-center m-0"><?= $r['product_name'] ?></td>
+                                    <td class="text-16-re text-center ordertitle-other-re"><?= $r['product_name'] ?></td>
+                                    <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
+                                    <td class="text-16-re text-center ordertitle-other-re"><?= $r['quantity'] ?></td>
+                                    <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['total'] ?></td>
                                     <td class="text-center ordertitle-other2-re "><button id="evaluation-btn-re" class="btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
                                 </tr>
                             </tbody>
+                            <?php endforeach ?>
                         </table>
+                        <?php foreach($polist_rows as $r): ?>
                         <div class="d-flex flex-wrap pt-3">
                             <div class="col-12 col-md-6 px-2">
                                 <table class="w-100">
@@ -667,15 +712,15 @@ $pageName ='會員中心'; //頁面名稱
                                     </tr>
                                     <tr>
                                         <th class="text-16-re py-1 widht30-re">收件人姓名</th>
-                                        <td class="text-16-re py-1">皮卡丘</td>
+                                        <td class="text-16-re py-1"><?= $r['name'] ?></td>
                                     </tr>
                                     <tr>
                                         <th class="text-16-re py-1">收件人電話</th>
-                                        <td class="text-16-re py-1">0987654321</td>
+                                        <td class="text-16-re py-1"><?= $r['phone'] ?></td>
                                     </tr>
                                     <tr>
                                         <th class="text-16-re py-1">收件人地址</th>
-                                        <td class="text-16-re py-1">台北市大安區和平東路二段106號3樓</td>
+                                        <td class="text-16-re py-1"><?= $r['city'] ?><?= $r['region'] ?><?= $r['address'] ?></td>
                                     </tr>
                                 </table>
                             </div>
@@ -686,19 +731,20 @@ $pageName ='會員中心'; //頁面名稱
                                     </tr>
                                     <tr>
                                         <th class="text-16-re py-1 widht30-re">收件方式</th>
-                                        <td class="text-16-re py-1">宅配</td>
+                                        <td class="text-16-re py-1"><?= $r['delivery'] ?></td>
                                     </tr>
                                     <tr>
                                         <th class="text-16-re py-1">付款方式</th>
-                                        <td class="text-16-re py-1">信用卡</td>
+                                        <td class="text-16-re py-1"><?= $r['payment'] ?></td>
                                     </tr>
                                     <tr>
                                         <th class="text-16-re py-1">付款狀態</th>
-                                        <td class="text-16-re py-1">訂單完成</td>
+                                        <td class="text-16-re py-1"><?= $r['state'] ?></td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
+                        <?php endforeach ?>
                     </div>
                     <div class="slide2-re px-3 py-3 position-relative">
                         <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
