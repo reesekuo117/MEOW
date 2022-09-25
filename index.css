@@ -26,6 +26,15 @@ header .navbar_ba {
 
 .body_ba a {
     text-decoration: none !important;
+    /* color: var(--color-orange) !important; */
+}
+
+.section1_ba a,
+.section2_ba a,
+.section3_ba a,
+.section4_ba a,
+.section5_ba a,
+.section6_ba a {
     color: var(--color-brown-dark) !important;
 }
 
