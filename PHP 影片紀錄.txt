@@ -128,6 +128,8 @@ $a = isset($_GET['a']) ? intval( $_GET['a']):0;
 8/29 13-30 8分 密碼雜湊（hash）
 8/29 13-30 18分 新增會員資料（fake-member）
 
+8/29 14-30 0分 新的 proj 
+
 8/29 15-44 16分 products list建立
 -
 8/30 10-13 0分 同時分頁和分類 echo http_build_query($qsp);

@@ -130,7 +130,7 @@
                             <li class="text-center">
                                 <a class="nav-link <?= $pageName == '獨家商品' ? 'active' : '' ?>" href="product_index.php">獨家商品</a>
                             </li>
-                            <li class="text-center d-flex justify-content-center">
+                            <li class="text-center">
                                 <a class="nav-link <?= $pageName == '旅遊行程' ? 'active' : '' ?>" href="travel_index.php">旅遊行程</a>
                             </li>
                         </ul>
