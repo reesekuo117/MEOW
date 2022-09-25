@@ -156,12 +156,13 @@ header("Refresh:180");
                                         <div class="travel_intro_mb intro_bg d-block d-md-none">
                                             <h5 class="mb-4">行程資訊</h5>
                                             <small>
+                                                <?=$r['travel_route']?>
                                                 <!-- •專業導覽員帶您閱讀大稻埕的歷史印記，濃濃的古式文化風情與屬於大稻埕的點滴故事。<br>
                                                 <br>
                                                 •漫步在大稻埕的傳統商家街道，拜訪許多知名老店，獨特回憶點滴湧上心頭。 <br>
                                                 <br>
                                                 •行程結束於大稻埕碼頭，可以享受微風徐徐的河畔風光，也能明白當時『一府二路三艋舺』的美名。 <br> -->
-                                                行程時間:一日遊<br>
+                                                <!-- 行程時間:一日遊<br>
                                                 <br> 
 
                                                 途經地點:<br>
@@ -173,7 +174,7 @@ header("Refresh:180");
                                                 老宅改建的雜貨店<br>
                                                 <br> 
                                                 餐廳酒吧等<br>
-                                                <br> 
+                                                <br>  -->
 
                                             </small>
                                         </div>
@@ -322,7 +323,9 @@ header("Refresh:180");
                                     </div>
                                     <div class="total d-flex justify-content-center">
                                         <h6>總金額</h6>
-                                        <h6 class="total_price"></h6>
+                                        <h6 class="total_price">
+
+                                        </h6>
                                     </div>
                                     <div class="buy_btn">
                                         <button class="buy d-flex justify-content-center align-items-center">
@@ -400,19 +403,8 @@ header("Refresh:180");
                                     <div class="intro_pc d-none d-md-block">
                                         <h5>行程介紹</h5>
                                         <p>行程時間：2小時</p>
-                                        <small>行程時間:一日遊<br>
-                                                <br> 
-
-                                                途經地點:<br>
-                                                <br> 
-                                                大稻埕<br>
-                                                <br> 
-                                                迪化街商圈<br>
-                                                <br> 
-                                                老宅改建的雜貨店<br>
-                                                <br> 
-                                                餐廳酒吧等<br>
-                                                <br> 
+                                        <small>
+                                            <?=$r['travel_introduction']?>
                                         </small>
                                     </div>
                                     <div class="intro_mb d-md-none d-block" id="intro_mb">
