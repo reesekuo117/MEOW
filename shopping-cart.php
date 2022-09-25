@@ -144,22 +144,22 @@ header("Refresh:180");
                                         </div>
                                     </td>
                                     <!-- 單價 -->
-                                    <td id="onepriceYu" nams="priceYu" class="price-yu m-0 "  >
+                                    <td  nams="priceYu" class="price-yu m-0 "  >
                                         <h6 class="onePriceinputYu h6 pprice" data-val="">
                                             <?= $v["product_price"] ?>
                                         </h6>
                                     </td>
                                     <!-- 數量 -->
                                     <td class="">
-                                        <form id='myform' method='POST' action='#'>
+                                        <form  method='POST' action='#'>
 
-                                            <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
+                                            <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
 
-                                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 qty-yu numberTotalYu'>
+                                            <span type='text' name='txt' value='1' class= ' px-1 qty-yu numberTotalYu'>
                                                 1
                                             </span>
                                             
-                                            <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
+                                            <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' />
                                         </form>
                                     </td>
                                     <!-- 小計 -->
@@ -181,7 +181,7 @@ header("Refresh:180");
                 <!-- 修改總金額 -->
                 <!--  <span>總計: </span><span id="total-price" ></span> 元 -->
                 <div class="h6 alert alert-succes totalprice-uniqui-yu "  role="alert">
-                        <span id="total-priceYu" class=" d-flex  price-uniqui-yu">
+                        <span class=" d-flex  price-uniqui-yu">
                             
                         </span>
                 </div>
@@ -273,7 +273,7 @@ header("Refresh:180");
                                         </h6>
                                     </td>
                                     <!-- 單價 -->
-                                    <td id="onepriceYu" class="price-yu h6" >
+                                    <td  class="price-yu h6" >
                                         <h6 class="onePriceinputYu" nams="priceYu">
                                             1500
                                         </h6>
@@ -282,24 +282,24 @@ header("Refresh:180");
                                     <td class="">
                                         <form id='myform' method='POST' action='#'>
 
-                                            <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
+                                            <input name="btnleft"  type='button' value='-' class='qtyminus disabled' field='quantity' />
 
-                                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 qty-yu numberTotalYu'>
+                                            <span  type='text' name='txt' value='1' class='px-1 qty-yu numberTotalYu'>
                                                 1
                                             </span>
                                             
-                                            <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
+                                            <input name="btnright"  type='button' value='+' class='qtyplus' field='quantity' />
                                         </form>
                                     </td>
                                     <!-- 小計 -->
-                                    <td name="tpriceYu" id="totalprice_yu" class="total_price_yu h6 p-2" >
+                                    <td name="tpriceYu" class="total_price_yu h6 p-2" >
                                         <h6 class="littlePriceYu" nams="priceYu">
                                             1500
                                         </h6>
                                     </td>
                                     <!-- 刪除 -->
                                     <th scope="col" class="form-delete-yu">
-                                        <i onclick="javascript:return del();"  id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
+                                        <i onclick="javascript:return del();"  class="fa-solid fa-trash-can confirmAct()"></i>
                                     </th>
                                 </tr>
                                 <?php endforeach ?>
@@ -411,14 +411,14 @@ header("Refresh:180");
                             707
                         </h5>
                         <!-- 數量 -->
-                        <form class="d-flex" id='myform' method='POST' action='#'>
-                            <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
+                        <form class="d-flex"  method='POST' action='#'>
+                            <input type='button' value='-'  class='qtyminus' field='quantity'/>
 
-                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
+                            <span  type='text' name='txt' value='1' class='px-1 spanqty-yu numberTotalYu'>
                                 1
                             </span>
 
-                            <input id="plus-yu"  type='button' value='+' class='qtyplus' field='quantity' />
+                            <input   type='button' value='+' class='qtyplus' field='quantity' />
                         </form>
                     </div>
                 </div>
@@ -442,14 +442,14 @@ header("Refresh:180");
                             707
                         </h5>
                         <!-- 數量 -->
-                        <div class="d-flex" id='myform' method='POST' action='#'>
-                            <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
+                        <div class="d-flex" method='POST' action='#'>
+                            <input type='button' value='-'  class='qtyminus' field='quantity'/>
 
-                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
+                            <span  type='text' name='txt' value='1' class= 'px-1 spanqty-yu numberTotalYu'>
                                 1
                             </span>
 
-                            <input id="plus-yu"  type='button' value='+' class='qtyplus' field='quantity' />
+                            <input   type='button' value='+' class='qtyplus' field='quantity' />
                         </div>
                     </div>
                 </div>
@@ -491,10 +491,10 @@ header("Refresh:180");
                             1500
                         </h5>
                         <!-- 數量 -->
-                        <div class="d-flex" id='myform' method='POST' action='#'>
-                            <input type='button' value='-' id="minus-yu" class='qtyminus' field='quantity'/>
+                        <div class="d-flex" method='POST' action='#'>
+                            <input type='button' value='-'  class='qtyminus' field='quantity'/>
 
-                            <span id="numbertotal_yu" type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
+                            <span  type='text' name='txt' value='1' class= ' px-1 spanqty-yu numberTotalYu'>
                                 1
                             </span>
 

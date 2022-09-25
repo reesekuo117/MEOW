@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = '旅遊行程'; //頁面名稱
-$title = '旅遊行程'
+$title = '旅遊行程';
 
 
 // if(!isset($_GET['sid'])){
@@ -10,11 +10,11 @@ $title = '旅遊行程'
 // }
 
 $sid = intval($_GET['sid']);
-$sql = "SELECT * FROM travel WHERE sid=sid";
-$rows = $pdo->query($sql)->fetch();
-// echo json_encode([
-//     '$rows'=>$rows,
-// ]);
+$sql = "SELECT * FROM travel WHERE sid=$sid";
+$rows = $pdo->query($sql)->fetchAll();
+echo json_encode([
+    '$rows'=>$rows,
+]);
 // exit;
 // $t_sql = "SELECT COUNT(1) FROM travel";
 // $rows = [];  // 預設值
@@ -25,7 +25,7 @@ $rows = $pdo->query($sql)->fetch();
     //     exit;
     //     }
 
-    $travel = $pdo->query("SELECT * FROM travel WHERE sid=sid")->fetchAll();
+    // $travel = $pdo->query("SELECT * FROM travel WHERE sid=$sid")->fetchAll();
     // $travelsid = $travel[0]['travel_sid'];
     // $travelname = $travrl[0]['travel_name']
 
@@ -54,7 +54,7 @@ header("Refresh:180");
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="imgs/travel/wall/<?=$r['travel_img'] ?>" class="d-block w-100" alt="...">
+                            <img src="imgs/travel/cards/<?=$r['travelcard_img'] ?>" class="d-block w-100" alt="...">
                         </div>
                         <!-- <div class="carousel-item">
                             <img src="imgs/travel/wall/T01_2.jpg.jpg" class="d-block w-100" alt="...">
@@ -98,34 +98,43 @@ header("Refresh:180");
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
                                                 </svg>
-                                                <small>台北</small>
+                                                <!-- 地址抓不到 -->
+                                                <small>
+                                                    <?=$r['travel_area']?>
+                                                </small>
                                             </div>
                                             <div class="icon_clock pl-3">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
                                                 </svg>
-                                                <small>出發日期：2022/08/05</small>
+                                                <small>出發日期：<?=$r['travel_date']?></small>
                                             </div>
                                         </div>
                                         <div class="evaluation d-md-none d-flex mt-2">
                                             <div class="star d-flex">
                                                 <div class="icon_fivestar small">
                                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                                    <span style="color: var(--color-text60);">（50+）</span>
+                                                    <span style="color: var(--color-text60);">
+                                                        <?=$r['travel_star']?>
+                                                    </span>
                                                 </div>
 
                                             </div>
                                             <div class="fire small">
                                                 <div class="icon_fire" style="color: var(--color-orange);">
                                                     <i class="fa-solid fa-fire"></i>
-                                                    <span style="color: var(--color-text60);">已賣出3K + 個</span>
+                                                    <span style="color: var(--color-text60);">
+                                                        已賣出<?=$r['travel_popular']?> 個
+                                                    </span>
                                                 </div>
                                             </div>
 
                                         </div>
                                         <div class="price_mb mt-2 offset-8">
-                                            <h4>345</h4>
+                                            <h4>
+                                                <?=$r['travel_price']?>
+                                            </h4>
                                         </div>
                                         <p class="my-5 d-none d-md-block">
                                             •專業導覽員帶您閱讀大稻埕的歷史印記，濃濃的古式文化風情與屬於大稻埕的點滴故事。<br>
@@ -150,7 +159,9 @@ header("Refresh:180");
                                             <div class="icon_fivestar">
                                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                             </div>
-                                            <p>（50+則評價）</p>
+                                            <p>
+                                                <?=$r['travel_star']?>
+                                            </p>
                                         </div>
                                         <!-- 火和字不能對齊 -->
                                         <div class="fire d-flex justify-content-center align-self-end">
@@ -165,7 +176,9 @@ header("Refresh:180");
                                                     </defs>
                                                 </svg>
                                             </div>
-                                            <p>已賣出3K + 個</p>
+                                            <p>
+                                                已賣出<?=$r['travel_popular']?> 個
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +186,7 @@ header("Refresh:180");
                                     <small>出發前 1 天可免費取消</small>
                                     <div class="price">
                                         <h2>
-                                            345
+                                            <?=$r['travel_price']?>
                                         </h2>
                                     </div>
                                     <div class="buy_btn">
@@ -1100,7 +1113,7 @@ header("Refresh:180");
             function(data){
                 console.log(data);
                 
-                showCartCount(data);
+                // showCartCount(data);
             },
             "json");
     }
