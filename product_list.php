@@ -257,10 +257,20 @@ if(isset($_GET['sort'])){
                             </a>
                         </div>
                         <!-- 分類壞掉了QQ因為用e.preventDefault();才會壞掉 -->
-                        <?php foreach ($cates as $c): ?> 
+                        <!-- <?php foreach ($cates as $c): ?> 
+                        <div class="product_cate btncolor_default"> -->
+                            <!-- 用a連結記得JQ要加e.preventDefault(); -->
+                            <!-- <a type="button" href="?cate=<?= $qsp['cate']=$c['sid'] ?>">
+                                <h5>－<?= $c['category_name'] ?></h5>
+                            </a>
+                        </div>
+                        <?php endforeach ?> -->
+
+                        <?php $qsp2 = $qsp;
+                        foreach ($cates as $c): ?> 
                         <div class="product_cate btncolor_default">
                             <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                            <a type="button" href="?cate=<?= $qsp['cate']=$c['sid'] ?>">
+                            <a type="button" href="?cate=<?= $qsp2['cate']=$c['sid'] ?>">
                                 <h5>－<?= $c['category_name'] ?></h5>
                             </a>
                         </div>
