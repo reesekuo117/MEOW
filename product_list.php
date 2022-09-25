@@ -8,9 +8,10 @@ if ($page < 1) {
     exit;
 }
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要指定哪個分類，intval($_GET['cate']是變成整數的意思，0表示所有產品
-// $lowp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
-// $highp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
-// $hotp = isset($_GET['hotp']) ? intval($_GET['hotp']) : 0; // 熱門
+$newp = isset($_GET['newp']) ? intval($_GET['newp']) : 0; // 最新
+$hotp = isset($_GET['hotp']) ? intval($_GET['hotp']) : 0; // 熱門
+$lowerp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
+$higherp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
 
 $qsp = []; // query string parameters
 
@@ -66,33 +67,38 @@ if ($totalRows > 0) {
 
 
 // 取得商品熱門程度
-// $hotp = $pdo->query("SELECT `product_popular` FROM `product` GROUP BY `product_popular` DESC") 
+// $hotp = $pdo->query("SELECT `product_popular` FROM `product` ORDER BY `product_popular` DESC") 
 //    ->fetchAll();
 // 取得價格由低到高
-//$lowerp = $pdo->query("SELECT `product_price` FROM `product` GROUP BY `product_price` ASC") 
+//$lowerp = $pdo->query("SELECT `product_price` FROM `product` ORDER BY `product_price` ASC") 
 //    ->fetchAll();
-
 //取得價格由高到低
-// $lowerp = $pdo->query("SELECT `product_price` FROM `product` GROUP BY `product_price` DESC") 
+// $lowerp = $pdo->query("SELECT `product_price` FROM `product` ORDER BY `product_price` DESC") 
 //    ->fetchAll();
-$dataSql = "SELECT * FROM `product` GROUP BY ";
+$dataSql = "SELECT * FROM `product` ORDER BY ";
 $dataSort = '';
 // SQL語法前面都一樣，所以將一樣的部分"SELECT * FROM `product` GROUP BY "設定成變數
 // 但是GROUP BY之後的東西都不一樣，所以設變數空字串，在if內再給空字串不一樣的內容
 if(isset($_GET['sort'])){
     if($_GET['sort'] === 'hotp'){
         // 設定hotp變數和$dataSort的內容
-        $dataSort = "`product_popular` DESC";
+        $dataSort = " `product_popular` DESC ";
     }
     
     if($_GET['sort'] === 'lowerp'){
-        $dataSort = "`product_price` ASC";
+        $dataSort = " `product_price` ASC ";
     }
     
     if($_GET['sort'] === 'higherp'){
-        $dataSort = "`product_price` DESC";
+        $dataSort = " `product_price` DESC ";
     }
-    $sqlSearchStr = $dataSql.$dataSort;
+    if($_GET['sort'] === 'newp'){
+        $dataSort = " `created_at` DESC ";
+    }
+    $sqlSearchStr = $dataSql. $dataSort. sprintf(" LIMIT %s, %s ",
+    ($page - 1) * $perPage,
+    $perPage
+    ) ;
     // 將兩個變數的內容相加
 
     if($dataSort != ''){
@@ -156,7 +162,7 @@ if(isset($_GET['sort'])){
                     <h5 style="color: var(--color-text87);"><i class="fa-regular fa-hourglass-half px-1"></i>排序方式</h5>
                 </div>
                 <div class="col">
-                    <a href="#">
+                    <a href="?sort=newp">
                         <h5>最新上架</h5>
                     </a>
                 </div>

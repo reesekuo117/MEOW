@@ -283,21 +283,21 @@
 }
 
 /* -------------------------------卡片--------------------------------- */
-.product_list{
+/* .product_list{ */
     /* display: flex; */
     /* flex-wrap: wrap; */
     /* justify-content: center; */
     /* align-items: center; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
 
-}
+/* } */
 @media screen and (max-width:768px){
     .product_list .col-12{
         padding: 24px 32px;
     }
 }
 .product_list .row{
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 @media screen and (min-width:768px){
@@ -341,9 +341,6 @@
 .product_list .card-body small{
     color: var(--color-text60);
 }
-/* .product_list .row{
-    margin: auto;
-} */
 .card-body{
     position: relative;
     box-sizing: border-box;
