@@ -138,13 +138,3 @@ function checkFormSignup(){
         }, 'json');
     }
 }
-
-// 購物車 每一次加商品的時候就去呼叫他
-//按了加入購物車 會改變購物車數量
-// function showCartCount(obj){
-//     let count = 0;
-    
-//     for(let k in obj){
-//         const item= obj[k];
-//         count += +item.qty; //+是讓字串轉型態
-
