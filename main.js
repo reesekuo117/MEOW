@@ -148,26 +148,3 @@ function checkFormSignup(){
 //         const item= obj[k];
 //         count += +item.qty; //+是讓字串轉型態
 
-<<<<<<< HEAD
-    }
-    $("#cartCountYu").html(count);
-}
-
-$.get(
-    "re-pcart-api.php",
-    function(data){
-        showCartCount(data);
-    },
-    "json");
-=======
-//     }
-//     $("#cartCount").html(count);
-// }
-
-// $.get(
-//     "handle-cart.php",
-//     function(data){
-//         showCartCount(data);
-//     },
-//     "json");
->>>>>>> bab75ef5814679ba4432cf82a04789a36af5daa7

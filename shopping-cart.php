@@ -154,7 +154,7 @@ header("Refresh:180");
                                         <form id='myform' method='POST' action='#'>
 
                                                 <input name="btnleft" id="minus-yu" type='button' value='-' class='qtyminus disabled' field='quantity' />
-                                                <span id="numbertotal_yu" type='text' name='txt'value="<?= $i ?>" class= 'pprice px-1 qty-yu numberTotalYu'>
+                                                <span id="numbertotal_yu" type='text' name='txt'value="1" class='pprice px-1 qty-yu numberTotalYu'>
                                                     <?= $i ?>
                                                 </span>
                                                 <input name="btnright" id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
@@ -312,14 +312,14 @@ header("Refresh:180");
                 </div>
             <div class=" d-md-flex justify-content-md-end">
             <!-- 如果使用者還未登入 -->
-                <?php if(empty($_SESSION["user"])) : ?>  
+                <!-- < ?php if(empty($_SESSION["user"])) : ?>   -->
                     <!-- 跳出提示框提醒用戶先登入會員 -->
                     <div class="alert alert-danger" role="alert">
                         請先登入會員，再結帳
                     </div>
                     <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
                     <!-- a href="#buy1.php" -->
-                <?php else: ?>
+                <!-- < ?php else: ?> -->
                 <a href="./shopping-cart-travellist.php" class="btn unique-nextbutton-yu">
                     <button class=" unique-btn-yu  me-md-2" type="button">
                         <p class="m-0 text-center">
@@ -327,7 +327,7 @@ header("Refresh:180");
                         </p>
                     </button>
                 </a>
-                <?php endif; ?>
+                <!-- < ?php endif; ?> -->
             </div>
             <?php endif?>
             </div>
