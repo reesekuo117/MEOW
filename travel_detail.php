@@ -9,13 +9,17 @@ $title = '旅遊行程';
 //     exit;
 // }
 
-$sid = intval($_GET['sid']);
-$sql = "SELECT * FROM travel WHERE sid=$sid";
+
+$sid = isset($_GET['sid']) ? intval($_GET['sid']):0;
+
+$sql = "SELECT * FROM travel WHERE sid = $sid";
 $rows = $pdo->query($sql)->fetchAll();
-echo json_encode([
-    '$rows'=>$rows,
-]);
+
+// echo json_encode([
+//     '$rows'=>$rows,
+// ]);
 // exit;
+
 // $t_sql = "SELECT COUNT(1) FROM travel";
 // $rows = [];  // 預設值
 
@@ -54,7 +58,7 @@ header("Refresh:180");
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="imgs/travel/cards/<?=$r['travelcard_img'] ?>" class="d-block w-100" alt="...">
+                            <img src="imgs/travel/cards/<?= $r['travelcard_img'] ?>" class="d-block w-100" alt="...">
                         </div>
                         <!-- <div class="carousel-item">
                             <img src="imgs/travel/wall/T01_2.jpg.jpg" class="d-block w-100" alt="...">
@@ -90,7 +94,9 @@ header("Refresh:180");
                                         <?=$r['travel_name']?>
                                         </h5>
                                         <!-- 副標題 -->
-                                        <p><?=$r['travel_subheading']?></p>
+                                        <p>
+                                            <?=$r['travel_subheading']?>
+                                        </p>
                                         <div class="small_top d-flex">
                                             <div class="icon_location">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,7 +104,6 @@ header("Refresh:180");
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
                                                 </svg>
-                                                <!-- 地址抓不到 -->
                                                 <small>
                                                     <?=$r['travel_area']?>
                                                 </small>
@@ -108,7 +113,9 @@ header("Refresh:180");
                                                     <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
                                                 </svg>
-                                                <small>出發日期：<?=$r['travel_date']?></small>
+                                                <small>出發日期：
+                                                    <?=$r['travel_date']?>
+                                                </small>
                                             </div>
                                         </div>
                                         <div class="evaluation d-md-none d-flex mt-2">
@@ -125,7 +132,7 @@ header("Refresh:180");
                                                 <div class="icon_fire" style="color: var(--color-orange);">
                                                     <i class="fa-solid fa-fire"></i>
                                                     <span style="color: var(--color-text60);">
-                                                        已賣出<?=$r['travel_popular']?> 個
+                                                        已賣出<?=$r['travel_popular']?>個
                                                     </span>
                                                 </div>
                                             </div>
@@ -137,20 +144,37 @@ header("Refresh:180");
                                             </h4>
                                         </div>
                                         <p class="my-5 d-none d-md-block">
-                                            •專業導覽員帶您閱讀大稻埕的歷史印記，濃濃的古式文化風情與屬於大稻埕的點滴故事。<br>
+                                            <!-- •專業導覽員帶您閱讀大稻埕的歷史印記，濃濃的古式文化風情與屬於大稻埕的點滴故事。<br>
                                             <br>
-                                            •漫步在大稻埕的傳統商家街道，拜訪許多知名老店，獨特回憶點滴湧上心頭。 <br>
+                                            •漫步在大稻埕的傳統商家街道，拜訪許多知名老店，獨特回憶點滴湧上心頭。 
                                             <br>
-                                            •行程結束於大稻埕碼頭，可以享受微風徐徐的河畔風光，也能明白當時『一府二路三艋舺』的美名。 <br>
+                                            <br>
+                                            •行程結束於大稻埕碼頭，可以享受微風徐徐的河畔風光，也能明白當時『一府二路三艋舺』的美名。 
+                                            <br> -->
+                                            <?=$r['travel_introduction']?>
                                         </p>
                                         <div class="travel_intro_mb intro_bg d-block d-md-none">
                                             <h5 class="mb-4">行程資訊</h5>
                                             <small>
-                                                •專業導覽員帶您閱讀大稻埕的歷史印記，濃濃的古式文化風情與屬於大稻埕的點滴故事。<br>
+                                                <!-- •專業導覽員帶您閱讀大稻埕的歷史印記，濃濃的古式文化風情與屬於大稻埕的點滴故事。<br>
                                                 <br>
                                                 •漫步在大稻埕的傳統商家街道，拜訪許多知名老店，獨特回憶點滴湧上心頭。 <br>
                                                 <br>
-                                                •行程結束於大稻埕碼頭，可以享受微風徐徐的河畔風光，也能明白當時『一府二路三艋舺』的美名。 <br>
+                                                •行程結束於大稻埕碼頭，可以享受微風徐徐的河畔風光，也能明白當時『一府二路三艋舺』的美名。 <br> -->
+                                                行程時間:一日遊<br>
+                                                <br> 
+
+                                                途經地點:<br>
+                                                <br> 
+                                                大稻埕<br>
+                                                <br> 
+                                                迪化街商圈<br>
+                                                <br> 
+                                                老宅改建的雜貨店<br>
+                                                <br> 
+                                                餐廳酒吧等<br>
+                                                <br> 
+
                                             </small>
                                         </div>
                                     </div>
@@ -164,20 +188,12 @@ header("Refresh:180");
                                             </p>
                                         </div>
                                         <!-- 火和字不能對齊 -->
-                                        <div class="fire d-flex justify-content-center align-self-end">
-                                            <div class="icon_fire">
-                                                <svg width="25" height="24" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                    <rect width="18" height="17" fill="url(#pattern0-946095)" />
-                                                    <defs>
-                                                        <pattern id="pattern0-946095" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                                            <use xlink:href="#image0_1808_23036" transform="translate(0.0277778) scale(0.0104938 0.0111111)" />
-                                                        </pattern>
-                                                        <image id="image0_1808_23036" width="90" height="90" xlink:href="data:image/png;base64,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" />
-                                                    </defs>
-                                                </svg>
+                                        <div class="fire d-flex justify-content-center align-self-end mx-3">
+                                            <div class="icon_fire pr-1" style="color: var(--color-orange);">
+                                                <i class="fa-solid fa-fire"></i>
                                             </div>
                                             <p>
-                                                已賣出<?=$r['travel_popular']?> 個
+                                                已賣出<?=$r['travel_popular']?>個
                                             </p>
                                         </div>
                                     </div>
@@ -334,8 +350,12 @@ header("Refresh:180");
                     <div class="row justify-content-center">
                         <div class="left_title">
                             <div class="col">
-                                <p>大稻埕霞海城廟深度漫步文化之旅</p>
-                                <h2>345</h2>
+                                <p>
+                                    <?=$r['travel_name']?>
+                                </p>
+                                <h2>
+                                    <?=$r['travel_price']?>
+                                </h2>
                             </div>
                         </div>
 
@@ -380,10 +400,19 @@ header("Refresh:180");
                                     <div class="intro_pc d-none d-md-block">
                                         <h5>行程介紹</h5>
                                         <p>行程時間：2小時</p>
-                                        <small>漫步在古色古香的大稻埕街上，宗教常成為聚落發展的中心，街上充斥著各式各樣的藥材、乾貨店，您知道為什麼嗎？ <br>
-                                            從大稻埕看到台北歷史發展的演進，它真的是功不可沒！
-                                            大稻埕也有豐富的南北貨資源，其中有名的就是茶葉與中藥材，歡迎來大稻埕走走晃晃
-                                            讓專業的導遊帶您認識這塊台北古城發展的中心吧！
+                                        <small>行程時間:一日遊<br>
+                                                <br> 
+
+                                                途經地點:<br>
+                                                <br> 
+                                                大稻埕<br>
+                                                <br> 
+                                                迪化街商圈<br>
+                                                <br> 
+                                                老宅改建的雜貨店<br>
+                                                <br> 
+                                                餐廳酒吧等<br>
+                                                <br> 
                                         </small>
                                     </div>
                                     <div class="intro_mb d-md-none d-block" id="intro_mb">
