@@ -819,7 +819,7 @@ color: #CD562F;
   /* box-shadow: 0px 2px 5px rgba(67, 42, 15, 0.38); */
 }
 .landmarkActive_lb{
- box-shadow: 3px 3px 3px var(--color-orange);
+ box-shadow: 4px 4px 5px #cd562fa8;
  /* transform: translateX(20px,-5px); */
 
 

@@ -1,7 +1,7 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName = '月老文化'; //頁面名稱
-$title = '月老文化'
+$title = '月老文化';
 
 $area = isset($_GET['area']) ? intval($_GET['area']):0; //用戶指定哪個區域
 $item = isset($_GET['item']) ? intval($_GET['item']):0; //用戶指定哪個項目
@@ -1033,7 +1033,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
             </div>
             
         </div>
-        <div class="row position-relative">
+        <div class="row position-relative m-0">
             <div id="mbdetail-card" class="mbdetail-card_lb hidden_lb ">
                 <div class="prepage_lb pl-2 pt-3">
                     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1365,11 +1365,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
             </div>
         </div>
     </div>
-
 </div>
-
-
-
 
 
 
@@ -1386,14 +1382,9 @@ const temples = <?= json_encode($temples); ?>;
 const area_lb = $('#area_lb'); //區域
 const item_lb = $('#item_lb'); //選項
 
-//mb
-// const mbarea_lb = $('#mbarea_lb'); 
-// const mbitem_lb = $('#mbitem_lb')
-
 //拿區域
 function getCate() {
     const area_sid = area_lb.val();
-    // const mbarea_sid = mbarea_lb.val();
     
     // console.log('area_sid',area_sid)
 
@@ -1409,13 +1400,16 @@ function getCate() {
     console.log('new Set(t2)',new Set(t2));
 
 
-
     let str = '';
     for(let i of mySet){
         str += `<option value="${i}">${i}</option>`
     };
 
     item_lb.html(str);
+
+}
+
+getCate();
 
 
 //如果該區域的廟(landmark)的category_tag不等於el.category_tag 就會隱藏
@@ -1424,15 +1418,7 @@ function getItem() {
     const selected =mySet.filter(el=>item==el.category_tag);
     // $('.landmark_lb').addClass('d-none').siblings().removeClass('d-none');
 
-
 }
-
-}
-
-getCate();
-
-
-
 
 //地圖預設：北部
 $(".path_lb").eq(0).css({
@@ -1553,6 +1539,33 @@ $('.info-card_lb').html(card_tpl_func(item));
 
 mapDefault();
 
+
+
+//mb
+const mbarea_lb = $('#mbarea_lb'); 
+const mbitem_lb = $('#mbitem_lb');
+function mbgetCate() {
+    const mbarea_sid = mbarea_lb.val();
+    
+    const mt = temples.filter(el=>mbarea_sid==el.area_sid);
+    console.log('mbtemple',mt);
+    const mt2 = mt.map(el=>el.category_tag);
+   
+    console.log('mbitem',mt2);
+    const mbmySet = new Set(mt2);
+    console.log('new Set(mt2)',new Set(mt2));
+
+
+    let mbstr = '';
+    for(let i of mbmySet){
+        mbstr += `<option value="${i}">${i}</option>`
+    };
+
+    mbitem_lb.html(mbstr);
+
+}
+
+mbgetCate();
 
 
 
