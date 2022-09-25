@@ -124,6 +124,10 @@ $a = isset($_GET['a']) ? intval( $_GET['a']):0;
 8/29 11-23 0分 修改資料 data-edit.php 檢查輸入資料格式 (htmlentities)
 8/29 11-23 8分 修改資料 data-edit-api.php
 
+8/29 13-30 0分 除錯
+8/29 13-30 8分 密碼雜湊（hash）
+8/29 13-30 18分 新增會員資料（fake-member）
+
 8/29 15-44 16分 products list建立
 -
 8/30 10-13 0分 同時分頁和分類 echo http_build_query($qsp);

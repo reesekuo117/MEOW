@@ -492,9 +492,7 @@ $pageName = '月老喵'; //頁面名稱
                 </div>
                 <div class="row_ba flex">
                     <h1 class="m-auto">
-                        <a href="travel_index.php">
                         熱門旅遊都在等你！
-                        </a>
                     </h1>
                     <!-- TODO: 07卡片 -->
                     <div class="otherp d-md-block d-none">

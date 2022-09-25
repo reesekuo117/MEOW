@@ -173,7 +173,7 @@ header("Refresh:180");
                                         <i onclick="javascript:return del();"  id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
                                     </th>
                                 </tr>
-                                <?php endforeach ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
@@ -204,7 +204,7 @@ header("Refresh:180");
                     </a>
                     <?php endif; ?>
                 </div>
-            <?php endif?>
+            <?php endif;?>
             </div>
 
             
@@ -302,7 +302,7 @@ header("Refresh:180");
                                         <i onclick="javascript:return del();"  class="fa-solid fa-trash-can confirmAct()"></i>
                                     </th>
                                 </tr>
-                                <?php endforeach ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
@@ -331,7 +331,7 @@ header("Refresh:180");
                 </a>
                 <?php endif; ?>
             </div>
-            <?php endif ?>
+            <?php endif; ?>
             </div>
         </div>
         <!-- 獨家商品訂單下一步之後的填寫資料 -->
