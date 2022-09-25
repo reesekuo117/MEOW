@@ -935,12 +935,11 @@ color: #CD562F;
 
 .c01-mbDetailTemImg-wrap {
   width: 120px;
-  height: 120px;
+  /* height: 120px; */
   /* width: 100%;
   height: 100%; */
-  border-radius: 50%;
-  overflow: hidden;
-  background: url(./imgs/culture/temple/C01_1.jpg) center center no-repeat;
+  /* overflow: hidden; */
+  /* background: url(./imgs/culture/temple/C01_1.jpg) center center no-repeat; */
   background-size: cover;
 }
 .c06-mbDetailTemImg-wrap {
@@ -993,16 +992,6 @@ color: #CD562F;
   scroll-snap-type: x mandatory;
 }
 
-/* .mbdetail-card_lb{
-  position: absolute;
-  top: 5px;
-  right: 0;
-  transition: 0.5s;
-  z-index: 100;
-  transform-origin: 0% 0%;
-  transform: translateY(550px);
-
-} */
 .prepage_lb {
   background-color: var(--color-orange);
 }
