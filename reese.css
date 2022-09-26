@@ -1,6 +1,6 @@
-*{
+/* *{
     outline: 1px solid #000;
-}
+} */
 header .navbar {
     /* background-color: transparent!important; */
 }
@@ -975,6 +975,7 @@ table .inside-orderlisttable-re {
     background-color: transparent;
     scroll-snap-align: start;
     cursor: pointer; 
+
 }
 .scroll-snap-re {
     display: flex;
