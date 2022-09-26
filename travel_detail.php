@@ -82,6 +82,8 @@ header("Refresh:180");
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
+            </div>
+            
             <div class="travel_head" id="travel_title">
                 <div class="container">
                     <div class="detail">
@@ -138,7 +140,7 @@ header("Refresh:180");
                                             </div>
 
                                         </div>
-                                        <div class="price_mb mt-2 offset-8">
+                                        <div class="price_mb mt-2 offset-7">
                                             <h4>
                                                 <?=$r['travel_price']?>
                                             </h4>

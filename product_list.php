@@ -202,23 +202,23 @@ if ($totalRows > 0) {
                     <h5 style="color: var(--color-text87);"><i class="fa-regular fa-hourglass-half px-1"></i>排序方式</h5>
                 </div>
                 <div class="col">
-                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=newp#desktopSort" class="<?php echo ($dataSort===$newp)? "btncolor_active" : "btncolor_default" ?>">
+                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=newp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='newp')? "sort_active" : "" ?>">
                         <h5>最新上架</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=hotp#desktopSort" class="<?= $allBtnStyle ?>">
+                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=hotp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='hotp')? "sort_active" : "" ?>">
                         <!-- 先設定要連到哪裡，再往上設定變數 -->
                         <h5>熱門程度</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="<?= $allBtnStyle ?>">
+                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
                         <h5>價格高 → 低</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=lowerp#desktopSort" class="<?= $allBtnStyle ?>">
+                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=lowerp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='lowerp')? "sort_active" : "" ?>">
                         <h5>價格低 → 高</h5>
                     </a>
                 </div>

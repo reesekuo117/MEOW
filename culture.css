@@ -819,8 +819,9 @@ color: #CD562F;
   /* box-shadow: 0px 2px 5px rgba(67, 42, 15, 0.38); */
 }
 .landmarkActive_lb{
- box-shadow: 4px 4px 5px #cd562fa8;
- /* transform: translateX(20px,-5px); */
+ box-shadow: 4px 4px #cd562f89;
+/* border: 4px solid #cd562f87; */
+ transform: translateX(20px,-5px);
 
 
 }
@@ -935,22 +936,9 @@ color: #CD562F;
 
 .c01-mbDetailTemImg-wrap {
   width: 120px;
-  /* height: 120px; */
-  /* width: 100%;
-  height: 100%; */
-  /* overflow: hidden; */
-  /* background: url(./imgs/culture/temple/C01_1.jpg) center center no-repeat; */
-  background-size: cover;
-}
-.c06-mbDetailTemImg-wrap {
-  width: 120px;
   height: 120px;
-  /* width: 100%;
-  height: 100%; */
   border-radius: 50%;
   overflow: hidden;
-  background: url(./imgs/culture/temple/C06_1.jpg) center center no-repeat;
-  background-size: cover;
 }
 
 .mbselect_lb {
@@ -993,37 +981,34 @@ color: #CD562F;
 }
 
 .prepage_lb {
-  background-color: var(--color-orange);
+  /* background-color: var(--color-orange); */
 }
 .mbdetail-card_lb {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 35px);
   border-radius: 8px 8px 0 0;
-  width: 375px;
+  width: 100%;
   transition: 0.5s;
-  /* overflow: hidden; */
-  /* height: 667px; */
+  overflow: auto;
   /* background-color: var(--color-orange); */
 }
 .mbdetail-card_lb.hidden_lb {
   height: 0;
   padding: 0;
-  overflow: hidden;
+  transition: .5s;
 }
 .mbTemCard-top_lb {
   background-color: var(--color-orange);
 }
 .mbTemCard-bottom_lb {
-  border-radius: 8px 8px 0 0;
-  height: 443px;
+  /* min-height:458px; */
+  height: 458px;
   background-color: var(--color-creamy);
-  /* border: 1px solid red; */
   padding: 10px 0;
+  z-index: 99;
+  overflow: auto;
 }
 .mbselected-temple_lb {
 padding-top: 150px;
-}
-.d-none_lb{
-  display: none !important; 
 }
 
 

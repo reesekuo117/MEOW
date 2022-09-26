@@ -95,7 +95,7 @@
     text-decoration: none;
     color: var(--color-text87);
 }
-.product_sort a .sort_active{
+.product_sort a.sort_active{
     color: var(--color-orange);
 }
 .product_sort a:hover {
