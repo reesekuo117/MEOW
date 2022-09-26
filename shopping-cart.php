@@ -88,9 +88,9 @@ header("Refresh:180");
                                     <th scope="col" class="formThwYu">
                                         <h6 class="mb-0 ">商品名稱</h6>
                                     </th>
-                                    <th scope="col" class="formThwYu">
+                                    <!-- <th scope="col" class="formThwYu">
                                         <h6 class="mb-0 ">規格</h6>
-                                    </th>
+                                    </th> -->
                                     <th scope="col" class="formThwYu">
                                         <h6 class="mb-0 ">單價</h6>
                                     </th>
@@ -128,15 +128,15 @@ header("Refresh:180");
                                             </h6>
                                         </td>
                                         <!-- 商品規格 -->
-                                        <td>
+                                        <!-- <td>
                                             <div class="">
                                                 <select class="form-select-yu" id="autosizing-yu">
-                                                    <option value="0"><?= $v["product_size"] ?></option>
-                                                    <!-- <option value="1">< ?=$v["product_size"] ?></option>
-                                                    <option value="2">< ?=$v["product_size"] ?></option> -->
+                                                    <option value="0">< ?= $v["product_size"] ?></option>
+                                                    <option value="1">< ?=$v["product_size"] ?></option>
+                                                    <option value="2">< ?=$v["product_size"] ?></option>
                                                 </select>
                                             </div>
-                                        </td>
+                                        </td>  -->
                                         <!-- 單價 -->
                                         <td nams="priceYu" class="price-yu m-0 ">
                                             <h6 class="onePriceinputYu h6 pprice" data-val="">
@@ -247,7 +247,7 @@ header("Refresh:180");
                             </thead>
                             <tbody class=" tbody">
                                     <?php
-                                    foreach ($_SESSION["tcart"] as $k => $v) : ?>
+                                    foreach ($_SESSION["tcart"] as $i => $j) : ?>
                                         <tr data-sid="" class="tcart-item">
                                             <th scope="col ">
                                                 <div class="row m-auto p-1 checkbox-yu ">
@@ -256,18 +256,18 @@ header("Refresh:180");
                                             </th>
                                             <!-- 行程照片 -->
                                             <td class="imgsCardYu">
-                                            <img class="w-100" src="imgs/travel/cards/<?= $v['travelcard_img'] ?>" alt="...">
+                                            <img class="w-100" src="imgs/travel/cards/<?= $j['travelcard_img'] ?>" alt="...">
                                             </td>
                                             <!-- 行程名稱 -->
                                             <td>
                                                 <h6 class="m-0">
-                                                    <?= $v['travel_name'] ?>
+                                                    <?= $j['travel_name'] ?>
                                                 </h6>
                                             </td>
                                             <!-- 單價 -->
                                             <td class="price-yu h6">
                                                 <h6 class="onePriceinputYu" nams="priceYu">
-                                                    <?= $v['travel_price'] ?>
+                                                    <?= $j['travel_price'] ?>
                                                 </h6>
                                             </td>
                                             <!-- 數量 -->
@@ -286,7 +286,7 @@ header("Refresh:180");
                                             <!-- 小計 -->
                                             <td name="tpriceYu" class="total_price_yu h6 p-2">
                                                 <h6 class="littlePriceYu" nams="priceYu">
-                                                    <?= $v['travel_price'] ?>
+                                                    <?= $j['travel_price'] ?>
                                                 </h6>
                                             </td>
                                             <!-- 刪除 -->
@@ -327,6 +327,7 @@ header("Refresh:180");
             </div>
         <?php endif; ?>
     </div>
+
     <!-- 獨家商品訂單下一步之後的填寫資料 -->
 </section>
 
@@ -394,11 +395,11 @@ header("Refresh:180");
                     <div class="mdcardlist-yu">
                         <p class="m-0">台北霞海城隍廟獨家聯名-七夕月老供品組</p>
                     </div>
-                    <select class="mdform-select-yu" id="autosizing-yu">
+                    <!-- <select class="mdform-select-yu" id="autosizing-yu">
                         <option value="0">甜作之盒單入組</option>
                         <option value="1">甜作之盒&棉布御守單入組</option>
                         <option value="2">棉布御守</option>
-                    </select>
+                    </select> -->
                     <!-- 單價 -->
                     <h5 class="mdprice-yu">
                         707

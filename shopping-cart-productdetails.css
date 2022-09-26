@@ -403,7 +403,9 @@ select:-webkit-autofill:focus {
 .priceNT-yu h6#total-price-yu::before{
   content: "總金額:NT$";
 }
-
+.imgsCardYu{
+  width: 10px;
+}
 /* ----- 桌機下拉詳細訂單表格總價---------*/
 .listinfo-details-totalprice-yu {
   padding-top: 0;
