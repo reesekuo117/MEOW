@@ -207,9 +207,8 @@ header("Refresh:180");
                                         </h2>
                                     </div>
                                     <div class="buy_btn">
-                                        <button class="buy d-flex justify-content-center align-items-center"  
-                                                data-sid="<?= $r["sid"]?>"
-                                                onclick="addToCart(event)">
+                                        <button class="buy btn_t_Yu d-flex justify-content-center align-items-center"  
+                                                >
                                             <div class="icon_buy">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <mask id="path-1-outside-1_1834_25020-499429" maskUnits="userSpaceOnUse" x="1.58203" y="3.25" width="20" height="17" fill="black">
@@ -328,7 +327,9 @@ header("Refresh:180");
                                         </h6>
                                     </div>
                                     <div class="buy_btn">
-                                        <button class="buy d-flex justify-content-center align-items-center">
+                                        <button class="buy d-flex justify-content-center align-items-center" 
+                                        data-sid="<?= $r["sid"]?>"
+                                                onclick="addToCart_T_Yu(event)">
                                             <div class="icon_buy">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <mask id="path-1-outside-1_1834_25020-499429" maskUnits="userSpaceOnUse" x="1.58203" y="3.25" width="20" height="17" fill="black">
@@ -1121,23 +1122,23 @@ header("Refresh:180");
 <script src="./travel_detail.js"></script>
 
 <script>
-    function addToCart(event){
-        const btn = $(event.currentTarget);
-        const qty = btn.closest(".card-body").find("select").val();
-        const sid = btn.attr("data-sid");
+            function addToCart_T_Yu(event) {
+            const btn = $(event.currentTarget);
+            const qty = btn.closest(".number").find(".people").text();
+            // const qty=1;
+            // console.log(btn);
+            // console.log('hihi',btn.closest(".number").find(".people").text());
+            const sid = btn.attr('data-sid');
+            console.log({sid, qty});
+            $.get(
+                're-cart-t-api.php', 
+                {sid, qty}, 
+                function(data){
+                    showCartCount(data);
+                }, 
+                'json');
+        }
 
-        console.log({sid, qty});
-
-        $.get(
-            're-t-cart-api.php',
-            {sid, qty}, 
-            function(data){
-                console.log(data);
-                
-                // showCartCount(data);
-            },
-            "json");
-    }
 </script>
 
 

@@ -1,3 +1,16 @@
+//獨家商品 旅遊行程分頁標籤切換
+$("#uniqui-a-yu").click(function(){
+  // console.log("yes");
+  $("#myTabContent-P-yu").show();
+  $("#myTabContent-T-yu").hide();
+});
+
+
+$("#travel-a-yu").click(function(){
+  $("#myTabContent-T-yu").show();
+  $("#myTabContent-P-yu").hide();
+});
+
 
 //----------刪除商品清單()--------------
 // const deleteIYu = $("#deleteIYu");
@@ -104,6 +117,7 @@ qtyminus.on("click" , function(){
 
 //全選的checkbox
 //獨家商品清單全選
+
 document.getElementById("check1AllYu").onclick = function () {
   var checkboxes = document.getElementsByName("oneCheck1Yu");
   for (var checkbox of checkboxes) {

@@ -2,7 +2,7 @@
 /*-----------------購物車訂單的進度條 ----------------- */
 
 /* *{
-    outline: 1px solid #000;
+    border: 1px solid #000;
 }  */
 
 .line-box-yu{
@@ -26,6 +26,7 @@
     margin: 28px 0;
     font-size: var(--font-h5-20)
 }
+
 .mdjustify-yu{
     display: flex;
     justify-content: space-evenly;
@@ -99,8 +100,15 @@
 }
 
 /* ---------桌機獨家商品 旅遊行程分頁標籤 ------------*/
-#myTabContent-yu{
-    max-width: 1400px;
+#myTabContent-P-yu{
+    max-width: 1450px;
+    border: 1px solid #000;
+    min-height: calc( 100vh - 135px );
+}
+#myTabContent-T-yu{
+    max-width: 1450px;
+    border: 1px solid #000;
+    min-height: calc( 100vh - 135px );
 }
 .pagination-yu{
     font-size: var(--font-h5-20);
@@ -200,7 +208,11 @@ th .checkbox-yu{
 }
 
 /* -----清單內字體顏色----------------- */
-#myTabContent-yu .table , .thead , .tbody h6{
+#myTabContent-P-yu .table , .thead , .tbody h6{
+    margin-bottom: 0px;
+    color: #432A0F;
+}
+#myTabContent-T-yu .table , .thead , .tbody h6{
     margin-bottom: 0px;
     color: #432A0F;
 }
@@ -212,9 +224,14 @@ th .checkbox-yu{
     width: 30px;
 }
 
-#myTabContent-yu .tbody th{
+#myTabContent-P-yu .tbody th{
     vertical-align: middle;
 } 
+
+#myTabContent-T-yu .tbody th{
+    vertical-align: middle;
+}
+
 #uniqui-yu.table .thead th{
     vertical-align: middle;
 }
@@ -255,7 +272,7 @@ td .total_price_yu{
 }
 /* -------- 旅遊行程表格外觀設定--------- */
 #travel-yu{
-    min-height: calc( 100vh - 50px );
+    /* min-height: calc( 100vh - 100px ); */
     /* width: 100%; */
 }
 #travel-yu .table .thead th{
