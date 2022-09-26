@@ -152,7 +152,7 @@ $('.orderbtn02-re').click(function(){
     $('.rightslide02-re').slideUp('normal');
 })
 // 給予評價
-$('#evaluation-btn-re').click(function(){
+$('.evaluation-btn-re').click(function(){
     $(this).parents("div.listslide-re").slideUp('normal');
     $(this).parents("div.listslide-re").next("div.commentslide-re").slideDown('normal');
     // $('.listslide-re').slideUp('normal');

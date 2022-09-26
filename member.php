@@ -63,10 +63,10 @@ $pageName ='會員中心'; //頁面名稱
             ad.city,
             ad2.city region
         FROM product_order po
-            JOIN product_details pod ON po.sid = pod.order_sid
-            JOIN product p ON p.sid = pod.product_sid
-            JOIN address ad ON ad.sid = po.address_city
-            JOIN address ad2 ON ad2.sid = po.address_region
+            LEFT JOIN product_details pod ON po.sid = pod.order_sid
+            LEFT JOIN product p ON p.sid = pod.product_sid
+            LEFT JOIN address ad ON ad.sid = po.address_city
+            LEFT JOIN address ad2 ON ad2.sid = po.address_region
             WHERE member_id=$member_id";
     $polist_rows = $pdo->query($polist_sql)->fetchAll();
 
@@ -81,7 +81,7 @@ $pageName ='會員中心'; //頁面名稱
 //     '$polist_rows' => $polist_rows,
 // ]);
 // exit;
-?>
+// ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./reese.css">
@@ -550,7 +550,7 @@ $pageName ='會員中心'; //頁面名稱
                         <div class="col-md text-20-re text-center">訂單狀態</div>
                         <div class="col-md text-20-re text-center thpadding-re">訂單備註</div>
                     </div>
-                    <?php foreach($polist_rows as $r): ?>
+                    <?php foreach($po_rows as $r): ?>
                         <!-- <table class="orderlisttable-re tablehover text-center w-100" >
                             <thead class="col-4 p-0">
                                 <tr class="orderlist-title-re col-12 p-0">
@@ -591,75 +591,82 @@ $pageName ='會員中心'; //頁面名稱
                                 </svg>
                             </div>
                         </div>
+                        
                         <!-- 訂單明細內容 -->
-                        <div class="listslide-re px-3 py-3 ">
-                            <table class="inside-orderlisttable-re tablehover text-center w-100" >
-                                <thead class="col-3 p-0">
-                                    <tr class="orderlist-title-re orderlisttitle-inside-re">
-                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-pic-re">商品圖片</th>
-                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-name-re">商品名稱</th>
-                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">規格</th>
-                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">單價</th>
-                                        <th class="col-12 col-md-1 text-18-re text-center ordertitle-other-re">數量</th>
-                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">小計</th>
-                                        <!-- <th class="col-12 col-md-1 text-18-re text-center ordertitle-other2-re"></th> -->
-                                    </tr>
-                                </thead>
-                                <tbody class="col-9 p-0">
-                                    <tr class="orderlist-re col-12 p-0">
-                                        <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt=""></td>
-                                        <td class="productname-re text-16-re text-center m-0"><?= $r['product_name'] ?></td>
-                                        <td class="text-16-re text-center ordertitle-other-re"><?= $r['product_name'] ?></td>
-                                        <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
-                                        <td class="text-16-re text-center ordertitle-other-re"><?= $r['quantity'] ?></td>
-                                        <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['total'] ?></td>
-                                        <td class="text-center ordertitle-other2-re "><button id="evaluation-btn-re" class="btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="d-flex flex-wrap pt-3">
-                                <div class="col-12 col-md-6 px-2">
-                                    <table class="w-100">
-                                        <tr>
-                                            <th colspan="2" class="text-16-re text-center bgcolor-re">收件人資訊</th>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-16-re py-1 widht30-re">收件人姓名</th>
-                                            <td class="text-16-re py-1"><?= $r['name'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-16-re py-1">收件人電話</th>
-                                            <td class="text-16-re py-1"><?= $r['phone'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-16-re py-1">收件人地址</th>
-                                            <td class="text-16-re py-1"><?= $r['city'] ?><?= $r['region'] ?><?= $r['address'] ?></td>
-                                        </tr>
+                        
+                            <div class="listslide-re px-3 py-3 ">
+                            <?php foreach($polist_rows as $rList): ?>
+                                <?php if($rList['sid'] === $r['sid']) :?>
+                                    <table class="inside-orderlisttable-re tablehover text-center w-100" >
+                                        <thead class="col-3 p-0">
+                                            <tr class="orderlist-title-re orderlisttitle-inside-re">
+                                                <th class="col-12 col-md-2 text-18-re text-center ordertitle-pic-re">商品圖片</th>
+                                                <th class="col-12 col-md-2 text-18-re text-center ordertitle-name-re">商品名稱</th>
+                                                <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">規格</th>
+                                                <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">單價</th>
+                                                <th class="col-12 col-md-1 text-18-re text-center ordertitle-other-re">數量</th>
+                                                <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">小計</th>
+                                                <!-- <th class="col-12 col-md-1 text-18-re text-center ordertitle-other2-re"></th> -->
+                                            </tr>
+                                        </thead>
+                                        <tbody class="col-9 p-0">
+                                            <tr class="orderlist-re col-12 p-0">
+                                                <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_img'] ?>.jpg" alt=""></td>
+                                                <td class="productname-re text-16-re text-center m-0"><?= $rList['product_name'] ?></td>
+                                                <td class="text-16-re text-center ordertitle-other-re"><?= $rList['product_name'] ?></td>
+                                                <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
+                                                <td class="text-16-re text-center ordertitle-other-re"><?= $rList['quantity'] ?></td>
+                                                <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $rList['total'] ?></td>
+                                                <td class="text-center ordertitle-other2-re "><button class="evaluation-btn-re btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
+                                            </tr>
+                                        </tbody>
                                     </table>
-                                </div>
-                                <div class="col-12 col-md-6 px-2">
-                                    <table class="w-100">
-                                        <tr>
-                                            <th colspan="2" class="text-16-re text-center bgcolor-re">物流及付款資訊</th>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-16-re py-1 widht30-re">收件方式</th>
-                                            <td class="text-16-re py-1"><?= $r['delivery'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-16-re py-1">付款方式</th>
-                                            <td class="text-16-re py-1"><?= $r['payment'] ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-16-re py-1">付款狀態</th>
-                                            <td class="text-16-re py-1"><?= $r['state'] ?></td>
-                                        </tr>
-                                    </table>
+                                <?php endif ?>
+                            <?php endforeach ?>
+                                <div class="d-flex flex-wrap pt-3">
+                                    <div class="col-12 col-md-6 px-2">
+                                        <table class="w-100">
+                                            <tr>
+                                                <th colspan="2" class="text-16-re text-center bgcolor-re">收件人資訊</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-16-re py-1 widht30-re">收件人姓名</th>
+                                                <td class="text-16-re py-1"><?= $rList['name'] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-16-re py-1">收件人電話</th>
+                                                <td class="text-16-re py-1"><?= $rList['phone'] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-16-re py-1">收件人地址</th>
+                                                <td class="text-16-re py-1"><?= $rList['city'] ?><?= $rList['region'] ?><?= $rList['address'] ?></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-12 col-md-6 px-2">
+                                        <table class="w-100">
+                                            <tr>
+                                                <th colspan="2" class="text-16-re text-center bgcolor-re">物流及付款資訊</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-16-re py-1 widht30-re">收件方式</th>
+                                                <td class="text-16-re py-1"><?= $r['delivery'] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-16-re py-1">付款方式</th>
+                                                <td class="text-16-re py-1"><?= $r['payment'] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-16-re py-1">付款狀態</th>
+                                                <td class="text-16-re py-1"><?= $r['state'] ?></td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        
                         <!-- 評論 -->
-                        <div class="commentslide-re px-3 py-3 position-relative">
+                        <from class="commentslide-re px-3 py-3 position-relative">
                             <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
                             <div class="ordercross-re ordercross01-re d-inline-block position-absolute">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -701,7 +708,8 @@ $pageName ='會員中心'; //頁面名稱
                                 <label><input id="tag-re-5" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                             </div>
                             <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
-                        </div>
+                        </from>
+                        
                     <?php endforeach ?>
                 </div>
     <!-- p4-T------------------------------------------------------------------ -->
