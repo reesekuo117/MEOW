@@ -324,25 +324,80 @@ $('.drawSection12 .horobtn').mouseleave(function () {
 //         'json');
 // }
 
-const btnSelected =[]
+// const btnSelected =[]
 
-function savedata(event){
-    btnSelected.push($(this));
-    console.log(btnSelected);
-}
+// function savedata(event){
+//     btnSelected.push($(this));
+//     console.log(btnSelected);
+// }
 
 // 條件
 
-$('.wantbtn').click(function () {
-    $(this).toggleClass('drawbtnToggle')
+    $('.wantbtn').click(function () {
+        $(this).toggleClass('drawbtnToggle')
+        const wantArray = [];
+        
+        $('.drawbtnToggle h2').each((index,item)=>{
+        wantArray.push($(item).text())
+        });
     
-    const wantArray = [];
-   $('.drawbtnToggle h2').each((index,item)=>{
-    wantArray.push($(item).text())
-    });
+        localStorage.setItem('wantArray', wantArray);
+    })
 
-    localStorage.setItem('wantArray',wantArray);
-})
+    function checkWantArray(){
+        const wantArray = localStorage.getItem('wantArray');
+        $('.wantbtn').each(function(index,item){
+            if(wantArray.includes($(item).text().trim())){
+                $(item).addClass('drawbtnToggle')
+            }
+        })
+    }
+
+    checkWantArray();
+
+
+// $('.wantbtn').click(function () {
+//     $(this).toggleClass('drawbtnToggle')
+// })
+
+// const wantArray = [];
+
+// $('#backtodraw07').click(function () {
+
+//     if(wantArray.length < 1){
+//         $('.wantbtn').click(function () {
+//             $(this).toggleClass('drawbtnToggle')
+//             const wantArray = [];
+            
+//             $('.drawbtnToggle h2').each((index,item)=>{
+//             wantArray.push($(item).text())
+//             });
+        
+//             localStorage.setItem('wantArray', wantArray);
+//         })
+//     }else{
+//         localStorage.getItem('wantArray')
+//         // 有這個陣列的選項都會變黃色
+//         $('.clearAll_ba').click(function () {
+//             localStorage.removeItem('wantArray');
+//         })
+//     }
+
+// // })
+
+// if($('.wantbtn').find('h2'))
+
+// 取陣列每一個值
+
+// const wantSelected
+
+// for (i=0 ; i<wantArray.length; i++) {
+//     console.log(wantArray[i]);
+//     let wantSelected = wantArray[i];
+//     return ;
+// }
+
+
 
 // 興趣
 
@@ -548,7 +603,7 @@ $('.interestbtn').click(function () {
         // console.log('no');
         // $('.btn_md_next').attr('disabled', true)
         $('.btn_md_next').addClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', '#')
+        $('.btn_md_next a').attr('href', '?')
 
     }
 })

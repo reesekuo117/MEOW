@@ -1489,7 +1489,7 @@ areas[val]();
 
 
 
-//TODO:求籤項目被改變的時候 地標卡片要篩選
+//求籤項目被改變的時候 地標卡片要篩選
 //如果該區域的廟(landmark)的category_tag不等於el.category_tag 就會隱藏
 $("#item_lb").on("change",function () {
     // console.log('HI', $(this).val());
@@ -1510,15 +1510,6 @@ $("#item_lb").on("change",function () {
             $(item).removeClass('d-inline-block').addClass('d-none');
         }   
     })
-    
-
-    // const tag = $('.landmark').attr('data-value');
-//     const [marks] = temples.filter(el=>{
-//     return el.category_tag==tag;
-
-// });
-// console.log('[marks]',[marks]);
-// marks[val]();
 });
 
 
@@ -1621,10 +1612,59 @@ function mbgetCate() {
                     </div>`
     })
     $('.temScroll-snap_lb .row').html(mtStr)
-
 }
 
 mbgetCate();
+
+//TODO:手機祈求篩選
+// function mbgetCate() {
+//     const mbarea_sid = mbarea_lb.val();
+    
+//     const mt = temples.filter(el=>mbarea_sid==el.area_sid);
+//     console.log('mbtemple',mt);
+
+//     const mt2 = mt.map(el=>el.category_tag);
+//     console.log('mbitem',mt2);
+//     const mbmySet = new Set(mt2);
+//     console.log('new Set(mt2)',new Set(mt2));
+
+//     let mbstr = '';
+//     for(let i of mbmySet){
+//         mbstr += `<option value="${i}">${i}</option>`
+//     };
+
+//     mbitem_lb.html(mbstr);
+
+   
+
+//     let mtStr = '';
+//     mt.forEach((item)=>{
+//         if ($(item).data('tag') === targetTag) {
+//               mtStr += `<div class="p-0">
+//                         <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="${item.sid}">
+//                             <div class="mx-auto c01-mbTemImg-wrap">
+//                                 <img class="w-100" src="./imgs/culture/temple/${item.img}_s.jpg" alt="">
+//                             </div>
+//                             <h6 class="text-center mt-3 text-white">${item.name}</h6>
+//                             <p class="xs mbdetail-info_lb mb-0 text-white">
+//                                 <span class="ml-3">${item.address}</span>
+//                                 <span class="ml-3">${item.opening_hours}</span>
+//                             </p>
+//                         </div>
+//                     </div>`
+//         } else {
+
+            
+//         }
+          
+//     })
+//     $('.temScroll-snap_lb .row').html(mtStr);
+// };
+
+// mbgetCate();
+
+
+
 
 
 //mb卡片
@@ -1663,6 +1703,9 @@ const mbcard_tpl_func = ({name,address,opening_hours,img,step,notice})=>{
                     ${notice}
                     </small>
                 </div>`
+            };
+
+
                 // <div class="prepage_lb pl-2 pt-3">
                 //     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 //         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white"/>
@@ -1700,9 +1743,6 @@ const mbcard_tpl_func = ({name,address,opening_hours,img,step,notice})=>{
 
 
 
-};
-
-
 $('.temScroll-snap_lb').on('click','.mbTemCard',function(){
 const mbid = $(this).attr('data-id');
 const [mbitem] = temples.filter(el=>{
@@ -1725,6 +1765,10 @@ $("html, body").animate({ scrollTop: $('#mbdetail-card').offset().top - 36 }, 50
 
 $('#mbarea_lb').change(function(){
     console.log('mbarea_lb changed');
+})
+
+$('#mbitem_lb').change(function(){
+    console.log('mbitem_lb changed');
 })
 
 
