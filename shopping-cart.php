@@ -66,7 +66,7 @@ header("Refresh:180");
             </div>
         <?php else : ?>
             <!-- 獨家商品 -->
-            <div class="tab-pane in active " id="uniqui-yu">
+            <div id="uniqui-yu">
                 <div class="px-0 col-auto justify-content-around text-center">
                     <div id="form-yu">
                         <table id="tabYu" class="table ">
@@ -211,7 +211,7 @@ header("Refresh:180");
                 購物車內沒有旅遊行程
             </div>
         <?php else : ?>
-            <div class="tab-pane fade" id="travel-yu">
+            <div id="travel-yu">
                 <div class="tab-content container col-auto justify-content-around mx-auto">
                     <div id="travel-form-yu">
                         <table class="table">
@@ -384,7 +384,7 @@ header("Refresh:180");
     </div>
     <div id="mdmyTabContent-yu" class=" px-1 tab-content container">
         <!--  手機購物車商品清單卡片 -->
-        <div id="mduniqui-yu" class=" container-fluid tab-pane in active">
+        <div id="mduniqui-yu" class=" container-fluid">
             <div class="card-yu row">
                 <!-- flex-nowrap -->
                 <div class=" d-flex px-1">
@@ -468,7 +468,7 @@ header("Refresh:180");
             </div>
         </div>
         <!--  手機購物車行程清單卡片 -->
-        <div id="mdtravel-yu" class="  container-fluid tab-pane fade ">
+        <div id="mdtravel-yu" class="  container-fluid">
             <div class="card-yu row">
                 <!-- flex-nowrap -->
                 <div class=" d-flex px-1">
