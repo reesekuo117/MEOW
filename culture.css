@@ -85,9 +85,6 @@ scroll-behavior: smooth;
 }
 
 /* 關於月老 */
-.section1_lb {
-  /* margin-top: -20px; */
-}
 .section1-content2_lb {
   transition: 0.5s;
 }
@@ -696,10 +693,6 @@ scroll-behavior: smooth;
   fill: var(--color-orange);
   transform: translate(-5px, -5px);
 }
-.map-wrap {
-  /* padding-left:100px ; */
-  /* margin: 0 auto; */
-}
 
 .select_lb {
   color: var(--color-brown-dark);
@@ -980,9 +973,6 @@ color: #CD562F;
   scroll-snap-type: x mandatory;
 }
 
-.prepage_lb {
-  /* background-color: var(--color-orange); */
-}
 .mbdetail-card_lb {
   height: calc(100vh - 35px);
   border-radius: 8px 8px 0 0;
