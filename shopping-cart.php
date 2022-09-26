@@ -217,14 +217,14 @@ header("Refresh:180");
                         <table class="table">
                             <thead class="thead ">
                                 <tr>
-                                    <th scope="col" class="m-auto checkbox-yu">
+                                    <!-- <th scope="col" class="m-auto checkbox-yu">
                                         <input id="check2AllYu" class="mx-1 " type="checkbox" aria-label="Checkbox for following text input">
                                         <label class="mb-0" for="">
                                             <h6 class="mb-0 ">
                                                 全選
                                             </h6>
                                         </label>
-                                    </th>
+                                    </th> -->
                                     <th>
                                         <h6 class="mb-0 mx-auto ">行程照片</h6>
                                     </th>
@@ -249,11 +249,11 @@ header("Refresh:180");
                                     <?php
                                     foreach ($_SESSION["tcart"] as $i => $j) : ?>
                                         <tr data-sid="" class="tcart-item">
-                                            <th scope="col ">
+                                            <!-- <th scope="col ">
                                                 <div class="row m-auto p-1 checkbox-yu ">
                                                     <input class=" mx-2 " type="checkbox" name="oneCheck2Yu" aria-label="Checkbox for following text input" checked>
                                                 </div>
-                                            </th>
+                                            </th> -->
                                             <!-- 行程照片 -->
                                             <td class="imgsCardYu">
                                             <img class="w-100" src="imgs/travel/cards/<?= $j['travelcard_img'] ?>" alt="...">
@@ -436,7 +436,8 @@ header("Refresh:180");
                         707
                     </h5>
                     <!-- 數量 -->
-                    <div class="d-flex" method='POST' action='#'>
+                    <!-- 數量 -->
+                    <form class="d-flex" method='POST' action='#'>
                         <input type='button' value='-' class='qtyminus' field='quantity' />
 
                         <span type='text' name='txt' value='1' class='px-1 spanqty-yu numberTotalYu'>
@@ -444,7 +445,7 @@ header("Refresh:180");
                         </span>
 
                         <input type='button' value='+' class='qtyplus' field='quantity' />
-                    </div>
+                    </form>
                 </div>
             </div>
             <div>
@@ -485,15 +486,15 @@ header("Refresh:180");
                         1500
                     </h5>
                     <!-- 數量 -->
-                    <div class="d-flex" method='POST' action='#'>
+                    <form class="d-flex" method='POST' action='#'>
                         <input type='button' value='-' class='qtyminus' field='quantity' />
 
-                        <span type='text' name='txt' value='1' class=' px-1 spanqty-yu numberTotalYu'>
+                        <span type='text' name='txt' value='1' class='px-1 spanqty-yu numberTotalYu'>
                             1
                         </span>
 
-                        <input id="plus-yu" type='button' value='+' class='qtyplus' field='quantity' />
-                    </div>
+                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                    </form>
                 </div>
             </div>
             <div>

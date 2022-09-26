@@ -375,6 +375,9 @@ select {
   background-color: var(--color-creamy-light);
   border: 2px solid var(--color-text87);
 }
+.favorite :active{
+  outline-style:none;
+}
 .td_footer_mb .buy {
   height: 45px;
   color: var(--color-text87);
