@@ -159,7 +159,7 @@ ol.carousel-indicators {
   text-decoration: none;
 }
 .tdnav_mb a small {
-  line-height: 50px;
+  /* line-height: 50px; */
 }
 .tdnav_mb a:hover small {
   color: #cd562f;
