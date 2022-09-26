@@ -52,10 +52,10 @@ $title = '線上求籤'
         </div>
         <div
             class="drawSection07btnGroup drawSection07btnGroup1 d-flex justify-content-between align-items-center mx-auto position-absolute">
-            <button class="wantbtn btn-round d-flex align-items-center my-0" onclick="savedata()">
+            <button class="wantbtn btn-round d-flex align-items-center my-0">
                 <h2 class="mx-auto mb-0" >年齡</h2>
             </button>
-            <button class="wantbtn btn-round d-flex align-items-center my-0" onclick="savedata()">
+            <button class="wantbtn btn-round d-flex align-items-center my-0">
                 <h2 class="mx-auto mb-0">外型</h2>
             </button>
         </div>
@@ -106,7 +106,7 @@ $title = '線上求籤'
         </a>
 
     </div>
-    <button class="btn_md_next btn_disabled_ba position-absolute disabled" onclick="savedata()">
+    <button class="btn_md_next btn_disabled_ba position-absolute disabled" onclick="">
         <a class="m-0 disabled text-decoration-none" href="#">
             <p class="m-0">
                 下一步
