@@ -543,13 +543,14 @@ $pageName ='會員中心'; //頁面名稱
                 </ul>
     <!-- p4-P------------------------------------------------------------------ -->
                 <div id="tab05-re" class="ordertab-inner-re">
-                    <div class="d-md-flex flex-nowrap orderlist-title-re">
-                        <div class=" col-md text-20-re text-center">訂單日期</div>
-                        <div class="col-md text-20-re text-center">訂單編號</div>
-                        <div class="col-md text-20-re text-center">訂單金額</div>
-                        <div class="col-md text-20-re text-center">訂單狀態</div>
-                        <div class="col-md text-20-re text-center thpadding-re">訂單備註</div>
-                    </div>
+                    <div class="">
+                        <div class="d-md-flex flex-nowrap orderlist-title-re">
+                            <div class=" col-md text-20-re text-center">訂單日期</div>
+                            <div class="col-md text-20-re text-center">訂單編號</div>
+                            <div class="col-md text-20-re text-center">訂單金額</div>
+                            <div class="col-md text-20-re text-center">訂單狀態</div>
+                            <div class="col-md text-20-re text-center thpadding-re">訂單備註</div>
+                        </div>
                     <?php foreach($po_rows as $r): ?>
                         <!-- <table class="orderlisttable-re tablehover text-center w-100" >
                             <thead class="col-4 p-0">
@@ -591,20 +592,19 @@ $pageName ='會員中心'; //頁面名稱
                                 </svg>
                             </div>
                         </div>
-                        
+                    </div>
                         <!-- 訂單明細內容 -->
-                        
                             <div class="listslide-re px-3 py-3 ">
                             <?php foreach($polist_rows as $rList): ?>
                                 <?php if($rList['sid'] === $r['sid']) :?>
                                     <table class="inside-orderlisttable-re tablehover text-center w-100" >
                                         <thead class="col-3 p-0">
                                             <tr class="orderlist-title-re orderlisttitle-inside-re">
-                                                <th class="col-12 col-md-2 text-18-re text-center ordertitle-pic-re">商品圖片</th>
-                                                <th class="col-12 col-md-2 text-18-re text-center ordertitle-name-re">商品名稱</th>
-                                                <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">規格</th>
+                                                <th class="col-12 col-md-3 text-18-re text-center ordertitle-pic-re">商品圖片</th>
+                                                <th class="col-12 col-md-3 text-18-re text-center ordertitle-name-re">商品名稱</th>
+                                                <!-- <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">規格</th> -->
                                                 <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">單價</th>
-                                                <th class="col-12 col-md-1 text-18-re text-center ordertitle-other-re">數量</th>
+                                                <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">數量</th>
                                                 <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">小計</th>
                                                 <!-- <th class="col-12 col-md-1 text-18-re text-center ordertitle-other2-re"></th> -->
                                             </tr>
@@ -613,7 +613,7 @@ $pageName ='會員中心'; //頁面名稱
                                             <tr class="orderlist-re col-12 p-0">
                                                 <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_img'] ?>.jpg" alt=""></td>
                                                 <td class="productname-re text-16-re text-center m-0"><?= $rList['product_name'] ?></td>
-                                                <td class="text-16-re text-center ordertitle-other-re"><?= $rList['product_name'] ?></td>
+                                                <!-- <td class="text-16-re text-center ordertitle-other-re"><?= $rList['product_name'] ?></td> -->
                                                 <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
                                                 <td class="text-16-re text-center ordertitle-other-re"><?= $rList['quantity'] ?></td>
                                                 <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $rList['total'] ?></td>

@@ -338,7 +338,7 @@ function addToCartP_re(event) {
         're-cart-p-api.php', 
         {sid, qty}, 
         function(data){
-            // showCartCountP(data);
+            showCartCount(data);
         }, 
         'json');
 }
@@ -358,7 +358,7 @@ function addToCartT_re(event) {
         're-cart-t-api.php', 
         {sid, qty}, 
         function(data){
-            // showCartCountT(data);
+            // showCartCount(data);
         }, 
         'json');
 }
