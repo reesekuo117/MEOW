@@ -1,6 +1,23 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
-$pageName ='home'; //頁面名稱
+$pageName ='獨家商品詳細頁'; //頁面名稱
+$title = '商品詳情';
+
+// if (!isset($_GET['sid'])){
+//     header('Location: product_list.php');
+//     exit;
+// }
+$sid = isset($_GET['sid']) ? intval($_GET['sid']):0;
+$sql = "SELECT * FROM product WHERE sid=$sid";
+// $sql = "SELECT * FROM product WHERE sid=localstorage的變數";
+//要用localstorage
+$rows = $pdo->query($sql)->fetchAll();
+// echo json_encode([
+//     '$rows'=>$rows,
+// ]);
+// exit;
+
+
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -8,6 +25,7 @@ $pageName ='home'; //頁面名稱
 <?php include __DIR__. '/parts/navbar.php'; ?>
 <div class="product_detail_07">
         <!-- computer head -->
+    <?php foreach ($rows as $r) : ?>
         <div class="pd_head d-none d-md-block" id="pd_title">
             <div class="container d-flex">
                 <div class="product_carousel col">
@@ -65,8 +83,8 @@ $pageName ='home'; //頁面名稱
                         <div class="row">
                             <div class="col">
                                 <div class="pd_t">
-                                    <h2>霞海城隍廟 X 甜作之盒月老供品組</h2>
-                                    <p>台北霞海城隍廟加持認證，最甜最完整的月老供品組合，一盒在手，求愛無阻！</p>
+                                    <h2><?= $r['product_name'] ?></h2>
+                                    <p><?= $r['product_subtitle'] ?></p>
                                 </div>
                             </div>
                             <div class="col">
@@ -83,14 +101,14 @@ $pageName ='home'; //頁面名稱
                                         <div class="icon_fire" style="color: var(--color-orange);">
                                             <i class="fa-solid fa-fire pr-2"></i>
                                         </div>
-                                        <p>已賣出3K + 個</p>
+                                        <p>已賣出<?= $r['product_popular'] ?>K + 個</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="price">
                                     <h2>
-                                        707
+                                    <?= $r['product_price']?>
                                     </h2>
                                 </div>
                             </div>
@@ -158,6 +176,8 @@ $pageName ='home'; //頁面名稱
                 </div>
             </div>
         </div>
+    <?php endforeach; ?>
+    
         <!-- mobile head 手機板輪播牆 -->
         <div class="pd_head_mb d-block d-md-none w-100">
             <div id="carouselExampleIndicators" class="carousel slide m-0 p-0 w-100" data-ride="carousel">
@@ -188,20 +208,12 @@ $pageName ='home'; //頁面名稱
                         <img src="./imgs/product/P04_5.webp" class="d-block w-100" alt="...">
                     </div>
                 </div>
-                <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span> -->
                 </a>
             </div>
             <div class="pb_headtitle_mb">
                 <div class="container">
-                    <h5 class="mt-2">霞海城隍廟聯名 X 甜作之盒</h5>
-                    <small>【最甜最完整的參拜體驗！】
-                        幫你把月老參拜體驗濃縮在這一盒中！</small>
+                    <h5 class="mt-2"><?= $r['product_name'] ?></h5>
+                    <small><?= $r['product_subtitle'] ?></small>
                     <div class="row justify-content-around align-items-center">
                         <div class="evaluation">
                             <div class="star d-flex">
@@ -216,11 +228,11 @@ $pageName ='home'; //頁面名稱
                                 <div class="icon_fire xs pr-1">
                                     <i class="fa-solid fa-fire"></i>
                                 </div>
-                                <small class="xs">已賣出3K + 個</small>
+                                <small class="xs">已賣出<?= $r['product_popular'] ?>K + 個</small>
                             </div>
                         </div>
                         <div class="price">
-                            <h4>707</h4>
+                            <h4><?= $r['product_price'] ?></h4>
                         </div>
                     </div>
                     <div class="size mt-2">
@@ -272,8 +284,8 @@ $pageName ='home'; //頁面名稱
                 <div class="row justify-content-center">
                     <div class="left_title">
                         <div class="col">
-                            <p>霞海城隍廟 X 甜作之盒月老供品組</p>
-                            <h2>707</h2>
+                            <p><?= $r['product_name'] ?></p>
+                            <h2><?= $r['product_price'] ?></h2>
                         </div>
                     </div>
 
@@ -346,9 +358,9 @@ $pageName ='home'; //頁面名稱
                             <div class="intro_bg" id="intro">
                                 <h5>商品介紹</h5>
                                 <div class="intro_img">
-                                    <img class="w-100" src="./imgs/product/P04_6.jpg" alt="">
+                                    <!-- <img class="w-100" src="./imgs/product/P04_6.jpg" alt=""> -->
                                 </div>
-                                <p>【最甜最完整的參拜體驗！】 <br>
+                                <!-- <p>【最甜最完整的參拜體驗！】 <br>
                                     幫你把月老參拜體驗濃縮在這一盒中！ <br>
                                     真命甜子小抄讓你 #釐清想要的愛情 <br>
                                     內附最甜供品，不用再煩惱要帶什麼供品參拜月老 <br>
@@ -364,12 +376,13 @@ $pageName ='home'; //頁面名稱
                                     既然月老最愛吃甜的，為什麼不用「甜密哲學」向月老訴說自己的感情觀和人生觀呢！ <br>
                                     <br>
                                     清香甜、芳醇甜、辛嗆甜...... <br>
-                                    甜蜜哲學甜小卡幫你發展了17種不同的甜，17種不同的感情模式，希望在和月老稟報前，先清楚的描繪屬於你內心嚮往的感情模式，發展出第18種，屬於你自己的甜。 <br>
+                                    甜蜜哲學甜小卡幫你發展了17種不同的甜，17種不同的感情模式，希望在和月老稟報前，先清楚的描繪屬於你內心嚮往的感情模式，發展出第18種，屬於你自己的甜。 <br> -->
+                                    <?= $r['product_introfirst']?>
                                 </p>
                                 <div class="intro_img">
-                                    <img class="w-100" src="./imgs/product/P04_7.jpg" alt="">
+                                    <!-- <img class="w-100" src="./imgs/product/P04_7.jpg" alt=""> -->
                                 </div>
-                                <p>「拜完然後呢？」 <br>
+                                <!-- <p>「拜完然後呢？」 <br>
                                     你的問題，也曾經是我們最大的煩惱， <br>
                                     除了保持「平常心」之外，我們為你整理了醞釀緣分的小技巧： <br>
                                     <br>
@@ -378,8 +391,9 @@ $pageName ='home'; //頁面名稱
                                     ● 善用『好運詩籤和紙』，妝點自己的生活日記或手帳，每次讀籤詩都覺得能量滿滿！ <br>
                                     ●
                                     分享月老的祝福：透過分送加持『參拜過的牛奶糖』廣結福緣，說不定就能遇見更多機會，自己留下一盒，還可以和3-30個朋友分享，這可就是3-30個機會啊！（直接送一整盒的話可以送3人，拆開來一人分一顆就可以分給30個人）
-                                    <br>
-                                </p>
+                                    <br> -->
+                                <?= $r['product_introsec']?>
+                                <!-- </p> -->
                             </div>
                             <div class="intro_bg" id="back">
                                 <h5>退換貨方式</h5>
@@ -617,7 +631,7 @@ $pageName ='home'; //頁面名稱
                                 </div>
                                 <!-- <div class="cd_mb d-block d-md-none">
                                 <a href="">看更多評論</a> 
-                            </div> -->
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -954,6 +968,7 @@ $pageName ='home'; //頁面名稱
                 </div>
             </div>
         </div>
+
     </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>
 <script src="./product_detail.js"></script>
