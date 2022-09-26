@@ -180,13 +180,13 @@ $pageName ='會員中心'; //頁面名稱
 
 
 //json_encode判斷型別輸出JSON 數字型態
-echo json_encode([ 
-    // '$prows' => $p_rows,
-    // '$trows' => $t_rows,
-    // '$po_rows' => $po_rows,
-    '$polist_rows' => $polist_rows,
-]);
-exit;
+// echo json_encode([ 
+//     // '$prows' => $p_rows,
+//     // '$trows' => $t_rows,
+//     // '$po_rows' => $po_rows,
+//     '$polist_rows' => $polist_rows,
+// ]);
+// exit;
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
