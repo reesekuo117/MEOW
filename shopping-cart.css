@@ -221,9 +221,7 @@ th .checkbox-yu{
     color: #432A0F;
 }
 /* -------- 獨家商品表格外觀設定--------- */
-.tbody .row{
-    
-}
+
 .imgsCardYu{
     width: 30px;
 }
@@ -275,10 +273,7 @@ td .total_price_yu{
     width: 20px;
 }
 /* -------- 旅遊行程表格外觀設定--------- */
-#travel-yu{
-    /* min-height: calc( 100vh - 100px ); */
-    /* width: 100%; */
-}
+
 #travel-yu .table .thead th{
     vertical-align: middle;
 }
