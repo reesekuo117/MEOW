@@ -180,13 +180,13 @@ $pageName ='會員中心'; //頁面名稱
 
 
 //json_encode判斷型別輸出JSON 數字型態
-// echo json_encode([ 
-//     // '$prows' => $p_rows,
-//     // '$trows' => $t_rows,
-//     // '$po_rows' => $po_rows,
-//     '$polist_rows' => $polist_rows,
-// ]);
-// exit;
+echo json_encode([ 
+    // '$prows' => $p_rows,
+    // '$trows' => $t_rows,
+    // '$po_rows' => $po_rows,
+    '$polist_rows' => $polist_rows,
+]);
+exit;
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -676,6 +676,7 @@ $pageName ='會員中心'; //頁面名稱
                         </tbody>
                         <?php endforeach ?>
                     </table>
+                    <?php foreach($polist_rows as $r): ?>
                     <div class="slide-re px-3 py-3">
                         <table class="inside-orderlisttable-re tablehover text-center w-100" >
                             <thead class="col-3 p-0">
@@ -689,7 +690,6 @@ $pageName ='會員中心'; //頁面名稱
                                     <!-- <th class="col-12 col-md-1 text-18-re text-center ordertitle-other2-re"></th> -->
                                 </tr>
                             </thead>
-                            <?php foreach($polist_rows as $r): ?>
                             <tbody class="col-9 p-0">
                                 <tr class="orderlist-re col-12 p-0">
                                     <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt=""></td>
@@ -701,9 +701,7 @@ $pageName ='會員中心'; //頁面名稱
                                     <td class="text-center ordertitle-other2-re "><button id="evaluation-btn-re" class="btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
                                 </tr>
                             </tbody>
-                            <?php endforeach ?>
                         </table>
-                        <?php foreach($polist_rows as $r): ?>
                         <div class="d-flex flex-wrap pt-3">
                             <div class="col-12 col-md-6 px-2">
                                 <table class="w-100">
@@ -744,8 +742,8 @@ $pageName ='會員中心'; //頁面名稱
                                 </table>
                             </div>
                         </div>
-                        <?php endforeach ?>
                     </div>
+                    <?php endforeach ?>
                     <div class="slide2-re px-3 py-3 position-relative">
                         <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
                         <div class="ordercross-re ordercross01-re d-inline-block position-absolute">
