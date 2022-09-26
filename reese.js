@@ -137,27 +137,35 @@ let $li = $('ul.ordertab-title-re li');
     });
 });
 // 查詢訂單
-$('.orderbtn-re').click(function(){
-    $('.slide-re').slideToggle('normal');
-    $('.slide2-re').slideUp('normal');
-})
+$('.orderbtn-re').on("click", function(){
+    $(this).parents().next("div.listslide-re").slideToggle('normal');
+    $(this).parents().next().next("div.commentslide-re").slideUp('normal');
+    // $('.listslide-re').slideToggle('normal');
+    // $('.commentslide-re').slideUp('normal');
+});
+// $('.orderbtn-re').click(function(){
+//     $('.slide-re').slideToggle('normal');
+//     $('.slide2-re').slideUp('normal');
+// })
 $('.orderbtn02-re').click(function(){
     $('.rightslide01-re').slideToggle('normal');
     $('.rightslide02-re').slideUp('normal');
 })
 // 給予評價
-$('#evaluation-btn-re').click(function(){
-    $('.slide-re').slideUp('normal');
-    $('.slide2-re').slideDown('normal');
+$('.evaluation-btn-re').click(function(){
+    $(this).parents("div.listslide-re").slideUp('normal');
+    $(this).parents("div.listslide-re").next("div.commentslide-re").slideDown('normal');
+    // $('.listslide-re').slideUp('normal');
+    // $('.commentslide-re').slideDown('normal');
 })
 $('#evaluation02-btn-re').click(function(){
     $('.rightslide01-re').slideUp('normal');
     $('.rightslide02-re').slideDown('normal');
 })
-// 關閉所以明細
+// 關閉所有明細
 $('.ordercross-re svg').click(function(){
-    $('.slide-re').slideUp('normal');
-    $('.slide2-re').slideUp('normal');
+    $('.listslide-re').slideUp('normal');
+    $('.commentslide-re').slideUp('normal');
 })
 $('.ordercross02-re').click(function(){
     $('.rightslide01-re').slideUp('normal');
@@ -330,7 +338,7 @@ function addToCartP_re(event) {
         're-cart-p-api.php', 
         {sid, qty}, 
         function(data){
-            // showCartCountP(data);
+            showCartCount(data);
         }, 
         'json');
 }
@@ -350,7 +358,7 @@ function addToCartT_re(event) {
         're-cart-t-api.php', 
         {sid, qty}, 
         function(data){
-            // showCartCountT(data);
+            // showCartCount(data);
         }, 
         'json');
 }

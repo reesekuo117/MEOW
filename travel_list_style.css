@@ -288,7 +288,9 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-
+.t_img{
+    height: 260px;
+}
 .t_img img{
     /* position: relative; */
     /* width: 400px; */
@@ -300,7 +302,9 @@
     /* padding: 30px; */
     margin: 0 auto;
 }
-
+/* .card-body{
+    padding: 12px 60px;
+} */
 @media screen and (max-width:768px){
     .card-body{
         padding: 20px 20px 10px;
@@ -337,26 +341,29 @@
         bottom: 200%;
         stroke: #fff;
         cursor: pointer;
+        z-index: 9999999;
     
         }
         .icon_fivestar{
             width: 18px;
             height: 18px;
             background: url(./imgs/product/star.png);
-            
-        
             }
-    
 }
 /* .card-body_mb{
     padding: 12px;
 } */
+.card_title .icon_heart{
+    z-index: 999999;
+    position: absolute;
+}
 .card-body .row{
     flex-direction: column;
 }
 .card_title{
     /* padding-bottom: 20px; */
     position: relative;
+
 }
 /* .card_title_mb{
     padding-bottom: 8px;
@@ -402,6 +409,13 @@
     .price{
         margin-bottom: 24px;
     }
+    .card_title{
+        padding: 20px 0 0 26px;
+
+    }
+    .card_under{
+        padding: 0 0 0 26px;
+    }
 }
 /* @media screen and (max-width:768px){
 
@@ -436,9 +450,7 @@
 .t_card{
     padding-bottom: 32px;
 }
-.card-body{
-    padding: 12px 60px;
-}
+
 
 /* @media screen and (max-width:768px) {
     .card-body{

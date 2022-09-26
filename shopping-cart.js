@@ -1,3 +1,21 @@
+//獨家商品 旅遊行程分頁標籤切換
+
+$(".CartYu").click(function () {
+  // console.log("yes");
+  $("#myTabContent-P-yu").show();
+  $("#myTabContent-T-yu").css("display", "none !important");
+});
+
+$("#uniqui-a-yu").click(function () {
+  // console.log("yes");
+  $("#myTabContent-P-yu").show();
+  $("#myTabContent-T-yu").hide();
+});
+
+$("#travel-a-yu").click(function () {
+  $("#myTabContent-T-yu").show();
+  $("#myTabContent-P-yu").hide();
+});
 
 //----------刪除商品清單()--------------
 // const deleteIYu = $("#deleteIYu");
@@ -62,10 +80,12 @@ qtyplus.on("click", function () {
   // numChanged();
 });
 
-qtyminus.on("click" , function(){
+qtyminus.on("click", function () {
   let num = +$(this).next().text().trim();
-  if( num >1 ){
-    $(this).next().text( num - 1 );
+  if (num > 1) {
+    $(this)
+      .next()
+      .text(num - 1);
     console.log(
       "要修改的h6",
       $(this).closest("td").next().find("h6").text().trim()
@@ -81,9 +101,6 @@ qtyminus.on("click" , function(){
     $(this).closest("td").next().find("h6").text(total);
   }
 });
-
-
-
 
 // qtyminus.on("click", function () {
 //   let num = +numbertotal_yu.html();

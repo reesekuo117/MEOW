@@ -138,3 +138,23 @@ function checkFormSignup(){
         }, 'json');
     }
 }
+
+
+//按了加入購物車 會改變購物車數量
+function showCartCount(obj){
+    let count = 0;
+    
+    for(let k in obj){
+        const item= obj[k];
+        count += +item.qty; //+是讓字串轉型態
+
+    }
+    $("#cartCountYu").html(count);
+}
+
+$.get(
+    "re-cart-t-api.php",
+    function(data){
+        showCartCount(data);
+    },
+    "json");

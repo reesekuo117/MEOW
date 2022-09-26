@@ -148,44 +148,19 @@ $(window).scroll(function () {
         //     console.log($(window).height());
         // });
 
-        // ----------------卡片輪播牆???-------------------
-// $(function() {
-    // This button will increment the value
-    // $('.plus').click(function() {
-    // Stop acting like a button
-    // e.preventDefault();
-    // Get the field name
-    // fieldName = $(this).attr('field');
-    // Get its current value
-    // var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-    // If is not undefined
-    // if (!isNaN(currentVal)) {
-      // Increment
-        // $('input[name=' + fieldName + ']').val(currentVal + 1);
-    // } else {
-      // Otherwise put a 0 there
-       //  $('input[name=' + fieldName + ']').val(0);
-    // }
-    // });
 
-    // This button will decrement the value till 0
-        // $(".minus").click(function() {
-        // Stop acting like a button
-        // e.preventDefault();
-        // Get the field name
-        // fieldName = $(this).attr('field');
-        // Get its current value
-        // var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-        // If it isn't undefined or its greater than 0
-        // if (!isNaN(currentVal) && currentVal > 0) {
-        // Decrement one
-            // $('input[name=' + fieldName + ']').val(currentVal - 1);
-        // } else {
-        // Otherwise put a 0 there
-            // $('input[name=' + fieldName + ']').val(0);
+        //------------------商品立即購買--------------
+        // function addToCart_T_Yu(event) {
+        //     const btn = $(event.currentTarget);
+        //     const qty = btn.closest(".purchase_travel").find(".total_price").val();
+        //     console.log(btn);
+        //     const sid = btn.attr('data-sid');
+        //     console.log({sid, qty});
+        //     $.get(
+        //         're-cart-t-api.php', 
+        //         {sid, qty}, 
+        //         function(data){
+        //             // showCartCountT(data);
+        //         }, 
+        //         'json');
         // }
-        // });
-    // });
-
-
-    // --------------報名場次---------------

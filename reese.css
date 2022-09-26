@@ -1,5 +1,5 @@
 *{
-    /* outline: 1px solid #000; */
+    outline: 1px solid #000;
 }
 header .navbar {
     /* background-color: transparent!important; */
@@ -943,7 +943,7 @@ table .inside-orderlisttable-re {
 .price-re::before{
     content: "NT$ ";
 }
-.slide-re, .slide2-re, .rightslide01-re, .rightslide02-re {
+.listslide-re, .commentslide-re, .rightslide01-re, .rightslide02-re {
     background-color: var(--color-lightcreamy);
     display: none;
 }

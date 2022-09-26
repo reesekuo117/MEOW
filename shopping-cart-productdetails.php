@@ -1,6 +1,11 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName ='購物車商品'; //頁面名稱
+
+
+$sql = "SELECT * FROM product WHERE 1";
+$temples = $pdo->query($sql)->fetchAll(); 
+
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -98,11 +103,11 @@ header("Refresh:180");
                                                                 商品名稱
                                                             </h6>
                                                         </th>
-                                                        <th scope="col">
+                                                        <!-- <th scope="col">
                                                             <h6 class="mb-0">
                                                                 規格
                                                             </h6>
-                                                        </th>
+                                                        </th> -->
                                                         <th scope="col">
                                                             <h6 class="mb-0">
                                                                 單價
@@ -121,60 +126,34 @@ header("Refresh:180");
                                                     </tr>
                                                 </thead>
                                                 <tbody class="tbody">
-                                                    <tr class="">
-                                                        <!-- 商品照片 -->
-                                                        <td>
-                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
-                                                        </td>
-                                                        <!-- 商品名稱 -->
-                                                        <td>
-                                                            <h6 class="m-0">
-                                                                台北霞海城隍廟獨家聯名
-                                                                <br />
-                                                                -七夕月老供品組-甜作之盒
-                                                            </h6>
-                                                        </td>
-                                                        <!-- 商品規格 -->
-                                                        <td>規格</td>
-                                                        <!-- 單價 -->
-                                                        <td class="OnePriceYu">
-                                                            707
-                                                        </td>
-                                                        <!-- 數量 -->
-                                                        <td>1</td>
-                                                        <!-- 小計 -->
-                                                        <td class="LittlePriceYu">
-                                                            707
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <tbody class="tbody">
-                                                    <tr class="">
-                                                        <!-- 商品照片 -->
-                                                        <td>
-                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
-                                                        </td>
-                                                        <!-- 商品名稱 -->
-                                                        <td>
-                                                            <h6 class="m-0">
-                                                                台北霞海城隍廟獨家聯名
-                                                                <br/>
-                                                                -七夕月老供品組-甜作之盒
-                                                            </h6>
-                                                        </td>
-                                                        <!-- 商品規格 -->
-                                                        <td>規格</td>
-                                                        <!-- 單價 -->
-                                                        <td class="OnePriceYu">
-                                                            707
-                                                        </td>
-                                                        <!-- 數量 -->
-                                                        <td>1</td>
-                                                        <!-- 小計 -->
-                                                        <td class="LittlePriceYu">
-                                                            707
-                                                        </td>
-                                                    </tr>
+                                                    <?php
+                                                    foreach ($_SESSION["pcart"] as $k => $v) : ?>
+                                                        <tr class="">
+                                                            <!-- 商品照片 -->
+                                                            <td class="imgsCardYu">
+                                                                <!-- <img src="imgs/product/< ?= $v['product_card_img'] ?>.jpg" class="card-img-top" > -->
+                                                                <img class="" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
+                                                            </td>
+                                                            <!-- 商品名稱 -->
+                                                            <td>
+                                                                <h6 class="m-0">
+                                                                    <?= $v["product_name"] ?>
+                                                                </h6>
+                                                            </td>
+                                                            <!-- 商品規格 -->
+                                                            <!-- <td>規格</td> -->
+                                                            <!-- 單價 -->
+                                                            <td class="OnePriceYu">
+                                                                <?= $v["product_price"] ?>
+                                                            </td>
+                                                            <!-- 數量 -->
+                                                            <td>1</td>
+                                                            <!-- 小計 -->
+                                                            <td class="LittlePriceYu">
+                                                                <?= $v["product_price"] ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -552,6 +531,10 @@ header("Refresh:180");
                 </form>
             </div>
         </section>
+
+
+
+
 
         <!-- ------------------手機 ------------------------>
         <section class=" d-block d-md-none">

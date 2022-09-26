@@ -33,6 +33,42 @@ if ($cate) {
 }
 
 
+// $dataSql = "SELECT * FROM `product` ORDER BY ";
+$dataSort = ' ORDER BY ';
+if(isset($_GET['sort'])){
+        if($_GET['sort'] === 'hotp'){
+            // 設定hotp變數和$dataSort的內容
+            $dataSort .= " `product_popular` DESC ";
+        }
+        
+        if($_GET['sort'] === 'lowerp'){
+            $dataSort .= " `product_price` ASC ";
+        }
+        
+        if($_GET['sort'] === 'higherp'){
+            $dataSort .= " `product_price` DESC ";
+        }
+        if($_GET['sort'] === 'newp'){
+            $dataSort .= " `created_at` DESC ";
+        }
+        // $sqlSearchStr = $dataSql. $dataSort. sprintf(" LIMIT %s, %s ",
+        // ($page - 1) * $perPage,
+        // $perPage
+        // ) ;
+        // $qsp['sqlSearchStr'] = $sqlSearchStr;
+        // 將兩個變數的內容相加
+    
+        // if($dataSort != ''){
+        //     // 因為上面有定義過rows的內容，但又加上新的變數了，所以要將兩個結合，如果$dataSort的內容不是空字串，就要讓$rows執行用新條件$sqlSearchStr再重新執行一次
+        //     $rows = $pdo->query($sqlSearchStr)->fetchAll();
+        // }
+    }
+    else{
+        $dataSort .=  " `sid` ASC";
+    }    
+
+
+
 // 取得資料的總筆數
 $t_sql = "SELECT COUNT(1) FROM product $where";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
@@ -59,8 +95,9 @@ if ($totalRows > 0) {
     }
     // 取得該頁面的資料
     $sql = sprintf(
-        "SELECT * FROM `product` %s ORDER BY `sid` ASC LIMIT %s, %s",
+        "SELECT * FROM `product` %s %s LIMIT %s, %s",
         $where,
+        $dataSort,
         ($page - 1) * $perPage,
         $perPage
     );
@@ -77,38 +114,38 @@ if ($totalRows > 0) {
 //取得價格由高到低
 // $lowerp = $pdo->query("SELECT `product_price` FROM `product` ORDER BY `product_price` DESC") 
 //    ->fetchAll();
-$dataSql = "SELECT * FROM `product` ORDER BY ";
-$dataSort = '';
+// $dataSql = "SELECT * FROM `product` ORDER BY ";
+// $dataSort = '';
 // SQL語法前面都一樣，所以將一樣的部分"SELECT * FROM `product` GROUP BY "設定成變數
 // 但是GROUP BY之後的東西都不一樣，所以設變數空字串，在if內再給空字串不一樣的內容
-if(isset($_GET['sort'])){
-    if($_GET['sort'] === 'hotp'){
-        // 設定hotp變數和$dataSort的內容
-        $dataSort = " `product_popular` DESC ";
-    }
+// if(isset($_GET['sort'])){
+//     if($_GET['sort'] === 'hotp'){
+//         // 設定hotp變數和$dataSort的內容
+//         $dataSort = " `product_popular` DESC ";
+//     }
     
-    if($_GET['sort'] === 'lowerp'){
-        $dataSort = " `product_price` ASC ";
-    }
+//     if($_GET['sort'] === 'lowerp'){
+//         $dataSort = " `product_price` ASC ";
+//     }
     
-    if($_GET['sort'] === 'higherp'){
-        $dataSort = " `product_price` DESC ";
-    }
-    if($_GET['sort'] === 'newp'){
-        $dataSort = " `created_at` DESC ";
-    }
-    $sqlSearchStr = $dataSql. $dataSort. sprintf(" LIMIT %s, %s ",
-    ($page - 1) * $perPage,
-    $perPage
-    ) ;
-    // $qsp['sqlSearchStr'] = $sqlSearchStr;
-    // 將兩個變數的內容相加
+//     if($_GET['sort'] === 'higherp'){
+//         $dataSort = " `product_price` DESC ";
+//     }
+//     if($_GET['sort'] === 'newp'){
+//         $dataSort = " `created_at` DESC ";
+//     }
+//     $sqlSearchStr = $dataSql. $dataSort. sprintf(" LIMIT %s, %s ",
+//     ($page - 1) * $perPage,
+//     $perPage
+//     ) ;
+//     // $qsp['sqlSearchStr'] = $sqlSearchStr;
+//     // 將兩個變數的內容相加
 
-    if($dataSort != ''){
-        // 因為上面有定義過rows的內容，但又加上新的變數了，所以要將兩個結合，如果$dataSort的內容不是空字串，就要讓$rows執行用新條件$sqlSearchStr再重新執行一次
-        $rows = $pdo->query($sqlSearchStr)->fetchAll();
-    }
-}
+//     if($dataSort != ''){
+//         // 因為上面有定義過rows的內容，但又加上新的變數了，所以要將兩個結合，如果$dataSort的內容不是空字串，就要讓$rows執行用新條件$sqlSearchStr再重新執行一次
+//         $rows = $pdo->query($sqlSearchStr)->fetchAll();
+//     }
+// }
 
 // echo json_encode([
 //     'totalRows' => $totalRows,
@@ -156,7 +193,7 @@ if(isset($_GET['sort'])){
     <!-- -----------------------------------搜尋欄結束------------------------------------ -->
 
     <!-- 桌機版排序 -->
-    <div class="sort d-md-block d-none">
+    <div id="desktopSort" class="sort d-md-block d-none">
         <div class="container">
             <div class="product_sort d-md-flex justify-content-center align-items-center">
                 <!-- <div class="col"></div> -->
@@ -165,23 +202,23 @@ if(isset($_GET['sort'])){
                     <h5 style="color: var(--color-text87);"><i class="fa-regular fa-hourglass-half px-1"></i>排序方式</h5>
                 </div>
                 <div class="col">
-                    <a href="?sort=newp">
+                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=newp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='newp')? "sort_active" : "" ?>">
                         <h5>最新上架</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?sort=hotp">
+                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=hotp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='hotp')? "sort_active" : "" ?>">
                         <!-- 先設定要連到哪裡，再往上設定變數 -->
                         <h5>熱門程度</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?sort=higherp">
+                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
                         <h5>價格高 → 低</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?sort=lowerp">
+                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=lowerp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='lowerp')? "sort_active" : "" ?>">
                         <h5>價格低 → 高</h5>
                     </a>
                 </div>
@@ -222,28 +259,6 @@ if(isset($_GET['sort'])){
             </div>
         </div>
     </div>
-    <!-- <div class="timesort_mb d-none d-md-none ">
-        <div class="col py-1">
-            <a href="#">
-                <small>最新上架</small>
-            </a>
-        </div>
-        <div class="col py-1">
-            <a href="#">
-                <small>熱門程度</small>
-            </a>
-        </div>
-        <div class="col py-1">
-            <a href="#">
-                <small>價格高 → 低</small>
-            </a>
-        </div>
-        <div class="col py-1">
-            <a href="#">
-                <small>價格低 → 高</small>
-            </a>
-        </div>
-    </div> -->
 
     <div class="product_section">
         <div class="container d-flex">
@@ -251,26 +266,17 @@ if(isset($_GET['sort'])){
             <div class="aside d-none d-md-block pr-3">
                 <div class="col">
                     <div class="cate_filter">
-                        <div class="product_cate btncolor_default">
-                            <a type="button" href="?" >
+                        <div class="product_cate <?php echo ($cate)? "btncolor_default" : "btncolor_active" ?>">
+                            <a type="button" href="?#desktopSort" >
                                 <h5>－全部商品</h5>
                             </a>
                         </div>
-                        <!-- 分類壞掉了QQ因為用e.preventDefault();才會壞掉 -->
-                        <!-- <?php foreach ($cates as $c): ?> 
-                        <div class="product_cate btncolor_default"> -->
-                            <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                            <!-- <a type="button" href="?cate=<?= $qsp['cate']=$c['sid'] ?>">
-                                <h5>－<?= $c['category_name'] ?></h5>
-                            </a>
-                        </div>
-                        <?php endforeach ?> -->
-
+                        <!-- qsp2?? -->
                         <?php $qsp2 = $qsp;
                         foreach ($cates as $c): ?> 
-                        <div class="product_cate btncolor_default">
+                        <div class="product_cate <?php echo ($cate==$c['sid'])? "btncolor_active" : "btncolor_default" ?>">
                             <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                            <a type="button" href="?cate=<?= $qsp2['cate']=$c['sid'] ?>">
+                            <a type="button" href="?cate=<?= $qsp2['cate']=$c['sid'] ?>#desktopSort">
                                 <h5>－<?= $c['category_name'] ?></h5>
                             </a>
                         </div>
@@ -304,20 +310,20 @@ if(isset($_GET['sort'])){
             <div class="product_list w-100">
                 <!-- --------------------卡片---------------------- -->
                 <div class="row">
-                    <?php foreach ($rows as $r) : ?>
+                    <?php  $qsp2 = $qsp; 
+                    foreach ($rows as $r) : ?>
                         <div class="col-12 col-md-4">
                             <div class="card" data-sid="<?= $r['id'] ?>">
-                                <a href="product_detail.php">
+                            <!-- 要用localstorage -->
+                                <a href="./product_detail.php?sid=<?= $r['sid'] ?>">
                                     <div class="p_img">
                                         <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" class="card-img-top" alt="...">
                                     </div>
                                 </a>
                                 <div class="card-body">
-                                    <a href="product_detail.php">
+                                    <a href="./product_detail.php?sid=<?= $r['id'] ?>">
                                         <div class="card_title pb-1">
                                             <h5 class="card-text" style="height: 56px;">
-                                            <!-- ${product_name} -->
-
                                                 <?= $r['product_name'] ?>
                                             </h5>
                                         </div>

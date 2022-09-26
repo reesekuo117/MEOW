@@ -18,9 +18,9 @@ function slideOne() {
 
 
     // this is only if the price range doesn't start at 0 like in this case, in the project I was working on. Otherwise the logic would be far simpler 
-    let sliderOnePercentage = sliderOne.attributes.min.nodeValue;
+    // let sliderOnePercentage = sliderOne.attributes.min.nodeValue;
     // console.log(sliderOnePercentage);
-    let sliderMovementOne = sliderOne.value - sliderOnePercentage;
+    // let sliderMovementOne = sliderOne.value - sliderOnePercentage;
     // console.log(sliderMovementOne);
     // console.log(sliderMovementOne /2900  * 5.862);
     // SliderValOne.style.left = `${sliderMovementOne /2900 * 70}px`;
@@ -31,112 +31,118 @@ function slideOne() {
     });
 
     
+    const newArray = productData.filter( (item)=>{
+        return +item.product_price > sliderOne.value
+        // 選低價格的拉霸的值小於商品價格時
+    });
 
-    console.log('delArray',delArray);
-
-    console.log('delArray.length',delArray.length);
-    console.log('delArrayLength',delArrayLength);
-    if(delArray.length > delArrayLength){
-        delArray.forEach(element => {
-            console.log($(`.card[data-sid="${element.id}"]`).length);
-            $(`.card[data-sid="${element.id}"]`).parent().remove();
-        });
-    }
-    else if (delArray.length < delArrayLength){
-        let htmlStr = '';
-        productData.forEach( (item,index)=>{
-            if(index > delArray.length && index < delArrayLength){
-                htmlStr += `<div class="col-12 col-md-4">
-                    <div class="card" data-sid="${item.id}">
-                        <a href="product_detail.php">
-                            <div class="p_img">
-                                <img src="./imgs/product/cards/${item.product_card_img}.jpg" class="card-img-top" alt="...">
-                            </div>
-                        </a>
-                        <div class="card-body">
-                            <a href="product_detail.php">
-                                <div class="card_title pb-1">
-                                    <h5 class="card-text" style="height: 56px;">
-                                    ${item.product_name}</h5>
-                                </div>
-                            </a>
-                            <div class="icon_heart">
-                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"></path>
-                                </svg>
-                            </div>
-                            <div class="row card_under justify-content-between align-items-baseline">
-                                <small class="xs card-text d-flex align-items-center pr-0">
-                                    <div class="icon_star pr-1">
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <span>${item.product_comment}</span>
-                                </small>
-                                <small class="xs card-text d-flex align-items-center">
-                                    <div class="icon_fire pr-1">
-                                        <i class="fa-solid fa-fire"></i>
-                                    </div>
-                                    <span>${item.product_popular}K+個已訂購</span>
-                                </small>
-                                <h4 class="card-text price">
-                                ${item.product_price}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
-            }
-        })
-
-        $('.product_list > .row').prepend(htmlStr);
-    }
     
 
-    delArrayLength = delArray.length;
+    // console.log('delArray',delArray);
 
-    // let htmlStr = '';
-
-    // for (let i = 0; i < newArray.length ; i++){
-    //     htmlStr += `<div class="col-12 col-md-4">
-    //     <div class="card">
-    //         <a href="product_detail.php">
-    //             <div class="p_img">
-    //                 <img src="./imgs/product/cards/${newArray[i].product_card_img}.jpg" class="card-img-top" alt="...">
-    //             </div>
-    //         </a>
-    //         <div class="card-body">
-    //             <a href="product_detail.php">
-    //                 <div class="card_title pb-1">
-    //                     <h5 class="card-text" style="height: 56px;">
-    //                     ${newArray[i].product_name}</h5>
-    //                 </div>
-    //             </a>
-    //             <div class="icon_heart">
-    //                 <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-    //                     <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"></path>
-    //                 </svg>
-    //             </div>
-    //             <div class="row card_under justify-content-between align-items-baseline">
-    //                 <small class="xs card-text d-flex align-items-center pr-0">
-    //                     <div class="icon_star pr-1">
-    //                         <i class="fa-solid fa-star"></i>
-    //                     </div>
-    //                     <span>${newArray[i].product_comment}</span>
-    //                 </small>
-    //                 <small class="xs card-text d-flex align-items-center">
-    //                     <div class="icon_fire pr-1">
-    //                         <i class="fa-solid fa-fire"></i>
-    //                     </div>
-    //                     <span>${newArray[i].product_popular}K+個已訂購</span>
-    //                 </small>
-    //                 <h4 class="card-text price">
-    //                 ${newArray[i].product_price}</h4>
-    //             </div>
-    //         </div>
-    //     </div>
-    // </div>`
+    // console.log('delArray.length',delArray.length);
+    // console.log('delArrayLength',delArrayLength);
+    // if(delArray.length > delArrayLength){
+    //     delArray.forEach(element => {
+    //         console.log($(`.card[data-sid="${element.id}"]`).length);
+    //         $(`.card[data-sid="${element.id}"]`).parent().remove();
+    //     });
     // }
+    // else if (delArray.length < delArrayLength){
+    //     let htmlStr = '';
+    //     productData.forEach( (item,index)=>{
+    //         if(index > delArray.length && index < delArrayLength){
+    //             htmlStr += `<div class="col-12 col-md-4">
+    //                 <div class="card" data-sid="${item.id}">
+    //                     <a href="product_detail.php">
+    //                         <div class="p_img">
+    //                             <img src="./imgs/product/cards/${item.product_card_img}.jpg" class="card-img-top" alt="...">
+    //                         </div>
+    //                     </a>
+    //                     <div class="card-body">
+    //                         <a href="product_detail.php">
+    //                             <div class="card_title pb-1">
+    //                                 <h5 class="card-text" style="height: 56px;">
+    //                                 ${item.product_name}</h5>
+    //                             </div>
+    //                         </a>
+    //                         <div class="icon_heart">
+    //                             <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+    //                                 <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"></path>
+    //                             </svg>
+    //                         </div>
+    //                         <div class="row card_under justify-content-between align-items-baseline">
+    //                             <small class="xs card-text d-flex align-items-center pr-0">
+    //                                 <div class="icon_star pr-1">
+    //                                     <i class="fa-solid fa-star"></i>
+    //                                 </div>
+    //                                 <span>${item.product_comment}</span>
+    //                             </small>
+    //                             <small class="xs card-text d-flex align-items-center">
+    //                                 <div class="icon_fire pr-1">
+    //                                     <i class="fa-solid fa-fire"></i>
+    //                                 </div>
+    //                                 <span>${item.product_popular}K+個已訂購</span>
+    //                             </small>
+    //                             <h4 class="card-text price">
+    //                             ${item.product_price}</h4>
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //             </div>`
+    //         }
+    //     })
 
-    // $('.product_list .row').html(htmlStr)
+    //     $('.product_list > .row').prepend(htmlStr);
+    // }
+    
+
+    // delArrayLength = delArray.length;
+
+    let htmlStr = '';
+
+    for (let i = 0; i < newArray.length ; i++){
+        htmlStr += `<div class="col-12 col-md-4">
+        <div class="card">
+            <a href="product_detail.php">
+                <div class="p_img">
+                    <img src="./imgs/product/cards/${newArray[i].product_card_img}.jpg" class="card-img-top" alt="...">
+                </div>
+            </a>
+            <div class="card-body">
+                <a href="product_detail.php">
+                    <div class="card_title pb-1">
+                        <h5 class="card-text" style="height: 56px;">
+                        ${newArray[i].product_name}</h5>
+                    </div>
+                </a>
+                <div class="icon_heart">
+                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"></path>
+                    </svg>
+                </div>
+                <div class="row card_under justify-content-between align-items-baseline">
+                    <small class="xs card-text d-flex align-items-center pr-0">
+                        <div class="icon_star pr-1">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span>${newArray[i].product_comment}</span>
+                    </small>
+                    <small class="xs card-text d-flex align-items-center">
+                        <div class="icon_fire pr-1">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <span>${newArray[i].product_popular}K+個已訂購</span>
+                    </small>
+                    <h4 class="card-text price">
+                    ${newArray[i].product_price}</h4>
+                </div>
+            </div>
+        </div>
+    </div>`
+    }
+
+    $('.product_list .row').html(htmlStr)
 }
 
 function slideTwo() {
