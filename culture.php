@@ -5,19 +5,33 @@ $title = '月老文化';
 
 $area = isset($_GET['area']) ? intval($_GET['area']):0; //用戶指定哪個區域
 $item = isset($_GET['item']) ? intval($_GET['item']):0; //用戶指定哪個項目
+$cate= isset($_GET['cate']) ? intval($_GET['cate']):0; //用戶指定分類
 
 
 $qsp = []; // query string parameters
 
-//取得廟宇資料表
-$sql = "SELECT * FROM `temple` WHERE 1";
-$temples = $pdo->query($sql)->fetchAll(); 
+$where = 'WHERE 1';
+if($cate){
+    $where.="AND category_tag=$cate";
+    $qsp['cate']=$cate;
+};
+//取得分類
+$tag_sql= sprintf(
+   "SELECT * FROM `temple` %s ORDER BY `sid` DESC",
+   $where,
+);
+$t_rows =  $pdo->query($tag_sql)->fetchAll(); 
 
-
-// echo json_encode([ 
-//     '$temps' => $temples,
+// var_dump([
+//     't_rows' => $t_rows,
 // ]);
 // exit;
+
+//取得廟宇資料表
+$sql = "SELECT * FROM `temple` WHERE 1";
+$temples = $pdo->query($tag_sql)->fetchAll(); 
+
+
 
 // var_dump([
 //     '$temps' => $temples,
@@ -601,55 +615,55 @@ $temples = $pdo->query($temple_sql)->fetchAll();
         <div class="d-flex">
             <div class="map-wrap position-relative col-6">
                 <div id="north-group_lb" class="active">
-                    <div class="C01 landmark_lb d-inline-block text-center position-absolute" data-id="1">
+                    <div class="C01 landmark_lb d-inline-block text-center position-absolute" data-id="1" data-tag="祈求姻緣">
                         <h6 class="m-0 loation_lb py-2 ">台北市</h6>
                         <p class="m-0 temname_lb px-2 py-2">霞海城隍廟</p>
                     </div>
-                    <div class="C06 landmark_lb d-inline-block text-center position-absolute" data-id="6">
+                    <div class="C06 landmark_lb d-inline-block text-center position-absolute" data-id="6" data-tag="祈求姻緣">
                         <h6 class="m-0 loation_lb py-2">台北市</h6>
                         <p class="m-0 temname_lb px-2 py-2">龍山寺</p>
                     </div>
-                    <div class="C07 landmark_lb d-inline-block text-center position-absolute" data-id="7">
-                        <h6 class="m-0 loation_lb py-2">台北市</h6>
+                    <div class="C07 landmark_lb d-inline-block text-center position-absolute" data-id="7" data-tag="斬桃花、小三">
+                        <h6 class="m-0 loation_lb py-2" >台北市</h6>
                         <p class="m-0 temname_lb px-2 py-2">指南宮</p>
                     </div>
-                    <div class="C10 landmark_lb d-inline-block text-center position-absolute" data-id="10">
+                    <div class="C10 landmark_lb d-inline-block text-center position-absolute" data-id="10" data-tag="祈求姻緣">
                         <h6 class="m-0 loation_lb py-2">新北市</h6>
                         <p class="m-0 temname_lb px-2 py-2">兔兒神廟</p>
                     </div>
                 </div>
                 <div id="middle-group_lb" class="d-none">
-                    <div class="C03 landmark_lb d-inline-block text-center position-absolute" data-id="3">
+                    <div class="C03 landmark_lb d-inline-block text-center position-absolute" data-id="3" data-tag="祈求姻緣">
                         <h6 class="m-0 loation_lb py-2 ">台中市</h6>
                         <p class="m-0 temname_lb px-2 py-2">樂成宮</p>
                     </div>
-                    <div class="C04 landmark_lb d-inline-block text-center position-absolute" data-id="4">
+                    <div class="C04 landmark_lb d-inline-block text-center position-absolute" data-id="4" data-tag="祈求姻緣">
                         <h6 class="m-0 loation_lb py-2">彰化縣</h6>
                         <p class="m-0 temname_lb px-2 py-2">鹿港天后宮</p>
                     </div>
-                    <div class="C08 landmark_lb d-inline-block text-center position-absolute" data-id="8">
+                    <div class="C08 landmark_lb d-inline-block text-center position-absolute" data-id="8" data-tag="祈求姻緣">
                         <h6 class="m-0 loation_lb py-2">南投縣</h6>
                         <p class="m-0 temname_lb px-2 py-2">月下老人祠</p>
                     </div>
                 </div>
                 <div id="south-group_lb" class="d-none">
-                    <div class="C02 landmark_lb d-inline-block text-center position-absolute" data-id="2">
+                    <div class="C02 landmark_lb d-inline-block text-center position-absolute" data-id="2" data-tag="斬桃花、小三">
                         <h6 class="m-0 loation_lb py-2 ">台南市</h6>
                         <p class="m-0 temname_lb px-2 py-2">祀典武廟</p>
                     </div>
-                    <div class="C05 landmark_lb d-inline-block text-center position-absolute" data-id="5">
+                    <div class="C05 landmark_lb d-inline-block text-center position-absolute" data-id="5" data-tag="幸福美滿">
                         <h6 class="m-0 loation_lb py-2">台南市</h6>
                         <p class="m-0 temname_lb px-2 py-2">祀典大天后宮</p>
                     </div>
-                    <div class="C09 landmark_lb d-inline-block text-center position-absolute" data-id="9">
+                    <div class="C09 landmark_lb d-inline-block text-center position-absolute" data-id="9" data-tag="斬桃花、小三">
                         <h6 class="m-0 loation_lb py-2">台南市</h6>
                         <p class="m-0 temname_lb px-2 py-2">重慶寺</p>
                     </div>
-                    <div class="C11 landmark_lb d-inline-block text-center position-absolute" data-id="11">
+                    <div class="C11 landmark_lb d-inline-block text-center position-absolute" data-id="11" data-tag="祈求姻緣">
                         <h6 class="m-0 loation_lb py-2">台南市</h6>
                         <p class="m-0 temname_lb px-2 py-2">大觀音亭</p>
                     </div>
-                    <div class="C12 landmark_lb d-inline-block text-center position-absolute" data-id="12">
+                    <div class="C12 landmark_lb d-inline-block text-center position-absolute" data-id="12" data-tag="祈求姻緣">
                         <h6 class="m-0 loation_lb py-2">高雄市</h6>
                         <p class="m-0 temname_lb px-2 py-2">關帝廟</p>
                     </div>
@@ -968,7 +982,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                 </select>
                             </div>
                             <div class="form-group my-auto">
-                                <select class="select_lb" name="item_lb" id="item_lb" onchange="getItem()">
+                                <select class="select_lb" name="item_lb" id="item_lb" >
                                 </select>
                             </div>
                         </div>
@@ -1005,7 +1019,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
             <div class="row flex-nowrap m-0">
                 <?php foreach ($temples as $t) : ?>
                     <div class="p-0">
-                        <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="1">
+                        <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="<?= $t['sid'] ?>">
                             <div class="mx-auto c01-mbTemImg-wrap">
                                 <img class="w-100" src="./imgs/culture/temple/<?=$t['img']?>_s.jpg" alt="">
                             </div>
@@ -1034,14 +1048,19 @@ $temples = $pdo->query($temple_sql)->fetchAll();
             
         </div>
         <div class="row position-relative m-0">
-            <div id="mbdetail-card" class="mbdetail-card_lb hidden_lb ">
-                <div class="prepage_lb pl-2 pt-3">
+            <div id="mbdetail-card" class="mbdetail-card_lb hidden_lb">
+                <!-- <div class="prepage_lb pl-2 pt-3">
                     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
                     </svg>
-                </div>
+                </div> -->
                 <div class="row mbTemCard-top_lb py-3 m-0">
                     <div class="col-7 p-0 pl-3">
+                        <div class="prepage_lb pl-2 pt-3">
+                            <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
+                            </svg>
+                        </div>
                         <h6 class="m-0 text-white">台北市霞海城隍廟</h6>
                         <p class="xs mbdetail-info_lb mb-0 text-white">
                             <span class="ml-1">台北市大同區迪化街一段61號
@@ -1056,7 +1075,6 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                     </div>
                 </div>
                 <div  class="mbTemCard-bottom_lb px-3">
-
                     <div class="text-center pb-2">
                         <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
                     </div>
@@ -1073,8 +1091,6 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         <br>
                         6. 將鉛錢、紅線在香爐中過火，並放至皮包中妥善保存
                     </small>
-
-
                     <div class="text-center py-2">
                         <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
                     </div>
@@ -1082,7 +1098,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         1. 需先向主神觀世音菩薩說明來意後，再依序參拜
                         <br>
                         2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
-                        </p>
+                    </small>
                 </div>
             </div> 
             
@@ -1370,10 +1386,9 @@ $temples = $pdo->query($temple_sql)->fetchAll();
 
 
 <?php include __DIR__ . '/parts/scripts.php'; ?>
-<!-- <script src="./culture.js"></script> -->
+<script src="./culture.js"></script>
 
 <script>
-
 //把撈出的資料轉為字串
 const areas = <?= json_encode($areas); ?>;
 const temples = <?= json_encode($temples); ?>;
@@ -1385,11 +1400,11 @@ const item_lb = $('#item_lb'); //選項
 //拿區域
 function getCate() {
     const area_sid = area_lb.val();
-    
+        
     // console.log('area_sid',area_sid)
 
-//拿到區域後把重複的item篩掉
-//ES6 中如果希望「陣列（Array）」的元素不會重複，可以使用 Set；如果是希望物件（Object）的鍵不會重複，則可以使用 Map。
+    //拿到區域後把重複的item篩掉
+    //ES6 中如果希望「陣列（Array）」的元素不會重複，可以使用 Set；如果是希望物件（Object）的鍵不會重複，則可以使用 Map。
     console.log('temples',temples);
     const t = temples.filter(el=>area_sid==el.area_sid);
     console.log('temple',t);
@@ -1398,7 +1413,6 @@ function getCate() {
     console.log('item',t2);
     const mySet = new Set(t2);
     console.log('new Set(t2)',new Set(t2));
-
 
     let str = '';
     for(let i of mySet){
@@ -1411,14 +1425,6 @@ function getCate() {
 
 getCate();
 
-
-//如果該區域的廟(landmark)的category_tag不等於el.category_tag 就會隱藏
-function getItem() {
-    const item = item_lb.val();
-    const selected =mySet.filter(el=>item==el.category_tag);
-    // $('.landmark_lb').addClass('d-none').siblings().removeClass('d-none');
-
-}
 
 //地圖預設：北部
 $(".path_lb").eq(0).css({
@@ -1458,7 +1464,7 @@ const middleClicked = function () {
 
 $(".middle").click(middleClicked);
 
-//地圖中部被點擊
+//地圖南部被點擊
 const southClicked = function () {
   $(".path_lb").removeAttr("style");
   $(".south").css({
@@ -1480,6 +1486,41 @@ const val = $(this).val() - 1;
 const areas = [northClicked, middleClicked, southClicked];
 areas[val]();
 });
+
+
+
+//TODO:求籤項目被改變的時候 地標卡片要篩選
+//如果該區域的廟(landmark)的category_tag不等於el.category_tag 就會隱藏
+$("#item_lb").on("change",function () {
+    // console.log('HI', $(this).val());
+    const targetTag = $(this).val();
+    const area_sid = area_lb.val();
+    // console.log('area',area_sid);
+
+    const areaDomIdArray = ["#north-group_lb","#middle-group_lb","#south-group_lb"]
+
+    $(`${areaDomIdArray[area_sid-1]} .landmark_lb`).each((index, item)=>{
+        console.log('item value', $(item).data('tag'));
+        if($(item).data('tag') === targetTag){
+            // $(item).show();
+            $(item).removeClass('d-none').addClass('d-inline-block');
+        }
+        else{
+            // $(item).hide();
+            $(item).removeClass('d-inline-block').addClass('d-none');
+        }   
+    })
+    
+
+    // const tag = $('.landmark').attr('data-value');
+//     const [marks] = temples.filter(el=>{
+//     return el.category_tag==tag;
+
+// });
+// console.log('[marks]',[marks]);
+// marks[val]();
+});
+
 
  //點擊地標出現廟宇卡片
  $('.landmark_lb').on('click', function(){
@@ -1544,13 +1585,14 @@ mapDefault();
 //mb
 const mbarea_lb = $('#mbarea_lb'); 
 const mbitem_lb = $('#mbitem_lb');
+
 function mbgetCate() {
     const mbarea_sid = mbarea_lb.val();
     
     const mt = temples.filter(el=>mbarea_sid==el.area_sid);
     console.log('mbtemple',mt);
+
     const mt2 = mt.map(el=>el.category_tag);
-   
     console.log('mbitem',mt2);
     const mbmySet = new Set(mt2);
     console.log('new Set(mt2)',new Set(mt2));
@@ -1563,70 +1605,127 @@ function mbgetCate() {
 
     mbitem_lb.html(mbstr);
 
+    let mtStr = '';
+    mt.forEach((item)=>{
+            mtStr += `<div class="p-0">
+                        <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="${item.sid}">
+                            <div class="mx-auto c01-mbTemImg-wrap">
+                                <img class="w-100" src="./imgs/culture/temple/${item.img}_s.jpg" alt="">
+                            </div>
+                            <h6 class="text-center mt-3 text-white">${item.name}</h6>
+                            <p class="xs mbdetail-info_lb mb-0 text-white">
+                                <span class="ml-3">${item.address}</span>
+                                <span class="ml-3">${item.opening_hours}</span>
+                            </p>
+                        </div>
+                    </div>`
+    })
+    $('.temScroll-snap_lb .row').html(mtStr)
+
 }
 
 mbgetCate();
 
 
-
-
 //mb卡片
 const mbcard_tpl_func = ({name,address,opening_hours,img,step,notice})=>{
-    return `
-                <div class="prepage_lb pl-2 pt-3">
-                    <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white"/>
-                    </svg>
-                </div>
-                <div class="row mbTemCard-top_lb py-3 m-0">
+    return ` <div class="row mbTemCard-top_lb py-3 m-0">
+                     <div class="col-12 prepage_lb pl-2 pt-3">
+                        <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
+                        </svg>
+                    </div>
                     <div class="col-7 p-0 pl-3">
                         <h6 class="m-0 text-white">${name}</h6>
                         <p class="xs mbdetail-info_lb mb-0 text-white">
                             <span class="ml-1">${address}
                             </span>
-                            <span class="ml-1"> ${opening_hours}</span>
+                            <span class="ml-1">${opening_hours}</span>
                         </p>
                     </div>
                     <div class="col-3 p-0 mx-2">
                         <div class="mx-auto c01-mbDetailTemImg-wrap">
-                            <img class="w-100" src="./imgs/culture/temple/${img}.jpg" alt="">
+                            <img class="w-100" src="./imgs/culture/temple/${img}_s.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div  class="mbTemCard-bottom_lb px-3">
-
                     <div class="text-center pb-2">
                         <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
                     </div>
-                    <small class=" mt-3 steptext_lb ">${step}</small>
+                    <small class=" mt-3 steptext_lb ">
+                    ${step}
+                    </small>
                     <div class="text-center py-2">
                         <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
                     </div>
                     <small class="mt-3 temnoticetext_lb">
                     ${notice}
-                        </p>
+                    </small>
                 </div>`
+                // <div class="prepage_lb pl-2 pt-3">
+                //     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                //         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white"/>
+                //     </svg>
+                // </div>
+                // <div class="row mbTemCard-top_lb py-3 m-0">
+                //     <div class="col-7 p-0 pl-3">
+                //         <h6 class="m-0 text-white">${name}</h6>
+                //         <p class="xs mbdetail-info_lb mb-0 text-white">
+                //             <span class="ml-1">${address}
+                //             </span>
+                //             <span class="ml-1"> ${opening_hours}</span>
+                //         </p>
+                //     </div>
+                //     <div class="col-3 p-0 mx-2">
+                //         <div class="mx-auto c01-mbDetailTemImg-wrap">
+                //             <img class="w-100" src="./imgs/culture/temple/${img}.jpg" alt="">
+                //         </div>
+                //     </div>
+                // </div>
+                // <div  class="mbTemCard-bottom_lb px-3">
+
+                //     <div class="text-center pb-2">
+                //         <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
+                //     </div>
+                //     <small class=" mt-3 steptext_lb ">${step}</small>
+                //     <div class="text-center py-2">
+                //         <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
+                //     </div>
+                //     <small class="mt-3 temnoticetext_lb">
+                //     ${notice}
+                //         </p>
+                // </div>`
+
+
+
+
 };
 
 
-$('.mbTemCard').on('click', function(){
+$('.temScroll-snap_lb').on('click','.mbTemCard',function(){
 const mbid = $(this).attr('data-id');
 const [mbitem] = temples.filter(el=>{
     return el.sid == mbid;
 });
 console.log('[mbitem]',[mbitem]);
 $('.mbdetail-card_lb').html(mbcard_tpl_func(mbitem));
-$('.mbdetail-card_lb').toggleClass('hidden_lb');
-$("html, body").animate({ scrollTop: $(document).height() }, 500);
-
+$('.mbdetail-card_lb').removeClass('hidden_lb');
+$("html, body").animate({ scrollTop: $('#mbdetail-card').offset().top - 36 }, 500);
 });
 
-//TODO: mb返回鍵詳細卡片沒辦法收起來
-  $(".prepage_lb").click(function () {
-    console.log(hi);
-  $(".mbdetail-card_lb").addClass('d-none');
+
+//卡片返回鍵
+  $(".mbdetail-card_lb").on('click','.prepage_lb',function () {
+    console.log('hi');
+  $(".mbdetail-card_lb").addClass('hidden_lb');
 });
 
+
+
+$('#mbarea_lb').change(function(){
+    console.log('mbarea_lb changed');
+})
 
 
 
