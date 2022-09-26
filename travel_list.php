@@ -43,8 +43,21 @@ if ($totalRows > 0) {
     $sql = sprintf("SELECT * FROM `travel` ORDER BY `sid` LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
     $rows = $pdo->query($sql)->fetchAll();
 
-    $Y_sql = "SELECT * FROM `travel` Inner join address on travel.travel_area = address.sid WHERE 1";
-    $Y_rows = $pdo->query($Y_sql)->fetchAll();
+    // $Y_sql = "SELECT t.*, ad.city FROM travel t 
+    //             JOIN address ad ON ad.sid = t.travel_area
+    //             WHERE 1";
+    // $Y_rows = $pdo->query($Y_sql)->fetchAll();
+
+    // 取得address
+    $sqlArea = sprintf("SELECT * FROM `address`");
+    $areaRows = $pdo->query($sqlArea)->fetchAll();
+
+
+    // echo json_encode([ 
+    //     // '$rows' => $rows,
+    //     '$Y_rows' => $Y_rows,
+    // ]);
+    // exit;
 
 }
 
@@ -391,9 +404,13 @@ header("Refresh:180");
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
                                                 </svg>
-                                                <small>
-                                                    <?= $r['travel_area'] ?>
-                                                </small>
+                                                <?php foreach ($areaRows as $Yr) : ?>
+                                                    <?php if($Yr['sid'] === $r['travel_area']) : ?>
+                                                    <small>
+                                                        <?= $Yr['city'] ?>
+                                                    </small>
+                                                    <?php endif ?>
+                                                <?php endforeach ?>
                                             </div>
                                             <div class="icon_clock pl-3">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

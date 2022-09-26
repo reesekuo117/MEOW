@@ -138,8 +138,8 @@ let $li = $('ul.ordertab-title-re li');
 });
 // 查詢訂單
 $('.orderbtn-re').on("click", function(){
-    $(this).parent().next("div.listslide-re").slideToggle('normal');
-    $(this).parent().next().next("div.commentslide-re").slideUp('normal');
+    $(this).parents().next("div.listslide-re").slideToggle('normal');
+    $(this).parents().next().next("div.commentslide-re").slideUp('normal');
     // $('.listslide-re').slideToggle('normal');
     // $('.commentslide-re').slideUp('normal');
 });

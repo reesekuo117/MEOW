@@ -63,10 +63,10 @@ $pageName ='會員中心'; //頁面名稱
             ad.city,
             ad2.city region
         FROM product_order po
-            LEFT JOIN product_details pod ON po.sid = pod.order_sid
-            LEFT JOIN product p ON p.sid = pod.product_sid
-            LEFT JOIN address ad ON ad.sid = po.address_city
-            LEFT JOIN address ad2 ON ad2.sid = po.address_region
+            JOIN product_details pod ON po.sid = pod.order_sid
+            JOIN product p ON p.sid = pod.product_sid
+            JOIN address ad ON ad.sid = po.address_city
+            JOIN address ad2 ON ad2.sid = po.address_region
             WHERE member_id=$member_id";
     $polist_rows = $pdo->query($polist_sql)->fetchAll();
 
@@ -721,7 +721,7 @@ $pageName ='會員中心'; //頁面名稱
                         <div class="col-md text-20-re text-center">訂單狀態</div>
                         <div class="col-md text-20-re text-center thpadding-re">訂單備註</div>
                     </div>
-                    <?php foreach($tolist_rows as $r): ?>
+                    < ?php foreach($tolist_rows as $r): ?>
                         <!-- 訂單查詢 -->
                         <div class="orderlist-re col-12 p-0">
                             <div class="text-16-re text-center">2022/09/05</div>
@@ -839,7 +839,7 @@ $pageName ='會員中心'; //頁面名稱
                             </div>
                             <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
                         </div>
-                    <?php endforeach ?>
+                    < ?php endforeach ?>
                 </div>
             </div>
         </div>
