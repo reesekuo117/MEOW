@@ -19,109 +19,7 @@ $pageName ='會員中心'; //頁面名稱
     // }
     // 如果沒有資料會拿到ture轉到首頁
 
-    //int isset(mixed var); 說明: 若參數var存在則傳回true，否則傳回false
-    //intval -- 取得變量的整數值
-    $perPage = 8;  //每頁最多有幾筆
-    $page = isset($_GET['page']) ? intval($_GET['page']) : 1; //使用者決定看第幾頁
-    // $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0;
 
-    // $qsp = []; //query string parameters 查詢字串的參數
-
-    // 取得分類資料
-    // $cates = $pdo->query("SELECT * FROM love_type WHERE 1")
-    // ->fetchAll();
-
-    // $where = 'where 1';  //起頭
-    // if($cate){
-    //     $where .= " AND love_type_sid=$cate ";
-    //     $qsp['cate'] = $cate;
-    // } // .= 相加.
-
-
-
-    // $p_sql = "SELECT COUNT(1) FROM `love` Inner join product on product.id = love.collect_id WHERE love.member_id=$member_id";
-    // $t_sql = "SELECT COUNT(1) FROM `love` Inner join travel on travel.id = love.collect_id WHERE love.member_id=$member_id";
-    // $f_sql = "SELECT COUNT(1) FROM `love` Inner join forturn on forturn.id = love.collect_id WHERE love.member_id=$member_id";
-    // $d_sql = "SELECT COUNT(1) FROM `love` Inner join draw on draw.id = love.collect_id WHERE love.member_id=$member_id";
-
-/*
-    // $p_sql = "SELECT COUNT(1) FROM product"; //取得資料的總筆數  
-    // $t_sql = "SELECT COUNT(1) FROM travel"; //取得資料的總筆數  
-    // $f_sql = "SELECT COUNT(1) FROM forturn"; //取得資料的總筆數  
-    // $d_sql = "SELECT COUNT(1) FROM draw"; //取得資料的總筆數  
-
-    $p_totalRows = $pdo->query($p_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
-    $t_totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
-    $f_totalRows = $pdo->query($f_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
-    $d_totalRows = $pdo->query($d_sql)->fetch(PDO::FETCH_NUM)[0];  //PDO::FETCH_NUM — 數字索引陣列形式
-
-    //計算總頁數
-    $p_totalPages = ceil($p_totalRows/$perPage);  //ceil無條件進位
-    $t_totalPages = ceil($t_totalRows/$perPage);  //ceil無條件進位
-    $f_totalPages = ceil($f_totalRows/$perPage);  //ceil無條件進位
-    $d_totalPages = ceil($d_totalRows/$perPage);  //ceil無條件進位
-
-    $rows = []; //預設
-    //有資料才執行 >0
-    if($p_totalRows > 0){
-        if($page<1){
-            header('Location: ?page=1');
-            exit;
-        }
-        if($page>$p_totalPages){
-            header('Location: ?page='. $p_totalPages);
-            exit;
-        }
-        // $page<1 ? ($page=1) : null;  //三元運算子
-        //$page>$totalPages ? ($page=$totalPages) : null; 
-
-        //TODO:取得該頁面的資料
-        //sql外層通常用雙引號 內層用單引號就不需要跳脫
-        $p_sql = sprintf("SELECT * FROM `love` join product on product.id = love.collect_id ORDER BY `id` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
-        // ORDER BY `sid` DESC 降冪 講義41頁
-        // LIMIT %s, %s ==> [索引][筆數]
-        $rows = $pdo->query($p_sql)->fetchAll();
-    }
-    // 行程
-    if($t_totalRows > 0){
-        if($page<1){
-            header('Location: ?page=1');
-            exit;
-        }
-        if($page>$t_totalPages){
-            header('Location: ?page='. $t_totalPages);
-            exit;
-        }
-        $t_sql = sprintf("SELECT * FROM `love` Inner join travel on travel.id = collect_id ORDER BY `id` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
-        $rows = $pdo->query($t_sql)->fetchAll();
-    }
-    // 詩籤
-    if($f_totalRows > 0){
-        if($page<1){
-            header('Location: ?page=1');
-            exit;
-        }
-        if($page>$f_totalPages){
-            header('Location: ?page='. $f_totalPages);
-            exit;
-        }
-        $f_sql = sprintf("SELECT * FROM `love` Inner join forturn on forturn.id = collect_id ORDER BY `id` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
-        $rows = $pdo->query($f_sql)->fetchAll();
-    }
-    // 運勢
-    if($d_totalRows > 0){
-        if($page<1){
-            header('Location: ?page=1');
-            exit;
-        }
-        if($page>$d_totalPages){
-            header('Location: ?page='. $d_totalPages);
-            exit;
-        }
-        $d_sql = sprintf("SELECT * FROM `love` Inner join draw on draw.id = collect_id ORDER BY `id` DESC LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
-        $rows = $pdo->query($d_sql)->fetchAll();
-    }
-*/
 
 
 
@@ -135,9 +33,6 @@ $pageName ='會員中心'; //頁面名稱
     $f_rows = $pdo->query($f_sql)->fetchAll();
     $d_rows = $pdo->query($d_sql)->fetchAll();
 
-
-    $po_sql = "SELECT * FROM `product_order`WHERE member_id=$member_id";
-    $po_rows = $pdo->query($po_sql)->fetchAll();
     // $polist_sql = "SELECT product.*, product_list.product_sid FROM  WHERE member_id=$member_id";
 
     // 錯誤
@@ -156,24 +51,23 @@ $pageName ='會員中心'; //頁面名稱
     // --     )
     // WHERE member_id=$member_id";
 
-
+    $po_sql = "SELECT * FROM `product_order`WHERE member_id=$member_id";
+    $po_rows = $pdo->query($po_sql)->fetchAll();
     $polist_sql = "
-    SELECT 
-        po.*, 
-        pod.total, 
-        pod.quantity, 
-        p.product_name, 
-        p.product_card_img, 
-        ad.city,
-        ad2.city region
-    FROM product_order po
-        JOIN product_details pod ON po.sid = pod.order_sid
-        JOIN product p ON p.sid = pod.product_sid
-        JOIN address ad ON ad.sid = po.address_city
-        JOIN address ad2 ON ad2.sid = po.address_region
-        WHERE member_id=$member_id";
-
-
+        SELECT 
+            po.*, 
+            pod.total, 
+            pod.quantity, 
+            p.product_name, 
+            p.product_card_img, 
+            ad.city,
+            ad2.city region
+        FROM product_order po
+            JOIN product_details pod ON po.sid = pod.order_sid
+            JOIN product p ON p.sid = pod.product_sid
+            JOIN address ad ON ad.sid = po.address_city
+            JOIN address ad2 ON ad2.sid = po.address_region
+            WHERE member_id=$member_id";
     $polist_rows = $pdo->query($polist_sql)->fetchAll();
 
     // $po_rows = $pdo->query($sql)->fetchAll();
@@ -649,274 +543,295 @@ $pageName ='會員中心'; //頁面名稱
                 </ul>
     <!-- p4-P------------------------------------------------------------------ -->
                 <div id="tab05-re" class="ordertab-inner-re">
-                    <table class="orderlisttable-re tablehover text-center w-100" >
-                        <thead class="col-4 p-0">
-                            <tr class="orderlist-title-re col-12 p-0">
-                                <th class="col-12 col-md-2 text-20-re text-center">訂單日期</th>
-                                <th class="col-12 col-md-2 text-20-re text-center">訂單編號</th>
-                                <th class="col-12 col-md-2 text-20-re text-center">訂單金額</th>
-                                <th class="col-12 col-md-2 text-20-re text-center">訂單狀態</th>
-                                <th class="col-12 col-md-2 text-20-re text-center thpadding-re">訂單備註</th>
-                            </tr>
-                        </thead>
-                        <?php foreach($po_rows as $r): ?>
-                        <tbody class="col-8 p-0">
-                            <tr class="orderlist-re col-12 p-0">
-                                <td class="text-16-re text-center"><?= $r['created_at'] ?></td>
-                                <td class="text-16-re text-center">PO2022<?= $r['sid'] ?></td>
-                                <td class="text-16-re text-center price-re"><?= $r['price'] ?></td>
-                                <td class="text-16-re text-center"><?= $r['state'] ?></td>
-                                <td class="orderbtn-re text-center">
-                                    查詢訂單
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9" stroke="#432A0F" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <?php endforeach ?>
-                    </table>
+                    <div class="d-md-flex flex-nowrap orderlist-title-re">
+                        <div class=" col-md text-20-re text-center">訂單日期</div>
+                        <div class="col-md text-20-re text-center">訂單編號</div>
+                        <div class="col-md text-20-re text-center">訂單金額</div>
+                        <div class="col-md text-20-re text-center">訂單狀態</div>
+                        <div class="col-md text-20-re text-center thpadding-re">訂單備註</div>
+                    </div>
                     <?php foreach($polist_rows as $r): ?>
-                    <div class="slide-re px-3 py-3">
-                        <table class="inside-orderlisttable-re tablehover text-center w-100" >
-                            <thead class="col-3 p-0">
-                                <tr class="orderlist-title-re orderlisttitle-inside-re">
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-pic-re">商品圖片</th>
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-name-re">商品名稱</th>
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">規格</th>
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">單價</th>
-                                    <th class="col-12 col-md-1 text-18-re text-center ordertitle-other-re">數量</th>
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">小計</th>
-                                    <!-- <th class="col-12 col-md-1 text-18-re text-center ordertitle-other2-re"></th> -->
+                        <!-- <table class="orderlisttable-re tablehover text-center w-100" >
+                            <thead class="col-4 p-0">
+                                <tr class="orderlist-title-re col-12 p-0">
+                                    <th class="col-12 col-md-2 text-20-re text-center">訂單日期</th>
+                                    <th class="col-12 col-md-2 text-20-re text-center">訂單編號</th>
+                                    <th class="col-12 col-md-2 text-20-re text-center">訂單金額</th>
+                                    <th class="col-12 col-md-2 text-20-re text-center">訂單狀態</th>
+                                    <th class="col-12 col-md-2 text-20-re text-center thpadding-re">訂單備註</th>
                                 </tr>
                             </thead>
-                            <tbody class="col-9 p-0">
+                            
+                            <tbody class="col-8 p-0">
                                 <tr class="orderlist-re col-12 p-0">
-                                    <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt=""></td>
-                                    <td class="productname-re text-16-re text-center m-0"><?= $r['product_name'] ?></td>
-                                    <td class="text-16-re text-center ordertitle-other-re"><?= $r['product_name'] ?></td>
-                                    <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
-                                    <td class="text-16-re text-center ordertitle-other-re"><?= $r['quantity'] ?></td>
-                                    <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['total'] ?></td>
-                                    <td class="text-center ordertitle-other2-re "><button id="evaluation-btn-re" class="btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
+                                    <td class="text-16-re text-center"><?= $r['created_at'] ?></td>
+                                    <td class="text-16-re text-center">PO2022<?= $r['sid'] ?></td>
+                                    <td class="text-16-re text-center price-re"><?= $r['price'] ?></td>
+                                    <td class="text-16-re text-center"><?= $r['state'] ?></td>
+                                    <td class="orderbtn-re text-center">
+                                        查詢訂單
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9" stroke="#432A0F" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </td>
                                 </tr>
                             </tbody>
-                        </table>
-                        <div class="d-flex flex-wrap pt-3">
-                            <div class="col-12 col-md-6 px-2">
-                                <table class="w-100">
-                                    <tr>
-                                        <th colspan="2" class="text-16-re text-center bgcolor-re">收件人資訊</th>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1 widht30-re">收件人姓名</th>
-                                        <td class="text-16-re py-1"><?= $r['name'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1">收件人電話</th>
-                                        <td class="text-16-re py-1"><?= $r['phone'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1">收件人地址</th>
-                                        <td class="text-16-re py-1"><?= $r['city'] ?><?= $r['region'] ?><?= $r['address'] ?></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="col-12 col-md-6 px-2">
-                                <table class="w-100">
-                                    <tr>
-                                        <th colspan="2" class="text-16-re text-center bgcolor-re">物流及付款資訊</th>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1 widht30-re">收件方式</th>
-                                        <td class="text-16-re py-1"><?= $r['delivery'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1">付款方式</th>
-                                        <td class="text-16-re py-1"><?= $r['payment'] ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1">付款狀態</th>
-                                        <td class="text-16-re py-1"><?= $r['state'] ?></td>
-                                    </tr>
-                                </table>
+                            
+                        </table> -->
+                        <!-- 訂單查詢 -->
+                        <div class="d-flex orderlist-re">
+                            <div class="col text-16-re text-center"><?= $r['created_at'] ?></div>
+                            <div class="col text-16-re text-center">PO2022<?= $r['sid'] ?></div>
+                            <div class="col text-16-re text-center price-re"><?= $r['price'] ?></div>
+                            <div class="col text-16-re text-center"><?= $r['state'] ?></div>
+                            <div class="col orderbtn-re text-center">
+                                查詢訂單
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9" stroke="#432A0F" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
                             </div>
                         </div>
-                    </div>
+                        <!-- 訂單明細內容 -->
+                        <div class="listslide-re px-3 py-3 ">
+                            <table class="inside-orderlisttable-re tablehover text-center w-100" >
+                                <thead class="col-3 p-0">
+                                    <tr class="orderlist-title-re orderlisttitle-inside-re">
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-pic-re">商品圖片</th>
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-name-re">商品名稱</th>
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">規格</th>
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">單價</th>
+                                        <th class="col-12 col-md-1 text-18-re text-center ordertitle-other-re">數量</th>
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">小計</th>
+                                        <!-- <th class="col-12 col-md-1 text-18-re text-center ordertitle-other2-re"></th> -->
+                                    </tr>
+                                </thead>
+                                <tbody class="col-9 p-0">
+                                    <tr class="orderlist-re col-12 p-0">
+                                        <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt=""></td>
+                                        <td class="productname-re text-16-re text-center m-0"><?= $r['product_name'] ?></td>
+                                        <td class="text-16-re text-center ordertitle-other-re"><?= $r['product_name'] ?></td>
+                                        <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
+                                        <td class="text-16-re text-center ordertitle-other-re"><?= $r['quantity'] ?></td>
+                                        <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['total'] ?></td>
+                                        <td class="text-center ordertitle-other2-re "><button id="evaluation-btn-re" class="btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-flex flex-wrap pt-3">
+                                <div class="col-12 col-md-6 px-2">
+                                    <table class="w-100">
+                                        <tr>
+                                            <th colspan="2" class="text-16-re text-center bgcolor-re">收件人資訊</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1 widht30-re">收件人姓名</th>
+                                            <td class="text-16-re py-1"><?= $r['name'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1">收件人電話</th>
+                                            <td class="text-16-re py-1"><?= $r['phone'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1">收件人地址</th>
+                                            <td class="text-16-re py-1"><?= $r['city'] ?><?= $r['region'] ?><?= $r['address'] ?></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-12 col-md-6 px-2">
+                                    <table class="w-100">
+                                        <tr>
+                                            <th colspan="2" class="text-16-re text-center bgcolor-re">物流及付款資訊</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1 widht30-re">收件方式</th>
+                                            <td class="text-16-re py-1"><?= $r['delivery'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1">付款方式</th>
+                                            <td class="text-16-re py-1"><?= $r['payment'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1">付款狀態</th>
+                                            <td class="text-16-re py-1"><?= $r['state'] ?></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 評論 -->
+                        <div class="commentslide-re px-3 py-3 position-relative">
+                            <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
+                            <div class="ordercross-re ordercross01-re d-inline-block position-absolute">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                                    <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                                <div class="pb-3">
+                                    <svg class="star-re mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                </div>
+                            <p class="">請告訴我們您的想法</p>
+                            <textarea class="evaluation-textarea-re" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
+                            <!-- <div class="d-flex py-2 scroll-snap-re">
+                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">出貨超快速</div>
+                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">ＣＰ值超高</div>
+                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品超可愛</div>
+                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品品質爆表</div>
+                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div>
+                            </div> -->
+                            <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
+                                <label><input id="tag-re-1" type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                                <label><input id="tag-re-2" type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                                <label><input id="tag-re-3" type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                                <label><input id="tag-re-4" type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                                <label><input id="tag-re-5" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
+                            </div>
+                            <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
+                        </div>
                     <?php endforeach ?>
-                    <div class="slide2-re px-3 py-3 position-relative">
-                        <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
-                        <div class="ordercross-re ordercross01-re d-inline-block position-absolute">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
-                                <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                            <div class="pb-3">
-                                <svg class="star-re mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                                <svg class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                                <svg class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                                <svg class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                                <svg class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                            </div>
-                        <p class="">請告訴我們您的想法</p>
-                        <textarea class="evaluation-textarea-re" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
-                        <!-- <div class="d-flex py-2 scroll-snap-re">
-                            <div id="tag-re" class="tag-re text-14-re px-2 mr-2">出貨超快速</div>
-                            <div id="tag-re" class="tag-re text-14-re px-2 mr-2">ＣＰ值超高</div>
-                            <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品超可愛</div>
-                            <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品品質爆表</div>
-                            <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div>
-                        </div> -->
-                        <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
-                            <label><input id="tag-re-1" type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
-                            <label><input id="tag-re-2" type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
-                            <label><input id="tag-re-3" type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
-                            <label><input id="tag-re-4" type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
-                            <label><input id="tag-re-5" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
-                        </div>
-                        <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
-                    </div>
                 </div>
     <!-- p4-T------------------------------------------------------------------ -->
                 <div id="tab06-re" class="ordertab-inner-re orderhight-re">
-                    <table class="orderlisttable-re tablehover text-center w-100" >
-                        <thead class="col-4 p-0">
-                            <tr class="orderlist-title-re col-12 p-0">
-                                <th class="col-12 col-md-2 text-20-re text-center">訂單日期</th>
-                                <th class="col-12 col-md-2 text-20-re text-center">訂單編號</th>
-                                <th class="col-12 col-md-2 text-20-re text-center">訂單金額</th>
-                                <th class="col-12 col-md-2 text-20-re text-center">訂單狀態</th>
-                                <th class="col-12 col-md-2 text-20-re text-center thpadding-re">訂單備註</th>
-                            </tr>
-                        </thead>
-                        <tbody class="col-8 p-0">
-                            <tr class="orderlist-re col-12 p-0">
-                                <td class="text-16-re text-center">2022/09/05</td>
-                                <td class="text-16-re text-center">OR202209052000</td>
-                                <td class="text-16-re text-center price-re">5220</td>
-                                <td class="text-16-re text-center">訂單完成</td>
-                                <td class="orderbtn02-re text-center">
-                                    查詢訂單
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9" stroke="#432A0F" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
+                    <div class="d-md-flex flex-nowrap orderlist-title-re">
+                        <div class="col-md text-20-re text-center">訂單日期</div>
+                        <div class="col-md text-20-re text-center">訂單編號</div>
+                        <div class="col-md text-20-re text-center">訂單金額</div>
+                        <div class="col-md text-20-re text-center">訂單狀態</div>
+                        <div class="col-md text-20-re text-center thpadding-re">訂單備註</div>
+                    </div>
+                    <?php foreach($tolist_rows as $r): ?>
+                        <!-- 訂單查詢 -->
+                        <div class="orderlist-re col-12 p-0">
+                            <div class="text-16-re text-center">2022/09/05</div>
+                            <div class="text-16-re text-center">OR202209052000</div>
+                            <div class="text-16-re text-center price-re">5220</div>
+                            <div class="text-16-re text-center">訂單完成</div>
+                            <div class="orderbtn02-re text-center">
+                                查詢訂單
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9" stroke="#432A0F" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- 訂單明細內容 -->
+                        <div class="rightslide01-re px-3 py-3">
+                            <table class="inside-orderlisttable-re tablehover text-center w-100" >
+                                <thead class="col-3 p-0">
+                                    <tr class="orderlist-title-re orderlisttitle-inside-re">
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-pic-re">行程圖片</th>
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-name-re">行程名稱</th>
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">單價</th>
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">數量</th>
+                                        <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">小計</th>
+                                        <!-- <th class="col-1 text-18-re"></th> -->
+                                    </tr>
+                                </thead>
+                                <tbody class="col-9 p-0">
+                                    <tr class="orderlist-re col-12 p-0">
+                                        <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/購物車-行程(測試用).png" alt=""></td>
+                                        <td class="productname-re text-16-re text-center m-0">台北霞海城隍廟獨家行程一日遊</td>
+                                        <td class="ext-16-re text-center ordertitle-other-re price-re">5220</td>
+                                        <td class="text-16-re text-center ordertitle-other-re">1</td>
+                                        <td class="ext-16-re text-center ordertitle-other-re price-re">5220</td>
+                                        <td class="text-center ordertitle-other2-re "><button id="evaluation02-btn-re" class="btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-flex flex-wrap pt-3">
+                                <div class="col-12 col-md-6 px-2">
+                                    <table class="w-100">
+                                        <tr>
+                                            <th colspan="2" class="text-16-re text-center bgcolor-re">收件人資訊</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1 widht30-re">訂購人姓名</th>
+                                            <td class="text-16-re py-1">皮卡丘</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1">訂購人電話</th>
+                                            <td class="text-16-re py-1">0987654321</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1">訂購人地址</th>
+                                            <td class="text-16-re py-1">台北市大安區和平東路二段106號3樓</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-12 col-md-6 px-2">
+                                    <table class="w-100">
+                                        <tr>
+                                            <th colspan="2" class="text-16-re text-center bgcolor-re">物流及付款資訊</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1 widht30-re">付款方式</th>
+                                            <td class="text-16-re py-1">信用卡</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-16-re py-1">付款狀態</th>
+                                            <td class="text-16-re py-1">訂單完成</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 評論 -->
+                        <div class="rightslide02-re px-3 py-3 position-relative">
+                            <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
+                            <div class="ordercross-re ordercross02-re d-inline-block position-absolute">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                                    <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                                <div class="pb-3">
+                                    <svg class="rightstar-re mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667"  xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
                                     </svg>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="rightslide01-re px-3 py-3">
-                        <table class="inside-orderlisttable-re tablehover text-center w-100" >
-                            <thead class="col-3 p-0">
-                                <tr class="orderlist-title-re orderlisttitle-inside-re">
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-pic-re">行程圖片</th>
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-name-re">行程名稱</th>
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">單價</th>
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">數量</th>
-                                    <th class="col-12 col-md-2 text-18-re text-center ordertitle-other-re">小計</th>
-                                    <!-- <th class="col-1 text-18-re"></th> -->
-                                </tr>
-                            </thead>
-                            <tbody class="col-9 p-0">
-                                <tr class="orderlist-re col-12 p-0">
-                                    <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/購物車-行程(測試用).png" alt=""></td>
-                                    <td class="productname-re text-16-re text-center m-0">台北霞海城隍廟獨家行程一日遊</td>
-                                    <td class="ext-16-re text-center ordertitle-other-re price-re">5220</td>
-                                    <td class="text-16-re text-center ordertitle-other-re">1</td>
-                                    <td class="ext-16-re text-center ordertitle-other-re price-re">5220</td>
-                                    <td class="text-center ordertitle-other2-re "><button id="evaluation02-btn-re" class="btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="d-flex flex-wrap pt-3">
-                            <div class="col-12 col-md-6 px-2">
-                                <table class="w-100">
-                                    <tr>
-                                        <th colspan="2" class="text-16-re text-center bgcolor-re">收件人資訊</th>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1 widht30-re">訂購人姓名</th>
-                                        <td class="text-16-re py-1">皮卡丘</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1">訂購人電話</th>
-                                        <td class="text-16-re py-1">0987654321</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1">訂購人地址</th>
-                                        <td class="text-16-re py-1">台北市大安區和平東路二段106號3樓</td>
-                                    </tr>
-                                </table>
+                                    <svg class="rightstar-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg class="rightstar-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg class="rightstar-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg class="rightstar-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                </div>
+                            <p class="">請告訴我們您的想法</p>
+                            <textarea class="evaluation-textarea-re" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
+                            <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
+                                <!-- <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">出貨超快速</div>
+                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">ＣＰ值超高</div>
+                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品超可愛</div>
+                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品品質爆表</div>
+                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div> -->
+                                
+                                <label><input id="tag-re" type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                                <label><input id="tag-re" type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                                <label><input id="tag-re" type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                                <label><input id="tag-re" type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                                <label><input id="tag-re" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                             </div>
-                            <div class="col-12 col-md-6 px-2">
-                                <table class="w-100">
-                                    <tr>
-                                        <th colspan="2" class="text-16-re text-center bgcolor-re">物流及付款資訊</th>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1 widht30-re">付款方式</th>
-                                        <td class="text-16-re py-1">信用卡</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="text-16-re py-1">付款狀態</th>
-                                        <td class="text-16-re py-1">訂單完成</td>
-                                    </tr>
-                                </table>
-                            </div>
+                            <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
                         </div>
-                    </div>
-                    <div class="rightslide02-re px-3 py-3 position-relative">
-                        <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
-                        <div class="ordercross-re ordercross02-re d-inline-block position-absolute">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
-                                <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                            <div class="pb-3">
-                                <svg class="rightstar-re mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667"  xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                                <svg class="rightstar-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                                <svg class="rightstar-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                                <svg class="rightstar-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                                <svg class="rightstar-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
-                                </svg>
-                            </div>
-                        <p class="">請告訴我們您的想法</p>
-                        <textarea class="evaluation-textarea-re" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
-                        <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
-                            <!-- <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">出貨超快速</div>
-                            <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">ＣＰ值超高</div>
-                            <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品超可愛</div>
-                            <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品品質爆表</div>
-                            <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div> -->
-                            
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
-                            <label><input id="tag-re" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
-                        </div>
-                        <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>
