@@ -366,6 +366,9 @@ if ($totalRows > 0) {
                 <nav aria-label="Page navigation example" class="">
                     <ul class="pagination">
                         <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                        <!-- <a href="?< ?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="< ?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
+                        <h5>價格高 → 低</h5>
+                        </a> -->
                             <a class="page-link" href="?<?php $qsp['page']=$page == 1;
                             echo http_build_query($qsp); ?>">
                                 <i class="fa-solid fa-angles-left"></i>
