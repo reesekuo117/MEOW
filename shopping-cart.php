@@ -215,33 +215,33 @@ header("Refresh:180");
                 <div class="tab-content container col-auto justify-content-around mx-auto">
                     <div id="travel-form-yu">
                         <table class="table">
-                            <thead class="thead ">
+                            <thead class="thead text-center">
                                 <tr>
-                                    <!-- <th scope="col" class="m-auto checkbox-yu">
+                                    <th scope="col" class="m-auto checkbox-yu d-none">
                                         <input id="check2AllYu" class="mx-1 " type="checkbox" aria-label="Checkbox for following text input">
                                         <label class="mb-0" for="">
                                             <h6 class="mb-0 ">
                                                 全選
                                             </h6>
                                         </label>
-                                    </th> -->
+                                    </th>
                                     <th>
-                                        <h6 class="mb-0 mx-auto ">行程照片</h6>
+                                        <h6 class="mb-0">行程照片</h6>
                                     </th>
                                     <th scope="col">
-                                        <h6 class="mb-0 mx-auto">行程名稱</h6>
+                                        <h6 class="mb-0 ">行程名稱</h6>
                                     </th>
                                     <th scope="col">
-                                        <h6 class="mb-0 mx-auto">單價</h6>
+                                        <h6 class="mb-0">單價</h6>
                                     </th>
                                     <th scope="col">
-                                        <h6 class="mb-0 mx-auto">數量</h6>
+                                        <h6 class="mb-0">數量</h6>
                                     </th>
                                     <th scope="col" class="sub-total">
-                                        <h6 class="mb-0 mx-auto">小計</h6>
+                                        <h6 class="mb-0 ">小計</h6>
                                     </th>
                                     <th scope="col" class="sub-total">
-                                        <h6 class="mb-0 mx-auto">刪除</h6>
+                                        <h6 class="mb-0">刪除</h6>
                                     </th>
                                 </tr>
                             </thead>
@@ -272,19 +272,19 @@ header("Refresh:180");
                                             </td>
                                             <!-- 數量 -->
                                             <td class="">
-                                                <form id='myform' method='POST' action='#'>
+                                                <form class="text-center" id='myform' method='POST' action='#'>
 
                                                     <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
 
                                                     <span type='text' name='txt' value='1' class='px-1 qty-yu numberTotalYu'>
-                                                        1
+                                                        <?= $j['qty'] ?>
                                                     </span>
 
                                                     <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' />
                                                 </form>
                                             </td>
                                             <!-- 小計 -->
-                                            <td name="tpriceYu" class="total_price_yu h6 p-2">
+                                            <td name="tpriceYu" class="total_price_yu h6  text-center">
                                                 <h6 class="littlePriceYu" nams="priceYu">
                                                     <?= $j['travel_price'] ?>
                                                 </h6>
@@ -524,7 +524,7 @@ header("Refresh:180");
 <script src="./shopping-cart.js"></script>
 
 
-<!-- <script>
+<script>
 
 //價錢加,
 const dollarCommas = function(n){
@@ -593,6 +593,5 @@ function removeItem(event) {
     updatePrices(); // 一進頁面就要執行一次
 
 
-</script> -->
-
+</script> 
 <?php include __DIR__ . '/parts/html-foot.php'; ?>
