@@ -146,7 +146,7 @@ header("Refresh:180");
                 <form action="" class="location">
                     <ul>
                         <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="0" name="northCheck">
+                            <input type="checkbox" class="form-check-input" value="0" name="northCheck" checked="checked">
                             <label for="northCheck">
                                 <span>北部</span>
                             </label>
@@ -179,7 +179,7 @@ header("Refresh:180");
                 <form action="" class="location">
                     <ul>
                         <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="0" name="matchCheck">
+                            <input type="checkbox" class="form-check-input" value="0" name="matchCheck" checked="checked">
                             <label for="matchCheck">
                                 <span>交友聯誼</span>
                             </label>
@@ -193,7 +193,7 @@ header("Refresh:180");
                     </ul>
                 </form>
             </section>
-            <legend>
+            <!-- <legend>
                 <h6>依旅遊時間分類</h6>
             </legend>
             <section>
@@ -214,14 +214,14 @@ header("Refresh:180");
                     </ul>
                 </form>
             </section>
-            <legend>
+            <legend> -->
                 <h6>依時間排序</h6>
             </legend>
             <section>
                 <form action="" class="location">
                     <ul>
                         <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="0" name="onedCheck">
+                            <input type="checkbox" class="form-check-input" value="0" name="onedCheck" checked="checked">
                             <label for="onedCheck">
                                 <span>最新上架</span>
                             </label>
@@ -302,7 +302,7 @@ header("Refresh:180");
                         </div>
 
                     </div>
-                    <div class="travel_cate time">
+                    <!-- <div class="travel_cate time">
                         <h5>－依旅遊時間分類</h5>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="0" id="onedCheck" name="onedCheck" checked="checked">
@@ -316,11 +316,11 @@ header("Refresh:180");
                                 兩天一夜
                             </label>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- TODO:價格篩選怎麼寫 -->
                 <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
-                <div class="price_filter">
+                <!-- <div class="price_filter">
                     <div class="filter-content__element">
                         <div class="filter-element-heading">
                             <h5>價格範圍</h5>
@@ -337,7 +337,7 @@ header("Refresh:180");
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- --------------------卡片怎麼會這麼難---------------------- -->

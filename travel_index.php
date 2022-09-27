@@ -210,7 +210,7 @@ header("Refresh:180");
                     </p>
                 </div>
                 <div class=" friend-btn-yu d-grid gap-2 d-flex justify-content-md-center">
-                    <a href="#" class="morebutton-yu">
+                    <a href="travel_list.php" class="morebutton-yu">
                         <button class=" btn " type="button">
                             <p class="m-0 text-center">
                                 看更多交友聯誼
@@ -265,7 +265,7 @@ header("Refresh:180");
                 </p>
             </div>
             <div class=" friend-btn-yu d-grid gap-2 d-flex justify-content-md-center">
-                <a href="#" class="morebutton-yu">
+                <a href="travel_list.php" class="morebutton-yu">
                     <button class=" btn " type="button">
                         <p class="m-0 text-center">
                             看更多文化之旅

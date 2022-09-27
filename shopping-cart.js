@@ -121,20 +121,22 @@ qtyminus.on("click", function () {
 
 //全選的checkbox
 //獨家商品清單全選
-document.getElementById("check1AllYu").onclick = function () {
-  var checkboxes = document.getElementsByName("oneCheck1Yu");
-  for (var checkbox of checkboxes) {
-    checkbox.checked = this.checked;
-  }
-};
+if (document.getElementById("check1AllYu")) {
+  document.getElementById("check1AllYu").onclick = function () {
+    var checkboxes = document.getElementsByName("oneCheck1Yu");
+    for (var checkbox of checkboxes) {
+      checkbox.checked = this.checked;
+    }
+  };
+}
 
 //旅遊行程清單全選
-document.getElementById("check2AllYu").onclick = function () {
-  var checkboxes = document.getElementsByName("oneCheck2Yu");
-  for (var checkbox of checkboxes) {
-    checkbox.checked = this.checked;
-  }
-};
+// document.getElementById("check2AllYu").onclick = function () {
+//   var checkboxes = document.getElementsByName("oneCheck2Yu");
+//   for (var checkbox of checkboxes) {
+//     checkbox.checked = this.checked;
+//   }
+// };
 
 // //計算操作
 // function setTotal(){

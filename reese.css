@@ -1,6 +1,6 @@
-*{
+/* *{
     outline: 1px solid #000;
-}
+} */
 header .navbar {
     /* background-color: transparent!important; */
 }
@@ -705,7 +705,7 @@ p {
 
 
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .textphone-16-re{
         font-family: 'gensen-M';
         font-size: 18px;
@@ -723,7 +723,7 @@ p {
         border-radius: 8px 8px 0 0;
     }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .textphone-14-re{
         font-family: 'gensen-R';
         font-size: 14px;
@@ -774,9 +774,6 @@ p {
     height: 70px;
     /* word-wrap:break-word; */
     white-space:pre-wrap;
-}
-.widht30-re {
-    width: 30%;
 }
 @media (max-width: 767px) {
     .ordertitle-pic-re{
@@ -943,11 +940,11 @@ table .inside-orderlisttable-re {
 .price-re::before{
     content: "NT$ ";
 }
-.listslide-re, .commentslide-re, .rightslide01-re, .rightslide02-re {
+.listslide-re, .commentslide-re, .listslideT-re, .commentslideT-re {
     background-color: var(--color-lightcreamy);
     display: none;
 }
-#evaluation-btn-re, #evaluation02-btn-re {
+#evaluation-btn-re, #evaluationT-btn-re {
     outline-style: none;
 }
 .evaluation-textarea-re{
@@ -975,6 +972,7 @@ table .inside-orderlisttable-re {
     background-color: transparent;
     scroll-snap-align: start;
     cursor: pointer; 
+
 }
 .scroll-snap-re {
     display: flex;
