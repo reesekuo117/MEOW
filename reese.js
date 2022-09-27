@@ -137,7 +137,7 @@ let $li = $('ul.ordertab-title-re li');
     });
 });
 // 查詢訂單
-$('.orderbtn-re').on("click", function(){
+$('.orderbtnP-re').on("click", function(){
     $(this).parents().next("div.listslide-re").slideToggle('normal');
     $(this).parents().next().next("div.commentslide-re").slideUp('normal');
     // $('.listslide-re').slideToggle('normal');
@@ -151,12 +151,21 @@ $('.orderbtnT-re').click(function(){
 })
 // 給予評價
 $('.evaluation-btn-re').on("click", function(){
+    const pid = $(this).attr('data-pid');
+    const formName = $(this).attr('data-form');
+    console.log({pid});
+
+    const form1 = $('#'+formName)[0];
+    console.log(form1)
+    form1.product_sid.value = pid;
+
     $(this).parents("div.listslide-re").slideUp('normal');
     $(this).parents("div.listslide-re").next("form.commentslide-re").slideDown('normal');
     // $('.listslide-re').slideUp('normal');
     // $('.commentslide-re').slideDown('normal');
 });
-$('#evaluationT-btn-re').click(function(){
+
+$('.evaluationT-btn-re').click(function(){
     $(this).parents("div.listslideT-re").slideUp('normal');
     $(this).parents("div.listslideT-re").next("form.commentslideT-re").slideDown('normal');
     // $('.rightslide01-re').slideUp('normal');
@@ -173,6 +182,9 @@ $('.ordercrossT-re').click(function(){
 })
 // 星星
 $('.star-re').click(function(){
+    const form1 = $(this).closest('form')[0];
+    form1.star_num.value = + $(this).index() + 1;
+
     console.log('hi',$(this).index());
     for(let i = 0; i < 5; i++ ){
         const color = ($(this).index() >= i)? '#E5A62A' : 'none';
@@ -200,8 +212,33 @@ $('.rightstar-re').click(function(){
         $('.rightstar-re').eq(i).css('fill',color)
     }
 })
-//
-
+//評論
+function checkFormReviewP(event){
+    const form1 = event.currentTarget;
+    console.log($(form1).serialize());
+    console.log('checkFormReviewP');
+    let isPass = true;
+    // if (!$('').val()) {
+    //     genAlert5('請填寫正確資料');
+    //     return;
+    // }else if (!$('').val()) {
+    //     genAlert5('請填寫正確資料');
+    //     return;
+    // }
+    if(isPass){
+        $.post(
+            're-review-api.php', 
+            $(form1).serialize(),
+            function(data){
+                console.log('form_preview_re data',data);
+                if(data.success){
+                    genAlert5('新增評論成功', 'success');
+                }else{
+                    genAlert5(data.error);
+                }
+        }, 'json');
+    }
+}
 
 // 
 let districtArray = [

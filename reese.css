@@ -702,16 +702,19 @@ p {
 }
 .card-body-re {
     padding: 8px;
-
-
 }
 @media (max-width: 768px) {
     .textphone-16-re{
         font-family: 'gensen-M';
-        font-size: 18px;
-        line-height: 140%;
-        padding: 10px 0;
+        font-size: 16px;
+        /* line-height: 140%;
+        padding: 10px 0; */
         border-radius: 8px 8px 0 0;
+    }
+    .textphone-14-re{
+        font-family: 'gensen-R';
+        font-size: 14px;
+        line-height: 140%;
     }
 }
 @media (min-width: 768px) {
@@ -722,22 +725,13 @@ p {
         padding: 4px 0;
         border-radius: 8px 8px 0 0;
     }
-}
-@media (max-width: 768px) {
-    .textphone-14-re{
-        font-family: 'gensen-R';
-        font-size: 14px;
-        line-height: 140%;
-
-    }
-}
-@media (min-width: 768px) {
     .textphone-14-re{
         font-family: 'gensen-R';
         font-size: 16px;
         line-height: 140%;
     }
 }
+
 /* -------------------------------------------------------------------- */
 .orderbtn-re, .orderbtn02-re {
     text-decoration: underline var(--color-text100) solid 2px;
@@ -748,10 +742,10 @@ p {
     padding: 10px 0;
     border-bottom: 0.5px solid var(--color-text60);
 }
-.orderlist-re td {
+.orderlist-re {
     padding: 12.8px 0;
-    /* border-top: 0.5px solid var(--color-text60); */
-    border-bottom: 0.5px solid var(--color-text60);
+    border-top: 0.5px solid var(--color-text38);
+    border-bottom: 0.5px solid var(--color-text38);
 }
 .orderlist-re:hover {
     /* background-color: var(--color-lightcreamy); */
@@ -816,13 +810,10 @@ p {
 .orderlisttable-re {
     border-collapse:collapse;
 }
-thead tr th.thpadding-re {
-    padding: 11.6px 0;
-}
 .bgcolor-re {
     background-color: var(--color-creamy);
 }
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
     table.orderlisttable-re {
         width: 100%;
         border-collapse: collapse;
@@ -867,7 +858,6 @@ thead tr th.thpadding-re {
     }
     table.orderlisttable-re td {
         display: block;
-        /* min-height: 1.25em; */
         text-align: left;
     }
     table.orderlisttable-re tr {
@@ -876,7 +866,7 @@ thead tr th.thpadding-re {
     table.orderlisttable-re thead {
         border: 0;
     }
-}
+} */
 /* 訂單明細----------------------------------------------- */
 table .inside-orderlisttable-re {
     border-collapse:collapse;

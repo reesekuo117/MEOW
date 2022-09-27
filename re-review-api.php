@@ -7,6 +7,7 @@ $output = [
     'code' => 0,
     'postData' => $_POST,
 ];
+echo $_POST;
 
 // if(empty($_POST['signup_email']) or empty($_POST['signup_password']) or empty($_POST['signup_again'])){
 //     $output['error'] = '請輸入正確的帳號密碼!';
@@ -15,17 +16,15 @@ $output = [
 // }
 
 $sql = "INSERT INTO `review`(
-        -- `sid`, 
-        -- `members_id`, 
+        `members_id`, 
         `target_type`, 
-        `collect_id`, 
+        `collect_sid`, 
         `star`, 
         `content`, 
         `tags_sid`, 
         `created_at`,
     ) VALUES (
-        -- ?,
-        -- ?,
+        ?,
         ?,
         ?,
         ?,
@@ -36,12 +35,11 @@ $sql = "INSERT INTO `review`(
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    // $_POST['signup_email'],
-    // $_POST['signup_password'],
     $_POST[''],
-    $_POST[''],
-    $_POST[''],
-    $_POST[''],
+    $_POST['target_type'],
+    $_POST['product_sid'],
+    $_POST['star_num'],
+    $_POST['tag_re[]'],
     $_POST[''],
 ]);
 
