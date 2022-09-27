@@ -40,7 +40,7 @@ $("i").click(function () {
   updateTotalPrice();
 });
 function del() {
-  var msg = "您真的確定要刪除嗎喵?";
+  var msg = "您確定要刪除嗎喵?";
   if (confirm(msg) === true) {
     return true;
   } else {
@@ -49,6 +49,8 @@ function del() {
 }
 
 //--------數量遞增按鈕--------------
+
+// const priceUnit = $('#total_price_ba').text().trim();
 
 const priceUnit = 707; //一定要寫死嗎
 const qtyminus = $("input.qtyminus");
@@ -179,3 +181,12 @@ if (document.getElementById("check1AllYu")) {
 //   console.log("hihi");
 //   $("#totalprice_yu").val === $("#TotalpriceYu").val($(this).val());
 // });
+
+
+
+
+
+
+
+
+

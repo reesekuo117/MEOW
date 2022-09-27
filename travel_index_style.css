@@ -103,7 +103,7 @@ button.carousel-control-next{
     box-shadow:none;
 }
 .morebutton-yu .btn:hover{
-    box-shadow: 4px 4px 0px 0px #432A0F;
+    box-shadow: 2px 2px 0px 0px #432A0F;
 }
 .morebutton-yu .active{
     background-color: #E5A62A;

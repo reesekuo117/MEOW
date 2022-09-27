@@ -1,6 +1,11 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = 'cart'; //頁面名稱
+
+
+
+
+
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -138,27 +143,27 @@ header("Refresh:180");
                                             </div>
                                         </td>  -->
                                         <!-- 單價 -->
-                                        <td nams="priceYu" class="price-yu m-0 ">
-                                            <h6 class="onePriceinputYu h6 pprice" data-val="">
-                                                <?= $v["product_price"] ?>
+                                        <td name="priceYu" class="price-yu m-0 ">
+                                            <h6 class="onePriceinputYu" data-val="<?= $v['product_price'] ?>">
+                                            <?= $v["product_price"] ?>
                                             </h6>
                                         </td>
                                         <!-- 數量 -->
-                                        <td class="">
+                                        <td class="PqtyYU" >
                                             <form method='POST' action='#'>
 
                                                 <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
 
                                                 <span type='text' name='txt' value='1' class=' px-1 qty-yu numberTotalYu'>
-                                                <?= $v['qty'] ?>
+                                                    <?= $v['qty'] ?>
                                                 </span>
 
                                                 <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' />
                                             </form>
                                         </td>
                                         <!-- 小計 -->
-                                        <td name="tpriceYu" class="total_price_yu h6 p-2">
-                                            <h6 id="totalprice_yu" class="littlePriceYu mx-auto" nams="priceYu"><?= $v["product_price"] ?></h6>
+                                        <td name="tpriceYu" class="sub-total total_price_yu p-2">
+                                            <h6 id="totalprice_yu" class="littlePriceYu mx-auto" name="priceYu" ><?= $v['product_price'] * $v['qty'] ?></h6>
                                         </td>
                                         <!-- 刪除 -->
                                         <th scope="col" class="form-delete-yu">
@@ -170,11 +175,19 @@ header("Refresh:180");
                         </table>
                     </div>
                 </div>
+                <!-- <h6>總金額</h6>
+                                <h6 class="total_price" id="total_price_ba">
+                                    <span >
+                                        < ?=$r['travel_price'] ?>
+                                    </span>
+                                </h6> -->
                 <!-- 修改總金額 -->
                 <!--  <span>總計: </span><span id="total-price" ></span> 元 -->
-                <div class="h6 alert alert-succes totalprice-uniqui-yu " role="alert">
-                    <span class=" d-flex  price-uniqui-yu">
-
+                <div class=" alert alert-succes totalprice-uniqui-yu " role="alert">
+                    <span class=" d-flex price-uniqui-yu">
+                        <h6 id="AllTotal_P_Yu">
+                            
+                        </h6>
                     </span>
                 </div>
                 <div class=" d-md-flex justify-content-md-end">
@@ -264,12 +277,12 @@ header("Refresh:180");
                                             </td>
                                             <!-- 單價 -->
                                             <td class="price-yu h6">
-                                                <h6 class="onePriceinputYu" nams="priceYu">
+                                                <h6 class="onePriceinputYu" name="priceYu">
                                                     <?= $j['travel_price'] ?>
                                                 </h6>
                                             </td>
                                             <!-- 數量 -->
-                                            <td class="">
+                                            <td class="TqtyYU">
                                                 <form class="text-center" id='myform' method='POST' action='#'>
 
                                                     <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
@@ -283,9 +296,8 @@ header("Refresh:180");
                                             </td>
                                             <!-- 小計 -->
                                             <td name="tpriceYu" class="total_price_yu h6  text-center">
-                                                <h6 class="littlePriceYu" nams="priceYu">
-                                                    <?= $j['travel_price'] ?>
-                                                </h6>
+                                                <h6 class="littlePriceYu" name="priceYu">
+                                                <?= $j['travel_price'] * $j['qty'] ?>
                                             </td>
                                             <!-- 刪除 -->
                                             <th scope="col" class="form-delete-yu">
@@ -297,9 +309,12 @@ header("Refresh:180");
                         </table>
                     </div>
                 </div>
+                <!-- 總價 -->
                 <div class="h6 alert alert-succes totalprice-travel-yu " role="alert">
                     <span id="total-amount" class=" d-flex price-travel-yu">
-                        <h6>1500</h6>
+                        <h6 id="">
+                        <?= $j['travel_price'] * $j['qty'] ?>
+                        </h6>
                     </span>
                 </div>
                 <div class=" d-md-flex justify-content-md-end">
@@ -537,30 +552,33 @@ function removeItem(event) {
             'json');
     }
 
+
+
     function updatePrices(){
-        let total = 0;  //總價歸零
+    let total = 0;  //總價歸零
 
-        $(".pcart-item").each(function(){
-            const tr = $(this);
-            const td_price = tr.find(".pprice");
-            const td_sub = tr.find(".sub-total");
+  $(".pcart-item").each(function(){
+      const tr = $(this);
+      const td_price = tr.find(".PlittlePriceYu");
+      // const td_sub = tr.find(".sub-total");
 
-            const price = +td_price.attr("data-val");
-            const qty = +tr.find(".qty").val();
+      const price = +td_price.attr("data-val");
+      const qty = +tr.find(".PqtyYU").val();
 
-            //td_price.html("$" +price); //+是轉型
-            //td_sub.html("$" +price * qty); 
+      //td_price.html("$" +price); //+是轉型
+      //td_sub.html("$" +price * qty); 
 
-            td_price.html('$ ' + dollarCommas(price) );
-            td_sub.html('$ ' + dollarCommas(price * qty));
-            total += price * qty; //小計計算
+//       td_price.html( dollarCommas(price) );
+//       td_sub.html( dollarCommas(price * qty));
+//       total += price * qty; //小計計算
 
-        });
-        //$("#total-price").html("$" + total);
-        $('#total-priceYu').html('$ ' + dollarCommas(total));
-    }
-    updatePrices(); // 一進頁面就要執行一次
+//   });
+//   $("#total-price").html( total);
+//   $('#total-priceYu').html( dollarCommas(total));
+// }
+updatePrices(); // 一進頁面就要執行一次
 
 
+    
 </script> 
 <?php include __DIR__ . '/parts/html-foot.php'; ?>

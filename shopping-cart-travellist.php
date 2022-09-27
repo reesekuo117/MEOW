@@ -1,6 +1,12 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = '購物車行程'; //頁面名稱
+
+
+
+$sql = "SELECT * FROM travel WHERE 1";
+$temples = $pdo->query($sql)->fetchAll(); 
+
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -119,28 +125,31 @@ header("Refresh:180");
                                                     </tr>
                                                 </thead>
                                                 <tbody class="tbody">
+                                                <?php
+                                                    foreach ($_SESSION["tcart"] as $k => $v) : ?>
                                                     <tr class="">
                                                         <!-- 商品照片 -->
                                                         <td>
-                                                            <img src="imgs/購物車-行程(測試用).png" alt="" />
+                                                        <img class="" src="imgs/travel/cards/<?= $v['travelcard_img'] ?>" alt="...">
                                                         </td>
                                                         <!-- 商品名稱 -->
                                                         <td>
                                                             <h6 class="m-0">
-                                                                大稻埕霞海城廟深度漫步文化之旅
+                                                            <?= $v['travel_name'] ?>
                                                             </h6>
                                                         </td>
                                                         <!-- 單價 -->
                                                         <td class="OnnPriceYu">
-                                                            1500
+                                                        <?= $v['travel_price'] ?>
                                                         </td>
                                                         <!-- 數量 -->
                                                         <td>1</td>
                                                         <!-- 小計 -->
                                                         <td class="littlePriceYu">
-                                                            1500
+                                                        <?= $v['travel_price'] ?>
                                                         </td>
                                                     </tr>
+                                                <?php endforeach; ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -151,7 +160,7 @@ header("Refresh:180");
                     </main>
                     <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
                         <h6 id="total-price-yu" class="price-uniqui-yu">
-                            1500
+                        <?= $v['travel_price'] ?>
                         </h6>
                         <h6 id="total-price"></h6>
                     </div>
@@ -325,7 +334,7 @@ header("Refresh:180");
                         <h3 class="listinfo-title-yu m-0">付款方式</h3>
                     </div>
                     <div class="p-3">
-                        <div class="p-3">
+                        <div class="pt-2">
                             <input type="radio" name="listinfo-title-radio-yu" id="creditcard-radio-yu" checked/>
                             <label for="name" class="m-0"> 
                                 信用卡 

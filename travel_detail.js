@@ -2,7 +2,7 @@
         // ----------------下方列-------------------
 
         $(window).scroll(function () {
-            if (window.screen.height >= ($('.detail_box').offset().top)) {
+            if ($(window).scrollTop() >= ($('.detail_box').offset().top)) {
                 // 視窗超過detail_box就出現undernav
                 $('.undernav').css({
                     transform: 'translateY(0px)',
@@ -114,7 +114,7 @@ $(window).resize(function(){
 // $('.links a').eq(3).css('color','red')
 
 $(window).scroll(function () {
-        const nowScroll = window.screen.height;
+        const nowScroll = $(window).scrollTop();
         // console.log(' now scroll123', nowScroll);
 
         for(let i = 0; i < 5; i++){
@@ -139,7 +139,7 @@ $(window).scroll(function () {
             // 視窗移動到$(document).height()整個視窗的底端
             
             // setTimeout(() => {
-            //     console.log(window.screen.height)
+            //     console.log($(window).scrollTop())
             // }, 1000)
         });
 

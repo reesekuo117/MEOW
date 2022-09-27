@@ -282,7 +282,6 @@ header("Refresh:180");
 
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 
-
 <script>
     // #move3-yu
     $(window).scroll(function() {

@@ -1170,8 +1170,8 @@ $("#btnAutoInput-yu").click(function () {
 // 確認訂購按鈕
 $(".Allsubmit").click(function (event) {
   let isPass = true;
-  if (!$(".cardCVC").val()) {
-    console.log("123:", $(".cardCVC").val());
+  if (!$(".receiveraddress3-yu ").val()) {
+    console.log("123:", $(".receiveraddress3-yu ").val());
     // 不送
     alert("沒填完");
     event.preventDefault();
@@ -1187,6 +1187,8 @@ $(".Allsubmit").click(function (event) {
     document.desktop_form.submit();
   }
 });
+
+
 
 
 function checkFormPass() {
@@ -1205,3 +1207,25 @@ function checkFormPass() {
 }
 
 $(".requiredYu").on("input", checkFormPass);
+
+
+
+
+function checkFormPass() {
+  const Allsubmit = $(".Allsubmit");
+  let isPass = true;
+  $(".receiveraddress3-yu").each(function () {
+    if (!$(this).val()) {
+      isPass = false;
+    }
+  });
+  if (isPass) {
+    Allsubmit.removeClass("btn_disabled_ba");
+  } else {
+    Allsubmit.addClass("btn_disabled_ba");
+  }
+}
+
+$(".receiveraddress3-yu").on("input", checkFormPass);
+
+

@@ -6,6 +6,9 @@ $pageName ='購物車商品'; //頁面名稱
 $sql = "SELECT * FROM product WHERE 1";
 $temples = $pdo->query($sql)->fetchAll(); 
 
+$member_id = $_SESSION['user']['id'];
+$user_id = "SELECT * FROM `member` WHERE id=$member_id";
+
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -147,10 +150,12 @@ header("Refresh:180");
                                                                 <?= $v["product_price"] ?>
                                                             </td>
                                                             <!-- 數量 -->
-                                                            <td>1</td>
+                                                            <td>
+                                                            <?= $v['qty'] ?>
+                                                            </td>
                                                             <!-- 小計 -->
                                                             <td class="LittlePriceYu">
-                                                                <?= $v["product_price"] ?>
+                                                            <?= $v['product_price'] * $v['qty'] ?>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
@@ -171,7 +176,7 @@ header("Refresh:180");
                 </div>
                 <!-- 訂購人資料 -->
                 <!-- 記得這邊的action要連到另一隻php -->
-                <form name="desktop_form" action="next.php" method="post">
+                <form name="product_form" method="post" action="shopping-cart-ATM-product.php" onsubmit="checkFormSignup(); return false;">
                     <div class="section-1-yu position-relative">
                         <div class="section-1-title-yu">
                             <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
@@ -185,7 +190,7 @@ header("Refresh:180");
                                     <span style="color: #963c38">*</span>
                                 </label>
                                 <br/>
-                                <input class="ordername-yu  requiredYu" type="text" placeholder="請輸入姓名 " id="name-yu" name="test" required/>
+                                <input class="ordername-yu  requiredYu" type="name" placeholder="請輸入姓名 " id="name-yu" name="ordername-yu" required/>
                                 <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確姓名</small>
@@ -197,7 +202,7 @@ header("Refresh:180");
                                     <span style="color: #963c38">*</span>
                                 </label>
                                 <br/>
-                                <input class="orderphone-yu  requiredYu" type="text" placeholder="請輸入聯絡電話" id="mobile-yu" name="test"  required/>
+                                <input class="orderphone-yu  requiredYu" type="mobile" placeholder="請輸入聯絡電話" id="mobile-yu" name="orderphone-yu"  required/>
                                 <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確的聯絡電話</small>
@@ -211,7 +216,9 @@ header("Refresh:180");
                                 <br/>
                                 <div class="d-flex align-items-center">
                                     <div class="form-group m-0">
-                                        <select class="orderaddress1-yu" name="test" id="city1-yu"required>
+                                        <select class="orderaddress1-yu" name="orderaddress1-yu" id="city1-yu" 
+                                        type="address_city" 
+                                        required>
                                             <option class="" value="0">臺北市</option>
                                             <option value="1">新北市</option>
                                             <option value="2">基隆市</option>
@@ -234,13 +241,13 @@ header("Refresh:180");
                                         </select>
                                     </div>
                                     <div class="form-group m-0">
-                                        <select class="orderaddress2-yu"name="test"id="district1-yu">
+                                        <select class="orderaddress2-yu"name="orderaddress2-yu"id="district1-yu" type="address_region" >
                                             <option class="" value="0">中正區</option>
                                             <option value="1">板橋區</option>
                                             <option value="2">仁愛區</option>
                                         </select>
                                     </div>
-                                    <input class="orderaddress3-yu  requiredYu" name="test" placeholder=" 請輸入詳細地址" id="address-yu" name="address"/>
+                                    <input class="orderaddress3-yu  requiredYu" name="orderaddress3-yu" placeholder=" 請輸入詳細地址" id="address-yu" name="address" type="address" />
                                     <i class="right fa-regular fa-circle-check"></i>
                                     <i class="wrong fa-solid fa-triangle-exclamation">
                                         <small>請輸入正確的地址</small>
@@ -252,7 +259,7 @@ header("Refresh:180");
                                     Email<span style="color: #963c38">*</span>
                                 </label>
                                 <br />
-                                <input type="email" class="email-yu  requiredYu"  id="email-yu" name="email"  />
+                                <input type="email" class="email-yu  requiredYu"  id="email-yu" name="order-email-yu"  />
                                 <i class="right fa-regular fa-circle-check"></i>
                                     <i class="wrong fa-solid fa-triangle-exclamation">
                                         <small>請輸入正確的Email</small>
@@ -399,8 +406,8 @@ header("Refresh:180");
                                 <h3 class="listinfo-title-yu m-0">付款方式</h3>
                             </div>
                             <div class="p-3">
-                                <div class="p-3">
-                                    <input type="radio" name="listinfo-title-radio-yu" id="creditcard-radio-yu" checked/>
+                                <div class="pt-2">
+                                    <input type="radio" name="listinfo-title-radio-yu" id="creditcard-radio-yu"/>
                                     <label for="name" class="m-0"> 
                                         信用卡 
                                     </label>
@@ -500,7 +507,7 @@ header("Refresh:180");
                                                             <input class=" cardCVC text-center requiredYu m-0" type="" name="test" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
                                                             <i class="right fa-regular fa-circle-check"></i>
                                                             <i class="wrong fa-solid fa-triangle-exclamation">
-                                                                <small>請輸入正確的信用卡後三碼</small>
+                                                            requiredYu                                 <small>請輸入正確的信用卡後三碼</small>
                                                             </i>
                                                         </div>
                                                     </div>
@@ -510,8 +517,8 @@ header("Refresh:180");
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-3">
-                                <input type="radio" name="listinfo-title-radio-yu" id="" />
+                            <div class="p-3 ATMradioYu " >
+                                <input class="ATMradioYu" type="radio" name="listinfo-title-radio-yu" id=""  checked/>
                                 <label for="name" class="m-0"> ATM轉帳 </label>
                             </div>
                         </section>
@@ -1028,5 +1035,6 @@ header("Refresh:180");
 <?php include __DIR__. '/parts/scripts.php'; ?>
 
 <script src="shopping-cart-productdetails.js" ></script>
+
 
 <?php include __DIR__. '/parts/html-foot.php'; ?>

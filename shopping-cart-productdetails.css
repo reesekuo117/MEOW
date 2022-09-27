@@ -692,7 +692,7 @@ input.receiverphone-yu {
 
 /* -----------信用卡----------- */
 .visacard-yu {
-  height: 275px;
+  height: 0px;
   overflow: hidden;
   transition: 0.5s;
 }
