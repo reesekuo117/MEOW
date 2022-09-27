@@ -19,12 +19,16 @@ html{
 .product_detail_07 button:focus{
     outline-style: none;
 }
-.product_detail_07 button a{
-    text-decoration: nonce;
+.product_detail_07 a{
+    text-decoration: none;
 }
-.product_detail_07 button a .icon_buy{
-    text-decoration: nonce;
+.product_detail_07 a .icon_buy{
+    text-decoration: none;
     color: var(--color-text100);
+}
+.product_detail_07 button{
+    cursor: pointer;
+    transition: .3s;
 }
 /* ------------------------輪播------------------------ */
 .img-demo{
@@ -182,20 +186,22 @@ html{
 }
 /* 小換大和商品標題結束 */
 /* 手機輪播牆 */
-.goback{
+.pd_head_mb .carousel{
+    position: relative;
+}
+.goback a{
     height: 26px;
     position: absolute;
     top: 10;
-    left: 10;
+    left: 20;
     z-index: 2;
-}
-.goback button{
-    border: none;
+    text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
     font-weight: bolder;
     background-color: transparent;
 }
+
 .carousel-indicators{
     bottom: 0!important;
 }
@@ -267,9 +273,11 @@ button:hover{
 .undernav .btns .buy{
     margin: 0;
     background-color: var(--color-yellow);
-
 }
-
+.undernav button a{
+    text-decoration: none;
+    color: var(--color-text87);
+}
 /* -----------------------下方列結束-------------------- */
 .links{
     flex-direction: column;

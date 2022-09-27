@@ -10,10 +10,11 @@ if ($page < 1) {
     exit;
 }
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要指定哪個分類，intval($_GET['cate']是變成整數的意思，0表示所有產品
-$newp = isset($_GET['newp']) ? intval($_GET['newp']) : 0; // 最新
-$hotp = isset($_GET['hotp']) ? intval($_GET['hotp']) : 0; // 熱門
+// $newp = isset($_GET['newp']) ? intval($_GET['newp']) : 0; // 最新
+// $hotp = isset($_GET['hotp']) ? intval($_GET['hotp']) : 0; // 熱門
 $lowerp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
 $higherp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
+$sort = isset($_GET['sort']) ? $_GET['sort'] : ''; 
 
 $qsp = []; // query string parameters
 
@@ -34,7 +35,31 @@ if ($cate) {
 
 
 // $dataSql = "SELECT * FROM `product` ORDER BY ";
-$dataSort = ' ORDER BY ';
+
+
+
+$dataSort = '';
+if(!empty($sort)){
+    $qsp['sort'] = $sort;
+    switch($sort){
+        case 'hotp':
+            $dataSort = ' ORDER BY product_popular DESC ';
+            break;
+        case 'newp':
+            $dataSort = ' ORDER BY created_at DESC ';
+            break;
+        case 'pricehigh':
+            $dataSort = ' ORDER BY product_price DESC ';
+            break;
+        case 'pricelow':
+            $dataSort = ' ORDER BY product_price ASC ';
+            break;
+    }
+
+
+}
+
+/*
 if(isset($_GET['sort'])){
         if($_GET['sort'] === 'hotp'){
             // 設定hotp變數和$dataSort的內容
@@ -67,7 +92,7 @@ if(isset($_GET['sort'])){
         $dataSort .=  " `sid` ASC";
     }    
 
-
+*/
 
 // 取得資料的總筆數
 $t_sql = "SELECT COUNT(1) FROM product $where";
@@ -202,23 +227,23 @@ if ($totalRows > 0) {
                     <h5 style="color: var(--color-text87);"><i class="fa-regular fa-hourglass-half px-1"></i>排序方式</h5>
                 </div>
                 <div class="col">
-                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=newp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='newp')? "sort_active" : "" ?>">
+                    <a href="?<?= $cate ? "cate={$cate}&" : '' ?>sort=newp#desktopSort" class="<?= $sort==='newp' ? "sort_active" : "" ?>">
                         <h5>最新上架</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=hotp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='hotp')? "sort_active" : "" ?>">
+                    <a href="?<?= $cate ? "cate={$cate}&" : '' ?>sort=hotp#desktopSort" class="<?= $sort==='hotp' ? "sort_active" : "" ?>">
                         <!-- 先設定要連到哪裡，再往上設定變數 -->
                         <h5>熱門程度</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
+                    <a href="?<?= $cate ? "cate={$cate}&" : '' ?>sort=pricehigh#desktopSort" class="<?= $sort==='pricehigh' ? "sort_active" : "" ?>">
                         <h5>價格高 → 低</h5>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="?<?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=lowerp#desktopSort" class="<?php echo (isset($_GET['sort']) && $_GET['sort'] ==='lowerp')? "sort_active" : "" ?>">
+                    <a href="?<?= $cate ? "cate={$cate}&" : '' ?>sort=pricelow#desktopSort" class="<?= $sort==='pricelow' ? "sort_active" : "" ?>">
                         <h5>價格低 → 高</h5>
                     </a>
                 </div>
@@ -310,7 +335,7 @@ if ($totalRows > 0) {
             <div class="product_list w-100">
                 <!-- --------------------卡片---------------------- -->
                 <div class="row">
-                    <?php  $qsp2 = $qsp; 
+                    <?php
                     foreach ($rows as $r) : ?>
                         <div class="col-12 col-md-4">
                             <div class="card" data-sid="<?= $r['id'] ?>">
@@ -321,7 +346,7 @@ if ($totalRows > 0) {
                                     </div>
                                 </a>
                                 <div class="card-body">
-                                    <a href="./product_detail.php?sid=<?= $r['id'] ?>">
+                                    <a href="./product_detail.php?sid=<?= $r['sid'] ?>">
                                         <div class="card_title pb-1">
                                             <h5 class="card-text" style="height: 56px;">
                                                 <?= $r['product_name'] ?>
@@ -344,7 +369,7 @@ if ($totalRows > 0) {
                                             <div class="icon_fire pr-1">
                                                 <i class="fa-solid fa-fire"></i>
                                             </div>
-                                            <span><?= $r['product_popular'] ?>K+個已訂購</span>
+                                            <span><?= $r['product_popular'] ?>個已訂購</span>
                                         </small>
                                         <h4 class="card-text price">
                                             <?= $r['product_price'] ?>
@@ -369,8 +394,8 @@ if ($totalRows > 0) {
                         <!-- <a href="?< ?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="< ?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
                         <h5>價格高 → 低</h5>
                         </a> -->
-                            <a class="page-link" href="?<?php $qsp['page']=$page == 1;
-                            echo http_build_query($qsp); ?>">
+                            <a class="page-link" href="?<?php $qsp['page']=1;
+                            echo http_build_query($qsp); ?>#desktopSort">
                                 <i class="fa-solid fa-angles-left"></i>
                             </a>
                         </li>
@@ -379,13 +404,13 @@ if ($totalRows > 0) {
                             $qsp['page']=$i;
                     ?>
                         <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                            <a class="page-link" href="?<?= http_build_query($qsp); ?>"><?= $i ?></a>
+                            <a class="page-link" href="?<?= http_build_query($qsp); ?>#desktopSort"><?= $i ?></a>
                         </li>
                     <?php endif;
                     endfor; ?>
                     <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?<?php $qsp['page']=$page == $totalPages;
-                        echo http_build_query($qsp); ?>">
+                        <a class="page-link" href="?<?php $qsp['page']=$totalPages;
+                        echo http_build_query($qsp); ?>#desktopSort">
                             <i class="fa-solid fa-angles-right"></i>
                         </a>
                     </li>

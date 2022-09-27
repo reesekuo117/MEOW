@@ -904,8 +904,8 @@ color: #CD562F;
 } */
 .mbTemCard {
   /* border: 1px solid red; */
-  margin: 20px;
-  width: 200px;
+  margin: 40px 5px;
+  width: 220px;
   height: 280px;
   border-radius: 8px;
   background-color: var(--color-orange);
@@ -965,12 +965,15 @@ color: #CD562F;
 }
 
 .temScroll-snap_lb {
-  /* border: 1px solid red; */
-  margin: 0 10px;
+  margin-left: 40px;
   display: flex;
   overflow-x: auto;
   scroll-padding: 0 50%;
   scroll-snap-type: x mandatory;
+}
+.empty{
+  width: 50px;
+  height: 280px;
 }
 
 .mbdetail-card_lb {
@@ -979,7 +982,6 @@ color: #CD562F;
   width: 100%;
   transition: 0.5s;
   overflow: auto;
-  /* background-color: var(--color-orange); */
 }
 .mbdetail-card_lb.hidden_lb {
   height: 0;
@@ -1002,7 +1004,7 @@ padding-top: 150px;
 }
 
 
-/* 月老喵推薦卡片 */
+/* PC 月老喵推薦卡片 */
 .recommand_lb {
   margin-top: 80px;
 }
@@ -1125,4 +1127,127 @@ padding-top: 150px;
 }
 .fire p {
   line-height: 24px;
+}
+
+/* 手機推薦卡片 */
+.card-carousel{
+  margin-left: -114px !important;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  color: var(--color-brown-dark);
+}
+.carousel_mb{
+  overflow: hidden;
+  padding: 50px 0 50px;
+}
+.carousel_mb .pit_mb {
+  text-align: left;
+}
+.carousel_mb .price h4::before{
+  content: "NT$ ";
+}
+.visuallyhidden {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  opacity: 0;
+
+}
+/* .carousel_test{
+  overflow: hidden;
+  padding: 20px;
+  margin-top: 2em;
+
+} */
+.card-carousel {
+  --card-width: 80%;
+  --card-max-width: 280px;
+  --card-height: 350px;
+  --carousel-min-width: 600px;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: var(--card-height);
+  min-width: var(--carousel-min-width);
+  transition: filter .3s ease;
+}
+
+@media screen and (max-width: 640px) {
+  .card-carousel {
+      margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+  }
+}
+
+.card-carousel.smooth-return {
+  transition: all .2s ease;
+}
+
+.card-carousel .card {
+  /* background: whitesmoke; */
+  width: var(--card-width);
+  max-width: var(--card-max-width);
+  text-align: center;
+  /* padding: 1em; */
+  min-width: 250px;
+  height: var(--card-height);
+  position: absolute;
+  margin: 0 auto;
+  transition: inherit;
+  border-radius: 8px;
+  filter: brightness(.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow:hidden;
+  box-shadow: 0px 3px 6px 0px var(--color-text38);
+
+}
+
+.card.highlight {
+  filter: brightness(1)
+}
+
+
+.card:nth-of-type(1) .image-container {
+  background-image: url("./imgs/product/P20_4.jpg");
+}
+
+.card:nth-of-type(2) .image-container {
+  background-image: url("./imgs/product/P19_1.jpg")
+}
+
+.card:nth-of-type(3) .image-container {
+  background-image: url("./imgs/product/P24_2.jpg")
+}
+
+.card:nth-of-type(4) .image-container {
+  background-image: url("./imgs/product/P30_1.jpg")
+}
+
+.card:nth-of-type(5) .image-container {
+  background-image: url("./imgs/product/P60_1.jpg")
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  margin-bottom: 1rem;
+  /* border-radius: 8px; */
+  padding: 1em;
+
+
+}
+.image-container::after {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 120%;
+  border-radius: 100%;
+  position: absolute;
+  top: calc(-10% - 3px);
+  left: calc(-10% - 3px);
 }

@@ -2,7 +2,7 @@
         // ----------------下方列-------------------
 
         $(window).scroll(function () {
-            if ($(window).scrollTop() >= ($('.detail_box').offset().top)) {
+            if (window.screen.height >= ($('.detail_box').offset().top)) {
                 // 視窗超過detail_box就出現undernav
                 $('.undernav').css({
                     transform: 'translateY(0px)',
@@ -31,7 +31,7 @@
         // 6.按下購買按鈕後，會記住按過的值跳轉到結帳頁面`→記在參數/記在session傳給後端(要再寫一支PHP)/記在localstorage(結帳頁面要來localstorage)
 
 
-        const priceUnit = 345;
+        const priceUnit = $('#total_price_ba').text().trim();
 
         const minusBtn = $('button.minus');
         const plusBtn = $('button.plus');
@@ -114,7 +114,7 @@ $(window).resize(function(){
 // $('.links a').eq(3).css('color','red')
 
 $(window).scroll(function () {
-        const nowScroll = $(window).scrollTop();
+        const nowScroll = window.screen.height;
         // console.log(' now scroll123', nowScroll);
 
         for(let i = 0; i < 5; i++){
@@ -139,7 +139,7 @@ $(window).scroll(function () {
             // 視窗移動到$(document).height()整個視窗的底端
             
             // setTimeout(() => {
-            //     console.log($(window).scrollTop())
+            //     console.log(window.screen.height)
             // }, 1000)
         });
 

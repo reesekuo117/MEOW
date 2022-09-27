@@ -17,6 +17,21 @@ $("#travel-a-yu").click(function () {
   $("#myTabContent-P-yu").hide();
 });
 
+
+//-----手機獨家商品 旅遊行程分頁標籤切換----------
+
+$("#mduniqui-a-yu").click(function () {
+  console.log("yes");
+  $("#mdmyTabContent-yu").show();
+  $("#mdmyTabCount-T-yu").hide();
+});
+
+$("#mdtravel-a-yu").click(function () {
+  $("#mdmyTabCount-T-yu").show();
+  $("#mdmyTabContent-yu").hide();
+});
+
+
 //----------刪除商品清單()--------------
 // const deleteIYu = $("#deleteIYu");
 $("i").click(function () {
@@ -41,7 +56,7 @@ const qtyplus = $("input.qtyplus");
 const numbertotal_yu = $("#numbertotal_yu");
 
 const littlePrice = $("h6.littlePriceYu");
-console.log("littlePrice", littlePrice);
+// console.log("littlePrice", littlePrice);
 
 qtyplus.on("click", function () {
   console.log("this", $(this).prev().text().trim());
