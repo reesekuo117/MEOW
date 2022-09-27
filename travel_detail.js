@@ -65,7 +65,7 @@
             totalDiv.html(num * priceUnit);
         }
         numChanged();
-        // 一進來就計算人數*金額
+        // // 一進來就計算人數*金額
 
         // ----------------愛心變色(輪播牆+卡片)----------------
         $('.icon_heart').click(function(e){

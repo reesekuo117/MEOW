@@ -150,7 +150,7 @@ header("Refresh:180");
                                                 <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
 
                                                 <span type='text' name='txt' value='1' class=' px-1 qty-yu numberTotalYu'>
-                                                    1
+                                                <?= $v['qty'] ?>
                                                 </span>
 
                                                 <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' />
@@ -159,7 +159,7 @@ header("Refresh:180");
                                         <!-- 小計 -->
                                         <td name="tpriceYu" class="total_price_yu h6 p-2">
                                             <h6 id="totalprice_yu" class="littlePriceYu mx-auto" nams="priceYu">
-                                                <?= $v["product_price"] ?>
+                                                <?= $v["product_price"] * $v['qty']?>
                                             </h6>
                                         </td>
                                         <!-- 刪除 -->
