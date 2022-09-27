@@ -361,8 +361,8 @@
 }
 .icon_heart {
     position: absolute;
-    right: 15px;
-    bottom: 135px;
+    right: 10px;
+    bottom: 120px;
     cursor: pointer;
     opacity: 0;
 }
@@ -379,12 +379,12 @@
 .p_img_mb{
     position: relative;
 }
-.icon_heart_mb{
+/* .icon_heart_mb{
     position: absolute;
     right: 20px;
     bottom: 15px;
     cursor: pointer;
-}
+} */
 /* .icon_heart_mb.color .heart_line {
     stroke: #432A0F;
     fill: #CD562F;
