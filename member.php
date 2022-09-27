@@ -50,7 +50,7 @@ $pageName ='會員中心'; //頁面名稱
     // --     SELECT * FROM address join product_order on address_parent = address_sid WHERE po.address_region
     // --     )
     // WHERE member_id=$member_id";
-
+    // 商品
     $po_sql = "SELECT * FROM `product_order`WHERE member_id=$member_id";
     $po_rows = $pdo->query($po_sql)->fetchAll();
     $polist_sql = "
@@ -70,16 +70,34 @@ $pageName ='會員中心'; //頁面名稱
             JOIN address ad2 ON ad2.sid = po.address_region
             WHERE member_id=$member_id";
     $polist_rows = $pdo->query($polist_sql)->fetchAll();
+    // 旅遊行程
+    $to_sql = "SELECT * FROM `travel_order`WHERE member_id=$member_id";
+    $to_rows = $pdo->query($to_sql)->fetchAll();
+    $tolist_sql = "
+        SELECT 
+            tod.*, 
+            t.travel_name, 
+            t.travelcard_img, 
+            ad.city,
+            ad2.city region
+        FROM travel_order tod
+            JOIN travel t ON t.sid = tod.travel_sid
+            JOIN address ad ON ad.sid = tod.address_city
+            JOIN address ad2 ON ad2.sid = tod.address_region
+            WHERE member_id=$member_id";
+    $tolist_rows = $pdo->query($tolist_sql)->fetchAll();
 
     // $po_rows = $pdo->query($sql)->fetchAll();
 
 
-//json_encode判斷型別輸出JSON 數字型態
+// json_encode判斷型別輸出JSON 數字型態
 // echo json_encode([ 
 //     // '$prows' => $p_rows,
 //     // '$trows' => $t_rows,
 //     // '$po_rows' => $po_rows,
-//     '$polist_rows' => $polist_rows,
+//     // '$polist_rows' => $polist_rows,
+//     // '$to_rows' => $to_rows,
+//     '$tolist_rows' => $tolist_rows,
 // ]);
 // exit;
 // ?>
@@ -552,7 +570,7 @@ $pageName ='會員中心'; //頁面名稱
                             <div class="col-md text-20-re text-center thpadding-re">訂單備註</div>
                         </div>
                     <?php foreach($po_rows as $r): ?>
-                        <!-- <table class="orderlisttable-re tablehover text-center w-100" >
+                        <!-- <table class="orderlisttable-re tablehover text-center w-100" ></table>
                             <thead class="col-4 p-0">
                                 <tr class="orderlist-title-re col-12 p-0">
                                     <th class="col-12 col-md-2 text-20-re text-center">訂單日期</th>
@@ -565,10 +583,10 @@ $pageName ='會員中心'; //頁面名稱
                             
                             <tbody class="col-8 p-0">
                                 <tr class="orderlist-re col-12 p-0">
-                                    <td class="text-16-re text-center"><?= $r['created_at'] ?></td>
-                                    <td class="text-16-re text-center">PO2022<?= $r['sid'] ?></td>
-                                    <td class="text-16-re text-center price-re"><?= $r['price'] ?></td>
-                                    <td class="text-16-re text-center"><?= $r['state'] ?></td>
+                                    <td class="text-16-re text-center">< ?= $r['created_at'] ?></td>
+                                    <td class="text-16-re text-center">PO2022< ?= $r['sid'] ?></td>
+                                    <td class="text-16-re text-center price-re">< ?= $r['price'] ?></td>
+                                    <td class="text-16-re text-center">< ?= $r['state'] ?></td>
                                     <td class="orderbtn-re text-center">
                                         查詢訂單
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -612,7 +630,7 @@ $pageName ='會員中心'; //頁面名稱
                                             <tr class="orderlist-re col-12 p-0">
                                                 <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_img'] ?>.jpg" alt=""></td>
                                                 <td class="productname-re text-16-re text-center m-0"><?= $rList['product_name'] ?></td>
-                                                <!-- <td class="text-16-re text-center ordertitle-other-re"><?= $rList['product_name'] ?></td> -->
+                                                <!-- <td class="text-16-re text-center ordertitle-other-re">< ?= $rList['product_name'] ?></td> -->
                                                 <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
                                                 <td class="text-16-re text-center ordertitle-other-re"><?= $rList['quantity'] ?></td>
                                                 <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $rList['total'] ?></td>
@@ -711,22 +729,22 @@ $pageName ='會員中心'; //頁面名稱
                     <?php endforeach ?>
                 </div>
     <!-- p4-T------------------------------------------------------------------ -->
-                <div id="tab06-re" class="ordertab-inner-re orderhight-re">
-                    <div class="d-md-flex flex-nowrap orderlist-title-re">
-                        <div class="col-md text-20-re text-center">訂單日期</div>
-                        <div class="col-md text-20-re text-center">訂單編號</div>
-                        <div class="col-md text-20-re text-center">訂單金額</div>
-                        <div class="col-md text-20-re text-center">訂單狀態</div>
-                        <div class="col-md text-20-re text-center thpadding-re">訂單備註</div>
-                    </div>
-
+                <div id="tab06-re" class="ordertab-inner-re">
+                        <div class="d-md-flex flex-nowrap orderlist-title-re">
+                            <div class="col-md text-20-re text-center">訂單日期</div>
+                            <div class="col-md text-20-re text-center">訂單編號</div>
+                            <div class="col-md text-20-re text-center">訂單金額</div>
+                            <div class="col-md text-20-re text-center">訂單狀態</div>
+                            <div class="col-md text-20-re text-center thpadding-re">訂單備註</div>
+                        </div>
+                    <?php foreach($to_rows as $t): ?>
                         <!-- 訂單查詢 -->
-                        <div class="orderlist-re col-12 p-0">
-                            <div class="text-16-re text-center">2022/09/05</div>
-                            <div class="text-16-re text-center">OR202209052000</div>
-                            <div class="text-16-re text-center price-re">5220</div>
-                            <div class="text-16-re text-center">訂單完成</div>
-                            <div class="orderbtn02-re text-center">
+                        <div class="d-md-flex orderlist-re p-0">
+                            <div class="col text-16-re text-center"><?= $t['created_at'] ?></div>
+                            <div class="col text-16-re text-center">TO2022<?= $t['sid'] ?></div>
+                            <div class="col text-16-re text-center price-re"><?= $t['price'] ?></div>
+                            <div class="col text-16-re text-center"><?= $t['state'] ?></div>
+                            <div class="col orderbtnT-re text-center">
                                 查詢訂單
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9" stroke="#432A0F" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
@@ -734,7 +752,9 @@ $pageName ='會員中心'; //頁面名稱
                             </div>
                         </div>
                         <!-- 訂單明細內容 -->
-                        <div class="rightslide01-re px-3 py-3">
+                        <div class="listslideT-re px-3 py-3">
+                            <?php foreach($tolist_rows as $tList): ?>
+                                <?php if($tList['sid'] === $t['sid']) :?>
                             <table class="inside-orderlisttable-re tablehover text-center w-100" >
                                 <thead class="col-3 p-0">
                                     <tr class="orderlist-title-re orderlisttitle-inside-re">
@@ -748,15 +768,17 @@ $pageName ='會員中心'; //頁面名稱
                                 </thead>
                                 <tbody class="col-9 p-0">
                                     <tr class="orderlist-re col-12 p-0">
-                                        <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/購物車-行程(測試用).png" alt=""></td>
-                                        <td class="productname-re text-16-re text-center m-0">台北霞海城隍廟獨家行程一日遊</td>
-                                        <td class="ext-16-re text-center ordertitle-other-re price-re">5220</td>
-                                        <td class="text-16-re text-center ordertitle-other-re">1</td>
-                                        <td class="ext-16-re text-center ordertitle-other-re price-re">5220</td>
-                                        <td class="text-center ordertitle-other2-re "><button id="evaluation02-btn-re" class="btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
+                                        <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/travel/cards/<?= $tList['travelcard_img'] ?>" alt=""></td>
+                                        <td class="productname-re text-16-re text-center m-0"><?= $tList['travel_name'] ?></td>
+                                        <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $t['price'] ?></td>
+                                        <td class="text-16-re text-center ordertitle-other-re"><?= $tList['quantity'] ?></td>
+                                        <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $tList['total'] ?></td>
+                                        <td class="text-center ordertitle-other2-re "><button id="evaluationT-btn-re" class="btn-re phonewidth250-re text-16-re py-2">給予評價</button></td>
                                     </tr>
                                 </tbody>
                             </table>
+                            <?php endif ?>
+                            <?php endforeach ?>
                             <div class="d-flex flex-wrap pt-3">
                                 <div class="col-12 col-md-6 px-2">
                                     <table class="w-100">
@@ -765,15 +787,15 @@ $pageName ='會員中心'; //頁面名稱
                                         </tr>
                                         <tr>
                                             <th class="text-16-re py-1 widht30-re">訂購人姓名</th>
-                                            <td class="text-16-re py-1">皮卡丘</td>
+                                            <td class="text-16-re py-1"><?= $tList['name'] ?></td>
                                         </tr>
                                         <tr>
                                             <th class="text-16-re py-1">訂購人電話</th>
-                                            <td class="text-16-re py-1">0987654321</td>
+                                            <td class="text-16-re py-1"><?= $tList['phone'] ?></td>
                                         </tr>
                                         <tr>
                                             <th class="text-16-re py-1">訂購人地址</th>
-                                            <td class="text-16-re py-1">台北市大安區和平東路二段106號3樓</td>
+                                            <td class="text-16-re py-1"><?= $tList['city'] ?><?= $tList['region'] ?><?= $tList['address'] ?></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -795,9 +817,9 @@ $pageName ='會員中心'; //頁面名稱
                             </div>
                         </div>
                         <!-- 評論 -->
-                        <div class="rightslide02-re px-3 py-3 position-relative">
+                        <form class="commentslideT-re px-3 py-3 position-relative">
                             <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
-                            <div class="ordercross-re ordercross02-re d-inline-block position-absolute">
+                            <div class="ordercross-re ordercrossT-re d-inline-block position-absolute">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
                                     <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
@@ -835,9 +857,9 @@ $pageName ='會員中心'; //頁面名稱
                                 <label><input id="tag-re" type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
                                 <label><input id="tag-re" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                             </div>
-                            <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
-                        </div>
-
+                            <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存" data-sid="<? $t['travel_sid'] ?>"></div>
+                        </form>
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>

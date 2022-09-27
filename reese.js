@@ -143,13 +143,11 @@ $('.orderbtn-re').on("click", function(){
     // $('.listslide-re').slideToggle('normal');
     // $('.commentslide-re').slideUp('normal');
 });
-// $('.orderbtn-re').click(function(){
-//     $('.slide-re').slideToggle('normal');
-//     $('.slide2-re').slideUp('normal');
-// })
-$('.orderbtn02-re').click(function(){
-    $('.rightslide01-re').slideToggle('normal');
-    $('.rightslide02-re').slideUp('normal');
+$('.orderbtnT-re').click(function(){
+    $(this).parents().next("div.listslideT-re").slideToggle('normal');
+    $(this).parents().next().next("div.commentslideT-re").slideUp('normal');
+    // $('.rightslide01-re').slideToggle('normal');
+    // $('.rightslide02-re').slideUp('normal');
 })
 // 給予評價
 $('.evaluation-btn-re').on("click", function(){
@@ -158,18 +156,20 @@ $('.evaluation-btn-re').on("click", function(){
     // $('.listslide-re').slideUp('normal');
     // $('.commentslide-re').slideDown('normal');
 });
-$('#evaluation02-btn-re').click(function(){
-    $('.rightslide01-re').slideUp('normal');
-    $('.rightslide02-re').slideDown('normal');
+$('#evaluationT-btn-re').click(function(){
+    $(this).parents("div.listslideT-re").slideUp('normal');
+    $(this).parents("div.listslideT-re").next("form.commentslideT-re").slideDown('normal');
+    // $('.rightslide01-re').slideUp('normal');
+    // $('.rightslide02-re').slideDown('normal');
 })
 // 關閉所有明細
 $('.ordercross-re svg').click(function(){
     $('.listslide-re').slideUp('normal');
     $('.commentslide-re').slideUp('normal');
 })
-$('.ordercross02-re').click(function(){
-    $('.rightslide01-re').slideUp('normal');
-    $('.rightslide02-re').slideUp('normal');
+$('.ordercrossT-re').click(function(){
+    $('.listslideT-re').slideUp('normal');
+    $('.commentslideT-re').slideUp('normal');
 })
 // 星星
 $('.star-re').click(function(){
