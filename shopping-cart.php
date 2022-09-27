@@ -158,9 +158,7 @@ header("Refresh:180");
                                         </td>
                                         <!-- 小計 -->
                                         <td name="tpriceYu" class="total_price_yu h6 p-2">
-                                            <h6 id="totalprice_yu" class="littlePriceYu mx-auto" nams="priceYu">
-                                                <?= $v["product_price"] * $v['qty']?>
-                                            </h6>
+                                            <h6 id="totalprice_yu" class="littlePriceYu mx-auto" nams="priceYu"><?= $v["product_price"] ?></h6>
                                         </td>
                                         <!-- 刪除 -->
                                         <th scope="col" class="form-delete-yu">
@@ -332,17 +330,10 @@ header("Refresh:180");
 </section>
 
 <!-- ------------------手機 ------------------------>
-<section class=" d-block d-md-none">
-    <!-- 返回icon -->
-    <!-- <div class="mdicon-back-yu">
-            <img src="imgs/shopping-cart/icon-32_32.png" alt="">
-        </div> -->
-    <!-- 手機獨家商品 旅遊行程分頁標籤 -->
-    <!-- href="#uniqui-yu" data-toggle="tab" -->
-    <!-- href="#travel-yu" data-toggle="tab" role="button -->
+<section class=" min-hYu  d-block d-md-none">
     <div class=" mdpagination-yu btn-group myTab nav nav-tabs">
-        <a href="#mduniqui-yu" data-toggle="tab" class="px-0 m-auto btn active" role="button">獨家商品</a>
-        <a href="#mdtravel-yu" data-toggle="tab" class=" px-0 m-auto btn" role="button">旅遊行程</a>
+        <a id="mduniqui-a-yu" href="#" data-toggle="tab" class="px-0 m-auto btn active" role="button">獨家商品</a>
+        <a id="mdtravel-a-yu" href="#" data-toggle="tab" class=" px-0 m-auto btn" role="button">旅遊行程</a>
     </div>
     <!-- 手機購物車訂單的進度條progress-bar -->
     <div class=" p-0">
@@ -377,12 +368,12 @@ header("Refresh:180");
                 </span>
             </div>
         </div>
+    </div>
+    <div id="mdmyTabContent-yu" class=" px-1 tab-content container">
         <div class="cardcheckall-yu mx-2 row d-flex align-items-center">
             <input type="checkbox" class="">
             <h6 class="pl m-0">全選</h6>
         </div>
-    </div>
-    <div id="mdmyTabContent-yu" class=" px-1 tab-content container">
         <!--  手機購物車商品清單卡片 -->
         <div id="mduniqui-yu" class=" container-fluid">
             <div class="card-yu row">
@@ -402,7 +393,7 @@ header("Refresh:180");
                     </select> -->
                     <!-- 單價 -->
                     <h5 class="mdprice-yu">
-                        707
+                        <?= $v["product_price"] ?>
                     </h5>
                     <!-- 數量 -->
                     <form class="d-flex" method='POST' action='#'>
@@ -426,16 +417,15 @@ header("Refresh:180");
                     <div class="mdcardlist-yu">
                         <p class="m-0">台北霞海城隍廟獨家聯名-七夕月老供品組</p>
                     </div>
-                    <select class="mdform-select-yu" id="autosizing-yu">
+                    <!-- <select class="mdform-select-yu" id="autosizing-yu">
                         <option value="0">甜作之盒單入組</option>
                         <option value="1">甜作之盒&棉布御守單入組</option>
                         <option value="2">棉布御守</option>
-                    </select>
+                    </select> -->
                     <!-- 單價 -->
                     <h5 class="mdprice-yu">
-                        707
+                        <?= $v["product_price"] ?>
                     </h5>
-                    <!-- 數量 -->
                     <!-- 數量 -->
                     <form class="d-flex" method='POST' action='#'>
                         <input type='button' value='-' class='qtyminus' field='quantity' />
@@ -467,12 +457,14 @@ header("Refresh:180");
                 </a>
             </div>
         </div>
+    </div>
+    <div id="mdmyTabCount-T-yu">
         <!--  手機購物車行程清單卡片 -->
         <div id="mdtravel-yu" class="  container-fluid">
-            <div class="card-yu row">
+            <div class="card-yu">
                 <!-- flex-nowrap -->
                 <div class=" d-flex px-1">
-                    <input type="checkbox" class="largerCheckbox-yu">
+                    <!-- <input type="checkbox" class="largerCheckbox-yu"> -->
                     <img class="" src="imgs/購物車手機版-行程(測試用 大).png" alt="">
                 </div>
                 <div class="px-1">

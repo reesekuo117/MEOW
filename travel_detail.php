@@ -364,8 +364,10 @@ header("Refresh:180");
                             </div>
                             <div class="total d-flex justify-content-center">
                                 <h6>總金額</h6>
-                                <h6 class="total_price">
-                                    <?=$r['travel_price']?>
+                                <h6 class="total_price" id="total_price_ba">
+                                    <!-- <span > -->
+                                        <?=$r['travel_price'] ?>
+                                    <!-- </span> -->
                                 </h6>
                             </div>
                             <div class="buy_btn">
@@ -1115,7 +1117,7 @@ header("Refresh:180");
             </div>
             <div class="total d-flex justify-content-center">
                 <h6>總金額</h6>
-                <h6 class="total_price">
+                <h6 class="total_price" >
                     <?= $r['travel_price'] ?>
                 </h6>
             </div>
