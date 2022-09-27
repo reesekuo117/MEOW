@@ -1,26 +1,26 @@
 <?php
-require __DIR__. '/parts/meow_db.php';  // /開頭
+require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = '月老文化'; //頁面名稱
 $title = '月老文化';
 
-$area = isset($_GET['area']) ? intval($_GET['area']):0; //用戶指定哪個區域
-$item = isset($_GET['item']) ? intval($_GET['item']):0; //用戶指定哪個項目
-$cate= isset($_GET['cate']) ? intval($_GET['cate']):0; //用戶指定分類
+$area = isset($_GET['area']) ? intval($_GET['area']) : 0; //用戶指定哪個區域
+$item = isset($_GET['item']) ? intval($_GET['item']) : 0; //用戶指定哪個項目
+$cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; //用戶指定分類
 
 
 $qsp = []; // query string parameters
 
 $where = 'WHERE 1';
-if($cate){
-    $where.="AND category_tag=$cate";
-    $qsp['cate']=$cate;
+if ($cate) {
+    $where .= "AND category_tag=$cate";
+    $qsp['cate'] = $cate;
 };
 //取得分類
-$tag_sql= sprintf(
-   "SELECT * FROM `temple` %s ORDER BY `sid` DESC",
-   $where,
+$tag_sql = sprintf(
+    "SELECT * FROM `temple` %s ORDER BY `sid` DESC",
+    $where,
 );
-$t_rows =  $pdo->query($tag_sql)->fetchAll(); 
+$t_rows =  $pdo->query($tag_sql)->fetchAll();
 
 // var_dump([
 //     't_rows' => $t_rows,
@@ -29,7 +29,7 @@ $t_rows =  $pdo->query($tag_sql)->fetchAll();
 
 //取得廟宇資料表
 $sql = "SELECT * FROM `temple` WHERE 1";
-$temples = $pdo->query($tag_sql)->fetchAll(); 
+$temples = $pdo->query($tag_sql)->fetchAll();
 
 
 
@@ -230,11 +230,11 @@ $temples = $pdo->query($temple_sql)->fetchAll();
             <div class="mbleft_pic_lb">
                 <img class="w-100" src="./imgs/culture/section1-1.png" alt="">
             </div>
-        
+
             <p class="mt-2 mb-p_lb">
-            傳說唐代韋固曾在客棧遇到一位老人，在夜光下翻著簿子，好奇請問，才知是姻緣簿，又問他自己將來婚配為誰？老人回說為店北頭賣菜瞎老太太三歲的小女兒。韋固一氣之下，派僕人刺殺小女兒，誰知僕人心虛只刺傷她的額頭。
-            <br>
-            十多年後，該女被刺史收為義女，並將其許配給韋固，新婚之後發現妻子額上常貼花黃是因幼年被刺，這才知月下老人所配的姻緣奇準無比，其神蹟從此廣為流傳
+                傳說唐代韋固曾在客棧遇到一位老人，在夜光下翻著簿子，好奇請問，才知是姻緣簿，又問他自己將來婚配為誰？老人回說為店北頭賣菜瞎老太太三歲的小女兒。韋固一氣之下，派僕人刺殺小女兒，誰知僕人心虛只刺傷她的額頭。
+                <br>
+                十多年後，該女被刺史收為義女，並將其許配給韋固，新婚之後發現妻子額上常貼花黃是因幼年被刺，這才知月下老人所配的姻緣奇準無比，其神蹟從此廣為流傳
             </p>
         </div>
         <div class="mb-section1-bottom_lb mt-5">
@@ -408,7 +408,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
         <div class="s3-leftcloud_lb position-absolute">
             <img class="w-100" src="./imgs/culture/cloud_6.png" alt="">
         </div>
-       
+
         <div class="s3-rightcloud_lb position-absolute">
             <img class="w-100" src="./imgs/culture/cloud_8.png" alt="">
         </div>
@@ -586,11 +586,11 @@ $temples = $pdo->query($temple_sql)->fetchAll();
 
     <!-- 如何還願-mb -->
     <div id="mbsection4_lb" class="container mbsection4_lb position-relative  d-md-none  mbtargetScrollSection">
-       
+
         <div class="mb-devotion-title  position-absolute">
-                <img class="w-100" src="./imgs/culture/Devotion title.png" alt="">
+            <img class="w-100" src="./imgs/culture/Devotion title.png" alt="">
         </div>
-     
+
         <div class="mb-devotion-bg ">
             <img class="w-100" src="./imgs/culture/devotion bg.png" alt="">
             <h3 class="mb-devo-content text-center position-absolute">
@@ -603,10 +603,10 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                 給後續香客嚐喜氣~
             </h3>
             <div class="mb-cp-cat position-absolute">
-            <img class="w-100" src="./imgs/culture/cp cat.png" alt="">
+                <img class="w-100" src="./imgs/culture/cp cat.png" alt="">
+            </div>
         </div>
-        </div>
-       
+
 
     </div>
 
@@ -624,7 +624,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         <p class="m-0 temname_lb px-2 py-2">龍山寺</p>
                     </div>
                     <div class="C07 landmark_lb d-inline-block text-center position-absolute" data-id="7" data-tag="斬桃花、小三">
-                        <h6 class="m-0 loation_lb py-2" >台北市</h6>
+                        <h6 class="m-0 loation_lb py-2">台北市</h6>
                         <p class="m-0 temname_lb px-2 py-2">指南宮</p>
                     </div>
                     <div class="C10 landmark_lb d-inline-block text-center position-absolute" data-id="10" data-tag="祈求姻緣">
@@ -982,14 +982,14 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                 </select>
                             </div>
                             <div class="form-group my-auto">
-                                <select class="select_lb" name="item_lb" id="item_lb" >
+                                <select class="select_lb" name="item_lb" id="item_lb">
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
-<!-- pc廟宇卡片 -->
-                <div id="c01-info-card_lb" class="info-card_lb  mt-5" ></div>
+                <!-- pc廟宇卡片 -->
+                <div id="c01-info-card_lb" class="info-card_lb  mt-5"></div>
             </div>
         </div>
     </div>
@@ -1006,7 +1006,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                 </select>
             </div>
             <div class="form-group my-auto">
-                <select class="mbselect_lb" name="mbitem_lb" id="mbitem_lb">
+                <select class="mbselect_lb" name="mbitem_lb" id="mbitem_lb" onchange="tagChanged()">
                     <!-- 改option樣式 -->
                     <!-- <option value="1">幸福美滿</option>
                     <option selected="selected" value="0">祈求姻緣</option>
@@ -1021,7 +1021,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                     <div class="p-0">
                         <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="<?= $t['sid'] ?>">
                             <div class="mx-auto c01-mbTemImg-wrap">
-                                <img class="w-100" src="./imgs/culture/temple/<?=$t['img']?>_s.jpg" alt="">
+                                <img class="w-100" src="./imgs/culture/temple/<?= $t['img'] ?>_s.jpg" alt="">
                             </div>
                             <h6 class="text-center mt-3 text-white"><?= $t['name'] ?></h6>
                             <p class="xs mbdetail-info_lb mb-0 text-white">
@@ -1045,7 +1045,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                     </div> -->
                 <?php endforeach; ?>
             </div>
-            
+
         </div>
         <div class="row position-relative m-0">
             <div id="mbdetail-card" class="mbdetail-card_lb hidden_lb">
@@ -1074,7 +1074,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         </div>
                     </div>
                 </div>
-                <div  class="mbTemCard-bottom_lb px-3">
+                <div class="mbTemCard-bottom_lb px-3">
                     <div class="text-center pb-2">
                         <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
                     </div>
@@ -1100,9 +1100,9 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
                     </small>
                 </div>
-            </div> 
-            
-           <!-- <div id="c06-mbdetail-card"  class="mbdetail-card_lb d-none">
+            </div>
+
+            <!-- <div id="c06-mbdetail-card"  class="mbdetail-card_lb d-none">
                     <div class="prepage_lb pl-2 pt-3">
                         <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
@@ -1151,7 +1151,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
         </div>
     </div>
 
-<!-- 月老喵誠心推薦 -->
+    <!-- 月老喵誠心推薦 -->
     <div class="d-none d-md-block recommand_lb">
         <h2 class="text-center cul-text100">月老喵誠心推薦</h2>
         <div class="otherp">
@@ -1389,145 +1389,157 @@ $temples = $pdo->query($temple_sql)->fetchAll();
 <script src="./culture.js"></script>
 
 <script>
-//把撈出的資料轉為字串
-const areas = <?= json_encode($areas); ?>;
-const temples = <?= json_encode($temples); ?>;
+    //把撈出的資料轉為字串
+    const areas = <?= json_encode($areas); ?>;
+    const temples = <?= json_encode($temples); ?>;
 
-//pc
-const area_lb = $('#area_lb'); //區域
-const item_lb = $('#item_lb'); //選項
+    //pc
+    const area_lb = $('#area_lb'); //區域
+    const item_lb = $('#item_lb'); //選項
 
-//拿區域
-function getCate() {
-    const area_sid = area_lb.val();
-        
-    // console.log('area_sid',area_sid)
+    //拿區域
+    function getCate() {
+        const area_sid = area_lb.val();
 
-    //拿到區域後把重複的item篩掉
-    //ES6 中如果希望「陣列（Array）」的元素不會重複，可以使用 Set；如果是希望物件（Object）的鍵不會重複，則可以使用 Map。
-    console.log('temples',temples);
-    const t = temples.filter(el=>area_sid==el.area_sid);
-    console.log('temple',t);
-    const t2 = t.map(el=>el.category_tag);
-   
-    console.log('item',t2);
-    const mySet = new Set(t2);
-    console.log('new Set(t2)',new Set(t2));
+        // console.log('area_sid',area_sid)
 
-    let str = '';
-    for(let i of mySet){
-        str += `<option value="${i}">${i}</option>`
+        //拿到區域後把重複的item篩掉
+        //ES6 中如果希望「陣列（Array）」的元素不會重複，可以使用 Set；如果是希望物件（Object）的鍵不會重複，則可以使用 Map。
+        // console.log('temples',temples);
+        const t = temples.filter(el => area_sid == el.area_sid);
+        // console.log('temple',t);
+        const t2 = t.map(el => el.category_tag);
+
+        // console.log('item',t2);
+        const mySet = new Set(t2);
+        // console.log('new Set(t2)',new Set(t2));
+
+        let str = '<option value="">All</option>';
+        for (let i of mySet) {
+            str += `<option value="${i}">${i}</option>`
+        };
+
+        item_lb.html(str);
+
+    }
+
+    getCate();
+
+
+    //地圖預設：北部
+    $(".path_lb").eq(0).css({
+        fill: "#E5A62A",
+        "-webkit-transform": "translate(-5px,-5px)",
+    });
+
+    //地圖北部被點擊
+    const northClicked = function() {
+        $(".path_lb").removeAttr("style");
+        $(".north").css({
+            fill: "#E5A62A",
+            "-webkit-transform": "translate(-5px,-5px)",
+        });
+        $("#north-group_lb").removeClass("d-none");
+        $("#middle-group_lb").addClass("d-none");
+        $("#south-group_lb").addClass("d-none");
+        $("#area_lb").val("1");
+        getCate();
     };
 
-    item_lb.html(str);
+    $(".north").click(northClicked);
 
-}
+    //地圖中部被點擊
+    const middleClicked = function() {
+        $(".path_lb").removeAttr("style");
+        $(".middle").css({
+            fill: "#E5A62A",
+            "-webkit-transform": "translate(-5px,-5px)",
+        });
+        $("#north-group_lb").addClass("d-none");
+        $("#middle-group_lb").removeClass("d-none");
+        $("#south-group_lb").addClass("d-none");
+        $("#area_lb").val("2");
+        getCate();
+    };
 
-getCate();
+    $(".middle").click(middleClicked);
 
+    //地圖南部被點擊
+    const southClicked = function() {
+        $(".path_lb").removeAttr("style");
+        $(".south").css({
+            fill: "#E5A62A",
+            "-webkit-transform": "translate(-5px,-5px)",
+        });
+        $("#north-group_lb").addClass("d-none");
+        $("#middle-group_lb").addClass("d-none");
+        $("#south-group_lb").removeClass("d-none");
+        $("#area_lb").val("3");
+        getCate();
+    };
+    $(".south").click(southClicked);
 
-//地圖預設：北部
-$(".path_lb").eq(0).css({
-  fill: "#E5A62A",
-  "-webkit-transform": "translate(-5px,-5px)",
-});
-
-//地圖北部被點擊
-const northClicked = function () {
-  $(".path_lb").removeAttr("style");
-  $(".north").css({
-    fill: "#E5A62A",
-    "-webkit-transform": "translate(-5px,-5px)",
-  });
-  $("#north-group_lb").removeClass("d-none");
-  $("#middle-group_lb").addClass("d-none");
-  $("#south-group_lb").addClass("d-none");
-  $("#area_lb").val("1");
-  getCate();
-};
-
-$(".north").click(northClicked);
-
-//地圖中部被點擊
-const middleClicked = function () {
-  $(".path_lb").removeAttr("style");
-  $(".middle").css({
-    fill: "#E5A62A",
-    "-webkit-transform": "translate(-5px,-5px)",
-  });
-  $("#north-group_lb").addClass("d-none");
-  $("#middle-group_lb").removeClass("d-none");
-  $("#south-group_lb").addClass("d-none");
-  $("#area_lb").val("2");
-  getCate();
-};
-
-$(".middle").click(middleClicked);
-
-//地圖南部被點擊
-const southClicked = function () {
-  $(".path_lb").removeAttr("style");
-  $(".south").css({
-    fill: "#E5A62A",
-    "-webkit-transform": "translate(-5px,-5px)",
-  });
-  $("#north-group_lb").addClass("d-none");
-  $("#middle-group_lb").addClass("d-none");
-  $("#south-group_lb").removeClass("d-none");
-  $("#area_lb").val("3");
-  getCate();
-};
-$(".south").click(southClicked);
-
-//區域被改變時
-$("#area_lb").on("change", function () {
-const val = $(this).val() - 1;
-    // console.log({val});
-const areas = [northClicked, middleClicked, southClicked];
-areas[val]();
-});
+    //區域被改變時
+    $("#area_lb").on("change", function() {
+        const val = $(this).val() - 1;
+        // console.log({val});
+        const areas = [northClicked, middleClicked, southClicked];
+        areas[val]();
+    });
 
 
 
-//求籤項目被改變的時候 地標卡片要篩選
-//如果該區域的廟(landmark)的category_tag不等於el.category_tag 就會隱藏
-$("#item_lb").on("change",function () {
-    // console.log('HI', $(this).val());
-    const targetTag = $(this).val();
-    const area_sid = area_lb.val();
-    // console.log('area',area_sid);
+    //求籤項目被改變的時候 地標卡片要篩選
+    //如果該區域的廟(landmark)的category_tag不等於el.category_tag 就會隱藏
+    $("#item_lb").on("change", function() {
+        // console.log('HI', $(this).val());
+        const targetTag = $(this).val();
+        const area_sid = area_lb.val();
+        // console.log('area',area_sid);
 
-    const areaDomIdArray = ["#north-group_lb","#middle-group_lb","#south-group_lb"]
+        const areaDomIdArray = ["#north-group_lb", "#middle-group_lb", "#south-group_lb"]
 
-    $(`${areaDomIdArray[area_sid-1]} .landmark_lb`).each((index, item)=>{
-        console.log('item value', $(item).data('tag'));
-        if($(item).data('tag') === targetTag){
-            // $(item).show();
-            $(item).removeClass('d-none').addClass('d-inline-block');
-        }
-        else{
-            // $(item).hide();
-            $(item).removeClass('d-inline-block').addClass('d-none');
-        }   
-    })
-});
+        $(`${areaDomIdArray[area_sid-1]} .landmark_lb`).each((index, item) => {
+            if(targetTag=='') {
+                $(item).removeClass('d-none').addClass('d-inline-block');
+                return;
+            }
+
+            // console.log('item value', $(item).data('tag'));
+            if ($(item).data('tag') === targetTag) {
+                // $(item).show();
+                $(item).removeClass('d-none').addClass('d-inline-block');
+            } else {
+                // $(item).hide();
+                $(item).removeClass('d-inline-block').addClass('d-none');
+            }
+        })
+    });
 
 
- //點擊地標出現廟宇卡片
- $('.landmark_lb').on('click', function(){
+    //點擊地標出現廟宇卡片
+    $('.landmark_lb').on('click', function() {
 
-const id = $(this).attr('data-id');
-const [item] = temples.filter(el=>{
-    return el.sid==id;
-});
-console.log('[item]',item);
-$('.info-card_lb').html(card_tpl_func(item));
-$(this).addClass('landmarkActive_lb').siblings().removeClass('landmarkActive_lb');
-});
+        const id = $(this).attr('data-id');
+        const [item] = temples.filter(el => {
+            return el.sid == id;
+        });
+        // console.log('[item]',item);
+        $('.info-card_lb').html(card_tpl_func(item));
+        $(this).addClass('landmarkActive_lb').siblings().removeClass('landmarkActive_lb');
+    });
 
-//pc廟宇卡片
-const card_tpl_func = ({hashtag,name,address,opening_hours,img,step,notice})=>{
-    return `
+    //pc廟宇卡片
+    const card_tpl_func = ({
+        hashtag,
+        name,
+        address,
+        opening_hours,
+        img,
+        step,
+        notice
+    }) => {
+        return `
         <div class="row">
             <div class="col-4">
                 <div class="title-box_lb">
@@ -1557,47 +1569,75 @@ const card_tpl_func = ({hashtag,name,address,opening_hours,img,step,notice})=>{
                 </div>
             </div>
         </div>`;
-};
-
-//桌機預設一開始出現的廟
-const  mapDefault = function () {
-const defaultId = $(this).attr('data-id');
-const [item] = temples.filter(el=>{
-    return el.sid === '6';
-});
-
-$('.info-card_lb').html(card_tpl_func(item));
-};
-
-mapDefault();
-
-
-
-//mb
-const mbarea_lb = $('#mbarea_lb'); 
-const mbitem_lb = $('#mbitem_lb');
-
-function mbgetCate() {
-    const mbarea_sid = mbarea_lb.val();
-    
-    const mt = temples.filter(el=>mbarea_sid==el.area_sid);
-    console.log('mbtemple',mt);
-
-    const mt2 = mt.map(el=>el.category_tag);
-    console.log('mbitem',mt2);
-    const mbmySet = new Set(mt2);
-    console.log('new Set(mt2)',new Set(mt2));
-
-
-    let mbstr = '';
-    for(let i of mbmySet){
-        mbstr += `<option value="${i}">${i}</option>`
     };
 
-    mbitem_lb.html(mbstr);
+    //桌機預設一開始出現的廟
+    const mapDefault = function() {
+        const defaultId = $(this).attr('data-id');
+        const [item] = temples.filter(el => {
+            return el.sid === '6';
+        });
 
-    let mtStr = '';
-    mt.forEach((item)=>{
+        $('.info-card_lb').html(card_tpl_func(item));
+    };
+
+    mapDefault();
+
+
+    //mb
+    const mbarea_lb = $('#mbarea_lb');
+    const mbitem_lb = $('#mbitem_lb');
+
+    // function mbgetCate() {
+    //     const mbarea_sid = mbarea_lb.val();
+
+    //     const mt = temples.filter(el => mbarea_sid == el.area_sid);
+    //     // console.log('mbtemple',mt);
+
+    //     const mt2 = mt.map(el => el.category_tag);
+    //     // console.log('mbitem',mt2);
+    //     const mbmySet = new Set(mt2);
+    //     // console.log('new Set(mt2)',new Set(mt2));
+
+
+    //     let mbstr = '';
+    //     for (let i of mbmySet) {
+    //         mbstr += `<option value="${i}">${i}</option>`
+    //     };
+
+    //     mbitem_lb.html(mbstr);
+
+    //     let mtStr = '';
+     
+    //         }
+    //     })
+
+    //     $('.temScroll-snap_lb .row').html(mtStr)
+    // }
+
+    // mbgetCate();
+
+    // // $('#mbitem_lb').on('change', function() {
+    // //     const mbtargetTag = $(this).val();
+    // //     console.log('mbtargetTag', mbtargetTag);
+
+
+
+
+    // });
+
+    function genTempleList() {
+        const mbarea_sid = mbarea_lb.val();
+        const mbitem_txt = mbitem_lb.val();
+        // console.log({mbarea_sid, mbitem_txt })
+
+        const mt = temples.filter( temple =>{
+            return mbarea_sid==temple.area_sid && mbitem_txt==temple.category_tag;
+        });
+        // console.log(temples)
+        // console.log({ mt })
+        let mtStr = '';
+        mt.forEach((item)=>{
             mtStr += `<div class="p-0">
                         <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="${item.sid}">
                             <div class="mx-auto c01-mbTemImg-wrap">
@@ -1610,66 +1650,51 @@ function mbgetCate() {
                             </p>
                         </div>
                     </div>`
-    })
-    $('.temScroll-snap_lb .row').html(mtStr)
-}
-
-mbgetCate();
-
-//TODO:手機祈求篩選
-// function mbgetCate() {
-//     const mbarea_sid = mbarea_lb.val();
-    
-//     const mt = temples.filter(el=>mbarea_sid==el.area_sid);
-//     console.log('mbtemple',mt);
-
-//     const mt2 = mt.map(el=>el.category_tag);
-//     console.log('mbitem',mt2);
-//     const mbmySet = new Set(mt2);
-//     console.log('new Set(mt2)',new Set(mt2));
-
-//     let mbstr = '';
-//     for(let i of mbmySet){
-//         mbstr += `<option value="${i}">${i}</option>`
-//     };
-
-//     mbitem_lb.html(mbstr);
-
-   
-
-//     let mtStr = '';
-//     mt.forEach((item)=>{
-//         if ($(item).data('tag') === targetTag) {
-//               mtStr += `<div class="p-0">
-//                         <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="${item.sid}">
-//                             <div class="mx-auto c01-mbTemImg-wrap">
-//                                 <img class="w-100" src="./imgs/culture/temple/${item.img}_s.jpg" alt="">
-//                             </div>
-//                             <h6 class="text-center mt-3 text-white">${item.name}</h6>
-//                             <p class="xs mbdetail-info_lb mb-0 text-white">
-//                                 <span class="ml-3">${item.address}</span>
-//                                 <span class="ml-3">${item.opening_hours}</span>
-//                             </p>
-//                         </div>
-//                     </div>`
-//         } else {
-
-            
-//         }
-          
-//     })
-//     $('.temScroll-snap_lb .row').html(mtStr);
-// };
-
-// mbgetCate();
+        })
+        $('.temScroll-snap_lb .row').html(mtStr);
+    }
 
 
 
 
+    //TODO:手機祈求篩選
+    function mbgetCate() {
+        const mbarea_sid = mbarea_lb.val();
 
-//mb卡片
-const mbcard_tpl_func = ({name,address,opening_hours,img,step,notice})=>{
-    return ` <div class="row mbTemCard-top_lb py-3 m-0">
+        const mt = temples.filter(el=>mbarea_sid==el.area_sid);
+        console.log('mbtemple',mt);
+
+        const mt2 = mt.map(el=>el.category_tag);
+        console.log('mbitem',mt2);
+        const mbmySet = new Set(mt2);
+        console.log('new Set(mt2)',new Set(mt2));
+
+        let mbstr = '';
+        for(let i of mbmySet){
+            mbstr += `<option value="${i}">${i}</option>`
+        };
+
+        mbitem_lb.html(mbstr);
+        genTempleList();
+    };
+    mbgetCate();
+
+    function tagChanged() {
+        genTempleList();
+    };
+
+
+
+    //mb卡片
+    const mbcard_tpl_func = ({
+        name,
+        address,
+        opening_hours,
+        img,
+        step,
+        notice
+    }) => {
+        return ` <div class="row mbTemCard-top_lb py-3 m-0">
                      <div class="col-12 prepage_lb pl-2 pt-3">
                         <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
@@ -1703,75 +1728,74 @@ const mbcard_tpl_func = ({name,address,opening_hours,img,step,notice})=>{
                     ${notice}
                     </small>
                 </div>`
-            };
+    };
 
 
-                // <div class="prepage_lb pl-2 pt-3">
-                //     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                //         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white"/>
-                //     </svg>
-                // </div>
-                // <div class="row mbTemCard-top_lb py-3 m-0">
-                //     <div class="col-7 p-0 pl-3">
-                //         <h6 class="m-0 text-white">${name}</h6>
-                //         <p class="xs mbdetail-info_lb mb-0 text-white">
-                //             <span class="ml-1">${address}
-                //             </span>
-                //             <span class="ml-1"> ${opening_hours}</span>
-                //         </p>
-                //     </div>
-                //     <div class="col-3 p-0 mx-2">
-                //         <div class="mx-auto c01-mbDetailTemImg-wrap">
-                //             <img class="w-100" src="./imgs/culture/temple/${img}.jpg" alt="">
-                //         </div>
-                //     </div>
-                // </div>
-                // <div  class="mbTemCard-bottom_lb px-3">
+    // <div class="prepage_lb pl-2 pt-3">
+    //     <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white"/>
+    //     </svg>
+    // </div>
+    // <div class="row mbTemCard-top_lb py-3 m-0">
+    //     <div class="col-7 p-0 pl-3">
+    //         <h6 class="m-0 text-white">${name}</h6>
+    //         <p class="xs mbdetail-info_lb mb-0 text-white">
+    //             <span class="ml-1">${address}
+    //             </span>
+    //             <span class="ml-1"> ${opening_hours}</span>
+    //         </p>
+    //     </div>
+    //     <div class="col-3 p-0 mx-2">
+    //         <div class="mx-auto c01-mbDetailTemImg-wrap">
+    //             <img class="w-100" src="./imgs/culture/temple/${img}.jpg" alt="">
+    //         </div>
+    //     </div>
+    // </div>
+    // <div  class="mbTemCard-bottom_lb px-3">
 
-                //     <div class="text-center pb-2">
-                //         <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
-                //     </div>
-                //     <small class=" mt-3 steptext_lb ">${step}</small>
-                //     <div class="text-center py-2">
-                //         <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
-                //     </div>
-                //     <small class="mt-3 temnoticetext_lb">
-                //     ${notice}
-                //         </p>
-                // </div>`
-
-
-
-
-$('.temScroll-snap_lb').on('click','.mbTemCard',function(){
-const mbid = $(this).attr('data-id');
-const [mbitem] = temples.filter(el=>{
-    return el.sid == mbid;
-});
-console.log('[mbitem]',[mbitem]);
-$('.mbdetail-card_lb').html(mbcard_tpl_func(mbitem));
-$('.mbdetail-card_lb').removeClass('hidden_lb');
-$("html, body").animate({ scrollTop: $('#mbdetail-card').offset().top - 36 }, 500);
-});
-
-
-//卡片返回鍵
-  $(".mbdetail-card_lb").on('click','.prepage_lb',function () {
-    console.log('hi');
-  $(".mbdetail-card_lb").addClass('hidden_lb');
-});
+    //     <div class="text-center pb-2">
+    //         <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
+    //     </div>
+    //     <small class=" mt-3 steptext_lb ">${step}</small>
+    //     <div class="text-center py-2">
+    //         <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
+    //     </div>
+    //     <small class="mt-3 temnoticetext_lb">
+    //     ${notice}
+    //         </p>
+    // </div>`
 
 
 
-$('#mbarea_lb').change(function(){
-    console.log('mbarea_lb changed');
-})
 
-$('#mbitem_lb').change(function(){
-    console.log('mbitem_lb changed');
-})
+    $('.temScroll-snap_lb').on('click', '.mbTemCard', function() {
+        const mbid = $(this).attr('data-id');
+        const [mbitem] = temples.filter(el => {
+            return el.sid == mbid;
+        });
+        console.log('[mbitem]', [mbitem]);
+        $('.mbdetail-card_lb').html(mbcard_tpl_func(mbitem));
+        $('.mbdetail-card_lb').removeClass('hidden_lb');
+        $("html, body").animate({
+            scrollTop: $('#mbdetail-card').offset().top - 36
+        }, 500);
+    });
+
+
+    //卡片返回鍵
+    $(".mbdetail-card_lb").on('click', '.prepage_lb', function() {
+        console.log('hi');
+        $(".mbdetail-card_lb").addClass('hidden_lb');
+    });
 
 
 
+    $('#mbarea_lb').change(function() {
+        console.log('mbarea_lb changed');
+    })
+
+    $('#mbitem_lb').change(function() {
+        console.log('mbitem_lb changed');
+    })
 </script>
 <?php include __DIR__ . '/parts/html-foot.php'; ?>
