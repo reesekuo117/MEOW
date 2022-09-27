@@ -164,7 +164,7 @@ header .navbar {
   position: absolute;
   width: 375px;
   /* height: 100vh; */
-  margin: 25px 0 0 -30px;
+  margin: 24px 0 0 -30px;
   padding: 20px;
   background: var(--color-lightbrown);
   list-style-type: none;

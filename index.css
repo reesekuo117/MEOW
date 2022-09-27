@@ -34,7 +34,13 @@ header .navbar_ba {
 .section3_ba a,
 .section4_ba a,
 .section5_ba a,
-.section6_ba a {
+.section6_ba a,
+.msection1_ba a,
+.msection2_ba a,
+.msection3_ba a,
+.msection4_ba a,
+.msection5_ba a,
+.msection6_ba a {
     color: var(--color-brown-dark) !important;
 }
 
@@ -1237,8 +1243,6 @@ header .navbar_ba {
 
 .card-carousel{
     margin-left: -114px !important;
-    /* left: 50%;
-    transform: translateX(-50%); */
     color: var(--color-brown-dark);
 }
 
