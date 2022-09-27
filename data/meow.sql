@@ -2,9 +2,9 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- 主機： 127.0.0.1
--- 產生時間： 2022-09-26 14:46:52
--- 伺服器版本： 10.4.24-MariaDB
+-- 主機： localhost
+-- 產生時間： 2022 年 09 月 27 日 09:13
+-- 伺服器版本： 10.4.21-MariaDB
 -- PHP 版本： 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -683,8 +683,8 @@ INSERT INTO `travel_kind` (`sid`, `travel_kind`) VALUES
 
 CREATE TABLE `travel_order` (
   `sid` int(11) NOT NULL,
-  `id` int(11) NOT NULL,
   `member_id` int(11) NOT NULL,
+  `travel_sid` int(11) NOT NULL,
   `state` varchar(100) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
@@ -703,7 +703,7 @@ CREATE TABLE `travel_order` (
 -- 傾印資料表的資料 `travel_order`
 --
 
-INSERT INTO `travel_order` (`sid`, `id`, `member_id`, `state`, `price`, `quantity`, `totle`, `name`, `phone`, `address_city`, `address_region`, `address`, `payment`, `payment_state`, `created_at`) VALUES
+INSERT INTO `travel_order` (`sid`, `member_id`, `travel_sid`, `state`, `price`, `quantity`, `totle`, `name`, `phone`, `address_city`, `address_region`, `address`, `payment`, `payment_state`, `created_at`) VALUES
 (1, 16, 3, '訂單完成', 1500, 1, 1500, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-16 12:50:00'),
 (2, 16, 6, '訂單完成', 6000, 1, 6000, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-17 12:50:00'),
 (3, 16, 9, '訂單完成', 6000, 2, 12000, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-18 12:50:00');
