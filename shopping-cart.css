@@ -398,7 +398,9 @@ h6.onePriceinputYu::before {
 h5.mdprice-yu::before {
   content: "NT$";
 }
-
+h6.mdprice-yu::after {
+    content: "NT$";
+  }
 /* ---------小計------------ */
 h6.littlePriceYu {
   /* border: 1px solid #000; */
@@ -559,4 +561,12 @@ h6.MDtatalpriceYu::before {
 
 #mdmyTabCount-T-yu {
   display: none;
+}
+
+.mdImg-Yu{
+    padding-left: 15px;
+}
+
+.cardcheckall-yu{
+    padding-top: 25px;
 }
