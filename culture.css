@@ -2,11 +2,7 @@
   outline: 1px solid black;
 } */
 
-/* 手機滑動滾輪隱藏 */
-/* body::-webkit-scrollbar{
-  display: none;
 
-} */
 /* html{
 scroll-behavior: smooth;
 } */
@@ -590,6 +586,13 @@ scroll-behavior: smooth;
   scroll-padding: 0 50%;
   scroll-snap-type: x mandatory;
   scroll-snap-align: center;
+}
+
+.scroll-snap_lb::-webkit-scrollbar{
+  display: none;
+}
+.temScroll-snap_lb::-webkit-scrollbar{
+  display: none;
 }
 .mb-ban-img-wrap {
   width: 220px;
