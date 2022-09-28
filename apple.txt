@@ -101,3 +101,7 @@ TD固定高度
 您改你
 訂單編號抓sid(行程TO2022+sid  商品PO2022+sid)
 
+
+TOFIXED:
+1.travel_detail 霞海文字增加
+2.公版navbar 下滑收起來 上滑出現
