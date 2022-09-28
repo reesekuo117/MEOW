@@ -429,7 +429,7 @@ header("Refresh:180");
                                             </div>
                                             <div class="card_small d-flex align-items-center pt-2
                                             ">
-                                                <div class="xs card-text  d-flex align-items-center  pr-4">
+                                                <div class="xs card-text d-flex align-items-center align-self-end pr-4">
                                                     <div class="icon_fivestar"></div>
                                                     <span>
                                                         <?= $r['travel_star']?>

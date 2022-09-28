@@ -376,6 +376,7 @@
 }
 .card-text{
     color: var(--color-text100);
+  margin: auto 0;
     /* border: 1px solid #000; */
 }
 
