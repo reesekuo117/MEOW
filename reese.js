@@ -160,6 +160,7 @@ $('.evaluation-btn-re').on("click", function(){
     form1.product_sid.value = pid;
 
     $(this).parents("div.listslide-re").slideUp('normal');
+    // $(this).parents("div.listslide-re").nextUntil("form.commentslide-re").slideDown('normal');
     $(this).parents("div.listslide-re").next("form.commentslide-re").slideDown('normal');
     // $('.listslide-re').slideUp('normal');
     // $('.commentslide-re').slideDown('normal');
@@ -188,13 +189,13 @@ $('.star-re').click(function(){
     console.log('hi',$(this).index());
     for(let i = 0; i < 5; i++ ){
         const color = ($(this).index() >= i)? '#E5A62A' : 'none';
-        // let color1 ;
-        // if($(this).index() >= i){
-        //     color1 = yellow
-        // }
-        // else{
-        //     color1 = none 
-        // }
+        let color1 ;
+        if($(this).index() >= i){
+            color1 = yellow
+        }
+        else{
+            color1 = none 
+        }
         $('.star-re').eq(i).css('fill',color)
     }
     // if($(this).index() === 0){
@@ -218,24 +219,23 @@ function checkFormReviewP(event){
     console.log($(form1).serialize());
     console.log('checkFormReviewP');
     let isPass = true;
+    
     // if (!$('').val()) {
     //     genAlert5('請填寫正確資料');
     //     return;
-    // }else if (!$('').val()) {
-    //     genAlert5('請填寫正確資料');
-    //     return;
     // }
+
     if(isPass){
         $.post(
             're-review-api.php', 
             $(form1).serialize(),
             function(data){
                 console.log('form_preview_re data',data);
-                if(data.success){
-                    genAlert5('新增評論成功', 'success');
-                }else{
-                    genAlert5(data.error);
-                }
+                // if(data.success){
+                //     genAlert5('新增評論成功', 'success');
+                // }else{
+                //     genAlert5(data.error);
+                // }
         }, 'json');
     }
 }

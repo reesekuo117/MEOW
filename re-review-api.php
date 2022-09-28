@@ -7,13 +7,24 @@ $output = [
     'code' => 0,
     'postData' => $_POST,
 ];
-echo $_POST;
+if(empty($_SESSION['user']['id'])){
+    echo json_encode($output);
+    exit;
+}
 
-// if(empty($_POST['signup_email']) or empty($_POST['signup_password']) or empty($_POST['signup_again'])){
-//     $output['error'] = '請輸入正確的帳號密碼!';
-//     echo json_encode($output, JSON_UNESCAPED_UNICODE);
-//     exit;
-// }
+$member_id = $_SESSION['user']['id'];
+
+if(empty($_POST['target_type']) or empty($_POST['product_sid'])){
+    $output['error'] = 'params !!';
+    echo json_encode($output);
+    exit;
+}
+
+$target_type = intval($_POST['target_type']);
+$product_sid = intval($_POST['product_sid']);
+$star_num = intval($_POST['star_num']);
+$tag_re = intval($_POST['tag_re']);
+
 
 $sql = "INSERT INTO `review`(
         `members_id`, 
@@ -22,7 +33,7 @@ $sql = "INSERT INTO `review`(
         `star`, 
         `content`, 
         `tags_sid`, 
-        `created_at`,
+        `created_at`
     ) VALUES (
         ?,
         ?,
@@ -35,12 +46,12 @@ $sql = "INSERT INTO `review`(
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    $_POST[''],
-    $_POST['target_type'],
-    $_POST['product_sid'],
-    $_POST['star_num'],
-    $_POST['tag_re[]'],
-    $_POST[''],
+    $member_id,
+    $target_type,
+    $product_sid ,
+    $star_num,
+    $_POST['content_p'],
+    $tag_re,
 ]);
 
 if($stmt->rowCount()){
