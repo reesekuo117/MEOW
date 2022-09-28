@@ -417,7 +417,7 @@ select {
 }
 
 .carousel .carousel-item img {
-  max-width: 100%;
+  /* max-width: 100%; */
   display: inline-block;
 }
 .img-box {
