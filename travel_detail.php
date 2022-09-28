@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = '旅遊行程'; //頁面名稱
-$title = '旅遊行程';
+$title = '旅遊行程詳情';
 
 
 // if(!isset($_GET['sid'])){
@@ -259,7 +259,7 @@ header("Refresh:180");
                                         立即購買
                                     </button>
                                 </a>
-                                <button class="favorite d-flex justify-content-center align-items-center">
+                                <button class="favorite d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToFav_T_07(event)">
                                     <div class="icon_heart_nav">
                                         <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
@@ -411,7 +411,7 @@ header("Refresh:180");
             <div class="btns">
                 <div class="row align-items-center">
                     <div class="col">
-                        <button class="favorite d-flex justify-content-center align-items-center">
+                        <button class="favorite d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                             <div class="icon_heart_nav">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
@@ -731,7 +731,7 @@ header("Refresh:180");
                                         <div class="thumb-wrapper mx-3">
                                             <div class="img-box">
                                                 <img src="./imgs/travel/cards/T01_1S.jpg" class="img-fluid" alt="">
-                                                <div class="icon_heart">
+                                                <div class="icon_heart" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                                                     <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                     </svg>
@@ -787,7 +787,7 @@ header("Refresh:180");
                                         <div class="thumb-wrapper mx-3">
                                             <div class="img-box">
                                                 <img src="./imgs/travel/T01_1.jpg" class="img-fluid" alt="">
-                                                <div class="icon_heart">
+                                                <div class="icon_heart" >
                                                     <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                     </svg>
@@ -1146,7 +1146,7 @@ header("Refresh:180");
     <div class="row justify-content-center align-items-center">
         <div class="col ml-2">
             <button class="favorite d-flex justify-content-center align-items-center w-100">
-                <div class="icon_heart_nav">
+                <div class="icon_heart_nav" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                     <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
                     </svg>
@@ -1200,6 +1200,20 @@ header("Refresh:180");
             },
             'json');
     }
+
+        function addToFav_T_07(event) {
+        const heartbtn = $(event.currentTarget); // 監聽
+        const collect_sid = heartbtn.attr('data-sid');
+        console.log('hiheart', heartbtn);
+        console.log('hisid', collect_sid);
+        $.get(
+            'favorite_api.php', {
+                collect_sid,
+                target_type: 2,
+            },
+            'json');
+        
+    };
 </script>
 
 

@@ -1,5 +1,5 @@
 // 手機版篩選
-$('.travel_sortbtn_mb  button').click(function(){
+$('.travel_sortbtn_mb button').click(function(){
     console.log('hello');
     // $('.travel_cate_mb').removeClass('d-none').addClass('d-block')
     $('.travel_sortbtn_mb  button').toggleClass('tsmbactive')
@@ -46,8 +46,8 @@ function slideTwo() {
     // SliderValTwo.style.right = `${sliderMovementTwo /2900 * 40 }%`;
 }
 
-sliderOne.addEventListener('input', slideOne)
-sliderTwo.addEventListener('input', slideTwo)
+// sliderOne.addEventListener('input', slideOne)
+// sliderTwo.addEventListener('input', slideTwo)
 
 // 愛心
 

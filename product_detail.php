@@ -37,9 +37,9 @@ $rows = $pdo->query($sql)->fetchAll();
                             <div class="img-demo d-flex justify-content-center">
                                 <img class="p1" src="./imgs/product/big/P19_1_b.jpg" alt="">
                                 <img class="p2" src="./imgs/product/big/P19_2_b.jpg" alt="">
-                                <img class="p3" src="./imgs/product/big/P19_4_b.jpg" alt="">
-                                <img class="p4" src="./imgs/product/big/P19_5_b.jpg" alt="">
-                                <img class="p5" src="./imgs/product/big/P19_6_b.jpg" alt="">
+                                <img class="p3" src="./imgs/product/big/P19_3_b.jpg" alt="">
+                                <img class="p4" src="./imgs/product/big/P19_4_b.jpg" alt="">
+                                <img class="p5" src="./imgs/product/big/P19_5_b.jpg" alt="">
                                 <!-- 輪播牆php -->
                                 <!-- < ?php
                                     $first = 0;
@@ -73,13 +73,13 @@ $rows = $pdo->query($sql)->fetchAll();
                                     <img src="./imgs/product/small/P19_2_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
+                                    <img src="./imgs/product/small/P19_3_s.jpg" alt="">
+                                </div>
+                                <div class="img-wrap">
                                     <img src="./imgs/product/small/P19_4_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
                                     <img src="./imgs/product/small/P19_5_s.jpg" alt="">
-                                </div>
-                                <div class="img-wrap">
-                                    <img src="./imgs/product/small/P19_6_s.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -198,13 +198,13 @@ $rows = $pdo->query($sql)->fetchAll();
                     <img src="./imgs/product/big/P19_2_b.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
+                    <img src="./imgs/product/big/P19_3_b.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
                     <img src="./imgs/product/big/P19_4_b.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="./imgs/product/big/P19_5_b.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imgs/product/big/P19_6_b.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             </a>
@@ -869,7 +869,7 @@ $rows = $pdo->query($sql)->fetchAll();
                 </button>
 
             </div>
-            <div class="col ml-0 mr-2">
+            <div class="col mr-3">
                 <button class="buy btn-l d-flex justify-content-center align-items-center w-100 my-3">
                     <div class="icon_buy pr-1">
                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
