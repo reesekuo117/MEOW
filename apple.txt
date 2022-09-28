@@ -5,9 +5,10 @@ Nav
 Footer 下滑消失 上滑出現
 
 首頁(8張)
-全館免運
-會員註冊登入換圖
-input藍底關掉貼公版
+OK全館免運
+OK會員註冊登入換圖
+OKinput藍底關掉貼公版
+
 求籤(8張)
 錯誤訊息光香研究(product_list .notlogin)
 線上求籤(八張)

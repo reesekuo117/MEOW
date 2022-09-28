@@ -47,8 +47,21 @@ var $li = $('ul.tab-title li');
     $li.click(function(){
         $($(this).find('a'). attr ('href')).show().siblings ('.tab-inner').hide();
         $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
+
     });
 });
+
+// 登入換圖
+$('.signoutBtn-re').click(function () {
+    // console.log('change');
+    $('.signoutBtn-re').closest('.loginwarp-re').find('.loginimgwarp-re').html('<img class="loginimg-ba" src="./imgs/member/loginbg.jpg" alt="">')
+})
+
+$('.signinBtn-re').click(function () {
+    // console.log('change');
+    $('.signoutBtn-re').closest('.loginwarp-re').find('.loginimgwarp-re').html('<img class="loginimg-ba" src="./imgs/member/loginbg2.jpg" alt="">')
+})
+
 // 登入欄位錯誤狀態
 const msgc_signin = $('#signin_msgContainer');
     function genAlert(msg1, type='danger'){

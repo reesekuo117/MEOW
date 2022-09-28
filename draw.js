@@ -344,16 +344,16 @@ $('.drawSection12 .horobtn').mouseleave(function () {
         localStorage.setItem('wantArray', wantArray);
     })
 
-    function checkWantArray(){
-        const wantArray = localStorage.getItem('wantArray');
-        $('.wantbtn').each(function(index,item){
-            if(wantArray.includes($(item).text().trim())){
-                $(item).addClass('drawbtnToggle')
-            }
-        })
-    }
+    // function checkWantArray(){
+    //     const wantArray = localStorage.getItem('wantArray');
+    //     $('.wantbtn').each(function(index,item){
+    //         if(wantArray.includes($(item).text().trim())){
+    //             $(item).addClass('drawbtnToggle')
+    //         }
+    //     })
+    // }
 
-    checkWantArray();
+    // checkWantArray();
 
 
 // $('.wantbtn').click(function () {
@@ -439,7 +439,9 @@ $('.facebtn').click(function () {
 
 $('.wantbtn').click(function () {
     if ($('.drawbtnToggle').length > 5) {
-        alert('超過五項囉喵')
+        $('#exampleModal').modal('show');
+        // $('.notlogin').css('display','block')
+        // alert('超過五項囉喵')
         // console.log(this);
         this.click(); // 模擬再點擊一次，讓他變白
     }
