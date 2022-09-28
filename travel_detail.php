@@ -11,7 +11,6 @@ $title = '旅遊行程詳情';
 
 
 $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
-
 $sql = "SELECT * FROM travel WHERE sid = $sid";
 // $rows= $pdo->query($sql)->fetchAll();
 
@@ -32,6 +31,7 @@ $areaRows = $pdo->query($sqlArea)->fetchAll();
 
 $t1_sql ="SELECT * FROM `travel` WHERE  sid IN(6,19,1,73,39)";
 $travel_1 = $pdo->query($t1_sql )->fetchAll();
+
 $t2_sql ="SELECT * FROM `travel` WHERE  sid IN(73,39,65)";
 $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
