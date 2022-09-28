@@ -21,7 +21,9 @@ $title = '獨家商品'
                         好想和另一半長長久久？ <br>
                         你的心願我們都聽到了！<br>
                     </h6>
-                    <button class="mb_btn btn-s">看更多熱門商品！</button>
+                    <button class="mb_btn btn-m">
+                        <a href="./product_list.php?sort=hotp">看更多熱門商品！</a>
+                    </button>
                 </div>
             </div>
             <!-- computer -->
@@ -56,7 +58,7 @@ $title = '獨家商品'
                         你的心願我們都聽到了！<br>
                     </h1>
                     <button class="pc_btn btn-l d-none d-md-block">
-                        <a href="product_list.php">看更多熱門商品！</a> 
+                        <a href="./product_list.php?sort=hotp">看更多熱門商品！</a> 
                     </button>
                 </div>
             </div>
@@ -161,7 +163,9 @@ $title = '獨家商品'
                     月老喵與亞洲最強月老聯名，網羅所有結緣必備元素， <br>
                     達成你的所有戀愛願望！
                 </small>
-                <button class="mb_btn btn-s d-block d-md-none mt-3">看更多品牌聯名</button>
+                <button class="mb_btn btn-l d-block d-md-none mt-3">
+                    <a href="./product_list.php?cate=1">看更多品牌聯名</a> 
+                </button>
             </div>
             <!-- computer -->
             <div class="pb_pc d-none d-md-block">
@@ -189,7 +193,9 @@ $title = '獨家商品'
                                         月老喵與亞洲最強月老聯名，網羅所有結緣必備元素， <br>
                                         達成你的所有戀愛願望！
                                     </h6>
-                                    <button class="btn-l">看更多品牌聯名</button>
+                                    <button class="btn-l">
+                                        <a href="./product_list.php?cate=1">看更多品牌聯名</a> 
+                                    </button>
                                 </div>
                             </div>
                             <div class="col"></div>
@@ -223,7 +229,9 @@ $title = '獨家商品'
                     無論是手鍊、香氛精油、愛情御守通通都有， <br>
                     精心為你打造質感生活與戀情守護。 <br>
                 </small>
-                <button class="mb_btn btn-s d-block d-md-none mt-3">看更多文創商品</button>
+                <button class="mb_btn btn-l d-block d-md-none mt-3">
+                    <a href="./product_list.php?cate=2">看更多文創商品</a> 
+                </button>
             </div>
             <!-- computer -->
             <div class="container py_pc d-none d-md-block">
@@ -258,7 +266,9 @@ $title = '獨家商品'
                                     無論是手鍊、香氛精油、愛情御守通通都有， <br>
                                     精心為你打造質感生活與戀情守護。 <br>
                                 </h6>
-                                <button class="btn-l">看更多文創商品</button>
+                                <button class="btn-l">
+                                    <a href="./product_list.php?cate=2">看更多文創商品</a> 
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -287,7 +297,9 @@ $title = '獨家商品'
                     包裝精美又美味的禮盒也適合送給另一半， <br>
                     讓你們的感情更甜蜜！
                 </small>
-                <button class="mb_btn btn-s d-block d-md-none mt-3">看更多甜蜜供品</button>
+                <button class="mb_btn btn-l d-block d-md-none mt-3">
+                    <a href="./product_list.php?cate=3">看更多甜蜜供品</a> 
+                </button>
             </div>
 
             <!-- computer -->
@@ -312,7 +324,9 @@ $title = '獨家商品'
                             包裝精美又美味的禮盒也適合送給另一半， <br>
                             讓你們的感情更甜蜜！
                         </h6>
-                        <button class="btn-l">看更多甜蜜供品</button>
+                        <button class="btn-l">
+                            <a href="./product_list.php?cate=3">看更多甜蜜供品</a> 
+                        </button>
                     </div>
                 </div>
             </div>
@@ -341,7 +355,9 @@ $title = '獨家商品'
                     長長久久的最大功臣， <br>
                     交給他們準沒錯！
                 </small>
-                <button class="mb_btn btn-s d-block d-md-none mt-3">看更多獨家商品</button>
+                <button class="mb_btn btn-l d-block d-md-none mt-3">
+                    <a href="./product_list.php?cate=4">看更多月老喵獨家</a> 
+                </button>
             </div>
 
             <!-- computer -->
@@ -368,7 +384,9 @@ $title = '獨家商品'
                                         長長久久的最大功臣， <br>
                                         交給他們準沒錯！
                                     </h6>
-                                    <button class="btn-l">看更多獨家商品</button>
+                                    <button class="btn-l">
+                                        <a href="./product_list.php?cate=4">看更多月老喵獨家</a> 
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -391,8 +409,9 @@ $title = '獨家商品'
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="card_title">
-                            <h2>快來瞧瞧熱門商品吧！</h2>
+                        <div class="card_title mb-0">
+                            <h2 class="d-none d-md-block">快來瞧瞧熱門商品吧！</h2>
+                            <h3 class="d-md-none d-block mt-5">快來瞧瞧熱門商品吧！</h3>
                         </div>
                     </div>
 
@@ -678,7 +697,7 @@ $title = '獨家商品'
                 <!-- https://codepen.io/WillyW/details/wZebow -->
                 <!-- https://codepen.io/rblinzler/pen/abVGzNM -->
                 <!-- 手機卡片 -->
-                <div class="container carousel_mb d-block d-md-none pb-5">
+                <div class="container carousel_mb d-block d-md-none pt-3 pb-5">
                     <div class="card-carousel">
                         <div class="card" id="1">
                             <div class="image-container"></div>

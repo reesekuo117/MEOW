@@ -134,8 +134,7 @@ header("Refresh:180");
                                                         <tr class="">
                                                             <!-- 商品照片 -->
                                                             <td class="imgsCardYu">
-                                                                <!-- <img src="imgs/product/< ?= $v['product_card_img'] ?>.jpg" class="card-img-top" > -->
-                                                                <img class="" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
+                                                               <img class=" w-100" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
                                                             </td>
                                                             <!-- 商品名稱 -->
                                                             <td>
