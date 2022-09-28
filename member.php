@@ -57,7 +57,7 @@ $pageName ='會員中心'; //頁面名稱
         SELECT 
             po.*, 
             pod.product_sid,
-            pod.total, 
+            pod.price, 
             pod.quantity,
             p.product_name, 
             p.product_card_img, 
