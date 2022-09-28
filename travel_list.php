@@ -3,10 +3,16 @@ require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = 'travel_list'; //頁面名稱
 $perPage = 6;  // 每頁最多有幾筆
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+if ($page < 1) {
+    header('Location: ?page=1');
+    exit;
+}
 $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就會回到全部分類
 //$cate=用戶指定的分類
 // $cates = $pdo->query("SELECT * FROM travel WHERE sid=0")->fetchAll();
+$sort = isset($_GET['sort']) ? $_GET['sort'] : ''; 
 
+$qsp = []; // query string parameters
 
 
 //定義一個變數$where
@@ -14,8 +20,29 @@ $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就�
 $where = " WHERE 1 ";  //起頭 記得要空格
 if ($cate){
     $where .=" AND category_sid =$cate ";
+    $qsp['cate'] = $cate;
+
 }
 
+// 排序
+$dataSort = '';
+if(!empty($sort)){
+    $qsp['sort'] = $sort;
+    switch($sort){
+        case 'hotp':
+            $dataSort = ' ORDER BY travel_popular DESC ';
+            break;
+        // case 'newp':
+            // $dataSort = ' ORDER BY created_at DESC ';
+            // break;
+        case 'pricehigh':
+            $dataSort = ' ORDER BY travel_price DESC ';
+            break;
+        case 'pricelow':
+            $dataSort = ' ORDER BY travel_price ASC ';
+            break;
+    }
+}
 
 // 旅遊商品  取得資料的總筆數
 $t_sql = "SELECT COUNT(1) FROM travel";
@@ -40,7 +67,11 @@ if ($totalRows > 0) {
         exit;
     }
     // 取得該頁面的資料
-    $sql = sprintf("SELECT * FROM `travel` ORDER BY `sid` LIMIT %s, %s", ($page - 1) * $perPage, $perPage);
+    $sql = sprintf(
+    "SELECT * FROM `travel` ORDER BY `sid` %s LIMIT %s, %s",
+    $dataSort,
+     ($page - 1) * $perPage,
+    $perPage);
     $rows = $pdo->query($sql)->fetchAll();
 
     // $Y_sql = "SELECT t.*, ad.city FROM travel t 
@@ -101,7 +132,7 @@ header("Refresh:180");
 <!-- ----------------------搜尋欄結束------------------------ -->
 
 <!-- TODO:篩選列表 -->
-<div class="sort">
+<div id="travelDesktopSort" class="sort">
     <div class="container">
         <!-- 電腦排序 -->
         <div class="travel_sort d-none d-md-flex justify-content-center align-items-center">
@@ -110,22 +141,22 @@ header("Refresh:180");
                 <h5 style="color: var(--color-text87);"><i class="fa-regular fa-hourglass-half px-1"></i>排序方式</h5>
             </div>
             <div class="col">
-                <a href="#">
+                <a href="?sort=newp#travelDesktopSort">
                     <h5>最新上架</h5>
                 </a>
             </div>
             <div class="col">
-                <a href="#">
+                <a href="?sort=hotp#travelDesktopSort">
                     <h5>熱門程度</h5>
                 </a>
             </div>
             <div class="col">
-                <a href="#">
+                <a href="?sort=pricehigh#travelDesktopSort">
                     <h5>價格高 → 低</h5>
                 </a>
             </div>
             <div class="col">
-                <a href="#">
+                <a href="?sort=pricelow#travelDesktopSort">
                     <h5>價格低 → 高</h5>
                 </a>
             </div>

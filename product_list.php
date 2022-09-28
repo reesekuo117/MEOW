@@ -12,8 +12,8 @@ if ($page < 1) {
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要指定哪個分類，intval($_GET['cate']是變成整數的意思，0表示所有產品
 // $newp = isset($_GET['newp']) ? intval($_GET['newp']) : 0; // 最新
 // $hotp = isset($_GET['hotp']) ? intval($_GET['hotp']) : 0; // 熱門
-$lowerp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
-$higherp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
+// $lowerp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
+// $higherp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
 $sort = isset($_GET['sort']) ? $_GET['sort'] : ''; 
 
 $qsp = []; // query string parameters
@@ -36,6 +36,7 @@ if ($cate) {
 // 模糊查詢
 $serach = ("SELECT * FROM `products` WHERE `product_name` LIKE '%月老%';");
 
+// 排序
 $dataSort = '';
 if(!empty($sort)){
     $qsp['sort'] = $sort;
