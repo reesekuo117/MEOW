@@ -12,6 +12,14 @@ $sql = "SELECT * FROM product WHERE sid=$sid";
 // $sql = "SELECT * FROM product WHERE sid=localstorage的變數";
 //要用localstorage
 $rows = $pdo->query($sql)->fetchAll();
+//月老推薦卡片
+$sqlArea = sprintf("SELECT * FROM `address`");
+$areaRows = $pdo->query($sqlArea)->fetchAll();
+
+$p1_sql = "SELECT * FROM `product` WHERE  sid IN(6,19,5,12,38)";
+$product_1 = $pdo->query($p1_sql)->fetchAll();
+$p2_sql = "SELECT * FROM `product` WHERE  sid IN(79,60,33)";
+$product_2 = $pdo->query($p2_sql)->fetchAll();
 // $photos = explode(',', $r['travel_img']);
 
 // echo json_encode([
@@ -383,7 +391,7 @@ $rows = $pdo->query($sql)->fetchAll();
                                     ●
                                     分享月老的祝福：透過分送加持『參拜過的牛奶糖』廣結福緣，說不定就能遇見更多機會，自己留下一盒，還可以和3-30個朋友分享，這可就是3-30個機會啊！（直接送一整盒的話可以送3人，拆開來一人分一顆就可以分給30個人）
                                     <br> -->
-                            <p><?= $r['product_introsec'] ?></p> 
+                            <p><?= $r['product_introsec'] ?></p>
                             <img class="w-100" src="./imgs/product/P19_3.png" alt="">
                             <!-- </p> -->
                         </div>
@@ -621,217 +629,83 @@ $rows = $pdo->query($sql)->fetchAll();
             <div class="row">
                 <div class="col mx-auto">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-                        <!-- Carousel indicators -->
-                        <!-- <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                    </ol>    -->
-                        <!-- Wrapper for carousel items -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col col-md-4">
-                                        <a href="">
-                                            <div class="thumb-wrapper mx-3">
-                                                <div class="img-box">
-                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
-                                                    <div class="icon_heart">
-                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                        </svg>
+                                <div class="row_07 d-flex">
+                                    <?php foreach ($product_1 as $p) : ?>
+                                        <div class="col-md-4">
+                                            <a href="">
+                                                <div class="thumb-wrapper mx-3">
+                                                    <div class="img-box">
+                                                        <img src="./imgs/product/cards/<?= $p['product_card_img'] ?>.jpg" class="img-fluid" alt="">
+                                                        <div class="icon_heart">
+                                                            <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pit_mb pb-2">
+                                                        <h6 class="p-2"><?= $p['product_name'] ?></h6>
+                                                    </div>
+                                                    <div class="thumb-content">
+                                                        <div class="card_under d-flex justify-content-between align-items-center">
+                                                            <small class="xs card-text d-flex pr-2">
+                                                                <div class="icon_star pr-1" style="color: var(--color-yellow);">
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                </div><?= $p['product_comment'] ?>
+                                                            </small>
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_fire pr-1" style="color: var(--color-orange);">
+                                                                    <i class="fa-solid fa-fire"></i>
+                                                                </div>
+                                                                <?= $p['product_popular'] ?>個已訂購
+                                                            </small>
+                                                            <h5 class="m-0 ml-auto"><?= $p['product_price'] ?></h5>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="thumb-content">
-                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
-
-                                                    <div class="card_under d-flex justify-content-between align-items-center">
-                                                        <small class="xs card-text d-flex">
-                                                            <div class="icon_star" style="color: var(--color-yellow);">
-                                                                <i class="fa-solid fa-star pr-1"></i>
-                                                            </div> 4.7(50)
-                                                        </small>
-                                                        <small class="xs card-text d-flex ml-2">
-                                                            <div class="icon_fire " style="color: var(--color-orange);">
-                                                                <i class="fa-solid fa-fire pr-1"></i>
-                                                            </div>
-                                                            3K個已訂購
-                                                        </small>
-                                                        <h5 class="m-0 ml-auto">850</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                    <div class="col col-md-4">
-                                        <a href="">
-                                            <div class="thumb-wrapper mx-3">
-                                                <div class="img-box">
-                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
-                                                    <div class="icon_heart">
-                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
-
-                                                    <div class="card_under d-flex justify-content-between align-items-center">
-                                                        <small class="xs card-text d-flex">
-                                                            <div class="icon_star" style="color: var(--color-yellow);">
-                                                                <i class="fa-solid fa-star pr-1"></i>
-                                                            </div> 4.7(50)
-                                                        </small>
-                                                        <small class="xs card-text d-flex ml-2">
-                                                            <div class="icon_fire " style="color: var(--color-orange);">
-                                                                <i class="fa-solid fa-fire pr-1"></i>
-                                                            </div>
-                                                            3K個已訂購
-                                                        </small>
-                                                        <h5 class="m-0 ml-auto">850</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                    <div class="col col-md-4">
-                                        <a href="">
-                                            <div class="thumb-wrapper mx-3">
-                                                <div class="img-box">
-                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
-                                                    <div class="icon_heart">
-                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
-
-                                                    <div class="card_under d-flex justify-content-between align-items-center">
-                                                        <small class="xs card-text d-flex">
-                                                            <div class="icon_star" style="color: var(--color-yellow);">
-                                                                <i class="fa-solid fa-star pr-1"></i>
-                                                            </div> 4.7(50)
-                                                        </small>
-                                                        <small class="xs card-text d-flex ml-2">
-                                                            <div class="icon_fire" style="color: var(--color-orange);">
-                                                                <i class="fa-solid fa-fire pr-1"></i>
-                                                            </div>
-                                                            3K個已訂購
-                                                        </small>
-                                                        <h5 class="m-0 ml-auto">850</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
+                                            </a>
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col col-md-4">
-                                        <a href="">
-                                            <div class="thumb-wrapper mx-3">
-                                                <div class="img-box">
-                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
-                                                    <div class="icon_heart">
-                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                        </svg>
+                                <div class="row_07 d-flex">
+                                    <?php foreach ($product_2 as $p) : ?>
+                                        <div class="col-md-4">
+                                            <a href="">
+                                                <div class="thumb-wrapper mx-3">
+                                                    <div class="img-box">
+                                                        <img src="./imgs/product/cards/<?= $p['product_card_img'] ?>.jpg" class="img-fluid" alt="">
+                                                        <div class="icon_heart">
+                                                            <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pit_mb pb-2">
+                                                        <h6 class="p-2"><?= $p['product_name'] ?></h6>
+                                                    </div>
+                                                    <div class="thumb-content">
+                                                        <div class="card_under d-flex justify-content-between align-items-center">
+                                                            <small class="xs card-text d-flex pr-2">
+                                                                <div class="icon_star pr-1" style="color: var(--color-yellow);">
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                </div><?= $p['product_comment'] ?>
+                                                            </small>
+                                                            <small class="xs card-text d-flex">
+                                                                <div class="icon_fire pr-1" style="color: var(--color-orange);">
+                                                                    <i class="fa-solid fa-fire"></i>
+                                                                </div>
+                                                                <?= $p['product_popular'] ?>個已訂購
+                                                            </small>
+                                                            <h5 class="m-0 ml-auto"><?= $p['product_price'] ?></h5>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="thumb-content">
-                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
-
-                                                    <div class="card_under d-flex justify-content-between align-items-center">
-                                                        <small class="xs card-text d-flex">
-                                                            <div class="icon_star" style="color: var(--color-yellow);">
-                                                                <i class="fa-solid fa-star pr-1"></i>
-                                                            </div> 4.7(50)
-                                                        </small>
-                                                        <small class="xs card-text d-flex ml-2">
-                                                            <div class="icon_fire" style="color: var(--color-orange);">
-                                                                <i class="fa-solid fa-fire pr-1"></i>
-                                                            </div>
-                                                            3K個已訂購
-                                                        </small>
-                                                        <h5 class="m-0 ml-auto">850</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                    <div class="col col-md-4">
-                                        <a href="">
-                                            <div class="thumb-wrapper mx-3">
-                                                <div class="img-box">
-                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
-                                                    <div class="icon_heart">
-                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
-
-                                                    <div class="card_under d-flex justify-content-between align-items-center">
-                                                        <small class="xs card-text d-flex">
-                                                            <div class="icon_star" style="color: var(--color-yellow);">
-                                                                <i class="fa-solid fa-star pr-1"></i>
-                                                            </div> 4.7(50)
-                                                        </small>
-                                                        <small class="xs card-text d-flex ml-2">
-                                                            <div class="icon_fire " style="color: var(--color-orange);">
-                                                                <i class="fa-solid fa-fire pr-1"></i>
-                                                            </div>
-                                                            3K個已訂購
-                                                        </small>
-                                                        <h5 class="m-0 ml-auto">850</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                    <div class="col col-md-4">
-                                        <a href="">
-                                            <div class="thumb-wrapper mx-3">
-                                                <div class="img-box">
-                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid" alt="">
-                                                    <div class="icon_heart">
-                                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="thumb-content">
-                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
-
-                                                    <div class="card_under d-flex justify-content-between align-items-center">
-                                                        <small class="xs card-text d-flex">
-                                                            <div class="icon_star" style="color: var(--color-yellow);">
-                                                                <i class="fa-solid fa-star pr-1"></i>
-                                                            </div> 4.7(50)
-                                                        </small>
-                                                        <small class="xs card-text d-flex ml-2">
-                                                            <div class="icon_fire " style="color: var(--color-orange);">
-                                                                <i class="fa-solid fa-fire pr-1"></i>
-                                                            </div>
-                                                            3K個已訂購
-                                                        </small>
-                                                        <h5 class="m-0 ml-auto">850</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                    </div>
+                                            </a>
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>
@@ -886,8 +760,8 @@ $rows = $pdo->query($sql)->fetchAll();
         </div>
     </div>
     <!-- <div class="notlogin d-none" id="favnotlogin"> -->
-        <!-- 1.背景用黑色半透明做光箱效果，視窗FIXED(原本就在用show，沒有要讓它出現用append) -->
-        <!-- <div class="">
+    <!-- 1.背景用黑色半透明做光箱效果，視窗FIXED(原本就在用show，沒有要讓它出現用append) -->
+    <!-- <div class="">
             <div class="alert d-flex justify-content-center align-items-center">
                 <div class="alert_head"><i class="fa-solid fa-triangle-exclamation"></i></div>
                 <div class="alert_title">
@@ -909,7 +783,7 @@ $rows = $pdo->query($sql)->fetchAll();
 
 <script>
     // const isLogined = < ?= !empty($_SESSION['user']) ? 'true' : 'false' ?>;
-    
+
     function addToCart_P_Yu(event) {
         const btn = $(event.currentTarget);
         const qty = btn.closest(".row").find(".product_q").text();
@@ -937,13 +811,13 @@ $rows = $pdo->query($sql)->fetchAll();
         const collect_sid = heartbtn.attr('data-sid');
         console.log('hiheart', heartbtn);
         console.log('hisid', collect_sid);
-            $.get(
+        $.get(
             'favorite_api.php', {
                 collect_sid,
                 target_type: 1,
             },
             'json');
-        
+
     };
 </script>
 <?php include __DIR__ . '/parts/html-foot.php'; ?>
