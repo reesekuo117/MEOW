@@ -28,13 +28,13 @@ $sql = "SELECT * FROM `temple` WHERE 1";
 $temples = $pdo->query($tag_sql)->fetchAll();
 
 
-//桌機：月老推薦卡片
+//月老推薦卡片
 $sqlArea = sprintf("SELECT * FROM `address`");
 $areaRows = $pdo->query($sqlArea)->fetchAll();
 
-$t1_sql ="SELECT * FROM `travel` WHERE  sid IN(6,2,10)";
+$t1_sql ="SELECT * FROM `travel` WHERE  sid IN(6,19,1,73,39)";
 $travel_1 = $pdo->query($t1_sql )->fetchAll();
-$t2_sql ="SELECT * FROM `travel` WHERE  sid IN(1,4,7)";
+$t2_sql ="SELECT * FROM `travel` WHERE  sid IN(73,39,65)";
 $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
 
@@ -1004,7 +1004,6 @@ $temples = $pdo->query($temple_sql)->fetchAll();
         <!-- 手機廟卡片 -->
         <div class="temScroll-snap_lb">
             <div class="row flex-nowrap m-0">
-                <div class="empty"></div>
                 <!-- < ?php foreach ($temples as $t) : ?>
                     <div class="p-0">
                         <div id="mbTemCard-c01" class="mbTemCard pt-3" data-id="<?= $t['sid'] ?>">
@@ -1021,15 +1020,9 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                     </div>
                 < ?php endforeach; ?> -->
             </div>
-
         </div>
         <div class="row position-relative m-0">
             <div id="mbdetail-card" class="mbdetail-card_lb hidden_lb">
-                <!-- <div class="prepage_lb pl-2 pt-3">
-                    <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
-                    </svg>
-                </div> -->
                 <div class="row mbTemCard-top_lb py-3 m-0">
                     <div class="col-7 p-0 pl-3">
                         <div class="prepage_lb pl-2 pt-3">
@@ -1077,59 +1070,13 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                     </small>
                 </div>
             </div>
-
-            <!-- <div id="c06-mbdetail-card"  class="mbdetail-card_lb d-none">
-                    <div class="prepage_lb pl-2 pt-3">
-                        <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
-                        </svg>
-                    </div>
-                    <div class="row mbTemCard-top_lb py-3 m-0">
-                        <div class="col-7 p-0 pl-3">
-                            <h6 class="m-0 text-white">龍山寺</h6>
-                            <p class="xs mbdetail-info_lb mb-0 text-white">
-                                <span class="ml-1">台北市萬華區廣州街211號
-                                </span>
-                                <span class="ml-1">07:00 - 21:30</span>
-                            </p>
-                        </div>
-                        <div class="col-3 p-0 mx-2">
-                            <div class="mx-auto c06-mbDetailTemImg-wrap">
-                            </div>
-                        </div>
-                    </div>
-                    <div  class="mbTemCard-bottom_lb px-3">
-
-                        <div class="text-center pb-2">
-                            <p class="s temnotice_lb my-auto px-3 py-1">參拜步驟</p>
-                        </div>
-                        <small class=" mt-3 steptext_lb ">
-                        1. 前殿:釋迦牟尼佛、藥師佛與阿彌陀佛<br>
-                        2. 正殿:先向外拜天公，再向內拜觀世音菩薩、文殊菩薩、普賢菩薩<br>
-                        3. 後殿中央:天上聖母<br>
-                        4. 後殿右方:水仙尊王、城隍爺、龍爺、福德正神<br>
-                        5. 後殿左方:註生娘娘、池頭夫人、十二婆者<br>
-                        6. 後殿右側:文昌帝君、大魁星君、紫陽夫子、華陀仙師<br>
-                        7. 後殿左側:關聖帝君、三官大帝、地藏王菩薩、月老神君<br>
-                        8. 向月老稟明生辰八字、姓名、住址、理想對象類型及條件，擲三次聖筊後可索取一條紅線，並在月老香爐上過火
-                        </small>
-
-
-                        <div class="text-center pb-2">
-                            <p class="temnotice_lb my-auto px-3 py-1">注意事項</p>
-                        </div>
-                        <small class="mt-3 temnoticetext_lb">
-                        1. 需先向主神觀世音菩薩說明來意後，再依序參拜 <br>
-                        2. 紅線務必隨身攜帶，可放置皮包或綁至手腕，建議盡量本人求紅線
-                            </p>
-                    </div>
-            </div> -->
         </div>
     </div>
 
     <!-- 月老喵誠心推薦 -->
     <div class="d-none d-md-block recommand_lb">
         <h2 class="text-center cul-text100">月老喵誠心推薦</h2>
+        <!--  PC 月老喵推薦卡片  -->
         <div class="otherp">
             <div class="container">
                 <!-- https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=thumbnail-carousel-with-content -->
@@ -1193,7 +1140,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                                                     <div class="icon_fire pr-1" style="color: var(--color-orange);">
                                                                         <i class="fa-solid fa-fire"></i>
                                                                     </div>
-                                                                    3K個已訂購
+                                                                    <?= $t['travel_popular']?>個已訂購
                                                                 </small>
                                                                 <h5 class="m-0 ml-auto"><?= $t['travel_price']?></h5>
                                                             </div>
@@ -1261,7 +1208,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                                                                     <div class="icon_fire pr-1" style="color: var(--color-orange);">
                                                                         <i class="fa-solid fa-fire"></i>
                                                                     </div>
-                                                                    3K個已訂購
+                                                                    <?= $t['travel_popular']?>個已訂購
                                                                 </small>
                                                                 <h5 class="m-0 ml-auto"><?= $t['travel_price']?></h5>
                                                             </div>
@@ -1286,38 +1233,44 @@ $temples = $pdo->query($temple_sql)->fetchAll();
             </div>
         </div>
     </div>
+
     <div class="d-block d-md-none  recommand_lb">
         <h2 class="mb-title_lb  text-center">月老喵誠心推薦</h2>
+        <!--  MB 月老喵推薦卡片  -->
         <div class="container carousel_mb pb-5">
             <div class="card-carousel">
+            <?php foreach ($travel_1 as $t) : ?> 
                 <div class="card" id="1">
                     <div class="image-container">
+                        <img class="" src="./imgs/travel/cards/<?= $t['travelcard_img'] ?>" alt="">
                     </div>
-                    <div class="pit_mb">
-                        <p class="mb-2">霞海城隍廟 X 護手霜禮盒</p>
+                    <div class="pit_mb pb-2">
+                        <h6 class="px-2"><?= $t['travel_name'] ?></h6>
                     </div>
                     <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
                         <div class="star">
                             <small class="xs d-flex">
-                                <div class="icon_fivestar" style="color: var(--color-yellow);">
+                                <div class="icon_fivestar mx-1" style="color: var(--color-yellow);">
                                     <i class="fa-solid fa-star"></i>
                                 </div>
-                                （5）
+                                (<?= $t['travel_star'] ?>)
                             </small>
                         </div>
-                        <div class="fire justify-content-center align-items-center mr-2">
+                        <div class="fire justify-content-center align-items-center mx-2">
                             <small class="xs d-flex">
                                 <div class="icon_fire xs">
                                     <i class="fa-solid fa-fire pr-1"></i>
                                 </div>
-                                已賣出3K + 個
+                                已賣出<?= $t['travel_popular'] ?>個
                             </small>
                         </div>
                         <div class="price">
-                            <h4>707</h4>
+                            <h4><?= $t['travel_price'] ?></h4>
                         </div>
                     </div>
                 </div>
+            <?php endforeach; ?> 
+
                 <div class="card" id="2">
                     <div class="image-container"></div>
                     <div class="pit_mb">
@@ -1345,6 +1298,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         </div>
                     </div>
                 </div>
+
                 <div class="card" id="3">
                     <div class="image-container"></div>
                     <div class="pit_mb">
@@ -1372,6 +1326,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         </div>
                     </div>
                 </div>
+
                 <div class="card" id="4">
                     <div class="image-container"></div>
                     <div class="pit_mb">
@@ -1399,6 +1354,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                         </div>
                     </div>
                 </div>
+
                 <div class="card" id="5">
                     <div class="image-container"></div>
                     <div class="pit_mb">
@@ -1425,9 +1381,11 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                             <h4>707</h4>
                         </div>
                     </div>
-                </div>
+                </div> -->
+            
             </div>
-            <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
+          
+            <a href="#" class="visuallyhidden card-controller"></a>
         </div>
     </div>
     
