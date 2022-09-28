@@ -5,6 +5,13 @@
 } 
  */
 
+/* .minhYU{
+  min-height: calc(100vh - 50px);
+}
+
+.minhYU .container-fluid{
+  margin-top: 100px;
+} */
 .line-box-yu {
   /* margin-top: 88px auto 0 auto; */
   margin: 0 auto;

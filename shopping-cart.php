@@ -18,7 +18,7 @@ header("Refresh:180");
 <!-- ------------------桌機----------------------- -->
 <section class="d-none d-md-block">
     <!-- 購物車訂單的進度條progress-bar -->
-    <div class="container-fluid p-0">
+    <div class=" container-fluid p-0 ">
         <div class="line-box-yu"></div>
         <div class="progress-bar-yu">
             <div class=" d-flex justify-content-around ">
