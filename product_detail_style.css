@@ -189,13 +189,13 @@ html{
 .pd_head_mb .carousel{
     position: relative;
 }
-
+.goback{
+    position: absolute;
+    left: 10;
+    z-index: 99;
+}
 .goback a{
     height: 26px;
-    position: absolute;
-    top: 10;
-    left: 20;
-    z-index: 2;
     text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
