@@ -188,7 +188,7 @@
     <div class="loginanimate-re">
         <div class="row loginwarp-re  justify-content-center m-0" id="tab-demo">
             <div class="loginimgwarp-re d-none d-lg-block col-3 p-0">
-                <img class="" src="./imgs/member/loginbg.jpg" alt="">
+                <img class="loginimg-ba" src="./imgs/member/loginbg2.jpg" alt="">
             </div>
             <div class="logincard-re col-12 col-md-3">
                 <div class="d-flex justify-content-end py-1">

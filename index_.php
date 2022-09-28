@@ -934,7 +934,7 @@ $pageName = '月老喵'; //頁面名稱
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊每日運勢占卜＊</h4>
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊商品、行程不定期優惠＊</h4>
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊生日好禮大放送＊</h4>
-                    <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊歡慶開幕全館免運中＊</h4>
+                    <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊全館免運中＊</h4>
 
                 </div>
             </div>
@@ -1457,7 +1457,7 @@ $pageName = '月老喵'; //頁面名稱
                 ＊每日運勢占卜＊<br>
                 ＊商品、行程不定期優惠＊<br>
                 ＊生日好禮大放送＊<br>
-                ＊歡慶開幕全館免運中＊
+                ＊全館免運中＊
             </p>
         </div>
 
