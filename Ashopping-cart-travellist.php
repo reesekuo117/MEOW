@@ -7,6 +7,11 @@ $pageName = '購物車行程'; //頁面名稱
 $sql = "SELECT * FROM travel WHERE 1";
 $temples = $pdo->query($sql)->fetchAll(); 
 
+// 取得會員
+$member_id = $_SESSION['user']['id'];
+$sqlmember = "SELECT * FROM `member` WHERE id=$member_id";
+$sm = $pdo->query($sqlmember)->fetch();
+
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -181,7 +186,7 @@ header("Refresh:180");
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="ordername-yu requiredYu" type="text" placeholder="請輸入姓名 " id="name-yu" name="name" required/>
+                            <input class="ordername-yu requiredYu" type="text" placeholder="請輸入姓名 " id="name-yu" name="name" required  value="<?=htmlentities($sm['name']) ?>"/>
                             <i class="right fa-regular fa-circle-check"></i>
                             <i class="wrong fa-solid fa-triangle-exclamation">
                                 <small>請輸入正確姓名</small>
@@ -193,7 +198,7 @@ header("Refresh:180");
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="orderphone-yu  requiredYu" type="text" placeholder="請輸入聯絡電話" id="mobile-yu" name="phone"  required/>
+                            <input class="orderphone-yu  requiredYu" type="text" placeholder="請輸入聯絡電話" id="mobile-yu" name="phone"  required  value="<?=htmlentities($sm['mobile']) ?>"/>
                             <i class="right fa-regular fa-circle-check"></i>
                             <i class="wrong fa-solid fa-triangle-exclamation">
                                 <small>請輸入正確的聯絡電話</small>
@@ -207,7 +212,7 @@ header("Refresh:180");
                             <br/>
                             <div class="d-flex align-items-center">
                                 <div class="form-group m-0">
-                                    <select class="orderaddress1-yu" name="address" id="city1-yu"required>
+                                    <select class="orderaddress1-yu" name="address" id="city1-yu" required value="<?=htmlentities($sm['address_city_re']) ?>">
                                         <option class="" value="0">臺北市</option>
                                         <option value="1">新北市</option>
                                         <option value="2">基隆市</option>
@@ -230,13 +235,13 @@ header("Refresh:180");
                                     </select>
                                 </div>
                                 <div class="form-group m-0">
-                                    <select class="orderaddress2-yu"name="address"id="district1-yu">
+                                    <select class="orderaddress2-yu"name="address"id="district1-yu" value="<?=htmlentities($sm['address_region_re']) ?>">
                                         <option class="" value="0">中正區</option>
                                         <option value="1">板橋區</option>
                                         <option value="2">仁愛區</option>
                                     </select>
                                 </div>
-                                <input class="orderaddress3-yu  requiredYu" name="address" placeholder=" 請輸入詳細地址" id="address-yu" name="address"/>
+                                <input class="orderaddress3-yu  requiredYu" name="address" placeholder=" 請輸入詳細地址" id="address-yu" name="address" value="<?=htmlentities($sm['address']) ?>"/>
                                 <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確的地址</small>
@@ -248,7 +253,7 @@ header("Refresh:180");
                                 Email<span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input type="email" class="email-yu  requiredYu"  id="email-yu" name="email"  />
+                            <input type="email" class="email-yu  requiredYu"  id="email-yu" name="email"  value="<?=htmlentities($sm['email']) ?>"  />
                             <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確的Email</small>
