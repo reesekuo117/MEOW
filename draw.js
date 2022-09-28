@@ -7,72 +7,77 @@
 
 // 音樂
 
-// window.onload=function(){
-//     // var bgm_text=document.queryselector('.bgm_text');
-//     var bgm_btn_play = document.querySelector('.bgm_btn_play');
-//     var bgm_btn_stop = document.querySelector('.bgm_btn_stop');
-//     var bgm = document.getElementById('bgm');
-//     //播放暂停
-//     bgm_btn_play.onclick=function(){
-//         bgm.play();
-//     }
-//     bgm_btn_stop.onclick=function(){
-//         bgm.pause();
-//     }
+window.onload = function () {
+    // var bgm_text=document.queryselector('.bgm_text');
+    var bgm_btn_play = document.querySelector('.bgm_btn_play');
+    var bgm_btn_stop = document.querySelector('.bgm_btn_stop');
+    var bgm = document.getElementById('bgm');
+    //播放暂停
+    bgm_btn_play.onclick = function () {
+        bgm.play();
+    }
+    bgm_btn_stop.onclick = function () {
+        bgm.pause();
+    }
 
-//     if(localStorage.getItem('bgm_gds') != null){
-//         bgm.setAttribute('value',localstorage.getItem('bgm_gds'))
-//         // bgm.setAttribute('value',localstorage.getItem('bgm_gds'));
-//         bgm.innerHTML=' <source src="bgm/'+localStorage.getItem('bgm_gds')+'.mp3" type="audio/mpeg">';
-//         // bgm_text.innerHTML='当前播放第'+localStorage.getItem('bgm_gds')+'首歌曲';
-//     }else{
-//         bgm.setAttribute('value', 1);
-//         bgm.innerHTML='<source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">';
-//         // bgm_text.innerHTML='当前播放第1首歌曲';
-//     }
+    $('.musicSwitch').click(function () {
+        return bgm.paused ? bgm.play() : bgm.pause();
+    })
+    
 
-//     setTimeout(function(){
-//         if(localStorage.getItem('bgm_time')!=null){
-//             bgm.currentTime = localStorage.getItem('bgm_time');
-//             bgm.play();
-//             // 音量逐漸變大
-//             // bgm.volume = 0;
-//             // v = 0;
-//             // var t = setInterval(function () {
-//             //     v+=0.005;
-//             //     if(v<=1){
-//             //         bgm.volume = v;
-//             //     }else{
-//             //         clearInterval(t);
-//             //     }
-//             // },25);
-//         }
+    if (localStorage.getItem('bgm_gds') != null) {
+        bgm.setAttribute('value', localstorage.getItem('bgm_gds'))
+        // bgm.setAttribute('value',localstorage.getItem('bgm_gds'));
+        bgm.innerHTML = ' <source src="bgm/' + localStorage.getItem('bgm_gds') + '.mp3" type="audio/mpeg">';
+        // bgm_text.innerHTML='当前播放第'+localStorage.getItem('bgm_gds')+'首歌曲';
+    } else {
+        bgm.setAttribute('value', 1);
+        bgm.innerHTML = '<source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">';
+        // bgm_text.innerHTML='当前播放第1首歌曲';
+    }
 
-//         // 每 100ms 週期執行播放進度紀錄
-//         window.setInterval(function () {
-//             // 檢查瀏覽器是否支援 localStorage
-//             if(typeof(Storage)!=='undefined'){
-//                 localStorage.setItem('bgm_time', bgm.currentTime);
-//             }else{
-//                 var doc_body = document.querySelector('body');
-//                 doc_body.innerHTML = "抱歉瀏覽器過舊"
-//             }
-//         }, 100);
-//         // 初始化後就啟動 bgm
-//         bgm.play();
-//         // bgm.volume = 0;
-//         // v = 0;
-//         // var t = setInterval(function () {
-//         //     v+=0.005;
-//         //     if(v<=1){
-//         //         bgm.volume = v;
-//         //     }else{
-//         //         clearInterval(t);
-//         //     }
-//         // },25)
-//     },1000)
+    setTimeout(function () {
+        if (localStorage.getItem('bgm_time') != null) {
+            bgm.currentTime = localStorage.getItem('bgm_time');
+            bgm.play();
+            // 音量逐漸變大
+            bgm.volume = 0;
+            v = 0;
+            var t = setInterval(function () {
+                v += 0.005;
+                if (v <= 1) {
+                    bgm.volume = v;
+                } else {
+                    clearInterval(t);
+                }
+            }, 25);
+        }
 
-// }
+        // 每 100ms 週期執行播放進度紀錄
+        window.setInterval(function () {
+            // 檢查瀏覽器是否支援 localStorage
+            if (typeof (Storage) !== 'undefined') {
+                localStorage.setItem('bgm_time', bgm.currentTime);
+            } else {
+                var doc_body = document.querySelector('body');
+                doc_body.innerHTML = "抱歉瀏覽器過舊"
+            }
+        }, 100);
+        // 初始化後就啟動 bgm
+        bgm.play();
+        bgm.volume = 0;
+        v = 0;
+        var t = setInterval(function () {
+            v += 0.005;
+            if (v <= 1) {
+                bgm.volume = v;
+            } else {
+                clearInterval(t);
+            }
+        }, 25)
+    }, 1000)
+
+}
 
 // function playAudio() {
 //     console.log('music');
@@ -123,81 +128,181 @@
 // }
 // setInterval(update, 1000);
 
+// 下一頁
+$(".drawSection02").hide();
+$(".drawSection03").hide();
+$(".drawSection04").hide();
+$(".drawSection05").hide();
+$(".drawSection06").hide();
+$(".drawSection07").hide();
+$(".drawSection08").hide();
+$(".drawSection09").hide();
+$(".drawSection10").hide();
+$(".drawSection11").hide();
+$(".drawSection12").hide();
+$(".drawSection15").hide();
+$(".drawSection16").hide();
+$(".drawSection17").hide();
+$(".drawSection18").hide();
+$(".drawSection19").hide();
+$(".drawSection20").hide();
+$(".drawSection21").hide();
+$(".drawSection22").hide();
+$(".drawSection23").hide();
+
+$(".musicOn").click(function () {
+    $(".drawSection02").show().siblings().hide();
+})
+
+$(".musicOff").click(function () {
+    $(".drawSection02").show().siblings().hide();
+})
+
+$(".toTemple").click(function () {
+    $(".drawSection03").show().siblings().hide();
+})
+
+$("#backtodraw01").click(function () {
+    $(".drawSection01").show().siblings().hide();
+})
+
+$("#backtodraw03").click(function () {
+    $(".drawSection03").show().siblings().hide();
+    $('.body_draw01').css('background','url(./imgs/draw/drawbg.png)');
+    $('.navbar_ba').show();
+})
+
+$(".templeSelect").click(function () {
+    $(".drawSection04").show().siblings().hide();
+    $('.body_draw01').css('background','url(./imgs/draw/drawbgblack.png)');
+    $('.navbar_ba').hide();
+})
+
+$("#backtodraw04").click(function () {
+    $(".drawSection04").show().siblings().hide();
+})
+
+$(".drawSection04 .btn-xl").click(function () {
+    $(".drawSection05").show().siblings().hide();
+})
+
+$(".drawSection05 .btn-xl").click(function () {
+    $(".drawSection06").show().siblings().hide();
+    $('.body_draw01').css('background','url(./imgs/draw/drawbg.png)');
+    $('.navbar_ba').show();
+})
+
+$(".toWant").click(function () {
+    $(".drawSection07").show().siblings().hide();
+})
+
+// $(".toBody").click(function () {
+//     $(".drawSection08").show().siblings().hide();
+// })
+
+
+$("#backtodraw07").click(function () {
+    $(".drawSection07").show().siblings().hide();
+})
+
+$(".toHowold").click(function () {
+    $(".drawSection09").show().siblings().hide();
+})
+
+$("#backtodraw08").click(function () {
+    $(".drawSection08").show().siblings().hide();
+})
+
+$("#backtodraw09").click(function () {
+    $(".drawSection09").show().siblings().hide();
+})
+
+
+
+
+
+
+
+
+
+// 貓翻牌
+
 $(".drawSection02LeftCat").mouseenter(function () {
-  $(".secretSection02LeftCat").css({
-    transform: "translate(-50%, -50%) scale(1)",
-  });
+    $(".secretSection02LeftCat").css({
+        transform: "translate(-50%, -50%) scale(1)",
+    });
 });
 $(".drawSection02LeftCat").mouseleave(function () {
-  $(".secretSection02LeftCat").css({
-    transform: "translate(-50%, -50%) scale(0)",
-  });
+    $(".secretSection02LeftCat").css({
+        transform: "translate(-50%, -50%) scale(0)",
+    });
 });
 
 $(".drawSection02MidCat").mouseenter(function () {
-  $(".secretSection02MidCat").css({
-    transform: "translate(-50%, -50%) scale(1)",
-  });
+    $(".secretSection02MidCat").css({
+        transform: "translate(-50%, -50%) scale(1)",
+    });
 });
 $(".drawSection02MidCat").mouseleave(function () {
-  $(".secretSection02MidCat").css({
-    transform: "translate(-50%, -50%) scale(0)",
-  });
+    $(".secretSection02MidCat").css({
+        transform: "translate(-50%, -50%) scale(0)",
+    });
 });
 
 $(".drawSection02RightCat").mouseenter(function () {
-  $(".secretSection02RightCat").css({
-    transform: "translate(-50%, -50%) scale(1)",
-  });
+    $(".secretSection02RightCat").css({
+        transform: "translate(-50%, -50%) scale(1)",
+    });
 });
+
 $(".drawSection02RightCat").mouseleave(function () {
-  $(".secretSection02RightCat").css({
-    transform: "translate(-50%, -50%) scale(0)",
-  });
+    $(".secretSection02RightCat").css({
+        transform: "translate(-50%, -50%) scale(0)",
+    });
 });
 
 // ------------------- draw03 -------------------------
 
 $(".temple01").mouseenter(function () {
-  $(".temple01Img img").attr("src", "./imgs/draw/temple01-1.png");
+    $(".temple01Img img").attr("src", "./imgs/draw/temple01-1.png");
 });
 $(".temple01").mouseleave(function () {
-  $(".temple01Img img").attr("src", "./imgs/draw/temple01.png");
+    $(".temple01Img img").attr("src", "./imgs/draw/temple01.png");
 });
 
 $(".temple02").mouseenter(function () {
-  $(".temple02Img img").attr("src", "./imgs/draw/temple02-1.png");
+    $(".temple02Img img").attr("src", "./imgs/draw/temple02-1.png");
 });
 $(".temple02").mouseleave(function () {
-  $(".temple02Img img").attr("src", "./imgs/draw/temple02.png");
+    $(".temple02Img img").attr("src", "./imgs/draw/temple02.png");
 });
 
 $(".temple03").mouseenter(function () {
-  $(".temple03Img img").attr("src", "./imgs/draw/temple05-1.png");
+    $(".temple03Img img").attr("src", "./imgs/draw/temple05-1.png");
 });
 $(".temple03").mouseleave(function () {
-  $(".temple03Img img").attr("src", "./imgs/draw/temple05.png");
+    $(".temple03Img img").attr("src", "./imgs/draw/temple05.png");
 });
 
 $(".temple04").mouseenter(function () {
-  $(".temple04Img img").attr("src", "./imgs/draw/temple06-1.png");
+    $(".temple04Img img").attr("src", "./imgs/draw/temple06-1.png");
 });
 $(".temple04").mouseleave(function () {
-  $(".temple04Img img").attr("src", "./imgs/draw/temple06.png");
+    $(".temple04Img img").attr("src", "./imgs/draw/temple06.png");
 });
 
 $(".temple05").mouseenter(function () {
-  $(".temple05Img img").attr("src", "./imgs/draw/temple03-1.png");
+    $(".temple05Img img").attr("src", "./imgs/draw/temple03-1.png");
 });
 $(".temple05").mouseleave(function () {
-  $(".temple05Img img").attr("src", "./imgs/draw/temple03.png");
+    $(".temple05Img img").attr("src", "./imgs/draw/temple03.png");
 });
 
 $(".drawdraw").mouseenter(function () {
-  $(this).find("img").attr("src", "./imgs/draw/53-hover.png");
+    $(this).find("img").attr("src", "./imgs/draw/53-hover.png");
 });
 $(".drawdraw").mouseleave(function () {
-  $(this).find("img").attr("src", "./imgs/draw/53.png");
+    $(this).find("img").attr("src", "./imgs/draw/53.png");
 });
 
 // ------------------- draw07 -------------------------
@@ -207,61 +312,61 @@ $(".drawdraw").mouseleave(function () {
 var eyes = $(".eye");
 
 $(window).on("mousemove", function (event) {
-  // document.querySelector('.drawSection07Img').getBoundingClientRect()
-  eyes.each(function () {
-    const rect = this.getBoundingClientRect();
-    var dx = event.pageX - rect.x;
-    var dy = event.pageY - rect.y;
+    // document.querySelector('.drawSection07Img').getBoundingClientRect()
+    eyes.each(function () {
+        const rect = this.getBoundingClientRect();
+        var dx = event.pageX - rect.x;
+        var dy = event.pageY - rect.y;
 
-    // var dx = event.pageX -405- $(this).position().left;
-    // var dy = event.pageY -350- $(this).position().top;
+        // var dx = event.pageX -405- $(this).position().left;
+        // var dy = event.pageY -350- $(this).position().top;
 
-    var ang = (Math.atan2(dy, dx) / Math.PI) * 180; // degree
+        var ang = (Math.atan2(dy, dx) / Math.PI) * 180; // degree
 
-    $(this).css("transform", "rotate(" + ang + "deg)");
-  });
+        $(this).css("transform", "rotate(" + ang + "deg)");
+    });
 });
 
 // 年紀
 
 $(".howOldbtn").click(function () {
-  $(this).toggleClass("howOldbtnToggle");
+    $(this).toggleClass("howOldbtnToggle");
 });
 
 // 貓翻牌
 $(".drawSection09 img").mouseenter(function () {
-  $(this).css("animation", "flip .3s forwards");
+    $(this).css("animation", "flip .3s forwards");
 });
 $(".drawSection09 img").mouseleave(function () {
-  $(this).css("animation", "flip_back .3s forwards");
+    $(this).css("animation", "flip_back .3s forwards");
 });
 
 $(".drawSection10 img").mouseenter(function () {
-  $(this).css("animation", "flip .3s forwards");
+    $(this).css("animation", "flip .3s forwards");
 });
 $(".drawSection10 img").mouseleave(function () {
-  $(this).css("animation", "flip_back .3s forwards");
+    $(this).css("animation", "flip_back .3s forwards");
 });
 
 $(".drawSection11 img").mouseenter(function () {
-  $(this).css("animation", "flip .3s forwards");
+    $(this).css("animation", "flip .3s forwards");
 });
 $(".drawSection11 img").mouseleave(function () {
-  $(this).css("animation", "flip_back .3s forwards");
+    $(this).css("animation", "flip_back .3s forwards");
 });
 
 $(".drawSection12 .lionCat img").mouseenter(function () {
-  $(this).css("animation", "flip .3s forwards");
+    $(this).css("animation", "flip .3s forwards");
 });
 $(".drawSection12 .lionCat img").mouseleave(function () {
-  $(this).css("animation", "flip_back .3s forwards");
+    $(this).css("animation", "flip_back .3s forwards");
 });
 
 $(".drawSection12 .horobtn").mouseenter(function () {
-  $(this).find("img").css("animation", "flip_horo .3s forwards");
+    $(this).find("img").css("animation", "flip_horo .3s forwards");
 });
 $(".drawSection12 .horobtn").mouseleave(function () {
-  $(this).find("img").css("animation", "flip_horo_back .3s forwards");
+    $(this).find("img").css("animation", "flip_horo_back .3s forwards");
 });
 
 // 回到上一步
@@ -329,21 +434,37 @@ $(".drawSection12 .horobtn").mouseleave(function () {
 // 條件
 
 $(".wantbtn").click(function () {
-  $(this).toggleClass("drawbtnToggle");
-  const wantArray = [];
+    $(this).toggleClass("drawbtnToggle");
+    const wantArray = [];
 
-  $(".drawbtnToggle h2").each((index, item) => {
-    wantArray.push($(item).text());
-  });
+    $(".drawbtnToggle h2").each((index, item) => {
+        wantArray.push($(item).text());
+    });
 
-  localStorage.setItem("wantArray", wantArray);
+    localStorage.setItem("wantArray", wantArray);
 });
 
-// function checkWantArray(){
+$(".wantbtn").click(function () {
+    if ($(".drawbtnToggle").length >= 1) {
+
+        $(".toBody").removeClass("btn_disabled_ba");
+        $(".toBody").click(function () {
+            $(".drawSection08").show().siblings().hide();
+        })
+
+    } else if ($(".drawbtnToggle").length < 1) {
+
+        $(".toBody").addClass("btn_disabled_ba");
+    }
+});
+
+// function checkWantArray() {
 //     const wantArray = localStorage.getItem('wantArray');
-//     $('.wantbtn').each(function(index,item){
-//         if(wantArray.includes($(item).text().trim())){
-//             $(item).addClass('drawbtnToggle')
+//     $('.wantbtn').each(function (index, item) {
+//         if (wantArray.includes($(item).text().trim())) {
+//             $(item).addClass('drawbtnToggle');
+//             $(".btn_md_next").removeClass("btn_disabled_ba");
+//             $(".btn_md_next a").attr("href", "draw08.php");
 //         }
 //     })
 // }
@@ -394,242 +515,241 @@ $(".wantbtn").click(function () {
 // 興趣
 
 $(".interestbtn").click(function () {
-  $(this).toggleClass("interestbtnToggle");
+    $(this).toggleClass("interestbtnToggle");
 });
 
 // 個性
 
 $(".personalitybtn").click(function () {
-  $(this).toggleClass("personalitybtnToggle");
+    $(this).toggleClass("personalitybtnToggle");
 });
 
 // 星座
 
 $(".horobtn").click(function () {
-  $(this).toggleClass("horobtnToggle");
+    $(this).toggleClass("horobtnToggle");
 });
 
 // 身高
 
 $(".heightbtn").click(function () {
-  $(this).toggleClass("drawbtnToggle");
+    $(this).toggleClass("drawbtnToggle");
 });
 
 // 體格
 
 $(".musclebtn").click(function () {
-  $(this).toggleClass("musclebtnToggle");
+    $(this).toggleClass("musclebtnToggle");
 });
 
 // 臉
 
 $(".facebtn").click(function () {
-  $(this).toggleClass("facebtnToggle");
+    $(this).toggleClass("facebtnToggle");
 });
 
 // 超過五個
 
 $(".wantbtn").click(function () {
-  if ($(".drawbtnToggle").length > 5) {
-    $("#exampleModal").modal("show");
-    // $('.notlogin').css('display','block')
-    // alert('超過五項囉喵')
-    // console.log(this);
-    this.click(); // 模擬再點擊一次，讓他變白
-  }
+    if ($(".drawbtnToggle").length > 5) {
+        $("#exampleModal").modal("show");
+        // $('.notlogin').css('display','block')
+        // alert('超過五項囉喵')
+        // console.log(this);
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
 });
 
 $(".interestbtn").click(function () {
-  if ($(".interestbtnToggle").length > 5) {
-    alert("超過五項囉喵");
-    this.click(); // 模擬再點擊一次，讓他變白
-  }
+    if ($(".interestbtnToggle").length > 5) {
+        $("#exampleModal").modal("show");
+        // alert("超過五項囉喵");
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
 });
 
 $(".facebtn").click(function () {
-  if ($(".facebtnToggle").length > 5) {
-    alert("超過五項囉喵");
-    this.click(); // 模擬再點擊一次，讓他變白
-  }
+    if ($(".facebtnToggle").length > 5) {
+        $("#exampleModal").modal("show");
+        // alert("超過五項囉喵");
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
 });
 
 $(".musclebtn").click(function () {
-  if ($(".musclebtnToggle").length > 5) {
-    alert("超過五項囉喵");
-    this.click(); // 模擬再點擊一次，讓他變白
-  }
+    if ($(".musclebtnToggle").length > 5) {
+        $("#exampleModal").modal("show");
+        // alert("超過五項囉喵");
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
 });
 
 $(".personalitybtn").click(function () {
-  if ($(".personalitybtnToggle").length > 5) {
-    alert("超過五項囉喵");
-    this.click(); // 模擬再點擊一次，讓他變白
-  }
+    if ($(".personalitybtnToggle").length > 5) {
+        $("#exampleModal").modal("show");
+        // alert("超過五項囉喵");
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
 });
 
 $(".horobtn").click(function () {
-  if ($(".horobtnToggle").length > 5) {
-    alert("超過五項囉喵");
-    this.click(); // 模擬再點擊一次，讓他變白
-  }
+    if ($(".horobtnToggle").length > 5) {
+        $("#exampleModal").modal("show");
+        // alert("超過五項囉喵");
+        this.click(); // 模擬再點擊一次，讓他變白
+    }
 });
 
 // 貓掌
 $(".drawdraw").click(function () {
-  // console.log($(this).css('left'));
-  // const drawtoleft = $(this).css('left');
-  const drawtoleft = $(this).css("left");
-  $(".catPaw").css({
-    left: drawtoleft,
-    animation: "catPaw 2.5s ease-in-out",
-  });
-  setTimeout(() => {
-    console.log($(this).css("transform"));
-    const drawtransform = $(this).css("transform");
-    console.log(this);
-    $(this).css({
-      transform: drawtransform,
-      animation: "drawUp 1.4s ease-in forwards",
+    // console.log($(this).css('left'));
+    // const drawtoleft = $(this).css('left');
+    const drawtoleft = $(this).css("left");
+    $(".catPaw").css({
+        left: drawtoleft,
+        animation: "catPaw 2.5s ease-in-out",
     });
-  }, 1125);
-  setTimeout(() => {
-    window.location.href = "draw19.php";
-  }, 3000);
-  // console.log($('.catPaw').offsetTop);
+    setTimeout(() => {
+        console.log($(this).css("transform"));
+        const drawtransform = $(this).css("transform");
+        console.log(this);
+        $(this).css({
+            transform: drawtransform,
+            animation: "drawUp 1.4s ease-in forwards",
+        });
+    }, 1125);
+    setTimeout(() => {
+        window.location.href = "draw19.php";
+    }, 3000);
+    // console.log($('.catPaw').offsetTop);
 });
 
 // 沒按不能下一步
-$(".wantbtn").click(function () {
-  if ($(".drawbtnToggle").length >= 1) {
-    // console.log('hi');
-    $(".btn_md_next").removeClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "draw08.php");
-  } else if ($(".drawbtnToggle").length < 1) {
-    // console.log('no');
-    // $('.btn_md_next').attr('disabled', true)
-    $(".btn_md_next").addClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "#");
-  }
-});
+
 
 $(".facebtn").click(function () {
-  if (
-    $(".drawbtnToggle").length >= 1 &&
-    $(".musclebtnToggle").length >= 1 &&
-    $(".facebtnToggle").length >= 1
-  ) {
-    // console.log('hi');
-    $(".btn_md_next").removeClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "draw09.php");
-  } else if (
-    $(".drawbtnToggle").length < 1 ||
-    $(".musclebtnToggle").length < 1 ||
-    $(".facebtnToggle").length < 1
-  ) {
-    // console.log('no');
-    // $('.btn_md_next').attr('disabled', true)
-    $(".btn_md_next").addClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "#");
-  }
+    if (
+        $(".drawbtnToggle").length >= 1 &&
+        $(".musclebtnToggle").length >= 1 &&
+        $(".facebtnToggle").length >= 1
+    ) {
+        // console.log('hi');
+        
+        $(".toHowold").removeClass("btn_disabled_ba");
+        $(".toHowold").click(function () {
+            $(".drawSection09").show().siblings().hide();
+            })
+
+        // $(".btn_md_next a").attr("href", "draw09.php");
+    } else if (
+        $(".drawbtnToggle").length < 1 ||
+        $(".musclebtnToggle").length < 1 ||
+        $(".facebtnToggle").length < 1
+    ) {
+
+        $(".toHowold").addClass("btn_disabled_ba");
+        // $(".btn_md_next a").attr("href", "#");
+    }
 });
 
 $(".musclebtn").click(function () {
-  if (
-    $(".drawbtnToggle").length >= 1 &&
-    $(".musclebtnToggle").length >= 1 &&
-    $(".facebtnToggle").length >= 1
-  ) {
-    // console.log('hi');
-    $(".btn_md_next").removeClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "draw09.php");
-  } else if (
-    $(".drawbtnToggle").length < 1 ||
-    $(".musclebtnToggle").length < 1 ||
-    $(".facebtnToggle").length < 1
-  ) {
-    // console.log('no');
-    // $('.btn_md_next').attr('disabled', true)
-    $(".btn_md_next").addClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "#");
-  }
+    if (
+        $(".drawbtnToggle").length >= 1 &&
+        $(".musclebtnToggle").length >= 1 &&
+        $(".facebtnToggle").length >= 1
+    ) {
+        // console.log('hi');
+        $(".toHowold").removeClass("btn_disabled_ba");
+        $(".toHowold").click(function () {
+            $(".drawSection09").show().siblings().hide();
+            })
+        // $(".btn_md_next a").attr("href", "draw09.php");
+    } else if (
+        $(".drawbtnToggle").length < 1 ||
+        $(".musclebtnToggle").length < 1 ||
+        $(".facebtnToggle").length < 1
+    ) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $(".toHowold").addClass("btn_disabled_ba");
+        // $(".btn_md_next a").attr("href", "#");
+    }
 });
 
 $(".heightbtn").click(function () {
-  if (
-    $(".drawbtnToggle").length >= 1 &&
-    $(".musclebtnToggle").length >= 1 &&
-    $(".facebtnToggle").length >= 1
-  ) {
-    // console.log('hi');
-    $(".btn_md_next").removeClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "draw09.php");
-  } else if (
-    $(".drawbtnToggle").length < 1 ||
-    $(".musclebtnToggle").length < 1 ||
-    $(".facebtnToggle").length < 1
-  ) {
-    // console.log('no');
-    // $('.btn_md_next').attr('disabled', true)
-    $(".btn_md_next").addClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "#");
-  }
+    if (
+        $(".drawbtnToggle").length >= 1 &&
+        $(".musclebtnToggle").length >= 1 &&
+        $(".facebtnToggle").length >= 1
+    ) {
+        $(".toHowold").removeClass("btn_disabled_ba");
+        $(".toHowold").click(function () {
+        $(".drawSection09").show().siblings().hide();
+        })
+    } else if (
+        $(".drawbtnToggle").length < 1 ||
+        $(".musclebtnToggle").length < 1 ||
+        $(".facebtnToggle").length < 1
+    ) {
+        $(".toHowold").addClass("btn_disabled_ba");
+    }
 });
 
 $(".howOldbtn").click(function () {
-  if ($(".howOldbtnToggle").length >= 1) {
-    // console.log('hi');
-    $(".btn_md_next").removeClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "draw10.php");
-  } else if ($(".howOldbtnToggle").length < 1) {
-    // console.log('no');
-    // $('.btn_md_next').attr('disabled', true)
-    $(".btn_md_next").addClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "#");
-  }
+    if ($(".howOldbtnToggle").length >= 1) {
+        $(".toInterest").removeClass("btn_disabled_ba");
+        $(".toInterest").click(function () {
+            $(".drawSection10").show().siblings().hide();
+            })
+    } else if ($(".howOldbtnToggle").length < 1) {
+
+        $(".toInterest").addClass("btn_disabled_ba");
+    }
 });
 
 $(".interestbtn").click(function () {
-  if ($(".interestbtnToggle").length >= 1) {
-    // console.log('hi');
-    $(".btn_md_next").removeClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "draw11.php");
-  } else if ($(".interestbtnToggle").length < 1) {
-    // console.log('no');
-    // $('.btn_md_next').attr('disabled', true)
-    $(".btn_md_next").addClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "?");
-  }
+    if ($(".interestbtnToggle").length >= 1) {
+        $(".topersonality").removeClass("btn_disabled_ba");
+        $(".topersonality").click(function () {
+            $(".drawSection11").show().siblings().hide();
+            })
+    } else if ($(".interestbtnToggle").length < 1) {
+        $(".topersonality").addClass("btn_disabled_ba");
+    }
 });
 
 $(".personalitybtn").click(function () {
-  if ($(".personalitybtnToggle").length >= 1) {
-    // console.log('hi');
-    $(".btn_md_next").removeClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "draw12.php");
-  } else if ($(".personalitybtnToggle").length < 1) {
-    // console.log('no');
-    // $('.btn_md_next').attr('disabled', true)
-    $(".btn_md_next").addClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "#");
-  }
+    if ($(".personalitybtnToggle").length >= 1) {
+        // console.log('hi');
+        $(".tohoro").removeClass("btn_disabled_ba");
+        $(".tohoro").click(function () {
+            $(".drawSection12").show().siblings().hide();
+            })
+        // $(".btn_md_next a").attr("href", "draw12.php");
+    } else if ($(".personalitybtnToggle").length < 1) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $(".tohoro").addClass("btn_disabled_ba");
+        // $(".btn_md_next a").attr("href", "#");
+    }
 });
 
 $(".horobtn").click(function () {
-  if ($(".horobtnToggle").length >= 1) {
-    // console.log('hi');
-    $(".btn_md_next").removeClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "draw15.php");
-  } else if ($(".horobtnToggle").length < 1) {
-    // console.log('no');
-    // $('.btn_md_next').attr('disabled', true)
-    $(".btn_md_next").addClass("btn_disabled_ba");
-    $(".btn_md_next a").attr("href", "#");
-  }
+    if ($(".horobtnToggle").length >= 1) {
+        // console.log('hi');
+        $(".btn_md_next").removeClass("btn_disabled_ba");
+        // $(".btn_md_next a").attr("href", "draw15.php");
+    } else if ($(".horobtnToggle").length < 1) {
+        // console.log('no');
+        // $('.btn_md_next').attr('disabled', true)
+        $(".btn_md_next").addClass("btn_disabled_ba");
+        // $(".btn_md_next a").attr("href", "#");
+    }
 });
 
 // clearAll 清除
 $(".clearAll_ba").click(function () {
-  $(".wantbtn").removeClass("drawbtnToggle");
+    $(".wantbtn").removeClass("drawbtnToggle");
 });
 
 // 搖籤
@@ -700,86 +820,86 @@ let dropArea = document.querySelector(".drop-area");
 // console.log(dropArea.offsetLeft);
 let area;
 if (dropArea) {
-  area = {
-    left: dropArea.offsetLeft,
-    right: dropArea.offsetLeft + dropArea.offsetWidth - dragDiv.offsetWidth,
-    top: dropArea.offsetTop,
-    bottom: dropArea.offsetTop + dropArea.offsetHeight - dragDiv.offsetHeight,
-  };
-  area.middle = (area.left + area.right) / 2;
+    area = {
+        left: dropArea.offsetLeft,
+        right: dropArea.offsetLeft + dropArea.offsetWidth - dragDiv.offsetWidth,
+        top: dropArea.offsetTop,
+        bottom: dropArea.offsetTop + dropArea.offsetHeight - dragDiv.offsetHeight,
+    };
+    area.middle = (area.left + area.right) / 2;
 
-  let startX = 0;
-  let startY = 0;
+    let startX = 0;
+    let startY = 0;
 
-  dragTitle.addEventListener("mousedown", dragStart);
+    dragTitle.addEventListener("mousedown", dragStart);
 
-  function dragStart(e) {
-    e.preventDefault();
-    //記錄點擊相對被點擊物件的座標
-    startX = e.clientX - dragDiv.offsetLeft;
-    startY = e.clientY - dragDiv.offsetTop;
-    document.addEventListener("mousemove", move);
-    document.addEventListener("mouseup", stop);
-  }
-
-  function move(e) {
-    //計算出拖曳物件最左上角座標
-    x = e.clientX - startX;
-    y = e.clientY - startY;
-    // console.log('x1: ', x);
-    x = Math.max(Math.min(x, area.right), area.left);
-    y = Math.max(Math.min(y, area.bottom), area.top);
-    // console.log('area.left: ', area.left);
-    // console.log('Math.min(x, area.right): ', Math.min(x, area.right));
-    // console.log('x2: ', x);
-    dragDiv.style.left = x + "px";
-    dragDiv.style.top = y + "px";
-    // console.log({x, y, area});
-
-    let currentStat; //當前狀態
-    if (x > area.middle) {
-      currentStat = "right";
-      // TODO: 做六張圖隨機
-      $(".drawImgWrap img").attr("src", "./imgs/draw/draw-r.png");
-      if (prevStat === "left") {
-        drawcounter++;
-      }
-      prevStat = currentStat;
-    } else if (x <= area.middle) {
-      currentStat = "left";
-      // TODO: 做六張圖隨機
-      $(".drawImgWrap img").attr("src", "./imgs/draw/draw-l.png");
-      if (prevStat === "right") {
-        drawcounter++;
-      }
-      prevStat = currentStat;
-      // 讓前一狀態等於當前狀態
+    function dragStart(e) {
+        e.preventDefault();
+        //記錄點擊相對被點擊物件的座標
+        startX = e.clientX - dragDiv.offsetLeft;
+        startY = e.clientY - dragDiv.offsetTop;
+        document.addEventListener("mousemove", move);
+        document.addEventListener("mouseup", stop);
     }
-    if (drawcounter > 8) {
-      // console.log('next');
-      window.location.href = "draw18.php";
-    }
-  }
 
-  function stop() {
-    document.removeEventListener("mousemove", move);
-    document.removeEventListener("mouseup", stop);
-  }
+    function move(e) {
+        //計算出拖曳物件最左上角座標
+        x = e.clientX - startX;
+        y = e.clientY - startY;
+        // console.log('x1: ', x);
+        x = Math.max(Math.min(x, area.right), area.left);
+        y = Math.max(Math.min(y, area.bottom), area.top);
+        // console.log('area.left: ', area.left);
+        // console.log('Math.min(x, area.right): ', Math.min(x, area.right));
+        // console.log('x2: ', x);
+        dragDiv.style.left = x + "px";
+        dragDiv.style.top = y + "px";
+        // console.log({x, y, area});
+
+        let currentStat; //當前狀態
+        if (x > area.middle) {
+            currentStat = "right";
+            // TODO: 做六張圖隨機
+            $(".drawImgWrap img").attr("src", "./imgs/draw/draw-r.png");
+            if (prevStat === "left") {
+                drawcounter++;
+            }
+            prevStat = currentStat;
+        } else if (x <= area.middle) {
+            currentStat = "left";
+            // TODO: 做六張圖隨機
+            $(".drawImgWrap img").attr("src", "./imgs/draw/draw-l.png");
+            if (prevStat === "right") {
+                drawcounter++;
+            }
+            prevStat = currentStat;
+            // 讓前一狀態等於當前狀態
+        }
+        if (drawcounter > 8) {
+            // console.log('next');
+            window.location.href = "draw18.php";
+        }
+    }
+
+    function stop() {
+        document.removeEventListener("mousemove", move);
+        document.removeEventListener("mouseup", stop);
+    }
 }
 
 $(window).scroll(function () {
-  if (
-    $(window).scrollTop() >=
-    $(".jadeSay").offset().top - (window.screen.height * 3) / 4
-  ) {
-    $(".jadeSay").css({
-      width: "700px",
-    });
-  } else {
-    $(".jadeSay").css({
-      width: "0px",
-    });
-  }
+    if (
+        $(window).scrollTop() >=
+        $(".jadeSay").offset().top - (window.screen.height * 3) / 4
+    ) {
+        $(".jadeSay").css({
+            width: "700px",
+        });
+    } else {
+        $(".jadeSay").css({
+            width: "0px",
+        });
+    }
 });
 
 // console.log($('.drawCard').html());
@@ -790,7 +910,7 @@ const drawValue = randDrawArr[randDraw];
 // console.log(drawValue)
 
 $(".drawCard").html(
-  '<img class="w-100 " src="./imgs/draw/draw' +
+    '<img class="w-100 " src="./imgs/draw/draw' +
     drawValue +
     '.png" alt=""></img>'
 );

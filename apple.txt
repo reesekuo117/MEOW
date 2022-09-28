@@ -13,8 +13,8 @@ OKinput藍底關掉貼公版
 OK錯誤訊息光香研究(product_list .notlogin)
 線上求籤(八張)
 *****音樂五個人包起來
-開btn有黑外框-Border透明
-五個條件按鈕壞掉要修
+OK開btn有黑外框-Border透明
+OK五個條件按鈕壞掉要修
 *****Draw07:localstorage
 選項陣列if有空
 ***求籤＋收藏功能

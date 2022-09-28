@@ -197,6 +197,7 @@ button:focus{
 
 .musicOn,
 .musicOff {
+    border: 1px transparent solid;
     transition: .2s;
     color: white;
     width: 144px;
@@ -383,8 +384,9 @@ button:focus{
 /*------------------ draw04 ----------------*/
 
 .drawSection04 {
+    margin-top: 100px;
     width: 100%;
-    height: calc(100vh - 100px);
+    height:calc(100vh - 100px) ;
 }
 
 button a {
@@ -425,8 +427,9 @@ button a:hover {
 /*------------------ draw05 ----------------*/
 
 .drawSection05 {
+    margin-top: 100px;
     width: 100%;
-    height: calc(100vh - 100px);
+    height:calc(100vh - 100px) ;
 }
 
 .drawSection05 h1 {
@@ -525,6 +528,18 @@ button a:hover {
     border-radius: 8px;
     transition: .3s;
     margin: 96px auto;
+    background-color: var(--color-yellow);
+    text-align: center;
+}
+
+.drawSection06 .btn-l {
+    cursor: pointer;
+    width: 200px;
+    height: 57px;
+    border: var(--color-brown-dark) 2px solid;
+    border-radius: 8px;
+    transition: .3s;
+    margin: 0 auto;
     background-color: var(--color-yellow);
     text-align: center;
 }
@@ -2126,6 +2141,12 @@ button[disabled]:hover {
 }
 
 .btn-secondary {
+    color: #fff;
+    background-color: var(--color-orange);
+    border-color: transparent;
+}
+
+.btn-secondary:hover {
     color: #fff;
     background-color: var(--color-orange);
     border-color: transparent;
