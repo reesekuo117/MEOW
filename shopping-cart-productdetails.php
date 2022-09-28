@@ -134,8 +134,7 @@ header("Refresh:180");
                                                         <tr class="">
                                                             <!-- 商品照片 -->
                                                             <td class="imgsCardYu">
-                                                                <!-- <img src="imgs/product/< ?= $v['product_card_img'] ?>.jpg" class="card-img-top" > -->
-                                                                <img class="" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
+                                                               <img class=" w-100" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
                                                             </td>
                                                             <!-- 商品名稱 -->
                                                             <td>
@@ -168,8 +167,6 @@ header("Refresh:180");
                         </div>
                     </main>
                     <div class=" h6 priceNT-yu alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
-                        <h6 class="NTYu">
-                        </h6>
                         <h6 id="total-price-yu" class="price-uniqui-yu">
                         </h6>
                     </div>

@@ -217,10 +217,6 @@ th .checkbox-yu {
 }
 /* -------- 獨家商品表格外觀設定--------- */
 
-.imgsCardYu {
-  width: 30px;
-}
-
 #myTabContent-P-yu .tbody th {
   vertical-align: middle;
 }
@@ -228,6 +224,7 @@ th .checkbox-yu {
 #myTabContent-T-yu .tbody th {
   vertical-align: middle;
 }
+
 
 #uniqui-yu.table .thead th {
   vertical-align: middle;
@@ -268,11 +265,23 @@ td .total_price_yu {
   margin: 0 auto;
   text-align: center;
 }
-h6.total_price_yu::before{
+h6.total_price_yu::before {
   content: "NT$";
+}
+
+.formThwYu {
+  width: 100%;
+}
+
+.imgsCardYu {
+  border: 1px solid saddlebrown;
+  width: 100px;
 }
 /* -------- 旅遊行程表格外觀設定--------- */
 
+#travel-yu {
+  width: 1442px;
+}
 #travel-yu .table .thead th {
   vertical-align: middle;
 }
@@ -290,6 +299,7 @@ h6.total_price_yu::before{
 }
 #travel-yu .table {
   margin-top: 20px;
+  width: 100%;
 }
 #travel-yu .table > thead > tr > th {
   border: none;
@@ -306,10 +316,12 @@ h6.total_price_yu::before{
   /* padding: 1rem; */
 }
 
-/* thead.formThwYu{
-    width: 60%;
-} */
-
+thead.thWidth {
+  width: 80px;
+}
+.thWidthD {
+  width: 70px;
+}
 /* ---------規格下拉選單外觀 ---------------*/
 .form-select-yu {
   text-align: center;
@@ -340,10 +352,13 @@ h6.total_price_yu::before{
 .largerCheckbox-yu {
   margin-right: 4px;
 }
+.cardlist-Yu {
+  padding: 0 px;
+}
 .mdcardlist-yu {
   overflow: hidden;
   /* border: 1px solid #000; */
-  width: 190px;
+  /* width: 190px; */
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -352,8 +367,9 @@ h6.total_price_yu::before{
 
 /*----手機購物車商品清單卡片checkbox-----  */
 .card-yu {
-  padding: 28px 0;
+  padding: 12px 0;
   display: flex;
+  margin: 0 auto;
   /* justify-content: space-evenly; */
   /* justify-content: flex-end; */
 }
@@ -368,7 +384,13 @@ h6.total_price_yu::before{
   height: 15px;
   /* margin-right: 8px; */
 }
-
+.card-yu {
+  justify-content: space-between;
+}
+#mdtravel-yu .tcard {
+  margin: 40px 0;
+  justify-content: space-around;
+}
 /* ---------手機規格下拉外觀 ------*/
 .mdform-select-yu {
   margin: 8px 0;
@@ -402,8 +424,8 @@ h5.mdprice-yu::before {
   content: "NT$";
 }
 h6.mdprice-yu::after {
-    content: "NT$";
-  }
+  content: "NT$";
+}
 /* ---------小計------------ */
 h6.littlePriceYu {
   /* border: 1px solid #000; */
@@ -411,6 +433,7 @@ h6.littlePriceYu {
   text-align: center;
   color: #432a0f;
   text-align: center;
+  width: 200px;
 }
 
 h6.littlePriceYu::before {
@@ -446,13 +469,16 @@ form span.spanqty-yu {
   border: none;
 }
 /* ------桌機刪除icon-------- */
-.form-delete-yu {
+.form-delete-yu a i {
   color: #432a0f;
 }
-.form-delete-yu:hover {
+.form-delete-yu a i:hover {
   color: #e5a62a;
 }
-
+.form-delete-yu i {
+  width: 80px;
+  text-align: center;
+}
 /*------------ 桌機下一步按鈕 -------------*/
 
 .unique-btn-yu {
@@ -570,10 +596,11 @@ h6.MDtatalpriceYu::before {
   display: none;
 }
 
-.mdImg-Yu{
-    padding-left: 15px;
+.mdImg-Yu {
+  padding-left: 15px;
 }
 
-.cardcheckall-yu{
-    padding-top: 25px;
+/* 手機i商品mg */
+.mdP-img {
+  width: 130px;
 }

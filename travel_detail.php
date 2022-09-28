@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = '旅遊行程'; //頁面名稱
-$title = '旅遊行程';
+$title = '旅遊行程詳情';
 
 
 // if(!isset($_GET['sid'])){
@@ -26,6 +26,14 @@ $photos = explode(',', $r['travel_img']);
 $sqlArea = sprintf("SELECT * FROM `address`");
 $areaRows = $pdo->query($sqlArea)->fetchAll();
 
+//月老推薦卡片
+$sqlArea = sprintf("SELECT * FROM `address`");
+$areaRows = $pdo->query($sqlArea)->fetchAll();
+
+$t1_sql ="SELECT * FROM `travel` WHERE  sid IN(6,19,1,73,39)";
+$travel_1 = $pdo->query($t1_sql )->fetchAll();
+$t2_sql ="SELECT * FROM `travel` WHERE  sid IN(73,39,65)";
+$travel_2 = $pdo->query($t2_sql )->fetchAll();
 
 
 
@@ -259,7 +267,7 @@ header("Refresh:180");
                                         立即購買
                                     </button>
                                 </a>
-                                <button class="favorite d-flex justify-content-center align-items-center">
+                                <button class="favorite d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToFav_T_07(event)">
                                     <div class="icon_heart_nav">
                                         <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
@@ -411,7 +419,7 @@ header("Refresh:180");
             <div class="btns">
                 <div class="row align-items-center">
                     <div class="col">
-                        <button class="favorite d-flex justify-content-center align-items-center">
+                        <button class="favorite d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                             <div class="icon_heart_nav">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
@@ -724,350 +732,141 @@ header("Refresh:180");
                 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
                     <!-- Wrapper for carousel items -->
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col col-md-4">
-                                    <a href="">
-                                        <div class="thumb-wrapper mx-3">
-                                            <div class="img-box">
-                                                <img src="./imgs/travel/cards/T01_1S.jpg" class="img-fluid" alt="">
-                                                <div class="icon_heart">
-                                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                    </svg>
-                                                </div>
+                    <div class="carousel-item active">
+                                    <div class="row_07 d-flex">
+                                        <?php foreach ($travel_1 as $t) : ?>   
+                                            <div class="col-md-4">
+                                                <a href="">
+                                                    <div class="thumb-wrapper mx-3">
+                                                        <div class="img-box">
+                                                            <img src="./imgs/travel/cards/<?= $t['travelcard_img'] ?>" class="img-fluid" alt="">
+                                                            <div class="icon_heart">
+                                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="thumb-content">
+                                                            <h6 class="mb-0" style="height: 50px"><?= $t['travel_name'] ?></h6>
+                                                            <div class="card_small_mb d-flex justify-content-between mb-1">
+                                                                <small class="xs card-text d-flex">
+                                                                    <div class="icon_location">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                        </svg>
+                                                                        <?php foreach ($areaRows as $Yr) : ?>
+                                                                            <?php if($Yr['sid']=== $t['travel_area']) : ?>
+                                                                                <span>
+                                                                                    <?= $Yr['city'] ?>
+                                                                                </span>
+                                                                            <?php endif ?>
+                                                                        <?php endforeach ?>
+                                                                    </div>
+                                                                </small>
+                                                                <small class="xs card-text d-flex">
+                                                                    <div class="icon_clock pl-3">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                        </svg>
+                                                                        <span>出發日期：<?= $t['travel_date'] ?></span>
+                                                                    </div>
+                                                                </small>
+                                                            </div>
+                                                            <div class="card_intro_mb card-text">
+                                                                <small style="color: var(--color-text100);"><?= $t['travel_subheading']?></small>
+                                                            </div>
+                                                            <div class="card_under d-flex justify-content-between align-items-center">
+                                                                <small class="xs card-text d-flex pr-2">
+                                                                    <div class="icon_star pr-1" style="color: var(--color-yellow);">
+                                                                        <i class="fa-solid fa-star"></i>
+                                                                    </div><?= $t['travel_star']?>
+                                                                </small>
+                                                                <small class="xs card-text d-flex">
+                                                                    <div class="icon_fire pr-1" style="color: var(--color-orange);">
+                                                                        <i class="fa-solid fa-fire"></i>
+                                                                    </div>
+                                                                    <?= $t['travel_popular']?>個已訂購
+                                                                </small>
+                                                                <h5 class="m-0 ml-auto"><?= $t['travel_price']?></h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </div>
-                                            <div class="thumb-content">
-                                                <h6 class="mb-0">大稻埕霞海城廟深度漫步文化之旅</h6>
-                                                <div class="card_small_mb d-flex justify-content-between mb-1">
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_location">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>台北</span>
-                                                        </div>
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_clock pl-3">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>出發日期：2022/10/20</span>
-                                                        </div>
-                                                    </small>
-                                                </div>
-                                                <div class="card_intro_mb card-text">
-                                                    <small style="color: var(--color-text100);">旅遊勢必能夠左右未來。可是，即使是這樣，旅遊的出現仍然代表了一定的意義。從這個角度來看旅遊的出現仍然代...</small>
-                                                </div>
-                                                <div class="card_under d-flex justify-content-between align-items-center">
-                                                    <small class="xs card-text d-flex pr-2">
-                                                        <div class="icon_star pr-1" style="color: var(--color-yellow);">
-                                                            <i class="fa-solid fa-star"></i>
-                                                        </div> 4.7(50)
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_fire pr-1" style="color: var(--color-orange);">
-                                                            <i class="fa-solid fa-fire"></i>
-                                                        </div>
-                                                        3K個已訂購
-                                                    </small>
-                                                    <h5 class="m-0 ml-auto">1500</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
+                                        <?php endforeach; ?>    
+                                    </div>
                                 </div>
-                                <div class="col col-md-4">
-                                    <a href="">
-                                        <div class="thumb-wrapper mx-3">
-                                            <div class="img-box">
-                                                <img src="./imgs/travel/T01_1.jpg" class="img-fluid" alt="">
-                                                <div class="icon_heart">
-                                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h6 class="mb-0">大稻埕霞海城廟深度漫步文化之旅</h6>
-                                                <div class="card_small_mb d-flex justify-content-between mb-1">
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_location">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>台北</span>
-                                                        </div>
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_clock pl-3">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>出發日期：2022/10/20</span>
-                                                        </div>
-                                                    </small>
-                                                </div>
-                                                <div class="card_intro_mb card-text">
-                                                    <small style="color: var(--color-text100);">旅遊勢必能夠左右未來。可是，即使是這樣，旅遊的出現仍然代表了一定的意義。從這個角度來看旅遊的出現仍然代...</small>
-                                                </div>
-                                                <div class="card_under d-flex justify-content-between align-items-center">
-                                                    <small class="xs card-text d-flex pr-2">
-                                                        <div class="icon_star pr-1" style="color: var(--color-yellow);">
-                                                            <i class="fa-solid fa-star"></i>
-                                                        </div> 4.7(50)
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_fire pr-1" style="color: var(--color-orange);">
-                                                            <i class="fa-solid fa-fire"></i>
-                                                        </div>
-                                                        3K個已訂購
-                                                    </small>
-                                                    <h5 class="m-0 ml-auto">1500</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
 
+                                <div class="carousel-item">
+                                    <div class="row_07 d-flex">
+                                    <?php foreach ($travel_2 as $t) : ?>   
+                                            <div class="col-md-4">
+                                                <a href="">
+                                                    <div class="thumb-wrapper mx-3">
+                                                        <div class="img-box">
+                                                            <img src="./imgs/travel/cards/<?= $t['travelcard_img'] ?>" class="img-fluid" alt="">
+                                                            <div class="icon_heart">
+                                                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="thumb-content">
+                                                            <h6 class="mb-0" style="height: 50px"><?= $t['travel_name'] ?></h6>
+                                                            <div class="card_small_mb d-flex justify-content-between mb-1">
+                                                                <small class="xs card-text d-flex">
+                                                                    <div class="icon_location">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                        </svg>
+                                                                        <?php foreach ($areaRows as $Yr) : ?>
+                                                                            <?php if($Yr['sid']=== $t['travel_area']) : ?>
+                                                                                <span>
+                                                                                    <?= $Yr['city'] ?>
+                                                                                </span>
+                                                                            <?php endif ?>
+                                                                        <?php endforeach ?>
+                                                                    </div>
+                                                                </small>
+                                                                <small class="xs card-text d-flex">
+                                                                    <div class="icon_clock pl-3">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
+                                                                        </svg>
+                                                                        <span>出發日期：<?= $t['travel_date'] ?></span>
+                                                                    </div>
+                                                                </small>
+                                                            </div>
+                                                            <div class="card_intro_mb card-text">
+                                                                <small style="color: var(--color-text100);"><?= $t['travel_subheading']?></small>
+                                                            </div>
+                                                            <div class="card_under d-flex justify-content-between align-items-center">
+                                                                <small class="xs card-text d-flex pr-2">
+                                                                    <div class="icon_star pr-1" style="color: var(--color-yellow);">
+                                                                        <i class="fa-solid fa-star"></i>
+                                                                    </div><?= $t['travel_star']?>
+                                                                </small>
+                                                                <small class="xs card-text d-flex">
+                                                                    <div class="icon_fire pr-1" style="color: var(--color-orange);">
+                                                                        <i class="fa-solid fa-fire"></i>
+                                                                    </div>
+                                                                    <?= $t['travel_popular']?>個已訂購
+                                                                </small>
+                                                                <h5 class="m-0 ml-auto"><?= $t['travel_price']?></h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        <?php endforeach; ?>  
+                                    </div>
                                 </div>
-                                <div class="col col-md-4">
-                                    <a href="">
-                                        <div class="thumb-wrapper mx-3">
-                                            <div class="img-box">
-                                                <img src="./imgs/travel/T01_1.jpg" class="img-fluid" alt="">
-                                                <div class="icon_heart">
-                                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h6 class="mb-0">大稻埕霞海城廟深度漫步文化之旅</h6>
-                                                <div class="card_small_mb d-flex justify-content-between mb-1">
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_location">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>台北</span>
-                                                        </div>
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_clock pl-3">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>出發日期：2022/10/20</span>
-                                                        </div>
-                                                    </small>
-                                                </div>
-                                                <div class="card_intro_mb card-text">
-                                                    <small style="color: var(--color-text100);">旅遊勢必能夠左右未來。可是，即使是這樣，旅遊的出現仍然代表了一定的意義。從這個角度來看旅遊的出現仍然代...</small>
-                                                </div>
-                                                <div class="card_under d-flex justify-content-between align-items-center">
-                                                    <small class="xs card-text d-flex pr-2">
-                                                        <div class="icon_star pr-1" style="color: var(--color-yellow);">
-                                                            <i class="fa-solid fa-star"></i>
-                                                        </div> 4.7(50)
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_fire pr-1" style="color: var(--color-orange);">
-                                                            <i class="fa-solid fa-fire"></i>
-                                                        </div>
-                                                        3K個已訂購
-                                                    </small>
-                                                    <h5 class="m-0 ml-auto">1500</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col col-md-4">
-                                    <a href="">
-                                        <div class="thumb-wrapper mx-3">
-                                            <div class="img-box">
-                                                <img src="./imgs/travel/T01_1.jpg" class="img-fluid" alt="">
-                                                <div class="icon_heart">
-                                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h6 class="mb-0">大稻埕霞海城廟深度漫步文化之旅</h6>
-                                                <div class="card_small_mb d-flex justify-content-between mb-1">
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_location">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>台北</span>
-                                                        </div>
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_clock pl-3">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>出發日期：2022/10/20</span>
-                                                        </div>
-                                                    </small>
-                                                </div>
-                                                <div class="card_intro_mb card-text">
-                                                    <small style="color: var(--color-text100);">旅遊勢必能夠左右未來。可是，即使是這樣，旅遊的出現仍然代表了一定的意義。從這個角度來看旅遊的出現仍然代...</small>
-                                                </div>
-                                                <div class="card_under d-flex justify-content-between align-items-center">
-                                                    <small class="xs card-text d-flex pr-2">
-                                                        <div class="icon_star pr-1" style="color: var(--color-yellow);">
-                                                            <i class="fa-solid fa-star"></i>
-                                                        </div> 4.7(50)
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_fire pr-1" style="color: var(--color-orange);">
-                                                            <i class="fa-solid fa-fire"></i>
-                                                        </div>
-                                                        3K個已訂購
-                                                    </small>
-                                                    <h5 class="m-0 ml-auto">1500</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                </div>
-                                <div class="col col-md-4">
-                                    <a href="">
-                                        <div class="thumb-wrapper mx-3">
-                                            <div class="img-box">
-                                                <img src="./imgs/travel/T01_1.jpg" class="img-fluid" alt="">
-                                                <div class="icon_heart">
-                                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h6 class="mb-0">大稻埕霞海城廟深度漫步文化之旅</h6>
-                                                <div class="card_small_mb d-flex justify-content-between mb-1">
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_location">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>台北</span>
-                                                        </div>
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_clock pl-3">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>出發日期：2022/10/20</span>
-                                                        </div>
-                                                    </small>
-                                                </div>
-                                                <div class="card_intro_mb card-text">
-                                                    <small style="color: var(--color-text100);">旅遊勢必能夠左右未來。可是，即使是這樣，旅遊的出現仍然代表了一定的意義。從這個角度來看旅遊的出現仍然代...</small>
-                                                </div>
-                                                <div class="card_under d-flex justify-content-between align-items-center">
-                                                    <small class="xs card-text d-flex pr-2">
-                                                        <div class="icon_star pr-1" style="color: var(--color-yellow);">
-                                                            <i class="fa-solid fa-star"></i>
-                                                        </div> 4.7(50)
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_fire pr-1" style="color: var(--color-orange);">
-                                                            <i class="fa-solid fa-fire"></i>
-                                                        </div>
-                                                        3K個已訂購
-                                                    </small>
-                                                    <h5 class="m-0 ml-auto">1500</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                </div>
-                                <div class="col col-md-4">
-                                    <a href="">
-                                        <div class="thumb-wrapper mx-3">
-                                            <div class="img-box">
-                                                <img src="./imgs/travel/T01_1.jpg" class="img-fluid" alt="">
-                                                <div class="icon_heart">
-                                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h6 class="mb-0">大稻埕霞海城廟深度漫步文化之旅</h6>
-                                                <div class="card_small_mb d-flex justify-content-between mb-1">
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_location">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M12 21.2445C11.7379 21.0503 11.4043 20.8032 11.4043 20.8032L12 21.2445Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7ZM11 10C11 9.44772 11.4477 9 12 9C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11C11.4477 11 11 10.5523 11 10Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4043 20.8032L12 21.2445C12.33 21 12.5964 20.8027 12.5964 20.8027L12.5981 20.8014L12.6032 20.7976L12.6198 20.7851C12.6337 20.7747 12.6531 20.7599 12.6777 20.741C12.7268 20.7031 12.7968 20.6484 12.8845 20.5779C13.0599 20.4368 13.307 20.2317 13.6019 19.9696C14.1903 19.4466 14.976 18.6902 15.7643 17.756C17.314 15.9193 19 13.246 19 10.2222C19 6.26809 15.9 3 12 3C8.10004 3 5 6.26809 5 10.2222C5 13.246 6.68605 15.9193 8.23571 17.756C9.02395 18.6902 9.8097 19.4466 10.3981 19.9696C10.693 20.2317 10.9401 20.4368 11.1155 20.5779C11.2032 20.6484 11.2732 20.7031 11.3223 20.741C11.3469 20.7599 11.3663 20.7747 11.3802 20.7851L11.3968 20.7976L11.4019 20.8014L11.4043 20.8032ZM7 10.2222C7 7.30348 9.27254 5 12 5C14.7275 5 17 7.30348 17 10.2222C17 12.5317 15.686 14.7473 14.2357 16.4662C13.524 17.3098 12.8097 17.9979 12.2731 18.4748C12.1756 18.5615 12.0842 18.641 12 18.713C11.9158 18.641 11.8244 18.5615 11.7269 18.4748C11.1903 17.9979 10.4761 17.3098 9.76429 16.4662C8.31395 14.7473 7 12.5317 7 10.2222Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>台北</span>
-                                                        </div>
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_clock pl-3">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H12C12.5523 13 13 12.5523 13 12V7Z" fill="#432A0F" fill-opacity="0.6" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12Z" fill="#432A0F" fill-opacity="0.6" />
-                                                            </svg>
-                                                            <span>出發日期：2022/10/20</span>
-                                                        </div>
-                                                    </small>
-                                                </div>
-                                                <div class="card_intro_mb card-text">
-                                                    <small style="color: var(--color-text100);">旅遊勢必能夠左右未來。可是，即使是這樣，旅遊的出現仍然代表了一定的意義。從這個角度來看旅遊的出現仍然代...</small>
-                                                </div>
-                                                <div class="card_under d-flex justify-content-between align-items-center">
-                                                    <small class="xs card-text d-flex pr-2">
-                                                        <div class="icon_star pr-1" style="color: var(--color-yellow);">
-                                                            <i class="fa-solid fa-star"></i>
-                                                        </div> 4.7(50)
-                                                    </small>
-                                                    <small class="xs card-text d-flex">
-                                                        <div class="icon_fire pr-1" style="color: var(--color-orange);">
-                                                            <i class="fa-solid fa-fire"></i>
-                                                        </div>
-                                                        3K個已訂購
-                                                    </small>
-                                                    <h5 class="m-0 ml-auto">1500</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <!-- Carousel controls -->
                     <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
@@ -1146,7 +945,7 @@ header("Refresh:180");
     <div class="row justify-content-center align-items-center">
         <div class="col ml-2">
             <button class="favorite d-flex justify-content-center align-items-center w-100">
-                <div class="icon_heart_nav">
+                <div class="icon_heart_nav" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                     <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
                     </svg>
@@ -1193,13 +992,28 @@ header("Refresh:180");
         $.get(
             're-cart-t-api.php', {
                 sid,
-                qty
+                qty,
+                tp
             },
             function(data) {
                 showCartCount(data);
             },
             'json');
     }
+
+        function addToFav_T_07(event) {
+        const heartbtn = $(event.currentTarget); // 監聽
+        const collect_sid = heartbtn.attr('data-sid');
+        console.log('hiheart', heartbtn);
+        console.log('hisid', collect_sid);
+        $.get(
+            'favorite_api.php', {
+                collect_sid,
+                target_type: 2,
+            },
+            'json');
+        
+    };
 </script>
 
 

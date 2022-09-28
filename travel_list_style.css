@@ -75,8 +75,8 @@
 
 .container-1 .icon {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 8px;
+    left: 13px;
     /* margin-left: 20px;
     margin-top: 17px; */
     z-index: 1;
@@ -134,21 +134,23 @@
     color: var(--color-text87);
 
 }
-.travel_sortbtn_mb button{
-    border: 2px solid var(--color-text60) !important;
+.travel_sortbtn_mb button.tsbtnmbb{
+    border: 2px solid var(--color-text60);
     border-radius: 8px;
     padding: 4px;
     background-color: var(--color-lightcreamy);
     color: var(--color-text87);
 }
 .travel_sortbtn_mb button.tsmbactive{
-    border: 2px solid var(--color-text60) !important;
-    border-radius: 8px;
+    /* border: 2px solid var(--color-text60) !important; */
+    /* border-radius: 8px; */
     background-color: var(--color-yellow);
-    color: var(--color-text87);
+    /* color: var(--color-text87); */
 
 }
-
+.travel_sortbtn_mb button{
+    outline: none;
+}
 /* -----------------------------價格篩選----------------------------- */
 .filter-content__element {
     width: 100%;
@@ -266,13 +268,14 @@
 }
 
 /* -------------------------行程卡片-------------------------- */
-.travel_list .container{ 
+.travel_list{ 
     justify-content: flex-start;
 }
 .travel_list .row{
     flex-direction: column;
 }
 .card_row {
+    justify-content: flex-start;
     border-radius: 8px;
     background-color: #FFF6E9;
     overflow: hidden;
@@ -373,6 +376,7 @@
 }
 .card-text{
     color: var(--color-text100);
+  margin: auto 0;
     /* border: 1px solid #000; */
 }
 
