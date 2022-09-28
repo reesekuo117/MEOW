@@ -94,57 +94,47 @@ $title = '線上求籤'
             </div>
         </a>
 
-    </div>
-    <button class="btn_md_next btn_disabled_ba position-absolute disabled" onclick="">
-        <a class="m-0 disabled text-decoration-none" href="#">
-            <p class="m-0">
-                下一步
-            </p>
-        </a>
-    </button>
+        <button class="btn_md_next btn_disabled_ba position-absolute disabled" onclick="">
+            <a class="m-0 disabled text-decoration-none" href="#">
+                <p class="m-0">
+                    下一步
+                </p>
+            </a>
+        </button>
 
-    <!-- Button trigger modal -->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-    </button> -->
+                <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content position-relative">
+                    <div class="modal-header">
+                        <div class="errorSign">
+                            <img src="./imgs/Errorsign.png" alt="">
+                        </div>
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        超過五項囉喵
+                    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <!-- <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <div class="modal-footer">
+                    <div class="errorMeow position-absolute">
+                        <img src="./imgs/errorMeow.png" alt="">
+                    </div>
+                        <button type="button" class="btn btn-secondary mx-auto" data-dismiss="modal">好的喵</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
                 </div>
             </div>
-        </div> -->
-        <div class="notlogin">
-        <!-- 1.背景用黑色半透明做光箱效果，視窗FIXED(原本就在用show，沒有要讓它出現用append) -->
-        <div class="">
-            <div class="alert d-flex justify-content-center align-items-center">
-                <div class="alert_head"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                <div class="alert_title">
-                    <h4>請先登入再收藏商品喔！</h4>
-                </div>
-                <div class="btn_ok">
-                    <button>好的喵</button>
-                </div>
-                <div class="alert_img">
-                    <img class="w-100" src="./imgs/17.png" alt="">
-                </div>
-            </div>
+
         </div>
     </div>
-    </div>
+
+
+
+
 </div>
 
 
