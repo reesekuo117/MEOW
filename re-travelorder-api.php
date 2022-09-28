@@ -1,52 +1,76 @@
 <?php
 require __DIR__. '/parts/meow_db.php';
 
-if(empty($_SESSION['user']) or empty($_SESSION['pcart'])){
+if(empty($_SESSION['user']) or empty($_SESSION['tcart'])){
     // header('Location: product-list.php');
     // exit;
 }
-$total = 0;
-foreach($_SESSION['pcart'] as $k=>$v){
-    $total += $v['product_price']*$v['qty'];
+if(empty($_SESSION['user']['id'])){
+    echo json_encode($output);
+    exit;
 }
-// 寫入訂單
+$member_id = $_SESSION['user']['id'];
 
-$po_sql = sprintf( "INSERT INTO `product_order`(
+$total = 0;
+foreach($_SESSION['tcart'] as $i=>$j){
+    $total += $j['price']*$j['qty'];
+}
+
+// 寫入訂單
+$to_sql = sprintf( "INSERT INTO `travel_order`(
         `member_id`, 
+        `travel_sid`,
         `state`, 
-        `total`, 
+        `price`, 
+        `quantity`, 
+        `totle`, 
         `name`, 
         `phone`, 
-        `address_city`, 
+        `address_city`,
         `address_region`, 
         `address`, 
-        `delivery`, 
         `payment`, 
         `payment_state`, 
         `created_at`
         ) VALUES(
-            %s, %s, 
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
             NOW()
         )", $_SESSION['user']['id'], $total );
-$stmt = $pdo->query($po_sql);
+$stmt = $pdo->query($to_sql);
 $order_sid = $pdo->lastInsertId();
 
-//訂單明細
-$pod_sql = "INSERT INTO `product_details`(`order_sid`, `product_sid`, `quantity`, `price`) VALUES(?, ?, ?, ?)";
-$stmt = $pdo->prepare($pod_sql);
+// //訂單明細
+// $tod_sql = "INSERT INTO `product_details`(`order_sid`, `product_sid`, `quantity`, `price`) VALUES(?, ?, ?, ?)";
+// $stmt = $pdo->prepare($pod_sql);
 
-foreach($_SESSION['pcart'] as $k=>$v){
+foreach($_SESSION['pcart'] as $i=>$j){
     $stmt->execute([
+        $member_id,
+        $j['sid'],
         $order_sid,
-        $v['sid'],
-        $v['price'],
-        $v['qty'],
+        $j['sid'],
+        $j['price'],
+        $j['qty'],
+
+
+        `state`, 
+        `price`, 
+        `quantity`, 
+        `totle`, 
+        `name`, 
+        `phone`, 
+        `address_city`,
+        `address_region`, 
+        `address`, 
+        `payment`, 
+        `payment_state`, 
     ]);
 }
 
 //清除購物車內容
 unset($_SESSION['pcart']);
-?>
+
+echo json_encode($output, JSON_UNESCAPED_UNICODE);
 
 
 

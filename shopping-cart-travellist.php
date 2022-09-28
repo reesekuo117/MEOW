@@ -476,7 +476,7 @@ header("Refresh:180");
             <pre>
                 <?php print_r($_post); ?>
             <pre>
-        <?php endif; ?>    
+    <?php endif; ?>    
     </section>
 
     <!-- ------------------手機 ------------------------>
