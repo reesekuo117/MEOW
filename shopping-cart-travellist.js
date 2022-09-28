@@ -1066,9 +1066,9 @@ $(window).scroll(function() {
     const fields = ["name-yu", "mobile-yu", "email-yu", "address-yu"];
     console.log("hihi");
 
-    const tr = $(this);
-            const td_price = tr.find(".price");
-            const td_sub = tr.find(".sub-total");
+    const atr = $(this);
+      const td_price = atr.find(".price");
+      const td_sub = tr.find(".sub-total");
     const name = tr.attr('data-sid'); 
 
 
