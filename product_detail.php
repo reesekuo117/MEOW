@@ -12,6 +12,8 @@ $sql = "SELECT * FROM product WHERE sid=$sid";
 // $sql = "SELECT * FROM product WHERE sid=localstorage的變數";
 //要用localstorage
 $rows = $pdo->query($sql)->fetchAll();
+$photos = explode(',', $r['travel_img']);
+
 // echo json_encode([
 //     '$rows'=>$rows,
 // ]);
@@ -38,7 +40,15 @@ $rows = $pdo->query($sql)->fetchAll();
                                 <img class="p3" src="./imgs/product/P04_3_b.jpg" alt="">
                                 <img class="p4" src="./imgs/product/P04_4_b.jpg" alt="">
                                 <img class="p5" src="./imgs/product/P04_5_b.jpg" alt="">
-
+                                <!-- 輪播強php -->
+                                <!-- < ?php
+                                    $first = 0;
+                                    foreach ($photos as $p) : ?>
+                                        <div class="carousel-item 
+                                        < ?php if ($first == 0) {echo 'active'; $first = 1;}?>">
+                                            <img src="imgs/travel/wall/< ?= $p ?>" class="d-block w-100" alt="...">
+                                        </div>
+                                    < ?php endforeach ?> -->
                                 <div class="icon_heart" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                                     <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />

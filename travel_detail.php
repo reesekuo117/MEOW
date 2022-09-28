@@ -76,7 +76,7 @@ header("Refresh:180");
             <div class="carousel-inner">
                 <!--
                 <div class="carousel-item active">
-                    <img src="imgs/travel/cards/<?= $r['travelcard_img'] ?>" class="d-block w-100" alt="...">
+                    <img src="imgs/travel/cards/< ?= $r['travelcard_img'] ?>" class="d-block w-100" alt="...">
                 </div>
     -->
                 <?php
@@ -88,7 +88,7 @@ header("Refresh:180");
                                                     $first = 1;
                                                 }
                                                 ?>">
-                        <img src="imgs/travel/wall/<?= $p ?>" class="d-block w-100" alt="...">
+                        <img src="imgs/travel/wall/<?= $p ?>" class="d-block" alt="...">
                     </div>
                 <?php endforeach ?>
                 <!-- <div class="carousel-item">
@@ -441,7 +441,7 @@ header("Refresh:180");
         </div>
     </div>
 
-    <div class="">
+    <div class="detail_box">
         <div class="container">
             <div class="row">
                 <div class="col">
