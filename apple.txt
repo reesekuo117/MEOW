@@ -5,12 +5,12 @@ Nav
 Footer 下滑消失 上滑出現
 
 首頁(8張)
-OK全館免運
-OK會員註冊登入換圖
-OKinput藍底關掉貼公版
+全館免運 OK
+會員註冊登入換圖 OK
+input藍底關掉貼公版 OK
 
 求籤(8張)
-OK錯誤訊息光香研究(product_list .notlogin)
+錯誤訊息光香研究(product_list .notlogin) OK
 線上求籤(八張)
 *****音樂五個人包起來
 OK開btn有黑外框-Border透明
@@ -20,6 +20,7 @@ OK五個條件按鈕壞掉要修
 ***求籤＋收藏功能
 手機月老推薦商品只放一個
 卡片偷蘋果的
+擲筊音效
 
 
 商品(07)

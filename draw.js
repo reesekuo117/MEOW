@@ -23,7 +23,7 @@ window.onload = function () {
     $('.musicSwitch').click(function () {
         return bgm.paused ? bgm.play() : bgm.pause();
     })
-    
+
 
     if (localStorage.getItem('bgm_gds') != null) {
         bgm.setAttribute('value', localstorage.getItem('bgm_gds'))
@@ -39,13 +39,13 @@ window.onload = function () {
     setTimeout(function () {
         if (localStorage.getItem('bgm_time') != null) {
             bgm.currentTime = localStorage.getItem('bgm_time');
-            bgm.play();
+            // bgm.play();
             // 音量逐漸變大
             bgm.volume = 0;
             v = 0;
             var t = setInterval(function () {
                 v += 0.005;
-                if (v <= 1) {
+                if (v <= 0.2) {
                     bgm.volume = v;
                 } else {
                     clearInterval(t);
@@ -64,12 +64,12 @@ window.onload = function () {
             }
         }, 100);
         // 初始化後就啟動 bgm
-        bgm.play();
+        // bgm.play();
         bgm.volume = 0;
         v = 0;
         var t = setInterval(function () {
             v += 0.005;
-            if (v <= 1) {
+            if (v <= 0.2) {
                 bgm.volume = v;
             } else {
                 clearInterval(t);
@@ -77,6 +77,23 @@ window.onload = function () {
         }, 25)
     }, 1000)
 
+    function volumeDown() {
+        if (localStorage.getItem('bgm_time') != null) {
+            bgm.currentTime = localStorage.getItem('bgm_time');
+            // bgm.play();
+            // 音量逐漸變大
+            bgm.volume = 0.2;
+            v = 0.2;
+            var t = setInterval(function () {
+                v -= 0.005;
+                if (v = 0.2) {
+                    bgm.volume = v;
+                } else {
+                    clearInterval(t);
+                }
+            }, 25);
+        }
+    }
 }
 
 // function playAudio() {
@@ -168,13 +185,13 @@ $("#backtodraw01").click(function () {
 
 $("#backtodraw03").click(function () {
     $(".drawSection03").show().siblings().hide();
-    $('.body_draw01').css('background','url(./imgs/draw/drawbg.png)');
+    $('.body_draw01').css('background', 'url(./imgs/draw/drawbg.png)');
     $('.navbar_ba').show();
 })
 
 $(".templeSelect").click(function () {
     $(".drawSection04").show().siblings().hide();
-    $('.body_draw01').css('background','url(./imgs/draw/drawbgblack.png)');
+    $('.body_draw01').css('background', 'url(./imgs/draw/drawbgblack.png)');
     $('.navbar_ba').hide();
 })
 
@@ -188,7 +205,7 @@ $(".drawSection04 .btn-xl").click(function () {
 
 $(".drawSection05 .btn-xl").click(function () {
     $(".drawSection06").show().siblings().hide();
-    $('.body_draw01').css('background','url(./imgs/draw/drawbg.png)');
+    $('.body_draw01').css('background', 'url(./imgs/draw/drawbg.png)');
     $('.navbar_ba').show();
 })
 
@@ -196,17 +213,8 @@ $(".toWant").click(function () {
     $(".drawSection07").show().siblings().hide();
 })
 
-// $(".toBody").click(function () {
-//     $(".drawSection08").show().siblings().hide();
-// })
-
-
 $("#backtodraw07").click(function () {
     $(".drawSection07").show().siblings().hide();
-})
-
-$(".toHowold").click(function () {
-    $(".drawSection09").show().siblings().hide();
 })
 
 $("#backtodraw08").click(function () {
@@ -217,6 +225,28 @@ $("#backtodraw09").click(function () {
     $(".drawSection09").show().siblings().hide();
 })
 
+$("#backtodraw10").click(function () {
+    $(".drawSection10").show().siblings().hide();
+})
+
+$("#backtodraw11").click(function () {
+    $(".drawSection11").show().siblings().hide();
+})
+
+$("#backtodraw12").click(function () {
+    $(".drawSection12").show().siblings().hide();
+})
+
+// $(".todraw").click(function () {
+//     $(".drawSection16").show().siblings().hide();
+// })
+
+$(".toShake").click(function () {
+
+    $(".drawSection17").show().siblings().hide();
+    $('.body_draw01').css('background', 'url(./imgs/draw/drawbgblack.png)');
+    $('.navbar_ba').hide();
+})
 
 
 
@@ -327,11 +357,6 @@ $(window).on("mousemove", function (event) {
     });
 });
 
-// 年紀
-
-$(".howOldbtn").click(function () {
-    $(this).toggleClass("howOldbtnToggle");
-});
 
 // 貓翻牌
 $(".drawSection09 img").mouseenter(function () {
@@ -512,6 +537,12 @@ $(".wantbtn").click(function () {
 //     return ;
 // }
 
+// 年紀
+
+$(".howOldbtn").click(function () {
+    $(this).toggleClass("howOldbtnToggle");
+});
+
 // 興趣
 
 $(".interestbtn").click(function () {
@@ -553,9 +584,6 @@ $(".facebtn").click(function () {
 $(".wantbtn").click(function () {
     if ($(".drawbtnToggle").length > 5) {
         $("#exampleModal").modal("show");
-        // $('.notlogin').css('display','block')
-        // alert('超過五項囉喵')
-        // console.log(this);
         this.click(); // 模擬再點擊一次，讓他變白
     }
 });
@@ -563,7 +591,6 @@ $(".wantbtn").click(function () {
 $(".interestbtn").click(function () {
     if ($(".interestbtnToggle").length > 5) {
         $("#exampleModal").modal("show");
-        // alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
 });
@@ -571,7 +598,6 @@ $(".interestbtn").click(function () {
 $(".facebtn").click(function () {
     if ($(".facebtnToggle").length > 5) {
         $("#exampleModal").modal("show");
-        // alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
 });
@@ -579,7 +605,6 @@ $(".facebtn").click(function () {
 $(".musclebtn").click(function () {
     if ($(".musclebtnToggle").length > 5) {
         $("#exampleModal").modal("show");
-        // alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
 });
@@ -587,7 +612,6 @@ $(".musclebtn").click(function () {
 $(".personalitybtn").click(function () {
     if ($(".personalitybtnToggle").length > 5) {
         $("#exampleModal").modal("show");
-        // alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
 });
@@ -595,7 +619,6 @@ $(".personalitybtn").click(function () {
 $(".horobtn").click(function () {
     if ($(".horobtnToggle").length > 5) {
         $("#exampleModal").modal("show");
-        // alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
 });
@@ -625,8 +648,6 @@ $(".drawdraw").click(function () {
 });
 
 // 沒按不能下一步
-
-
 $(".facebtn").click(function () {
     if (
         $(".drawbtnToggle").length >= 1 &&
@@ -634,11 +655,11 @@ $(".facebtn").click(function () {
         $(".facebtnToggle").length >= 1
     ) {
         // console.log('hi');
-        
+
         $(".toHowold").removeClass("btn_disabled_ba");
         $(".toHowold").click(function () {
             $(".drawSection09").show().siblings().hide();
-            })
+        })
 
         // $(".btn_md_next a").attr("href", "draw09.php");
     } else if (
@@ -662,7 +683,7 @@ $(".musclebtn").click(function () {
         $(".toHowold").removeClass("btn_disabled_ba");
         $(".toHowold").click(function () {
             $(".drawSection09").show().siblings().hide();
-            })
+        })
         // $(".btn_md_next a").attr("href", "draw09.php");
     } else if (
         $(".drawbtnToggle").length < 1 ||
@@ -684,7 +705,7 @@ $(".heightbtn").click(function () {
     ) {
         $(".toHowold").removeClass("btn_disabled_ba");
         $(".toHowold").click(function () {
-        $(".drawSection09").show().siblings().hide();
+            $(".drawSection09").show().siblings().hide();
         })
     } else if (
         $(".drawbtnToggle").length < 1 ||
@@ -700,7 +721,7 @@ $(".howOldbtn").click(function () {
         $(".toInterest").removeClass("btn_disabled_ba");
         $(".toInterest").click(function () {
             $(".drawSection10").show().siblings().hide();
-            })
+        })
     } else if ($(".howOldbtnToggle").length < 1) {
 
         $(".toInterest").addClass("btn_disabled_ba");
@@ -712,7 +733,7 @@ $(".interestbtn").click(function () {
         $(".topersonality").removeClass("btn_disabled_ba");
         $(".topersonality").click(function () {
             $(".drawSection11").show().siblings().hide();
-            })
+        })
     } else if ($(".interestbtnToggle").length < 1) {
         $(".topersonality").addClass("btn_disabled_ba");
     }
@@ -724,26 +745,20 @@ $(".personalitybtn").click(function () {
         $(".tohoro").removeClass("btn_disabled_ba");
         $(".tohoro").click(function () {
             $(".drawSection12").show().siblings().hide();
-            })
-        // $(".btn_md_next a").attr("href", "draw12.php");
+        })
     } else if ($(".personalitybtnToggle").length < 1) {
-        // console.log('no');
-        // $('.btn_md_next').attr('disabled', true)
         $(".tohoro").addClass("btn_disabled_ba");
-        // $(".btn_md_next a").attr("href", "#");
     }
 });
 
 $(".horobtn").click(function () {
     if ($(".horobtnToggle").length >= 1) {
-        // console.log('hi');
-        $(".btn_md_next").removeClass("btn_disabled_ba");
-        // $(".btn_md_next a").attr("href", "draw15.php");
+        $(".toReady").removeClass("btn_disabled_ba");
+        $(".toReady").click(function () {
+            $(".drawSection15").show().siblings().hide();
+        })
     } else if ($(".horobtnToggle").length < 1) {
-        // console.log('no');
-        // $('.btn_md_next').attr('disabled', true)
-        $(".btn_md_next").addClass("btn_disabled_ba");
-        // $(".btn_md_next a").attr("href", "#");
+        $(".toReady").addClass("btn_disabled_ba");
     }
 });
 
