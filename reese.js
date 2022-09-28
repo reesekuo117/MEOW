@@ -218,24 +218,23 @@ function checkFormReviewP(event){
     console.log($(form1).serialize());
     console.log('checkFormReviewP');
     let isPass = true;
+
     // if (!$('').val()) {
     //     genAlert5('請填寫正確資料');
     //     return;
-    // }else if (!$('').val()) {
-    //     genAlert5('請填寫正確資料');
-    //     return;
     // }
+
     if(isPass){
         $.post(
             're-review-api.php', 
             $(form1).serialize(),
             function(data){
                 console.log('form_preview_re data',data);
-                if(data.success){
-                    genAlert5('新增評論成功', 'success');
-                }else{
-                    genAlert5(data.error);
-                }
+                // if(data.success){
+                //     genAlert5('新增評論成功', 'success');
+                // }else{
+                //     genAlert5(data.error);
+                // }
         }, 'json');
     }
 }
