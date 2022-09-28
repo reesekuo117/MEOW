@@ -33,10 +33,8 @@ if ($cate) {
     $qsp['cate'] = $cate;
 }
 
-
-// $dataSql = "SELECT * FROM `product` ORDER BY ";
-
-
+// 模糊查詢
+$serach = ("SELECT * FROM `products` WHERE `product_name` LIKE '%月老%';");
 
 $dataSort = '';
 if(!empty($sort)){
@@ -55,8 +53,6 @@ if(!empty($sort)){
             $dataSort = ' ORDER BY product_price ASC ';
             break;
     }
-
-
 }
 
 /*
