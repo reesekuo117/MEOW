@@ -632,7 +632,7 @@ scroll-behavior: smooth;
   width: 90%;
   top: -2%;
   left: 5%;
-  z-index: 10;
+  /* z-index: 10; */
 }
 .mbsection4_lb {
     padding: 250px 0px 100px;
@@ -1135,6 +1135,7 @@ padding-top: 150px;
 .carousel_mb{
   overflow: hidden;
   padding: 50px 0 50px;
+  margin-bottom: 50px;
 }
 .carousel_mb .pit_mb{
   text-align: left;
@@ -1156,7 +1157,7 @@ padding-top: 150px;
   --card-max-width: 280px;
   --card-height: 350px;
   --carousel-min-width: 600px;
-  z-index: 1;
+  z-index: 0;
   position: relative;
   margin: 0 auto;
   width: 100%;
