@@ -60,7 +60,7 @@ $pageName ='會員中心'; //頁面名稱
             pod.total, 
             pod.quantity,
             p.product_name, 
-            p.product_card_img, 
+            p.product_card_smallimg, 
             ad.city,
             ad2.city region
         FROM product_order po
@@ -76,7 +76,7 @@ $pageName ='會員中心'; //頁面名稱
     $tolist_sql = "
         SELECT 
             tod.*, 
-            t.travel_name, 
+            t.travel_name,
             t.travelcard_img, 
             ad.city,
             ad2.city region
@@ -363,7 +363,7 @@ $pageName ='會員中心'; //頁面名稱
                             <div class="card-re">
                                 <div class="position-relative ">
                                     <div class="cardimg-re">
-                                        <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt="">
+                                        <img src="./imgs/product/cards/<?= $r['product_card_smallimg'] ?>.jpg" alt="">
                                     </div>
                                     <div class="position-absolute likeicon-re">
                                         <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">

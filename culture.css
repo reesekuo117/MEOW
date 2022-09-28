@@ -2,11 +2,7 @@
   outline: 1px solid black;
 } */
 
-/* 手機滑動滾輪隱藏 */
-/* body::-webkit-scrollbar{
-  display: none;
 
-} */
 /* html{
 scroll-behavior: smooth;
 } */
@@ -591,6 +587,13 @@ scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scroll-snap-align: center;
 }
+
+.scroll-snap_lb::-webkit-scrollbar{
+  display: none;
+}
+.temScroll-snap_lb::-webkit-scrollbar{
+  display: none;
+}
 .mb-ban-img-wrap {
   width: 220px;
 }
@@ -632,7 +635,7 @@ scroll-behavior: smooth;
   width: 90%;
   top: -2%;
   left: 5%;
-  z-index: 10;
+  /* z-index: 10; */
 }
 .mbsection4_lb {
     padding: 250px 0px 100px;
@@ -1135,6 +1138,7 @@ padding-top: 150px;
 .carousel_mb{
   overflow: hidden;
   padding: 50px 0 50px;
+  margin-bottom: 50px;
 }
 .carousel_mb .pit_mb{
   text-align: left;
@@ -1156,7 +1160,7 @@ padding-top: 150px;
   --card-max-width: 280px;
   --card-height: 350px;
   --carousel-min-width: 600px;
-  z-index: 1;
+  z-index: 0;
   position: relative;
   margin: 0 auto;
   width: 100%;

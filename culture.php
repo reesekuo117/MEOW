@@ -1075,7 +1075,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
 
     <!-- 月老喵誠心推薦 -->
     <div class="d-none d-md-block recommand_lb">
-        <h2 class="text-center cul-text100">月老喵誠心推薦</h2>
+        <h1 class="text-center cul-text100">月老喵誠心推薦</h1>
         <!--  PC 月老喵推薦卡片  -->
         <div class="otherp">
             <div class="container">
@@ -1235,7 +1235,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
     </div>
 
     <div class="d-block d-md-none  recommand_lb">
-        <h2 class="mb-title_lb  text-center">月老喵誠心推薦</h2>
+        <h1 class="mb-title_lb  text-center">月老喵誠心推薦</h1>
         <!--  MB 月老喵推薦卡片  -->
         <div class="container carousel_mb pb-5">
             <div class="card-carousel">

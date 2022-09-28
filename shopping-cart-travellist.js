@@ -1041,17 +1041,46 @@ $('input[type="radio"]').click(function () {
 
 // 一健帶入 要用迴圈
 //#字號是因為回圈內的是id名稱
-$(".AllinputValueYu").click(function () {
-  const fields = ["name-yu", "mobile-yu", "email-yu", "address-yu"];
 
-  $("#name-yu").val("皮卡丘");
-  $("#mobile-yu").val("0924568756");
-  $("#email-yu").val("elena456@gmail.com");
-  $("#address-yu").val(" 復興南路一段390號2樓");
 
-  fields.forEach(function (el) {
-    $("#" + el).trigger("input");
-  });
+// $(".AllinputValueYu").click(function () {
+//   const fields = ["name-yu", "mobile-yu", "email-yu", "address-yu"];
+
+//   $("#name-yu").val("皮卡丘");
+//   $("#mobile-yu").val("0924568756");
+//   $("#email-yu").val("elena456@gmail.com");
+//   $("#address-yu").val(" 復興南路一段390號2樓");
+
+//   fields.forEach(function (el) {
+//     $("#" + el).trigger("input");
+//   });
+// });
+
+// $(".AllinputValueYu").click();
+
+// $("#clickme").click();
+
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() >= ($('.listinfo-yu').offset().top - window.screen.height * 1 / 2)) {
+    const fields = ["name-yu", "mobile-yu", "email-yu", "address-yu"];
+    console.log("hihi");
+
+    const atr = $(this);
+      const td_price = atr.find(".price");
+      const td_sub = tr.find(".sub-total");
+    const name = tr.attr('data-sid'); 
+
+
+    $("#name-yu").val("皮卡丘");
+    $("#mobile-yu").val("0924568756");
+    $("#email-yu").val("elena456@gmail.com");
+    $("#address-yu").val(" 復興南路一段390號2樓");
+  
+    fields.forEach(function (el) {
+      $("#" + el).trigger("input");
+    });
+  } 
 });
 
 //同訂購人帶入
@@ -1083,44 +1112,15 @@ $(".Allsubmit").click(function (event) {
     // 不送
     alert("沒填完");
     event.preventDefault();
-    // $(".Allsubmit").addClass("btn_disabled_ba");
-    // $("a").attr("href", "#section-3-yu");
   } else {
     console.log("fff");
     // 送
-    // $(".Allsubmit").removeClass("btn_disabled_ba");
     $("a").attr("href", "shopping-cart-creditcard-travel.php");
     confirm("您確定送出嗎?");
 
     document.desktop_form.submit();
   }
 });
-
-// $(".cardCVC").click
-
-// function(){
-//   if($(".cardCVC").val()){
-//     $(".Allsubmit").addClass("btn_disabled_ba");
-//   } else{
-//     $(".Allsubmit").removeClass("btn_disabled_ba");
-//   }
-// }
-
-// if ($(".cardCVC").val() == "") {
-//   console.log("add");
-//   $(".Allsubmit").addClass("btn_disabled_ba");
-// } else {
-//   console.log("rem");
-//   $(".Allsubmit").removeClass("btn_disabled_ba");
-// }
-
-// function(){
-//   if($(".cardCVC").val()){
-//     $(".Allsubmit").addClass("btn_disabled_ba");
-//   } else{
-//     $(".Allsubmit").removeClass("btn_disabled_ba");
-//   }
-// }
 
 function checkFormPass() {
   const Allsubmit = $(".Allsubmit ");

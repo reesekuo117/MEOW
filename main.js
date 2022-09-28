@@ -2,16 +2,20 @@
 let lastScroll = 0;
 $(window).scroll(function(){
 let scrollNow =  $(window).scrollTop();
-//console.log('lastScroll:', lastScroll);
-//console.log('scrollNow', scrollNow);
+// console.log('lastScroll:', lastScroll);
+// console.log('scrollNow', scrollNow);
 if(scrollNow > lastScroll){
-$('header').addClass('hidden')
+$('.header-fixed ').addClass('hidden')
+$('.header-xs-fixed').addClass('hidden')
 }
 else{
-$('header').removeClass('hidden')
+$('.header-fixed ').removeClass('hidden')
+$('.header-xs-fixed').removeClass('hidden')
 }
 lastScroll = scrollNow;
 })
+
+
 //漢堡
 $('#menuToggle input').click(function(){
     $('#menu').css('transform','translate(0%, 0)')
