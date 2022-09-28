@@ -126,27 +126,29 @@ header("Refresh:180");
                                                 </thead>
                                                 <tbody class="tbody">
                                                 <?php
-                                                    foreach ($_SESSION["tcart"] as $k => $v) : ?>
+                                                    foreach ($_SESSION["tcart"] as $i => $j) : ?>
                                                     <tr class="">
                                                         <!-- 商品照片 -->
                                                         <td>
-                                                        <img class="" src="imgs/travel/cards/<?= $v['travelcard_img'] ?>" alt="...">
+                                                        <img class="" src="imgs/travel/cards/<?= $j['travelcard_img'] ?>" alt="...">
                                                         </td>
                                                         <!-- 商品名稱 -->
                                                         <td>
                                                             <h6 class="m-0">
-                                                            <?= $v['travel_name'] ?>
+                                                            <?= $j['travel_name'] ?>
                                                             </h6>
                                                         </td>
                                                         <!-- 單價 -->
                                                         <td class="OnnPriceYu">
-                                                        <?= $v['travel_price'] ?>
+                                                        <?= $j['travel_price'] ?>
                                                         </td>
                                                         <!-- 數量 -->
-                                                        <td>1</td>
+                                                        <td>
+                                                        <?= $j['qty'] ?>
+                                                        </td>
                                                         <!-- 小計 -->
                                                         <td class="littlePriceYu">
-                                                        <?= $v['travel_price'] ?>
+                                                        <?= $j['travel_price'] * $j['qty'] ?>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
@@ -160,7 +162,7 @@ header("Refresh:180");
                     </main>
                     <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
                         <h6 id="total-price-yu" class="price-uniqui-yu">
-                        <?= $v['travel_price'] ?>
+                        <?= $j['travel_price'] ?>
                         </h6>
                         <h6 id="total-price"></h6>
                     </div>

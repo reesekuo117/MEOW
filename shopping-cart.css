@@ -469,10 +469,10 @@ form span.spanqty-yu {
   border: none;
 }
 /* ------桌機刪除icon-------- */
-.form-delete-yu {
+.form-delete-yu a i {
   color: #432a0f;
 }
-.form-delete-yu:hover {
+.form-delete-yu a i:hover {
   color: #e5a62a;
 }
 .form-delete-yu i {
