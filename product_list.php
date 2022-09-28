@@ -420,9 +420,9 @@ if ($totalRows > 0) {
         </div>
     </div>
 
-    <div class="notlogin d-none">
+    <!-- <div class="notlogin d-none"> -->
         <!-- 1.背景用黑色半透明做光箱效果，視窗FIXED(原本就在用show，沒有要讓它出現用append) -->
-        <div class="">
+        <!-- <div class="">
             <div class="alert d-flex justify-content-center align-items-center">
                 <div class="alert_head"><i class="fa-solid fa-triangle-exclamation"></i></div>
                 <div class="alert_title">
@@ -436,7 +436,7 @@ if ($totalRows > 0) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </div>
 <script>

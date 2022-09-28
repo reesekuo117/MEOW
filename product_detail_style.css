@@ -486,12 +486,12 @@ button:hover{
 	margin: 4px;
 	border: none;
 }
-.carousel-indicators li {	
-	/* background: #ababab; */
+/* .carousel-indicators li {	
+	background: #ababab;
 }
 .carousel-indicators li.active {	
-	/* background: rgb(85, 85, 85); */
-}
+	background: rgb(85, 85, 85);
+} */
 .card_under h5::before{
     content: "NT$";
 }

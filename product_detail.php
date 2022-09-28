@@ -12,7 +12,7 @@ $sql = "SELECT * FROM product WHERE sid=$sid";
 // $sql = "SELECT * FROM product WHERE sid=localstorage的變數";
 //要用localstorage
 $rows = $pdo->query($sql)->fetchAll();
-$photos = explode(',', $r['travel_img']);
+// $photos = explode(',', $r['travel_img']);
 
 // echo json_encode([
 //     '$rows'=>$rows,
@@ -35,12 +35,12 @@ $photos = explode(',', $r['travel_img']);
                         <div class="col">
                             <!-- https://codepen.io/RetinaInc/details/MWEygq -->
                             <div class="img-demo d-flex justify-content-center">
-                                <img class="p1" src="./imgs/product/P04_1_b.jpg" alt="">
-                                <img class="p2" src="./imgs/product/P04_2_b.jpg" alt="">
-                                <img class="p3" src="./imgs/product/P04_3_b.jpg" alt="">
-                                <img class="p4" src="./imgs/product/P04_4_b.jpg" alt="">
-                                <img class="p5" src="./imgs/product/P04_5_b.jpg" alt="">
-                                <!-- 輪播強php -->
+                                <img class="p1" src="./imgs/product/big/P19_1_b.jpg" alt="">
+                                <img class="p2" src="./imgs/product/big/P19_2_b.jpg" alt="">
+                                <img class="p3" src="./imgs/product/big/P19_4_b.jpg" alt="">
+                                <img class="p4" src="./imgs/product/big/P19_5_b.jpg" alt="">
+                                <img class="p5" src="./imgs/product/big/P19_6_b.jpg" alt="">
+                                <!-- 輪播牆php -->
                                 <!-- < ?php
                                     $first = 0;
                                     foreach ($photos as $p) : ?>
@@ -67,19 +67,19 @@ $photos = explode(',', $r['travel_img']);
                         <div class="col">
                             <div class="img-selector-area d-flex">
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/small/P04_1_s.jpg" alt="">
+                                    <img src="./imgs/product/small/P19_1_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/small/P04_2_s.jpg" alt="">
+                                    <img src="./imgs/product/small/P19_2_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/small/P04_3_s.jpg" alt="">
+                                    <img src="./imgs/product/small/P19_4_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/small/P04_4_s.jpg" alt="">
+                                    <img src="./imgs/product/small/P19_5_s.jpg" alt="">
                                 </div>
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/small/P04_5_s.jpg" alt="">
+                                    <img src="./imgs/product/small/P19_6_s.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -110,14 +110,14 @@ $photos = explode(',', $r['travel_img']);
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col mt-5">
                                 <div class="price">
                                     <h2>
                                         <?= $r['product_price'] ?>
                                     </h2>
                                 </div>
                             </div>
-                            <div class="col">
+                            <!-- <div class="col">
                                 <div class="size">
                                     <p>請選擇商品規格</p>
                                     <select name="" id="size">
@@ -126,7 +126,7 @@ $photos = explode(',', $r['travel_img']);
                                         <option value="2">甜作之盒&棉布御守&紙膠帶單入組</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col">
                                 <!-- TODO:還沒做按鈕功能 -->
                                 <div class="number">
@@ -192,19 +192,19 @@ $photos = explode(',', $r['travel_img']);
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./imgs/product/P04_1.jpg" class="d-block w-100" alt="...">
+                    <img src="./imgs/product/big/P19_1_b.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./imgs/product/P04_2.jpg" class="d-block w-100" alt="...">
+                    <img src="./imgs/product/big/P19_2_b.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./imgs/product/P04_3.webp" class="d-block w-100" alt="...">
+                    <img src="./imgs/product/big/P19_4_b.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./imgs/product/P04_4.webp" class="d-block w-100" alt="...">
+                    <img src="./imgs/product/big/P19_5_b.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="./imgs/product/P04_5.webp" class="d-block w-100" alt="...">
+                    <img src="./imgs/product/big/P19_6_b.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             </a>
@@ -232,14 +232,14 @@ $photos = explode(',', $r['travel_img']);
                         <h4><?= $r['product_price'] ?></h4>
                     </div>
                 </div>
-                <div class="size mt-2">
+                <!-- <div class="size mt-2">
                     <p>請選擇商品規格</p>
                     <select name="" id="size" class="w-100">
                         <option value="0">甜作之盒單入組</option>
                         <option value="1">甜作之盒&棉布御守單入組</option>
                         <option value="2">甜作之盒&棉布御守&紙膠帶單入組</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="number">
                     <p>請選擇商品數量</p>
                     <div class="choice d-flex">
@@ -346,7 +346,8 @@ $photos = explode(',', $r['travel_img']);
                         <div class="intro_bg" id="intro">
                             <h5>商品介紹</h5>
                             <div class="intro_img">
-                                <!-- <img class="w-100" src="./imgs/product/P04_6.jpg" alt=""> -->
+                                <!-- < ?= $r['product_introimgfirst'] ?> -->
+                                <img class="w-100" src="./imgs/product/P19_4.jpg" alt="">
                             </div>
                             <!-- <p>【最甜最完整的參拜體驗！】 <br>
                                     幫你把月老參拜體驗濃縮在這一盒中！ <br>
@@ -365,10 +366,12 @@ $photos = explode(',', $r['travel_img']);
                                     <br>
                                     清香甜、芳醇甜、辛嗆甜...... <br>
                                     甜蜜哲學甜小卡幫你發展了17種不同的甜，17種不同的感情模式，希望在和月老稟報前，先清楚的描繪屬於你內心嚮往的感情模式，發展出第18種，屬於你自己的甜。 <br> -->
-                            <?= $r['product_introfirst'] ?>
-                            </p>
+                            <p><?= $r['product_introfirst'] ?></p>
+                            <!-- </p> -->
                             <div class="intro_img">
-                                <!-- <img class="w-100" src="./imgs/product/P04_7.jpg" alt=""> -->
+                                <!-- < ?= $r['product_introimgsec'] ?> -->
+                                <img class="w-100" src="./imgs/product/P19_5.jpg" alt="">
+                                <img class="w-100 pt-3" src="./imgs/product/P19_6.jpg" alt="">
                             </div>
                             <!-- <p>「拜完然後呢？」 <br>
                                     你的問題，也曾經是我們最大的煩惱， <br>
@@ -380,7 +383,8 @@ $photos = explode(',', $r['travel_img']);
                                     ●
                                     分享月老的祝福：透過分送加持『參拜過的牛奶糖』廣結福緣，說不定就能遇見更多機會，自己留下一盒，還可以和3-30個朋友分享，這可就是3-30個機會啊！（直接送一整盒的話可以送3人，拆開來一人分一顆就可以分給30個人）
                                     <br> -->
-                            <?= $r['product_introsec'] ?>
+                            <p><?= $r['product_introsec'] ?></p> 
+                            <img class="w-100" src="./imgs/product/P19_3.png" alt="">
                             <!-- </p> -->
                         </div>
                         <div class="intro_bg" id="back">
@@ -882,9 +886,9 @@ $photos = explode(',', $r['travel_img']);
             </div>
         </div>
     </div>
-    <div class="notlogin d-none" id="favnotlogin">
+    <!-- <div class="notlogin d-none" id="favnotlogin"> -->
         <!-- 1.背景用黑色半透明做光箱效果，視窗FIXED(原本就在用show，沒有要讓它出現用append) -->
-        <div class="">
+        <!-- <div class="">
             <div class="alert d-flex justify-content-center align-items-center">
                 <div class="alert_head"><i class="fa-solid fa-triangle-exclamation"></i></div>
                 <div class="alert_title">
@@ -898,14 +902,14 @@ $photos = explode(',', $r['travel_img']);
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 <script src="./product_detail.js"></script>
 
 
 <script>
-    const isLogined = <?= !empty($_SESSION['user']) ? 'true' : 'false' ?>;
+    // const isLogined = < ?= !empty($_SESSION['user']) ? 'true' : 'false' ?>;
     
     function addToCart_P_Yu(event) {
         const btn = $(event.currentTarget);
