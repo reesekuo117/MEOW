@@ -103,6 +103,9 @@
 }
 .sort_mb{
     background-color: var(--color-lightcreamy);
+    position: sticky;
+    top: 0;
+    z-index: 5;
 }
 .psort_mb{
     border: 2px solid var(--color-text60);
@@ -127,6 +130,7 @@
     border-radius: 0 0 8px 8px;
     text-align: center;
     padding-bottom: 4px;
+    transition: .3s;
 }
 .timesort_mb a{
     text-decoration: none;
@@ -135,6 +139,11 @@
 .timesort_mb a:hover{
     color: var(--color-orange);
 }
+.timesort_mb.ptsmbhz{
+    height: 0;
+    opacity: 0;
+}
+
 /* -----------------------------排序結束-------------------------------- */
 
 .product_section {

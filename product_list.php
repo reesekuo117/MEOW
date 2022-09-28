@@ -262,27 +262,49 @@ if ($totalRows > 0) {
                 </div>
                 <div class="col px-1">
                     <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                    <a href="?cate=1">
+                    <a href="?cate=1#desktopSort" class="product_cate <?php echo ($cate)? "btncolor_default" : "btncolor_active" ?>">
                         <small class="mb-0">品牌聯名</small>
                     </a>
                 </div>
                 <div class="col px-1">
-                    <a href="?cate=2">
+                    <a href="?cate=2#desktopSort">
                         <small class="mb-0">文創商品</small>
                     </a>
                 </div>
                 <div class="col px-1">
-                    <a href="?cate=3">
+                    <a href="?cate=3#desktopSort">
                         <small class="mb-0">甜蜜供品</small>
                     </a>
                 </div>
                 <div class="col px-1">
-                    <a href="?cate=4">
+                    <a href="?cate=4#desktopSort">
                         <small class="mb-0">獨家商品</small>
                     </a>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="timesort_mb ptsmbhz d-md-none pt-3">
+            <div class="col">
+                <a href="#">
+                    <p>最新上架</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#">
+                    <p>熱門程度</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#">
+                    <p>價格高→低</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#">
+                    <p class="mb-2">價格低→高</p>
+                </a>
+            </div>
     </div>
 
     <div class="product_section">
@@ -308,9 +330,9 @@ if ($totalRows > 0) {
                         <?php endforeach ?>
                         
                     </div>
-                    <!-- TODO:價格篩選怎麼寫 -->
+                    <!-- TODO:價格篩選PHP怎麼寫 -->
                     <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
-                    <div class="price_filter">
+                    <!-- <div class="price_filter">
                         <div class="filter-content__element">
                             <div class="filter-element-heading">
                                 <h5>價格範圍</h5>
@@ -327,7 +349,7 @@ if ($totalRows > 0) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -353,7 +375,7 @@ if ($totalRows > 0) {
                                             </h5>
                                         </div>
                                     </a>
-                                    <div class="icon_heart">
+                                    <div class="icon_heart" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                                         <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                         </svg>
@@ -441,29 +463,19 @@ if ($totalRows > 0) {
 </div>
 <script>
     // const productData = < ?php echo json_encode($rows); ?>;
-        console.log('productData',productData);
+        // console.log('productData',productData);
 
         function addToFav_P_07(event) {
         const heartbtn = $(event.currentTarget); // 監聽
         const collect_sid = heartbtn.attr('data-sid');
         console.log('hiheart', heartbtn);
         console.log('hisid', collect_sid);
-        if(!isLogined){
-            $('.notlogin').append();
-            console.log('hibox', collect_sid);
-        } else {
-            $.get(
+        $.get(
             'favorite_api.php', {
                 collect_sid,
                 target_type: 1,
             },
-            function(heartp) {
-            console.log({heartp});
-                // showCartCount(heartp);
-                // 一進來就確認這個會員有沒有收藏這個商品，JOIN或做兩次?
-            },
             'json');
-        }
         
     };
 </script>

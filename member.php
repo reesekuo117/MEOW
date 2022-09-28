@@ -655,6 +655,7 @@ $pageName ='會員中心'; //頁面名稱
                                 </div>
                             </div>
                         </div>
+                    
                         <!-- 評論 -->
                         <form class="commentslide-re px-3 py-3 position-relative" id='orderForm<?= $r['sid'] ?>' method="post" onsubmit="checkFormReviewP(event); return false;">
                             <input type="hidden" name="product_sid">
@@ -686,13 +687,6 @@ $pageName ='會員中心'; //頁面名稱
                                 </div>
                             <p class="">請告訴我們您的想法</p>
                             <textarea class="evaluation-textarea-re" cols="121" rows="3" name="content_p" maxlength="250" style="OVERFLOW:hidden"></textarea>
-                            <!-- <div class="d-flex py-2 scroll-snap-re">
-                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">出貨超快速</div>
-                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">ＣＰ值超高</div>
-                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品超可愛</div>
-                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品品質爆表</div>
-                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div>
-                            </div> -->
                             <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
                                 <label><input id="tag-re-1" type="checkbox" name="tag_re[]" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
                                 <label><input id="tag-re-2" type="checkbox" name="tag_re[]" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
@@ -703,6 +697,46 @@ $pageName ='會員中心'; //頁面名稱
                             <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
                         </form>
                     <?php endforeach ?>
+                    <!-- 評論 -->
+                    <!-- <form class="commentslide-re px-3 py-3 position-relative" id='orderForm< ?= $r['sid'] ?>' method="post" onsubmit="checkFormReviewP(event); return false;">
+                            <input type="hidden" name="product_sid">
+                            <input type="hidden" name="star_num" value="">
+                            <input type="hidden" name="target_type" value="1">
+                            <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
+                            <div class="ordercross-re ordercross01-re d-inline-block position-absolute">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.66663 6.66666L25.3333 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                                    <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                                <div class="pb-3">
+                                    <svg data-val="1" class="star-re mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg data-val="2" class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg data-val="3" class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg data-val="4" class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                    <svg data-val="5" class="star-re  mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>
+                                    </svg>
+                                </div>
+                            <p class="">請告訴我們您的想法</p>
+                            <textarea class="evaluation-textarea-re" cols="121" rows="3" name="content_p" maxlength="250" style="OVERFLOW:hidden"></textarea>
+                            <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
+                                <label><input id="tag-re-1" type="checkbox" name="tag_re[]" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                                <label><input id="tag-re-2" type="checkbox" name="tag_re[]" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                                <label><input id="tag-re-3" type="checkbox" name="tag_re[]" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                                <label><input id="tag-re-4" type="checkbox" name="tag_re[]" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                                <label><input id="tag-re-5" type="checkbox" name="tag_re[]" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
+                            </div>
+                            <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
+                    </form> -->
                 </div>
     <!-- p4-T------------------------------------------------------------------ -->
                 <div id="tab06-re" class="ordertab-inner-re">
