@@ -74,8 +74,6 @@
 
 // }
 
-
-
 // function playAudio() {
 //     console.log('music');
 //     const audio = document.createElement("audio");
@@ -125,149 +123,146 @@
 // }
 // setInterval(update, 1000);
 
-$('.drawSection02LeftCat').mouseenter(function () {
-    $('.secretSection02LeftCat').css({
-        transform: 'translate(-50%, -50%) scale(1)'
+$(".drawSection02LeftCat").mouseenter(function () {
+    $(".secretSection02LeftCat").css({
+        transform: "translate(-50%, -50%) scale(1)",
     });
-})
-$('.drawSection02LeftCat').mouseleave(function () {
-    $('.secretSection02LeftCat').css({
-        transform: 'translate(-50%, -50%) scale(0)'
+});
+$(".drawSection02LeftCat").mouseleave(function () {
+    $(".secretSection02LeftCat").css({
+        transform: "translate(-50%, -50%) scale(0)",
     });
-})
+});
 
-$('.drawSection02MidCat').mouseenter(function () {
-    $('.secretSection02MidCat').css({
-        transform: 'translate(-50%, -50%) scale(1)'
+$(".drawSection02MidCat").mouseenter(function () {
+    $(".secretSection02MidCat").css({
+        transform: "translate(-50%, -50%) scale(1)",
     });
-})
-$('.drawSection02MidCat').mouseleave(function () {
-    $('.secretSection02MidCat').css({
-        transform: 'translate(-50%, -50%) scale(0)'
+});
+$(".drawSection02MidCat").mouseleave(function () {
+    $(".secretSection02MidCat").css({
+        transform: "translate(-50%, -50%) scale(0)",
     });
-})
+});
 
-$('.drawSection02RightCat').mouseenter(function () {
-    $('.secretSection02RightCat').css({
-        transform: 'translate(-50%, -50%) scale(1)'
+$(".drawSection02RightCat").mouseenter(function () {
+    $(".secretSection02RightCat").css({
+        transform: "translate(-50%, -50%) scale(1)",
     });
-})
-$('.drawSection02RightCat').mouseleave(function () {
-    $('.secretSection02RightCat').css({
-        transform: 'translate(-50%, -50%) scale(0)'
+});
+$(".drawSection02RightCat").mouseleave(function () {
+    $(".secretSection02RightCat").css({
+        transform: "translate(-50%, -50%) scale(0)",
     });
-})
+});
 
 // ------------------- draw03 -------------------------
 
-$('.temple01').mouseenter(function () {
-    $('.temple01Img img').attr('src', './imgs/draw/temple01-1.png');
-})
-$('.temple01').mouseleave(function () {
-    $('.temple01Img img').attr('src', './imgs/draw/temple01.png');
-})
+$(".temple01").mouseenter(function () {
+    $(".temple01Img img").attr("src", "./imgs/draw/temple01-1.png");
+});
+$(".temple01").mouseleave(function () {
+    $(".temple01Img img").attr("src", "./imgs/draw/temple01.png");
+});
 
-$('.temple02').mouseenter(function () {
-    $('.temple02Img img').attr('src', './imgs/draw/temple02-1.png');
-})
-$('.temple02').mouseleave(function () {
-    $('.temple02Img img').attr('src', './imgs/draw/temple02.png');
-})
+$(".temple02").mouseenter(function () {
+    $(".temple02Img img").attr("src", "./imgs/draw/temple02-1.png");
+});
+$(".temple02").mouseleave(function () {
+    $(".temple02Img img").attr("src", "./imgs/draw/temple02.png");
+});
 
-$('.temple03').mouseenter(function () {
-    $('.temple03Img img').attr('src', './imgs/draw/temple05-1.png');
-})
-$('.temple03').mouseleave(function () {
-    $('.temple03Img img').attr('src', './imgs/draw/temple05.png');
-})
+$(".temple03").mouseenter(function () {
+    $(".temple03Img img").attr("src", "./imgs/draw/temple05-1.png");
+});
+$(".temple03").mouseleave(function () {
+    $(".temple03Img img").attr("src", "./imgs/draw/temple05.png");
+});
 
-$('.temple04').mouseenter(function () {
-    $('.temple04Img img').attr('src', './imgs/draw/temple06-1.png');
-})
-$('.temple04').mouseleave(function () {
-    $('.temple04Img img').attr('src', './imgs/draw/temple06.png');
-})
+$(".temple04").mouseenter(function () {
+    $(".temple04Img img").attr("src", "./imgs/draw/temple06-1.png");
+});
+$(".temple04").mouseleave(function () {
+    $(".temple04Img img").attr("src", "./imgs/draw/temple06.png");
+});
 
-$('.temple05').mouseenter(function () {
-    $('.temple05Img img').attr('src', './imgs/draw/temple03-1.png');
-})
-$('.temple05').mouseleave(function () {
-    $('.temple05Img img').attr('src', './imgs/draw/temple03.png');
-})
+$(".temple05").mouseenter(function () {
+    $(".temple05Img img").attr("src", "./imgs/draw/temple03-1.png");
+});
+$(".temple05").mouseleave(function () {
+    $(".temple05Img img").attr("src", "./imgs/draw/temple03.png");
+});
 
-$('.drawdraw').mouseenter(function () {
-    $(this).find('img').attr('src', './imgs/draw/53-hover.png');
-})
-$('.drawdraw').mouseleave(function () {
-    $(this).find('img').attr('src', './imgs/draw/53.png');
-})
+$(".drawdraw").mouseenter(function () {
+    $(this).find("img").attr("src", "./imgs/draw/53-hover.png");
+});
+$(".drawdraw").mouseleave(function () {
+    $(this).find("img").attr("src", "./imgs/draw/53.png");
+});
 
 // ------------------- draw07 -------------------------
 
 // 眼睛跟著游標
 // 'use strict';
-var eyes = $('.eye');
+var eyes = $(".eye");
 
-$(window).on('mousemove', function (event) {
+$(window).on("mousemove", function (event) {
     // document.querySelector('.drawSection07Img').getBoundingClientRect()
     eyes.each(function () {
         const rect = this.getBoundingClientRect();
         var dx = event.pageX - rect.x;
         var dy = event.pageY - rect.y;
 
-
-
         // var dx = event.pageX -405- $(this).position().left;
         // var dy = event.pageY -350- $(this).position().top;
 
-        var ang = Math.atan2(dy, dx) / Math.PI * 180; // degree
+        var ang = (Math.atan2(dy, dx) / Math.PI) * 180; // degree
 
-        $(this).css('transform', 'rotate(' + ang + 'deg)');
+        $(this).css("transform", "rotate(" + ang + "deg)");
     });
 });
 
 // 年紀
 
-$('.howOldbtn').click(function () {
-    $(this).toggleClass('howOldbtnToggle')
-})
-
+$(".howOldbtn").click(function () {
+    $(this).toggleClass("howOldbtnToggle");
+});
 
 // 貓翻牌
-$('.drawSection09 img').mouseenter(function () {
-    $(this).css('animation', 'flip .3s forwards');
-})
-$('.drawSection09 img').mouseleave(function () {
-    $(this).css('animation', 'flip_back .3s forwards');
-})
+$(".drawSection09 img").mouseenter(function () {
+    $(this).css("animation", "flip .3s forwards");
+});
+$(".drawSection09 img").mouseleave(function () {
+    $(this).css("animation", "flip_back .3s forwards");
+});
 
-$('.drawSection10 img').mouseenter(function () {
-    $(this).css('animation', 'flip .3s forwards');
-})
-$('.drawSection10 img').mouseleave(function () {
-    $(this).css('animation', 'flip_back .3s forwards');
-})
+$(".drawSection10 img").mouseenter(function () {
+    $(this).css("animation", "flip .3s forwards");
+});
+$(".drawSection10 img").mouseleave(function () {
+    $(this).css("animation", "flip_back .3s forwards");
+});
 
-$('.drawSection11 img').mouseenter(function () {
-    $(this).css('animation', 'flip .3s forwards');
-})
-$('.drawSection11 img').mouseleave(function () {
-    $(this).css('animation', 'flip_back .3s forwards');
-})
+$(".drawSection11 img").mouseenter(function () {
+    $(this).css("animation", "flip .3s forwards");
+});
+$(".drawSection11 img").mouseleave(function () {
+    $(this).css("animation", "flip_back .3s forwards");
+});
 
-$('.drawSection12 .lionCat img').mouseenter(function () {
-    $(this).css('animation', 'flip .3s forwards');
-})
-$('.drawSection12 .lionCat img').mouseleave(function () {
-    $(this).css('animation', 'flip_back .3s forwards');
-})
+$(".drawSection12 .lionCat img").mouseenter(function () {
+    $(this).css("animation", "flip .3s forwards");
+});
+$(".drawSection12 .lionCat img").mouseleave(function () {
+    $(this).css("animation", "flip_back .3s forwards");
+});
 
-$('.drawSection12 .horobtn').mouseenter(function () {
-    $(this).find("img").css('animation', 'flip_horo .3s forwards');
-})
-$('.drawSection12 .horobtn').mouseleave(function () {
-    $(this).find("img").css('animation', 'flip_horo_back .3s forwards');
-})
+$(".drawSection12 .horobtn").mouseenter(function () {
+    $(this).find("img").css("animation", "flip_horo .3s forwards");
+});
+$(".drawSection12 .horobtn").mouseleave(function () {
+    $(this).find("img").css("animation", "flip_horo_back .3s forwards");
+});
 
 // 回到上一步
 // const cacheData = localStorage.getItem('my-key');
@@ -290,11 +285,11 @@ $('.drawSection12 .horobtn').mouseleave(function () {
 
 // $('.wantbtn').click(function () {
 // console.log($(this).value());
-    
+
 // })
 
 // 先把選項存成整列，在轉 Json放入 cookie
-// 存入 存成陣列 》轉 Json 〉放入cookies 
+// 存入 存成陣列 》轉 Json 〉放入cookies
 // 讀取 抓 cookies 》json 轉 陣列
 
 // $('.wantbtn').click(function(){
@@ -333,28 +328,27 @@ $('.drawSection12 .horobtn').mouseleave(function () {
 
 // 條件
 
-    $('.wantbtn').click(function () {
-        $(this).toggleClass('drawbtnToggle')
-        const wantArray = [];
-        
-        $('.drawbtnToggle h2').each((index,item)=>{
-        wantArray.push($(item).text())
-        });
-    
-        localStorage.setItem('wantArray', wantArray);
+$(".wantbtn").click(function () {
+    $(this).toggleClass("drawbtnToggle");
+    const wantArray = [];
+
+    $(".drawbtnToggle h2").each((index, item) => {
+        wantArray.push($(item).text());
+    });
+
+    localStorage.setItem("wantArray", wantArray);
+});
+
+function checkWantArray(){
+    const wantArray = localStorage.getItem('wantArray');
+    $('.wantbtn').each(function(index,item){
+        if(wantArray.includes($(item).text().trim())){
+            $(item).addClass('drawbtnToggle')
+        }
     })
+}
 
-    function checkWantArray(){
-        const wantArray = localStorage.getItem('wantArray');
-        $('.wantbtn').each(function(index,item){
-            if(wantArray.includes($(item).text().trim())){
-                $(item).addClass('drawbtnToggle')
-            }
-        })
-    }
-
-    checkWantArray();
-
+checkWantArray();
 
 // $('.wantbtn').click(function () {
 //     $(this).toggleClass('drawbtnToggle')
@@ -368,11 +362,11 @@ $('.drawSection12 .horobtn').mouseleave(function () {
 //         $('.wantbtn').click(function () {
 //             $(this).toggleClass('drawbtnToggle')
 //             const wantArray = [];
-            
+
 //             $('.drawbtnToggle h2').each((index,item)=>{
 //             wantArray.push($(item).text())
 //             });
-        
+
 //             localStorage.setItem('wantArray', wantArray);
 //         })
 //     }else{
@@ -397,262 +391,252 @@ $('.drawSection12 .horobtn').mouseleave(function () {
 //     return ;
 // }
 
-
-
 // 興趣
 
-$('.interestbtn').click(function () {
-    $(this).toggleClass('interestbtnToggle')
-})
+$(".interestbtn").click(function () {
+    $(this).toggleClass("interestbtnToggle");
+});
 
 // 個性
 
-$('.personalitybtn').click(function () {
-    $(this).toggleClass('personalitybtnToggle')
-})
+$(".personalitybtn").click(function () {
+    $(this).toggleClass("personalitybtnToggle");
+});
 
 // 星座
 
-$('.horobtn').click(function () {
-    $(this).toggleClass('horobtnToggle')
-})
+$(".horobtn").click(function () {
+    $(this).toggleClass("horobtnToggle");
+});
 
 // 身高
 
-$('.heightbtn').click(function () {
-    $(this).toggleClass('drawbtnToggle')
-})
+$(".heightbtn").click(function () {
+    $(this).toggleClass("drawbtnToggle");
+});
 
 // 體格
 
-$('.musclebtn').click(function () {
-    $(this).toggleClass('musclebtnToggle')
-})
+$(".musclebtn").click(function () {
+    $(this).toggleClass("musclebtnToggle");
+});
 
 // 臉
 
-$('.facebtn').click(function () {
-    $(this).toggleClass('facebtnToggle')
-})
+$(".facebtn").click(function () {
+    $(this).toggleClass("facebtnToggle");
+});
 
 // 超過五個
 
-$('.wantbtn').click(function () {
-    if ($('.drawbtnToggle').length > 5) {
-        $('#exampleModal').modal('show');
+$(".wantbtn").click(function () {
+    if ($(".drawbtnToggle").length > 5) {
+        $("#exampleModal").modal("show");
         // $('.notlogin').css('display','block')
         // alert('超過五項囉喵')
         // console.log(this);
         this.click(); // 模擬再點擊一次，讓他變白
     }
-})
+});
 
-$('.interestbtn').click(function () {
-    if ($('.interestbtnToggle').length > 5) {
-        alert('超過五項囉喵')
+$(".interestbtn").click(function () {
+    if ($(".interestbtnToggle").length > 5) {
+        alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
-})
+});
 
-$('.facebtn').click(function () {
-    if ($('.facebtnToggle').length > 5) {
-        alert('超過五項囉喵')
+$(".facebtn").click(function () {
+    if ($(".facebtnToggle").length > 5) {
+        alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
-})
+});
 
-$('.musclebtn').click(function () {
-    if ($('.musclebtnToggle').length > 5) {
-        alert('超過五項囉喵')
+$(".musclebtn").click(function () {
+    if ($(".musclebtnToggle").length > 5) {
+        alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
-})
+});
 
-$('.personalitybtn').click(function () {
-    if ($('.personalitybtnToggle').length > 5) {
-        alert('超過五項囉喵')
+$(".personalitybtn").click(function () {
+    if ($(".personalitybtnToggle").length > 5) {
+        alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
-})
+});
 
-$('.horobtn').click(function () {
-    if ($('.horobtnToggle').length > 5) {
-        alert('超過五項囉喵')
+$(".horobtn").click(function () {
+    if ($(".horobtnToggle").length > 5) {
+        alert("超過五項囉喵");
         this.click(); // 模擬再點擊一次，讓他變白
     }
-})
+});
 
 // 貓掌
-$('.drawdraw').click(function () {
+$(".drawdraw").click(function () {
     // console.log($(this).css('left'));
     // const drawtoleft = $(this).css('left');
-    const drawtoleft = $(this).css('left');
-    $('.catPaw').css({
+    const drawtoleft = $(this).css("left");
+    $(".catPaw").css({
         left: drawtoleft,
-        animation: 'catPaw 2.5s ease-in-out'
-    })
+        animation: "catPaw 2.5s ease-in-out",
+    });
     setTimeout(() => {
-        console.log($(this).css('transform'));
-        const drawtransform = $(this).css('transform')
+        console.log($(this).css("transform"));
+        const drawtransform = $(this).css("transform");
         console.log(this);
         $(this).css({
             transform: drawtransform,
-            animation: 'drawUp 1.4s ease-in forwards'
-        })
+            animation: "drawUp 1.4s ease-in forwards",
+        });
     }, 1125);
     setTimeout(() => {
-        window.location.href = "draw19.php"
+        window.location.href = "draw19.php";
     }, 3000);
     // console.log($('.catPaw').offsetTop);
-})
-
+});
 
 // 沒按不能下一步
-$('.wantbtn').click(function () {
-    if ($('.drawbtnToggle').length >= 1) {
+$(".wantbtn").click(function () {
+    if ($(".drawbtnToggle").length >= 1) {
         // console.log('hi');
-        $('.btn_md_next').removeClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', 'draw08.php')
-
-    } else if ($('.drawbtnToggle').length < 1) {
+        $(".btn_md_next").removeClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "draw08.php");
+    } else if ($(".drawbtnToggle").length < 1) {
         // console.log('no');
         // $('.btn_md_next').attr('disabled', true)
-        $('.btn_md_next').addClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', '#')
-
+        $(".btn_md_next").addClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "#");
     }
-})
+});
 
-$('.facebtn').click(function () {
-    if ($('.drawbtnToggle').length >= 1 &&
-        $('.musclebtnToggle').length >= 1 &&
-        $('.facebtnToggle').length >= 1) {
+$(".facebtn").click(function () {
+    if (
+        $(".drawbtnToggle").length >= 1 &&
+        $(".musclebtnToggle").length >= 1 &&
+        $(".facebtnToggle").length >= 1
+    ) {
         // console.log('hi');
-        $('.btn_md_next').removeClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', 'draw09.php')
-
-    } else if ($('.drawbtnToggle').length < 1 ||
-        $('.musclebtnToggle').length < 1 ||
-        $('.facebtnToggle').length < 1) {
+        $(".btn_md_next").removeClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "draw09.php");
+    } else if (
+        $(".drawbtnToggle").length < 1 ||
+        $(".musclebtnToggle").length < 1 ||
+        $(".facebtnToggle").length < 1
+    ) {
         // console.log('no');
         // $('.btn_md_next').attr('disabled', true)
-        $('.btn_md_next').addClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', '#')
-
+        $(".btn_md_next").addClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "#");
     }
-})
+});
 
-$('.musclebtn').click(function () {
-    if ($('.drawbtnToggle').length >= 1 &&
-        $('.musclebtnToggle').length >= 1 &&
-        $('.facebtnToggle').length >= 1) {
+$(".musclebtn").click(function () {
+    if (
+        $(".drawbtnToggle").length >= 1 &&
+        $(".musclebtnToggle").length >= 1 &&
+        $(".facebtnToggle").length >= 1
+    ) {
         // console.log('hi');
-        $('.btn_md_next').removeClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', 'draw09.php')
-
-    } else if ($('.drawbtnToggle').length < 1 ||
-        $('.musclebtnToggle').length < 1 ||
-        $('.facebtnToggle').length < 1) {
+        $(".btn_md_next").removeClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "draw09.php");
+    } else if (
+        $(".drawbtnToggle").length < 1 ||
+        $(".musclebtnToggle").length < 1 ||
+        $(".facebtnToggle").length < 1
+    ) {
         // console.log('no');
         // $('.btn_md_next').attr('disabled', true)
-        $('.btn_md_next').addClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', '#')
-
+        $(".btn_md_next").addClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "#");
     }
-})
+});
 
-$('.heightbtn').click(function () {
-    if ($('.drawbtnToggle').length >= 1 &&
-        $('.musclebtnToggle').length >= 1 &&
-        $('.facebtnToggle').length >= 1) {
+$(".heightbtn").click(function () {
+    if (
+        $(".drawbtnToggle").length >= 1 &&
+        $(".musclebtnToggle").length >= 1 &&
+        $(".facebtnToggle").length >= 1
+    ) {
         // console.log('hi');
-        $('.btn_md_next').removeClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', 'draw09.php')
-
-    } else if ($('.drawbtnToggle').length < 1 ||
-        $('.musclebtnToggle').length < 1 ||
-        $('.facebtnToggle').length < 1) {
+        $(".btn_md_next").removeClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "draw09.php");
+    } else if (
+        $(".drawbtnToggle").length < 1 ||
+        $(".musclebtnToggle").length < 1 ||
+        $(".facebtnToggle").length < 1
+    ) {
         // console.log('no');
         // $('.btn_md_next').attr('disabled', true)
-        $('.btn_md_next').addClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', '#')
-
+        $(".btn_md_next").addClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "#");
     }
-})
+});
 
-$('.howOldbtn').click(function () {
-    if ($('.howOldbtnToggle').length >= 1) {
+$(".howOldbtn").click(function () {
+    if ($(".howOldbtnToggle").length >= 1) {
         // console.log('hi');
-        $('.btn_md_next').removeClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', 'draw10.php')
-
-    } else if ($('.howOldbtnToggle').length < 1) {
+        $(".btn_md_next").removeClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "draw10.php");
+    } else if ($(".howOldbtnToggle").length < 1) {
         // console.log('no');
         // $('.btn_md_next').attr('disabled', true)
-        $('.btn_md_next').addClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', '#')
-
+        $(".btn_md_next").addClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "#");
     }
-})
+});
 
-$('.interestbtn').click(function () {
-    if ($('.interestbtnToggle').length >= 1) {
+$(".interestbtn").click(function () {
+    if ($(".interestbtnToggle").length >= 1) {
         // console.log('hi');
-        $('.btn_md_next').removeClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', 'draw11.php')
-
-    } else if ($('.interestbtnToggle').length < 1) {
+        $(".btn_md_next").removeClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "draw11.php");
+    } else if ($(".interestbtnToggle").length < 1) {
         // console.log('no');
         // $('.btn_md_next').attr('disabled', true)
-        $('.btn_md_next').addClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', '?')
-
+        $(".btn_md_next").addClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "?");
     }
-})
+});
 
-$('.personalitybtn').click(function () {
-    if ($('.personalitybtnToggle').length >= 1) {
+$(".personalitybtn").click(function () {
+    if ($(".personalitybtnToggle").length >= 1) {
         // console.log('hi');
-        $('.btn_md_next').removeClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', 'draw12.php')
-
-    } else if ($('.personalitybtnToggle').length < 1) {
+        $(".btn_md_next").removeClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "draw12.php");
+    } else if ($(".personalitybtnToggle").length < 1) {
         // console.log('no');
         // $('.btn_md_next').attr('disabled', true)
-        $('.btn_md_next').addClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', '#')
-
+        $(".btn_md_next").addClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "#");
     }
-})
+});
 
-$('.horobtn').click(function () {
-    if ($('.horobtnToggle').length >= 1) {
+$(".horobtn").click(function () {
+    if ($(".horobtnToggle").length >= 1) {
         // console.log('hi');
-        $('.btn_md_next').removeClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', 'draw15.php')
-
-    } else if ($('.horobtnToggle').length < 1) {
+        $(".btn_md_next").removeClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "draw15.php");
+    } else if ($(".horobtnToggle").length < 1) {
         // console.log('no');
         // $('.btn_md_next').attr('disabled', true)
-        $('.btn_md_next').addClass('btn_disabled_ba')
-        $('.btn_md_next a').attr('href', '#')
-
+        $(".btn_md_next").addClass("btn_disabled_ba");
+        $(".btn_md_next a").attr("href", "#");
     }
-})
-
+});
 
 // clearAll 清除
-$('.clearAll_ba').click(function () {
-    $('.wantbtn').removeClass('drawbtnToggle')
-})
-
+$(".clearAll_ba").click(function () {
+    $(".wantbtn").removeClass("drawbtnToggle");
+});
 
 // 搖籤
 var windowWidth = window.innerWidth;
 // console.log(windowWidth);
 
-
-let prevStat = ''; // '', 'left', 'right'
+let prevStat = ""; // '', 'left', 'right'
 // 過去狀態
 let drawcounter = 0;
 // 搖動次數
@@ -685,7 +669,6 @@ let drawcounter = 0;
 //     }
 // }
 
-
 // $('body').click(function () {
 //     const rect = this.getBoundingClientRect();
 //     console.log(rect);
@@ -710,9 +693,9 @@ window.addEventListener('mouseup', function(){
 // $('.navoff_ba').parentsUntil('.navbar').addClass('d-none-ba')
 
 // FIXME: 籤筒會超過範圍
-let dragDiv = document.querySelector('.drag');
-let dragTitle = document.querySelector('.drag-title') || dragDiv;
-let dropArea = document.querySelector('.drop-area');
+let dragDiv = document.querySelector(".drag");
+let dragTitle = document.querySelector(".drag-title") || dragDiv;
+let dropArea = document.querySelector(".drop-area");
 // console.log(dropArea);
 // console.log(dropArea.offsetLeft);
 let area;
@@ -728,15 +711,15 @@ if (dropArea) {
     let startX = 0;
     let startY = 0;
 
-    dragTitle.addEventListener('mousedown', dragStart);
+    dragTitle.addEventListener("mousedown", dragStart);
 
     function dragStart(e) {
         e.preventDefault();
         //記錄點擊相對被點擊物件的座標
         startX = e.clientX - dragDiv.offsetLeft;
         startY = e.clientY - dragDiv.offsetTop;
-        document.addEventListener('mousemove', move);
-        document.addEventListener('mouseup', stop);
+        document.addEventListener("mousemove", move);
+        document.addEventListener("mouseup", stop);
     }
 
     function move(e) {
@@ -749,24 +732,24 @@ if (dropArea) {
         // console.log('area.left: ', area.left);
         // console.log('Math.min(x, area.right): ', Math.min(x, area.right));
         // console.log('x2: ', x);
-        dragDiv.style.left = x + 'px';
-        dragDiv.style.top = y + 'px';
+        dragDiv.style.left = x + "px";
+        dragDiv.style.top = y + "px";
         // console.log({x, y, area});
 
         let currentStat; //當前狀態
         if (x > area.middle) {
-            currentStat = 'right';
+            currentStat = "right";
             // TODO: 做六張圖隨機
-            $('.drawImgWrap img').attr('src', './imgs/draw/draw-r.png')
-            if (prevStat === 'left') {
+            $(".drawImgWrap img").attr("src", "./imgs/draw/draw-r.png");
+            if (prevStat === "left") {
                 drawcounter++;
             }
             prevStat = currentStat;
         } else if (x <= area.middle) {
-            currentStat = 'left';
+            currentStat = "left";
             // TODO: 做六張圖隨機
-            $('.drawImgWrap img').attr('src', './imgs/draw/draw-l.png')
-            if (prevStat === 'right') {
+            $(".drawImgWrap img").attr("src", "./imgs/draw/draw-l.png");
+            if (prevStat === "right") {
                 drawcounter++;
             }
             prevStat = currentStat;
@@ -774,33 +757,30 @@ if (dropArea) {
         }
         if (drawcounter > 8) {
             // console.log('next');
-            window.location.href = "draw18.php"
+            window.location.href = "draw18.php";
         }
-
     }
 
     function stop() {
-        document.removeEventListener('mousemove', move);
-        document.removeEventListener('mouseup', stop)
+        document.removeEventListener("mousemove", move);
+        document.removeEventListener("mouseup", stop);
     }
-
 }
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() >= ($('.jadeSay').offset().top - window.screen.height * 3 / 4)) {
-        $('.jadeSay').css({
-            width: '700px',
-        })
-
+    if (
+        $(window).scrollTop() >=
+        $(".jadeSay").offset().top - (window.screen.height * 3) / 4
+    ) {
+        $(".jadeSay").css({
+            width: "700px",
+        });
+    } else {
+        $(".jadeSay").css({
+            width: "0px",
+        });
     }
-    else {
-        $('.jadeSay').css({
-            width: '0px',
-        })
-    }
-
-})
-
+});
 
 // console.log($('.drawCard').html());
 const randDrawArr = [9, 12, 57, 63, 64, 74, 75, 81, 92, 95];
@@ -809,4 +789,8 @@ const randDraw = Math.floor(Math.random() * randDrawArr.length);
 const drawValue = randDrawArr[randDraw];
 // console.log(drawValue)
 
-$('.drawCard').html('<img class="w-100 " src="./imgs/draw/draw' + drawValue + '.png" alt=""></img>')
+$(".drawCard").html(
+    '<img class="w-100 " src="./imgs/draw/draw' +
+    drawValue +
+    '.png" alt=""></img>'
+);
