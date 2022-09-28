@@ -178,7 +178,7 @@ header("Refresh:180");
                         <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
                     </div>
                     <!-- 訂購人填寫資料 -->
-                    <div class="AllinputValueYu"></div>
+                    <div class="AllinputValueYu" id="clickme" onclick="clickme()"></div>
                     <div id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu" method="post" action="">
                         <div class="field order-name-yu p-3 ">
                             <label for="name" class="">
