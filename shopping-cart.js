@@ -33,6 +33,47 @@ $("#mdtravel-a-yu").click(function () {
 
 
 //----------刪除商品清單()--------------
+
+function removeItem(event) {
+  const tr = $(event.currentTarget).closest('tr');
+  const sid = tr.attr('data-sid');
+
+  $.get(
+      're-cart-p-api.php',
+      {sid}, 
+      function(data){
+          console.log(data);
+          showCartCount(data); // 購物車總數量
+          tr.remove();
+
+          // TODO: 更新小計, 總計, 
+          //TODO:總計,
+          
+          updatePrices();//刪除後要呼叫函式
+      }, 
+      'json');
+}
+
+// function updateItem(event) {
+//   const sid = $(event.currentTarget).closest('tr').attr('data-sid');
+//   const qty = $(event.currentTarget).val(); 
+
+//   $.get(
+//       're-cart-p-api.php',
+//       {sid, qty}, 
+//       function(data){
+//           console.log(data);
+//           showCartCount(data); // 購物車總數量
+//           // TODO: 更新小計, 總計, 總數量
+//           // TODO: 更新小計, 總計
+//           updatePrices(); //更新後就要呼叫函式
+//       }, 
+//       'json');
+// }
+
+
+
+
 // const deleteIYu = $("#deleteIYu");
 $("i").click(function () {
   console.log("yes");
@@ -138,14 +179,14 @@ qtyminus.on("click", function () {
 
 //全選的checkbox
 //獨家商品清單全選
-if (document.getElementById("check1AllYu")) {
-  document.getElementById("check1AllYu").onclick = function () {
-    var checkboxes = document.getElementsByName("oneCheck1Yu");
-    for (var checkbox of checkboxes) {
-      checkbox.checked = this.checked;
-    }
-  };
-}
+// if (document.getElementById("check1AllYu")) {
+//   document.getElementById("check1AllYu").onclick = function () {
+//     var checkboxes = document.getElementsByName("oneCheck1Yu");
+//     for (var checkbox of checkboxes) {
+//       checkbox.checked = this.checked;
+//     }
+//   };
+// }
 
 //旅遊行程清單全選
 // document.getElementById("check2AllYu").onclick = function () {

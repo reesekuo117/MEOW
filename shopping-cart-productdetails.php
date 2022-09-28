@@ -167,8 +167,6 @@ header("Refresh:180");
                         </div>
                     </main>
                     <div class=" h6 priceNT-yu alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
-                        <h6 class="NTYu">
-                        </h6>
                         <h6 id="total-price-yu" class="price-uniqui-yu">
                         </h6>
                     </div>
