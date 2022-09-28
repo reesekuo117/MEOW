@@ -135,20 +135,20 @@
 
 }
 .travel_sortbtn_mb button{
-    border: 2px solid var(--color-text60);
+    border: 2px solid var(--color-text60) !important;
     border-radius: 8px;
     padding: 4px;
     background-color: var(--color-lightcreamy);
     color: var(--color-text87);
 }
-.travel_sortbtn_mb:hover button{
+.travel_sortbtn_mb button.tsmbactive{
+    border: 2px solid var(--color-text60) !important;
+    border-radius: 8px;
     background-color: var(--color-yellow);
     color: var(--color-text87);
 
 }
-/* .travel_cate_mb{
-    background-color: var(--color-creamy-light);
-} */
+
 /* -----------------------------價格篩選----------------------------- */
 .filter-content__element {
     width: 100%;

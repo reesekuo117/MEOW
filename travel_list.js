@@ -2,6 +2,7 @@
 $('.travel_sortbtn_mb  button').click(function(){
     console.log('hello');
     // $('.travel_cate_mb').removeClass('d-none').addClass('d-block')
+    $('.travel_sortbtn_mb  button').toggleClass('tsmbactive')
     $('.travel_cate_mb').toggleClass('d-none')
 })
 
@@ -26,9 +27,9 @@ function slideOne() {
 
 
     // this is only if the price range doesn't start at 0 like in this case, in the project I was working on. Otherwise the logic would be far simpler 
-    let sliderOnePercentage = sliderOne.attributes.min.nodeValue;
+    // let sliderOnePercentage = sliderOne.attributes.min.nodeValue;
     // console.log(sliderOnePercentage);
-    let sliderMovementOne = sliderOne.value - sliderOnePercentage;
+    // let sliderMovementOne = sliderOne.value - sliderOnePercentage;
     // console.log(sliderMovementOne);
     // console.log(sliderMovementOne /2900  * 5.862);
     // SliderValOne.style.left = `${sliderMovementOne /2900 * 70}px`;

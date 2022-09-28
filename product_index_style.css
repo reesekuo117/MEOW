@@ -102,7 +102,7 @@ button {
 
 /* ----------------------輪播牆結束--------------------- */
 .product_midcontrol {
-    margin: 40px auto;
+    margin: 20px auto 40px;
     /* text-align: center; */
 }
 
@@ -446,6 +446,7 @@ button {
     fill: #CD562F;
 }
 /* ---------------------------手機卡片輪播---------------------------- */
+
 .carousel_mb{
     overflow: hidden;
     padding: 50px 0 50px;

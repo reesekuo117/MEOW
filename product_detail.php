@@ -260,7 +260,7 @@ $rows = $pdo->query($sql)->fetchAll();
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col px-3">
-                    <a href="#pay"><small>寄送與付款方式</small></a>
+                    <a href="#pay"><small>寄送與付款</small></a>
                 </div>
                 <div class="col pr-3 pl-0">
                     <a href="#intro"><small>商品介紹</small></a>
@@ -290,7 +290,7 @@ $rows = $pdo->query($sql)->fetchAll();
             <div class="btns">
                 <div class="row align-items-center">
                     <div class="col">
-                        <button class="favorite d-flex justify-content-center align-items-center">
+                        <button class="favorite d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                             <div class="icon_heart_nav">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
@@ -406,14 +406,13 @@ $rows = $pdo->query($sql)->fetchAll();
                                         <h3 class="d-none d-md-block mr-3">5</h3>
                                         <small class="d-flex xs">
                                             <div class="icon_fivestar px-0">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                                <div class="small xs d-md-none">(50 + 則評價)</div>
+                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span class="xs d-md-none">(50 + 則評價)</span>
                                             </div>
                                             <div class="xs d-none d-md-block ml-2">(50 + 則評價)</div>
                                         </small>
                                     </div>
                                 </div>
-                                <div class="col col-md-3">
+                                <!-- <div class="col col-md-3">
                                     <div class="time_sort">
                                         <select name="" id="">
                                             <option value="">最新</option>
@@ -421,7 +420,7 @@ $rows = $pdo->query($sql)->fetchAll();
                                             <option value="">評價低→高</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="cd">
                                 <!-- computer comment -->

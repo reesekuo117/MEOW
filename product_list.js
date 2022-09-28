@@ -156,8 +156,8 @@ function slideTwo() {
     // SliderValTwo.style.right = `${sliderMovementTwo /2900 * 40 }%`;
 }
 
-sliderOne.addEventListener('input', slideOne)
-sliderTwo.addEventListener('input', slideTwo)
+// sliderOne.addEventListener('input', slideOne)
+// sliderTwo.addEventListener('input', slideTwo)
 
 // 排序會亮
 $('.product_sort a').click(function(){
@@ -181,7 +181,7 @@ $('.product_cate').click(function(){
 $('.psort_mb').click(function(){
     console.log('hello');
     // $('.travel_cate_mb').removeClass('d-none').addClass('d-block')
-    $('.timesort_mb').toggleClass('d-none')
+    $(this).parents().next('.timesort_mb').toggleClass('ptsmbhz')
 })
 
 
