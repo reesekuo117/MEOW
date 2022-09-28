@@ -606,7 +606,7 @@ scroll-behavior: smooth;
   color: var(--color-text100);
 }
 .mb-content_lb {
-  font-size: 18px;
+  /* font-size: 18px; */
   color: var(--color-text87);
 }
 

@@ -1062,8 +1062,15 @@ $('input[type="radio"]').click(function () {
 
 
 $(window).scroll(function() {
-  if (window.screen.height >= ($('.listinfo-yu').offset().top - window.screen.height * 1 / 2)) {
+  if ($(window).scrollTop() >= ($('.listinfo-yu').offset().top - window.screen.height * 1 / 2)) {
     const fields = ["name-yu", "mobile-yu", "email-yu", "address-yu"];
+    console.log("hihi");
+
+    const atr = $(this);
+      const td_price = atr.find(".price");
+      const td_sub = tr.find(".sub-total");
+    const name = tr.attr('data-sid'); 
+
 
     $("#name-yu").val("皮卡丘");
     $("#mobile-yu").val("0924568756");

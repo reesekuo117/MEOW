@@ -157,17 +157,17 @@ $title = '線上求籤'
             <h4 class="position-absolute">(4/5)</h4>
         </div>
 
-
+        <button class="btn_md_next btn_disabled_ba position-absolute disabled">
+            <a class="m-0 disabled text-decoration-none" href="#">
+                <p class="m-0">
+                    下一步
+                </p>
+            </a>
+        </button>
 
 
     </div>
-    <button class="btn_md_next btn_disabled_ba position-absolute disabled">
-        <a class="m-0 disabled text-decoration-none" href="#">
-            <p class="m-0">
-                下一步
-            </p>
-        </a>
-    </button>
+
     </div>
 
 

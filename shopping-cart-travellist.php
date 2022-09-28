@@ -186,7 +186,7 @@ header("Refresh:180");
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="ordername-yu requiredYu" type="text" placeholder="請輸入姓名 " id="name-yu" name="name" required  value="<?=htmlentities($sm['name']) ?>"/>
+                            <input class="ordername-yu requiredYu" type="text" placeholder="請輸入姓名 " id="name-yu" name="name" required data-value="<?=htmlentities($sm['name']) ?>"/>
                             <i class="right fa-regular fa-circle-check"></i>
                             <i class="wrong fa-solid fa-triangle-exclamation">
                                 <small>請輸入正確姓名</small>

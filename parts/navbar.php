@@ -36,7 +36,7 @@
     /* 注意權重 */
 </style>
 <!-- header-md ----------------------------------->
-<header class="header-fixed d-none d-md-block draw16_none">
+<header class="d-none d-md-block draw16_none">
     <div class="navbar navbar_ba">
         <div class="container-fluid p-0">
             <div class="row justify-content-between w-100 m-0">

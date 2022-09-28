@@ -6,11 +6,11 @@ let scrollNow =  $(window).scrollTop();
 // console.log('scrollNow', scrollNow);
 if(scrollNow > lastScroll){
 $('.header-fixed ').addClass('hidden')
-$('.header-xs').addClass('hidden')
+$('.header-xs-fixed').addClass('hidden')
 }
 else{
 $('.header-fixed ').removeClass('hidden')
-$('.header-xs').removeClass('hidden')
+$('.header-xs-fixed').removeClass('hidden')
 }
 lastScroll = scrollNow;
 })
