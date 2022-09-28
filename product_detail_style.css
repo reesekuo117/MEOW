@@ -191,8 +191,9 @@ html{
 }
 .goback{
     position: absolute;
-    left: 10;
     z-index: 99;
+    left: 3%;
+    top: 1%;
 }
 .goback a{
     height: 26px;
