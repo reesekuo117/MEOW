@@ -1239,152 +1239,38 @@ $temples = $pdo->query($temple_sql)->fetchAll();
         <!--  MB 月老喵推薦卡片  -->
         <div class="container carousel_mb pb-5">
             <div class="card-carousel">
-            <?php foreach ($travel_1 as $t) : ?> 
-                <div class="card" id="1">
-                    <div class="image-container">
-                        <img class="" src="./imgs/travel/cards/<?= $t['travelcard_img'] ?>" alt="">
-                    </div>
-                    <div class="pit_mb pb-2">
-                        <h6 class="px-2"><?= $t['travel_name'] ?></h6>
-                    </div>
-                    <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
-                        <div class="star">
-                            <small class="xs d-flex">
-                                <div class="icon_fivestar mx-1" style="color: var(--color-yellow);">
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                (<?= $t['travel_star'] ?>)
-                            </small>
+                <?php foreach ($travel_1 as $t) : ?> 
+                    <div class="card" id="1">
+                        <div class="image-container">
+                            <img class="" src="./imgs/travel/cards/<?= $t['travelcard_img'] ?>" alt="">
                         </div>
-                        <div class="fire justify-content-center align-items-center mx-2">
-                            <small class="xs d-flex">
-                                <div class="icon_fire xs">
-                                    <i class="fa-solid fa-fire pr-1"></i>
-                                </div>
-                                已賣出<?= $t['travel_popular'] ?>個
-                            </small>
+                        <div class="pit_mb pb-2">
+                            <h6 class="px-2"><?= $t['travel_name'] ?></h6>
                         </div>
-                        <div class="price">
-                            <h4><?= $t['travel_price'] ?></h4>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?> 
-
-                <div class="card" id="2">
-                    <div class="image-container"></div>
-                    <div class="pit_mb">
-                        <p class="mb-2">霞海城隍聯名 X 姻緣簿茶蜜組</p>
-                    </div>
-                    <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
-                        <div class="star">
-                        <small class="xs d-flex">
-                            <div class="icon_fivestar" style="color: var(--color-yellow);">
-                                <i class="fa-solid fa-star"></i>
+                        <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
+                            <div class="star">
+                                <small class="xs d-flex">
+                                    <div class="icon_fivestar mx-1" style="color: var(--color-yellow);">
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    (<?= $t['travel_star'] ?>)
+                                </small>
                             </div>
-                            （5）
-                        </small>
-                        </div>
-                        <div class="fire justify-content-center align-items-center mr-2">
-                        <small class="xs d-flex">
-                            <div class="icon_fire xs">
-                                <i class="fa-solid fa-fire pr-1"></i>
+                            <div class="fire justify-content-center align-items-center mx-2">
+                                <small class="xs d-flex">
+                                    <div class="icon_fire xs">
+                                        <i class="fa-solid fa-fire pr-1"></i>
+                                    </div>
+                                    已賣出<?= $t['travel_popular'] ?>個
+                                </small>
                             </div>
-                            已賣出3K + 個
-                        </small>
-                        </div>
-                        <div class="price">
-                            <h4>707</h4>
+                            <div class="price">
+                                <h4><?= $t['travel_price'] ?></h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="card" id="3">
-                    <div class="image-container"></div>
-                    <div class="pit_mb">
-                        <p class="mb-2">霞海城隍廟 X 扣式真皮中夾禮盒</p>
-                    </div>
-                    <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
-                        <div class="star">
-                        <small class="xs d-flex">
-                            <div class="icon_fivestar" style="color: var(--color-yellow);">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            （5）
-                        </small>
-                        </div>
-                        <div class="fire justify-content-center align-items-center mr-2">
-                        <small class="xs d-flex">
-                            <div class="icon_fire xs">
-                                <i class="fa-solid fa-fire pr-1"></i>
-                            </div>
-                            已賣出3K + 個
-                        </small>
-                        </div>
-                        <div class="price">
-                            <h4>707</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" id="4">
-                    <div class="image-container"></div>
-                    <div class="pit_mb">
-                        <p class="mb-2">霞海城隍廟聯名 X 月老牽線絹印組</p>
-                    </div>
-                    <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
-                        <div class="star">
-                        <small class="xs d-flex">
-                            <div class="icon_fivestar" style="color: var(--color-yellow);">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            （5）
-                        </small>
-                        </div>
-                        <div class="fire justify-content-center align-items-center mr-2">
-                        <small class="xs d-flex">
-                            <div class="icon_fire xs">
-                                <i class="fa-solid fa-fire pr-1"></i>
-                            </div>
-                            已賣出3K + 個
-                        </small>
-                        </div>
-                        <div class="price">
-                            <h4>707</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" id="5">
-                    <div class="image-container"></div>
-                    <div class="pit_mb">
-                        <p class="mb-2">月老喵療癒你盥洗組</p>
-                    </div>
-                    <div class="piu_mb d-flex justify-content-between align-items-center mb-2">
-                        <div class="star">
-                        <small class="xs d-flex">
-                            <div class="icon_fivestar" style="color: var(--color-yellow);">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            （5）
-                        </small>
-                        </div>
-                        <div class="fire justify-content-center align-items-center mr-2">
-                        <small class="xs d-flex">
-                            <div class="icon_fire xs">
-                                <i class="fa-solid fa-fire pr-1"></i>
-                            </div>
-                            已賣出3K + 個
-                        </small>
-                        </div>
-                        <div class="price">
-                            <h4>707</h4>
-                        </div>
-                    </div>
-                </div> -->
-            
+                <?php endforeach; ?> 
             </div>
-          
             <a href="#" class="visuallyhidden card-controller"></a>
         </div>
     </div>
