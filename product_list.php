@@ -440,8 +440,32 @@ if ($totalRows > 0) {
 
 </div>
 <script>
-    const productData = <?php echo json_encode($rows); ?>;
+    // const productData = < ?php echo json_encode($rows); ?>;
         console.log('productData',productData);
+
+        function addToFav_P_07(event) {
+        const heartbtn = $(event.currentTarget); // 監聽
+        const collect_sid = heartbtn.attr('data-sid');
+        console.log('hiheart', heartbtn);
+        console.log('hisid', collect_sid);
+        if(!isLogined){
+            $('.notlogin').append();
+            console.log('hibox', collect_sid);
+        } else {
+            $.get(
+            'favorite_api.php', {
+                collect_sid,
+                target_type: 1,
+            },
+            function(heartp) {
+            console.log({heartp});
+                // showCartCount(heartp);
+                // 一進來就確認這個會員有沒有收藏這個商品，JOIN或做兩次?
+            },
+            'json');
+        }
+        
+    };
 </script>
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 <script src="./product_list.js"></script>

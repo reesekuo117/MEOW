@@ -938,22 +938,12 @@ $rows = $pdo->query($sql)->fetchAll();
         const collect_sid = heartbtn.attr('data-sid');
         console.log('hiheart', heartbtn);
         console.log('hisid', collect_sid);
-        if(!isLogined){
-            $('.notlogin').append();
-            console.log('hibox', collect_sid);
-        } else {
             $.get(
             'favorite_api.php', {
                 collect_sid,
                 target_type: 1,
             },
-            function(heartp) {
-            console.log({heartp});
-                // showCartCount(heartp);
-                // 一進來就確認這個會員有沒有收藏這個商品，JOIN或做兩次?
-            },
             'json');
-        }
         
     };
 </script>
