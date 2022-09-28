@@ -126,9 +126,57 @@
     top: 10%;
 }
 
-.form-check:hover{
-    color: var(--color-orange);
+
+/* ----------側邊攔篩選樣式------- */
+/* #form-check-ca:hover{
+    text-decoration:none;
+    color: var(--color-yellow);
 }
+
+#form-check-ca{
+    color: #432A0F;
+} */
+
+#form-check-ka:hover{
+    text-decoration:none;
+    color: var(--color-yellow);
+}
+
+#form-check-ka{
+    color: #432A0F;
+}
+
+.product_cate.btncolor_default{
+    color: var(--color-text87);
+}
+.product_cate.btncolor_active{
+    color: var(--color-yellow);
+}
+
+.product_cate a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.product_cate:hover a {
+    color: var(--color-yellow);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 手機版排序 */
 .travel_cate_mb{
     color: var(--color-text87);

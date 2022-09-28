@@ -1,56 +1,87 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = 'travel_list'; //頁面名稱
+
+
 $perPage = 6;  // 每頁最多有幾筆
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 if ($page < 1) {
     header('Location: ?page=1');
     exit;
 }
-$cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就會回到全部分類
+
+
+
+$city = isset($_GET['city']) ? intval($_GET['city']) : 0;//依活動分類
+$where = " WHERE 1 ";//起頭
+if($city){
+    $where .= " AND  travel_area=$city ";
+}
+
+
+
+
+// $kind = isset($_GET['travel_kind']) ? intval($_GET['travel_kind']) : 0;//依活動類型
+// $where = " WHERE 1 ";//起頭
+// if($kind){
+//     $where .= " AND  travel_kind=$kind ";
+// }
+
+
+
+
+
+
+
+
+// $cate = isset($_GET['cate']) ? intval($_GET['cate']):0;//沒有找到的話就會回到全部分類
 //$cate=用戶指定的分類
 // $cates = $pdo->query("SELECT * FROM travel WHERE sid=0")->fetchAll();
-$sort = isset($_GET['sort']) ? $_GET['sort'] : ''; 
+// $sort = isset($_GET['sort']) ? $_GET['sort'] : ''; 
 
-$qsp = []; // query string parameters
+// $qsp = []; // query string parameters
 
 
 //定義一個變數$where
 //如果有$cate這個分類的話不是0的話 就把條件加進來={  分類category_sid =$cate }
-$where = " WHERE 1 ";  //起頭 記得要空格
-if ($cate){
-    $where .=" AND category_sid =$cate ";
-    $qsp['cate'] = $cate;
+// $where = " WHERE 1 ";  //起頭 記得要空格
+// if ($cate){
+//     $where .=" AND category_sid =$cate ";
+//     $qsp['cate'] = $cate;
 
-}
+// }
 
 // 排序
-$dataSort = '';
-if(!empty($sort)){
-    $qsp['sort'] = $sort;
-    switch($sort){
-        case 'hotp':
-            $dataSort = ' ORDER BY travel_popular DESC ';
-            break;
-        // case 'newp':
-            // $dataSort = ' ORDER BY created_at DESC ';
-            // break;
-        case 'pricehigh':
-            $dataSort = ' ORDER BY travel_price DESC ';
-            break;
-        case 'pricelow':
-            $dataSort = ' ORDER BY travel_price ASC ';
-            break;
-    }
-}
+// $dataSort = '';
+// if(!empty($sort)){
+//     $qsp['sort'] = $sort;
+//     switch($sort){
+//         case 'hotp':
+//             $dataSort = ' ORDER BY travel_popular DESC ';
+//             break;
+//         // case 'newp':
+//             // $dataSort = ' ORDER BY created_at DESC ';
+//             // break;
+//         case 'pricehigh':
+//             $dataSort = ' ORDER BY travel_price DESC ';
+//             break;
+//         case 'pricelow':
+//             $dataSort = ' ORDER BY travel_price ASC ';
+//             break;
+//     }
+// }
+
+
 
 // 旅遊商品  取得資料的總筆數
-$t_sql = "SELECT COUNT(1) FROM travel";
-// $t_sql = "SELECT * FROM `product` WHERE 1";
+$t_sql = "SELECT COUNT(1) FROM travel $where ";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 
 // 計算總頁數
 $totalPages = ceil($totalRows / $perPage);
+
+
+
 
 $rows = [];  // 預設值
 // 有資料才執行
@@ -66,29 +97,47 @@ if ($totalRows > 0) {
         //?page= 輸入第幾頁 只要輸入大於的頁數就會自動跳轉到最後一頁
         exit;
     }
+
+
+
+
     // 取得該頁面的資料
     $sql = sprintf(
-    "SELECT * FROM `travel` ORDER BY `sid` %s LIMIT %s, %s",
-    $dataSort,
-     ($page - 1) * $perPage,
-    $perPage);
+        "SELECT * FROM `travel` %s ORDER BY `sid` LIMIT %s, %s",
+        $where,
+        ($page - 1) * $perPage,
+        $perPage
+    );
     $rows = $pdo->query($sql)->fetchAll();
 
-    // $Y_sql = "SELECT t.*, ad.city FROM travel t 
-    //             JOIN address ad ON ad.sid = t.travel_area
-    //             WHERE 1";
-    // $Y_rows = $pdo->query($Y_sql)->fetchAll();
+  
 
-    // 取得address
-    $sqlArea = sprintf("SELECT * FROM `address`");
-    $areaRows = $pdo->query($sqlArea)->fetchAll();
+   
 
+
+    //取得活動地區類型
+    $city = $pdo->query("SELECT * FROM address WHERE parent=0")->fetchAll();
+
+    //取得活動類型
+    $kind = $pdo->query("SELECT * FROM `travel_kind` WHERE travel_kind=travel_kind")->fetchAll();
 
     // echo json_encode([ 
-    //     // '$rows' => $rows,
-    //     '$areaRows' => $areaRows,
-    // ]);
-    // exit;
+    //         '$city' => $city,
+    //         '$kind' => $kind,
+    //     ]);
+    //     exit;
+
+
+  // 取得address
+  $sqlArea = sprintf("SELECT * FROM `address`");
+  $areaRows = $pdo->query($sqlArea)->fetchAll();
+
+
+
+
+
+
+
 
 }
 
@@ -176,30 +225,16 @@ header("Refresh:180");
             <section>
                 <form action="" class="location">
                     <ul>
-                        <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="0" name="northCheck" checked="checked">
-                            <label for="northCheck">
-                                <span>北部</span>
-                            </label>
-                        </li>
-                        <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="1" name="middleCheck">
-                            <label for="middleCheck">
-                                <span>中部</span>
-                            </label>
-                        </li>
-                        <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="2" name="southCheck">
-                            <label for="southCheck">
-                                <span>南部</span>
-                            </label>
-                        </li>
-                        <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="3" name="eastCheck">
-                            <label for="eastCheck">
-                                <span>東部</span>
-                            </label>
-                        </li>
+                        <?php foreach ($city as $sc) :?>
+                            <a href="">
+                                <li class="list-unstyled">
+                                <input type="radio" class="form-check-input" value="0" name="p_location" checked="checked">
+                                <label for="northCheck">
+                                    <?=$sc["city"]?>
+                                </label>
+                            </li>
+                            </a>
+                        <?php endforeach?>
                     </ul>
                 </form>
             </section>
@@ -207,20 +242,16 @@ header("Refresh:180");
                 <h6>依活動類型</h6>
             </legend>
             <section>
-                <form action="" class="location">
+                <form action="" class="location s_category">
                     <ul>
-                        <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="0" name="matchCheck" checked="checked">
-                            <label for="matchCheck">
-                                <span>交友聯誼</span>
-                            </label>
-                        </li>
-                        <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="1" name="cultureCheck">
-                            <label for="cultureCheck">
-                                <span>文化之旅</span>
-                            </label>
-                        </li>
+                        <?php foreach ($kind as $sk) :?>
+                            <li class="list-unstyled">
+                                <input type="radio" class="form-check-input" value="0" name=" s_category" checked="checked">
+                                <label for="matchCheck">
+                                    <?=$k['travel_kind']?>
+                                </label>
+                            </li>
+                        <?php endforeach?>
                     </ul>
                 </form>
             </section>
@@ -249,28 +280,28 @@ header("Refresh:180");
                 <h6>依時間排序</h6>
             </legend>
             <section>
-                <form action="" class="location">
+                <form action="" class="location s_time">
                     <ul>
                         <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="0" name="onedCheck" checked="checked">
+                            <input type="radio" class="form-check-input" value="0" name="s_time" checked="checked">
                             <label for="onedCheck">
                                 <span>最新上架</span>
                             </label>
                         </li>
                         <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="1" name="towdCheck">
+                            <input type="radio" class="form-check-input" value="1" name="s_time">
                             <label for="towdCheck">
                                 <span>熱門程度</span>
                             </label>
                         </li>
                         <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="1" name="towdCheck">
+                            <input type="radio" class="form-check-input" value="1" name="s_time">
                             <label for="towdCheck">
                                 <span>評價高 → 低</span>
                             </label>
                         </li>
                         <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="1" name="towdCheck">
+                            <input type="radio" class="form-check-input" value="1" name="s_time">
                             <label for="towdCheck">
                                 <span>評價低 → 高</span>
                             </label>
@@ -289,49 +320,42 @@ header("Refresh:180");
         <div class="aside offset-1 d-none d-md-block">
             <div class="col">
                 <div class="cate_filter">
-                    <div class="travel_cate location">
+                    <div class="travel_cate location ">
                         <h5>－依活動地區</h5>
-                        <div class="form-check">
-                            <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
-                            <input class="form-check-input" type="checkbox" value="0" name="northCheck" id="northCheck" checked="checked">
-                            <label class="form-check-label" for="northCheck">
-                                北部
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="middleCheck" id="middleCheck">
-                            <label class="form-check-label" for="middleCheck">
-                                中部
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="2" name="southCheck" id="southCheck">
-                            <label class="form-check-label" for="southCheck">
-                                南部
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="3" name="eastCheck" id="eastCheck">
-                            <label class="form-check-label" for="eastCheck">
-                                東部
-                            </label>
-                        </div>
+                        
+                        <?php $allBtnStyle = empty($city) ? " btncolor_active" : "btncolor_default" ?>
+
+                        <p class=" mb-0 form-check light  product_cate <?php echo ($cate) ? "btncolor_default" : "btncolor_active" ?>">
+                            <a type="button" href="?#desktopSort" class="<?= $allBtnStyle?>" >
+                                全台地區
+                            </a>
+                        </p>
+                        <?php foreach ($city as $c) : 
+                            ?>
+                            <div class=" product_cate form-check ">
+                                <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
+                                        <a class="product_cate  " id="form-check-ca" type="button" href="?city=<?=$c['sid']?>#desktopSort">
+                                            <?=$c["city"]?>
+                                        </a>
+                            </div>
+                        <?php endforeach?>
                     </div>
                     <div class="travel_cate category">
                         <h5>－依活動類型</h5>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="0" name="matchCheck" id="matchCheck" checked="checked">
-                            <label class="form-check-label" for="matchCheck">
-                                交友聯誼
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="cultureCheck" id="cultureCheck">
-                            <label class="form-check-label" for="cultureCheck">
-                                文化之旅
-                            </label>
-                        </div>
-
+                        <?php foreach ($kind as $k) :?>
+                            <div class="form-check">
+                                <a class="product_cate" id="form-check-ka" type="button" href="?kind=<?=$k['sid']?>">
+                                    <!-- <input class="form-check-input" type="radio" value="0" name="category" id="matchCheck"> -->
+                                        <?=$k['travel_kind']?>
+                                </a>
+                            </div>
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="radio" value="1" name="category" id="cultureCheck">
+                                <label class="form-check-label" for="cultureCheck">
+                                    文化之旅
+                                </label>
+                            </div> -->
+                        <?php endforeach?>
                     </div>
                     <!-- <div class="travel_cate time">
                         <h5>－依旅遊時間分類</h5>

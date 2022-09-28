@@ -58,3 +58,14 @@ $('.icon_heart').click(function(){
 //     $(this).find('.heart_line').toggleClass('color')
 // });
 // 按收藏後真的進入收藏頁面&沒登入會跳出提示窗
+
+
+// 排序會亮
+$('.product_sort a').click(function(){
+    $(this).closest('div').find('a').addClass('sort_active').siblings().removeClass('sort_active');
+});
+
+// 側邊欄篩選
+$('.product_cate').click(function(){
+    $(this).closest('div').find('a').addClass('btncolor_active').siblings().removeClass('btncolor_active');
+});
