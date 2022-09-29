@@ -121,12 +121,12 @@ if ($totalRows > 0) {
     //取得活動類型
     $daytime = $pdo->query("SELECT * FROM `travel_daytime` WHERE travel_daytime=travel_daytime")->fetchAll();
 
-    // echo json_encode([ 
-    //         '$city' => $city,
-    //         '$kind' => $kind,
-    //         '$daytime' => $daytime,
-    //     ]);
-    //     exit;
+    echo json_encode([ 
+            '$city' => $city,
+            '$kind' => $kind,
+            '$daytime' => $daytime,
+        ]);
+        exit;
 
 
     // 取得address
@@ -268,7 +268,7 @@ header("Refresh:180");
                     <ul>
                     <?php foreach ($kind as $k) : ?>
                             <div class="form-check">
-                                <a class="<?= $k['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php 
+                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php 
                                 $tmp = $qsp;
                                 $tmp['kind'] = $k['sid'];
                                 echo http_build_query($tmp);
@@ -371,7 +371,7 @@ header("Refresh:180");
                         <?php foreach ($city as $c) : ?>
                             <div class=" form-check ">
                                 <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
-                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " id="form-check-ca" type="button" href="?<?php
+                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> "  type="button" href="?<?php
                                 $tmp = $qsp;
                                 $tmp['city'] = $c['sid'];
                                 echo http_build_query($tmp);
@@ -385,7 +385,7 @@ header("Refresh:180");
                         <h5>－依活動類型</h5>
                         <?php foreach ($kind as $k) : ?>
                             <div class="form-check">
-                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php 
+                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>"  type="button" href="?<?php 
                                 $tmp = $qsp;
                                 $tmp['kind'] = $k['sid'];
                                 echo http_build_query($tmp);
@@ -399,7 +399,7 @@ header("Refresh:180");
                         <h5>－依旅遊時間分類</h5>
                         <?php foreach ($daytime as $t) : ?>
                         <div class="form-check">
-                            <a  class="<?= $t['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php 
+                            <a  class="<?= $t['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>"  type="button" href="?<?php 
                                 $tmp = $qsp;
                                 $tmp['daytime'] = $t['sid'];
                                 echo http_build_query($tmp);
