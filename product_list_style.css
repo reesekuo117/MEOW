@@ -34,7 +34,10 @@
 .search_btn button:hover{
     color: var(--color-text87);
 }
-
+.input_search button{
+    border: none;
+    background: transparent;
+}
 /* input{
     border-radius: 8px;
     margin: 0 0 8px;

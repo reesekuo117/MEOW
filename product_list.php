@@ -15,6 +15,7 @@ $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要指定哪�
 // $lowerp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
 // $higherp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
 $sort = isset($_GET['sort']) ? $_GET['sort'] : ''; 
+$search = isset($_GET['search']) ? $_GET['search'] : '';   //搜尋關鍵字
 
 $qsp = []; // query string parameters
 
@@ -29,12 +30,18 @@ $cates = $pdo->query("SELECT * FROM product_category WHERE 1") //1表示全部�
 
 $where = ' WHERE 1 '; // 起頭，1是true
 if ($cate) {
-    $where .= "AND category_sid = $cate ";
+    $where .= " AND category_sid = $cate ";
     $qsp['cate'] = $cate;
 }
 
-// 模糊查詢
-$serach = ("SELECT * FROM `products` WHERE `product_name` LIKE '%月老%';");
+//搜尋關鍵字
+if (!empty($search)) {
+    $where .= sprintf(" AND product_name LIKE %s ", $pdo->quote('%'. $search. '%'));
+    
+    $qsp['search'] = $search;
+}
+
+
 
 // 排序
 $dataSort = '';
@@ -116,10 +123,11 @@ if ($totalRows > 0) {
         exit;
     }
     // 取得該頁面的資料
-    $sql = sprintf(
-        "SELECT * FROM `product` %s %s LIMIT %s, %s",
+    $sql = sprintf( 
+       "SELECT * FROM `product` %s %s LIMIT %s, %s",
         $where,
         $dataSort,
+        // $serach,
         ($page - 1) * $perPage,
         $perPage
     );
@@ -199,17 +207,23 @@ if ($totalRows > 0) {
                     </div> -->
             <!-- TODO: 救命關鍵字功能要怎麼寫→套PHP -->
             <!-- https://webdesign.tutsplus.com/zh-hant/tutorials/css-experiments-with-a-search-form-input-and-button--cms-22069 -->
-            <div class="input_search">
+            <!-- 搜尋START-->
+            <form name="search_form" class="input_search">
                 <div class="container-1">
-                    <span class="icon"><i class="fa fa-search"></i></span>
-                    <input type="search" id="search" placeholder="請輸入關鍵字搜尋" />
+                    <!-- <span class="icon"><i class="fa fa-search"></i></span> -->
+                    
+                    <label for="">
+                        <input type="text" id="search" name="search" placeholder="請輸入關鍵字搜尋" value="<?= empty($search) ? '' : htmlentities($search) ?>" />
+                    </label>
+                    <button class="icon" type="submit"><i class="fa fa-search"></i></button>
                 </div>
-            </div>
+            </form>
             <div class="search_btn">
-                <button>#手鍊</button>
-                <button>#霞海</button>
-                <button>#祈願</button>
+                <button onclick="$('#search').val('手鍊')">#手鍊</button>
+                <button onclick="$('#search').val('霞海')">#霞海</button>
+                <button  onclick="$('#search').val('祈願')">#祈願</button>
             </div>
+             <!-- 搜尋END -->
         </div>
     </div>
     <!-- -----------------------------------搜尋欄結束------------------------------------ -->
@@ -475,6 +489,15 @@ if ($totalRows > 0) {
             'json');
         
     };
+
+function SearchFormData() {
+  const inputValue = document.getElementById('search').value;
+    console.log('inputValue',inputValue)
+};
+// SearchFormData()
+
+
+    
 </script>
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 <script src="./product_list.js"></script>
