@@ -5,16 +5,16 @@
     color: var(--color-brown-dark);
 }
 
-.bodyBlack_ba{
+.bodyBlack_ba {
     background-color: #F2DFCC;
 }
 
-button:focus{
+button:focus {
     outline-style: none;
 }
 
-.d-none-ba{
-    display: none !important; 
+.d-none-ba {
+    display: none !important;
 }
 
 .youcantseeme {
@@ -386,7 +386,7 @@ button:focus{
 .drawSection04 {
     margin-top: 100px;
     width: 100%;
-    height:calc(100vh - 100px) ;
+    height: calc(100vh - 100px);
 }
 
 button a {
@@ -429,7 +429,7 @@ button a:hover {
 .drawSection05 {
     margin-top: 100px;
     width: 100%;
-    height:calc(100vh - 100px) ;
+    height: calc(100vh - 100px);
 }
 
 .drawSection05 h1 {
@@ -750,16 +750,16 @@ button[disabled]:hover {
     width: 198px;
 }
 
-.presshere-left{
+.presshere-left {
     width: 20%;
     height: 100%;
     /* border: 1px salmon solid; */
     cursor: pointer;
 }
 
-.presshere-right{
+.presshere-right {
     top: 0;
-    right:0%;
+    right: 0%;
     width: 20%;
     height: 100%;
     /* border: 1px salmon solid; */
@@ -1485,7 +1485,7 @@ button[disabled]:hover {
     text-align: center;
 }
 
-.result01{
+.result01 {
     /* border: 1px salmon solid; */
     width: 280px;
     height: 72px;
@@ -1493,7 +1493,7 @@ button[disabled]:hover {
 
 }
 
-.result02{
+.result02 {
     /* border: 1px salmon solid; */
     width: 200px;
     height: 72px;
@@ -1611,7 +1611,7 @@ button[disabled]:hover {
 .moonBlockContent {
     width: 480px;
     height: 400px;
-    top: 120px;
+    top: 180px;
     right: 600px;
     /* border: 1px salmon solid; */
     opacity: 0;
@@ -1798,7 +1798,7 @@ button[disabled]:hover {
     border: var(--color-brown-dark) 2px solid;
     border-radius: 8px;
     transition: .3s;
-    margin: 60px 40px;
+    margin: 30px 40px 50px;
     background-color: var(--color-yellow);
     text-align: center;
 }
@@ -1806,8 +1806,7 @@ button[disabled]:hover {
 .drawSection23 {
     /* border: 1px salmon solid; */
     overflow: hidden;
-
-    height: 200vh;
+    /* height: 200vh; */
     background: url();
 }
 
@@ -1998,7 +1997,7 @@ button[disabled]:hover {
 
 .mdrawSection23 {
     width: 100%;
-    height: 280vh;
+    /* height: 220vh; */
     overflow: hidden;
 }
 
@@ -2038,7 +2037,6 @@ button[disabled]:hover {
 }
 
 .mdrawSection23 .grain_ba {
-    /* border: 1px salmon solid; */
     top: 0;
     overflow: hidden;
     width: 100%;
@@ -2081,13 +2079,11 @@ button[disabled]:hover {
     margin-top: 48px;
 }
 
-.card-carousel{
+.card-carousel {
     margin-left: -114px !important;
-    /* left: 50%;
-    transform: translateX(-50%); */
 }
 
-.btn-mobile{
+.btn-mobile {
     width: 311px;
     height: 41px;
     display: flex;
@@ -2116,26 +2112,26 @@ button[disabled]:hover {
 }
 
 /* 光箱 */
-.modal-header{
+.modal-header {
     background-color: var(--color-yellow);
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
 }
 
-.modal-footer{
+.modal-footer {
     border-top: 0;
     padding-top: 10px;
 }
 
-.modal-footer .btn{
+.modal-footer .btn {
     background-color: var(--color-yellow);
 }
 
-.modal-content{
+.modal-content {
     border-radius: 16px;
 }
 
-.errorMeow{
+.errorMeow {
     bottom: 0px;
     left: 32px;
 }
@@ -2152,8 +2148,252 @@ button[disabled]:hover {
     border-color: transparent;
 }
 
-.modal-body{
+.modal-body {
     height: 90px;
     align-items: center;
     padding-top: 36px;
+}
+
+/* pc 月老喵推薦卡片 */
+.recommand_lb {
+    margin-top: 80px;
+}
+
+.otherp {
+    padding: 28px 0;
+}
+
+.otherp h4 {
+    color: var(--color-text87);
+}
+
+.otherp .container {
+    /* background-color: var(--color-creamy-light); */
+    padding-top: 24px;
+}
+
+.otherp a {
+    text-decoration: none;
+    color: var(--color-text87);
+}
+
+.carousel {
+    margin: 24px auto 24px;
+    padding: 0 80px;
+}
+
+.carousel .carousel-item {
+    text-align: center;
+    overflow: hidden;
+}
+
+.carousel .carousel-item img {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.img-box {
+    position: relative;
+}
+
+.img-box:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(45, 45, 45, 0.176); */
+    position: absolute;
+    bottom: 0;
+    /* 直接在div下陰影 */
+}
+
+/* .carousel .icon_heart{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  } */
+.icon_heart {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.carousel .thumb-wrapper {
+    margin: 5px;
+    text-align: left;
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carousel .thumb-content {
+    padding: 10px;
+    font-size: 13px;
+}
+
+.otherp .carousel-control-prev,
+.otherp .carousel-control-next {
+    height: 44px;
+    width: 44px;
+    background: none;
+    margin: auto 0;
+}
+
+.otherp .carousel-control-prev i,
+.otherp .carousel-control-next i {
+    font-size: 36px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -19px 0 0 0;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    color: var(--color-orange);
+    text-shadow: none;
+    font-weight: bold;
+}
+
+.otherp .carousel-control-prev i {
+    margin-left: -3px;
+}
+
+.otherp .carousel-control-next i {
+    margin-right: -3px;
+}
+
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.carousel-indicators li,
+.carousel-indicators li.active {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 4px;
+    border: none;
+}
+
+.card_under h5::before {
+    content: "NT$";
+}
+
+.card_under small {
+    color: var(--color-text38);
+}
+
+.back-button {
+    bottom: 40px;
+    z-index: 2;
+}
+
+.color {
+    stroke: #432a0f;
+    fill: #cd562f;
+}
+
+.fire p {
+    line-height: 24px;
+}
+
+/* MB 月老喵推薦卡片 */
+.card-carousel {
+    margin-left: -114px !important;
+    color: var(--color-brown-dark);
+}
+
+.carousel_mb {
+    overflow: hidden;
+    padding: 50px 0 50px;
+    margin-bottom: 50px;
+}
+
+.carousel_mb .pit_mb {
+    text-align: left;
+}
+
+.carousel_mb .price h4::before {
+    content: "NT$ ";
+}
+
+.visuallyhidden {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    opacity: 0;
+
+}
+
+.card-carousel {
+    --card-width: 80%;
+    --card-max-width: 280px;
+    --card-height: 350px;
+    --carousel-min-width: 600px;
+    z-index: 0;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: var(--card-height);
+    min-width: var(--carousel-min-width);
+    transition: filter .3s ease;
+}
+
+@media screen and (max-width: 640px) {
+    .card-carousel {
+        margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+    }
+}
+
+.card-carousel.smooth-return {
+    transition: all .2s ease;
+}
+
+.card-carousel .card {
+    width: var(--card-width);
+    max-width: var(--card-max-width);
+    text-align: center;
+    min-width: 250px;
+    height: var(--card-height);
+    position: absolute;
+    margin: 0 auto;
+    transition: inherit;
+    border-radius: 8px;
+    filter: brightness(.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px 0px var(--color-text38);
+
+}
+
+.card.highlight {
+    filter: brightness(1)
+}
+
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.image-container::after {
+    content: "";
+    display: block;
+    width: 120%;
+    height: 120%;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(-10% - 3px);
+    left: calc(-10% - 3px);
+}
+
+.card_intro_mb{
+    height: 40px;
 }

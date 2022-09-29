@@ -6,9 +6,7 @@ $pageName = '月老喵'; //頁面名稱
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 
 <link rel="stylesheet" href="./index.css">
-<!-- <link rel="stylesheet" href="product_index_style.css"> -->
-<!-- <link rel="stylesheet" href="travel_list_style.css"> -->
-<!-- <link rel="stylesheet" href="./travel_detail_style.css"> -->
+
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
@@ -988,6 +986,11 @@ $pageName = '月老喵'; //頁面名稱
             </h4>
         </div>
 
+
+
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="container-fluid meowTemple_m">
+        </div>
+
         <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="position-absolute cloud cloudm06">
             <img src="./imgs/index/cloudm_5.png" alt="">
         </div>
@@ -1004,8 +1007,6 @@ $pageName = '月老喵'; //頁面名稱
             <img src="./imgs/index/cloudm_10.png" alt="">
         </div>
 
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" class="container-fluid meowTemple_m">
-        </div>
         <div type="button" class="position-absolute btn indexbtn_m btn01_m_ba mx-auto">
             <div class="btn-l">
                 <a href="culture.php">
@@ -1432,7 +1433,7 @@ $pageName = '月老喵'; //頁面名稱
 
     </div>
 
-    <div class="msection6_ba position-relative text-align">
+    <div class="msection6_ba position-relative text-align ">
 
         <div class="row_ba reelm mt-3">
             <div class="middleReelm position-absolute d-flex justify-content-center ">
@@ -1474,7 +1475,7 @@ $pageName = '月老喵'; //頁面名稱
         </div>
 
 
-        <div type="button" class="position-absolute btn indexbtn_m btn02_m_ba mx-auto">
+        <div type="button" class="position-absolute btn indexbtn_m btn02_m_ba mx-auto mb-5 mt-3">
             <div class="btn-l">
                 <a href="member.php">
                 馬上成為月老喵的一員！

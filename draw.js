@@ -5,6 +5,12 @@
 //     $(this).find('svg').attr('fill','#432A0F')
 // })
 
+// 擲筊聲
+const moon = new Audio();
+moon.src = "/MEOW/music/moon.mp3"
+console.log(moon.src);
+
+
 // 音樂
 
 window.onload = function () {
@@ -77,24 +83,27 @@ window.onload = function () {
         }, 25)
     }, 1000)
 
-    function volumeDown() {
-        if (localStorage.getItem('bgm_time') != null) {
-            bgm.currentTime = localStorage.getItem('bgm_time');
-            // bgm.play();
-            // 音量逐漸變大
+
+    $('.todraw').click(function () {
+        // console.log('down');
+            // 音量逐漸變小
             bgm.volume = 0.2;
             v = 0.2;
             var t = setInterval(function () {
                 v -= 0.005;
-                if (v = 0.2) {
+                if (v > 0) {
+                    v -= 0.005;
+                    // console.log(v);
                     bgm.volume = v;
-                } else {
+                } else if(v = 0) {
+                    bgm.pause();
                     clearInterval(t);
                 }
             }, 25);
-        }
-    }
+    })
 }
+
+
 
 // function playAudio() {
 //     console.log('music');
@@ -159,13 +168,11 @@ $(".drawSection11").hide();
 $(".drawSection12").hide();
 $(".drawSection15").hide();
 $(".drawSection16").hide();
-$(".drawSection17").hide();
-$(".drawSection18").hide();
-$(".drawSection19").hide();
+
 $(".drawSection20").hide();
 $(".drawSection21").hide();
 $(".drawSection22").hide();
-$(".drawSection23").hide();
+
 
 $(".musicOn").click(function () {
     $(".drawSection02").show().siblings().hide();
@@ -237,23 +244,53 @@ $("#backtodraw12").click(function () {
     $(".drawSection12").show().siblings().hide();
 })
 
-// $(".todraw").click(function () {
-//     $(".drawSection16").show().siblings().hide();
-// })
-
-$(".toShake").click(function () {
-
-    $(".drawSection17").show().siblings().hide();
-    $('.body_draw01').css('background', 'url(./imgs/draw/drawbgblack.png)');
-    $('.navbar_ba').hide();
+$(".todraw").click(function () {
+    $(".drawSection16").show().siblings().hide();
+    $('.body_draw01').removeClass('d-md-flex').addClass('d-md-block');
 })
 
+$(".to20").click(function () {
+    $(".drawSection20").show().siblings().hide();
+    $('.body_draw04').css('background', 'url(./imgs/draw/drawbg.png)');
+    $('.draw16_none').css({
+        display: 'block',
+        color: 'var(--color-brown-dark)'
+    });
+})
 
+$(".to20").click(function () {
+    $(".drawSection20").show().siblings().hide();
+    $('.body_draw04').css({
+        background: 'url(./imgs/draw/drawbg.png)',
+        color: 'var(--color-brown-dark)'
+    });
+    $('.draw16_none').css({
+        display: 'block !important',
+    });
+    $('header').removeClass('draw16_none')
+})
 
+$(".to21").click(function () {
+    $(".drawSection21").show().siblings().hide();
+    $('.body_draw04').css({
+        background: 'url(./imgs/draw/drawbg.png)',
+        color: 'var(--color-brown-dark)'
+    });
+    $('.draw16_none').css({
+        display: 'block !important',
+    });
+    $('header').removeClass('draw16_none')
+})
 
+$(".to22").click(function () {
+    $(".drawSection22").show().siblings().hide();
+    $('.body_draw04').css({
+        background: 'url(./imgs/draw/drawbg.png)',
+        color: 'var(--color-brown-dark)'
+    });
+    $('header').removeClass('draw16_none')
 
-
-
+})
 
 // 貓翻牌
 
@@ -654,22 +691,16 @@ $(".facebtn").click(function () {
         $(".musclebtnToggle").length >= 1 &&
         $(".facebtnToggle").length >= 1
     ) {
-        // console.log('hi');
-
-        $(".toHowold").removeClass("btn_disabled_ba");
+        $(".toHowold").removeClass("d-none");
         $(".toHowold").click(function () {
             $(".drawSection09").show().siblings().hide();
         })
-
-        // $(".btn_md_next a").attr("href", "draw09.php");
     } else if (
         $(".drawbtnToggle").length < 1 ||
         $(".musclebtnToggle").length < 1 ||
         $(".facebtnToggle").length < 1
     ) {
-
-        $(".toHowold").addClass("btn_disabled_ba");
-        // $(".btn_md_next a").attr("href", "#");
+        $(".toHowold").addClass("d-none");
     }
 });
 
@@ -679,21 +710,16 @@ $(".musclebtn").click(function () {
         $(".musclebtnToggle").length >= 1 &&
         $(".facebtnToggle").length >= 1
     ) {
-        // console.log('hi');
-        $(".toHowold").removeClass("btn_disabled_ba");
+        $(".toHowold").removeClass("d-none");
         $(".toHowold").click(function () {
             $(".drawSection09").show().siblings().hide();
         })
-        // $(".btn_md_next a").attr("href", "draw09.php");
     } else if (
         $(".drawbtnToggle").length < 1 ||
         $(".musclebtnToggle").length < 1 ||
         $(".facebtnToggle").length < 1
     ) {
-        // console.log('no');
-        // $('.btn_md_next').attr('disabled', true)
-        $(".toHowold").addClass("btn_disabled_ba");
-        // $(".btn_md_next a").attr("href", "#");
+        $(".toHowold").addClass("d-none");
     }
 });
 
@@ -703,7 +729,7 @@ $(".heightbtn").click(function () {
         $(".musclebtnToggle").length >= 1 &&
         $(".facebtnToggle").length >= 1
     ) {
-        $(".toHowold").removeClass("btn_disabled_ba");
+        $(".toHowold").removeClass("d-none");
         $(".toHowold").click(function () {
             $(".drawSection09").show().siblings().hide();
         })
@@ -712,7 +738,7 @@ $(".heightbtn").click(function () {
         $(".musclebtnToggle").length < 1 ||
         $(".facebtnToggle").length < 1
     ) {
-        $(".toHowold").addClass("btn_disabled_ba");
+        $(".toHowold").addClass("d-none");
     }
 });
 

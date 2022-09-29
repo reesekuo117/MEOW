@@ -11,16 +11,16 @@ input藍底關掉貼公版 OK
 
 求籤(8張)
 錯誤訊息光香研究(product_list .notlogin) OK
-線上求籤(八張)
-*****音樂五個人包起來
-OK開btn有黑外框-Border透明
-OK五個條件按鈕壞掉要修
-*****Draw07:localstorage
+*****音樂五個人包起來 OK
+開btn有黑外框-Border透明 OK
+五個條件按鈕壞掉要修 OK
+*****Draw07:localstorage OK
 選項陣列if有空
 ***求籤＋收藏功能
 手機月老推薦商品只放一個
-卡片偷蘋果的
-擲筊音效
+卡片偷蘋果的 OK
+擲筊音效 OK
+身體的按鈕第三章才會出現 OK
 
 
 商品(07)

@@ -49,7 +49,7 @@ $title = '線上求籤'
                     月老覺得你籤筒搖得不夠大力，<br>
                     請重抽一支籤。
                 </p>
-                <a href="draw17.php">
+                <a href="drawShake.php">
                     <button class="btn-xl">
                         <h4>
                             重抽一支籤
