@@ -52,6 +52,10 @@
     border: none;
     background: transparent;
 }
+.input_search button:focus{
+    outline: none;
+    border: none;
+}
 /* input{
     border-radius: 8px;
     margin: 0 0 8px;
