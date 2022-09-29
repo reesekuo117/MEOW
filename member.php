@@ -60,7 +60,7 @@ $pageName ='會員中心'; //頁面名稱
             pod.total, 
             pod.quantity,
             p.product_name, 
-            p.product_card_smallimg, 
+            p.product_card_img, 
             ad.city,
             ad2.city region
         FROM product_order po
@@ -364,7 +364,7 @@ $pageName ='會員中心'; //頁面名稱
                             <div class="card-re">
                                 <div class="position-relative ">
                                     <div class="cardimg-re">
-                                        <img src="./imgs/product/cards/<?= $r['product_card_smallimg'] ?>.jpg" alt="">
+                                        <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt="">
                                     </div>
                                     <div class="position-absolute likeicon-re">
                                         <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
@@ -602,7 +602,7 @@ $pageName ='會員中心'; //頁面名稱
                                         </thead>
                                         <tbody class="col-9 p-0">
                                             <tr class="orderlist-re col-12 p-0">
-                                                <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_smallimg'] ?>.jpg" alt=""></td>
+                                                <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_img'] ?>.jpg" alt=""></td>
                                                 <td class="productname-re text-16-re text-center m-0"><?= $rList['product_name'] ?></td>
                                                 <!-- <td class="text-16-re text-center ordertitle-other-re">< ?= $rList['product_name'] ?></td> -->
                                                 <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
