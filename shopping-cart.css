@@ -143,6 +143,11 @@
     z-index: -1;
 } */
 
+/* 手機版高度 */
+/* .mdsection{
+  max
+} */
+
 /*  手機標標籤不要浮起來 */
 .btn-group > .btn.active {
   z-index: -1;
@@ -360,7 +365,8 @@ thead.thWidth {
   margin-right: 4px;
 }
 .cardlist-Yu {
-  padding: 0 px;
+
+
 }
 .mdcardlist-yu {
   overflow: hidden;
@@ -392,7 +398,8 @@ thead.thWidth {
   /* margin-right: 8px; */
 }
 .card-yu {
-  justify-content: space-between;
+  
+  justify-content:baseline;
 }
 #mdtravel-yu .tcard {
   margin: 40px 0;

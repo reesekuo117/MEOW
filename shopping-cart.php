@@ -148,7 +148,7 @@ header("Refresh:180");
                                         </td>
                                         <!-- 數量 -->
                                         <td class="PqtyYU">
-                                            <form method='POST' action='#'>
+                                            <form method='POST' action='#' onchange="updateItem(event)">
 
                                                 <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
 
@@ -156,7 +156,7 @@ header("Refresh:180");
                                                     <?= $v['qty'] ?>
                                                 </span>
 
-                                                <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' onclick="updateItem(event)" />
+                                                <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' />
                                             </form>
                                         </td>
                                         <!-- 小計 -->
@@ -165,7 +165,7 @@ header("Refresh:180");
                                         </td>
                                         <!-- 刪除 -->
                                         <th scope="col" class="form-delete-yu">
-                                            <a href="javascript:" onclick="removeItem(event)">
+                                            <a href="javascript:" onclick="removePItem(event)">
                                                 <i id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
                                             </a>
                                         </th>
@@ -286,7 +286,7 @@ header("Refresh:180");
                                         </td>
                                         <!-- 數量 -->
                                         <td class="TqtyYU">
-                                            <form class="text-center" id='myform' method='POST' action='#'>
+                                            <form class="text-center" id='myform' method='POST' action='#' onchange="updateItem(event)">
 
                                                 <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
 
@@ -294,8 +294,7 @@ header("Refresh:180");
                                                     <?= $j['qty'] ?>
                                                 </span>
 
-                                                <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' 
-                                                onclick="updateItem(event)" />
+                                                <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' />
                                             </form>
                                         </td>
                                         <!-- 小計 -->
@@ -306,7 +305,7 @@ header("Refresh:180");
                                         </td>
                                         <!-- 刪除 -->
                                         <th scope="col" class="form-delete-yu">
-                                        <a href="javascript:" onclick="removeItem(event)">
+                                        <a href="javascript:" onclick="removeTItem(event)">
                                                 <i id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
                                             </a>
                                         </th>
@@ -336,7 +335,7 @@ header("Refresh:180");
                     <?php else : ?>
                         <a href="shopping-cart-travellist.php" class="btn unique-nextbutton-yu">
                             <button class=" unique-btn-yu  me-md-2" type="button" 
-                            data-t-sid="<?= $j["sid"] ?>" onclick="addToCart_T_Yu(event)">
+                            data-sid="<?= $j["sid"] ?>" onclick="addToCart_T_Yu(event)">
                                 <p class="m-0 text-center">
                                     下一步
                                 </p>
@@ -393,29 +392,24 @@ header("Refresh:180");
         </div>
     </div>
     <div id="mdmyTabContent-yu" class="  tab-content container">
-        <div class="cardcheckall-yu mx-2 row d-flex align-items-center">
+        <!-- <div class="cardcheckall-yu mx-2 row d-flex align-items-center">
             <input type="checkbox" class="">
             <h6 class="pl m-0">全選</h6>
-        </div>
+        </div> -->
         <!--  手機購物車商品清單卡片 -->
         <div id="mduniqui-yu" class=" container-fluid">
             <div class="card-yu">
                 <!-- flex-nowrap -->
                 <div class=" d-flex  mdP-img">
-                    <input type="checkbox" class="largerCheckbox-yu">
+                    <!-- <input type="checkbox" class="largerCheckbox-yu"> -->
                     <img class=" w-100" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
                 </div>
-                <div class="cardlist-Yu">
+                <div class="cardlist-Yu pl-4">
                     <div class="mdcardlist-yu">
                         <p class="m-0">
                             <?= $v["product_name"] ?>
                         </p>
                     </div>
-                    <!-- <select class="mdform-select-yu" id="autosizing-yu">
-                        <option value="0">甜作之盒單入組</option>
-                        <option value="1">甜作之盒&棉布御守單入組</option>
-                        <option value="2">棉布御守</option>
-                    </select> -->
                     <!-- 單價 -->
                     <h5 class="mdprice-yu">
                         <?= $v["product_price"] ?>
@@ -461,29 +455,28 @@ header("Refresh:180");
         <div id="mdtravel-yu" class="  container-fluid">
             <div class="d-flex tcard">
                 <!-- flex-nowrap -->
-                <div class=" d-flex px-1">
-                    <!-- <input type="checkbox" class="largerCheckbox-yu"> -->
-                    <img class=" mdImg-Yu " src="imgs/購物車手機版-行程(測試用 大).png" alt="">
+                <div class=" d-flex">
+                    <img class=" w-75" src="imgs/travel/cards/<?= $j['travelcard_img'] ?>" alt="...">
                 </div>
                 <div class="px-1">
                     <div class="mdcardlist-yu">
-                        <p class="m-0">
+                        <p class="m-0 " >
                             <?= $j['travel_name'] ?>
                         </p>
                     </div>
                     <!-- 單價 -->
-                    <h5 class="mdprice-yu">
+                    <h5 class="mdprice-yu onePriceinputYu" name="priceYu">
                         <?= $j['travel_price'] ?>
                     </h5>
                     <!-- 數量 -->
                     <form class="d-flex" method='POST' action='#'>
-                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                    <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
 
-                        <span type='text' name='txt' value='1' class='px-1 spanqty-yu numberTotalYu'>
-                            1
-                        </span>
+                    <span type='text' name='txt' value='1' class=' TqtyYu px-1 qty-yu numberTotalYu'>
+                    <?= $j['qty'] ?>
+                    </span>
 
-                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                    <input name="btnright" type='button' value='+' class='qtyplus' field='quantity'  />
                     </form>
                 </div>
             </div>
