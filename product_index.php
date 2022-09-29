@@ -73,7 +73,7 @@ $products_2 = $pdo->query($sql_2)->fetchAll();
 
         <div class="product_midcontrol">
             <div class="container">
-                <div class="row no-gutters">
+                <div class="row no-gutters pt-1">
                     <div class="col-3">
                         <div class="midicon">
                             <a href="#product_brand">
