@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-.travel_search{
+.travel_search {
     width: 100%;
     height: 530px;
     background: url(./imgs/travel/T01_8.jpg) top center / cover;
@@ -15,7 +15,7 @@
     align-items: center;
 }
 
-.search_bar h3{
+.search_bar h3 {
     padding-bottom: 8px;
 }
 
@@ -33,25 +33,30 @@
 
 
 .search_btn button {
+    cursor: pointer;
     outline: none;
     color: #fff;
     border-radius: 30px;
-    border: 1px solid #432A0F;
+    border: 0px solid #432A0F;
     background-color: #E5A62A;
     padding: 4px 16px;
     margin-top: 8px;
 }
-.search_btn button:focus{
+
+.search_btn button:focus {
     outline: none;
     border: none;
 }
-.search_btn button:hover{
+
+.search_btn button:hover {
     color: var(--color-text87);
 }
-.input_search button{
+
+.input_search button {
     border: none;
     background: transparent;
 }
+
 /* input{
     border-radius: 8px;
     margin: 0 0 8px;
@@ -105,27 +110,31 @@
     text-decoration: none;
     color: var(--color-text87);
 }
+
 .travel_sort a:hover {
     color: var(--color-orange);
 }
+
 .travel_sort a:focus {
     color: var(--color-orange);
 }
-.travel_sort a.sort_active{
+
+.travel_sort a.sort_active {
     color: var(--color-orange);
 }
+
 .travel_section input[type=checkbox]:checked {
     background: var(--color-yellow);
     color: #fff;
 }
 
-.travel_cate{
+.travel_cate {
     padding-bottom: 20px;
     color: var(--color-text87);
 
 }
 
-.aside .col{
+.aside .col {
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -136,25 +145,28 @@
 
 /* ----------側邊攔篩選樣式------- */
 
-.btncolor_default{
+.btncolor_default {
     color: var(--color-text87) !important;
 }
-.btncolor_default:hover{
-    color: var(--color-yellow) !important;
-}
-.btncolor_active{
+
+.btncolor_default:hover {
     color: var(--color-yellow) !important;
 }
 
-.travel_section a{
+.btncolor_active {
+    color: var(--color-yellow) !important;
+}
+
+.travel_section a {
     color: #432A0F;
     text-decoration: none;
 }
-.travel_section a:hover{    
+
+.travel_section a:hover {
     color: var(--color-yellow);
 }
 
-.list-unstyled a{
+.list-unstyled a {
     color: #432A0F;
     text-decoration: none;
 }
@@ -163,7 +175,7 @@
 
 
 /* -------上方排序---------------- */
-a.sort_active{
+a.sort_active {
     color: var(--color-orange);
 }
 
@@ -176,27 +188,31 @@ a.sort_active{
 
 
 /* 手機版排序 */
-.travel_cate_mb{
+.travel_cate_mb {
     color: var(--color-text87);
 
 }
-.travel_sortbtn_mb button.tsbtnmbb{
+
+.travel_sortbtn_mb button.tsbtnmbb {
     border: 2px solid var(--color-text60);
     border-radius: 8px;
     padding: 4px;
     background-color: var(--color-lightcreamy);
     color: var(--color-text87);
 }
-.travel_sortbtn_mb button.tsmbactive{
+
+.travel_sortbtn_mb button.tsmbactive {
     /* border: 2px solid var(--color-text60) !important; */
     /* border-radius: 8px; */
     background-color: var(--color-yellow);
     /* color: var(--color-text87); */
 
 }
-.travel_sortbtn_mb button{
+
+.travel_sortbtn_mb button {
     outline: none;
 }
+
 /* -----------------------------價格篩選----------------------------- */
 .filter-content__element {
     width: 100%;
@@ -314,12 +330,14 @@ a.sort_active{
 }
 
 /* -------------------------行程卡片-------------------------- */
-.travel_list{ 
+.travel_list {
     justify-content: flex-start;
 }
-.travel_list .row{
+
+.travel_list .row {
     flex-direction: column;
 }
+
 .card_row {
     justify-content: flex-start;
     border-radius: 8px;
@@ -327,7 +345,7 @@ a.sort_active{
     overflow: hidden;
 }
 
-.webkitlineYu{
+.webkitlineYu {
     overflow: hidden;
     /* border: 1px solid #000 !important; */
     width: 85%;
@@ -337,112 +355,130 @@ a.sort_active{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-.t_img{
+
+.t_img {
     height: 260px;
 }
-.t_img img{
+
+.t_img img {
     /* position: relative; */
     /* width: 400px; */
     height: 100%;
 }
-.card-body{
+
+.card-body {
     /* position: relative; */
     box-sizing: border-box;
     /* padding: 30px; */
     margin: 0 auto;
 }
+
 /* .card-body{
     padding: 12px 60px;
 } */
-@media screen and (max-width:768px){
-    .card-body{
+@media screen and (max-width:768px) {
+    .card-body {
         padding: 20px 20px 10px;
     }
-    .t_card{
+
+    .t_card {
         /* width: 100px; */
         width: 100%;
     }
-    .mdpriceYu{
+
+    .mdpriceYu {
         padding-bottom: 12px;
         width: 100%;
 
     }
-    .travel_dateYu{
+
+    .travel_dateYu {
         width: 100px;
         /* border: 1px solid #CD562F; */
     }
-    .webkitlineYu{
+
+    .webkitlineYu {
         overflow: hidden;
         /* border: 1px solid #000; */
-        width: 100%; 
+        width: 100%;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
     }
+
     .card_row {
         background-color: #ffffff;
         box-shadow: 0px 0px 8px var(--color-text38);
     }
-    .icon_heart{
+
+    .icon_heart {
         position: absolute;
         right: 0;
         bottom: 200%;
         stroke: #fff;
         cursor: pointer;
         z-index: 9999999;
-    
-        }
-        .icon_fivestar{
-            width: 18px;
-            height: 18px;
-            background: url(./imgs/product/star.png);
-            }
+
+    }
+
+    .icon_fivestar {
+        width: 18px;
+        height: 18px;
+        background: url(./imgs/product/star.png);
+    }
 }
+
 /* .card-body_mb{
     padding: 12px;
 } */
-.card_title .icon_heart{
+.card_title .icon_heart {
     z-index: 999999;
     position: absolute;
 }
-.card-body .row{
+
+.card-body .row {
     flex-direction: column;
 }
-.card_title{
+
+.card_title {
     /* padding-bottom: 20px; */
     position: relative;
 
 }
+
 /* .card_title_mb{
     padding-bottom: 8px;
 } */
-.card_title a{
+.card_title a {
     text-decoration: none;
 }
-.card-text{
+
+.card-text {
     color: var(--color-text100);
-  margin: auto 0;
+    margin: auto 0;
     /* border: 1px solid #000; */
 }
 
-.card_small small{
+.card_small small {
     color: var(--color-text60);
 }
 
-.card_intro_mb p{
+.card_intro_mb p {
     margin: 0;
     padding-bottom: 10px;
 }
-.card-text span{
+
+.card-text span {
     color: var(--color-text60);
 }
-.p_img{
+
+.p_img {
     position: relative;
 }
 
-@media screen and (min-width:768px){
-    .icon_heart{
+@media screen and (min-width:768px) {
+    .icon_heart {
         position: absolute;
         left: 95%;
         bottom: 10%;
@@ -450,23 +486,28 @@ a.sort_active{
         cursor: pointer;
 
     }
-    .icon_fivestar{
+
+    .icon_fivestar {
         width: 92px;
         height: 18px;
         background: url(./imgs/product/fivestar.png);
 
     }
-    .price{
+
+    .price {
         margin-bottom: 24px;
     }
-    .card_title{
+
+    .card_title {
         padding: 20px 0 0 26px;
 
     }
-    .card_under{
+
+    .card_under {
         padding: 0 0 0 26px;
     }
 }
+
 /* @media screen and (max-width:768px){
 
 } */
@@ -474,17 +515,20 @@ a.sort_active{
 @media screen and (max-width:768px){
 
 } */
-.icon_fivestar i{
+.icon_fivestar i {
     color: var(--color-yellow);
 }
-.color{
+
+.color {
     stroke: #432A0F;
     fill: #CD562F;
 }
+
 .pl_row {
     margin: 36px auto;
 }
-.travel_list{
+
+.travel_list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -493,11 +537,13 @@ a.sort_active{
     width: 100%;
 
 }
-.travel_list a{
+
+.travel_list a {
     text-decoration: none;
     color: var(--color-text87);
 }
-.t_card{
+
+.t_card {
     padding-bottom: 32px;
 }
 
@@ -505,35 +551,39 @@ a.sort_active{
 /* @media screen and (max-width:768px) {
     .card-body{
         /* margin: 0; */
-        /* padding: 16px 16px;
+/* padding: 16px 16px;
     } */
-    
 
 
-.card_under{
+
+.card_under {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
 }
-.card_under .price{
+
+.card_under .price {
     justify-content: flex-end;
     align-self: baseline;
 }
-.card_under .price::before{
-    content:"NT$ ";
+
+.card_under .price::before {
+    content: "NT$ ";
 }
-.card_under .price::after{
-    content:" /人 ";
+
+.card_under .price::after {
+    content: " /人 ";
     font-size: 8px;
 }
 
 /* -------------------上下頁按鈕------------------ */
 /* ------------------頁數按鈕----------------- */
-.pages{
+.pages {
     margin: 3rem;
 }
-.pages nav li a{
+
+.pages nav li a {
     padding: 10px 16px;
     margin: 8px;
     background-color: #fff;
@@ -541,22 +591,25 @@ a.sort_active{
     border-radius: 4px;
     color: var(--color-text38);
 }
-.pages nav li a:hover{
+
+.pages nav li a:hover {
     border: 1px solid var(--color-text87);
     color: var(--color-text87);
     background-color: #fff;
 }
-.pages .page-item.active .page-link{
+
+.pages .page-item.active .page-link {
     border: 1px solid var(--color-text87);
     color: #fff;
     background-color: var(--color-orange);
 }
-.pages .row{
+
+.pages .row {
     justify-content: center;
 }
 
 /* ------------------未登入提醒視窗----------------- */
-.notlogin{
+.notlogin {
     /* margin: 0 auto; */
     position: fixed;
     top: 0;
@@ -564,10 +617,10 @@ a.sort_active{
     left: 0;
     right: 0;
     background-color: rgba(47, 47, 47, 0.635);
-    
+
 }
 
-.alert{
+.alert {
     overflow: hidden;
     flex-direction: column;
     width: 500px;
@@ -578,24 +631,27 @@ a.sort_active{
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     backdrop-filter: blur(5px);
     z-index: 2;
 }
-.alert_head{
+
+.alert_head {
     width: 100%;
     height: 60px;
     background-color: var(--color-yellow);
     position: absolute;
     top: 0;
 }
-.alert_head i{
+
+.alert_head i {
     font-size: 2.5rem;
     line-height: 60px;
     padding-left: 16px;
     color: var(--color-text100);
 }
-.alert_title{
+
+.alert_title {
     text-align: center;
     color: var(--color-text100);
     padding-top: 30px;
@@ -604,23 +660,26 @@ a.sort_active{
     left: 130px;
     bottom: 180px; */
 }
-.btn_ok{
+
+.btn_ok {
     /* margin: 0 auto; */
     text-align: center;
     margin-top: 15px;
     padding-top: 30px;
 }
-.alert .btn_ok button{
+
+.alert .btn_ok button {
     /* position: absolute;
     left: 200px;
     bottom: 100px; */
-    
+
     color: var(--color-text100);
     padding: 8px 16px;
     border-radius: 16px;
     background-color: var(--color-yellow);
 }
-.alert_img{
+
+.alert_img {
     width: 100px;
     position: absolute;
     left: 10px;

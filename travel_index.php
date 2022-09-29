@@ -84,7 +84,7 @@ header("Refresh:180");
                         給自己一個認識更多人的機會吧！
                     </h3>
                     <div class=" friend-btn-yu d-grid gap-2 d-md-flex justify-content-md-center">
-                        <a href="travel_list.php" class="morebutton-yu">
+                        <a href="travel_list.php?kind=1" class="morebutton-yu">
                             <button class=" btn me-md-2" type="button">
                                 <p class="m-0 text-center">
                                     看更多交友聯誼
@@ -129,7 +129,7 @@ header("Refresh:180");
                         體驗在地風情
                     </h3>
                     <div class=" friend-btn-yu d-grid gap-2 d-md-flex justify-content-md-center">
-                        <a href="travel_list.php" class="morebutton-yu">
+                        <a href="travel_list.php?kind=2" class="morebutton-yu">
                             <button class=" btn me-md-2" type="button">
                                 <p class="m-0 text-center">
                                     看更多文化之旅
@@ -210,7 +210,7 @@ header("Refresh:180");
                     </p>
                 </div>
                 <div class=" friend-btn-yu d-grid gap-2 d-flex justify-content-md-center">
-                    <a href="travel_list.php" class="morebutton-yu">
+                    <a href="travel_list.php?kind=1" class="morebutton-yu">
                         <button class=" btn " type="button">
                             <p class="m-0 text-center">
                                 看更多交友聯誼
@@ -265,7 +265,7 @@ header("Refresh:180");
                 </p>
             </div>
             <div class=" friend-btn-yu d-grid gap-2 d-flex justify-content-md-center">
-                <a href="travel_list.php" class="morebutton-yu">
+                <a href="travel_list.php?kind=2" class="morebutton-yu">
                     <button class=" btn " type="button">
                         <p class="m-0 text-center">
                             看更多文化之旅
@@ -283,10 +283,9 @@ header("Refresh:180");
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 
 <script>
-    
     // #move3-yu
     $(window).scroll(function() {
-        if ($(window).scrollTop()  >= ($('#move3-yu').offset().top - window.screen.height * 1 / 2)) {
+        if ($(window).scrollTop() >= ($('#move3-yu').offset().top - window.screen.height * 1 / 2)) {
             $('#move3-yu').css({
                 opacity: 1,
                 transform: "translateY(0px)",
@@ -303,7 +302,7 @@ header("Refresh:180");
 
     // #move4-yu
     $(window).scroll(function() {
-        if ($(window).scrollTop()  >= ($('#move4-yu').offset().top - window.screen.height * 1 / 2)) {
+        if ($(window).scrollTop() >= ($('#move4-yu').offset().top - window.screen.height * 1 / 2)) {
             $('#move4-yu').css({
                 opacity: 1,
                 transform: "translateY(0px)",
@@ -320,7 +319,7 @@ header("Refresh:180");
 
     // #move5-yu 
     $(window).scroll(function() {
-        if ($(window).scrollTop()  >= ($('#move5-yu ').offset().top - window.screen.height * 1 / 2)) {
+        if ($(window).scrollTop() >= ($('#move5-yu ').offset().top - window.screen.height * 1 / 2)) {
             $('#move5-yu ').css({
                 opacity: 1,
                 transform: "translatex(0px)",
@@ -337,7 +336,7 @@ header("Refresh:180");
 
     // #move6-yu 
     $(window).scroll(function() {
-        if ($(window).scrollTop()  >= ($('#move6-yu ').offset().top - window.screen.height * 1 / 2)) {
+        if ($(window).scrollTop() >= ($('#move6-yu ').offset().top - window.screen.height * 1 / 2)) {
             $('#move6-yu ').css({
                 opacity: 1,
                 transform: "translatex(0px)",

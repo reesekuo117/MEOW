@@ -40,8 +40,8 @@ if ($cate) {
 
 //搜尋關鍵字
 if (!empty($search)) {
-    $where .= sprintf(" AND travel_name LIKE %s ", $pdo->quote('%'. $search. '%'));
-    
+    $where .= sprintf(" AND travel_name LIKE %s ", $pdo->quote('%' . $search . '%'));
+
     $qsp['search'] = $search;
 }
 
@@ -149,18 +149,18 @@ header("Refresh:180");
                     </div> -->
         <!-- TODO: 救命關鍵字功能要怎麼寫→套PHP -->
         <!-- https://webdesign.tutsplus.com/zh-hant/tutorials/css-experiments-with-a-search-form-input-and-button--cms-22069 -->
-        <form  name="search_form" class="input_search">
+        <form name="search_form" class="input_search">
             <div class="container-1">
                 <label for="">
-                        <input type="text" id="search" name="search" placeholder="請輸入關鍵字搜尋" value="<?= empty($search) ? '' : htmlentities($search) ?>" />
+                    <input type="text" id="search" name="search" placeholder="請輸入關鍵字搜尋" value="<?= empty($search) ? '' : htmlentities($search) ?>" />
                 </label>
                 <button class="icon" type="submit"><i class="fa fa-search"></i></button>
             </div>
         </form>
         <div class="search_btn">
-            <button onclick="$('#search').val('聯誼')">#聯誼</button>
-            <button onclick="$('#search').val('霞海')">#霞海</button>
-            <button onclick="$('#search').val('七夕')">#七夕</button>
+            <button onclick="$('#search').val('月老')">#月老</button>
+            <button onclick="$('#search').val('體驗')">#體驗</button>
+            <button onclick="$('#search').val('一日')">#一日</button>
         </div>
     </div>
 </div>
@@ -176,42 +176,38 @@ header("Refresh:180");
                 <h5 style="color: var(--color-text87);"><i class="fa-regular fa-hourglass-half px-1"></i>排序方式</h5>
             </div>
             <div class="col">
-                <a href="?<?php 
-                                $tmp = $qsp;
-                                // $tmp['kind'] = $k['sid'];
-                                echo http_build_query($tmp);
-                                ?>&sort=newp#travelDesktopSort" 
-                                class="<?= $sort === 'newp' ? "sort_active" : "" ?>">
+                <a href="?<?php
+                            $tmp = $qsp;
+                            // $tmp['kind'] = $k['sid'];
+                            echo http_build_query($tmp);
+                            ?>&sort=newp#travelDesktopSort" class="<?= $sort === 'newp' ? "sort_active" : "" ?>">
                     <h5>最新上架</h5>
                 </a>
             </div>
             <div class="col">
-                <a href="?<?php 
-                                $tmp = $qsp;
-                                // $tmp['kind'] = $k['sid'];
-                                echo http_build_query($tmp);
-                                ?>&sort=hotp#travelDesktopSort" 
-                class="<?= $sort === 'hotp' ? "sort_active" : "" ?>">
+                <a href="?<?php
+                            $tmp = $qsp;
+                            // $tmp['kind'] = $k['sid'];
+                            echo http_build_query($tmp);
+                            ?>&sort=hotp#travelDesktopSort" class="<?= $sort === 'hotp' ? "sort_active" : "" ?>">
                     <h5>熱門程度</h5>
                 </a>
             </div>
             <div class="col">
-                <a href="?<?php 
-                                $tmp = $qsp;
-                                // $tmp['kind'] = $k['sid'];
-                                echo http_build_query($tmp);
-                                ?>&sort=pricehigh#travelDesktopSort" 
-                class="<?= $sort === 'pricehigh' ? "sort_active" : "" ?>">
+                <a href="?<?php
+                            $tmp = $qsp;
+                            // $tmp['kind'] = $k['sid'];
+                            echo http_build_query($tmp);
+                            ?>&sort=pricehigh#travelDesktopSort" class="<?= $sort === 'pricehigh' ? "sort_active" : "" ?>">
                     <h5>價格高 → 低</h5>
                 </a>
             </div>
             <div class="col">
-                <a href="?<?php 
-                                $tmp = $qsp;
-                                // $tmp['kind'] = $k['sid'];
-                                echo http_build_query($tmp);
-                                ?>&sort=pricelow#travelDesktopSort"
-                class="<?= $sort === 'pricelow' ? "sort_active" : "" ?>">
+                <a href="?<?php
+                            $tmp = $qsp;
+                            // $tmp['kind'] = $k['sid'];
+                            echo http_build_query($tmp);
+                            ?>&sort=pricelow#travelDesktopSort" class="<?= $sort === 'pricelow' ? "sort_active" : "" ?>">
                     <h5>價格低 → 高</h5>
                 </a>
             </div>
@@ -232,22 +228,22 @@ header("Refresh:180");
                 <form action="" class="location">
                     <ul>
                         <p class=" mb-0 form-check light ">
-                                <a type="button" href="?#desktopSort" class="<?= empty($selectedCity) ? "btncolor_active" : "btncolor_default" ?>">
-                                    全台地區
+                            <a type="button" href="?#desktopSort" class="<?= empty($selectedCity) ? "btncolor_active" : "btncolor_default" ?>">
+                                全台地區
+                            </a>
+                        </p>
+                        <?php foreach ($city as $c) : ?>
+                            <div class=" form-check ">
+                                <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
+                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " id="form-check-ca" type="button" href="?<?php
+                                                                                                                                                                $tmp = $qsp;
+                                                                                                                                                                $tmp['city'] = $c['sid'];
+                                                                                                                                                                echo http_build_query($tmp);
+                                                                                                                                                                ?>#travelDesktopSort">
+                                    <?= $c['city'] ?>
                                 </a>
-                            </p>
-                            <?php foreach ($city as $c) : ?>
-                                <div class=" form-check ">
-                                    <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
-                                    <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " id="form-check-ca" type="button" href="?<?php
-                                    $tmp = $qsp;
-                                    $tmp['city'] = $c['sid'];
-                                    echo http_build_query($tmp);
-                                    ?>#travelDesktopSort">
-                                        <?= $c['city'] ?>
-                                    </a>
-                                </div>
-                            <?php endforeach ?>
+                            </div>
+                        <?php endforeach ?>
                     </ul>
                 </form>
             </section>
@@ -257,13 +253,13 @@ header("Refresh:180");
             <section>
                 <form action="" class="location s_category">
                     <ul>
-                    <?php foreach ($kind as $k) : ?>
+                        <?php foreach ($kind as $k) : ?>
                             <div class="form-check">
-                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php 
-                                $tmp = $qsp;
-                                $tmp['kind'] = $k['sid'];
-                                echo http_build_query($tmp);
-                                ?>#travelDesktopSort">
+                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php
+                                                                                                                                                                $tmp = $qsp;
+                                                                                                                                                                $tmp['kind'] = $k['sid'];
+                                                                                                                                                                echo http_build_query($tmp);
+                                                                                                                                                                ?>#travelDesktopSort">
                                     <?= $k['travel_kind'] ?>
                                 </a>
                             </div>
@@ -305,44 +301,40 @@ header("Refresh:180");
                 <form action="" class="location s_time">
                     <ul>
                         <li class="list-unstyled">
-                            <a href="?<?php 
-                                    $tmp = $qsp;
-                                    // $tmp['kind'] = $k['sid'];
-                                    echo http_build_query($tmp);
-                                    ?>&sort=newp#travelDesktopSort" 
-                                    class="<?= $sort === 'newp' ? "sort_active" : "" ?>">
-                                    <p>最新上架</p>
+                            <a href="?<?php
+                                        $tmp = $qsp;
+                                        // $tmp['kind'] = $k['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>&sort=newp#travelDesktopSort" class="<?= $sort === 'newp' ? "sort_active" : "" ?>">
+                                <p>最新上架</p>
                             </a>
                         </li>
                         <li class="list-unstyled">
-                            <a href="?<?php 
-                                $tmp = $qsp;
-                                // $tmp['kind'] = $k['sid'];
-                                echo http_build_query($tmp);
-                                ?>&sort=hotp#travelDesktopSort" 
-                                class="<?= $sort === 'hotp' ? "sort_active" : "" ?>">
+                            <a href="?<?php
+                                        $tmp = $qsp;
+                                        // $tmp['kind'] = $k['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>&sort=hotp#travelDesktopSort" class="<?= $sort === 'hotp' ? "sort_active" : "" ?>">
                                 <p>熱門程度</p>
                             </a>
                         </li>
                         <li class="list-unstyled">
-                        <a href="?<?php 
-                                $tmp = $qsp;
-                                // $tmp['kind'] = $k['sid'];
-                                echo http_build_query($tmp);
-                                ?>&sort=pricehigh#travelDesktopSort" 
-                                class="<?= $sort === 'pricehigh' ? "sort_active" : "" ?>">
+                            <a href="?<?php
+                                        $tmp = $qsp;
+                                        // $tmp['kind'] = $k['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>&sort=pricehigh#travelDesktopSort" class="<?= $sort === 'pricehigh' ? "sort_active" : "" ?>">
                                 <p>價格高 → 低</p>
-                        </a>
+                            </a>
                         </li>
                         <li class="list-unstyled">
-                        <a href="?<?php 
-                                $tmp = $qsp;
-                                // $tmp['kind'] = $k['sid'];
-                                echo http_build_query($tmp);
-                                ?>&sort=pricelow#travelDesktopSort"
-                                class="<?= $sort === 'pricelow' ? "sort_active" : "" ?>">
+                            <a href="?<?php
+                                        $tmp = $qsp;
+                                        // $tmp['kind'] = $k['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>&sort=pricelow#travelDesktopSort" class="<?= $sort === 'pricelow' ? "sort_active" : "" ?>">
                                 <p>價格低 → 高</p>
-                        </a>
+                            </a>
                         </li>
                     </ul>
                 </form>
@@ -370,10 +362,10 @@ header("Refresh:180");
                             <div class=" form-check ">
                                 <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
                                 <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " id="form-check-ca" type="button" href="?<?php
-                                $tmp = $qsp;
-                                $tmp['city'] = $c['sid'];
-                                echo http_build_query($tmp);
-                                ?>#travelDesktopSort">
+                                                                                                                                                                $tmp = $qsp;
+                                                                                                                                                                $tmp['city'] = $c['sid'];
+                                                                                                                                                                echo http_build_query($tmp);
+                                                                                                                                                                ?>#travelDesktopSort">
                                     <?= $c['city'] ?>
                                 </a>
                             </div>
@@ -383,11 +375,11 @@ header("Refresh:180");
                         <h5>－依活動類型</h5>
                         <?php foreach ($kind as $k) : ?>
                             <div class="form-check">
-                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php 
-                                $tmp = $qsp;
-                                $tmp['kind'] = $k['sid'];
-                                echo http_build_query($tmp);
-                                ?>#travelDesktopSort">
+                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php
+                                                                                                                                                                $tmp = $qsp;
+                                                                                                                                                                $tmp['kind'] = $k['sid'];
+                                                                                                                                                                echo http_build_query($tmp);
+                                                                                                                                                                ?>#travelDesktopSort">
                                     <?= $k['travel_kind'] ?>
                                 </a>
                             </div>
@@ -556,58 +548,58 @@ header("Refresh:180");
         <div class="row">
             <nav aria-label="Page navigation example">
                 <ul class="pagination d-none d-md-flex ">
-                <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
                         <!-- <a href="?< ?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="< ?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
                         <h5>價格高 → 低</h5>
                         </a> -->
-                            <a class="page-link" href="?<?php $qsp['page']=1;
-                            echo http_build_query($qsp); ?>#desktopSort">
-                                <i class="fa-solid fa-angles-left"></i>
-                            </a>
-                        </li>
-                        <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
+                        <a class="page-link" href="?<?php $qsp['page'] = 1;
+                                                    echo http_build_query($qsp); ?>#desktopSort">
+                            <i class="fa-solid fa-angles-left"></i>
+                        </a>
+                    </li>
+                    <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
                         if ($i >= 1 and $i <= $totalPages) :
-                            $qsp['page']=$i;
+                            $qsp['page'] = $i;
                     ?>
-                        <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                            <a class="page-link" href="?<?= http_build_query($qsp); ?>#desktopSort"><?= $i ?></a>
-                        </li>
+                            <li class="page-item <?= $page == $i ? 'active' : '' ?>">
+                                <a class="page-link" href="?<?= http_build_query($qsp); ?>#desktopSort"><?= $i ?></a>
+                            </li>
                     <?php endif;
                     endfor; ?>
                     <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?<?php $qsp['page']=$totalPages;
-                        echo http_build_query($qsp); ?>#desktopSort">
+                        <a class="page-link" href="?<?php $qsp['page'] = $totalPages;
+                                                    echo http_build_query($qsp); ?>#desktopSort">
                             <i class="fa-solid fa-angles-right"></i>
                         </a>
                     </li>
                 </ul>
-                
+
 
 
 
 
                 <ul class="pagination d-flex d-md-none ">
-                <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
                         <!-- <a href="?< ?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="< ?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
                         <h5>價格高 → 低</h5>
                         </a> -->
-                            <a class="page-link" href="?<?php $qsp['page']=1;
-                            echo http_build_query($qsp); ?>#desktopSort">
-                                <i class="fa-solid fa-angles-left"></i>
-                            </a>
-                        </li>
-                        <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
+                        <a class="page-link" href="?<?php $qsp['page'] = 1;
+                                                    echo http_build_query($qsp); ?>#desktopSort">
+                            <i class="fa-solid fa-angles-left"></i>
+                        </a>
+                    </li>
+                    <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
                         if ($i >= 1 and $i <= $totalPages) :
-                            $qsp['page']=$i;
+                            $qsp['page'] = $i;
                     ?>
-                        <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                            <a class="page-link" href="?<?= http_build_query($qsp); ?>#desktopSort"><?= $i ?></a>
-                        </li>
+                            <li class="page-item <?= $page == $i ? 'active' : '' ?>">
+                                <a class="page-link" href="?<?= http_build_query($qsp); ?>#desktopSort"><?= $i ?></a>
+                            </li>
                     <?php endif;
                     endfor; ?>
                     <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?<?php $qsp['page']=$totalPages;
-                        echo http_build_query($qsp); ?>#desktopSort">
+                        <a class="page-link" href="?<?php $qsp['page'] = $totalPages;
+                                                    echo http_build_query($qsp); ?>#desktopSort">
                             <i class="fa-solid fa-angles-right"></i>
                         </a>
                     </li>
