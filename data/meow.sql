@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2022 年 09 月 28 日 19:51
+-- 產生時間： 2022 年 09 月 29 日 13:01
 -- 伺服器版本： 10.4.21-MariaDB
 -- PHP 版本： 8.0.19
 
@@ -264,9 +264,9 @@ CREATE TABLE `product` (
   `id` varchar(100) DEFAULT NULL,
   `category_sid` int(11) DEFAULT NULL,
   `product_name` varchar(255) DEFAULT NULL,
+  `product_card_img` varchar(255) DEFAULT NULL,
   `product_card_smallimg` varchar(255) DEFAULT NULL,
   `product_card_bigimg` varchar(255) DEFAULT NULL,
-  `product_size` varchar(255) DEFAULT NULL,
   `product_price` int(11) DEFAULT NULL,
   `product_subtitle` varchar(255) DEFAULT NULL,
   `product_introfirst` varchar(255) DEFAULT NULL,
@@ -282,7 +282,7 @@ CREATE TABLE `product` (
 -- 傾印資料表的資料 `product`
 --
 
-INSERT INTO `product` (`sid`, `id`, `category_sid`, `product_name`, `product_card_smallimg`, `product_card_bigimg`, `product_size`, `product_price`, `product_subtitle`, `product_introfirst`, `product_introimgfirst`, `product_introsec`, `product_introimgsec`, `product_popular`, `product_comment`, `created_at`) VALUES
+INSERT INTO `product` (`sid`, `id`, `category_sid`, `product_name`, `product_card_img`, `product_card_smallimg`, `product_card_bigimg`, `product_price`, `product_subtitle`, `product_introfirst`, `product_introimgfirst`, `product_introsec`, `product_introimgsec`, `product_popular`, `product_comment`, `created_at`) VALUES
 (1, 'P01', 2, '月老系祈福戀人手繩', 'P01_1', 'P01_1_b.jpg,P01_2_b.jpg,P01_3_b.jpg,P01_4_b.jpg,P01_5_b.jpg', 'P01_1_s.jpg,P01_2_s.jpg,P01_3_s.jpg,P01_s_b.jpg,P01_5_s.jpg', 485, '月老系｜ 胭脂 喜糖 姻緣樹\n「 戀人的 守護幸福祈願力量♡ 」', '古文「系」字通「繫」。 <br> <br> 『赤繩子耳，以系夫婦之足，及其坐則潛用相繫。雖讐敵之家，貴賤懸隔，天涯從宦，吳楚異鄉，此繩一繫，終不可逭。』 <br> <br> 月下老人最早出自於唐朝李複言所著《續玄怪錄。定婚店》中的故事， <br> 故事中少年韋固因為老人的姻緣牽引， <br> 多年後最終娶得當初老人所言那賣菜婦人懷中女孩為妻。 <br> 這段話說被紅繩系住的男女不論是仇家、貧富懸殊、或相隔千里，最終都會成為夫妻。 <br> <br>', 'P01_4.jpg,P01_5.jpg', ':: 霞海城隍廟香爐加持 :: <br> 祝願每一位配戴手繩的你(妳)，都能平安自在♡ <br> <br> :: 兩顆珠子 :: <br> 月老系 就是藉月老傳說的美意， <br> 將兩顆聖木珠結在手繩頭尾兩端，繞一圈交會，相伴相扣， <br> 象徵牽引兩人那條看不見的姻緣線， <br> 繞過千山萬水，終得白頭不相離。', 'P01_6.jpg,P01_3.jpg', '4', '4', '2022-06-01'),
 (2, 'P02', 2, '月老牽引水晶手鏈', 'P02_1', '', '', 1880, '', '紅紋石 9 mm\n紅紋石有助舒緩激動的情緒及過濾負能量。 紅紋石可治療因失戀帶來的痛苦、失落、憂鬱，讓情緒穩定緩和。 紅紋石可助消解憂鬱，有助蜜運、亦可加強個人衝勁及行動力。\n\n月亮石7mm\n由於月亮石是愛情之石，所以月亮石的功效有助提升女性魅力，幫助吸引異性，以及增進男女朋友情侶之間了解對方，改善情緒上的偏執，所以很多人會認為月光石有助分手的情侶復合。 而對於個人有肋入眠、可調節飲食習慣，長期佩戴月光石可由改善氣質，更會護膚、明眸、護髮。\n', '', '\n關於產品:\n1. 天然石的顏色/內含物每顆不一樣，商品與實物未必一模一樣.\n2. 任何飾品不建議洗澡時配戴，汗水，香水也可能影響力 金屬氧化褪色', '', '10', '4', '2022-07-31'),
 (3, 'P03', 2, '一顆不變的心草莓晶手鍊', 'P03_1', '', '', 888, '▸桃花運☆增加異性緣、斬爛桃花，婚姻感情升溫。 \n▸貴人運☆提升人際關係、魅力，才能事半功倍。 \n\n', '一顆不變的心手鍊，花若盛開、蝴蝶自來， #提升戀愛運，草莓晶可幫助人緣、人際關係，增強正緣桃花運，同時可使思考更加清晰。給自己一條水晶手鍊，運用水晶能量，提升氣場。咕咕好運，陪您一起變好的朋友。\n草莓晶的能量及磁場偏強，有助於提升愛情運勢、吸引美好姻緣，及增進人際關係。', '', '', '', '15', '4', '2022-07-31'),
