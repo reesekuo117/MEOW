@@ -284,6 +284,11 @@ const msgc_member = $('#member_msgContainer');
         </div>
         `);
         msgc_member.append(a);
+        setTimeout(()=>{
+            a.fadeOut(400, function(){
+                a.remove();
+            })
+        }, 2000);
     }
     $('#member-page-re').click(function(){
         $('.alert').remove();
@@ -292,13 +297,13 @@ const msgc_member = $('#member_msgContainer');
 function checkFormMember(){
     console.log('checkFormMember');
     let isPass = true;
-    // if (!$('#member_name_re').val()) {
-    //     genAlert3('請填寫正確會員資料');
-    //     return;
-    // }else if (!$('#member_phone_re').val()) {
-    //     genAlert3('請填寫正確會員資料');
-    //     return;
-    // }
+    if (!$('#member_name_re').val()) {
+        genAlert3('請填寫正確資料');
+        return;
+    }else if (!$('#member_phone_re').val()) {
+        genAlert3('請填寫正確資料');
+        return;
+    }
     if(isPass){
         $.post(
             're-member-api.php', 
@@ -306,7 +311,7 @@ function checkFormMember(){
             function(data){
                 console.log('checkFormMember data',data);
                 if(data.success){
-                    genAlert3('修改成功', 'success');
+                    genAlert3('會員資料修改成功，', 'success');
                 }else{
                     genAlert3(data.error);
                 }
@@ -339,10 +344,10 @@ function checkFormPassword(){
     }else if (!$('#againpassword_re').val()) {
         genAlert4('請填寫正確資料');
         return;
-    }else if (!$('#newpassword_re').val() === $('#againpassword_re').val()) {
+    }else if ($('#newpassword_re').val() != $('#againpassword_re').val()) {
         genAlert4('請填寫正確資料');
         return;
-    }else if (!$('#newpassword_re').val() != $('#oldpassword_re').val()) {
+    }else if ($('#newpassword_re').val() === $('#oldpassword_re').val()) {
         genAlert4('與現在密碼重複 請輸入正確資料');
         return;
     }
@@ -353,7 +358,7 @@ function checkFormPassword(){
             function(data){
                 console.log('checkFormPassword data',data);
                 if(data.success){
-                    genAlert4('修改成功', 'success');
+                    genAlert4('密碼修改成功', 'success');
                 }else{
                     genAlert4(data.error);
                 }

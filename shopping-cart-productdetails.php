@@ -134,7 +134,7 @@ header("Refresh:180");
                                                         <tr class="">
                                                             <!-- 商品照片 -->
                                                             <td class="imgsCardYu">
-                                                               <img class=" w-100" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
+                                                                <img class=" w-100" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
                                                             </td>
                                                             <!-- 商品名稱 -->
                                                             <td>
@@ -283,7 +283,7 @@ header("Refresh:180");
                                     <span style="color: #963c38">*</span>
                                 </label>
                                 <br />
-                                <input class="receivername-yu requiredYu" type="text" placeholder="請輸入姓名" id="username-yu" name="test"  required/>
+                                <input class="receivername-yu requiredYu" type="text" placeholder="請輸入姓名" id="username-yu" name="consigneename"  required/>
                                 <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確姓名</small>
@@ -295,13 +295,14 @@ header("Refresh:180");
                                     <span style="color: #963c38">*</span>
                                 </label>
                                 <br />
-                                <input class="receiverphone-yu  requiredYu" type="text" placeholder="請輸入聯絡電話" id="usermobile-yu" name="test" required/>
+                                <input class="receiverphone-yu  requiredYu" type="text" placeholder="請輸入聯絡電話" id="usermobile-yu" name="consigneephone" required/>
                                 <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確聯絡電話</small>
                                 </i>
                             </div>
                             <div class="receiver-deliver-yu p-3">
+                                <input type="hidden" name="delivery" value="宅配">
                                 <label for="" class="">
                                     配送方式
                                     <span style="color: #963c38">*</span>
@@ -338,7 +339,7 @@ header("Refresh:180");
                                     </div>
                                 </div>
                             </div>
-                            <div class="field2 receiver-email-yu p-3">
+                            <!-- <div class="field2 receiver-email-yu p-3">
                                 <label for="email" class="">
                                     Email
                                     <span style="color: #963c38">*</span>
@@ -349,7 +350,7 @@ header("Refresh:180");
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確姓名</small>
                                 </i>
-                            </div>
+                            </div> -->
                             <div class="field2 receiver-address-yu p-3">
                                 <label for="address" class="">
                                     地址

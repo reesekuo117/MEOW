@@ -218,7 +218,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                 <img class="w-100" src="./imgs/culture/section1-1.png" alt="">
             </div>
 
-            <p class="mt-2 mb-p_lb">
+            <p class="mt-3 mb-p_lb">
                 傳說唐代韋固曾在客棧遇到一位老人，在夜光下翻著簿子，好奇請問，才知是姻緣簿，又問他自己將來婚配為誰？老人回說為店北頭賣菜瞎老太太三歲的小女兒。韋固一氣之下，派僕人刺殺小女兒，誰知僕人心虛只刺傷她的額頭。
                 <br>
                 十多年後，該女被刺史收為義女，並將其許配給韋固，新婚之後發現妻子額上常貼花黃是因幼年被刺，這才知月下老人所配的姻緣奇準無比，其神蹟從此廣為流傳
@@ -228,7 +228,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
             <div class="mbright_pic_lb">
                 <img class="w-100" src="./imgs/culture/section1-2.png" alt="">
             </div>
-            <p class="mt-2 mb-p_lb">
+            <p class="mt-3 mb-p_lb">
                 直到現今對月老的形象便是左手拿著姻緣簿，右手拄著拐杖，將姻緣簿中有姻緣關係的未婚男女以紅絲線綁住，使得有情人終成眷屬，因此不少到了適婚年齡的民眾們，便會前去參拜月老，求取姻緣。
                 <br>
                 傳統民間信仰中，月老是一個專門掌管人們姻緣的神。然而最初的月下老人其實只負責保管姻緣簿，並無幫人媒合的神力在。但百姓相傳月老有著成人之美，撒嬌一下便會幫忙協助撮合。
@@ -981,7 +981,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
         </div>
     </div>
     <!--全台精選月老廟-mb-->
-    <div id="mbselected-temple_lb" class=" container mbtargetScrollSection mbselected-temple_lb  d-md-none p-0">
+    <div id="mbselected-temple_lb" class=" container mbtargetScrollSection mbselected-temple_lb  d-md-none p-0 pt-5">
         <h1 class="text-center mb-title_lb py-4">全台精選月老廟</h1>
         <div class="row d-flex justify-content-center m-0">
             <div class="form-group mr-4 my-auto">

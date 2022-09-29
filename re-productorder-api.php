@@ -1,11 +1,6 @@
 <?php
 require __DIR__. '/parts/meow_db.php';
 
-$output = [
-    'success' => false,
-    'error' => '',
-    'code' => 0,
-];
 
 if(empty($_SESSION['user']) or empty($_SESSION['pcart'])){
     // header('Location: product-list.php');
@@ -15,11 +10,11 @@ $total = 0;
 foreach($_SESSION['pcart'] as $k=>$v){
     $total += $v['product_price']*$v['qty'];
 }
-// 寫入訂單
 
+// 寫入訂單
 $po_sql = sprintf( "INSERT INTO `product_order`(
         `member_id`, 
-        `state`, 
+        -- `staxte`, 
         `total`, 
         `name`, 
         `phone`, 
@@ -31,10 +26,23 @@ $po_sql = sprintf( "INSERT INTO `product_order`(
         `payment_state`, 
         `created_at`
         ) VALUES(
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
             NOW()
-        )", $_SESSION['user']['id'], $total );
+        )", 
+        $_SESSION['user']['id'], 
+        $total,
+        $_POST['consigneename'],
+        $_POST['consigneephone'],
+        $_POST['consigneeaddress1'],
+        $_POST['consigneeaddress2'],
+        $_POST['consigneeaddress3'],
+        $delivery,
+        $payment,
+        $payment_state
+        
+    );
 $stmt = $pdo->query($po_sql);
+
 $order_sid = $pdo->lastInsertId();
 
 //訂單明細
@@ -53,7 +61,6 @@ foreach($_SESSION['pcart'] as $k=>$v){
 //清除購物車內容
 unset($_SESSION['pcart']);
 
-echo json_encode($output, JSON_UNESCAPED_UNICODE);
 
-
-
+// serialize存字串
+?>

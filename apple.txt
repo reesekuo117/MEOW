@@ -1,8 +1,18 @@
+**NOTICE**
+1.煮魚RQ:travel_detail 霞海文字增加(07 done)
+2.公版navbar 下滑收起來 上滑出現(公版CSS新增.header-fixed/.header-xs-fixed 有需要的人自己套用)
+3.公版FOOTER已fixed，大家記得調整最後跟FOOTER距離
+4.07 商品RQ:
+詳細頁加入購物車
+列表頁搜尋功能
+(蘋果:首頁圖片有點大 需要調整~)
+
+
 首頁→註冊→冠廷分享會員資料和修改密碼→蘋果分享文化→行程→購物車結帳→商品(收藏和結帳要選不一樣)→購物車→冠廷的會員查詢訂單和收藏→求籤壓軸
 
 Mb公版(女王)
-Nav
-Footer 下滑消失 上滑出現
+Nav OK
+Footer 下滑消失 上滑出現 OK
 
 首頁(8張)
 全館免運 OK
@@ -102,7 +112,3 @@ TD固定高度
 您改你
 訂單編號抓sid(行程TO2022+sid  商品PO2022+sid)
 
-
-TOFIXED:
-1.travel_detail 霞海文字增加
-2.公版navbar 下滑收起來 上滑出現

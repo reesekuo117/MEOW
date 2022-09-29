@@ -231,7 +231,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  position: 999;
+  z-index:999;
 }
 
 .footer-xs>ul {
