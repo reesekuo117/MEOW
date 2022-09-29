@@ -43,9 +43,14 @@
 }
 .search_btn button:focus{
     outline: none;
+    border: none;
 }
 .search_btn button:hover{
     color: var(--color-text87);
+}
+.input_search button{
+    border: none;
+    background: transparent;
 }
 /* input{
     border-radius: 8px;

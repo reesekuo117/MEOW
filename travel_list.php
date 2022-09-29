@@ -16,6 +16,7 @@ $selectedCity = isset($_GET['city']) ? intval($_GET['city']) : 0; //依活動分
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; //沒有找到的話就會回到全部分類
 $sort = isset($_GET['sort']) ? $_GET['sort'] : '';
 $selectedKind = isset($_GET['kind']) ? intval($_GET['kind']) : 0; //依活動類型
+$search = isset($_GET['search']) ? $_GET['search'] : '';   //搜尋關鍵字
 
 $where = " WHERE 1 "; //起頭
 
@@ -36,6 +37,14 @@ if ($cate) {
     $where .= " AND category_sid =$cate ";
     $qsp['cate'] = $cate;
 }
+
+//搜尋關鍵字
+if (!empty($search)) {
+    $where .= sprintf(" AND travel_name LIKE %s ", $pdo->quote('%'. $search. '%'));
+    
+    $qsp['search'] = $search;
+}
+
 
 
 // 排序
@@ -140,16 +149,18 @@ header("Refresh:180");
                     </div> -->
         <!-- TODO: 救命關鍵字功能要怎麼寫→套PHP -->
         <!-- https://webdesign.tutsplus.com/zh-hant/tutorials/css-experiments-with-a-search-form-input-and-button--cms-22069 -->
-        <div class="input_search">
+        <form  name="search_form" class="input_search">
             <div class="container-1">
-                <span class="icon"><i class="fa fa-search"></i></span>
-                <input type="search" id="search" placeholder="請輸入關鍵字搜尋" />
+                <label for="">
+                        <input type="text" id="search" name="search" placeholder="請輸入關鍵字搜尋" value="<?= empty($search) ? '' : htmlentities($search) ?>" />
+                </label>
+                <button class="icon" type="submit"><i class="fa fa-search"></i></button>
             </div>
-        </div>
+        </form>
         <div class="search_btn">
-            <button>#聯誼</button>
-            <button>#霞海</button>
-            <button>#七夕</button>
+            <button onclick="$('#search').val('聯誼')">#聯誼</button>
+            <button onclick="$('#search').val('霞海')">#霞海</button>
+            <button onclick="$('#search').val('七夕')">#七夕</button>
         </div>
     </div>
 </div>
