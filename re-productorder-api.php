@@ -61,4 +61,6 @@ foreach($_SESSION['pcart'] as $k=>$v){
 //清除購物車內容
 unset($_SESSION['pcart']);
 
+
+// serialize存字串
 ?>

@@ -101,7 +101,7 @@ function checkFormSignin() {
         function(data) {
             console.log('data',data);
             if(data.success){
-                location.href = './index_.php';
+                location.href = './member.php';
             } else {
                 console.log(data);
                 // genAlert(data.error);
@@ -155,7 +155,6 @@ function checkFormSignup(){
         }, 'json');
     }
 }
-
 
 //按了加入購物車 會改變購物車數量
 function showCartCount(obj){

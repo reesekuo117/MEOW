@@ -129,7 +129,8 @@ $pageName ='會員中心'; //頁面名稱
                     <img class="tablist-meowsvg03_re d-none" src="./imgs/member/cate.png" alt="">我的最愛</li>
                 <li class="tablist-meowli04_re text-20-re py-2 col-6 mx-auto" data-val="member-order">
                     <img class="tablist-meowsvg04_re d-none" src="./imgs/member/cate.png" alt="">查詢訂單</li>
-                <label class="signupbutton my-2"><input class="btn-re btn200-re phonewidth330-re" type="button" value="登出" onclick="location.href='re-logout.php'"></label>
+                <li class="signupbutton my-2  text-20-re" type="button" value="登出" onclick="location.href='re-logout.php'">登出</li>
+                <!-- <label class="signupbutton my-2"><input class="btn-re btn200-re phonewidth330-re" type="button" value="登出" onclick="location.href='re-logout.php'"></label> -->
             </ul>
         </div>
 <!-- 會員頭像----------------------------------------------------- -->
@@ -305,7 +306,7 @@ $pageName ='會員中心'; //頁面名稱
                         <label for="email" class="form-label-re text-18-re">信箱帳號<span style="color:#963C38">*</span></label><br>
                         <input id="member_email_re" class="inputdisabled-re col-8 noline-re" type="text" class="form-control" disabled="disabled" value="<?=htmlentities($r_re['email']) ?>">
                     </div>
-                    <div id="member_msgContainer"></div>
+                    <div id="member_msgContainer" class="col-8 p-0"></div>
                     <div class="position-absolute fixedbtn_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
                 </form>
             </div>
@@ -343,8 +344,8 @@ $pageName ='會員中心'; //頁面名稱
                         <label for="account" class="form-label-re text-18-re">請再次確認新密碼<span style="color:#963C38">*</span></label><br>
                         <input id="againpassword_re" name="againpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
                     </div>
-                    <div id="password_msgContainer"></div>
-                    <div class="position-absolute fixedbtn_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
+                    <div id="password_msgContainer" style="width: 330px;"></div>
+                    <div class="position-absolute fixedbtn_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存" ></div>
                 </form>
             </div>
 
@@ -491,7 +492,7 @@ $pageName ='會員中心'; //頁面名稱
     <!-- p3-D------------------------------------------------------------------ -->
                 <div id="tab03-re" class="tab-inner-re">
                     <div class="row mb-3 mx-0 likehight-re">
-                        <?php foreach($f_rows as $r): ?>
+                        <?php foreach($d_rows as $r): ?>
                         <div class="col-6 col-md-4 likecard-re position-relative pb-3">
                             <img class="w-100" src="./imgs/love/<?= $r['img'] ?>" alt="">
                             <div class="position-absolute likeicon2-re">
@@ -523,7 +524,7 @@ $pageName ='會員中心'; //頁面名稱
     <!-- p3-F------------------------------------------------------------------ -->
                 <div id="tab04-re" class="tab-inner-re">
                     <div class="row mb-3 mx-0 likehight-re">
-                    <?php foreach($d_rows as $r): ?>
+                    <?php foreach($f_rows as $r): ?>
                     <div class="col-6 col-md-4 likecard-re position-relative pb-3">
                         <img class="w-100" src="./imgs/love/<?= $r['img'] ?>" alt="">
                         <div class="position-absolute likeicon2-re">
@@ -601,7 +602,7 @@ $pageName ='會員中心'; //頁面名稱
                                         </thead>
                                         <tbody class="col-9 p-0">
                                             <tr class="orderlist-re col-12 p-0">
-                                                <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_img'] ?>.jpg" alt=""></td>
+                                                <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_smallimg'] ?>.jpg" alt=""></td>
                                                 <td class="productname-re text-16-re text-center m-0"><?= $rList['product_name'] ?></td>
                                                 <!-- <td class="text-16-re text-center ordertitle-other-re">< ?= $rList['product_name'] ?></td> -->
                                                 <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
