@@ -429,7 +429,7 @@ header("Refresh:180");
                         </button>
                     </div>
                     <div class="col">
-                        <a href="#BuyNowYu" style="text-decoration:none;">
+                        <a id="btmBuy" href="#BuyNowYu" style="text-decoration:none;">
                             <button class="buy d-flex justify-content-center align-items-center">
                                 <div class="icon_buy">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -879,6 +879,34 @@ header("Refresh:180");
             </div>
         </div>
     </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content position-relative">
+                <div class="modal-header">
+                    <div class="errorSign">
+                        <img src="./imgs/Errorsign.png" alt="">
+                    </div>
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    請選擇數量再購買喵
+                </div>
+
+                <div class="modal-footer">
+                    <div class="errorMeow position-absolute mb-2">
+                        <img src="./imgs/errorMeow2.png" alt="">
+                    </div>
+                    <button type="button" class="btn btn-secondary mx-auto" data-dismiss="modal">好的喵</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- 手機版下方列 -->
 <div class="choiceandbuy_mb d-md-none" id="MdBuyNowYu">
@@ -1014,6 +1042,14 @@ header("Refresh:180");
             'json');
         
     };
+
+
+    $('#btmBuy').click(function () {
+        setTimeout(() => {
+            $("#exampleModal").modal("show");
+        }, 700);
+
+    })
 </script>
 
 
