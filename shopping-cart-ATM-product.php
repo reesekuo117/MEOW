@@ -1,6 +1,44 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName ='購物車'; //頁面名稱
+
+
+$member_id = $_SESSION['user']['id'];
+$allsql = " SELECT 
+                po.*,
+                -- pod.product_sid,
+                -- pod.price, 
+                -- pod.quantity,
+                -- pod.created_at,
+                -- p.product_name, 
+                -- p.product_card_img,
+                ad.city,
+                ad2.city region
+            FROM product_order po
+                -- JOIN product_details pod ON po.sid = pod.order_sid
+                -- JOIN product p ON p.sid = pod.product_sid
+                JOIN address ad ON ad.sid = po.address_city
+                JOIN address ad2 ON ad2.sid = po.address_region
+                WHERE member_id=$member_id ORDER BY po.created_at DESC LIMIT 1";
+$all_rows = $pdo->query($allsql)->fetch();
+
+$order_sid = $all_rows['sid'];
+$listsql = " SELECT 
+                pod.*,
+                p.product_name, 
+                p.product_card_img
+            FROM product_details pod
+                JOIN product p ON p.sid = pod.product_sid
+                WHERE order_sid=$order_sid";
+$list_rows = $pdo->query($listsql)->fetchAll();
+
+// echo json_encode([ 
+//     '$all_rows' => $all_rows,
+//     '$list_rows' => $list_rows,
+
+// ]);
+// exit;
+
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -123,6 +161,7 @@ header("Refresh:180");
                 </div>
                 <div class="listinfo-yu">
                     <!--訂單明細  -->
+                    
                     <section class="note-section2-yu">
                         <h3 class="listinfo-title-yu m-0">
                             訂單明細
@@ -137,19 +176,19 @@ header("Refresh:180");
                                         <li>
                                             收件人姓名:
                                             <th>
-                                                皮卡丘
+                                                <?= $all_rows['name'] ?>
                                             </th>
                                         </li>
                                         <li>
                                             收件人電話:
                                             <th>
-                                                0987654321
+                                            <?= $all_rows['phone'] ?>
                                             </th>
                                         </li>
                                         <li>
                                             收件人地址:
                                             <th>
-                                                台北市大安區和平東路二段106號3樓
+                                                <?= $all_rows['city'] ?><?= $all_rows['region'] ?><?= $all_rows['address'] ?>
                                             </th>
                                         </li>
                                     </ul>
@@ -164,19 +203,19 @@ header("Refresh:180");
                                         <li>
                                             收件方式:
                                             <th>
-                                                宅配
+                                            <?= $all_rows['delivery'] ?>
                                             </th>
                                         </li>
                                         <li>
                                             付款方式:
                                             <th>
-                                                信用卡付款
+                                                <?= $all_rows['payment'] ?>
                                             </th>
                                         </li>
                                         <li>
                                             付款狀態:
                                             <th>
-                                                已付款
+                                            <?= $all_rows['payment_state'] ?>
                                             </th>
                                         </li>
                                     </ul>
@@ -211,11 +250,11 @@ header("Refresh:180");
                                                                 商品名稱
                                                             </h6>
                                                         </th>
-                                                        <th scope="col">
+                                                        <!-- <th scope="col">
                                                             <h6 class="mb-0">
                                                                 規格
                                                             </h6>
-                                                        </th>
+                                                        </th> -->
                                                         <th scope="col">
                                                             <h6 class="mb-0">
                                                                 單價
@@ -233,13 +272,41 @@ header("Refresh:180");
                                                         </th>
                                                     </tr>
                                                 </thead>
+                                                <?php foreach($list_rows as $s): ?>
                                                 <tbody class="tbody">
                                                     <tr class="">
                                                         <!-- 商品照片 -->
                                                         <td>
-                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
+                                                            <img src="imgs/product/cards/<?= $s['product_card_img'] ?>.jpg" alt="" />
                                                         </td>
                                                         <!-- 商品名稱 -->
+                                                        <td>
+                                                            <h6 class="m-0">
+                                                                <?= $s['product_name'] ?>
+                                                            </h6>
+                                                        </td>
+                                                        <!-- 商品規格 -->
+                                                        <!-- <td>規格</td> -->
+                                                        <!-- 單價 -->
+                                                        <td class="onePriceYu">
+                                                            <?= $s['price'] ?>
+                                                        </td>
+                                                        <!-- 數量 -->
+                                                        <td><?= $s['quantity'] ?></td>
+                                                        <!-- 小計 -->
+                                                        <td class="littlePriceYu">
+                                                        <?= $s['price'] * $s['quantity'] ?>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                <?php endforeach ?>
+                                                <!-- <tbody class="tbody">
+                                                    <tr class="">
+                                                        商品照片
+                                                        <td>
+                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
+                                                        </td>
+                                                        商品名稱
                                                         <td>
                                                             <h6 class="m-0">
                                                                 台北霞海城隍廟獨家聯名
@@ -247,62 +314,36 @@ header("Refresh:180");
                                                                 -七夕月老供品組-甜作之盒
                                                             </h6>
                                                         </td>
-                                                        <!-- 商品規格 -->
+                                                        商品規格
                                                         <td>規格</td>
-                                                        <!-- 單價 -->
+                                                        單價
                                                         <td class="onePriceYu">
                                                             707
                                                         </td>
-                                                        <!-- 數量 -->
+                                                        數量
                                                         <td>1</td>
-                                                        <!-- 小計 -->
+                                                        小計
                                                         <td class="littlePriceYu">
                                                             707
                                                         </td>
                                                     </tr>
-                                                </tbody>
-                                                <tbody class="tbody">
-                                                    <tr class="">
-                                                        <!-- 商品照片 -->
-                                                        <td>
-                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
-                                                        </td>
-                                                        <!-- 商品名稱 -->
-                                                        <td>
-                                                            <h6 class="m-0">
-                                                                台北霞海城隍廟獨家聯名
-                                                                <br />
-                                                                -七夕月老供品組-甜作之盒
-                                                            </h6>
-                                                        </td>
-                                                        <!-- 商品規格 -->
-                                                        <td>規格</td>
-                                                        <!-- 單價 -->
-                                                        <td class="onePriceYu">
-                                                            707
-                                                        </td>
-                                                        <!-- 數量 -->
-                                                        <td>1</td>
-                                                        <!-- 小計 -->
-                                                        <td class="littlePriceYu">
-                                                            707
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
+                                                </tbody> -->
                                             </table>
+                                        
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
+                    
                     <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
                         <h6 class="oderListPriceYu">
-                            1414
+                            <?= $all_rows['total'] ?>
                         </h6>
-                        <h6 id="total-price-yu" class="price-uniqui-yu">
+                        <!-- <h6 id="total-price-yu" class="price-uniqui-yu">
                             1414
-                        </h6>
+                        </h6> -->
                     </div>
                 </div>
             </div>

@@ -6,8 +6,11 @@ $pageName ='購物車商品'; //頁面名稱
 $sql = "SELECT * FROM product WHERE 1";
 $temples = $pdo->query($sql)->fetchAll(); 
 
+// 取得會員
 $member_id = $_SESSION['user']['id'];
-$user_id = "SELECT * FROM `member` WHERE id=$member_id";
+$sqlmember = "SELECT * FROM `member` WHERE id=$member_id";
+$sm = $pdo->query($sqlmember)->fetch();
+
 
 ?>
 
@@ -173,21 +176,21 @@ header("Refresh:180");
                 </div>
                 <!-- 訂購人資料 -->
                 <!-- 記得這邊的action要連到另一隻php -->
-                <form name="product_form" method="post" action="shopping-cart-ATM-product.php" onsubmit="checkFormSignup(); return false;">
+                <form name="product_form" method="post" action="shopping-cart-ATM-product.php" onsubmit="checkFormProduct(); return false;">
                     <div class="section-1-yu position-relative">
                         <div class="section-1-title-yu">
                             <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
                         </div>
                         <!-- 訂購人填寫資料 -->
                         <div class="AllinputValueYu"></div>
-                        <div id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu" method="post" action="">
+                        <div id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu">
                             <div class="field order-name-yu p-3 ">
                                 <label for="name" class="">
                                     姓名
                                     <span style="color: #963c38">*</span>
                                 </label>
                                 <br/>
-                                <input class="ordername-yu  requiredYu" type="name" placeholder="請輸入姓名 " id="name-yu" name="ordername-yu" required/>
+                                <input class="ordername-yu  requiredYu" type="name" placeholder="請輸入姓名 " id="name-yu" name="ordername-yu" required value="<?=htmlentities($sm['name']) ?>"/>
                                 <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確姓名</small>
@@ -199,7 +202,7 @@ header("Refresh:180");
                                     <span style="color: #963c38">*</span>
                                 </label>
                                 <br/>
-                                <input class="orderphone-yu  requiredYu" type="mobile" placeholder="請輸入聯絡電話" id="mobile-yu" name="orderphone-yu"  required/>
+                                <input class="orderphone-yu  requiredYu" type="mobile" placeholder="請輸入聯絡電話" id="mobile-yu" name="orderphone-yu"  required value="<?=htmlentities($sm['mobile']) ?>"/>
                                 <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確的聯絡電話</small>
@@ -215,7 +218,7 @@ header("Refresh:180");
                                     <div class="form-group m-0">
                                         <select class="orderaddress1-yu" name="orderaddress1-yu" id="city1-yu" 
                                         type="address_city" 
-                                        required>
+                                        required value="<?=htmlentities($sm['address_city_re']) ?>">
                                             <option class="" value="0">臺北市</option>
                                             <option value="1">新北市</option>
                                             <option value="2">基隆市</option>
@@ -238,13 +241,13 @@ header("Refresh:180");
                                         </select>
                                     </div>
                                     <div class="form-group m-0">
-                                        <select class="orderaddress2-yu"name="orderaddress2-yu"id="district1-yu" type="address_region" >
+                                        <select class="orderaddress2-yu"name="orderaddress2-yu"id="district1-yu" type="address_region" value="<?=htmlentities($sm['address_region_re']) ?>" >
                                             <option class="" value="0">中正區</option>
                                             <option value="1">板橋區</option>
                                             <option value="2">仁愛區</option>
                                         </select>
                                     </div>
-                                    <input class="orderaddress3-yu  requiredYu" name="orderaddress3-yu" placeholder=" 請輸入詳細地址" id="address-yu" name="address" type="address" />
+                                    <input class="orderaddress3-yu  requiredYu" name="orderaddress3-yu" placeholder=" 請輸入詳細地址" id="address-yu" name="address" type="address" value="<?=htmlentities($sm['address']) ?>"/>
                                     <i class="right fa-regular fa-circle-check"></i>
                                     <i class="wrong fa-solid fa-triangle-exclamation">
                                         <small>請輸入正確的地址</small>
@@ -256,7 +259,7 @@ header("Refresh:180");
                                     Email<span style="color: #963c38">*</span>
                                 </label>
                                 <br />
-                                <input type="email" class="email-yu  requiredYu"  id="email-yu" name="order-email-yu"  />
+                                <input type="email" class="email-yu  requiredYu"  id="email-yu" name="order-email-yu" value="<?=htmlentities($sm['email']) ?>" />
                                 <i class="right fa-regular fa-circle-check"></i>
                                     <i class="wrong fa-solid fa-triangle-exclamation">
                                         <small>請輸入正確的Email</small>
@@ -271,7 +274,7 @@ header("Refresh:180");
                                 收件人資料
                             </h3>
                             <label for="name" class="m-0 mr-3">
-                                <input type="checkbox" name="test" id="btnAutoInput-yu"/>
+                                <input type="checkbox"  id="btnAutoInput-yu"/>
                                 同訂購人
                             </label>
                         </div>
@@ -345,7 +348,7 @@ header("Refresh:180");
                                     <span style="color: #963c38">*</span>
                                 </label>
                                 <br/>
-                                <input class="receiveremail-yu  requiredYu" type="email " id="useremail-yu" name="test" />
+                                <input class="receiveremail-yu  requiredYu" type="email " id="useremail-yu"  />
                                 <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
                                     <small>請輸入正確姓名</small>
@@ -359,36 +362,81 @@ header("Refresh:180");
                                 <br/>
                                 <div class="d-flex align-items-center">
                                     <div class="form-group m-0">
-                                        <select class="receiveraddress1-yu" name="test" id="usercity-yu"required>
-                                            <option class="" value="0">臺北市</option>
-                                            <option value="1">新北市</option>
-                                            <option value="2">基隆市</option>
-                                            <option value="3">宜蘭縣</option>
-                                            <option value="4">桃園市</option>
-                                            <option value="5">新竹市</option>
-                                            <option value="6">新竹縣</option>
-                                            <option value="7">苗栗縣</option>
-                                            <option value="8">彰化縣</option>
-                                            <option value="9">臺中市</option>
-                                            <option value="10">南投縣</option>
-                                            <option value="11">雲林縣</option>
-                                            <option value="12">嘉義市</option>
-                                            <option value="13">嘉義縣</option>
-                                            <option value="14">臺南市</option>
-                                            <option value="15">高雄市</option>
-                                            <option value="16">屏東縣</option>
-                                            <option value="17">花蓮縣</option>
-                                            <option value="18">臺東縣</option>
-                                            </select>
-                                    </div>
-                                    <div class="form-group m-0">
-                                        <select class="receiveraddress2-yu" name="useraddress" id="userdistrict-yu">
-                                            <option class="" value="0">中正區</option>
-                                            <option value="1">板橋區</option>
-                                            <option value="2">仁愛區</option>
+                                        <select class="receiveraddress1-yu" name="consigneeaddress1" id="usercity-yu"required>
+                                            <option class="" value="5">臺北市</option>
+                                            <option value="6">新北市</option>
+                                            <option value="7">基隆市</option>
+                                            <option value="8">宜蘭縣</option>
+                                            <option value="9">桃園市</option>
+                                            <option value="10">新竹市</option>
+                                            <option value="11">新竹縣</option>
+                                            <option value="12">苗栗縣</option>
+                                            <option value="13">彰化縣</option>
+                                            <option value="14">臺中市</option>
+                                            <option value="15">南投縣</option>
+                                            <option value="16">雲林縣</option>
+                                            <option value="17">嘉義市</option>
+                                            <option value="18">嘉義縣</option>
+                                            <option value="19">臺南市</option>
+                                            <option value="20">高雄市</option>
+                                            <option value="21">屏東縣</option>
+                                            <option value="22">花蓮縣</option>
+                                            <option value="23">臺東縣</option>
                                         </select>
                                     </div>
-                                    <input class="receiveraddress3-yu  requiredYu" type="text" placeholder=" 請輸入詳細地址" id="useraddress-yu" name="useraddress"/>
+                                    <div class="form-group m-0">
+                                        <select class="receiveraddress2-yu" name="consigneeaddress2" id="userdistrict-yu">
+                                            <option class="" value="24">中正區</option>
+                                            <option value="25">大同區</option>
+                                            <option value="26">中山區</option>
+                                            <option value="27">萬華區</option>
+                                            <option value="28">信義區</option>
+                                            <option value="29">松山區</option>
+                                            <option value="30">大安區</option>
+                                            <option value="31">南港區</option>
+                                            <option value="32">北投區</option>
+                                            <option value="33">內湖區</option>
+                                            <option value="34">士林區</option>
+                                            <option value="35">文山區</option>
+                                            <option value="36">板橋區</option>
+                                            <option value="37">新莊區</option>
+                                            <option value="38">泰山區</option>
+                                            <option value="39">林口區</option>
+                                            <option value="40">淡水區</option>
+                                            <option value="41">金山區</option>
+                                            <option value="42">八里區</option>
+                                            <option value="43">萬里區</option>
+                                            <option value="44">石門區</option>
+                                            <option value="45">三芝區</option>
+                                            <option value="46">瑞芳區</option>
+                                            <option value="47">汐止區</option>
+                                            <option value="48">平溪區</option>
+                                            <option value="49">貢寮區</option>
+                                            <option value="50">雙溪區</option>
+                                            <option value="51">深坑區</option>
+                                            <option value="52">石碇區</option>
+                                            <option value="53">新店區</option>
+                                            <option value="54">坪林區</option>
+                                            <option value="55">烏來區</option>
+                                            <option value="56">中和區</option>
+                                            <option value="57">永和區</option>
+                                            <option value="58">土城區</option>
+                                            <option value="59">三峽區</option>
+                                            <option value="60">樹林區</option>
+                                            <option value="61">鶯歌區</option>
+                                            <option value="62">三重區</option>
+                                            <option value="63">蘆洲區</option>
+                                            <option value="64">五股區</option>
+                                            <option value="65">仁愛區</option>
+                                            <option value="66">中正區</option>
+                                            <option value="67">信義區</option>
+                                            <option value="68">中山區</option>
+                                            <option value="69">安樂區</option>
+                                            <option value="70">暖暖區</option>
+                                            <option value="71">七堵區</option>
+                                        </select>
+                                    </div>
+                                    <input class="receiveraddress3-yu  requiredYu" type="text" placeholder=" 請輸入詳細地址" id="useraddress-yu" name="consigneeaddress3"/>
                                     <i class="right fa-regular fa-circle-check"></i>
                                     <i class="wrong fa-solid fa-triangle-exclamation">
                                         <small>請輸入正確地址</small>
@@ -398,7 +446,7 @@ header("Refresh:180");
                         </div>
                     </div>
                     <!-- 付款方式 -->
-                    <div class=" section-3-yu"  method="post" action="" onsubmit="return CheckForm();">
+                    <div class=" section-3-yu">
                         <section class="section-3-yu">
                             <div class="section-3-title-yu">
                                 <h3 class="listinfo-title-yu m-0">付款方式</h3>
@@ -420,20 +468,20 @@ header("Refresh:180");
                                                         </div>
                                                         <div class=" creditcardnumber-yu d-flex" id="creditcardnumber-yu">
             
-                                                            <input id="creditcardnumber1-yu" class=" text-center" type="text"name="test" placeholder="0000" maxlength="4">
+                                                            <input id="creditcardnumber1-yu" class=" text-center" type="text" placeholder="0000" maxlength="4">
             
-                                                            <input id="creditcardnumber2-yu" class=" text-center"  type="text"name="test" placeholder="0000" maxlength="4">
+                                                            <input id="creditcardnumber2-yu" class=" text-center"  type="text" placeholder="0000" maxlength="4">
             
-                                                            <input id="creditcardnumber3-yu" class=" text-center"  type="text"name="test" placeholder="0000" maxlength="4">
+                                                            <input id="creditcardnumber3-yu" class=" text-center"  type="text" placeholder="0000" maxlength="4">
             
-                                                            <input id="creditcardnumber4-yu" class=" text-center"  type="text"name="test" placeholder="0000" maxlength="4">
+                                                            <input id="creditcardnumber4-yu" class=" text-center"  type="text" placeholder="0000" maxlength="4">
                                                         </div>
                                                         <div class="creditcarddate-yu d-flex" id="creditcarddate-yu">
-                                                            <input class="text-center"  type="text"name="test" placeholder="月" maxlength="2" id="creditcardmonth-yu" >
+                                                            <input class="text-center"  type="text" placeholder="月" maxlength="2" id="creditcardmonth-yu" >
                                                             <h6>
                                                                 /
                                                             </h6>
-                                                            <input class="text-center"  type="text" name="test"placeholder="年" maxlength="2" id="creditcardyear-yu"  >
+                                                            <input class="text-center"  type="text" placeholder="年" maxlength="2" id="creditcardyear-yu"  >
                                                         </div>
                                                         <!-- <div class="ring"></div> -->
                                                     </div>
@@ -459,17 +507,17 @@ header("Refresh:180");
                                                     <br>
                                                     <div class=" usercdinputYu  d-flex justify-content-start align-items-start"> 
                                                         <div class=" field3 mx-1 ">
-                                                            <input class="usercdnumber3  usercdnumber4 requiredYu text-center m-0" type="" name="test"id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyPress="autoTab()" onkeyUp="autoTab()">
+                                                            <input class="usercdnumber3  usercdnumber4 requiredYu text-center m-0" type="" id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyPress="autoTab()" onkeyUp="autoTab()">
                                                         </div>
                                                         <div class=" field3 mx-1">
-                                                            <input class=" usercdnumber3 usercdnumber4 requiredYu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
+                                                            <input class=" usercdnumber3 usercdnumber4 requiredYu text-center m-0" type=""  placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
                                                             <!-- onkeyup="value=value.replace(/[^\d]/g,'') " -->
                                                         </div>
                                                         <div class=" field3 mx-1">
-                                                            <input class=" usercdnumber3 usercdnumber4 requiredYu text-center m-0" type="" name="test"placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" >
+                                                            <input class=" usercdnumber3 usercdnumber4 requiredYu text-center m-0" type="" placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" >
                                                         </div>
                                                         <div class=" field3 mx-1  d-flex align-items-center">
-                                                            <input class=" usercdnumber3 usercdnumber4 requiredYu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu">
+                                                            <input class=" usercdnumber3 usercdnumber4 requiredYu text-center m-0" type=""  placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu">
                                                             <i class="right fa-regular fa-circle-check"></i>
                                                             <i class="wrong fa-solid fa-triangle-exclamation">
                                                                 <small>請輸入正確的信用卡卡號</small>
@@ -484,10 +532,10 @@ header("Refresh:180");
                                                     <br>
                                                     <div class=" d-flex justify-content-start align-items-start "> 
                                                         <div class="field3 mx-1 ">
-                                                            <input class=" usercdMonthYu  requiredYu text-center m-0" type="" name="test" placeholder="月 " maxlength="2" id="usercreditcardmonth-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>12)value=12">
+                                                            <input class=" usercdMonthYu  requiredYu text-center m-0" placeholder="月 " maxlength="2" id="usercreditcardmonth-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>12)value=12">
                                                         </div>
                                                         <div class="field3 mx-1">
-                                                            <input class=" usercdYearYu  requiredYu text-center m-0" type="" name="test"placeholder="年" maxlength="2" id="usercreditcardyear-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>29)value=29">
+                                                            <input class=" usercdYearYu  requiredYu text-center m-0" placeholder="年" maxlength="2" id="usercreditcardyear-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>29)value=29">
                                                             <i class="right fa-regular fa-circle-check"></i>
                                                             <i class="wrong fa-solid fa-triangle-exclamation">
                                                                 <small>請輸入正確的信用卡卡號</small>
@@ -502,7 +550,7 @@ header("Refresh:180");
                                                     <br>
                                                     <div class=" d-flex justify-content-start align-items-start "> 
                                                         <div class=" field3  mx-1 ">
-                                                            <input class=" cardCVC text-center requiredYu m-0" type="" name="test" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                            <input class=" cardCVC text-center requiredYu m-0" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
                                                             <i class="right fa-regular fa-circle-check"></i>
                                                             <i class="wrong fa-solid fa-triangle-exclamation">
                                                             requiredYu                                 <small>請輸入正確的信用卡後三碼</small>
@@ -516,21 +564,25 @@ header("Refresh:180");
                                 </div>
                             </div>
                             <div class="p-3 ATMradioYu " >
-                                <input class="ATMradioYu" type="radio" name="listinfo-title-radio-yu" id=""  checked/>
+                                <input class="ATMradioYu" type="radio" name="listinfo-title-radio-yu" checked/>
                                 <label for="name" class="m-0"> ATM轉帳 </label>
                             </div>
                         </section>
                     </div>
+                    <input type="hidden" name="state" value="訂單未完成">
+                    <input type="hidden" name="delivery" value="宅配">
+                    <input type="hidden" name="payment" value="ATM轉帳">
+                    <input type="hidden" name="payment_state" value="未付款">
                     <div class=" d-md-flex justify-content-md-end">
                         <!-- a href="#buy1.php" -->
                         <div class="btn unique-nextbutton-yu p-0">
-                            <a href="shopping-cart-ATM-product.php">
-                                <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="button"  name=ok value="送出">
+                            <!-- <a href="shopping-cart-ATM-product.php"></a> -->
+                                <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="submit"  name=ok value="送出">
                                     <p class="m-0 text-center">
                                         確認訂購
                                     </p>
                                 </button>
-                            </a>
+                            
                         </div>
                     </div>
                 </form>
@@ -684,7 +736,7 @@ header("Refresh:180");
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="test"required/>
+                            <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" required/>
                         </div>
                         <div class="mdorder-phone-yu p-3">
                             <label for="mobile" class="">
@@ -692,7 +744,7 @@ header("Refresh:180");
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="orderaddress3-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="test"required/>
+                            <input class="orderaddress3-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"required/>
                         </div>
                         <div class="mdorder-address-yu p-3">
                             <label for="address" class="">
@@ -703,7 +755,7 @@ header("Refresh:180");
                             <div>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="form-group mdorderaddress1-yu">
-                                        <select class=""name="test"id="city-yu"required>
+                                        <select class=""id="city-yu"required>
                                             <option class="" value="0">臺北市</option>
                                             <option value="1">新北市</option>
                                             <option value="2">基隆市</option>
@@ -726,14 +778,14 @@ header("Refresh:180");
                                         </select>
                                     </div>
                                     <div class="form-group mdorderaddress2-yu">
-                                        <select class=""name="test"id="district">
+                                        <select class=""id="district">
                                             <option class="" value="0">中正區</option>
                                             <option value="1">板橋區</option>
                                             <option value="2">仁愛區</option>
                                         </select>
                                     </div>
                                 </div>
-                                <input class="mdorderaddress3-yu mt-1" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="test"/>
+                                <input class="mdorderaddress3-yu mt-1" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"/>
                             </div>
                         </div>
                         <div class="mdorder-email-yu p-3">
@@ -741,7 +793,7 @@ header("Refresh:180");
                                 >Email<span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="" type="text" class="" id="email-yu" name="test" />
+                            <input class="" type="text" class="" id="email-yu"  />
                         </div>
                     </div>
                 </section>
@@ -764,7 +816,7 @@ header("Refresh:180");
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="test"required/>
+                            <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" required/>
                         </div>
                         <div class="mdorder-phone-yu p-3">
                             <label for="mobile" class="">
@@ -772,7 +824,7 @@ header("Refresh:180");
                                 <span style="color: #963c38">*</span>
                             </label>
                             <br/>
-                            <input class="mdorderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="test"required/>
+                            <input class="mdorderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"required/>
                         </div>
                         <div class="receiver-deliver-yu p-3">
                             <label for="" class="">
@@ -796,7 +848,7 @@ header("Refresh:180");
                             <div>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="form-group mdorderaddress1-yu">
-                                        <select class=""name="test"id="city-yu"required>
+                                        <select class=""id="city-yu"required>
                                             <option class="" value="0">臺北市</option>
                                             <option value="1">新北市</option>
                                             <option value="2">基隆市</option>
@@ -819,14 +871,14 @@ header("Refresh:180");
                                         </select>
                                     </div>
                                     <div class="form-group mdorderaddress2-yu">
-                                        <select class=""name="test"id="district">
+                                        <select class=""id="district">
                                             <option class="" value="0">中正區</option>
                                             <option value="1">板橋區</option>
                                             <option value="2">仁愛區</option>
                                         </select>
                                     </div>
                                 </div>
-                                <input class="mdorderaddress3-yu mt-1" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="test"/>
+                                <input class="mdorderaddress3-yu mt-1" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"/>
                             </div>
                         </div>
                         <div class="mdorder-email-yu p-3">
@@ -834,7 +886,7 @@ header("Refresh:180");
                                 >Email<span style="color: #963c38">*</span>
                             </label>
                             <br />
-                            <input class="" type="text" class="" id="email-yu" name="test" />
+                            <input class="" type="text" class="" id="email-yu"  />
                         </div>
                     </div>
                 </section>
@@ -856,16 +908,16 @@ header("Refresh:180");
                                 <br>
                                 <div class=" mdcreditcard-number-yu d-flex justify-content-center align-items-center "> 
                                     <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                 </div>
                                 <div class="mdcreditcard-numberbox "></div>
@@ -877,16 +929,16 @@ header("Refresh:180");
                                 <br>
                                 <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
                                     <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor1-yu">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor2-yu">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                 </div>
                                 <div class="mdcreditcard2-numberbox "></div>
@@ -898,22 +950,22 @@ header("Refresh:180");
                                 <br>
                                 <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
                                     <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor1-yu">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor2-yu">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="0000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="0000 ">
                                     </div>
                                     <div class=" mdcreditcard-number-backgroundcolor3-yu">
-                                        <input class="text-center m-0" type="" name="test" id="" placeholder="000 ">
+                                        <input class="text-center m-0" type=""  id="" placeholder="000 ">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="pt-4">
-                            <input type="checkbox" name="test" id="" />
+                            <input type="checkbox"  id="" />
                             <label for="name" class="m-0 "> 
                                 ATM匯款
                             </label>

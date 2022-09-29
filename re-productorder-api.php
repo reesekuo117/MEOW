@@ -12,36 +12,39 @@ foreach($_SESSION['pcart'] as $k=>$v){
 }
 
 // 寫入訂單
-$po_sql = sprintf( "INSERT INTO `product_order`(
-        `member_id`, 
-        -- `staxte`, 
-        `total`, 
-        `name`, 
-        `phone`, 
-        `address_city`, 
-        `address_region`, 
-        `address`, 
-        `delivery`, 
-        `payment`, 
-        `payment_state`, 
-        `created_at`
-        ) VALUES(
-            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-            NOW()
-        )", 
-        $_SESSION['user']['id'], 
-        $total,
-        $_POST['consigneename'],
-        $_POST['consigneephone'],
-        $_POST['consigneeaddress1'],
-        $_POST['consigneeaddress2'],
-        $_POST['consigneeaddress3'],
-        $delivery,
-        $payment,
-        $payment_state
-        
-    );
-$stmt = $pdo->query($po_sql);
+$po_sql ="INSERT INTO `product_order`(
+    `member_id`, 
+    `state`, 
+    `total`, 
+    `name`, 
+    `phone`, 
+    `address_city`, 
+    `address_region`, 
+    `address`, 
+    `delivery`, 
+    `payment`, 
+    `payment_state`, 
+    `created_at`
+    ) VALUES(
+        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+        NOW()
+    )";
+$stmt = $pdo->prepare($po_sql);
+$stmt->execute([
+    $_SESSION['user']['id'],
+    $_POST['state'],
+    $total,
+    $_POST['consigneename'],
+    $_POST['consigneephone'],
+    $_POST['consigneeaddress1'],
+    $_POST['consigneeaddress2'],
+    $_POST['consigneeaddress3'],
+    $_POST['delivery'],
+    $_POST['payment'],
+    $_POST['payment_state']
+]);
+
+
 
 $order_sid = $pdo->lastInsertId();
 
@@ -53,14 +56,18 @@ foreach($_SESSION['pcart'] as $k=>$v){
     $stmt->execute([
         $order_sid,
         $v['sid'],
-        $v['price'],
         $v['qty'],
+        $v['product_price'],
     ]);
 }
 
 //清除購物車內容
 unset($_SESSION['pcart']);
 
+if($stmt->rowCount()){
+    $output['success'] = true;
+} else {
+    $output['error'] = '購買未成功';
+}
 
-// serialize存字串
-?>
+echo json_encode($output, JSON_UNESCAPED_UNICODE);

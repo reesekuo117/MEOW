@@ -182,21 +182,24 @@ $('.ordercrossT-re').click(function(){
     $('.commentslideT-re').slideUp('normal');
 })
 // 星星
-$('.star-re').click(function(){
+$('.pb-3 .star-re').click(function(){
     const form1 = $(this).closest('form')[0];
     form1.star_num.value = + $(this).index() + 1;
 
     console.log('hi',$(this).index());
+
+    const stars = $(this).closest('.pb-3').find('.star-re')
+
     for(let i = 0; i < 5; i++ ){
         const color = ($(this).index() >= i)? '#E5A62A' : 'none';
         let color1 ;
         if($(this).index() >= i){
-            color1 = yellow
+            color1 = '#E5A62A'
         }
         else{
-            color1 = none 
+            color1 = 'none' 
         }
-        $('.star-re').eq(i).css('fill',color)
+        stars.eq(i).css('fill',color)
     }
     // if($(this).index() === 0){
     //     $('.star-re').eq(0).css('fill','#E5A62A')

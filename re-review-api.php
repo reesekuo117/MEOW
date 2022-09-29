@@ -23,7 +23,7 @@ if(empty($_POST['target_type']) or empty($_POST['product_sid'])){
 $target_type = intval($_POST['target_type']);
 $product_sid = intval($_POST['product_sid']);
 $star_num = intval($_POST['star_num']);
-$tag_re = intval($_POST['tag_re']);
+$tag_re = empty($_POST['tag_re']) ? '[]' : json_encode($_POST['tag_re']);
 
 
 $sql = "INSERT INTO `review`(
