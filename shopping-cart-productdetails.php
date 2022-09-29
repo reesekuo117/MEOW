@@ -1086,5 +1086,34 @@ header("Refresh:180");
 
 <script src="shopping-cart-productdetails.js" ></script>
 
+<script>
+    // 商品
+    function addToCart_P_Yu(event) {
+        const btn = $(event.currentTarget);
+        const qty = btn.closest("#uniqui-yu").find(".PqtyYu").text();
+        const p = btn.closest("#uniqui-yu").find("#AllTotal_P_Yu").text();
+        // const qty=1;
+        // console.log(btn);
+        console.log('hihi', btn.closest("#uniqui-yu").find("#AllTotal_P_Yu").text());
+        const sid = btn.attr('data-sid');
+        console.log({
+            sid,
+            qty,
+            p
+        });
+        $.get(
+            're-cart-p-api.php', {
+                sid,
+                qty,
+                p
+            },
+            function(data) {
+                showCartCount(data);
+            },
+            'json');
+    }
+
+</script>
+
 
 <?php include __DIR__. '/parts/html-foot.php'; ?>

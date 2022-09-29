@@ -1211,8 +1211,6 @@ $("#btnAutoInput-yu").click(function () {
 // });
 
 
-
-
 function checkFormPass() {
   const Allsubmit = $(".Allsubmit");
   let isPass = true;
