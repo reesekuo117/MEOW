@@ -61,11 +61,11 @@ $('.icon_heart').click(function(){
 
 
 // 排序會亮
-$('.product_sort a').click(function(){
-    $(this).closest('div').find('a').addClass('sort_active').siblings().removeClass('sort_active');
-});
+// $('.product_sort a').click(function(){
+//     $(this).closest('div').find('a').addClass('sort_active').siblings().removeClass('sort_active');
+// });
 
 // 側邊欄篩選
-$('.product_cate').click(function(){
-    $(this).closest('div').find('a').addClass('btncolor_active').siblings().removeClass('btncolor_active');
-});
+// $('.product_cate').click(function(){
+//     $(this).closest('div').find('a').addClass('btncolor_active').siblings().addClass('btncolor_default');
+// });

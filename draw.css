@@ -1943,7 +1943,7 @@ button[disabled]:hover {
 
 .mdrawSection01 {
     width: 100%;
-    height: calc(100vh - 72px)
+    /* height: 100vh */
 }
 
 .mdrawSection01 h4 {
@@ -2204,7 +2204,6 @@ button[disabled]:hover {
     /* background-color: rgba(45, 45, 45, 0.176); */
     position: absolute;
     bottom: 0;
-    /* 直接在div下陰影 */
 }
 
 /* .carousel .icon_heart{

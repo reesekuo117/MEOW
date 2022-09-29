@@ -70,7 +70,12 @@ foreach($_SESSION['pcart'] as $i=>$j){
 //清除購物車內容
 unset($_SESSION['pcart']);
 
-echo json_encode($output, JSON_UNESCAPED_UNICODE);
+if($stmt->rowCount()){
+    $output['success'] = true;
+} else {
+    $output['error'] = '資料未修改';
+}
 
+echo json_encode($output, JSON_UNESCAPED_UNICODE);
 
 

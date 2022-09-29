@@ -866,5 +866,32 @@ header("Refresh:180");
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 
 <script src="./shopping-cart-travellist.js"></script>
+<script>
+    //行程
+    function addToCart_T_Yu(event) {
+        const btn = $(event.currentTarget);
+        const qty = btn.closest("#travel-yu").find(".TqtyYu").text();
+        const t = btn.closest("#travel-yu").find("#AllTotal_T_Yu").text();
+        // const qty=1;
+        // console.log(btn);
+        console.log('hihi',  btn.closest("#travel-yu").find("#AllTotal_T_Yu").text());
+        const sid = btn.attr('data-t-sid');
+        console.log({
+            sid,
+            qty,
+            t
+        });
+        $.get(
+            're-cart-t-api.php', {
+                sid,
+                qty,
+                t
+            },
+            function(data) {
+                showCartCount(data);
+            },
+            'json');
+    }
+</script>
 
 <?php include __DIR__ . '/parts/html-foot.php'; ?>

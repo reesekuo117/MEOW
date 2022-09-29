@@ -57,7 +57,7 @@ $pageName ='會員中心'; //頁面名稱
         SELECT 
             po.*, 
             pod.product_sid,
-            pod.total, 
+            pod.price, 
             pod.quantity,
             p.product_name, 
             p.product_card_img, 
@@ -575,7 +575,7 @@ $pageName ='會員中心'; //頁面名稱
                         <div class="d-md-flex orderlist-re py-3">
                             <div class="col text-16-re text-center"><?= $r['created_at'] ?></div>
                             <div class="col text-16-re text-center">PO2022<?= $r['sid'] ?></div>
-                            <div class="col text-16-re text-center price-re"><?= $r['price'] ?></div>
+                            <div class="col text-16-re text-center price-re"><?= $r['total'] ?></div>
                             <div class="col text-16-re text-center"><?= $r['state'] ?></div>
                             <div class="col text-center orderbtn-re orderbtnP-re">
                                 查詢訂單
@@ -605,9 +605,9 @@ $pageName ='會員中心'; //頁面名稱
                                                 <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_img'] ?>.jpg" alt=""></td>
                                                 <td class="productname-re text-16-re text-center m-0"><?= $rList['product_name'] ?></td>
                                                 <!-- <td class="text-16-re text-center ordertitle-other-re">< ?= $rList['product_name'] ?></td> -->
-                                                <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $r['price'] ?></td>
+                                                <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $rList['price'] ?></td>
                                                 <td class="text-16-re text-center ordertitle-other-re"><?= $rList['quantity'] ?></td>
-                                                <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $rList['total'] ?></td>
+                                                <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $rList['price'] * $rList['quantity'] ?></td>
                                                 <td class="text-center ordertitle-other2-re ">
                                                     <button class="evaluation-btn-re btn-re phonewidth250-re text-16-re py-2" data-pid="<?= $rList['product_sid'] ?>" data-form="orderForm<?= $r['sid'] ?>">給予評價</button></td>
                                             </tr>
@@ -669,6 +669,7 @@ $pageName ='會員中心'; //頁面名稱
                                     <path d="M25.3333 6.66666L6.66659 25.3333" stroke="#432A0F" stroke-width="2.66667" stroke-linecap="round"/>
                                 </svg>
                             </div>
+                            <!-- 星星 -->
                                 <div class="pb-3">
                                     <svg data-val="1" class="star-re mx-1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E5A62A" stroke-width="2.66667" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13.7617 3.3816C12.9756 1.88483 10.6717 1.99174 10.1024 3.70234L8.69513 7.93109H4.27626C2.32724 7.93109 1.52943 10.4347 3.1191 11.5623L6.65256 14.0689L5.27732 18.2013C4.66691 20.0356 6.75544 21.5826 8.33216 20.4641L12.0001 17.8622L15.668 20.4641C17.2447 21.5826 19.3333 20.0356 18.7228 18.2013L17.3476 14.0689L20.8811 11.5623C22.4707 10.4347 21.6729 7.93109 19.7239 7.93109H15.305L13.8978 3.70234C13.8598 3.5883 13.8141 3.48139 13.7617 3.3816Z"/>

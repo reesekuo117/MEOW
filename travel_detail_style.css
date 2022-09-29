@@ -510,3 +510,60 @@ select {
   bottom: 40px;
   z-index: 2;
 }
+
+/* ------------------------- 光箱-------------------- */
+
+.modal-header {
+  background-color: var(--color-yellow);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modal-footer {
+  border-top: 0;
+  padding-top: 10px;
+}
+
+.modal-footer .btn {
+  background-color: var(--color-yellow);
+}
+
+.modal-content {
+  border-radius: 16px;
+  border: 0px salmon solid;
+  
+}
+
+.errorMeow {
+  bottom: 0px;
+  left: 32px;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: var(--color-orange);
+  border-color: transparent;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: var(--color-orange);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+}
+
+.modal-body {
+  text-align: center;
+  height: 90px;
+  align-items: center;
+  padding-top: 36px;
+}
+
+.close {
+  text-shadow: 0 0 transparent;
+}
+
+.close:hover {
+  text-shadow: 0 0 transparent;
+  box-shadow: 0 0 transparent;
+}

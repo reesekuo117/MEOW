@@ -106,7 +106,9 @@
 .travel_sort a:focus {
     color: var(--color-orange);
 }
-
+.travel_sort a.sort_active{
+    color: var(--color-orange);
+}
 .travel_section input[type=checkbox]:checked {
     background: var(--color-yellow);
     color: #fff;
@@ -128,46 +130,37 @@
 
 
 /* ----------側邊攔篩選樣式------- */
-/* #form-check-ca:hover{
-    text-decoration:none;
-    color: var(--color-yellow);
+
+.btncolor_default{
+    color: var(--color-text87) !important;
+}
+.btncolor_default:hover{
+    color: var(--color-yellow) !important;
+}
+.btncolor_active{
+    color: var(--color-yellow) !important;
 }
 
-#form-check-ca{
+.travel_section a{
     color: #432A0F;
-} */
-
-#form-check-ka:hover{
-    text-decoration:none;
+    text-decoration: none;
+}
+.travel_section a:hover{    
     color: var(--color-yellow);
 }
 
-#form-check-ka{
+.list-unstyled a{
     color: #432A0F;
-}
-
-.product_cate.btncolor_default{
-    color: var(--color-text87);
-}
-.product_cate.btncolor_active{
-    color: var(--color-yellow);
-}
-
-.product_cate a {
-    color: inherit;
     text-decoration: none;
 }
 
-.product_cate:hover a {
-    color: var(--color-yellow);
+
+
+
+/* -------上方排序---------------- */
+a.sort_active{
+    color: var(--color-orange);
 }
-
-
-
-
-
-
-
 
 
 

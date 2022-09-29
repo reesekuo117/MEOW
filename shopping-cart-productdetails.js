@@ -1,3 +1,25 @@
+// product
+function checkFormProduct(){
+  console.log('checkFormProduct');
+  let isPass = true;
+  // if (!$('#oldpassword_re').val()) {
+  //     genAlert4('請填寫正確資料');
+  //     return;
+  // }
+  if(isPass){
+      $.post(
+          're-productorder-api.php', 
+          $(document.product_form).serialize(),
+          function(data){
+              console.log('product_form data',data);
+              if(data.success){
+                  genAlert('購買成功', 'success');
+              }else{
+                  genAlert(data.error);
+              }
+      }, 'json');
+  }
+}
 
 //-------------------------訂購人地址--------------------------
 let districtArray1 = [
@@ -48,9 +70,9 @@ let districtArray1 = [
   ],
   ["仁愛區", "中正區", "信義區", "中山區", "安樂區", "暖暖區", "七堵區"],
 ];
-$("#city1-yu").change(function () {
+$("#usercity-yu").change(function () {
   const cityNumber1 = $(this).val();
-  const districtData1 = districtArray1[cityNumber1];
+  const districtData1 = districtArray1[cityNumber1-5];
   // 用迴圈會更方便
   // $('#district option').eq(0).text(districtData[0])
   // $('#district option').eq(1).text(districtData[1])
@@ -61,11 +83,11 @@ $("#city1-yu").change(function () {
   // 2.用陣列的方法來寫迴圈，次數就是陣列的資料數量
 
   console.log("districtData1:", districtData1.length);
-  $("#district1-yu").empty();
+  $("#userdistrict-yu").empty();
   $(districtData1).each(function (index, item) {
     console.log("JQ item:", item);
     console.log("JQ index:", index);
-    $("#district1-yu").append(`<option value="${index}">${item}</option>`);
+    $("#userdistrict-yu").append(`<option value="${index}">${item}</option>`);
   });
 });
 
@@ -120,7 +142,7 @@ let districtArray2 = [
 ];
 $("#usercity-yu").change(function () {
   const cityNumber2 = $(this).val();
-  const districtData2 = districtArray2[cityNumber2];
+  const districtData2 = districtArray2[cityNumber2-5];
   // 用迴圈會更方便
   // $('#district option').eq(0).text(districtData[0])
   // $('#district option').eq(1).text(districtData[1])
@@ -1167,28 +1189,26 @@ $("#btnAutoInput-yu").click(function () {
   });
 });
 
-// 確認訂購按鈕
-$(".Allsubmit").click(function (event) {
-  let isPass = true;
-  if (!$(".receiveraddress3-yu ").val()) {
-    console.log("123:", $(".receiveraddress3-yu ").val());
-    // 不送
-    alert("沒填完");
-    event.preventDefault();
-    // $(".Allsubmit").addClass("btn_disabled_ba");
-    // $("a").attr("href", "#section-3-yu");
-  } else {
-    console.log("fff");
-    // 送
-    // $(".Allsubmit").removeClass("btn_disabled_ba");
-    $("a").attr("href", "shopping-cart-ATM-product.php");
-    confirm("您確定送出嗎?");
+// // 確認訂購按鈕
+// $(".Allsubmit").click(function (event) {
+//   let isPass = true;
+//   if (!$(".receiveraddress3-yu ").val()) {
+//     console.log("123:", $(".receiveraddress3-yu ").val());
+//     // 不送
+//     alert("沒填完");
+//     event.preventDefault();
+//     // $(".Allsubmit").addClass("btn_disabled_ba");
+//     // $("a").attr("href", "#section-3-yu");
+//   } else {
+//     console.log("fff");
+//     // 送
+//     // $(".Allsubmit").removeClass("btn_disabled_ba");
+//     $("a").attr("href", "shopping-cart-ATM-product.php");
+//     confirm("您確定送出嗎?");
 
-    document.desktop_form.submit();
-  }
-});
-
-
+//     document.desktop_form.submit();
+//   }
+// });
 
 
 function checkFormPass() {
@@ -1227,5 +1247,6 @@ function checkFormPass() {
 }
 
 $(".receiveraddress3-yu").on("input", checkFormPass);
+
 
 

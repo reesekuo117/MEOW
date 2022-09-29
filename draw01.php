@@ -1403,7 +1403,7 @@ $title = '線上求籤'
             <img class="w-100" src="./imgs/draw/46.png" alt="">
         </div>
 
-        <div class="sound-icon disabled justify-content-center ">
+        <div class="sound-icon disabled justify-content-center d-none">
             <div class="sound-wave">
                 <i class="bar"></i>
                 <i class="bar"></i>
@@ -1427,7 +1427,7 @@ $title = '線上求籤'
                 <i class="bar"></i>
             </div>
         </div>
-        <div class="onOff d-flex justify-content-center ">
+        <div class="onOff d-flex justify-content-center mt-3">
             <a class="text-decoration-none" href="draw02.html">
                 <div class="musicOn d-flex justify-content-center align-items-center">
                     <h3>開</h3>
