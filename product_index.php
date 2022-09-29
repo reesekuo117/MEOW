@@ -1,7 +1,12 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // 開頭
 $pageName ='獨家商品'; //頁面名稱
-$title = '獨家商品'
+$title = '獨家商品';
+
+$sql_1 ="SELECT * FROM `product` WHERE  sid IN(6,11,12)";
+$products_1 = $pdo->query($sql_1)->fetchAll();
+$sql_2 ="SELECT * FROM `product` WHERE  sid IN(1,7,8)";
+$products_2 = $pdo->query($sql_2)->fetchAll();
 
 ?>
 
@@ -429,87 +434,48 @@ $title = '獨家商品'
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
                                             <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="">
-                                                        <div class="thumb-wrapper mx-3">
-                                                            <div class="img-box">
-                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                    alt="">
-                                                                <div class="icon_heart">
-                                                                    <svg class="heart_line" width="32" height="32"
-                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                        <path
-                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                            stroke-width="2.66667" />
-                                                                    </svg>
+                                                <?php foreach ($products_1  as $p) : ?>   
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/cards/<?= $p['product_card_img'] ?>.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6><?= $p['product_name'] ?></h6>
+
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-around align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i class="fa-solid fa-star"></i></span>
+                                                                            </div><?= $p['product_comment']?>
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire">
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            <?= $p['product_popular']?>個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto"><?= $p['product_price']?></h5>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="thumb-content">
-                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+                                                        </a>
 
-                                                                <div
-                                                                    class="card_under d-flex justify-content-around align-items-center">
-                                                                    <small class="xs card-text d-flex pr-1">
-                                                                        <div class="icon_star">
-                                                                            <span><i class="fa-solid fa-star"></i></span>
-                                                                        </div>4.7(50)
-                                                                    </small>
-                                                                    <small class="xs card-text d-flex">
-                                                                        <div class="icon_fire">
-                                                                            <span><i class="fa-solid fa-fire"></i></span>
-                                                                        </div>
-                                                                        3K個已訂購
-                                                                    </small>
-                                                                    <h5 class="m-0 ml-auto">850</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="">
-                                                        <div class="thumb-wrapper mx-3">
-                                                            <div class="img-box">
-                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                    alt="">
-                                                                <div class="icon_heart">
-                                                                    <svg class="heart_line" width="32" height="32"
-                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                        <path
-                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                            stroke-width="2.66667" />
-                                                                    </svg>
-                                                                </div>
-                                                            </div>
-                                                            <div class="thumb-content">
-                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
-
-                                                                <div
-                                                                    class="card_under d-flex justify-content-between align-items-center">
-                                                                    <small class="xs card-text d-flex pr-1">
-                                                                        <div class="icon_star">
-                                                                            <span><i
-                                                                                    class="fa-solid fa-star"></i></span>
-                                                                        </div> 4.7(50)
-                                                                    </small>
-                                                                    <small class="xs card-text d-flex">
-                                                                        <div class="icon_fire ">
-                                                                            <span><i
-                                                                                    class="fa-solid fa-fire"></i></span>
-                                                                        </div>
-                                                                        3K個已訂購
-                                                                    </small>
-                                                                    <h5 class="m-0 ml-auto">850</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-
-                                                </div>
-                                                <div class="col-md-4">
+                                                    </div>
+                                                <?php endforeach; ?>   
+                                                <!-- <div class="col-md-4">
                                                     <a href="">
                                                         <div class="thumb-wrapper mx-3">
                                                             <div class="img-box">
@@ -549,134 +515,174 @@ $title = '獨家商品'
                                                         </div>
                                                     </a>
 
-                                                </div>
+                                                </div> -->
+                                                <!-- <div class="col-md-4">
+                                                    <a href="">
+                                                        <div class="thumb-wrapper mx-3">
+                                                            <div class="img-box">
+                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                    alt="">
+                                                                <div class="icon_heart">
+                                                                    <svg class="heart_line" width="32" height="32"
+                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                            stroke-width="2.66667" />
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-content">
+                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                <div
+                                                                    class="card_under d-flex justify-content-between align-items-center">
+                                                                    <small class="xs card-text d-flex pr-1">
+                                                                        <div class="icon_star">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-star"></i></span>
+                                                                        </div> 4.7(50)
+                                                                    </small>
+                                                                    <small class="xs card-text d-flex">
+                                                                        <div class="icon_fire ">
+                                                                            <span><i
+                                                                                    class="fa-solid fa-fire"></i></span>
+                                                                        </div>
+                                                                        3K個已訂購
+                                                                    </small>
+                                                                    <h5 class="m-0 ml-auto">850</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                </div> -->
                                             </div>
                                         </div>
                                         <div class="carousel-item">
                                             <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="">
-                                                        <div class="thumb-wrapper mx-3">
-                                                            <div class="img-box">
-                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                    alt="">
-                                                                <div class="icon_heart">
-                                                                    <svg class="heart_line" width="32" height="32"
-                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                        <path
-                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                            stroke-width="2.66667" />
-                                                                    </svg>
+                                                <?php foreach ($products_2 as $p) : ?>   
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/cards/<?= $p['product_card_img'] ?>.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6><?= $p['product_name'] ?></h6>
+
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-around align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i class="fa-solid fa-star"></i></span>
+                                                                            </div><?= $p['product_comment']?>
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire">
+                                                                                <span><i class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            <?= $p['product_popular']?>個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto"><?= $p['product_price']?></h5>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="thumb-content">
-                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+                                                        </a>
+                                                    </div>
+                                                <?php endforeach; ?> 
+                                                    <!-- <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
 
-                                                                <div
-                                                                    class="card_under d-flex justify-content-between align-items-center">
-                                                                    <small class="xs card-text d-flex pr-1">
-                                                                        <div class="icon_star">
-                                                                            <span><i
-                                                                                    class="fa-solid fa-star"></i></span>
-                                                                        </div> 4.7(50)
-                                                                    </small>
-                                                                    <small class="xs card-text d-flex">
-                                                                        <div class="icon_fire ">
-                                                                            <span><i
-                                                                                    class="fa-solid fa-fire"></i></span>
-                                                                        </div>
-                                                                        3K個已訂購
-                                                                    </small>
-                                                                    <h5 class="m-0 ml-auto">850</h5>
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </a>
+                                                        </a>
 
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="">
-                                                        <div class="thumb-wrapper mx-3">
-                                                            <div class="img-box">
-                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                    alt="">
-                                                                <div class="icon_heart">
-                                                                    <svg class="heart_line" width="32" height="32"
-                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                        <path
-                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                            stroke-width="2.66667" />
-                                                                    </svg>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="">
+                                                            <div class="thumb-wrapper mx-3">
+                                                                <div class="img-box">
+                                                                    <img src="./imgs/product/P20_4.jpg" class="img-fluid"
+                                                                        alt="">
+                                                                    <div class="icon_heart">
+                                                                        <svg class="heart_line" width="32" height="32"
+                                                                            viewBox="0 0 32 32" fill="none" stroke="#fff"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
+                                                                                stroke-width="2.66667" />
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="thumb-content">
+                                                                    <h6>霞海城隍廟 X 護手霜禮盒</h6>
+
+                                                                    <div
+                                                                        class="card_under d-flex justify-content-between align-items-center">
+                                                                        <small class="xs card-text d-flex pr-1">
+                                                                            <div class="icon_star">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-star"></i></span>
+                                                                            </div> 4.7(50)
+                                                                        </small>
+                                                                        <small class="xs card-text d-flex">
+                                                                            <div class="icon_fire ">
+                                                                                <span><i
+                                                                                        class="fa-solid fa-fire"></i></span>
+                                                                            </div>
+                                                                            3K個已訂購
+                                                                        </small>
+                                                                        <h5 class="m-0 ml-auto">850</h5>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="thumb-content">
-                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
+                                                        </a>
 
-                                                                <div
-                                                                    class="card_under d-flex justify-content-between align-items-center">
-                                                                    <small class="xs card-text d-flex pr-1">
-                                                                        <div class="icon_star">
-                                                                            <span><i
-                                                                                    class="fa-solid fa-star"></i></span>
-                                                                        </div> 4.7(50)
-                                                                    </small>
-                                                                    <small class="xs card-text d-flex">
-                                                                        <div class="icon_fire ">
-                                                                            <span><i
-                                                                                    class="fa-solid fa-fire"></i></span>
-                                                                        </div>
-                                                                        3K個已訂購
-                                                                    </small>
-                                                                    <h5 class="m-0 ml-auto">850</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="">
-                                                        <div class="thumb-wrapper mx-3">
-                                                            <div class="img-box">
-                                                                <img src="./imgs/product/P20_4.jpg" class="img-fluid"
-                                                                    alt="">
-                                                                <div class="icon_heart">
-                                                                    <svg class="heart_line" width="32" height="32"
-                                                                        viewBox="0 0 32 32" fill="none" stroke="#fff"
-                                                                        xmlns="http://www.w3.org/2000/svg">
-                                                                        <path
-                                                                            d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z"
-                                                                            stroke-width="2.66667" />
-                                                                    </svg>
-                                                                </div>
-                                                            </div>
-                                                            <div class="thumb-content">
-                                                                <h6>霞海城隍廟 X 護手霜禮盒</h6>
-
-                                                                <div
-                                                                    class="card_under d-flex justify-content-between align-items-center">
-                                                                    <small class="xs card-text d-flex pr-1">
-                                                                        <div class="icon_star">
-                                                                            <span><i
-                                                                                    class="fa-solid fa-star"></i></span>
-                                                                        </div> 4.7(50)
-                                                                    </small>
-                                                                    <small class="xs card-text d-flex">
-                                                                        <div class="icon_fire ">
-                                                                            <span><i
-                                                                                    class="fa-solid fa-fire"></i></span>
-                                                                        </div>
-                                                                        3K個已訂購
-                                                                    </small>
-                                                                    <h5 class="m-0 ml-auto">850</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-
-                                                </div>
+                                                    </div> --> 
                                             </div>
                                         </div>
                                     </div>
