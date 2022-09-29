@@ -17,7 +17,6 @@ $("#travel-a-yu").click(function () {
   $("#myTabContent-P-yu").hide();
 });
 
-
 //-----手機獨家商品 旅遊行程分頁標籤切換----------
 
 $("#mduniqui-a-yu").click(function () {
@@ -31,63 +30,67 @@ $("#mdtravel-a-yu").click(function () {
   $("#mdmyTabContent-yu").hide();
 });
 
-
 //----------刪除商品清單()--------------
 
-function removeItem(event) {
-  const tr = $(event.currentTarget).closest('tr');
-  const sid = tr.attr('data-sid');
+function removePItem(event) {
+  const tr = $(event.currentTarget).closest("tr");
+  const sid = tr.attr("data-sid");
 
   $.get(
-      're-cart-p-api.php',
-      {sid}, 
-      function(data){
-          console.log(data);
-          showCartCount(data); // 購物車總數量
-          tr.remove();
+    "re-cart-p-api.php",
+    { sid },
+    function (data) {
+      console.log(data);
+      showCartCount(data); // 購物車總數量
+      tr.remove();
 
-          // TODO: 更新小計, 總計, 
-          //TODO:總計,
-          
-          updatePrices();//刪除後要呼叫函式
-      }, 
-      'json');
+      // TODO: 更新小計, 總計,
+      //TODO:總計,
+
+      updatePrices(); //刪除後要呼叫函式
+    },
+    "json"
+  );
 }
 
-// function updateItem(event) {
-//   const sid = $(event.currentTarget).closest('tr').attr('data-sid');
-//   const qty = $(event.currentTarget).val(); 
 
-//   $.get(
-//       're-cart-p-api.php',
-//       {sid, qty}, 
-//       function(data){
-//           console.log(data);
-//           showCartCount(data); // 購物車總數量
-//           // TODO: 更新小計, 總計, 總數量
-//           // TODO: 更新小計, 總計
-//           updatePrices(); //更新後就要呼叫函式
-//       }, 
-//       'json');
-// }
+//----------刪除旅遊清單()--------------
+function removeTItem(event) {
+  const tr = $(event.currentTarget).closest("tr");
+  const sid = tr.attr("data-sid");
 
 
+  $.get(
+    "re-cart-t-api.php",
+    { sid },
+    function (data) {
+      console.log(data);
+      showCartCount(data); // 購物車總數量
+      tr.remove();
 
+      // TODO: 更新小計, 總計,
+      //TODO:總計,
+
+      updatePrices(); //刪除後要呼叫函式
+    },
+    "json"
+  );
+}
 
 // const deleteIYu = $("#deleteIYu");
-$("i").click(function () {
-  console.log("yes");
-  $(this).closest("tr").remove();
-  updateTotalPrice();
-});
-function del() {
-  var msg = "您確定要刪除嗎喵?";
-  if (confirm(msg) === true) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// $("i").click(function () {
+//   console.log("yes");
+//   $(this).closest("tr").remove();
+//   updateTotalPrice();
+// });
+// function del() {
+//   var msg = "您確定要刪除嗎喵?";
+//   if (confirm(msg) === true) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 //--------數量遞增按鈕--------------
 
@@ -129,14 +132,36 @@ qtyplus.on("click", function () {
 
   $(this).closest("td").next().find("h6").text(total);
 
-  //   修改總金額
+  calTotal(); //呼叫
 
-  // 拿到要改的dom
-  // $("#total-amount").find("h6").text("1111");
-  // // 拿到要改的數值
-
-  // numChanged();
 });
+//總價計算商品
+function calTotal() {
+  let total = 0;
+  //訂單總金額
+  $(".littlePriceYu").each(function () {
+    total += +$(this).text();
+    // console.log($(this).text());
+  });
+  $("#AllTotal_P_Yu").text(total);
+  console.log({ total });
+}
+
+//總價計算行程
+function calTotal() {
+  let total = 0;
+  //訂單總金額
+  $(".littlePriceYu").each(function () {
+    total += +$(this).text();
+    // console.log($(this).text());
+  });
+  $("#AllTotal_T_Yu").text(total);
+  console.log({ total });
+}
+
+
+
+
 
 qtyminus.on("click", function () {
   let num = +$(this).next().text().trim();
@@ -195,39 +220,4 @@ qtyminus.on("click", function () {
 //     checkbox.checked = this.checked;
 //   }
 // };
-
-// //計算操作
-// function setTotal(){
-//     $("#totalprice_yu").html((t.val()) * 707);
-//     //toFixed()是保留小數點的函式
-// $(".total_price_yu").html((t.val()) * ( $('input[name="priceYu"]').val()) ); //toFixed()是保留小數點的函式
-// }
-// //初始化
-// setTotal();
-
-//訂單總金額
-// function setTotal(){
-//     var sum = 0;
-//     $("#tabYu td").each(function(){
-//     var num = parseInt($(this).find("input[class*=numberTotalYu]").val());
-//     var price = parseFloat($(this).find("span[class*=priceYu]").text());
-//     sum  = num*price;
-//     })
-//     totalpriceuniqui.html(sum);
-//     }
-// setTotal();
-
-//訂單金額
-// $("#checkboxInputYu").click(function () {
-//   console.log("hihi");
-//   $("#totalprice_yu").val === $("#TotalpriceYu").val($(this).val());
-// });
-
-
-
-
-
-
-
-
 

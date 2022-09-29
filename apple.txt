@@ -3,8 +3,8 @@
 2.公版navbar 下滑收起來 上滑出現(公版CSS新增.header-fixed/.header-xs-fixed 有需要的人自己套用)
 3.公版FOOTER已fixed，大家記得調整最後跟FOOTER距離
 4.07 商品RQ:
-詳細頁加入購物車
-列表頁搜尋功能
+詳細頁加入購物車 OK
+列表頁搜尋功能 OK
 (蘋果:首頁圖片有點大 需要調整~)
 
 
