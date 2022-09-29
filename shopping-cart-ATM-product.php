@@ -6,17 +6,9 @@ $pageName ='購物車'; //頁面名稱
 $member_id = $_SESSION['user']['id'];
 $allsql = " SELECT 
                 po.*,
-                -- pod.product_sid,
-                -- pod.price, 
-                -- pod.quantity,
-                -- pod.created_at,
-                -- p.product_name, 
-                -- p.product_card_img,
                 ad.city,
                 ad2.city region
             FROM product_order po
-                -- JOIN product_details pod ON po.sid = pod.order_sid
-                -- JOIN product p ON p.sid = pod.product_sid
                 JOIN address ad ON ad.sid = po.address_city
                 JOIN address ad2 ON ad2.sid = po.address_region
                 WHERE member_id=$member_id ORDER BY po.created_at DESC LIMIT 1";

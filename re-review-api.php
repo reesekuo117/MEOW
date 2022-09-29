@@ -48,7 +48,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $member_id,
     $target_type,
-    $product_sid ,
+    $product_sid,
     $star_num,
     $_POST['content_p'],
     $tag_re,
