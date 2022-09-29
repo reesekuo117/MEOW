@@ -12,10 +12,11 @@ if ($page < 1) {
 
 $qsp = []; // query string parameters
 
-$selectedCity = isset($_GET['city']) ? intval($_GET['city']) : 0; //依活動分類
+$selectedCity = isset($_GET['city']) ? intval($_GET['city']) : 0; //依活動地區分類
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; //沒有找到的話就會回到全部分類
 $sort = isset($_GET['sort']) ? $_GET['sort'] : '';
 $selectedKind = isset($_GET['kind']) ? intval($_GET['kind']) : 0; //依活動類型
+$selectedDaytime = isset($_GET['daytime']) ? intval($_GET['daytime']) : 0; //依活動時間類型
 $search = isset($_GET['search']) ? $_GET['search'] : '';   //搜尋關鍵字
 
 $where = " WHERE 1 "; //起頭
@@ -25,11 +26,14 @@ if ($selectedCity) {
     $qsp['city'] = $selectedCity;
 }
 
-
-
 if ($selectedKind) {
     $where .= " AND  travel_kind=$selectedKind ";
     $qsp['kind'] = $selectedKind;
+}
+
+if ($selectedDaytime) {
+    $where .= " AND  travel_daytime=$selectedDaytime ";
+    $qsp['daytime'] = $selectedDaytime;
 }
 
 
@@ -113,9 +117,14 @@ if ($totalRows > 0) {
     //取得活動類型
     $kind = $pdo->query("SELECT * FROM `travel_kind` WHERE travel_kind=travel_kind")->fetchAll();
 
+
+    //取得活動類型
+    $daytime = $pdo->query("SELECT * FROM `travel_daytime` WHERE travel_daytime=travel_daytime")->fetchAll();
+
     // echo json_encode([ 
     //         '$city' => $city,
     //         '$kind' => $kind,
+    //         '$daytime' => $daytime,
     //     ]);
     //     exit;
 
@@ -259,7 +268,7 @@ header("Refresh:180");
                     <ul>
                     <?php foreach ($kind as $k) : ?>
                             <div class="form-check">
-                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php 
+                                <a class="<?= $k['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php 
                                 $tmp = $qsp;
                                 $tmp['kind'] = $k['sid'];
                                 echo http_build_query($tmp);
@@ -267,12 +276,6 @@ header("Refresh:180");
                                     <?= $k['travel_kind'] ?>
                                 </a>
                             </div>
-                            <!-- <div class="form-check">
-                                <input class="form-check-input" type="radio" value="1" name="category" id="cultureCheck">
-                                <label class="form-check-label" for="cultureCheck">
-                                    文化之旅
-                                </label>
-                            </div> -->
                         <?php endforeach ?>
                     </ul>
                 </form>
@@ -353,7 +356,6 @@ header("Refresh:180");
 
 <div class="travel_section">
     <div class="container-fluid d-flex">
-        <!-- <div class="col-1"></div> -->
         <!-- 電腦篩選 -->
         <div class="aside offset-1 d-none d-md-block">
             <div class="col">
@@ -391,29 +393,22 @@ header("Refresh:180");
                                     <?= $k['travel_kind'] ?>
                                 </a>
                             </div>
-                            <!-- <div class="form-check">
-                                <input class="form-check-input" type="radio" value="1" name="category" id="cultureCheck">
-                                <label class="form-check-label" for="cultureCheck">
-                                    文化之旅
-                                </label>
-                            </div> -->
                         <?php endforeach ?>
                     </div>
-                    <!-- <div class="travel_cate time">
+                    <div class="travel_cate time">
                         <h5>－依旅遊時間分類</h5>
+                        <?php foreach ($daytime as $t) : ?>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="0" id="onedCheck" name="onedCheck" checked="checked">
-                            <label class="form-check-label" for="onedCheck">
-                                一日遊
-                            </label>
+                            <a  class="<?= $t['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php 
+                                $tmp = $qsp;
+                                $tmp['daytime'] = $t['sid'];
+                                echo http_build_query($tmp);
+                                ?>#travelDesktopSort">
+                                <?= $t['travel_daytime'] ?>
+                            </a>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="towdCheck" id="towdCheck">
-                            <label class="form-check-label" for="towdCheck">
-                                兩天一夜
-                            </label>
-                        </div>
-                    </div> -->
+                        <?php endforeach ?>
+                    </div>
                 </div>
                 <!-- TODO:價格篩選怎麼寫 -->
                 <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
