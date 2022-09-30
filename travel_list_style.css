@@ -447,6 +447,11 @@ a.sort_active {
         /* background: url(./imgs/product/star.png); */
     }
 }
+.starNum{
+    padding-top: 3px;
+    font-size: 14px;
+}
+
 
 /* .card-body_mb{
     padding: 12px;
@@ -476,7 +481,6 @@ a.sort_active {
 .card-text {
     color: var(--color-text100);
     margin: auto 0;
-    /* border: 1px solid #000; */
 }
 
 .card_small small {
@@ -599,7 +603,8 @@ a.sort_active {
 /* -------------------上下頁按鈕------------------ */
 /* ------------------頁數按鈕----------------- */
 .pages {
-    margin: 3rem;
+    margin-top: 0px;
+    margin-bottom: 80px;
 }
 
 .pages nav li a {

@@ -4,6 +4,11 @@
 header .navbar {
     /* background-color: transparent!important; */
 }
+
+.bgc_ba{
+
+    background-color: #f7d9b5;
+}
 header .navbar_ba {
     background-color: transparent !important;
     width: 100%;
@@ -14,7 +19,7 @@ header .navbar_ba {
     /* background:
         url(./imgs/index/grain2.png)center -500px / 160% no-repeat,
         url(./imgs/index/bg0.png) center center / 100%, var(--color-orange); */
-    background: url(./imgs/member/bg.png)  center center / cover no-repeat;
+    background: url(./imgs/member/bg-head.png)  center top / 1920px 240px no-repeat;
 }
 .background-re {
     /* background: url(./imgs/member/bg-member.jpg)  center center / cover no-repeat; */
@@ -23,6 +28,7 @@ header .navbar_ba {
     background-size: cover; */
     width: 100%;
     min-height: calc(100vh - 134px);
+    /* background-color: #f7d9b5; */
 }
 @media (max-width: 767px) {
     .container-re {
@@ -655,7 +661,7 @@ p {
 .liketitle-all-re a {
     list-style: none;
     text-decoration: none;
-    color: var(--color-text100);
+    color: white;
     
 }
 .liketitle-all-re a:hover {
@@ -702,6 +708,7 @@ p {
     right: 32px;
 }
 .card-re {
+    height: 320px;
     border-radius: 8px;
     overflow: hidden;
     background-color: var(--color-lightcreamy);
@@ -745,7 +752,7 @@ p {
 
 /* -------------------------------------------------------------------- */
 .orderbtn-re, .orderbtn02-re {
-    text-decoration: underline var(--color-text100) solid 2px;
+    text-decoration: underline var(--color-text100) solid 1px;
     text-underline-offset: 3px;
     cursor: pointer;
 }
@@ -756,7 +763,7 @@ p {
 .orderlist-re {
     padding: 12.8px 0;
     border-top: 0.5px solid var(--color-text38);
-    border-bottom: 0.5px solid var(--color-text38);
+    /* border-bottom: 0.5px solid var(--color-text38); */
 }
 .orderlist-re:hover {
     /* background-color: var(--color-lightcreamy); */

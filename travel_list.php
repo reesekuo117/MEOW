@@ -433,7 +433,7 @@ header("Refresh:180");
                         <br>
                         <div class="search_btn">
                             <a href="travel_list.php?search=月老#travelDesktopSort">
-                                <button  onclick="">#月老</button>
+                                <button onclick="">#月老</button>
                             </a>
                             <a href="travel_list.php?search=體驗#travelDesktopSort">
                                 <button onclick="">#體驗</button>
@@ -441,7 +441,7 @@ header("Refresh:180");
                             <a href="travel_list.php?search=一日#travelDesktopSort">
                                 <button onclick="">#一日</button>
                             </a>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <!-- 手機 -->
@@ -456,7 +456,7 @@ header("Refresh:180");
                         <br>
                         <div class="search_btn">
                             <a href="travel_list.php?search=月老#travelDesktopSort">
-                                <button  onclick="">#月老</button>
+                                <button onclick="">#月老</button>
                             </a>
                             <a href="travel_list.php?search=體驗#travelDesktopSort">
                                 <button onclick="">#體驗</button>
@@ -464,7 +464,7 @@ header("Refresh:180");
                             <a href="travel_list.php?search=一日#travelDesktopSort">
                                 <button onclick="">#一日</button>
                             </a>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             <?php else : ?>
@@ -550,15 +550,15 @@ header("Refresh:180");
                                         </div>
                                         <div class="card_small d-flex align-items-center pt-2
                                                 ">
-                                            <div class="xs card-text d-flex align-items-center align-self-end pr-4">
+                                            <div class="xs card-text d-flex align-items-center align-self-end pr-3">
                                                 <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
-                                                <span>
+                                                <span class="starNum pl-1">
                                                     <?= $r['travel_star'] ?>
                                                 </span>
                                             </div>
-                                            <div class="xs card-text  ">
-                                                <i class="icon_fire fa-solid fa-fire" style="color: var(--color-orange);"></i>
-                                                <?= $r['travel_popular'] ?>個已訂購
+                                            <div class="xs card-text text-center">
+                                                <i class="icon_fire fa-solid fa-fire" style="color: var(--color-orange);font-size:15px"></i>
+                                                <span class="starNum pl-1"><?= $r['travel_popular'] ?>個已訂購 </span>
                                             </div>
                                         </div>
                                         <h4 class="card-text price d-flex mdpriceYu pb-1">

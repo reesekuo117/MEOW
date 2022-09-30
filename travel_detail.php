@@ -64,9 +64,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./travel_detail_style.css">
-<?php
-header("Refresh:180");
-?>
+
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 <div class="travel_detail_07">
     <?php //foreach($rows as $r): 
@@ -909,8 +907,8 @@ header("Refresh:180");
     </div>
 </div>
 <!-- 手機版下方列 -->
-<div class="choiceandbuy_mb d-md-none" id="MdBuyNowYu">
-    <div class="signup" id="BuyNowFYu">
+<div class="choiceandbuy_mb d-md-none mb-5" id="MdBuyNowYu">
+    <div class="signup mb-3" id="BuyNowFYu">
         <h6>報名場次</h6>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">

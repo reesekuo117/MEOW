@@ -7,7 +7,7 @@ if (!isset($title)) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bgc_ba">
 
 <head>
     <meta charset="UTF-8">

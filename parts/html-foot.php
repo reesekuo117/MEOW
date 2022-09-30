@@ -10,7 +10,7 @@
         </svg>
     </div> -->
     <!-- footer-xs ----------------------------------->
-    <footer class="footer-xs d-md-none ">
+    <footer class="footer-xs d-md-none product-none">
         <ul class="d-flex">
             <li>
                 <a href="index_.php">

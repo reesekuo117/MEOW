@@ -490,11 +490,11 @@ if ($totalRows > 0) {
         
     };
 
-function SearchFormData() {
-  const inputValue = document.getElementById('search').value;
-    console.log('inputValue',inputValue)
-};
-// SearchFormData()
+// function SearchFormData() {
+//   const inputValue = document.getElementById('search').value;
+//     console.log('inputValue',inputValue)
+// };
+// // SearchFormData()
 
 
     

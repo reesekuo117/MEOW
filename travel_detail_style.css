@@ -568,3 +568,9 @@ select {
   text-shadow: 0 0 transparent;
   box-shadow: 0 0 transparent;
 }
+
+/* 手機把 footer 關掉 */
+
+footer.product-none{
+  display: none !important;
+}
