@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
-$pageName = '獨家商品詳細頁'; //頁面名稱
+$pageName = '獨家商品'; //頁面名稱
 $title = '商品詳情';
 
 // if (!isset($_GET['sid'])){

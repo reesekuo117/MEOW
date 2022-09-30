@@ -8,8 +8,42 @@
 ?>
 <style>
     .navbar .nav-link.active {
-        border-bottom: var(--color-white) 2px solid;
+        text-decoration: underline white 2px;
+        text-underline-offset: 16px;
+        /* border-bottom: var(--color-white) 2px solid; */
     }
+/* 
+    .navbar .nav-link {
+        display: block;
+        transition: .3s;
+    }
+
+    .navbar .nav-link:hover {
+        text-decoration: underline white 2px;
+        text-underline-offset: 16px;
+        animation:underline .3s forwards ease-in-out ;
+        transform: scale(1);
+    } */
+
+    /* @keyframes underline  {
+        0%{
+            text-decoration: underline white 0px;
+        }
+        100%{
+            text-decoration: underline white 2px;
+        }
+        
+    } */
+/* 
+    a.nav-link::after {
+        background-color: #333;
+    bottom: 0;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    transition-duration: 0.25s;
+    width: 100%;
+    } */
 
     .header-xs #menu .nav-link.active {
         color: var(--color-white);
@@ -70,7 +104,7 @@
                         </a>
                     </div>
                     <!-- menu -->
-                    <div class="d-flex mx-0">
+                    <div class="d-flex mx-0 position-relative">
                         <div class="nav-menu mx-0">
                             <a class="mx-0 nav-link <?= $pageName == '月老文化' ? 'active' : '' ?>" href="culture.php">月老文化</a>
                         </div>

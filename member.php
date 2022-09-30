@@ -121,15 +121,15 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
             </div>
             <ul class="tab_list_re m-0 p-0 text-center">
-                <li class="tablist-meowli01_re text-20-re py-2 col-6 mx-auto" data-val="member-data">
+                <li class="tablist-meowli01_re text-20-re py-2 col-6 mx-auto" data-val="member-data" tabindex="1">
                     <img class="tablist-meowsvg01_re" src="./imgs/member/cate.png" alt="">會員資料</li>
-                <li class="tablist-meowli02_re text-20-re py-2 col-6 mx-auto" data-val="modify-password">
+                <li class="tablist-meowli02_re text-20-re py-2 col-6 mx-auto" data-val="modify-password" tabindex="1">
                     <img class="tablist-meowsvg02_re d-none" src="./imgs/member/cate.png" alt="">修改密碼</li>
-                <li class="tablist-meowli03_re text-20-re py-2 col-6 mx-auto" data-val="my-favorites">
+                <li class="tablist-meowli03_re text-20-re py-2 col-6 mx-auto" data-val="my-favorites" tabindex="1">
                     <img class="tablist-meowsvg03_re d-none" src="./imgs/member/cate.png" alt="">我的最愛</li>
-                <li class="tablist-meowli04_re text-20-re py-2 col-6 mx-auto" data-val="member-order">
+                <li class="tablist-meowli04_re text-20-re py-2 col-6 mx-auto" data-val="member-order" tabindex="1">
                     <img class="tablist-meowsvg04_re d-none" src="./imgs/member/cate.png" alt="">查詢訂單</li>
-                <li class="signupbutton my-2  text-20-re" type="button" value="登出" onclick="location.href='re-logout.php'">登出</li>
+                <li class="signupbutton my-2  text-20-re" type="button" value="登出" onclick="location.href='re-logout.php'" tabindex="1">登出</li>
                 <!-- <label class="signupbutton my-2"><input class="btn-re btn200-re phonewidth330-re" type="button" value="登出" onclick="location.href='re-logout.php'"></label> -->
             </ul>
         </div>

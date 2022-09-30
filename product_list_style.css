@@ -28,6 +28,7 @@
     text-align: center;
 }
 .search_btn button{
+    transition: .2s;
     color: #fff;
     margin-top: 8px;
 }
@@ -580,3 +581,8 @@
     left: 10px;
     bottom: -10px;
 }
+
+/* 捲動 */
+/* html {
+    scroll-behavior:auto;
+} */

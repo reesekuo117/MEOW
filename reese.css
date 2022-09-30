@@ -371,6 +371,15 @@ p {
 }
 /* left-------------------------------------------------------------------- */
 .tab_list_re li {
+    color: rgba(67, 42, 15, 0.8);
+    cursor: pointer;
+}
+.tab_list_re li:focus {
+    color: rgba(67, 42, 15, 1);
+    cursor: pointer;
+}
+.tab_list_re li:hover {
+    color: var(--color-brown-dark);
     cursor: pointer;
 }
 /* 頭像--------------------------------------------------------------------- */
@@ -473,6 +482,7 @@ p {
 
 /* -------------------------------------------- */
 .btn-re {
+    transition: .2s;
     box-shadow:none;
     outline-style: none;
     /* width: 330px; */
@@ -543,6 +553,7 @@ p {
 }
 /* ------------------------------------------------------------------- */
 .input-re {
+    transition: .2s;
     padding: 0 4px;
     border: none;
     box-shadow: none;
@@ -607,6 +618,7 @@ p {
 }
 /* 地址------------------------------------------------------------------- */
 .select-re {
+    transition: .2s;
     border: 2px solid var(--color-brown-dark);
     border-radius: 8px;
     width: 160px;
@@ -640,8 +652,14 @@ p {
     overflow: auto;
 }
 .liketitle-re {
+    transition: .2s;
+    cursor: pointer;
     padding: 0 10px;
     border-radius: 8px 8px 0 0;
+}
+
+.liketitle-re:hover{
+    background-color: rgba(229, 167, 42, 1);
 }
 .liketitle-re .activetext-re {
     color: var(--color-text100);
@@ -769,6 +787,7 @@ p {
     border-bottom: 0.5px solid var(--color-text60);
 }
 .orderlist-re {
+    transition: .2s;
     padding: 12.8px 0;
     border-top: 0.5px solid var(--color-text38);
     /* border-bottom: 0.5px solid var(--color-text38); */
@@ -1088,3 +1107,4 @@ table .inside-orderlisttable-re {
 .opacity0{
     opacity: 0;
 }
+

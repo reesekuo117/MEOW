@@ -33,6 +33,7 @@
 
 
 .search_btn button {
+    transition: .2s;
     cursor: pointer;
     outline: none;
     color: #fff;
@@ -721,3 +722,8 @@ a.sort_active {
 .notfind_yu .h6{
     color: #432A0F;
 }
+
+/* 捲動 */
+/* html {
+    scroll-behavior:auto;
+} */

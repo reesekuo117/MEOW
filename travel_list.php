@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/parts/meow_db.php';  // /開頭
-$pageName = 'travel_list'; //頁面名稱
+$pageName = '旅遊行程'; //頁面名稱
 $title = '旅遊行程';
 
 // if(!isset($_GET['sid'])){
