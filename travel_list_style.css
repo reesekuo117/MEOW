@@ -433,6 +433,11 @@ a.sort_active {
         /* background: url(./imgs/product/star.png); */
     }
 }
+.starNum{
+    padding-top: 3px;
+    font-size: 14px;
+}
+
 
 /* .card-body_mb{
     padding: 12px;
@@ -462,7 +467,6 @@ a.sort_active {
 .card-text {
     color: var(--color-text100);
     margin: auto 0;
-    /* border: 1px solid #000; */
 }
 
 .card_small small {
