@@ -250,7 +250,7 @@ header("Refresh:180");
                 <form action="" class="location">
                     <ul>
                         <p class=" mb-0 form-check light ">
-                            <a type="button" href="?#desktopSort" class="<?= empty($selectedCity) ? "btncolor_active" : "btncolor_default" ?>">
+                            <a type="button" href="?#travelDesktopSort" class="<?= empty($selectedCity) ? "btncolor_active" : "btncolor_default" ?>">
                                 全台地區
                             </a>
                         </p>
@@ -291,28 +291,28 @@ header("Refresh:180");
                     </ul>
                 </form>
             </section>
-            <!-- <legend>
+            <legend>
                 <h6>依旅遊時間分類</h6>
             </legend>
             <section>
                 <form action="" class="location">
                     <ul>
-                        <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="0" name="onedCheck">
-                            <label for="onedCheck">
-                                <span>一日遊</span>
-                            </label>
-                        </li>
-                        <li class="list-unstyled">
-                            <input type="checkbox" class="form-check-input" value="1" name="towdCheck">
-                            <label for="towdCheck">
-                                <span>兩天一夜</span>
-                            </label>
-                        </li>
+                    <?php foreach ($daytime as $t) : ?>
+                            <div class="form-check">
+                                <a class="<?= $t['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>" type="button" 
+                                href="?<?php
+                                        $tmp = $qsp;
+                                        $tmp['daytime'] = $t['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>#travelDesktopSort">
+                                    <?= $t['travel_daytime'] ?>
+                                </a>
+                            </div>
+                        <?php endforeach ?>
                     </ul>
                 </form>
             </section>
-            <legend> -->
+            <legend>
             <h6>依時間排序</h6>
             </legend>
             <section>
@@ -592,8 +592,9 @@ header("Refresh:180");
                             <!-- <a href="?< ?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="< ?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
                         <h5>價格高 → 低</h5>
                         </a> -->
-                            <a class="page-link" href="?<?php $qsp['page'] = 1;
-                                                        echo http_build_query($qsp); ?>#travelDesktopSort">
+                            <a class="page-link" 
+                            href="?<?php $qsp['page'] = 1;
+                                    echo http_build_query($qsp); ?>#travelDesktopSort">
                                 <i class="fa-solid fa-angles-left"></i>
                             </a>
                         </li>
@@ -607,8 +608,9 @@ header("Refresh:180");
                         <?php endif;
                         endfor; ?>
                         <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                            <a class="page-link" href="?<?php $qsp['page'] = $totalPages;
-                                                        echo http_build_query($qsp); ?>#travelDesktopSort">
+                            <a class="page-link" 
+                            href="?<?php $qsp['page'] = $totalPages;
+                                    echo http_build_query($qsp); ?>#travelDesktopSort">
                                 <i class="fa-solid fa-angles-right"></i>
                             </a>
                         </li>
@@ -617,8 +619,9 @@ header("Refresh:180");
 
                     <ul class="pagination d-flex d-md-none ">
                         <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                            <a class="page-link" href="?<?php $qsp['page'] = 1;
-                                                        echo http_build_query($qsp); ?>#travelDesktopSort">
+                            <a class="page-link" 
+                            href="?<?php $qsp['page'] = 1;
+                                    echo http_build_query($qsp); ?>#travelDesktopSort">
                                 <i class="fa-solid fa-angles-left"></i>
                             </a>
                         </li>
