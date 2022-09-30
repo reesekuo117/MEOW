@@ -5,6 +5,10 @@
   /* border: 1px salmon solid; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "gensen-B";
   src: url("./gensen-font-master/ttc/GenSenRounded-B.ttc");
