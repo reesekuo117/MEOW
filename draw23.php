@@ -7,6 +7,10 @@ $title = '線上求籤';
 $sqlArea = sprintf("SELECT * FROM `address`");
 $areaRows = $pdo->query($sqlArea)->fetchAll();
 
+// 取得詩籤資料
+$sqldraw = "SELECT * FROM `draw` ORDER BY RAND () LIMIT 1";
+$draw = $pdo->query($sqldraw)->fetch();
+
 $t1_sql ="SELECT * FROM `travel` WHERE  sid IN(6,19,1,73,39)";
 $travel_1 = $pdo->query($t1_sql )->fetchAll();
 $t2_sql ="SELECT * FROM `travel` WHERE  sid IN(73,39,65)";
@@ -62,25 +66,45 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                         <img src="./imgs/draw/56.png" alt="">
                     </div>
                     <div class="drawCard position-absolute d-flex align-items-center">
-                        <img class="w-100 " src="./imgs/draw/draw64.png" alt="">
+                        <img class="w-100 " src="./imgs/draw/fortune/<?= $draw['img'] ?>" alt="">
                     </div>
                     <div class="jadeDownhand position-absolute">
                         <img src="./imgs/draw/57.png" alt="">
                     </div>
-                    <div class="jadeSay mx-auto">
-                        <div class="jadeSayBorder w-100 h-100">
-                            <div class="jadeSaycontent overflow-hidden">
-                                <h2 class="overflow-hidden mt-1">小玉的貼心提醒</h2>
-                                <p class="overflow-hidden">
-                                    如果願望成真，<br>
-                                    記得帶一份喜餅到霞海城隍廟向月老還願，<br>
-                                    若是在祈願時有另外向月老約定其他還願方式，<br>
-                                    也要記得遵守和月老的承諾喔！
-                                </p>
+                    <div class="addToFav position-absolute">
+                        <button class=" mt-n5 mx-auto favorite d-flex justify-content-center align-items-center" data-sid="<?= $draw["sid"] ?>" onclick="addToFav_F_ba(event)">
+                            <div class="icon_heart_nav mr-2">
+                                <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
+                                </svg>
                             </div>
-
-                        </div>
+                            將詩籤加入最愛
+                        </button>
+                        <!-- <input type="hidden" name="target_type" value="3"> -->
                     </div>
+                    
+
+
+
+
+
+                        <div class="jadeSay mx-auto">
+                            <div class="jadeSayBorder w-100 h-100">
+                                <div class="jadeSaycontent overflow-hidden">
+                                    <h2 class="overflow-hidden mt-1">小玉的貼心提醒</h2>
+                                    <p class="overflow-hidden">
+                                        如果願望成真，<br>
+                                        記得帶一份喜餅到霞海城隍廟向月老還願，<br>
+                                        若是在祈願時有另外向月老約定其他還願方式，<br>
+                                        也要記得遵守和月老的承諾喔！
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
                 </div>
                 <h2 class="recommendm_ba">月老喵誠心推薦</h2>
 

@@ -72,6 +72,7 @@
 }
 /* --------------------------------------------- */
 .loginbtn-re {
+    cursor: pointer;
     /* box-shadow:none; */
     outline-style: none;
     width: 100%;
@@ -133,6 +134,7 @@
 }
 
 .closeicon-re {
+    cursor: pointer;
     margin-left: -7%;
     /* margin-top: 1%; */
 }

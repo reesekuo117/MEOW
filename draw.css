@@ -2393,6 +2393,29 @@ button[disabled]:hover {
     left: calc(-10% - 3px);
 }
 
-.card_intro_mb{
+.card_intro_mb {
     height: 40px;
+}
+
+/* 最愛 */
+
+.addToFav{
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.color {
+    stroke: #432a0f;
+    fill: #cd562f;
+}
+
+.favorite {
+    width: 250px;
+    height: 45px;
+    color: var(--color-text87);
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--color-creamy-light);
+    border: 2px solid var(--color-text87);
 }

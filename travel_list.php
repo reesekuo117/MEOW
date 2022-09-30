@@ -121,12 +121,12 @@ if ($totalRows > 0) {
     //取得活動類型
     $daytime = $pdo->query("SELECT * FROM `travel_daytime` WHERE travel_daytime=travel_daytime")->fetchAll();
 
-    echo json_encode([
-        '$city' => $city,
-        '$kind' => $kind,
-        '$daytime' => $daytime,
-    ]);
-    exit;
+    // echo json_encode([
+    //     '$city' => $city,
+    //     '$kind' => $kind,
+    //     '$daytime' => $daytime,
+    // ]);
+    // exit;
 
 
     // 取得address
