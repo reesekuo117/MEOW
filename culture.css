@@ -1004,6 +1004,15 @@ color: #CD562F;
 padding-top: 150px;
 }
 
+.prepage_lb {
+ color: var(--color-creamy);
+ width: 18px;
+}
+.prepage_lb i {
+  font-size: 30px;
+
+}
+
 
 /* pc 月老喵推薦卡片 */
 .recommand_lb {

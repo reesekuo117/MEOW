@@ -1550,10 +1550,8 @@ $temples = $pdo->query($temple_sql)->fetchAll();
         notice
     }) => {
         return ` <div class="row mbTemCard-top_lb py-3 m-0">
-                    <div class="col-12 prepage_lb pl-2 pt-3">
-                        <svg width="28" height="34" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9936 4.73409C22.3313 5.28285 22.1602 6.00145 21.6115 6.33914L8.05941 14.6789L21.6115 23.0186C22.1602 23.3563 22.3313 24.0749 21.9936 24.6237C21.6559 25.1724 20.9373 25.3435 20.3886 25.0058L6.83651 16.6661C5.35593 15.7549 5.35593 13.6028 6.83651 12.6917L20.3886 4.35194C20.9373 4.01425 21.6559 4.18534 21.9936 4.73409Z" fill="white" />
-                        </svg>
+                    <div class="col-12 prepage_lb ">
+                        <i class="fa-solid fa-xmark"></i>
                     </div>
                     <div class="col-7 p-0 pl-3">
                         <h6 class="m-0 text-white">${name}</h6>
