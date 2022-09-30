@@ -430,7 +430,7 @@ a.sort_active {
     .icon_fivestar {
         width: 18px;
         height: 18px;
-        background: url(./imgs/product/star.png);
+        /* background: url(./imgs/product/star.png); */
     }
 }
 

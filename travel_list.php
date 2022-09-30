@@ -3,6 +3,13 @@ require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = 'travel_list'; //頁面名稱
 $title = '旅遊行程';
 
+// if(!isset($_GET['sid'])){
+//     header('Location: travel_list.php');
+//     exit;
+// }
+
+
+
 $perPage = 6;  // 每頁最多有幾筆
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 if ($page < 1) {
@@ -14,10 +21,10 @@ $qsp = []; // query string parameters
 
 $selectedCity = isset($_GET['city']) ? intval($_GET['city']) : 0; //依活動地區分類
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; //沒有找到的話就會回到全部分類
-$sort = isset($_GET['sort']) ? $_GET['sort'] : '';
+$sort = isset($_GET['sort']) ? $_GET['sort'] : 0;
 $selectedKind = isset($_GET['kind']) ? intval($_GET['kind']) : 0; //依活動類型
 $selectedDaytime = isset($_GET['daytime']) ? intval($_GET['daytime']) : 0; //依活動時間類型
-$search = isset($_GET['search']) ? $_GET['search'] : '';   //搜尋關鍵字
+$search = isset($_GET['search']) ? $_GET['search'] : 0;   //搜尋關鍵字
 
 $where = " WHERE 1 "; //起頭
 
@@ -121,17 +128,24 @@ if ($totalRows > 0) {
     //取得活動類型
     $daytime = $pdo->query("SELECT * FROM `travel_daytime` WHERE travel_daytime=travel_daytime")->fetchAll();
 
-    echo json_encode([
-        '$city' => $city,
-        '$kind' => $kind,
-        '$daytime' => $daytime,
-    ]);
-    exit;
+    // echo json_encode([
+    //     '$city' => $city,
+    //     '$kind' => $kind,
+    //     '$daytime' => $daytime,
+    // ]);
+    // exit;
 
 
     // 取得address
     $sqlArea = sprintf("SELECT * FROM `address`");
     $areaRows = $pdo->query($sqlArea)->fetchAll();
+
+
+// if(empty($rows)){
+//     header('Location: travel_list.php');
+//     exit;
+//     }
+
 }
 
 
@@ -360,18 +374,19 @@ header("Refresh:180");
                                 全台地區
                             </a>
                         </p>
-                        <?php foreach ($city as $c) : ?>
-                            <div class=" form-check ">
-                                <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
-                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " type="button" href="?<?php
-                                                                                                                                                $tmp = $qsp;
-                                                                                                                                                $tmp['city'] = $c['sid'];
-                                                                                                                                                echo http_build_query($tmp);
-                                                                                                                                                ?>#travelDesktopSort">
-                                    <?= $c['city'] ?>
-                                </a>
-                            </div>
-                        <?php endforeach ?>
+                        <?php ?>
+                            <?php foreach ($city as $c) : ?>
+                                <div class=" form-check ">
+                                    <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
+                                    <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " type="button" href="?<?php
+                                                                                                                                                    $tmp = $qsp;
+                                                                                                                                                    $tmp['city'] = $c['sid'];
+                                                                                                                                                    echo http_build_query($tmp);
+                                                                                                                                                    ?>#travelDesktopSort">
+                                        <?= $c['city'] ?>
+                                    </a>
+                                </div>
+                            <?php endforeach ?>
                     </div>
                     <div class="travel_cate category">
                         <h5>－依活動類型</h5>
@@ -514,7 +529,9 @@ header("Refresh:180");
                                     <div class="card_small d-flex align-items-center pt-2
                                             ">
                                         <div class="xs card-text d-flex align-items-center align-self-end pr-4">
-                                            <div class="icon_fivestar"></div>
+                                            <div class="icon_fivestar">
+                                                <img class="w-25" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
+                                            </div>
                                             <span>
                                                 <?= $r['travel_star'] ?>
                                             </span>
