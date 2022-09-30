@@ -30,68 +30,6 @@ $("#mdtravel-a-yu").click(function () {
   $("#mdmyTabContent-yu").hide();
 });
 
-//----------刪除商品清單()--------------
-
-function removePItem(event) {
-  const tr = $(event.currentTarget).closest("tr");
-  const sid = tr.attr("data-sid");
-
-  $.get(
-    "re-cart-p-api.php",
-    { sid },
-    function (data) {
-      console.log(data);
-      showCartCount(data); // 購物車總數量
-      tr.remove();
-
-      // TODO: 更新小計, 總計,
-      //TODO:總計,
-
-      updatePrices(); //刪除後要呼叫函式
-    },
-    "json"
-  );
-}
-
-
-//----------刪除旅遊清單()--------------
-function removeTItem(event) {
-  const tr = $(event.currentTarget).closest("tr");
-  const sid = tr.attr("data-sid");
-
-
-  $.get(
-    "re-cart-t-api.php",
-    { sid },
-    function (data) {
-      console.log(data);
-      showCartCount(data); // 購物車總數量
-      tr.remove();
-
-      // TODO: 更新小計, 總計,
-      //TODO:總計,
-
-      updatePrices(); //刪除後要呼叫函式
-    },
-    "json"
-  );
-}
-
-// const deleteIYu = $("#deleteIYu");
-// $("i").click(function () {
-//   console.log("yes");
-//   $(this).closest("tr").remove();
-//   updateTotalPrice();
-// });
-// function del() {
-//   var msg = "您確定要刪除嗎喵?";
-//   if (confirm(msg) === true) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
-
 //--------數量遞增按鈕--------------
 
 // const priceUnit = $('#total_price_ba').text().trim();
@@ -133,7 +71,8 @@ qtyplus.on("click", function () {
   $(this).closest("td").next().find("h6").text(total);
 
   calTotal(); //呼叫
-
+  updatePrices();
+  updataPItem(this);
 });
 //總價計算商品
 function calTotal() {
@@ -182,6 +121,8 @@ qtyminus.on("click", function () {
       $(this).closest("td").prev().find("h6").text().trim() * (num - 1);
 
     $(this).closest("td").next().find("h6").text(total);
+      updatePrices();
+      updataPItem(this);
   }
 });
 
@@ -220,4 +161,108 @@ qtyminus.on("click", function () {
 //     checkbox.checked = this.checked;
 //   }
 // };
+
+// 商品
+//----------刪除商品清單()--------------
+
+function removePItem(event) {
+  const tr = $(event.currentTarget).closest("tr");
+  const sid = tr.attr("data-sid");
+  console.log('pcart', sid);
+
+  $.get(
+    "re-cart-p-api.php",
+    { sid },
+    function (data) {
+      console.log(data);
+      showCartCount(data); // 購物車總數量
+      tr.remove();
+
+      // TODO: 更新小計, 總計,
+      //TODO:總計,
+
+      updatePrices(); //刪除後要呼叫函式
+    },
+    "json"
+  );
+}
+
+function updataPItem(btn){
+  console.log('hihihi');
+  const sid = $(btn).closest('tr').attr('data-sid');
+  const qty = $(btn).parent().find('.qty-yu').text();
+  $.get(
+      're-cart-p-api.php',
+      {sid,qty},
+      function(data){
+          console.log(data);
+          // showCartCount(data);
+          // updatePrices();
+      },
+      'json');
+}
+function updatePrices(){
+  let total = 0; // 總價
+
+  $('.pcart-item').each(function(){
+      const tr = $(this);
+      const td_price = tr.find('.price');
+      const td_sub = tr.find('.sub-total');
+      
+      const price = +td_price.attr('data-val'); // +轉換成數字
+      const qty = +tr.find('.qty-yu').text();
+
+      console.log('price',price);
+      console.log('qty',qty);
+
+      td_price.html(price);
+      td_sub.html(price * qty);
+      total += price * qty;
+
+      console.log('TOTAL',total);
+  });
+  $('#total-price').html(total);
+
+}
+updatePrices(); //一進來就要先執行一次
+
+// 行程
+//----------刪除旅遊清單()--------------
+function removeTItem(event) {
+  const tr = $(event.currentTarget).closest("tr");
+  const sid = tr.attr("data-sid");
+
+
+  $.get(
+    "re-cart-t-api.php",
+    { sid },
+    function (data) {
+      console.log(data);
+      showCartCount(data); // 購物車總數量
+      tr.remove();
+
+      // TODO: 更新小計, 總計,
+      //TODO:總計,
+
+      updatePrices(); //刪除後要呼叫函式
+    },
+    "json"
+  );
+}
+
+// const deleteIYu = $("#deleteIYu");
+// $("i").click(function () {
+//   console.log("yes");
+//   $(this).closest("tr").remove();
+//   updateTotalPrice();
+// });
+// function del() {
+//   var msg = "您確定要刪除嗎喵?";
+//   if (confirm(msg) === true) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
 

@@ -725,12 +725,11 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
     <div class="container">
         <h4>瀏覽此行程的人，也看了...</h4>
         <!-- https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=thumbnail-carousel-with-content -->
-        <div class="row">
-            <div class="col mx-auto">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-                    <!-- Wrapper for carousel items -->
-                    <div class="carousel-inner">
-                    <div class="carousel-item active">
+        <div class="row_07 d-flex">
+                    <div class="col mx-auto">
+                        <div id="myCarousel2" class="carousel carousel_card slide d-flex justify-content-center" data-ride="carousel" data-interval="0">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
                                     <div class="row_07 d-flex">
                                         <?php foreach ($travel_1 as $t) : ?>   
                                             <div class="col-md-4">
@@ -778,7 +777,8 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                                             </div>
                                                             <div class="card_under d-flex justify-content-between align-items-center">
                                                                 <small class="xs card-text d-flex pr-2">
-                                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
+                                                                    <div class="icon_star pr-1" style="color: var(--color-yellow);">
+                                                                        <i class="fa-solid fa-star"></i>
                                                                     </div><?= $t['travel_star']?>
                                                                 </small>
                                                                 <small class="xs card-text d-flex">
@@ -845,10 +845,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                                             </div>
                                                             <div class="card_under d-flex justify-content-between align-items-center">
                                                                 <small class="xs card-text d-flex pr-2">
-                                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
-                                                                    <!-- <div class="icon_star pr-1" style="color: var(--color-yellow);">
+                                                                    <div class="icon_star pr-1" style="color: var(--color-yellow);">
                                                                         <i class="fa-solid fa-star"></i>
-                                                                    </div>< ?= $t['travel_star']?> -->
+                                                                    </div><?= $t['travel_star']?>
                                                                 </small>
                                                                 <small class="xs card-text d-flex">
                                                                     <div class="icon_fire pr-1" style="color: var(--color-orange);">
@@ -865,17 +864,17 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                         <?php endforeach; ?>  
                                     </div>
                                 </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control-prev" href="#myCarousel2" data-slide="prev">
+                                <i class="fa-solid fa-caret-left"></i>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel2" data-slide="next">
+                                <i class="fa-solid fa-caret-right"></i>
+                            </a>
+                        </div>
                     </div>
-                    <!-- Carousel controls -->
-                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                        <i class="fa-solid fa-caret-left"></i>
-                    </a>
-                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                        <i class="fa-solid fa-caret-right"></i>
-                    </a>
                 </div>
-            </div>
-        </div>
     </div>
 
         <!-- Modal -->
