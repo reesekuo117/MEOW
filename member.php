@@ -456,7 +456,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re textphone-14-re word-wrap-re"><?= $r['travel_name'] ?></p>
+                                    <p class="card-title-re textphone-14-re word-wrap-re mb-2"><?= $r['travel_name'] ?></p>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto"><?= $r['travel_price'] ?></p>
                                         <button class="btn-re btn200-re col-3 p-0" data-sid="<?= $r['sid']?>" onclick="addToCartT_re(event)">

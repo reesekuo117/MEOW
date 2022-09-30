@@ -467,7 +467,8 @@
 
 /* ------------------頁數按鈕----------------- */
 .pages{
-    margin: 3rem;
+    margin-top: 0;
+    margin-bottom: 80px;
 }
 .pages nav li a{
     padding: 10px 14px;

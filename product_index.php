@@ -703,7 +703,7 @@ $products_2 = $pdo->query($sql_2)->fetchAll();
                 <!-- https://codepen.io/WillyW/details/wZebow -->
                 <!-- https://codepen.io/rblinzler/pen/abVGzNM -->
                 <!-- 手機卡片 -->
-                <div class="container carousel_mb d-block d-md-none pt-3 pb-5">
+                <div class="container carousel_mb d-block d-md-none pt-3 pb-5 mb-5">
                     <div class="card-carousel">
                         <div class="card" id="1">
                             <div class="image-container"></div>
