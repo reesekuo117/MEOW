@@ -78,7 +78,15 @@ if (!empty($sort)) {
     }
 }
 
+//取得活動地區類型
+$city = $pdo->query("SELECT * FROM address WHERE parent=0")->fetchAll();
 
+//取得活動類型
+$kind = $pdo->query("SELECT * FROM `travel_kind` WHERE travel_kind=travel_kind")->fetchAll();
+
+
+//取得活動類型
+$daytime = $pdo->query("SELECT * FROM `travel_daytime` WHERE travel_daytime=travel_daytime")->fetchAll();
 
 
 // 旅遊商品  取得資料的總筆數
@@ -115,20 +123,8 @@ if ($totalRows > 0) {
     // exit;
     $rows = $pdo->query($sql)->fetchAll();
 
-
-
-
-    //取得活動地區類型
-    $city = $pdo->query("SELECT * FROM address WHERE parent=0")->fetchAll();
-
-    //取得活動類型
-    $kind = $pdo->query("SELECT * FROM `travel_kind` WHERE travel_kind=travel_kind")->fetchAll();
-
-
-    //取得活動類型
-    $daytime = $pdo->query("SELECT * FROM `travel_daytime` WHERE travel_daytime=travel_daytime")->fetchAll();
-
     // echo json_encode([
+    //     '$rows' => $rows,
     //     '$city' => $city,
     //     '$kind' => $kind,
     //     '$daytime' => $daytime,
@@ -141,14 +137,17 @@ if ($totalRows > 0) {
     $areaRows = $pdo->query($sqlArea)->fetchAll();
 
 
-// if(empty($rows)){
-//     header('Location: travel_list.php');
-//     exit;
-//     }
+    // if(empty($rows)){
+    //     header('Location: travel_list.php');
+    //     exit;
+    //     }
 
 }
 
-
+// echo json_encode([
+//     '$rows' => $rows,
+// ]);
+// exit;
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -258,12 +257,11 @@ header("Refresh:180");
                         <?php foreach ($city as $c) : ?>
                             <div class=" form-check ">
                                 <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
-                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " id="form-check-ca" type="button" 
-                                    href="?<?php
-                                        $tmp = $qsp;
-                                        $tmp['city'] = $c['sid'];
-                                        echo http_build_query($tmp);
-                                        ?>#travelDesktopSort">
+                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " id="form-check-ca" type="button" href="?<?php
+                                                                                                                                                                $tmp = $qsp;
+                                                                                                                                                                $tmp['city'] = $c['sid'];
+                                                                                                                                                                echo http_build_query($tmp);
+                                                                                                                                                                ?>#travelDesktopSort">
                                     <?= $c['city'] ?>
                                 </a>
                             </div>
@@ -279,12 +277,11 @@ header("Refresh:180");
                     <ul>
                         <?php foreach ($kind as $k) : ?>
                             <div class="form-check">
-                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" 
-                                    href="?<?php
-                                            $tmp = $qsp;
-                                            $tmp['kind'] = $k['sid'];
-                                            echo http_build_query($tmp);
-                                            ?>#travelDesktopSort">
+                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php
+                                                                                                                                                                $tmp = $qsp;
+                                                                                                                                                                $tmp['kind'] = $k['sid'];
+                                                                                                                                                                echo http_build_query($tmp);
+                                                                                                                                                                ?>#travelDesktopSort">
                                     <?= $k['travel_kind'] ?>
                                 </a>
                             </div>
@@ -363,63 +360,56 @@ header("Refresh:180");
 </div>
 
 <div class="travel_section">
-    <div class="container-fluid d-flex">
+    <div class="container-fluid d-flex travel_section_bottom">
         <!-- 電腦篩選 -->
         <div class="aside offset-1 d-none d-md-block">
             <div class="col">
                 <div class="cate_filter">
                     <div class="travel_cate location ">
                         <h5>－依活動地區</h5>
-                                <p class=" mb-0 form-check light ">
-                                    <a type="button" href="?#desktopSort" class="<?= empty($selectedCity) ? "btncolor_active" : "btncolor_default" ?>">
-                                        全台地區
-                                    </a>
-                                </p>
-                                <?php foreach ($city as $c) : ?>
-                                    <div class=" form-check ">
-                                        <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
-                                        <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " type="button" 
-                                        href="?<?php
-                                                $tmp = $qsp;
-                                                $tmp['city'] = $c['sid'];
-                                                echo http_build_query($tmp);
-                                                ?>#travelDesktopSort">
-                                            <?= $c['city'] ?>
-                                        </a>
-                                    </div>
-                                <?php endforeach ?>
+                        <p class=" mb-0 form-check light ">
+                            <a type="button" href="?#travelDesktopSort" class="<?= empty($selectedCity) ? "btncolor_active" : "btncolor_default" ?>">
+                                全台地區
+                            </a>
+                        </p>
+                        <?php foreach ($city as $c) : ?>
+                            <div class=" form-check ">
+                                <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
+                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " type="button" href="?<?php
+                                                                                                                                                $tmp = $qsp;
+                                                                                                                                                $tmp['city'] = $c['sid'];
+                                                                                                                                                echo http_build_query($tmp);
+                                                                                                                                                ?>#travelDesktopSort">
+                                    <?= $c['city'] ?>
+                                </a>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                     <div class="travel_cate category">
                         <h5>－依活動類型</h5>
-                        <!-- < ?php if (empty($_SESSION['kind'])) : ?>
-                                <div class="alert alert-danger" role="alert">
-                                    找不到
-                                </div>
-                        < ?php else : ?>     -->
-                            <?php foreach ($kind as $k) : ?>
-                                <div class="form-check">
-                                    <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" type="button" 
-                                    href="?<?php
-                                            $tmp = $qsp;
-                                            $tmp['kind'] = $k['sid'];
-                                            echo http_build_query($tmp);
-                                            ?>#travelDesktopSort">
-                                        <?= $k['travel_kind'] ?>
-                                    </a>
-                                </div>
-                            <?php endforeach ?>
-                        <!-- < ?php endif?> -->
+
+                        <?php foreach ($kind as $k) : ?>
+                            <div class="form-check">
+                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" type="button" href="?<?php
+                                                                                                                                            $tmp = $qsp;
+                                                                                                                                            $tmp['kind'] = $k['sid'];
+                                                                                                                                            echo http_build_query($tmp);
+                                                                                                                                            ?>#travelDesktopSort">
+                                    <?= $k['travel_kind'] ?>
+                                </a>
+                            </div>
+                        <?php endforeach ?>
+
                     </div>
                     <div class="travel_cate time">
                         <h5>－依旅遊時間分類</h5>
                         <?php foreach ($daytime as $t) : ?>
                             <div class="form-check">
-                                <a class="<?= $t['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>" type="button" 
-                                href="?<?php
-                                        $tmp = $qsp;
-                                        $tmp['daytime'] = $t['sid'];
-                                        echo http_build_query($tmp);
-                                        ?>#travelDesktopSort">
+                                <a class="<?= $t['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>" type="button" href="?<?php
+                                                                                                                                                $tmp = $qsp;
+                                                                                                                                                $tmp['daytime'] = $t['sid'];
+                                                                                                                                                echo http_build_query($tmp);
+                                                                                                                                                ?>#travelDesktopSort">
                                     <?= $t['travel_daytime'] ?>
                                 </a>
                             </div>
@@ -428,8 +418,57 @@ header("Refresh:180");
                 </div>
             </div>
         </div>
-        <!-- --------------------卡片怎麼會這麼難---------------------- --> 
-            <div class="travel_list m-auto">
+        <!-- --------------------卡片怎麼會這麼難---------------------- -->
+        <div class="travel_list m-auto">
+            <?php if (empty($rows)) : ?>
+                <!-- 桌機 -->
+                <div class="notfind_yu text-center d-none d-md-block">
+                    <div>
+                        <img src="./imgs/18.png" alt="">
+                    </div>
+                    <div class=" h6">
+                        找不到相關結果
+                        <br>
+                        請嘗試其它關鍵字喵！
+                        <br>
+                        <div class="search_btn">
+                            <a href="travel_list.php?search=月老#travelDesktopSort">
+                                <button onclick="">#月老</button>
+                            </a>
+                            <a href="travel_list.php?search=體驗#travelDesktopSort">
+                                <button onclick="">#體驗</button>
+                            </a>
+                            <a href="travel_list.php?search=一日#travelDesktopSort">
+                                <button onclick="">#一日</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 手機 -->
+                <div class="notfindmb_yu text-center d-block d-md-none">
+                    <div>
+                        <img src="./imgs/18s.png" alt="">
+                    </div>
+                    <div class=" h6">
+                        找不到相關結果
+                        <br>
+                        請嘗試其它關鍵字喵！
+                        <br>
+                        <div class="search_btn">
+                            <a href="travel_list.php?search=月老#travelDesktopSort">
+                                <button onclick="">#月老</button>
+                            </a>
+                            <a href="travel_list.php?search=體驗#travelDesktopSort">
+                                <button onclick="">#體驗</button>
+                            </a>
+                            <a href="travel_list.php?search=一日#travelDesktopSort">
+                                <button onclick="">#一日</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php else : ?>
+
                 <?php foreach ($rows as $r) : ?>
                     <div class="t_card col-12 col-md-9">
                         <div class="card_row d-block d-md-flex align-items-center ">
@@ -512,7 +551,7 @@ header("Refresh:180");
                                         <div class="card_small d-flex align-items-center pt-2
                                                 ">
                                             <div class="xs card-text d-flex align-items-center align-self-end pr-3">
-                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
+                                                <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 <span class="starNum pl-1">
                                                     <?= $r['travel_star'] ?>
                                                 </span>
@@ -531,73 +570,75 @@ header("Refresh:180");
                         </div>
                     </div>
                 <?php endforeach; ?>
-            </div>
-    </div>
-</div>
-
-<div class="pages">
-    <div class="container">
-        <div class="row">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination d-none d-md-flex ">
-                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                        <!-- <a href="?< ?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="< ?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
-                        <h5>價格高 → 低</h5>
-                        </a> -->
-                        <a class="page-link" href="?<?php $qsp['page'] = 1;
-                            echo http_build_query($qsp); ?>#desktopSort">
-                            <i class="fa-solid fa-angles-left"></i>
-                        </a>
-                    </li>
-                    <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
-                        if ($i >= 1 and $i <= $totalPages) :
-                            $qsp['page'] = $i;
-                    ?>
-                            <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                                <a class="page-link" href="?<?= http_build_query($qsp); ?>#desktopSort"><?= $i ?></a>
-                            </li>
-                    <?php endif;
-                    endfor; ?>
-                    <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?<?php $qsp['page'] = $totalPages;
-                            echo http_build_query($qsp); ?>#desktopSort">
-                            <i class="fa-solid fa-angles-right"></i>
-                        </a>
-                    </li>
-                </ul>
-
-
-
-
-
-                <ul class="pagination d-flex d-md-none ">
-                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?<?php $qsp['page'] = 1;
-                            echo http_build_query($qsp); ?>#desktopSort">
-                            <i class="fa-solid fa-angles-left"></i>
-                        </a>
-                    </li>
-                    <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
-                        if ($i >= 1 and $i <= $totalPages) :
-                            $qsp['page'] = $i;
-                    ?>
-                            <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                                <a class="page-link" href="?<?= http_build_query($qsp); ?>#desktopSort"><?= $i ?></a>
-                            </li>
-                    <?php endif;
-                    endfor; ?>
-                    <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-                        <a class="page-link" href="?<?php $qsp['page'] = $totalPages;
-                            echo http_build_query($qsp); ?>#desktopSort">
-                            <i class="fa-solid fa-angles-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <?php endif ?>
         </div>
     </div>
 </div>
 
+<?php if (empty($rows)) : ?>
+
+<?php else : ?>
+    <div class="pages">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination d-none d-md-flex ">
+                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                            <!-- <a href="?< ?php echo ($cate)? "cate=".$cate."&" : '' ?>sort=higherp#desktopSort" class="< ?php echo (isset($_GET['sort']) && $_GET['sort'] ==='higherp')? "sort_active" : "" ?>">
+                        <h5>價格高 → 低</h5>
+                        </a> -->
+                            <a class="page-link" href="?<?php $qsp['page'] = 1;
+                                                        echo http_build_query($qsp); ?>#travelDesktopSort">
+                                <i class="fa-solid fa-angles-left"></i>
+                            </a>
+                        </li>
+                        <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
+                            if ($i >= 1 and $i <= $totalPages) :
+                                $qsp['page'] = $i;
+                        ?>
+                                <li class="page-item <?= $page == $i ? 'active' : '' ?>">
+                                    <a class="page-link" href="?<?= http_build_query($qsp); ?>#travelDesktopSort"><?= $i ?></a>
+                                </li>
+                        <?php endif;
+                        endfor; ?>
+                        <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?<?php $qsp['page'] = $totalPages;
+                                                        echo http_build_query($qsp); ?>#travelDesktopSort">
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+
+                    <ul class="pagination d-flex d-md-none ">
+                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?<?php $qsp['page'] = 1;
+                                                        echo http_build_query($qsp); ?>#travelDesktopSort">
+                                <i class="fa-solid fa-angles-left"></i>
+                            </a>
+                        </li>
+                        <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
+                            if ($i >= 1 and $i <= $totalPages) :
+                                $qsp['page'] = $i;
+                        ?>
+                                <li class="page-item <?= $page == $i ? 'active' : '' ?>">
+                                    <a class="page-link" href="?<?= http_build_query($qsp); ?>#travelDesktopSort"><?= $i ?></a>
+                                </li>
+                        <?php endif;
+                        endfor; ?>
+                        <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
+                            <a class="page-link" href="?<?php $qsp['page'] = $totalPages;
+                                                        echo http_build_query($qsp); ?>#travelDesktopSort">
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+<?php endif ?>
 <!-- <div class="notlogin d-none"> -->
 <!-- 1.背景用黑色半透明做光箱效果，視窗FIXED(原本就在用show，沒有要讓它出現用append) -->
 <!-- <div class="">
