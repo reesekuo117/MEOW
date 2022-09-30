@@ -661,7 +661,7 @@ p {
 .liketitle-all-re a {
     list-style: none;
     text-decoration: none;
-    color: white;
+    color: var(--color-brown-dark);
     
 }
 .liketitle-all-re a:hover {
@@ -713,13 +713,21 @@ p {
     overflow: hidden;
     background-color: var(--color-lightcreamy);
 }
+
+@media (max-width: 768px) {
+    .card-re{
+        height: 310px;
+    }
+}
 .cardimg-re {
     /* width: 100%; */
     max-height: 220px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 .card-body-re {
-    padding: 8px;
+    padding: 12px;
 }
 @media (max-width: 768px) {
     .textphone-16-re{

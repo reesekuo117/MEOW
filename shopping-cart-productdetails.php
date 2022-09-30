@@ -17,7 +17,7 @@ $sm = $pdo->query($sqlmember)->fetch();
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./shopping-cart-productdetails.css">
 <?php
-header("Refresh:180");
+// header("Refresh:180");
 ?>
 <?php include __DIR__. '/parts/navbar.php'; ?>
 
@@ -77,9 +77,9 @@ header("Refresh:180");
                         <h3 class="listinfo-title-yu m-0">
                             訂單明細
                         </h3>
-                        <h6 class="listinfo-number-yu">
+                        <!-- <h6 class="listinfo-number-yu">
                         訂單編號: <span>M20221234567</span>
-                        </h6>
+                        </h6> -->
                         
                         <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
                             <div class="panel panel-default">
@@ -1087,31 +1087,7 @@ header("Refresh:180");
 <script src="shopping-cart-productdetails.js" ></script>
 
 <script>
-    // 商品
-    function addToCart_P_Yu(event) {
-        const btn = $(event.currentTarget);
-        const qty = btn.closest("#uniqui-yu").find(".PqtyYu").text();
-        const p = btn.closest("#uniqui-yu").find("#AllTotal_P_Yu").text();
-        // const qty=1;
-        // console.log(btn);
-        console.log('hihi', btn.closest("#uniqui-yu").find("#AllTotal_P_Yu").text());
-        const sid = btn.attr('data-sid');
-        console.log({
-            sid,
-            qty,
-            p
-        });
-        $.get(
-            're-cart-p-api.php', {
-                sid,
-                qty,
-                p
-            },
-            function(data) {
-                showCartCount(data);
-            },
-            'json');
-    }
+
 
 </script>
 
