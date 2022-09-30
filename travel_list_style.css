@@ -495,7 +495,7 @@ a.sort_active {
     .icon_fivestar {
         width: 92px;
         height: 18px;
-        background: url(./imgs/product/fivestar.png);
+        /* background: url(./imgs/product/fivestar.png); */
 
     }
 
