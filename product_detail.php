@@ -308,7 +308,7 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                         </button>
                     </div>
                     <div class="col">
-                        <button class="cart d-flex justify-content-center align-items-center">
+                        <button class="cart d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)" >
                             <!-- 跳轉頁面所以button還要再包a連結? -->
                             <div class="icon_cart">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -320,7 +320,7 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                     </div>
                     <div class="col">
                         <button class="buy d-flex justify-content-center align-items-center">
-                            <a class="d-flex" href="#pd_title">
+                            <a class="d-flex" href="#shopping-cart.php" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)" >
                                 <div class="icon_buy">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <mask id="path-1-outside-1_1834_25020-499429" maskUnits="userSpaceOnUse" x="1.58203" y="3.25" width="20" height="17" fill="black">
@@ -733,7 +733,8 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                 </div>
             </div>
             <div class="col">
-                <button class="cart btn-l d-flex justify-content-center align-items-center w-100 my-3">
+                <button class="cart btn-l d-flex justify-content-center align-items-center w-100 my-3"
+                        data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)" >
                     <div class="icon_cart">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M4 3C3.44772 3 3 3.44772 3 4C3 4.55228 3.44772 5 4 5H5.20504L5.71394 7.19844L6.98368 14.5122C6.38575 14.969 6 15.6894 6 16.5C6 17.8807 7.11929 19 8.5 19H10C9.44772 19 9 19.4477 9 20C9 20.5523 9.44772 21 10 21C10.5523 21 11 20.5523 11 20C11 19.4477 10.5523 19 10 19H17C16.4477 19 16 19.4477 16 20C16 20.5523 16.4477 21 17 21C17.5523 21 18 20.5523 18 20C18 19.4477 17.5523 19 17 19H19C19.5523 19 20 18.5523 20 18C20 17.4477 19.5523 17 19 17H8.5C8.22386 17 8 16.7761 8 16.5C8 16.2239 8.22386 16 8.5 16H18.9167C19.4171 16 19.8405 15.6301 19.9076 15.1342L20.991 7.13419C21.0297 6.84818 20.943 6.55939 20.7531 6.34205C20.5632 6.1247 20.2886 6 20 6H7.48941L6.97424 3.77448C6.86928 3.32107 6.4654 3 6 3H4ZM8.92468 14L7.88301 8H18.8555L18.043 14H8.92468Z" fill="#432A0F" />
@@ -744,7 +745,8 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
 
             </div>
             <div class="col mr-3">
-                <button class="buy btn-l d-flex justify-content-center align-items-center w-100 my-3">
+                <button class="buy btn-l d-flex justify-content-center align-items-center w-100 my-3" 
+                    data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
                     <div class="icon_buy pr-1">
                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="path-1-outside-1_2793_16617-140835" maskUnits="userSpaceOnUse" x="-0.961914" y="0.75" width="20" height="17" fill="black">

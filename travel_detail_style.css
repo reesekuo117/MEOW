@@ -341,7 +341,8 @@ select {
 .choiceandbuy_mb {
   background-color: var(--color-creamy-light);
   padding: 24px;
-  margin-top: 24px;
+  margin-top: 40px;
+  margin-bottom: 75px ;
   /* transition: .5s; */
 }
 /* .choiceandbuy_mb.hidden_choicemb{

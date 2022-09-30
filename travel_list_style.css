@@ -1,5 +1,5 @@
 /* *{
-    outline: 1px solid rgb(255, 0, 0);
+    outline: 1px solid rgb(100, 34, 34);
 } */
 .pages .row {
     margin: 0;
@@ -131,7 +131,20 @@
 .travel_section input[type=checkbox]:checked {
     background: var(--color-yellow);
     color: #fff;
+    /* margin-bottom: 28px; */
 }
+
+.travel_section_bottom{
+    margin-bottom: 80px;
+}
+
+
+@media screen and (max-width:768px) {
+    .travel_section_bottom{
+        margin-bottom: 120px;
+    }
+}
+
 
 .travel_cate {
     padding-bottom: 20px;
@@ -336,6 +349,7 @@ a.sort_active {
 
 /* -------------------------行程卡片-------------------------- */
 .travel_list {
+    position: relative;
     justify-content: flex-start;
 }
 
@@ -689,4 +703,16 @@ a.sort_active {
     position: absolute;
     left: 10px;
     bottom: -10px;
+}
+
+
+
+/* ------------找不到相關結果---------- */
+.notfind_yu{
+    position: absolute;
+    left: 540px;
+}
+
+.notfind_yu .h6{
+    color: #432A0F;
 }
