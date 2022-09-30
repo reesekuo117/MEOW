@@ -459,7 +459,6 @@ header("Refresh:180");
                 <?php endif; ?>
                 
             </div>
-<<<<<<< HEAD
             <div>
                 <h6 class=" MDtotalItemsYu text-center px-5">
                 <?= $v['qty'] ?>
@@ -479,9 +478,7 @@ header("Refresh:180");
                 </a>
             </div>
         </div>
-=======
         <?php endif; ?>
->>>>>>> a58cad7a4f7cecb091add8e7930928191fc4a340
     </div>
 
     <!--  手機購物車行程清單卡片 -->
