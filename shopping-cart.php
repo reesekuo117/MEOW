@@ -142,26 +142,23 @@ header("Refresh:180");
                                         </td>  -->
                                         <!-- 單價 -->
                                         <td name="priceYu" class="price-yu m-0 ">
-                                            <h6 class="onePriceinputYu" data-val="<?= $v['product_price'] ?>">
+                                            <h6 class="onePriceinputYu price" data-val="<?= $v['product_price'] ?>">
                                                 <?= $v["product_price"] ?>
                                             </h6>
                                         </td>
                                         <!-- 數量 -->
                                         <td class="PqtyYU">
-                                            <form method='POST' action='#' onchange="updateItem(event)">
-
-                                                <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
-
-                                                <span type='text' name='txt' value='' class=' PqtyYu px-1 qty-yu numberTotalYu'>
+                                            <form method='POST' action='#'>
+                                                <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity'  />
+                                                <span type='text' name='txt' class=' PqtyYu px-1 qty-yu numberTotalYu'>
                                                     <?= $v['qty'] ?>
                                                 </span>
-
                                                 <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' />
                                             </form>
                                         </td>
                                         <!-- 小計 -->
-                                        <td name="tpriceYu" class="sub-total total_price_yu p-2">
-                                            <h6 id="totalprice_yu" class="littlePriceYu mx-auto" name="priceYu"><?= $v['product_price'] * $v['qty'] ?></h6>
+                                        <td name="priceYu" class="sub-total total_price_yu p-2">
+                                            <h6 id="totalprice_yu" class="littlePriceYu mx-auto sub-total" name="priceYu"><?= $v['product_price'] * $v['qty'] ?></h6>
                                         </td>
                                         <!-- 刪除 -->
                                         <th scope="col" class="form-delete-yu">
@@ -186,7 +183,8 @@ header("Refresh:180");
                 <div class=" alert alert-succes totalprice-uniqui-yu " role="alert">
                     <span class=" d-flex price-uniqui-yu">
                         <h6 id="AllTotal_P_Yu">
-                            <?= $total ?>
+                            <!-- <span>總計: </span> -->
+                            <span id="total-price"></span> 元
                         </h6>
                     </span>
                 </div>
@@ -201,7 +199,7 @@ header("Refresh:180");
                         <!-- a href="#buy1.php" -->
                     <?php else : ?>
                         <a href="./shopping-cart-productdetails.php" class="btn unique-nextbutton-yu">
-                            <button class=" unique-btn-yu  me-md-2" type="button" data-sid="<?= $v["sid"] ?>" onclick="addToCart_P_Yu(event)">
+                            <button class=" unique-btn-yu  me-md-2" type="button" data-sid="<?= $v["sid"] ?>">
                                 <p class="m-0 text-center">
                                     下一步
                                 </p>
@@ -286,7 +284,7 @@ header("Refresh:180");
                                         </td>
                                         <!-- 數量 -->
                                         <td class="TqtyYU">
-                                            <form class="text-center" id='myform' method='POST' action='#' onchange="updateItem(event)">
+                                            <form class="text-center" id='myform' method='POST' action='#' onchange="updateTItem(event)">
 
                                                 <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
 
@@ -299,7 +297,7 @@ header("Refresh:180");
                                         </td>
                                         <!-- 小計 -->
                                         <td name="tpriceYu" class="total_price_yu h6  text-center">
-                                            <h6 class="littlePriceYu" name="priceYu">
+                                            <h6 class="littlePriceYu" name="tpriceYu">
                                                 <?= $j['travel_price'] * $j['qty'] ?>
                                             </h6>
                                         </td>
@@ -352,6 +350,7 @@ header("Refresh:180");
 </section>
 
 <!-- ------------------手機 ------------------------>
+
 <section class=" min-hYu  d-block d-md-none">
     <div class=" mdpagination-yu btn-group myTab nav nav-tabs">
         <a id="mduniqui-a-yu" href="#" data-toggle="tab" class="px-0 m-auto btn active" role="button">獨家商品</a>
@@ -428,7 +427,7 @@ header("Refresh:180");
             </div>
             <div>
                 <h6 class=" MDtotalItemsYu text-center px-5">
-                    1
+                <?= $v['qty'] ?>
                 </h6>
                 <h6 class=" MDtatalpriceYu text-center px-5">
                     <?= $v['product_price'] * $v['qty'] ?>
@@ -506,63 +505,9 @@ header("Refresh:180");
 
 
 
+
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 
 <script src="./shopping-cart.js"></script>
-
-
-<script>
-    // 商品
-    function addToCart_P_Yu(event) {
-        const btn = $(event.currentTarget);
-        const qty = btn.closest("#uniqui-yu").find(".PqtyYu").text();
-        const p = btn.closest("#uniqui-yu").find("#AllTotal_P_Yu").text();
-        // const qty=1;
-        // console.log(btn);
-        console.log('hihi', btn.closest("#uniqui-yu").find("#AllTotal_P_Yu").text());
-        const sid = btn.attr('data-sid');
-        console.log({
-            sid,
-            qty,
-            p
-        });
-        $.get(
-            're-cart-p-api.php', {
-                sid,
-                qty,
-                p
-            },
-            function(data) {
-                showCartCount(data);
-            },
-            'json');
-    }
-
-    //行程
-    function addToCart_T_Yu(event) {
-        const btn = $(event.currentTarget);
-        const qty = btn.closest("#travel-yu").find(".TqtyYu").text();
-        const t = btn.closest("#travel-yu").find("#AllTotal_T_Yu").text();
-        // const qty=1;
-        // console.log(btn);
-        console.log('hihi',  btn.closest("#travel-yu").find("#AllTotal_T_Yu").text());
-        const sid = btn.attr('data-t-sid');
-        console.log({
-            sid,
-            qty,
-            t
-        });
-        $.get(
-            're-cart-t-api.php', {
-                sid,
-                qty,
-                t
-            },
-            function(data) {
-                showCartCount(data);
-            },
-            'json');
-    }
-</script>
 
 <?php include __DIR__ . '/parts/html-foot.php'; ?>

@@ -57,7 +57,7 @@ foreach($_SESSION['pcart'] as $k=>$v){
         $order_sid,
         $v['sid'],
         $v['qty'],
-        $v['product_price'],
+        $v['product_price']
     ]);
 }
 

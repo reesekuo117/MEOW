@@ -38,7 +38,7 @@ $to_sql = "INSERT INTO `travel_order`(
 $stmt = $pdo->prepare($to_sql);
 $stmt->execute([
     $_SESSION['user']['id'],
-    $_POST['travel_sid'],
+    $j['sid'],
     $_POST['state'],
     $j['price'],
     $j['qty'],
