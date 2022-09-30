@@ -257,11 +257,12 @@ header("Refresh:180");
                         <?php foreach ($city as $c) : ?>
                             <div class=" form-check ">
                                 <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
-                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " id="form-check-ca" type="button" href="?<?php
-                                                                                                                                                                $tmp = $qsp;
-                                                                                                                                                                $tmp['city'] = $c['sid'];
-                                                                                                                                                                echo http_build_query($tmp);
-                                                                                                                                                                ?>#travelDesktopSort">
+                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " id="form-check-ca" type="button" 
+                                href="?<?php
+                                        $tmp = $qsp;
+                                        $tmp['city'] = $c['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>#travelDesktopSort">
                                     <?= $c['city'] ?>
                                 </a>
                             </div>
@@ -277,11 +278,12 @@ header("Refresh:180");
                     <ul>
                         <?php foreach ($kind as $k) : ?>
                             <div class="form-check">
-                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" href="?<?php
-                                                                                                                                                                $tmp = $qsp;
-                                                                                                                                                                $tmp['kind'] = $k['sid'];
-                                                                                                                                                                echo http_build_query($tmp);
-                                                                                                                                                                ?>#travelDesktopSort">
+                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" id="form-check-ka" type="button" 
+                                href="?<?php
+                                        $tmp = $qsp;
+                                        $tmp['kind'] = $k['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>#travelDesktopSort">
                                     <?= $k['travel_kind'] ?>
                                 </a>
                             </div>
@@ -375,11 +377,12 @@ header("Refresh:180");
                         <?php foreach ($city as $c) : ?>
                             <div class=" form-check ">
                                 <!-- 如果單選type要改radio，並設name，且同一類的name要取一樣的，因為後端要抓name的值 -->
-                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " type="button" href="?<?php
-                                                                                                                                                $tmp = $qsp;
-                                                                                                                                                $tmp['city'] = $c['sid'];
-                                                                                                                                                echo http_build_query($tmp);
-                                                                                                                                                ?>#travelDesktopSort">
+                                <a class="<?= $c['sid'] == $selectedCity ? "btncolor_active " : "btncolor_default" ?> " type="button" 
+                                href="?<?php
+                                        $tmp = $qsp;
+                                        $tmp['city'] = $c['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>#travelDesktopSort">
                                     <?= $c['city'] ?>
                                 </a>
                             </div>
@@ -390,11 +393,12 @@ header("Refresh:180");
 
                         <?php foreach ($kind as $k) : ?>
                             <div class="form-check">
-                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" type="button" href="?<?php
-                                                                                                                                            $tmp = $qsp;
-                                                                                                                                            $tmp['kind'] = $k['sid'];
-                                                                                                                                            echo http_build_query($tmp);
-                                                                                                                                            ?>#travelDesktopSort">
+                                <a class="<?= $k['sid'] == $selectedKind ? "btncolor_active " : "btncolor_default" ?>" type="button" 
+                                href="?<?php
+                                        $tmp = $qsp;
+                                        $tmp['kind'] = $k['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>#travelDesktopSort">
                                     <?= $k['travel_kind'] ?>
                                 </a>
                             </div>
@@ -405,11 +409,12 @@ header("Refresh:180");
                         <h5>－依旅遊時間分類</h5>
                         <?php foreach ($daytime as $t) : ?>
                             <div class="form-check">
-                                <a class="<?= $t['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>" type="button" href="?<?php
-                                                                                                                                                $tmp = $qsp;
-                                                                                                                                                $tmp['daytime'] = $t['sid'];
-                                                                                                                                                echo http_build_query($tmp);
-                                                                                                                                                ?>#travelDesktopSort">
+                                <a class="<?= $t['sid'] == $selectedDaytime ? "btncolor_active " : "btncolor_default" ?>" type="button" 
+                                href="?<?php
+                                        $tmp = $qsp;
+                                        $tmp['daytime'] = $t['sid'];
+                                        echo http_build_query($tmp);
+                                        ?>#travelDesktopSort">
                                     <?= $t['travel_daytime'] ?>
                                 </a>
                             </div>
