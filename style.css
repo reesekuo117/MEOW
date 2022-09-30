@@ -5,6 +5,10 @@
   /* border: 1px salmon solid; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "gensen-B";
   src: url("./gensen-font-master/ttc/GenSenRounded-B.ttc");
@@ -231,7 +235,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index:999;
+  z-index:9999999;
 }
 
 .footer-xs>ul {
@@ -369,4 +373,9 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+button,
+.button{
+  cursor: pointer;
 }

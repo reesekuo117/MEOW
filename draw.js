@@ -944,14 +944,43 @@ $(window).scroll(function () {
 });
 
 // console.log($('.drawCard').html());
-const randDrawArr = [9, 12, 57, 63, 64, 74, 75, 81, 92, 95];
+// const randDrawArr = [9, 12, 57, 63, 64, 74, 75, 81, 92, 95];
 
-const randDraw = Math.floor(Math.random() * randDrawArr.length);
-const drawValue = randDrawArr[randDraw];
+// const randDraw = Math.floor(Math.random() * randDrawArr.length);
+// const drawValue = randDrawArr[randDraw];
 // console.log(drawValue)
 
-$(".drawCard").html(
-    '<img class="w-100 " src="./imgs/draw/draw' +
-    drawValue +
-    '.png" alt=""></img>'
-);
+// $(".drawCard").html(
+//     '<img class="w-100 " src="./imgs/draw/draw' +
+//     drawValue +
+//     '.png" alt=""></img>'
+// );
+
+// SELECT column FROM table ORDER BY RAND () LIMIT 1;   
+
+// rand(01,10)
+
+
+
+//下方列+卡片輪播愛心變色
+$('.favorite').click(function(){
+    $(this).find('.icon_heart_nav > svg').toggleClass('color')
+});
+// ----------------愛心變色結束-------------------
+
+// 加入最愛
+function addToFav_F_ba(event) {
+    const heartbtn = $(event.currentTarget); // 監聽
+    const collect_sid = heartbtn.attr('data-sid');
+    // console.log('hiheart', heartbtn);
+    console.log('heartsid', collect_sid);
+    $.get(
+        'favorite_api.php', {
+            collect_sid,
+            target_type: 3,
+        },
+        'json');
+
+};
+
+

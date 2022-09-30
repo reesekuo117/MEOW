@@ -504,3 +504,9 @@ button:hover{
     bottom: 40px;
     z-index: 2;
 }
+
+/* 手機把 footer 關掉 */
+
+footer.product-none{
+    display: none !important;
+}

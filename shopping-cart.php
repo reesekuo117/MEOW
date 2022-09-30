@@ -365,7 +365,7 @@ header("Refresh:180");
                         <h5 class="page-light-number">1</h5>
                     </div>
                     <div class="page-yu ">
-                        <p class=" m-0 page-yu-one">購物車訂單</p>
+                        <p class=" m-0 page-yu-one pt-1">購物車訂單</p>
                     </div>
                     <div class=" pageline-yu "></div>
                 </span>
@@ -375,7 +375,7 @@ header("Refresh:180");
                         <h5>2</h5>
                     </div>
                     <div class="page-yu ">
-                        <p class="m-0 page-yu-two ">填寫資料</p>
+                        <p class="m-0 page-yu-two pt-1 ">填寫資料</p>
                     </div>
                 </span>
 
@@ -384,47 +384,81 @@ header("Refresh:180");
                         <h5>3</h5>
                     </div>
                     <div class="page-yu ">
-                        <p class="m-0 page-yu-three">完成訂單</p>
+                        <p class="m-0 page-yu-three pt-1">完成訂單</p>
                     </div>
                 </span>
             </div>
         </div>
     </div>
+    <!--  手機購物車商品清單卡片 -->
     <div id="mdmyTabContent-yu" class="  tab-content container">
-        <!-- <div class="cardcheckall-yu mx-2 row d-flex align-items-center">
-            <input type="checkbox" class="">
-            <h6 class="pl m-0">全選</h6>
-        </div> -->
-        <!--  手機購物車商品清單卡片 -->
-        <div id="mduniqui-yu" class=" container-fluid">
-            <div class="card-yu">
-                <!-- flex-nowrap -->
-                <div class=" d-flex  mdP-img">
-                    <!-- <input type="checkbox" class="largerCheckbox-yu"> -->
-                    <img class=" w-100" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
-                </div>
-                <div class="cardlist-Yu pl-4">
-                    <div class="mdcardlist-yu">
-                        <p class="m-0">
-                            <?= $v["product_name"] ?>
-                        </p>
-                    </div>
-                    <!-- 單價 -->
-                    <h5 class="mdprice-yu">
-                        <?= $v["product_price"] ?>
-                    </h5>
-                    <!-- 數量 -->
-                    <form class="d-flex" method='POST' action='#'>
-                        <input type='button' value='-' class='qtyminus' field='quantity' />
-
-                        <span type='text' name='txt' value='1' class=' px-1 qty-yu numberTotalYu'>
-                            <?= $v['qty'] ?>
-                        </span>
-
-                        <input type='button' value='+' class='qtyplus' field='quantity' />
-                    </form>
-                </div>
+        <?php if (empty($_SESSION['pcart'])) : ?>
+            <div class="alert alert-danger" role="alert">
+                購物車內沒有獨家商品
             </div>
+        <?php else : ?>
+            <div id="mduniqui-yu" class=" container-fluid">
+            <?php
+                $total = 0;
+                foreach ($_SESSION["pcart"] as $k => $v) : 
+                $total += $v['product_price'] * $v['qty']; ?>
+                <div class="card-yu">
+                    <!-- flex-nowrap -->
+                    <div class=" d-flex  mdP-img">
+                        <!-- <input type="checkbox" class="largerCheckbox-yu"> -->
+                        <img class=" w-100" src="imgs/product/cards/<?= $v['product_card_img'] ?>.jpg" alt="...">
+                    </div>
+                    <div class="cardlist-Yu pl-4">
+                        <div class="mdcardlist-yu">
+                            <p class="m-0">
+                                <?= $v["product_name"] ?>
+                            </p>
+                        </div>
+                        <!-- 單價 -->
+                        <h5 class="mdprice-yu">
+                            <?= $v["product_price"] ?>
+                        </h5>
+                        <!-- 數量 -->
+                        <form class="d-flex" method='POST' action='#'>
+                            <input type='button' value='-' class='qtyminus' field='quantity' />
+
+                            <span type='text' name='txt' value='1' class=' px-1 qty-yu numberTotalYu'>
+                                <?= $v['qty'] ?>
+                            </span>
+
+                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <!-- <h6 class=" MDtotalItemsYu text-center px-5">
+                        1
+                    </h6> -->
+                    <h6 class=" MDtatalpriceYu text-center px-5">
+                        <?= $total ?>
+                    </h6>
+                </div>
+            <?php endforeach; ?>    
+                <!-- 未登入 -->
+                <?php if (empty($_SESSION["user"])) : ?>
+                    <!-- 跳出提示框提醒用戶先登入會員 -->
+                    <div class="alert alert-danger" role="alert">
+                        請先登入會員，再結帳
+                    </div>
+                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
+                <?php else : ?>
+                    <div class=" d-flex justify-content-center mdH_yu">
+                        <a href="./shopping-cart-productdetails.php" class="btn mdunique-nextbutton-yu">
+                            <button class=" mdunique-btn-yu " type="button">
+                                <p class="m-0 text-center">
+                                    下一步
+                                </p>
+                            </button>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            </div>
+<<<<<<< HEAD
             <div>
                 <h6 class=" MDtotalItemsYu text-center px-5">
                 <?= $v['qty'] ?>
@@ -444,60 +478,80 @@ header("Refresh:180");
                 </a>
             </div>
         </div>
+=======
+        <?php endif; ?>
+>>>>>>> a58cad7a4f7cecb091add8e7930928191fc4a340
     </div>
-    <div id="mdmyTabCount-T-yu">
-        <!-- <div class="cardcheckall-yu mx-2 row d-flex align-items-center ">
-            <input type="checkbox" class="">
-            <h6 class="pl m-0">全選</h6>
-        </div> -->
-        <!--  手機購物車行程清單卡片 -->
-        <div id="mdtravel-yu" class="  container-fluid">
-            <div class="d-flex tcard">
-                <!-- flex-nowrap -->
-                <div class=" d-flex">
-                    <img class=" w-75" src="imgs/travel/cards/<?= $j['travelcard_img'] ?>" alt="...">
-                </div>
-                <div class="px-1">
-                    <div class="mdcardlist-yu">
-                        <p class="m-0 " >
-                            <?= $j['travel_name'] ?>
-                        </p>
+
+    <!--  手機購物車行程清單卡片 -->
+    <div id="mdmyTabCount-T-yu"  class="  tab-content container">
+        <?php if (empty($_SESSION['tcart'])) : ?>
+            <div class="alert alert-danger" role="alert">
+                購物車內沒有旅遊行程
+            </div>
+        <?php else : ?>
+            <div id="mdtravel-yu" class="container-fluid">
+                <?php
+                    $total = 0;
+                    foreach ($_SESSION["tcart"] as $i => $j) : 
+                    $total += $j['travel_price'] * $j['qty']; ?>
+                    <div class="d-flex tcard">
+                        <!-- flex-nowrap -->
+                        <div class=" d-flex">
+                            <img class=" w-75" src="imgs/travel/cards/<?= $j['travelcard_img'] ?>" alt="...">
+                        </div>
+                        <div class="px-1">
+                            <div class="mdcardlist-yu">
+                                <p class="m-0 " >
+                                    <?= $j['travel_name'] ?>
+                                </p>
+                            </div>
+                            <!-- 單價 -->
+                            <h5 class="mdprice-yu onePriceinputYu" name="priceYu">
+                                <?= $j['travel_price'] ?>
+                            </h5>
+                            <!-- 數量 -->
+                            <form class="d-flex" method='POST' action='#'>
+                            <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
+
+                            <span type='text' name='txt' value='1' class=' TqtyYu px-1 qty-yu numberTotalYu'>
+                            <?= $j['qty'] ?>
+                            </span>
+
+                            <input name="btnright" type='button' value='+' class='qtyplus' field='quantity'  />
+                            </form>
+                        </div>
                     </div>
-                    <!-- 單價 -->
-                    <h5 class="mdprice-yu onePriceinputYu" name="priceYu">
-                        <?= $j['travel_price'] ?>
-                    </h5>
-                    <!-- 數量 -->
-                    <form class="d-flex" method='POST' action='#'>
-                    <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity' />
-
-                    <span type='text' name='txt' value='1' class=' TqtyYu px-1 qty-yu numberTotalYu'>
-                    <?= $j['qty'] ?>
-                    </span>
-
-                    <input name="btnright" type='button' value='+' class='qtyplus' field='quantity'  />
-                    </form>
+                <?php endforeach; ?>
+                <div>
+                    <!-- <h6 class=" MDtotalItemsYu text-center px-5">
+                        1
+                    </h6> -->
+                    <h6 class=" MDtatalpriceYu text-center px-5">
+                        <?= $j["travel_price"] ?>
+                    </h6>
                 </div>
+                <!-- 未登入 -->
+                <!-- 如果使用者還未登入 -->
+                <?php if (empty($_SESSION["user"])) : ?>
+                    <!-- 跳出提示框提醒用戶先登入會員 -->
+                    <div class="alert alert-danger" role="alert">
+                        請先登入會員，再結帳
+                    </div>
+                    <!-- 如果以登入會員點選結帳 跳轉至結帳頁 -->
+                <?php else : ?>
+                    <div class=" d-flex justify-content-center mdH_yu">
+                        <a href="./shopping-cart-travellist.php" class="btn mdunique-nextbutton-yu">
+                            <button class=" mdunique-btn-yu " type="button">
+                                <p class="m-0 text-center">
+                                    下一步
+                                </p>
+                            </button>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
-            <div>
-                <h6 class=" MDtotalItemsYu text-center px-5">
-                    1
-                </h6>
-                <h6 class=" MDtatalpriceYu text-center px-5">
-                    <?= $j["travel_price"] ?>
-                </h6>
-            </div>
-            <!-- 未登入 -->
-            <div class=" d-flex justify-content-center">
-                <a href="./shopping-cart-travellist.php" class="btn mdunique-nextbutton-yu">
-                    <button class=" mdunique-btn-yu " type="button">
-                        <p class="m-0 text-center">
-                            下一步
-                        </p>
-                    </button>
-                </a>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
 
 </section>

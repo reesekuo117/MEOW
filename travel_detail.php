@@ -64,9 +64,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./travel_detail_style.css">
-<?php
-header("Refresh:180");
-?>
+
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 <div class="travel_detail_07">
     <?php //foreach($rows as $r): 
@@ -167,7 +165,7 @@ header("Refresh:180");
                                 <div class="evaluation d-md-none d-flex mt-2">
                                     <div class="star d-flex">
                                         <div class="icon_fivestar small">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                            <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                             <span style="color: var(--color-text60);">
                                                 <?= $r['travel_star'] ?>
                                             </span>
@@ -228,7 +226,7 @@ header("Refresh:180");
                             <div class="evaluation d-none d-md-flex">
                                 <div class="star d-flex">
                                     <div class="icon_fivestar">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                     </div>
                                     <p>
                                         <?= $r['travel_star'] ?>
@@ -511,14 +509,14 @@ header("Refresh:180");
                                         <h3 class="d-none d-md-block mr-3">5</h3>
                                         <small class="d-flex xs">
                                             <div class="icon_fivestar px-0">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                                <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 <div class="small xs d-md-none">(50 + 則評價)</div>
                                             </div>
                                             <div class="xs d-none d-md-block ml-2">(50 + 則評價)</div>
                                         </small>
                                     </div>
                                 </div>
-                                <div class="col col-md-3">
+                                <!-- <div class="col col-md-3">
                                     <div class="time_sort">
                                         <select name="" id="">
                                             <option value="">最新</option>
@@ -526,7 +524,7 @@ header("Refresh:180");
                                             <option value="">評價低→高</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="cd">
                                 <!-- computer comment -->
@@ -541,7 +539,7 @@ header("Refresh:180");
                                             <p class="name">黃八張</p>
                                             <div class="star_date d-flex align-items-center">
                                                 <div class="icon_fivestar">
-                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 </div>
                                                 <small class="date">2022/8/31</small>
                                             </div>
@@ -566,7 +564,7 @@ header("Refresh:180");
                                             <p class="name">黃八張</p>
                                             <div class="star_date d-flex align-items-center">
                                                 <div class="icon_fivestar">
-                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 </div>
                                                 <small class="date">2022/8/31</small>
                                             </div>
@@ -591,7 +589,7 @@ header("Refresh:180");
                                             <p class="name">黃八張</p>
                                             <div class="star_date d-flex align-items-center">
                                                 <div class="icon_fivestar">
-                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 </div>
                                                 <small class="date">2022/8/31</small>
                                             </div>
@@ -619,7 +617,7 @@ header("Refresh:180");
                                         <div class="star_date d-flex align-items-center ">
                                             <div class="icon_fivestar px-0">
                                                 <small class="date xs d-flex align-items-center">
-                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star pr-1"></i>
+                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                             </div>
                                             2022/8/31
                                             </small>
@@ -650,7 +648,7 @@ header("Refresh:180");
                                         <div class="star_date d-flex align-items-center ">
                                             <div class="icon_fivestar px-0">
                                                 <small class="date xs d-flex align-items-center">
-                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star pr-1"></i>
+                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                             </div>
                                             2022/8/31
                                             </small>
@@ -681,7 +679,7 @@ header("Refresh:180");
                                         <div class="star_date d-flex align-items-center ">
                                             <div class="icon_fivestar px-0">
                                                 <small class="date xs d-flex align-items-center">
-                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star pr-1"></i>
+                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                             </div>
                                             2022/8/31
                                             </small>
@@ -780,8 +778,7 @@ header("Refresh:180");
                                                             </div>
                                                             <div class="card_under d-flex justify-content-between align-items-center">
                                                                 <small class="xs card-text d-flex pr-2">
-                                                                    <div class="icon_star pr-1" style="color: var(--color-yellow);">
-                                                                        <i class="fa-solid fa-star"></i>
+                                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                                     </div><?= $t['travel_star']?>
                                                                 </small>
                                                                 <small class="xs card-text d-flex">
@@ -848,9 +845,10 @@ header("Refresh:180");
                                                             </div>
                                                             <div class="card_under d-flex justify-content-between align-items-center">
                                                                 <small class="xs card-text d-flex pr-2">
-                                                                    <div class="icon_star pr-1" style="color: var(--color-yellow);">
+                                                                    <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
+                                                                    <!-- <div class="icon_star pr-1" style="color: var(--color-yellow);">
                                                                         <i class="fa-solid fa-star"></i>
-                                                                    </div><?= $t['travel_star']?>
+                                                                    </div>< ?= $t['travel_star']?> -->
                                                                 </small>
                                                                 <small class="xs card-text d-flex">
                                                                     <div class="icon_fire pr-1" style="color: var(--color-orange);">
@@ -909,8 +907,8 @@ header("Refresh:180");
     </div>
 </div>
 <!-- 手機版下方列 -->
-<div class="choiceandbuy_mb d-md-none" id="MdBuyNowYu">
-    <div class="signup" id="BuyNowFYu">
+<div class="choiceandbuy_mb d-md-none mb-5" id="MdBuyNowYu">
+    <div class="signup mb-3" id="BuyNowFYu">
         <h6>報名場次</h6>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
@@ -950,7 +948,7 @@ header("Refresh:180");
             </div>
             <div class="buy_btn">
                 <a href="shopping-cart.php" style="text-decoration:none;">
-                    <button class="buy d-flex justify-content-center align-items-center">
+                    <button class="buy d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_T_Yu(event)">
                         <div class="icon_buy pr-1">
                             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <mask id="path-1-outside-1_2793_16617-140835" maskUnits="userSpaceOnUse" x="-0.961914" y="0.75" width="20" height="17" fill="black">
@@ -983,7 +981,7 @@ header("Refresh:180");
         </div>
         <div class="col ml-0 mr-2">
             <a href="#MdBuyNowYu" style="text-decoration:none;">
-                <button class="buy btn-l d-flex justify-content-center align-items-center w-100 my-3">
+                <button class="buy btn-l d-flex justify-content-center align-items-center w-100 my-3" data-sid="<?= $r["sid"] ?>" onclick="addToCart_T_Yu(event)">
                     <div class="icon_buy pr-1">
                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="path-1-outside-1_2793_16617-140835" maskUnits="userSpaceOnUse" x="-0.961914" y="0.75" width="20" height="17" fill="black">

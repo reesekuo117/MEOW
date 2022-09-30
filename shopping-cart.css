@@ -618,3 +618,9 @@ h6.MDtatalpriceYu::before {
 .mdP-img {
   width: 130px;
 }
+
+
+/*手機版高度 */
+.mdH_yu{
+  padding-bottom: 80px;
+}

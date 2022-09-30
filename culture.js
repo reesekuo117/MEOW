@@ -1,14 +1,13 @@
 //PC:側邊欄FIXED
 $(window).scroll(function () {
-  if (
-    $(window).scrollTop() >=
-    $(".section1-content_lb").offset().top - ($(window).height() * 1) / 3
-  ) {
+  if ($(window).scrollTop() >=
+    ($(".section1-content_lb").offset().top - window.screen.height * 1 / 3)){
     $(".sidebar_lb").css({
       transform: "translateY(0px)",
       opacity: 1,
     });
-  } else {
+  } 
+  else {
     $(".sidebar_lb").css({
       transform: "translateY(50px)",
       opacity: 0,
@@ -30,38 +29,37 @@ $(window).scroll(function () {
 
 //關於月老
 //桌機
-$(window).scroll(function () {
-  if (
-    $(window).scrollTop() >=
-    $(".section1_lb").offset().top - ($(window).height() * 2) / 3
-  ) {
-    $(".section1-content_lb").css({
-      transform: "translateY(0px)",
-      opacity: 1,
-    });
-  } else {
-    $(".section1-content_lb").css({
-      transform: "translateY(10px)",
-      opacity: 0,
-    });
-  }
-});
-$(window).scroll(function () {
-  if (
-    $(window).scrollTop() >=
-    $(".section1-content_lb").offset().top - ($(window).height() * 1) / 10
-  ) {
-    $(".section1-content2_lb").css({
-      transform: "translateY(0px)",
-      opacity: 1,
-    });
-  } else {
-    $(".section1-content2_lb").css({
-      transform: "translateY(30px)",
-      opacity: 0,
-    });
-  }
-});
+// $(window).scroll(function () {
+//   if ($(window).scrollTop() >=
+//     ($(".section1_lb").offset().top - window.screen.height * 2 / 3)) {
+//     $(".section1-content_lb").css({
+//       transform: "translateY(0px)",
+//       opacity: 1,
+//     });
+//   } 
+//   else {
+//     $(".section1-content_lb").css({
+//       transform: "translateY(10px)",
+//       opacity: 0,
+//     });
+//   }
+// });
+// $(window).scroll(function () {
+//   if (
+//     $(window).scrollTop() >=
+//     $(".section1-content_lb").offset().top - ($(window).height() * 1) / 10
+//   ) {
+//     $(".section1-content2_lb").css({
+//       transform: "translateY(0px)",
+//       opacity: 1,
+//     });
+//   } else {
+//     $(".section1-content2_lb").css({
+//       transform: "translateY(30px)",
+//       opacity: 0,
+//     });
+//   }
+// });
 //mb
 
 // $(window).scroll(function () {
@@ -98,7 +96,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".mb-section1-bottom_lb").offset().top - ($(window).height() * 3) / 4
+    $(".mb-section1-bottom_lb").offset().top - ($(window).height() * 3 / 4)
   ) {
     $(".mb-section1-bottom_lb").css({
       transform: "translateY(-20px)",
@@ -116,7 +114,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".pic-group_lb").offset().top - ($(window).height() * 2) / 3
+    $(".pic-group_lb").offset().top - ($(window).height() * 2 / 3)
   ) {
     $(".tmp-pic1_lb").css({
       transform: "translateX(100px)",
@@ -133,7 +131,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".tmp-pic2_lb").offset().top - ($(window).height() * 2) / 3
+    $(".tmp-pic2_lb").offset().top - ($(window).height() * 2 / 3)
   ) {
     $(".tmp-pic2_lb").css({
       transform: "translateX(100px)",
@@ -150,7 +148,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".tmp-pic2_lb").offset().top - ($(window).height() * 1) / 3
+    $(".tmp-pic2_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $(".tmp-pic3_lb").css({
       transform: "translateX(100px)",
@@ -168,7 +166,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".section2_box").offset().top - ($(window).height() * 1) / 3
+    $(".section2_box").offset().top - ($(window).height() * 1 / 3)
   ) {
     $("#rdLine-1").addClass("rdLine-1 d-md-block");
   } else {
@@ -179,7 +177,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step1_lb").offset().top - ($(window).height() * 1) / 3
+    $(".step1_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $("#rdLine-2").addClass("rdLine-2 d-md-block");
   } else {
@@ -189,7 +187,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step2_lb").offset().top - ($(window).height() * 1) / 3
+    $(".step2_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $("#rdLine-3").addClass("rdLine-3 d-md-block");
   } else {
@@ -199,7 +197,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step3_lb").offset().top - ($(window).height() * 1) / 3
+    $(".step3_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $("#rdLine-4").addClass("rdLine-4 d-md-block");
   } else {
@@ -209,7 +207,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step4_lb").offset().top - ($(window).height() * 1) / 3
+    $(".step4_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $("#rdLine-5").addClass("rdLine-5 d-md-block");
   } else {
@@ -219,7 +217,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step5_lb").offset().top - ($(window).height() * 1) / 3
+    $(".step5_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $("#rdLine-6").addClass("rdLine-6 d-md-block");
   } else {
@@ -230,7 +228,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step1_lb").offset().top - ($(window).height() * 1) / 3
+    $(".step1_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $(".step2_lb").css({
       //   transform: "translateY(0px)",
@@ -247,7 +245,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step2_lb").offset().top - ($(window).height() * 1) / 3
+    $(".step2_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $(".step3_lb").css({
       //   transform: "translateY(0px)",
@@ -264,7 +262,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step3_lb").offset().top - ($(window).height() * 1) / 3
+    $(".step3_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $(".step4_lb").css({
       //   transform: "translateY(0px)",
@@ -281,7 +279,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step4_lb").offset().top - ($(window).height() * 1) / 3
+    $(".step4_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $(".step5_lb").css({
       //   transform: "translateY(0px)",
@@ -316,7 +314,7 @@ $(window).resize(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".cp-cat-move").offset().top - ($(window).height() * 2) / 3
+    $(".cp-cat-move").offset().top - ($(window).height() * 2 / 3)
   ) {
     const windowWidth = $(window).width();
 
@@ -370,7 +368,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".section3_lb ").offset().top - ($(window).height() * 1) / 3
+    $(".section3_lb ").offset().top - ($(window).height() * 1 / 3)
   ) {
     $(".ban-card").css({
       transform: "translateX(0px)",
@@ -406,7 +404,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".section4_lb").offset().top - ($(window).height() * 1) / 3
+    $(".section4_lb").offset().top - ($(window).height() * 1 / 3)
   ) {
     $(".devo-content").css({
       transform: "translateY(0px)",
@@ -510,7 +508,7 @@ function changeLinkColor(){
     for (mbidentCounter in mbsections) {
       if (
         mbsections[mbidentCounter] <=
-          scrollPosition + ($(window).height() * 1) / 3 ||
+          scrollPosition + ($(window).height() * 1 / 3) ||
         mbsections[0] <= scrollPosition
       ) {
         // console.log(mbidentCounter, mbsections[mbidentCounter], scrollPosition);
@@ -538,7 +536,7 @@ function changeLinkColor(){
     for (identCounter in sections) {
       if (
         sections[identCounter] <=
-        scrollPosition + ($(window).height() * 1) / 3
+        scrollPosition + ($(window).height() * 1 / 3)
       ) {
         // console.log(identCounter, sections[identCounter], scrollPosition);
         document.querySelector(".active_lb").removeAttribute("class");

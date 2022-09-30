@@ -302,7 +302,7 @@ $pageName ='會員中心'; //頁面名稱
                             </div>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-5">
                         <label for="email" class="form-label-re text-18-re">信箱帳號<span style="color:#963C38">*</span></label><br>
                         <input id="member_email_re" class="inputdisabled-re col-8 noline-re" type="text" class="form-control" disabled="disabled" value="<?=htmlentities($r_re['email']) ?>">
                     </div>
@@ -358,13 +358,13 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
     <!-- p3-P------------------------------------------------------------------ -->
                 <div id="tab01-re" class="tab-inner-re ">
-                    <div class="row mx-0 likehight-re">
+                    <div class="row mb-5 pb-3 mx-0 likehight-re">
                     <?php foreach($p_rows as $r): ?>
-                        <div class="col-6 col-md-3 px-2 pb-3">
+                        <div class="col-12 col-md-3 px-4 px-md-2 pb-3">
                             <div class="card-re">
                                 <div class="position-relative ">
                                     <div class="cardimg-re">
-                                        <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt="">
+                                        <img class="w-100" src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt="">
                                     </div>
                                     <div class="position-absolute likeicon-re">
                                         <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
@@ -439,13 +439,13 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
     <!-- p3-T------------------------------------------------------------------ -->
                 <div id="tab02-re" class="tab-inner-re">
-                <div class="row mx-0 likehight-re">
+                <div class="row mb-5 pb-3 mx-0 likehight-re">
                     <?php foreach($t_rows as $r): ?>
-                        <div class="col-6 col-md-3 px-2 pb-3">
+                        <div class="col-12 col-md-3 px-4 px-md-2 pb-3">
                             <div class="card-re">
                                 <div class="position-relative">
                                     <div class="cardimg-re">
-                                    <img src="./imgs/travel/cards/<?= $r['travelcard_img'] ?>" alt="">
+                                    <img class="h-100" src="./imgs/travel/cards/<?= $r['travelcard_img'] ?>" alt="">
                                     </div>
                                     <div class="position-absolute likeicon-re">
                                         <a href="javascript: removeItem_t(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
@@ -456,7 +456,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re textphone-14-re word-wrap-re"><?= $r['travel_name'] ?></p>
+                                    <p class="card-title-re textphone-14-re word-wrap-re mb-2"><?= $r['travel_name'] ?></p>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto"><?= $r['travel_price'] ?></p>
                                         <button class="btn-re btn200-re col-3 p-0" data-sid="<?= $r['sid']?>" onclick="addToCartT_re(event)">
@@ -562,7 +562,7 @@ $pageName ='會員中心'; //頁面名稱
                     <li class="col-6 d-inline-block liketitle-re text-20-re text-center active-re"><a class="active activetext-re" href="#tab05-re">獨家商品</a></li><li class="col-6 d-inline-block liketitle-re text-20-re text-center "><a href="#tab06-re">旅遊行程</a></li>
                 </ul>
     <!-- p4-P------------------------------------------------------------------ -->
-                <div id="tab05-re" class="ordertab-inner-re">
+                <div id="tab05-re" class="ordertab-inner-re mb-5 pb-3">
                         <div class="d-md-flex flex-nowrap orderlist-title-re p-0 ">
                             <div class="col-md textphone-16-re text-center">訂單日期</div>
                             <div class="col-md textphone-16-re text-center">訂單編號</div>
@@ -741,7 +741,7 @@ $pageName ='會員中心'; //頁面名稱
                     </form> -->
                 </div>
     <!-- p4-T------------------------------------------------------------------ -->
-                <div id="tab06-re" class="ordertab-inner-re">
+                <div id="tab06-re" class="ordertab-inner-re mb-5 pb-3">
                         <div class="d-md-flex flex-nowrap orderlist-title-re">
                             <div class="col-md textphone-16-re text-center">訂單日期</div>
                             <div class="col-md textphone-16-re text-center">訂單編號</div>

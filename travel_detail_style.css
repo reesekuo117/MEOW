@@ -341,7 +341,8 @@ select {
 .choiceandbuy_mb {
   background-color: var(--color-creamy-light);
   padding: 24px;
-  margin-top: 24px;
+  margin-top: 40px;
+  margin-bottom: 75px ;
   /* transition: .5s; */
 }
 /* .choiceandbuy_mb.hidden_choicemb{
@@ -566,4 +567,10 @@ select {
 .close:hover {
   text-shadow: 0 0 transparent;
   box-shadow: 0 0 transparent;
+}
+
+/* 手機把 footer 關掉 */
+
+footer.product-none{
+  display: none !important;
 }
