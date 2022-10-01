@@ -98,14 +98,14 @@ header("Refresh:180");
                 </h6>
                 <div class=" d-md-flex justify-content-center">
                     
-                    <a href="#" class="btn unique-nextbutton-yu">
+                    <a href="member.php#member-order" class="btn unique-nextbutton-yu">
                         <button class=" unique-btn-yu que-btn-yu me-md-2" type="button">
                             <p class="m-0 text-center">
                                 查詢訂單
                             </p>
                         </button>
                     </a>
-                    <a href="#" class="btn unique-nextbutton-yu">
+                    <a href="product_list.php" class="btn unique-nextbutton-yu">
                         <button class=" unique-btn-yu que-btn-yu  me-md-2 " type="button">
                             <p class="m-0 text-center">
                                 繼續購物
@@ -133,7 +133,7 @@ header("Refresh:180");
                                     虛擬帳號: 9992 - 2505 - 1391 - 2100
                                 </ul>
                                 <ul class="orderListpriceYu">
-                                    1414
+                                    <?= $all_rows['total'] ?>
                                 </ul>
                             </div>
                             <div class="noteinfo-red-yu">

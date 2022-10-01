@@ -648,9 +648,19 @@ p {
     background-color: red;
 } */
 /* ---------------------------------------------------------------------*/ 
-.tab-inner-re {
-    overflow: auto;
+@media (min-width: 768px) {
+    .tab-inner-re, .ordertab-inner-re {
+        overflow: auto;
+        height: 672px;
+    }
+    .tab-inner-re::-webkit-scrollbar {
+        display: none;
+    }
+    .ordertab-inner-re::-webkit-scrollbar {
+        display: none;
+    }
 }
+
 .liketitle-re {
     transition: .2s;
     cursor: pointer;
@@ -746,6 +756,10 @@ p {
 }
 .card-body-re {
     padding: 12px;
+}
+.card-body-re a {
+    text-decoration: none;
+    color: var(--color-brown-dark);
 }
 @media (max-width: 768px) {
     .textphone-16-re{
