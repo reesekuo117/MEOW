@@ -20,7 +20,7 @@ $("#travel-a-yu").click(function () {
 //-----手機獨家商品 旅遊行程分頁標籤切換----------
 
 $("#mduniqui-a-yu").click(function () {
-  console.log("yes");
+  // console.log("yes");
   $("#mdmyTabContent-yu").show();
   $("#mdmyTabCount-T-yu").hide();
 });
@@ -30,6 +30,7 @@ $("#mdtravel-a-yu").click(function () {
   $("#mdmyTabContent-yu").hide();
 });
 
+// 商品---------------------------------------------------------------------------------
 //--------數量遞增按鈕--------------
 
 // const priceUnit = $('#total_price_ba').text().trim();
@@ -43,7 +44,7 @@ const littlePrice = $("h6.littlePriceYu");
 // console.log("littlePrice", littlePrice);
 
 qtyplus.on("click", function () {
-  console.log("this", $(this).prev().text().trim());
+  // console.log("this", $(this).prev().text().trim());
   // 可以用function也可以用箭頭函式，用箭頭函不能用this
   let num = +$(this).prev().text().trim();
   // +numbertotal_yu.html()→將numbertotal_yu裡面的文字轉換為數值，原生的用法是將.html()改成.innerText()
@@ -55,14 +56,14 @@ qtyplus.on("click", function () {
     .prev()
     .text(num + 1);
 
-  console.log(
-    "要修改的h6",
-    $(this).closest("td").next().find("h6").text().trim()
-  );
-  console.log(
-    "要乘數量的h6",
-    $(this).closest("td").prev().find("h6").text().trim()
-  );
+  // console.log(
+  //   "要修改的h6",
+  //   $(this).closest("td").next().find("h6").text().trim()
+  // );
+  // console.log(
+  //   "要乘數量的h6",
+  //   $(this).closest("td").prev().find("h6").text().trim()
+  // );
 
   //   修改小計
   const total =
@@ -73,6 +74,7 @@ qtyplus.on("click", function () {
   calTotal(); //呼叫
   updatePrices();
   updataPItem(this);
+
 });
 //總價計算商品
 function calTotal() {
@@ -83,7 +85,7 @@ function calTotal() {
     // console.log($(this).text());
   });
   $("#AllTotal_P_Yu").text(total);
-  console.log({ total });
+  // console.log({ total });
 }
 
 //總價計算行程
@@ -95,11 +97,8 @@ function calTotal() {
     // console.log($(this).text());
   });
   $("#AllTotal_T_Yu").text(total);
-  console.log({ total });
+  // console.log({ total });
 }
-
-
-
 
 
 qtyminus.on("click", function () {
@@ -108,14 +107,14 @@ qtyminus.on("click", function () {
     $(this)
       .next()
       .text(num - 1);
-    console.log(
-      "要修改的h6",
-      $(this).closest("td").next().find("h6").text().trim()
-    );
-    console.log(
-      "要乘數量的h6",
-      $(this).closest("td").prev().find("h6").text().trim()
-    );
+    // console.log(
+    //   "要修改的h6",
+    //   $(this).closest("td").next().find("h6").text().trim()
+    // );
+    // console.log(
+    //   "要乘數量的h6",
+    //   $(this).closest("td").prev().find("h6").text().trim()
+    // );
     //   修改小計
     const total =
       $(this).closest("td").prev().find("h6").text().trim() * (num - 1);
@@ -123,6 +122,7 @@ qtyminus.on("click", function () {
     $(this).closest("td").next().find("h6").text(total);
       updatePrices();
       updataPItem(this);
+
   }
 });
 
@@ -162,7 +162,6 @@ qtyminus.on("click", function () {
 //   }
 // };
 
-// 商品
 //----------刪除商品清單()--------------
 
 function removePItem(event) {
@@ -188,7 +187,6 @@ function removePItem(event) {
 }
 
 function updataPItem(btn){
-  console.log('hihihi');
   const sid = $(btn).closest('tr').attr('data-sid');
   const qty = $(btn).parent().find('.qty-yu').text();
   $.get(
@@ -212,21 +210,92 @@ function updatePrices(){
       const price = +td_price.attr('data-val'); // +轉換成數字
       const qty = +tr.find('.qty-yu').text();
 
-      console.log('price',price);
-      console.log('qty',qty);
+      // console.log('price',price);
+      // console.log('qty',qty);
 
       td_price.html(price);
       td_sub.html(price * qty);
       total += price * qty;
 
-      console.log('TOTAL',total);
+      // console.log('TOTAL',total);
   });
   $('#total-price').html(total);
 
 }
 updatePrices(); //一進來就要先執行一次
 
-// 行程
+// 行程---------------------------------------------------------------------------------
+//--------數量遞增按鈕--------------
+
+// const priceUnit = $('#total_price_ba').text().trim();
+
+const TpriceUnit = 707; //一定要寫死嗎
+const Tqtyminus = $("input.tqtyminus");
+const Tqtyplus = $("input.tqtyplus");
+const Tnumbertotal_yu = $("#tnumbertotal_yu");
+
+const TlittlePrice = $("h6.tlittlePriceYu");
+// console.log("littlePrice", littlePrice);
+
+Tqtyplus.on("click", function () {
+  console.log("this", $(this).prev().text().trim());
+  // 可以用function也可以用箭頭函式，用箭頭函不能用this
+  let num = +$(this).prev().text().trim();
+  // +numbertotal_yu.html()→將numbertotal_yu裡面的文字轉換為數值，原生的用法是將.html()改成.innerText()
+  // numbertotal_yu.html(num+1);
+  //   ?????? 裡面的字 要改成 num+1
+  //   要改值的人在$(this)的哪裡?
+
+  $(this)
+    .prev()
+    .text(num + 1);
+
+  console.log(
+    "要修改的h6",
+    $(this).closest("td").next().find("h6").text().trim()
+  );
+  console.log(
+    "要乘數量的h6",
+    $(this).closest("td").prev().find("h6").text().trim()
+  );
+
+  //   修改小計
+  const total =
+    $(this).closest("td").prev().find("h6").text().trim() * (num + 1);
+
+  $(this).closest("td").next().find("h6").text(total);
+
+  calTotal(); //呼叫
+  updateTPrices();
+  updataTItem(this);
+
+});
+
+Tqtyminus.on("click", function () {
+  let num = +$(this).next().text().trim();
+  if (num > 1) {
+    $(this)
+      .next()
+      .text(num - 1);
+    console.log(
+      "要修改的h6",
+      $(this).closest("td").next().find("h6").text().trim()
+    );
+    console.log(
+      "要乘數量的h6",
+      $(this).closest("td").prev().find("h6").text().trim()
+    );
+    //   修改小計
+    const total =
+      $(this).closest("td").prev().find("h6").text().trim() * (num - 1);
+
+    $(this).closest("td").next().find("h6").text(total);
+      updatTePrices();
+      updataTItem(this);
+
+  }
+});
+
 //----------刪除旅遊清單()--------------
 function removeTItem(event) {
   const tr = $(event.currentTarget).closest("tr");
@@ -238,17 +307,55 @@ function removeTItem(event) {
     { sid },
     function (data) {
       console.log(data);
-      showCartCount(data); // 購物車總數量
+      // showCartCount(data); // 購物車總數量
       tr.remove();
 
       // TODO: 更新小計, 總計,
       //TODO:總計,
 
-      updatePrices(); //刪除後要呼叫函式
+      updateTPrices(); //刪除後要呼叫函式
     },
     "json"
   );
 }
+function updataTItem(btn){
+  console.log('hihihi');
+  const sid = $(btn).closest('tr').attr('data-sid');
+  const qty = $(btn).parent().find('.Tqty-yu').text();
+  $.get(
+      're-cart-t-api.php',
+      {sid,qty},
+      function(data){
+          console.log(data);
+          // showCartCount(data);
+          // updatePrices();
+      },
+      'json');
+}
+function updateTPrices(){
+  let total = 0; // 總價
+
+  $('.tcart-item').each(function(){
+      const tr = $(this);
+      const td_price = tr.find('.Tprice');
+      const td_sub = tr.find('.Tsub-total');
+      
+      const price = +td_price.attr('data-val'); // +轉換成數字
+      const qty = +tr.find('.Tqty-yu').text();
+
+      console.log('price',price);
+      console.log('qty',qty);
+
+      td_price.html(price);
+      td_sub.html(price * qty);
+      total += price * qty;
+
+      console.log('TOTAL',total);
+  });
+  $('#Ttotal-price').html(total);
+
+}
+updateTPrices(); //一進來就要先執行一次
 
 // const deleteIYu = $("#deleteIYu");
 // $("i").click(function () {
