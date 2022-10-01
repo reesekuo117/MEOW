@@ -358,7 +358,7 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
     <!-- p3-P------------------------------------------------------------------ -->
                 <div id="tab01-re" class="tab-inner-re ">
-                    <div class="row mb-5 pb-3 mx-0 likehight-re">
+                    <div class="row mx-0 likehight-re">
                     <?php foreach($p_rows as $r): ?>
                         <div class="col-12 col-md-3 px-4 px-md-2 pb-3">
                             <div class="card-re">
@@ -376,7 +376,9 @@ $pageName ='會員中心'; //頁面名稱
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re textphone-14-re mb-2 word-wrap-re"><?= $r['product_name'] ?></p>
+                                    <a href="./product_detail.php?sid=<?= $r['sid'] ?>">
+                                        <p class="card-title-re textphone-14-re mb-2 word-wrap-re"><?= $r['product_name'] ?></p>
+                                    </a>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto"><?= $r['product_price'] ?></p>
                                         <button class="btn-re btn200-re col-3 p-0"  data-sid="<?= $r['sid']?>" onclick="addToCartP_re(event)">
@@ -439,7 +441,7 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
     <!-- p3-T------------------------------------------------------------------ -->
                 <div id="tab02-re" class="tab-inner-re">
-                <div class="row mb-5 pb-3 mx-0 likehight-re">
+                <div class="row mx-0 likehight-re">
                     <?php foreach($t_rows as $r): ?>
                         <div class="col-12 col-md-3 px-4 px-md-2 pb-3">
                             <div class="card-re">
@@ -456,7 +458,9 @@ $pageName ='會員中心'; //頁面名稱
                                     </div>
                                 </div>
                                 <div class="card-body-re">
-                                    <p class="card-title-re textphone-14-re word-wrap-re mb-2"><?= $r['travel_name'] ?></p>
+                                    <a class="" href="./travel_detail.php?sid=<?= $r['sid'] ?>">
+                                        <p class="card-title-re textphone-14-re word-wrap-re mb-2"><?= $r['travel_name'] ?></p>
+                                    </a>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto"><?= $r['travel_price'] ?></p>
                                         <button class="btn-re btn200-re col-3 p-0" data-sid="<?= $r['sid']?>" onclick="addToCartT_re(event)">
@@ -562,7 +566,7 @@ $pageName ='會員中心'; //頁面名稱
                     <li class="col-6 d-inline-block liketitle-re text-20-re text-center active-re"><a class="active activetext-re" href="#tab05-re">獨家商品</a></li><li class="col-6 d-inline-block liketitle-re text-20-re text-center "><a href="#tab06-re">旅遊行程</a></li>
                 </ul>
     <!-- p4-P------------------------------------------------------------------ -->
-                <div id="tab05-re" class="ordertab-inner-re mb-5 pb-3">
+                <div id="tab05-re" class="ordertab-inner-re">
                         <div class="d-md-flex flex-nowrap orderlist-title-re p-0 ">
                             <div class="col-md textphone-16-re text-center">訂單日期</div>
                             <div class="col-md textphone-16-re text-center">訂單編號</div>
@@ -741,7 +745,7 @@ $pageName ='會員中心'; //頁面名稱
                     </form> -->
                 </div>
     <!-- p4-T------------------------------------------------------------------ -->
-                <div id="tab06-re" class="ordertab-inner-re mb-5 pb-3">
+                <div id="tab06-re" class="ordertab-inner-re">
                         <div class="d-md-flex flex-nowrap orderlist-title-re">
                             <div class="col-md textphone-16-re text-center">訂單日期</div>
                             <div class="col-md textphone-16-re text-center">訂單編號</div>
