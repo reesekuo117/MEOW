@@ -10,8 +10,48 @@ $title = '商品詳情';
 $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
 $sql = "SELECT * FROM product WHERE sid=$sid";
 // $sql = "SELECT * FROM product WHERE sid=localstorage的變數";
+
+
 //要用localstorage
-$rows = $pdo->query($sql)->fetchAll();
+// $rows = $pdo->query($sql)->fetchAll();
+
+
+//大圖
+
+$b = $pdo->query($sql)->fetch();
+if (empty($b)) {
+    exit;
+}
+$photos_b = explode(',', $b['product_card_smallimg']);
+
+//小圖
+
+$s = $pdo->query($sql)->fetch();
+if (empty($s)) {
+    exit;
+}
+$photos_s = explode(',', $s['product_card_bigimg']);
+
+
+
+
+$r = $pdo->query($sql)->fetch();
+if (empty($r)) {
+    exit;
+}
+$photos = explode(',', $r['product_introimgfirst']);
+
+
+$s = $pdo->query($sql)->fetch();
+if (empty($s)) {
+    exit;
+}
+$photos_sec = explode(',', $s['product_introimgsec']);
+
+
+
+
+
 //月老推薦卡片
 $sqlArea = sprintf("SELECT * FROM `address`");
 $areaRows = $pdo->query($sqlArea)->fetchAll();
@@ -35,21 +75,31 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 <div class="product_detail_07">
     <!-- computer head -->
-    <?php foreach ($rows as $r) : ?>
-        <div class="pd_head d-none d-md-block" id="pd_title">
-            <div class="container d-flex">
-                <div class="product_carousel col">
-                    <div class="row">
-                        <div class="col">
-                            <!-- https://codepen.io/RetinaInc/details/MWEygq -->
-                            <div class="img-demo d-flex justify-content-center">
-                                <img class="p1" src="./imgs/product/big/P19_1_b.jpg" alt="">
-                                <img class="p2" src="./imgs/product/big/P19_2_b.jpg" alt="">
+    <!-- < ?php foreach ($rows as $r) : ?> -->
+    <div class="pd_head d-none d-md-block" id="pd_title">
+        <div class="container d-flex">
+            <div class="product_carousel col">
+                <div class="row">
+                    <div class="col">
+                        <!-- https://codepen.io/RetinaInc/details/MWEygq -->
+                        <div class="img-demo d-flex justify-content-center">
+                            <!-- <img class="p1" src="./imgs/product/big/P19_1_b.jpg" alt=""> -->
+                            <?php
+                            $i=0;
+                            // for ($i = 1; $i < 5; $i++) {
+                            //     echo $i;
+                            // };
+                            foreach ($photos_b as $b) : $i++
+                            ?>
+                                <img src="imgs/product/big/<?= $b ?>" class="p<?= $i ?>" alt="...">
+                                <!-- < ?php endfor ?> -->
+                            <?php endforeach ?>
+                            <!-- <img class="p2" src="./imgs/product/big/P19_2_b.jpg" alt="">
                                 <img class="p3" src="./imgs/product/big/P19_3_b.jpg" alt="">
                                 <img class="p4" src="./imgs/product/big/P19_4_b.jpg" alt="">
-                                <img class="p5" src="./imgs/product/big/P19_5_b.jpg" alt="">
-                                <!-- 輪播牆php -->
-                                <!-- < ?php
+                                <img class="p5" src="./imgs/product/big/P19_5_b.jpg" alt=""> -->
+                            <!-- 輪播牆php -->
+                            <!-- < ?php
                                     $first = 0;
                                     foreach ($photos as $p) : ?>
                                         <div class="carousel-item 
@@ -57,75 +107,81 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                                             <img src="imgs/travel/wall/< ?= $p ?>" class="d-block w-100" alt="...">
                                         </div>
                                     < ?php endforeach ?> -->
-                                <div class="icon_heart" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
-                                    <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="top_carousel">
-                                <a class="carousel-control-prev" href="" data-slide="prev">
-                                    <i class="fa-solid fa-caret-left"></i>
-                                </a>
-                                <a class="carousel-control-next" href="" data-slide="next">
-                                    <i class="fa-solid fa-caret-right"></i>
-                                </a>
+                            <div class="icon_heart" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
+                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                </svg>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="img-selector-area d-flex">
+                        <div class="top_carousel">
+                            <a class="carousel-control-prev" href="" data-slide="prev">
+                                <i class="fa-solid fa-caret-left"></i>
+                            </a>
+                            <a class="carousel-control-next" href="" data-slide="next">
+                                <i class="fa-solid fa-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img-selector-area d-flex">
+                            <?php
+                                foreach ($photos_s as $s) : 
+                            ?>
                                 <div class="img-wrap">
-                                    <img src="./imgs/product/small/P19_1_s.jpg" alt="">
+                                
+                                    <img src="imgs/product/small/<?= $s ?>"  alt="...">
+                                    <!-- < ?php endfor ?> -->
                                 </div>
-                                <div class="img-wrap">
-                                    <img src="./imgs/product/small/P19_2_s.jpg" alt="">
-                                </div>
-                                <div class="img-wrap">
-                                    <img src="./imgs/product/small/P19_3_s.jpg" alt="">
-                                </div>
-                                <div class="img-wrap">
-                                    <img src="./imgs/product/small/P19_4_s.jpg" alt="">
-                                </div>
-                                <div class="img-wrap">
-                                    <img src="./imgs/product/small/P19_5_s.jpg" alt="">
-                                </div>
+                            <?php endforeach ?>
+                            <!-- <div class="img-wrap">
+                                <img src="./imgs/product/small/P19_2_s.jpg" alt="">
                             </div>
+                            <div class="img-wrap">
+                                <img src="./imgs/product/small/P19_3_s.jpg" alt="">
+                            </div>
+                            <div class="img-wrap">
+                                <img src="./imgs/product/small/P19_4_s.jpg" alt="">
+                            </div>
+                            <div class="img-wrap">
+                                <img src="./imgs/product/small/P19_5_s.jpg" alt="">
+                            </div> -->
                         </div>
                     </div>
                 </div>
-                <div class="detail col-6">
-                    <div class="detail_title" id="purchasep">
-                        <div class="row">
-                            <div class="col">
-                                <div class="pd_t">
-                                    <h2><?= $r['product_name'] ?></h2>
-                                    <p><?= $r['product_subtitle'] ?></p>
-                                </div>
+            </div>
+            <div class="detail col-6">
+                <div class="detail_title" id="purchasep">
+                    <div class="row">
+                        <div class="col">
+                            <div class="pd_t">
+                                <h2><?= $r['product_name'] ?></h2>
+                                <p><?= $r['product_subtitle'] ?></p>
                             </div>
-                            <div class="col">
-                                <div class="evaluation">
-                                    <div class="star d-flex">
-                                        <div class="icon_fivestar pr-0">
-                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                        </div>
-                                        <p>（50+則評價）</p>
+                        </div>
+                        <div class="col">
+                            <div class="evaluation">
+                                <div class="star d-flex">
+                                    <div class="icon_fivestar pr-0">
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                     </div>
-                                    <div class="fire d-flex justify-content-center align-self-end">
-                                        <div class="icon_fire" style="color: var(--color-orange);">
-                                            <i class="fa-solid fa-fire pr-2"></i>
-                                        </div>
-                                        <p>已賣出<?= $r['product_popular'] ?>個</p>
+                                    <p>（50+則評價）</p>
+                                </div>
+                                <div class="fire d-flex justify-content-center align-self-end">
+                                    <div class="icon_fire" style="color: var(--color-orange);">
+                                        <i class="fa-solid fa-fire pr-2"></i>
                                     </div>
+                                    <p>已賣出<?= $r['product_popular'] ?>個</p>
                                 </div>
                             </div>
-                            <div class="col mt-5">
-                                <div class="price">
-                                    <h2>
-                                        <?= $r['product_price'] ?>
-                                    </h2>
-                                </div>
+                        </div>
+                        <div class="col mt-5">
+                            <div class="price">
+                                <h2>
+                                    <?= $r['product_price'] ?>
+                                </h2>
                             </div>
-                            <!-- <div class="col">
+                        </div>
+                        <!-- <div class="col">
                                 <div class="size">
                                     <p>請選擇商品規格</p>
                                     <select name="" id="size">
@@ -135,55 +191,55 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                                     </select>
                                 </div>
                             </div> -->
-                            <div class="col">
-                                <!-- TODO:還沒做按鈕功能 -->
-                                <div class="number">
-                                    <p>請選擇商品數量</p>
-                                    <div class="choice d-flex">
-                                        <div class="quantity">
-                                            <button class="minus disabled">－</button>
-                                        </div>
-                                        <div class="product_q px-2">
-                                            1
-                                        </div>
-                                        <div class="quantity">
-                                            <button class="plus">＋</button>
-                                        </div>
+                        <div class="col">
+                            <!-- TODO:還沒做按鈕功能 -->
+                            <div class="number">
+                                <p>請選擇商品數量</p>
+                                <div class="choice d-flex">
+                                    <div class="quantity">
+                                        <button class="minus disabled">－</button>
+                                    </div>
+                                    <div class="product_q px-2">
+                                        1
+                                    </div>
+                                    <div class="quantity">
+                                        <button class="plus">＋</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="buy_btn">
-                                    <button class="buy d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
-                                        <a href="shopping-cart.php">
-                                            <div class="icon_buy">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <mask id="path-1-outside-1_1834_25020-499429" maskUnits="userSpaceOnUse" x="1.58203" y="3.25" width="20" height="17" fill="black">
-                                                        <rect fill="white" x="1.58203" y="3.25" width="20" height="17" />
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.09827 5.25C6.79605 5.25 5.69918 6.22304 5.54392 7.51597L4.60073 15.3706C4.41683 16.902 5.61261 18.25 7.15508 18.25H16.8382C18.3888 18.25 19.587 16.8885 19.39 15.3504L18.384 7.49584C18.2195 6.21184 17.1266 5.25 15.8321 5.25H8.09827ZM8.71466 7.7029C8.72994 7.64444 8.73801 7.58365 8.73801 7.52123C8.73801 7.06458 8.30622 6.69438 7.77357 6.69438C7.24093 6.69438 6.80914 7.06458 6.80914 7.52123C6.80914 7.97789 7.24093 8.34808 7.77357 8.34808C7.79553 8.34808 7.81732 8.34745 7.8389 8.34622C8.15888 9.67663 8.49438 10.7885 9.00121 11.593C9.29939 12.0664 9.66702 12.4516 10.1401 12.7147C10.6133 12.9779 11.1586 13.1005 11.7832 13.1005C12.4 13.1005 12.9498 12.9926 13.4372 12.7522C13.9264 12.511 14.3243 12.1505 14.6566 11.6873C15.228 10.8908 15.6217 9.76455 15.9734 8.34596C15.9964 8.34736 16.0196 8.34808 16.0431 8.34808C16.5757 8.34808 17.0075 7.97789 17.0075 7.52123C17.0075 7.06458 16.5757 6.69438 16.0431 6.69438C15.5104 6.69438 15.0786 7.06458 15.0786 7.52123C15.0786 7.58194 15.0863 7.64112 15.1008 7.6981C14.7244 9.30618 14.3468 10.4037 13.8441 11.1044C13.5917 11.4562 13.3141 11.6979 12.9949 11.8553C12.674 12.0136 12.2825 12.1005 11.7832 12.1005C11.2918 12.1005 10.9216 12.0051 10.6263 11.8408C10.3309 11.6766 10.0771 11.4248 9.84731 11.06C9.38935 10.3331 9.06972 9.23377 8.71466 7.7029Z" />
-                                                    </mask>
-                                                    <path d="M5.54392 7.51597L3.55819 7.27752L5.54392 7.51597ZM4.60073 15.3706L6.58647 15.609L4.60073 15.3706ZM19.39 15.3504L17.4062 15.6045V15.6045L19.39 15.3504ZM18.384 7.49584L16.4002 7.74994V7.74994L18.384 7.49584ZM8.71466 7.7029L6.77972 7.19693L6.65491 7.6742L6.76637 8.15477L8.71466 7.7029ZM7.8389 8.34622L9.78346 7.87854L9.3927 6.25381L7.72438 6.3495L7.8389 8.34622ZM9.00121 11.593L7.30901 12.6591L7.30901 12.6591L9.00121 11.593ZM10.1401 12.7147L9.16794 14.4625L9.16794 14.4625L10.1401 12.7147ZM13.4372 12.7522L12.5527 10.9584L12.5527 10.9584L13.4372 12.7522ZM14.6566 11.6873L16.2817 12.8531L16.2817 12.8531L14.6566 11.6873ZM15.9734 8.34596L16.0956 6.34969L14.433 6.24796L14.0322 7.86464L15.9734 8.34596ZM15.1008 7.6981L17.0481 8.15382L17.1594 7.67853L17.0391 7.20543L15.1008 7.6981ZM13.8441 11.1044L12.219 9.93851L12.219 9.93851L13.8441 11.1044ZM12.9949 11.8553L12.1105 10.0615L12.1105 10.0615L12.9949 11.8553ZM10.6263 11.8408L11.5985 10.093L11.5985 10.093L10.6263 11.8408ZM9.84731 11.06L8.15511 12.1261L8.15511 12.1261L9.84731 11.06ZM7.52966 7.75442C7.56422 7.4666 7.80839 7.25 8.09827 7.25V3.25C5.78371 3.25 3.83414 4.97947 3.55819 7.27752L7.52966 7.75442ZM6.58647 15.609L7.52966 7.75442L3.55819 7.27752L2.615 15.1321L6.58647 15.609ZM7.15508 16.25C6.81172 16.25 6.54553 15.9499 6.58647 15.609L2.615 15.1321C2.28813 17.8542 4.4135 20.25 7.15508 20.25V16.25ZM16.8382 16.25H7.15508V20.25H16.8382V16.25ZM17.4062 15.6045C17.4501 15.9469 17.1834 16.25 16.8382 16.25V20.25C19.5942 20.25 21.724 17.8301 21.3738 15.0963L17.4062 15.6045ZM16.4002 7.74994L17.4062 15.6045L21.3738 15.0963L20.3678 7.24175L16.4002 7.74994ZM15.8321 7.25C16.1203 7.25 16.3636 7.46411 16.4002 7.74994L20.3678 7.24175C20.0754 4.95956 18.1329 3.25 15.8321 3.25V7.25ZM8.09827 7.25H15.8321V3.25H8.09827V7.25ZM6.73801 7.52123C6.73801 7.41029 6.75247 7.30111 6.77972 7.19693L10.6496 8.20887C10.7074 7.98777 10.738 7.757 10.738 7.52123H6.73801ZM7.77357 8.69438C7.58102 8.69438 7.35565 8.628 7.15377 8.45492C6.9477 8.27825 6.73801 7.95436 6.73801 7.52123H10.738C10.738 5.68227 9.1109 4.69438 7.77357 4.69438V8.69438ZM8.80914 7.52123C8.80914 7.95436 8.59945 8.27825 8.39337 8.45492C8.1915 8.628 7.96613 8.69438 7.77357 8.69438V4.69438C6.43624 4.69438 4.80914 5.68227 4.80914 7.52123H8.80914ZM7.77357 6.34808C7.96613 6.34808 8.1915 6.41447 8.39337 6.58754C8.59945 6.76422 8.80914 7.0881 8.80914 7.52123H4.80914C4.80914 9.36019 6.43624 10.3481 7.77357 10.3481V6.34808ZM7.72438 6.3495C7.74093 6.34855 7.75733 6.34808 7.77357 6.34808V10.3481C7.83373 10.3481 7.8937 10.3464 7.95343 10.3429L7.72438 6.3495ZM10.6934 10.527C10.3805 10.0302 10.1044 9.21291 9.78346 7.87854L5.89435 8.81389C6.21338 10.1404 6.60829 11.5468 7.30901 12.6591L10.6934 10.527ZM11.1124 10.9669C10.995 10.9016 10.8549 10.7834 10.6934 10.527L7.30901 12.6591C7.74383 13.3493 8.33905 14.0015 9.16794 14.4625L11.1124 10.9669ZM11.7832 11.1005C11.4249 11.1005 11.2296 11.0322 11.1124 10.9669L9.16794 14.4625C9.99699 14.9237 10.8923 15.1005 11.7832 15.1005V11.1005ZM12.5527 10.9584C12.3983 11.0346 12.1652 11.1005 11.7832 11.1005V15.1005C12.6349 15.1005 13.5012 14.9506 14.3217 14.546L12.5527 10.9584ZM13.0316 10.5214C12.859 10.762 12.7018 10.8849 12.5527 10.9584L14.3217 14.546C15.1509 14.1371 15.7897 13.5389 16.2817 12.8531L13.0316 10.5214ZM14.0322 7.86464C13.6901 9.24447 13.3676 10.053 13.0316 10.5214L16.2817 12.8531C17.0884 11.7286 17.5533 10.2846 17.9146 8.82728L14.0322 7.86464ZM16.0431 6.34808C16.0606 6.34808 16.0781 6.34862 16.0956 6.34969L15.8513 10.3422C15.9147 10.3461 15.9787 10.3481 16.0431 10.3481V6.34808ZM15.0075 7.52123C15.0075 7.0881 15.2172 6.76422 15.4233 6.58754C15.6251 6.41447 15.8505 6.34808 16.0431 6.34808V10.3481C17.3804 10.3481 19.0075 9.36019 19.0075 7.52123H15.0075ZM16.0431 8.69438C15.8505 8.69438 15.6251 8.628 15.4233 8.45492C15.2172 8.27825 15.0075 7.95436 15.0075 7.52123H19.0075C19.0075 5.68227 17.3804 4.69438 16.0431 4.69438V8.69438ZM17.0786 7.52123C17.0786 7.95436 16.8689 8.27825 16.6629 8.45492C16.461 8.628 16.2356 8.69438 16.0431 8.69438V4.69438C14.7057 4.69438 13.0786 5.68227 13.0786 7.52123H17.0786ZM17.0391 7.20543C17.065 7.3071 17.0786 7.41336 17.0786 7.52123H13.0786C13.0786 7.75052 13.1076 7.97514 13.1624 8.19077L17.0391 7.20543ZM15.4691 12.2702C16.2241 11.2179 16.6698 9.77071 17.0481 8.15382L13.1534 7.24238C12.7791 8.84166 12.4695 9.58943 12.219 9.93851L15.4691 12.2702ZM13.8794 13.6491C14.5384 13.3242 15.0568 12.8449 15.4691 12.2702L12.219 9.93851C12.169 10.0083 12.1356 10.0405 12.1224 10.0522C12.1156 10.0582 12.112 10.0606 12.1113 10.061C12.1108 10.0614 12.1108 10.0614 12.1105 10.0615L13.8794 13.6491ZM11.7832 14.1005C12.5177 14.1005 13.2257 13.9715 13.8794 13.6491L12.1105 10.0615C12.1101 10.0617 12.1065 10.0635 12.098 10.0664C12.0894 10.0693 12.0741 10.0739 12.0503 10.0788C12.0024 10.0888 11.9175 10.1005 11.7832 10.1005V14.1005ZM9.65404 13.5886C10.3048 13.9506 11.025 14.1005 11.7832 14.1005V10.1005C11.6664 10.1005 11.6052 10.0891 11.5841 10.0842C11.5661 10.08 11.5756 10.0803 11.5985 10.093L9.65404 13.5886ZM8.15511 12.1261C8.52185 12.7082 9.00335 13.2267 9.65405 13.5886L11.5985 10.093C11.6213 10.1058 11.6313 10.1163 11.6263 10.1113C11.619 10.104 11.5883 10.0715 11.5395 9.99398L8.15511 12.1261ZM6.76637 8.15477C7.11148 9.64276 7.49022 11.0706 8.15511 12.1261L11.5395 9.99398C11.2885 9.59549 11.0279 8.82479 10.6629 7.25103L6.76637 8.15477Z" fill="#432A0F" mask="url(#path-1-outside-1_1834_25020-499429)" />
-                                                </svg>
-                                                立即購買
-                                            </div>
-                                        </a>
-                                    </button>
-                                    <button class="cart d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)"  >
-                                        <div class="icon_cart">
+                        </div>
+                        <div class="col">
+                            <div class="buy_btn">
+                                <button class="buy d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
+                                    <a href="shopping-cart.php">
+                                        <div class="icon_buy">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 3C3.44772 3 3 3.44772 3 4C3 4.55228 3.44772 5 4 5H5.20504L5.71394 7.19844L6.98368 14.5122C6.38575 14.969 6 15.6894 6 16.5C6 17.8807 7.11929 19 8.5 19H10C9.44772 19 9 19.4477 9 20C9 20.5523 9.44772 21 10 21C10.5523 21 11 20.5523 11 20C11 19.4477 10.5523 19 10 19H17C16.4477 19 16 19.4477 16 20C16 20.5523 16.4477 21 17 21C17.5523 21 18 20.5523 18 20C18 19.4477 17.5523 19 17 19H19C19.5523 19 20 18.5523 20 18C20 17.4477 19.5523 17 19 17H8.5C8.22386 17 8 16.7761 8 16.5C8 16.2239 8.22386 16 8.5 16H18.9167C19.4171 16 19.8405 15.6301 19.9076 15.1342L20.991 7.13419C21.0297 6.84818 20.943 6.55939 20.7531 6.34205C20.5632 6.1247 20.2886 6 20 6H7.48941L6.97424 3.77448C6.86928 3.32107 6.4654 3 6 3H4ZM8.92468 14L7.88301 8H18.8555L18.043 14H8.92468Z" fill="#432A0F" />
+                                                <mask id="path-1-outside-1_1834_25020-499429" maskUnits="userSpaceOnUse" x="1.58203" y="3.25" width="20" height="17" fill="black">
+                                                    <rect fill="white" x="1.58203" y="3.25" width="20" height="17" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.09827 5.25C6.79605 5.25 5.69918 6.22304 5.54392 7.51597L4.60073 15.3706C4.41683 16.902 5.61261 18.25 7.15508 18.25H16.8382C18.3888 18.25 19.587 16.8885 19.39 15.3504L18.384 7.49584C18.2195 6.21184 17.1266 5.25 15.8321 5.25H8.09827ZM8.71466 7.7029C8.72994 7.64444 8.73801 7.58365 8.73801 7.52123C8.73801 7.06458 8.30622 6.69438 7.77357 6.69438C7.24093 6.69438 6.80914 7.06458 6.80914 7.52123C6.80914 7.97789 7.24093 8.34808 7.77357 8.34808C7.79553 8.34808 7.81732 8.34745 7.8389 8.34622C8.15888 9.67663 8.49438 10.7885 9.00121 11.593C9.29939 12.0664 9.66702 12.4516 10.1401 12.7147C10.6133 12.9779 11.1586 13.1005 11.7832 13.1005C12.4 13.1005 12.9498 12.9926 13.4372 12.7522C13.9264 12.511 14.3243 12.1505 14.6566 11.6873C15.228 10.8908 15.6217 9.76455 15.9734 8.34596C15.9964 8.34736 16.0196 8.34808 16.0431 8.34808C16.5757 8.34808 17.0075 7.97789 17.0075 7.52123C17.0075 7.06458 16.5757 6.69438 16.0431 6.69438C15.5104 6.69438 15.0786 7.06458 15.0786 7.52123C15.0786 7.58194 15.0863 7.64112 15.1008 7.6981C14.7244 9.30618 14.3468 10.4037 13.8441 11.1044C13.5917 11.4562 13.3141 11.6979 12.9949 11.8553C12.674 12.0136 12.2825 12.1005 11.7832 12.1005C11.2918 12.1005 10.9216 12.0051 10.6263 11.8408C10.3309 11.6766 10.0771 11.4248 9.84731 11.06C9.38935 10.3331 9.06972 9.23377 8.71466 7.7029Z" />
+                                                </mask>
+                                                <path d="M5.54392 7.51597L3.55819 7.27752L5.54392 7.51597ZM4.60073 15.3706L6.58647 15.609L4.60073 15.3706ZM19.39 15.3504L17.4062 15.6045V15.6045L19.39 15.3504ZM18.384 7.49584L16.4002 7.74994V7.74994L18.384 7.49584ZM8.71466 7.7029L6.77972 7.19693L6.65491 7.6742L6.76637 8.15477L8.71466 7.7029ZM7.8389 8.34622L9.78346 7.87854L9.3927 6.25381L7.72438 6.3495L7.8389 8.34622ZM9.00121 11.593L7.30901 12.6591L7.30901 12.6591L9.00121 11.593ZM10.1401 12.7147L9.16794 14.4625L9.16794 14.4625L10.1401 12.7147ZM13.4372 12.7522L12.5527 10.9584L12.5527 10.9584L13.4372 12.7522ZM14.6566 11.6873L16.2817 12.8531L16.2817 12.8531L14.6566 11.6873ZM15.9734 8.34596L16.0956 6.34969L14.433 6.24796L14.0322 7.86464L15.9734 8.34596ZM15.1008 7.6981L17.0481 8.15382L17.1594 7.67853L17.0391 7.20543L15.1008 7.6981ZM13.8441 11.1044L12.219 9.93851L12.219 9.93851L13.8441 11.1044ZM12.9949 11.8553L12.1105 10.0615L12.1105 10.0615L12.9949 11.8553ZM10.6263 11.8408L11.5985 10.093L11.5985 10.093L10.6263 11.8408ZM9.84731 11.06L8.15511 12.1261L8.15511 12.1261L9.84731 11.06ZM7.52966 7.75442C7.56422 7.4666 7.80839 7.25 8.09827 7.25V3.25C5.78371 3.25 3.83414 4.97947 3.55819 7.27752L7.52966 7.75442ZM6.58647 15.609L7.52966 7.75442L3.55819 7.27752L2.615 15.1321L6.58647 15.609ZM7.15508 16.25C6.81172 16.25 6.54553 15.9499 6.58647 15.609L2.615 15.1321C2.28813 17.8542 4.4135 20.25 7.15508 20.25V16.25ZM16.8382 16.25H7.15508V20.25H16.8382V16.25ZM17.4062 15.6045C17.4501 15.9469 17.1834 16.25 16.8382 16.25V20.25C19.5942 20.25 21.724 17.8301 21.3738 15.0963L17.4062 15.6045ZM16.4002 7.74994L17.4062 15.6045L21.3738 15.0963L20.3678 7.24175L16.4002 7.74994ZM15.8321 7.25C16.1203 7.25 16.3636 7.46411 16.4002 7.74994L20.3678 7.24175C20.0754 4.95956 18.1329 3.25 15.8321 3.25V7.25ZM8.09827 7.25H15.8321V3.25H8.09827V7.25ZM6.73801 7.52123C6.73801 7.41029 6.75247 7.30111 6.77972 7.19693L10.6496 8.20887C10.7074 7.98777 10.738 7.757 10.738 7.52123H6.73801ZM7.77357 8.69438C7.58102 8.69438 7.35565 8.628 7.15377 8.45492C6.9477 8.27825 6.73801 7.95436 6.73801 7.52123H10.738C10.738 5.68227 9.1109 4.69438 7.77357 4.69438V8.69438ZM8.80914 7.52123C8.80914 7.95436 8.59945 8.27825 8.39337 8.45492C8.1915 8.628 7.96613 8.69438 7.77357 8.69438V4.69438C6.43624 4.69438 4.80914 5.68227 4.80914 7.52123H8.80914ZM7.77357 6.34808C7.96613 6.34808 8.1915 6.41447 8.39337 6.58754C8.59945 6.76422 8.80914 7.0881 8.80914 7.52123H4.80914C4.80914 9.36019 6.43624 10.3481 7.77357 10.3481V6.34808ZM7.72438 6.3495C7.74093 6.34855 7.75733 6.34808 7.77357 6.34808V10.3481C7.83373 10.3481 7.8937 10.3464 7.95343 10.3429L7.72438 6.3495ZM10.6934 10.527C10.3805 10.0302 10.1044 9.21291 9.78346 7.87854L5.89435 8.81389C6.21338 10.1404 6.60829 11.5468 7.30901 12.6591L10.6934 10.527ZM11.1124 10.9669C10.995 10.9016 10.8549 10.7834 10.6934 10.527L7.30901 12.6591C7.74383 13.3493 8.33905 14.0015 9.16794 14.4625L11.1124 10.9669ZM11.7832 11.1005C11.4249 11.1005 11.2296 11.0322 11.1124 10.9669L9.16794 14.4625C9.99699 14.9237 10.8923 15.1005 11.7832 15.1005V11.1005ZM12.5527 10.9584C12.3983 11.0346 12.1652 11.1005 11.7832 11.1005V15.1005C12.6349 15.1005 13.5012 14.9506 14.3217 14.546L12.5527 10.9584ZM13.0316 10.5214C12.859 10.762 12.7018 10.8849 12.5527 10.9584L14.3217 14.546C15.1509 14.1371 15.7897 13.5389 16.2817 12.8531L13.0316 10.5214ZM14.0322 7.86464C13.6901 9.24447 13.3676 10.053 13.0316 10.5214L16.2817 12.8531C17.0884 11.7286 17.5533 10.2846 17.9146 8.82728L14.0322 7.86464ZM16.0431 6.34808C16.0606 6.34808 16.0781 6.34862 16.0956 6.34969L15.8513 10.3422C15.9147 10.3461 15.9787 10.3481 16.0431 10.3481V6.34808ZM15.0075 7.52123C15.0075 7.0881 15.2172 6.76422 15.4233 6.58754C15.6251 6.41447 15.8505 6.34808 16.0431 6.34808V10.3481C17.3804 10.3481 19.0075 9.36019 19.0075 7.52123H15.0075ZM16.0431 8.69438C15.8505 8.69438 15.6251 8.628 15.4233 8.45492C15.2172 8.27825 15.0075 7.95436 15.0075 7.52123H19.0075C19.0075 5.68227 17.3804 4.69438 16.0431 4.69438V8.69438ZM17.0786 7.52123C17.0786 7.95436 16.8689 8.27825 16.6629 8.45492C16.461 8.628 16.2356 8.69438 16.0431 8.69438V4.69438C14.7057 4.69438 13.0786 5.68227 13.0786 7.52123H17.0786ZM17.0391 7.20543C17.065 7.3071 17.0786 7.41336 17.0786 7.52123H13.0786C13.0786 7.75052 13.1076 7.97514 13.1624 8.19077L17.0391 7.20543ZM15.4691 12.2702C16.2241 11.2179 16.6698 9.77071 17.0481 8.15382L13.1534 7.24238C12.7791 8.84166 12.4695 9.58943 12.219 9.93851L15.4691 12.2702ZM13.8794 13.6491C14.5384 13.3242 15.0568 12.8449 15.4691 12.2702L12.219 9.93851C12.169 10.0083 12.1356 10.0405 12.1224 10.0522C12.1156 10.0582 12.112 10.0606 12.1113 10.061C12.1108 10.0614 12.1108 10.0614 12.1105 10.0615L13.8794 13.6491ZM11.7832 14.1005C12.5177 14.1005 13.2257 13.9715 13.8794 13.6491L12.1105 10.0615C12.1101 10.0617 12.1065 10.0635 12.098 10.0664C12.0894 10.0693 12.0741 10.0739 12.0503 10.0788C12.0024 10.0888 11.9175 10.1005 11.7832 10.1005V14.1005ZM9.65404 13.5886C10.3048 13.9506 11.025 14.1005 11.7832 14.1005V10.1005C11.6664 10.1005 11.6052 10.0891 11.5841 10.0842C11.5661 10.08 11.5756 10.0803 11.5985 10.093L9.65404 13.5886ZM8.15511 12.1261C8.52185 12.7082 9.00335 13.2267 9.65405 13.5886L11.5985 10.093C11.6213 10.1058 11.6313 10.1163 11.6263 10.1113C11.619 10.104 11.5883 10.0715 11.5395 9.99398L8.15511 12.1261ZM6.76637 8.15477C7.11148 9.64276 7.49022 11.0706 8.15511 12.1261L11.5395 9.99398C11.2885 9.59549 11.0279 8.82479 10.6629 7.25103L6.76637 8.15477Z" fill="#432A0F" mask="url(#path-1-outside-1_1834_25020-499429)" />
                                             </svg>
+                                            立即購買
                                         </div>
-                                        加入購物車
-                                    </button>
-                                </div>
+                                    </a>
+                                </button>
+                                <button class="cart d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
+                                    <div class="icon_cart">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 3C3.44772 3 3 3.44772 3 4C3 4.55228 3.44772 5 4 5H5.20504L5.71394 7.19844L6.98368 14.5122C6.38575 14.969 6 15.6894 6 16.5C6 17.8807 7.11929 19 8.5 19H10C9.44772 19 9 19.4477 9 20C9 20.5523 9.44772 21 10 21C10.5523 21 11 20.5523 11 20C11 19.4477 10.5523 19 10 19H17C16.4477 19 16 19.4477 16 20C16 20.5523 16.4477 21 17 21C17.5523 21 18 20.5523 18 20C18 19.4477 17.5523 19 17 19H19C19.5523 19 20 18.5523 20 18C20 17.4477 19.5523 17 19 17H8.5C8.22386 17 8 16.7761 8 16.5C8 16.2239 8.22386 16 8.5 16H18.9167C19.4171 16 19.8405 15.6301 19.9076 15.1342L20.991 7.13419C21.0297 6.84818 20.943 6.55939 20.7531 6.34205C20.5632 6.1247 20.2886 6 20 6H7.48941L6.97424 3.77448C6.86928 3.32107 6.4654 3 6 3H4ZM8.92468 14L7.88301 8H18.8555L18.043 14H8.92468Z" fill="#432A0F" />
+                                        </svg>
+                                    </div>
+                                    加入購物車
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <?php endforeach; ?>
+    </div>
+    <!-- < ?php endforeach; ?> -->
 
     <!-- mobile head 手機板輪播牆 -->
     <div class="pd_head_mb d-block d-md-none w-100">
@@ -308,7 +364,7 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                         </button>
                     </div>
                     <div class="col">
-                        <button class="cart d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)" >
+                        <button class="cart d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
                             <!-- 跳轉頁面所以button還要再包a連結? -->
                             <div class="icon_cart">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -320,7 +376,7 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                     </div>
                     <div class="col">
                         <button class="buy d-flex justify-content-center align-items-center">
-                            <a class="d-flex" href="#shopping-cart.php" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)" >
+                            <a class="d-flex" href="#shopping-cart.php" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
                                 <div class="icon_buy">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <mask id="path-1-outside-1_1834_25020-499429" maskUnits="userSpaceOnUse" x="1.58203" y="3.25" width="20" height="17" fill="black">
@@ -354,8 +410,13 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                         <div class="intro_bg" id="intro">
                             <h5>商品介紹</h5>
                             <div class="intro_img">
-                                <!-- < ?= $r['product_introimgfirst'] ?> -->
-                                <img class="w-100" src="./imgs/product/P19_4.jpg" alt="">
+                                <?php
+                                // $first = 0;
+                                foreach ($photos as $p) : ?>
+                                    <img src="./imgs/product/<?= $p ?>" class="d-block w-100" alt="...">
+                                    <!-- </div> -->
+                                <?php endforeach ?>
+                                <p><?= $r['product_introfirst'] ?></p>
                             </div>
                             <!-- <p>【最甜最完整的參拜體驗！】 <br>
                                     幫你把月老參拜體驗濃縮在這一盒中！ <br>
@@ -374,12 +435,15 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                                     <br>
                                     清香甜、芳醇甜、辛嗆甜...... <br>
                                     甜蜜哲學甜小卡幫你發展了17種不同的甜，17種不同的感情模式，希望在和月老稟報前，先清楚的描繪屬於你內心嚮往的感情模式，發展出第18種，屬於你自己的甜。 <br> -->
-                            <p><?= $r['product_introfirst'] ?></p>
+                            <!-- <p>< ?= $r['product_introfirst'] ?></p> -->
                             <!-- </p> -->
                             <div class="intro_img">
-                                <!-- < ?= $r['product_introimgsec'] ?> -->
-                                <img class="w-100" src="./imgs/product/P19_5.jpg" alt="">
-                                <img class="w-100 pt-3" src="./imgs/product/P19_6.jpg" alt="">
+                                <?php
+                                foreach ($photos_sec as $s) : ?>
+                                    <img src="./imgs/product/<?= $s ?>" class="d-block w-100" alt="...">
+                                <?php endforeach ?>
+                                <!-- <img class="w-100" src="./imgs/product/< ?= $r['product_introimgsec'] ?>" alt=""> -->
+                                <p><?= $r['product_introsec'] ?></p>
                             </div>
                             <!-- <p>「拜完然後呢？」 <br>
                                     你的問題，也曾經是我們最大的煩惱， <br>
@@ -391,8 +455,8 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                                     ●
                                     分享月老的祝福：透過分送加持『參拜過的牛奶糖』廣結福緣，說不定就能遇見更多機會，自己留下一盒，還可以和3-30個朋友分享，這可就是3-30個機會啊！（直接送一整盒的話可以送3人，拆開來一人分一顆就可以分給30個人）
                                     <br> -->
-                            <p><?= $r['product_introsec'] ?></p>
-                            <img class="w-100" src="./imgs/product/P19_3.png" alt="">
+                            <!-- <p>< ?= $r['product_introsec'] ?></p>
+                            <img class="w-100" src="./imgs/product/< ?= $r['product_introimgsec'] ?>" alt=""> -->
                             <!-- </p> -->
                         </div>
                         <div class="intro_bg" id="back">
@@ -414,7 +478,12 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                                         <h3 class="d-none d-md-block mr-3">5</h3>
                                         <small class="d-flex xs">
                                             <div class="icon_fivestar px-0">
-                                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span class="xs d-md-none">(50 + 則評價)</span>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <span class="xs d-md-none">(50 + 則評價)</span>
                                             </div>
                                             <div class="xs d-none d-md-block ml-2">(50 + 則評價)</div>
                                         </small>
@@ -733,8 +802,7 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
                 </div>
             </div>
             <div class="col">
-                <button class="cart btn-l d-flex justify-content-center align-items-center w-100 my-3"
-                        data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)" >
+                <button class="cart btn-l d-flex justify-content-center align-items-center w-100 my-3" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
                     <div class="icon_cart">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M4 3C3.44772 3 3 3.44772 3 4C3 4.55228 3.44772 5 4 5H5.20504L5.71394 7.19844L6.98368 14.5122C6.38575 14.969 6 15.6894 6 16.5C6 17.8807 7.11929 19 8.5 19H10C9.44772 19 9 19.4477 9 20C9 20.5523 9.44772 21 10 21C10.5523 21 11 20.5523 11 20C11 19.4477 10.5523 19 10 19H17C16.4477 19 16 19.4477 16 20C16 20.5523 16.4477 21 17 21C17.5523 21 18 20.5523 18 20C18 19.4477 17.5523 19 17 19H19C19.5523 19 20 18.5523 20 18C20 17.4477 19.5523 17 19 17H8.5C8.22386 17 8 16.7761 8 16.5C8 16.2239 8.22386 16 8.5 16H18.9167C19.4171 16 19.8405 15.6301 19.9076 15.1342L20.991 7.13419C21.0297 6.84818 20.943 6.55939 20.7531 6.34205C20.5632 6.1247 20.2886 6 20 6H7.48941L6.97424 3.77448C6.86928 3.32107 6.4654 3 6 3H4ZM8.92468 14L7.88301 8H18.8555L18.043 14H8.92468Z" fill="#432A0F" />
@@ -745,8 +813,7 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
 
             </div>
             <div class="col mr-3">
-                <button class="buy btn-l d-flex justify-content-center align-items-center w-100 my-3" 
-                    data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
+                <button class="buy btn-l d-flex justify-content-center align-items-center w-100 my-3" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
                     <div class="icon_buy pr-1">
                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="path-1-outside-1_2793_16617-140835" maskUnits="userSpaceOnUse" x="-0.961914" y="0.75" width="20" height="17" fill="black">

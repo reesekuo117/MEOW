@@ -66,10 +66,16 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
 <link rel="stylesheet" href="./travel_detail_style.css">
 
 <?php include __DIR__ . '/parts/navbar.php'; ?>
+    
 <div class="travel_detail_07">
+    
     <?php //foreach($rows as $r): 
     ?>
     <div class="travel_carousel container-fluid">
+    <div class=" mt-5 d-flex">
+        <!-- <img src="./imgs/travel/icon-back.png" alt=""> -->
+        <h6 class="p-0"> ＜　商品列表頁 </h6>
+    </div>
         <div id="carouselExampleIndicators" class="carousel slide m-0 px-0" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -226,9 +232,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                             <div class="evaluation d-none d-md-flex">
                                 <div class="star d-flex">
                                     <div class="icon_fivestar">
-                                        <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
+                                        <img class="w-100" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                     </div>
-                                    <p>
+                                    <p class="m-0 travel_star_p">
                                         <?= $r['travel_star'] ?>
                                     </p>
                                 </div>
@@ -465,7 +471,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                     <h5>行程介紹</h5>
                                 </div>
                                 <div class="tnotice_info">
-                                    <small>•集合地點：捷運北門站2號出口 <br>
+                                    <small>
+                                        <?= $r['travel_route'] ?>
+                                        <!-- •集合地點：捷運北門站2號出口 <br>
                                         （請找穿黃色衣服的導遊） <br>
                                         •結束地點：大稻埕碼頭（原地解散） <br>
                                         •行程長度：2小時 <br>
@@ -479,7 +487,8 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                         •迪化街郵局 <br>
                                         •大稻埕遊客中心 <br>
                                         •台北霞海城隍廟 <br>
-                                        以上景點視當天天候或行程安排調整</small>
+                                        以上景點視當天天候或行程安排調整 -->
+                                    </small>
                                 </div>
                             </div>
                         </div>
@@ -506,13 +515,13 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                             <div class="row align-items-center">
                                 <div class="col col-md-9">
                                     <div class="c_star d-flex align-items-center">
-                                        <h3 class="d-none d-md-block mr-3">5</h3>
+                                        <h3 class="d-none d-md-block mr-3"><?= $r['travel_star'] ?></h3>
                                         <small class="d-flex xs">
                                             <div class="icon_fivestar px-0">
-                                                <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
+                                                <img class="w-100" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 <div class="small xs d-md-none">(50 + 則評價)</div>
                                             </div>
-                                            <div class="xs d-none d-md-block ml-2">(50 + 則評價)</div>
+                                            <div class="xs d-none d-md-block ml-2 marginTop">(50 + 則評價)</div>
                                         </small>
                                     </div>
                                 </div>
@@ -541,14 +550,13 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                                 <div class="icon_fivestar">
                                                     <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 </div>
-                                                <small class="date">2022/8/31</small>
+                                                <small class="date">2020/11/31</small>
                                             </div>
                                             <div class="c_tags py-1">
-                                                <small class="tags">商品超可愛</small>
                                                 <small class="tags">CP值超高</small>
                                             </div>
                                             <div class="p_comment">
-                                                <p>很可愛的商品！超讚的聯名企劃，替第一次參拜月老的人準備周全的商品，設計也很有質感，有保存的價值和意義。</p>
+                                                <p>超讚的旅遊經驗，到定點給予的時間也很剛好，整體來說很順暢</p>
                                             </div>
                                         </div>
                                     </div>

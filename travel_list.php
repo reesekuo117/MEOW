@@ -203,7 +203,7 @@ header("Refresh:180");
                             // $tmp['kind'] = $k['sid'];
                             echo http_build_query($tmp);
                             ?>&sort=newp#travelDesktopSort" class="<?= $sort === 'newp' ? "sort_active" : "" ?>">
-                    <h5>最新上架</h5>
+                    <h5>出發日期</h5>
                 </a>
             </div>
             <div class="col">
@@ -324,7 +324,7 @@ header("Refresh:180");
                                         // $tmp['kind'] = $k['sid'];
                                         echo http_build_query($tmp);
                                         ?>&sort=newp#travelDesktopSort" class="<?= $sort === 'newp' ? "sort_active" : "" ?>">
-                                <p>最新上架</p>
+                                <p>出發日期</p>
                             </a>
                         </li>
                         <li class="list-unstyled">

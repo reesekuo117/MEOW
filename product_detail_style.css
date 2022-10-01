@@ -326,6 +326,7 @@ button:hover{
     padding: 8px 0;
 }
 .c_star h3{
+    color: #fff;
     padding: 16px 25px;
     background-color: var(--color-yellow);
     border-radius: 8px;

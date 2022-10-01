@@ -343,7 +343,7 @@ if ($totalRows > 0) {
                     </div>
                     <!-- TODO:價格篩選PHP怎麼寫 -->
                     <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
-                    <!-- <div class="price_filter">
+                    <div class="price_filter">
                         <div class="filter-content__element">
                             <div class="filter-element-heading">
                                 <h5>價格範圍</h5>
@@ -360,7 +360,7 @@ if ($totalRows > 0) {
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
 

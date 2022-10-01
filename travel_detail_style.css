@@ -67,6 +67,12 @@ ol.carousel-indicators {
 .evaluation {
   display: flex;
 }
+
+.travel_star_p{
+  padding-top: 2px;
+}
+
+
 .travel_head .col-md-3 {
   text-align: center;
 }
@@ -89,6 +95,12 @@ ol.carousel-indicators {
   content: "/人";
   font-size: 14px;
 }
+
+
+.fire{
+  margin-top: 1px;
+}
+
 .fire p {
   line-height: 24px;
 }
@@ -303,10 +315,17 @@ select {
   padding: 8px 0;
 }
 .c_star h3 {
+  color: #fff;
   padding: 16px 25px;
   background-color: var(--color-yellow);
   border-radius: 8px;
 }
+
+.c_star .marginTop{
+  margin-top: 5px;
+}
+
+
 .cd .row {
   margin-top: 12px;
   border-bottom: 1px solid var(--color-text60);
