@@ -367,7 +367,7 @@ $pageName ='會員中心'; //頁面名稱
                                         <img class="w-100" src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt="">
                                     </div>
                                     <div class="position-absolute likeicon-re">
-                                        <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                        <a href="javascript: hello(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()" >
                                             <svg class="likeiconsvg-re" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path  fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
                                             </svg>
@@ -391,6 +391,36 @@ $pageName ='會員中心'; //頁面名稱
                                         </button>
                                     </div>
                                 </div>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content position-relative">
+                                        <div class="modal-header">
+                                            <div class="errorSign">
+                                                <img src="./imgs/Errorsign.png" alt="">
+                                            </div>
+                                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body ml-5">
+                                        
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <div class="errorMeow position-absolute">
+                                                <img src="./imgs/errorMeow.png" alt="">
+                                            </div>
+                                            <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
+                                            <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
+                                                <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                                忍痛刪除嗚嗚
+                                                </a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                             </div>
                         </div>
                     <?php endforeach ?>
@@ -903,7 +933,11 @@ $pageName ='會員中心'; //頁面名稱
                         <img src="./imgs/errorMeow.png" alt="">
                     </div>
                     <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
-                    <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >忍痛刪除嗚嗚</button>
+                    <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
+                        <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                        忍痛刪除嗚嗚
+                        </a>
+                    </button>
                 </div>
             </div>
         </div>
