@@ -14,6 +14,7 @@ function checkFormProduct(){
               console.log('product_form data',data);
               if(data.success){
                   genAlert('購買成功', 'success');
+                  location.href = './shopping-cart-ATM-product.php';
               }else{
                   genAlert(data.error);
               }

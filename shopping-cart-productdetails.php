@@ -80,7 +80,6 @@ $sm = $pdo->query($sqlmember)->fetch();
                         <!-- <h6 class="listinfo-number-yu">
                         訂單編號: <span>M20221234567</span>
                         </h6> -->
-                        
                         <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">

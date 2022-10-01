@@ -292,43 +292,13 @@ header("Refresh:180");
                                                     </tr>
                                                 </tbody>
                                                 <?php endforeach ?>
-                                                <!-- <tbody class="tbody">
-                                                    <tr class="">
-                                                        商品照片
-                                                        <td>
-                                                            <img src="imgs/購物車-商品(測試用).png" alt="" />
-                                                        </td>
-                                                        商品名稱
-                                                        <td>
-                                                            <h6 class="m-0">
-                                                                台北霞海城隍廟獨家聯名
-                                                                <br />
-                                                                -七夕月老供品組-甜作之盒
-                                                            </h6>
-                                                        </td>
-                                                        商品規格
-                                                        <td>規格</td>
-                                                        單價
-                                                        <td class="onePriceYu">
-                                                            707
-                                                        </td>
-                                                        數量
-                                                        <td>1</td>
-                                                        小計
-                                                        <td class="littlePriceYu">
-                                                            707
-                                                        </td>
-                                                    </tr>
-                                                </tbody> -->
                                             </table>
-                                        
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    
                     <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
                         <h6 class="oderListPriceYu">
                             <?= $all_rows['total'] ?>
