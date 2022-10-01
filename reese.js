@@ -407,7 +407,6 @@ function removeItem_p(sid){
     $('.del-ba').click(function() {
         console.log('被按了');
         return isDelete = true;
-
     })
 
 
