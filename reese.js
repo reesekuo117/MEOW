@@ -387,11 +387,40 @@ function addToCartP_re(event) {
         }, 
         'json');
 }
+
+// function del(){
+//     console.log('被刪掉惹');
+//     return true
+// }
+
+
+let isDeleted = false;
+
+// const del = $('.del-ba').click()
+
 function removeItem_p(sid){
-    console.log('hi P');
-    if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
-        location.href = `re-del-p.php?sid=${sid}`;
+
+    // console.log('hi P');
+    $("#exampleModal").modal("show");
+    $('.modal-body').text(`是否要刪除編號為 ${sid} 的資料？`);
+    
+    $('.del-ba').click(function() {
+        console.log('被按了');
+        return isDelete = true;
+    })
+
+
+    if(isDeleted){
+        console.log('刪了');
+        // location.href = `re-del-p.php?sid=${sid}`;
+    }else{
+        console.log('沒刪');
     }
+
+
+    // if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
+    //     location.href = `re-del-p.php?sid=${sid}`;
+    // }
 }
 // 最愛 行程
 function addToCartT_re(event) {
@@ -408,10 +437,11 @@ function addToCartT_re(event) {
         'json');
 }
 function removeItem_t(sid){
-    console.log('hi T');
-    if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
-        location.href = `re-del-t.php?sid=${sid}`;
-    }
+    // console.log('hi T');
+    $("#exampleModal").modal("show");
+    // if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
+    //     location.href = `re-del-t.php?sid=${sid}`;
+    // }
 }
 function removeItem_d(sid){
     console.log('hi D');

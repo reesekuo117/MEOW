@@ -170,6 +170,7 @@ $sm = $pdo->query($sqlmember)->fetch();
                     </main>
                     <div class=" h6 priceNT-yu alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
                         <h6 id="total-price-yu" class="price-uniqui-yu">
+                        <?= $v['product_price'] * $v['qty'] ?>
                         </h6>
                     </div>
                 </div>
