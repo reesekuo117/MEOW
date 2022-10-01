@@ -877,6 +877,33 @@ $pageName ='會員中心'; //頁面名稱
         </div>
         </div>
     </div>
+    <!-- 錯誤訊息 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content position-relative">
+                <div class="modal-header">
+                    <div class="errorSign">
+                        <img src="./imgs/Errorsign.png" alt="">
+                    </div>
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body ml-5">
+                
+                </div>
+
+                <div class="modal-footer">
+                    <div class="errorMeow position-absolute">
+                        <img src="./imgs/errorMeow.png" alt="">
+                    </div>
+                    <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
+                    <button type="button" class="btn-del btn ml-3 del-yes" data-dismiss="modal" onclick="del()">忍痛刪除嗚嗚</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>

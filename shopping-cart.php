@@ -2,17 +2,11 @@
 require __DIR__ . '/parts/meow_db.php';  // /開頭
 $pageName = 'cart'; //頁面名稱
 
-
-
-
-
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./shopping-cart.css">
-<?php
-header("Refresh:180");
-?>
+
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 
 <!-- ------------------桌機----------------------- -->
