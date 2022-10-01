@@ -899,7 +899,7 @@ $pageName ='會員中心'; //頁面名稱
                         <img src="./imgs/errorMeow.png" alt="">
                     </div>
                     <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
-                    <button type="button" class="btn-del btn ml-3 del-yes" data-dismiss="modal" onclick="del()">忍痛刪除嗚嗚</button>
+                    <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >忍痛刪除嗚嗚</button>
                 </div>
             </div>
         </div>

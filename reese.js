@@ -394,26 +394,31 @@ function addToCartP_re(event) {
 // }
 
 
-$('.del-ba').click(function() {
-    return true
-    console.log('真的有被刪掉嗎');
-
-})
+let isDeleted = false;
 
 // const del = $('.del-ba').click()
 
 function removeItem_p(sid){
-    console.log('hi P');
+
+    // console.log('hi P');
     $("#exampleModal").modal("show");
     $('.modal-body').text(`是否要刪除編號為 ${sid} 的資料？`);
-    // console.log('被刪掉惹', delit());
-    // console.log('被刪掉惹');
-    if($('.del-ba').dbclick()){
+    
+    $('.del-ba').click(function() {
+        console.log('被按了');
+        return isDelete = true;
+
+    })
+
+
+    if(isDeleted){
         console.log('刪了');
         // location.href = `re-del-p.php?sid=${sid}`;
     }else{
         console.log('沒刪');
     }
+
+
     // if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
     //     location.href = `re-del-p.php?sid=${sid}`;
     // }
