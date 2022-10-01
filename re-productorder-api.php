@@ -1,6 +1,13 @@
 <?php
 require __DIR__. '/parts/meow_db.php';
 
+$output = [
+    'success' => false,
+    'error' => '',
+    'code' => 0,
+    'postData' => $_POST,
+];
+
 
 if(empty($_SESSION['user']) or empty($_SESSION['pcart'])){
     // header('Location: product-list.php');
@@ -67,7 +74,7 @@ unset($_SESSION['pcart']);
 if($stmt->rowCount()){
     $output['success'] = true;
 } else {
-    $output['error'] = '購買未成功';
+    $output['error'] = '購買失敗';
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);

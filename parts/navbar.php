@@ -5,6 +5,7 @@
 //     header('Location: ./index_.php');
 //     exit;
 // }
+
 ?>
 <style>
     .navbar .nav-link.active {
@@ -147,6 +148,7 @@
                         </a>
                     <?php else : ?>
                         <a class="nav-icon pl-3" href="" onclick="document.getElementById('loginCard_re').style.display='block'; return false;" style="width:auto;">
+                            <!-- <img id="blah_md_re" class="w-100" src="<?= $rp['picture'] ?>" alt=""> -->
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M16 4C13.0545 4 10.6667 6.38781 10.6667 9.33333C10.6667 12.2789 13.0545 14.6667 16 14.6667C18.9455 14.6667 21.3333 12.2789 21.3333 9.33333C21.3333 6.38781 18.9455 4 16 4ZM13.3333 9.33333C13.3333 7.86057 14.5272 6.66667 16 6.66667C17.4728 6.66667 18.6667 7.86057 18.6667 9.33333C18.6667 10.8061 17.4728 12 16 12C14.5272 12 13.3333 10.8061 13.3333 9.33333Z" fill="white" />
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6667 16C9.512 16 5.33333 20.1787 5.33333 25.3333V26.6667C5.33333 27.403 5.93028 28 6.66666 28H25.3333C26.0697 28 26.6667 27.403 26.6667 26.6667V25.3333C26.6667 20.1787 22.488 16 17.3333 16H14.6667ZM7.99999 25.3333C7.99999 21.6514 10.9848 18.6667 14.6667 18.6667H17.3333C21.0152 18.6667 24 21.6514 24 25.3333H7.99999Z" fill="white" />
