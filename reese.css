@@ -862,6 +862,7 @@ p {
 
 /* likecard-------------------------------------------------------------------- */
 .likeicon-re {
+    cursor: pointer;
     /* z-index: 9; */
     top: 10px;
     right: 10px;
@@ -1366,24 +1367,18 @@ table .inside-orderlisttable-re {
 
 .del-yes a:hover{
     color: #fff;
+    text-decoration: none;
 }
 
 .modal-content {
     border-radius: 16px;
     border: 0px salmon solid;
-
 }
 
 .errorMeow {
     bottom: 0px;
     left: 32px;
 }
-
-/* .btn-secondary {
-    color: #fff;
-    background-color: var(--color-orange);
-    border-color: transparent;
-} */
 
 .del-no:hover {
     color: #fff;
@@ -1397,20 +1392,17 @@ table .inside-orderlisttable-re {
     background-color: var(--color-orange);
 }
 
-/* .btn-primary{
-    background-color: var(--color-orange);
-    border-color: transparent;
-} */
-
 .btn-primary:hover{
     border-color: transparent;
 }
 
 .modal-body {
+    margin-left: 72px;
+    /* width: 300px; */
     text-align: center;
     height: 90px;
     align-items: center;
-    padding-top: 36px;
+    padding-top: 24px;
 }
 
 .close {

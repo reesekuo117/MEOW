@@ -13,38 +13,31 @@
         text-underline-offset: 16px;
         /* border-bottom: var(--color-white) 2px solid; */
     }
-/* 
+
     .navbar .nav-link {
         display: block;
-        transition: .3s;
+        transition: .5s;
     }
 
     .navbar .nav-link:hover {
         text-decoration: underline white 2px;
         text-underline-offset: 16px;
-        animation:underline .3s forwards ease-in-out ;
-        transform: scale(1);
-    } */
+        /* animation:underline .2s forwards ease-out ; */
+        /* transform: scale(1); */
+    }
 
-    /* @keyframes underline  {
+    @keyframes underline  {
         0%{
-            text-decoration: underline white 0px;
+            text-underline-offset: -72px;
+            /* opacity: 0; */
+
         }
         100%{
-            text-decoration: underline white 2px;
+            text-underline-offset: 16px;
+            /* opacity: 1; */
         }
         
-    } */
-/* 
-    a.nav-link::after {
-        background-color: #333;
-    bottom: 0;
-    height: 4px;
-    left: 0;
-    position: absolute;
-    transition-duration: 0.25s;
-    width: 100%;
-    } */
+    }
 
     .header-xs #menu .nav-link.active {
         color: var(--color-white);
