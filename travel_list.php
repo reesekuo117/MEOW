@@ -75,7 +75,7 @@ if (!empty($sort)) {
         case 'pricelow':
             $dataSort = ' ORDER BY travel_price ASC ';
             break;
-    }
+    } 
 }
 
 //取得活動地區類型
