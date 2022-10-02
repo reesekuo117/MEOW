@@ -50,8 +50,6 @@ $photos_sec = explode(',', $s['product_introimgsec']);
 
 
 
-
-
 //月老推薦卡片
 $sqlArea = sprintf("SELECT * FROM `address`");
 $areaRows = $pdo->query($sqlArea)->fetchAll();
@@ -67,6 +65,29 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
 // ]);
 // exit;
 
+
+// 取得會員
+$member_id = $_SESSION['user']['id'];
+$sqlmember = "SELECT * FROM `member` WHERE id=$member_id";
+$sm = $pdo->query($sqlmember)->fetch();
+
+
+//  // 取得評論的全部
+ $sqlReview = sprintf("SELECT * FROM `review`");
+ $review = $pdo->query($sqlReview )->fetchAll();
+
+
+ // 取得評論的review_tags
+ $sqlreviewTags = sprintf("SELECT * FROM `review_tags`");
+ $reviewTags = $pdo->query($sqlreviewTags)->fetchAll();
+
+ echo json_encode([
+    'sqlreviewTags ' => $sqlreviewTags ,
+    'reviewTags' => $reviewTags,
+    'sm' => $sm,
+    'review' => $review,
+]);
+exit;
 
 ?>
 
@@ -852,6 +873,29 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
 
 <script>
     // const isLogined = < ?= !empty($_SESSION['user']) ? 'true' : 'false' ?>;
+
+
+    function checkFormProduct(){
+    console.log('checkFormProduct');
+    let isPass = true;
+
+    if(isPass){
+        $.post(
+            're-review-api.php', 
+            $(document.product_form).serialize(),
+            function(data){
+                console.log('product_form data',data);
+                if(data.success){
+                }else{
+                    genAlert(data.error);
+                }
+        }, 'json');
+    }
+}
+
+
+
+
 
     function addToCart_P_Yu(event) {
         const btn = $(event.currentTarget);
