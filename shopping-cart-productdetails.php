@@ -11,7 +11,6 @@ $member_id = $_SESSION['user']['id'];
 $sqlmember = "SELECT * FROM `member` WHERE id=$member_id";
 $sm = $pdo->query($sqlmember)->fetch();
 
-
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>

@@ -12,9 +12,6 @@ $sql = "SELECT * FROM product WHERE sid=$sid";
 // $sql = "SELECT * FROM product WHERE sid=localstorage的變數";
 
 
-//要用localstorage
-// $rows = $pdo->query($sql)->fetchAll();
-
 
 //大圖
 
@@ -65,14 +62,13 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
 // ]);
 // exit;
 
-
 // 取得會員
 $member_id = $_SESSION['user']['id'];
-$sqlmember = "SELECT * FROM `member` WHERE id=$member_id";
-$sm = $pdo->query($sqlmember)->fetch();
+$user_id = "SELECT * FROM `member` WHERE id=$member_id";
+$u = $pdo->query($user_id)->fetch();
 
 
-//  // 取得評論的全部
+// 取得評論的全部
  $sqlReview = sprintf("SELECT * FROM `review`");
  $review = $pdo->query($sqlReview )->fetchAll();
 
@@ -81,10 +77,12 @@ $sm = $pdo->query($sqlmember)->fetch();
  $sqlreviewTags = sprintf("SELECT * FROM `review_tags`");
  $reviewTags = $pdo->query($sqlreviewTags)->fetchAll();
 
+
+ 
  echo json_encode([
     'sqlreviewTags ' => $sqlreviewTags ,
     'reviewTags' => $reviewTags,
-    'sm' => $sm,
+    'u' => $u,
     'review' => $review,
 ]);
 exit;
@@ -875,23 +873,23 @@ exit;
     // const isLogined = < ?= !empty($_SESSION['user']) ? 'true' : 'false' ?>;
 
 
-    function checkFormProduct(){
-    console.log('checkFormProduct');
-    let isPass = true;
+//     function checkFormProduct(){
+//     console.log('checkFormProduct');
+//     let isPass = true;
 
-    if(isPass){
-        $.post(
-            're-review-api.php', 
-            $(document.product_form).serialize(),
-            function(data){
-                console.log('product_form data',data);
-                if(data.success){
-                }else{
-                    genAlert(data.error);
-                }
-        }, 'json');
-    }
-}
+//     if(isPass){
+//         $.post(
+//             're-review-api.php', 
+//             $(document.product_form).serialize(),
+//             function(data){
+//                 console.log('product_form data',data);
+//                 if(data.success){
+//                 }else{
+//                     genAlert(data.error);
+//                 }
+//         }, 'json');
+//     }
+// }
 
 
 
