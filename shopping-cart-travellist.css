@@ -196,6 +196,10 @@ select:-webkit-autofill:focus {
   max-width: 1450px;
 }
 /* ----------------桌機訂單明細 --------------*/
+#TmyTabContent-yu{
+  min-width: 1400px;
+}
+
 .listinfo-yu {
   background-color: #fffcf7;
   margin-bottom: 60px;
@@ -772,4 +776,95 @@ input.receiverphone-yu {
 .mdunique-btn-yu:focus {
   box-shadow: none;
   background-color: #e5a62a;
+}
+
+/* 一鍵 */
+.onekey{
+  border: 1px salmon solid;
+  width: 500px;
+  height: 250px;
+  right: 0px;
+  bottom: 0;
+}
+
+/* ------------------------- 光箱-------------------- */
+
+.modal-header {
+  background-color: var(--color-yellow);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modal-footer {
+  border-top: 0;
+  padding-top: 10px;
+}
+
+/* .modal-footer .btn {
+  background-color: var(--color-yellow);
+} */
+
+.del-no{
+  color: #fff;
+  border-color: transparent;
+  background-color: var(--color-yellow);
+}
+
+.del-yes{
+  color: #fff;
+  border-color: transparent;
+  background-color: var(--color-yellow);
+}
+
+.del-yes a{
+  color: #fff;
+}
+
+.del-yes a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+.modal-content {
+  border-radius: 16px;
+  border: 0px salmon solid;
+}
+
+.errorMeow {
+  bottom: 0px;
+  left: 32px;
+}
+
+.del-no:hover {
+  color: #fff;
+  background-color: var(--color-orange);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+}
+
+.del-yes:hover{
+  color: #fff;
+  background-color: var(--color-orange);
+}
+
+.btn-primary:hover{
+  border-color: transparent;
+}
+
+.modal-body {
+  /* margin-left: 72px; */
+  /* width: 300px; */
+  text-align: center;
+  height: 90px;
+  align-items: center;
+  padding-top: 24px;
+}
+
+.close {
+  text-shadow: 0 0 transparent;
+}
+
+.close:hover {
+  text-shadow: 0 0 transparent;
+  box-shadow: 0 0 transparent;
 }

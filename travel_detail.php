@@ -260,7 +260,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                             </div>
                             <div class="buy_btn">
                                 <a href="#BuyNowYu" style="text-decoration:none;">
-                                    <button class="buy btn_t_Yu d-flex justify-content-center align-items-center">
+                                    <button id="btnBuy2" class="buy btn_t_Yu d-flex justify-content-center align-items-center">
                                         <div class="icon_buy">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <mask id="path-1-outside-1_1834_25020-499429" maskUnits="userSpaceOnUse" x="1.58203" y="3.25" width="20" height="17" fill="black">
@@ -435,7 +435,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                         </button>
                     </div>
                     <div class="col">
-                        <a id="btmBuy" href="#BuyNowYu" style="text-decoration:none;">
+                        <a id="btnBuy" href="#BuyNowYu" style="text-decoration:none;">
                             <button class="buy d-flex justify-content-center align-items-center">
                                 <div class="icon_buy">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -909,7 +909,21 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                         <img src="./imgs/errorMeow2.png" alt="">
                     </div>
                     <button type="button" class="btn btn-secondary mx-auto" data-dismiss="modal">好的喵</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- 加入最愛 -->
+        <div class="modal fade" id="favModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content position-relative mx-auto">
+                <div class="modal-header-fav">
+                    <div class="favOK mx-auto d-flex justify-content-center my-3">
+                        <img class="w-100" src="./imgs/favOK.png" alt="">
+                    </div>
+                </div>
+                <div class="modal-body-fav pt-0">
+                    已將行程加入最愛！
                 </div>
             </div>
         </div>
@@ -1051,10 +1065,17 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
     };
 
 
-    $('#btmBuy').click(function () {
+    $('#btnBuy').click(function () {
         setTimeout(() => {
             $("#exampleModal").modal("show");
         }, 700);
+
+    })
+
+    $('.favorite ').click(function () {
+        setTimeout(() => {
+            $("#favModal").modal("show");
+        }, 300);
 
     })
 </script>
