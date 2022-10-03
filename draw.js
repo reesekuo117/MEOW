@@ -10,6 +10,16 @@ const moon = new Audio();
 moon.src = "/MEOW/music/moon.mp3"
 console.log(moon.src);
 
+// 搖籤聲
+const shake = new Audio();
+shake.src = "/MEOW/music/shake.mp3"
+console.log(shake.src);
+
+// 貓叫聲
+const meow = new Audio();
+meow.src = "/MEOW/music/meow.mp3"
+console.log(meow.src);
+
 
 // 音樂
 
@@ -902,6 +912,7 @@ if (dropArea) {
             currentStat = "right";
             // TODO: 做六張圖隨機
             $(".drawImgWrap img").attr("src", "./imgs/draw/draw-r.png");
+            shake.play()
             if (prevStat === "left") {
                 drawcounter++;
             }

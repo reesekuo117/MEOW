@@ -38,22 +38,22 @@ $title = '線上求籤'
             <h1 class="">請選擇一支籤</h1>
 
             <div class="drawdrawGroup position-absolute">
-                <div class="drawdraw draw01 position-absolute">
+                <div class="drawdraw draw01 position-absolute" onclick="meow.play()">
                     <img src="./imgs/draw/53.png" alt="">
                 </div>
-                <div class="drawdraw draw02 position-absolute">
+                <div class="drawdraw draw02 position-absolute" onclick="meow.play()">
                     <img src="./imgs/draw/53.png" alt="">
                 </div>
-                <div class="drawdraw draw03 position-absolute">
+                <div class="drawdraw draw03 position-absolute" onclick="meow.play()">
                     <img src="./imgs/draw/53.png" alt="">
                 </div>
-                <div class="drawdraw draw04 position-absolute">
+                <div class="drawdraw draw04 position-absolute" onclick="meow.play()">
                     <img src="./imgs/draw/53.png" alt="">
                 </div>
-                <div class="drawdraw draw05 position-absolute">
+                <div class="drawdraw draw05 position-absolute" onclick="meow.play()">
                     <img src="./imgs/draw/53.png" alt="">
                 </div>
-                <div class="drawdraw draw06 position-absolute">
+                <div class="drawdraw draw06 position-absolute" onclick="meow.play()">
                     <img src="./imgs/draw/53.png" alt="">
                 </div>
             </div>

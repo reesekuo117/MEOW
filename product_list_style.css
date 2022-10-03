@@ -315,7 +315,11 @@
 }
 @media screen and (min-width:768px){
     .product_list .card{
-        margin: 24px auto; 
+        margin: 24px auto;
+        transition: .3s;
+    }
+    .product_list .card:hover{
+        transform: translateY(-4px);
 
     }
 }
@@ -351,6 +355,7 @@
     /* 直接在div下陰影 */
     
 }
+
 .product_list .card-body small{
     color: var(--color-text60);
 }

@@ -135,15 +135,17 @@
     /* margin-bottom: 28px; */
 }
 
+
 .travel_section_bottom{
-    margin-bottom: 80px;
+    margin-bottom: 120px;
 }
 
 
-@media screen and (max-width:768px) {
+@media screen and (min-width:768px) {
     .travel_section_bottom{
-        margin-bottom: 120px;
+        margin-bottom: 80px;
     }
+    
 }
 
 
@@ -180,10 +182,11 @@
     color: #432A0F;
     text-decoration: none;
 }
-
+/* 
 .travel_section a:hover {
-    color: var(--color-yellow);
+    color:red;
 }
+*/
 
 .list-unstyled a {
     color: #432A0F;
@@ -359,10 +362,26 @@ a.sort_active {
 }
 
 .card_row {
-    justify-content: flex-start;
+    background-color: #ffffff;
     border-radius: 8px;
-    background-color: #FFF6E9;
     overflow: hidden;
+    box-shadow: 0px 0px 8px var(--color-text38);
+}
+
+
+@media screen and (min-width:768px) {
+    .card_row {
+        transition: .3s;
+        justify-content: flex-start;
+        border-radius: 8px;
+        background-color: #FFF6E9;
+        overflow: hidden;
+        box-shadow: none;
+    }
+}
+
+.card_row:hover{
+    box-shadow:0px 4px 12px  rgba(67, 42, 15, 0.2);
 }
 
 .webkitlineYu {
@@ -383,6 +402,7 @@ a.sort_active {
 .t_img img {
     /* position: relative; */
     /* width: 400px; */
+    object-fit: cover;
     height: 100%;
 }
 
@@ -396,7 +416,7 @@ a.sort_active {
 /* .card-body{
     padding: 12px 60px;
 } */
-@media screen and (max-width:768px) {
+
     .card-body {
         padding: 20px 20px 10px;
     }
@@ -427,39 +447,50 @@ a.sort_active {
         -webkit-box-orient: vertical;
     }
 
-    .card_row {
+    /* .card_row {
         background-color: #ffffff;
         box-shadow: 0px 0px 8px var(--color-text38);
-    }
+    } */
 
-    .icon_heart {
+    /* .icon_heart {
         position: absolute;
         right: 0;
         bottom: 200%;
         stroke: #fff;
         cursor: pointer;
         z-index: 9999999;
-
-    }
+    } */
 
     .icon_fivestar {
         width: 18px;
         height: 18px;
         /* background: url(./imgs/product/star.png); */
     }
-}
+
 .starNum{
     padding-top: 3px;
     font-size: 14px;
+    /* width: 80px; */
+}
+
+.starNum:hover{
+    color: #432A0F;
+}
+
+.boughtNum{
+    width: 120px;
 }
 
 
 /* .card-body_mb{
     padding: 12px;
 } */
-.card_title .icon_heart {
+.icon_heart {
     z-index: 999999;
     position: absolute;
+    right: 24px;
+    top: 42%;
+    stroke: white;
 }
 
 .card-body .row {
@@ -504,11 +535,15 @@ a.sort_active {
 @media screen and (min-width:768px) {
     .icon_heart {
         position: absolute;
-        left: 95%;
-        bottom: 10%;
+        right: 24px;
+        top: 8px;
         stroke: #432A0F;
         cursor: pointer;
+        z-index: 999999;
+    }
 
+    .icon_heart:hover {
+        fill: #CD562F;
     }
 
     .icon_fivestar {
@@ -524,7 +559,7 @@ a.sort_active {
 
     .card_title {
         padding: 20px 0 0 26px;
-
+        z-index: 999;
     }
 
     .card_under {
@@ -568,7 +603,12 @@ a.sort_active {
 }
 
 .t_card {
+    transition: .3s;
     padding-bottom: 32px;
+}
+
+.t_card:hover {
+    transform: translateY(-4px);
 }
 
 
