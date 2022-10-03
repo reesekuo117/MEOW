@@ -65,7 +65,7 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
 // 取得會員
 $member_id = $_SESSION['user']['id'];
 $user_id = "SELECT * FROM `member` WHERE id=$member_id";
-$u = $pdo->query($user_id)->fetch();
+$uId = $pdo->query($user_id)->fetch();
 
 
 // 取得評論的全部
@@ -73,17 +73,19 @@ $u = $pdo->query($user_id)->fetch();
  $review = $pdo->query($sqlReview )->fetchAll();
 
 
- // 取得評論的review_tags
- $sqlreviewTags = sprintf("SELECT * FROM `review_tags`");
- $reviewTags = $pdo->query($sqlreviewTags)->fetchAll();
+ // 取得評論的review_tags所有
+ $reviewTags = $pdo->query("SELECT * FROM `review_tags`")->fetchAll();
+ $sqlreviewTags =$pdo->query("SELECT * FROM `review`");
+ $re = $pdo->query($sqlreviewTags)->fetchAll();
 
 
  
  echo json_encode([
     'sqlreviewTags ' => $sqlreviewTags ,
     'reviewTags' => $reviewTags,
-    'u' => $u,
+    'uId' => $uId,
     'review' => $review,
+    're' => $re,
 ]);
 exit;
 
@@ -520,7 +522,39 @@ exit;
                             </div>
                             <div class="cd">
                                 <!-- computer comment -->
-                                <div class="row d-none d-md-flex">
+                                <div class="row d-none d-md-flex" >
+                                    <?php foreach ($review as $w): ?>
+                                        <div class="col col-md-3">
+                                            <div class="profile_img" >
+                                                <img class="w-100" src="<?=htmlentities($uId['picture']) ?>"alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-9">
+                                            <div class="detail_comment">
+                                                <p class="name" value=""><?=htmlentities($uId['name']) ?></p>
+                                                <div class="star_date d-flex align-items-center">
+                                                    <div class="icon_fivestar">
+                                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                    <small class="date"><?=$w['created_at']?></small>
+                                                
+                                                </div>
+                                                <div class="c_tags py-1">
+                                                    <?php foreach ($reviewTags as $Rt) : ?>
+                                                        <?php if ($Rt['sid'] === $w['tags_sid']) : ?>
+
+                                                            <?=$w['tags_tag']?>
+                                                        <?php endif ?>
+                                                    <?php endforeach ?>
+                                                </div>
+                                                <div class="p_comment">
+                                                    <p>很可愛的商品！超讚的聯名企劃，替第一次參拜月老的人準備周全的商品，設計也很有質感，有保存的價值和意義。</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach ?>    
+                                </div>
+                                <!-- <div class="row d-none d-md-flex">
                                     <div class="col col-md-3">
                                         <div class="profile_img">
                                             <img class="w-100" src="./imgs/member/picture01.png" alt="">
@@ -569,32 +603,7 @@ exit;
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row d-none d-md-flex">
-                                    <div class="col col-md-3">
-                                        <div class="profile_img">
-                                            <img class="w-100" src="./imgs/member/picture01.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col col-md-9">
-                                        <div class="detail_comment">
-                                            <p class="name">黃八張</p>
-                                            <div class="star_date d-flex align-items-center">
-                                                <div class="icon_fivestar">
-                                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <small class="date">2022/8/31</small>
-                                            </div>
-                                            <div class="c_tags py-1">
-                                                <small class="tags">商品超可愛</small>
-                                                <small class="tags">CP值超高</small>
-                                            </div>
-                                            <div class="p_comment">
-                                                <p>很可愛的商品！超讚的聯名企劃，替第一次參拜月老的人準備周全的商品，設計也很有質感，有保存的價值和意義。</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- mobile comment -->
                             <div class="cd_mb d-block d-md-none">
@@ -871,28 +880,6 @@ exit;
 
 <script>
     // const isLogined = < ?= !empty($_SESSION['user']) ? 'true' : 'false' ?>;
-
-
-//     function checkFormProduct(){
-//     console.log('checkFormProduct');
-//     let isPass = true;
-
-//     if(isPass){
-//         $.post(
-//             're-review-api.php', 
-//             $(document.product_form).serialize(),
-//             function(data){
-//                 console.log('product_form data',data);
-//                 if(data.success){
-//                 }else{
-//                     genAlert(data.error);
-//                 }
-//         }, 'json');
-//     }
-// }
-
-
-
 
 
     function addToCart_P_Yu(event) {
