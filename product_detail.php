@@ -75,8 +75,8 @@ $uId = $pdo->query($user_id)->fetch();
 
  // 取得評論的review_tags所有
  $reviewTags = $pdo->query("SELECT * FROM `review_tags`")->fetchAll();
- $sqlreviewTags =$pdo->query("SELECT * FROM `review`");
- $re = $pdo->query($sqlreviewTags)->fetchAll();
+ $sqlreviewTags =$pdo->query("SELECT *  FROM `review` JOIN `review_tags` ON `review` . `tags_sid` = `review_tags` . `sid`");
+//  $re = $pdo->query($sqlreviewTags)->fetchAll();
 
 
  
@@ -85,7 +85,7 @@ $uId = $pdo->query($user_id)->fetch();
     'reviewTags' => $reviewTags,
     'uId' => $uId,
     'review' => $review,
-    're' => $re,
+    // 're' => $re,
 ]);
 exit;
 
