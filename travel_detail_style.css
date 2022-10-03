@@ -593,3 +593,8 @@ select {
 footer.product-none{
   display: none !important;
 }
+
+/* 返回列表 */
+#backtoTravelList{
+  cursor: pointer;
+}

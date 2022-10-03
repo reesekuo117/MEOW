@@ -395,7 +395,7 @@ function hello_p(event) {
     const sid = a.attr('data-sid')
 
     $("#DEL_P").modal("show");
-    $('.modal-body').html(`是否要刪除<br> 「 ${name} 」`);
+    $('.modal-body').html(`是否要刪除<br> 「 ${name} 」？`);
     
     $('.del-ba').click(function() {
         console.log(sid,'被按了');
@@ -418,7 +418,7 @@ function hello_t(event) {
     const sid = a.attr('data-sid')
 
     $("#DEL_T").modal("show");
-    $('.modal-body').html(`是否要刪除<br> 「 ${name} 」`);
+    $('.modal-body').html(`是否要刪除<br> 「 ${name} 」？`);
     
     $('.del-ba').click(function() {
         console.log(sid,'被按了');
@@ -438,10 +438,11 @@ function removeItem_t(sid){
 // 移除最愛確認(詩籤)
 function hello_f(event) {
     const a = $(event.currentTarget);
+    const name = a.attr('data-name')
     const sid = a.attr('data-sid')
 
     $("#DEL_T").modal("show");
-    $('.modal-body').html(`是否要刪除第 「 ${sid} 」`);
+    $('.modal-body').html(`是否要刪除第 「 ${name} 」 籤？`);
     
     $('.del-ba').click(function() {
         console.log(sid,'被按了');
@@ -492,3 +493,20 @@ function removeItem_f(sid){
 }
 console.log('帳號密碼','999@com/999');
 
+// 一鍵輸入(名字+電話)
+$('#onekey1').click(function () {
+    $("#member_name_re").val("皮卡丘");
+    $("#member_phone_re").val("0956456789");
+})
+
+// 一鍵輸入(商品評論)
+$('#onekey-p').click(function () {
+    console.log('yoyo');
+    $("#comment-p").val("下單後不到三天就收到商品了超快速，配色很可愛又實用♡，希望可以幫我招來好桃花ヽ(●´∀`●)ﾉ♡");
+})
+
+// 一鍵輸入(行程評論)
+$('#onekey-t').click(function () {
+    console.log('yoyo');
+    $("#comment-t").val("導遊宸宸很親切也很熱心介紹，風景非常美麗，整個安排非常順暢，希望可以有更多的行程可以參加。");
+})

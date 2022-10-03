@@ -74,7 +74,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
     <div class="travel_carousel container-fluid">
     <div class=" mt-5 d-flex">
         <!-- <img src="./imgs/travel/icon-back.png" alt=""> -->
-        <h6 class="p-0"> ＜　商品列表頁 </h6>
+
+        <h6 id="backtoTravelList" onclick="backtoTravelList()" class="p-0"> ＜　商品列表頁 </h6>
+
     </div>
         <div id="carouselExampleIndicators" class="carousel slide m-0 px-0" data-ride="carousel">
             <ol class="carousel-indicators">
