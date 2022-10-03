@@ -164,3 +164,9 @@ $(window).scroll(function () {
         //         }, 
         //         'json');
         // }
+
+
+
+    $('#backtoTravelList').click(function () {
+        history.back()
+    })

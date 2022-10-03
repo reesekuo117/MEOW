@@ -132,6 +132,9 @@ $pageName ='會員中心'; //頁面名稱
                 <li class="signupbutton my-2  text-20-re" type="button" value="登出" onclick="location.href='re-logout.php'" tabindex="1">登出</li>
                 <!-- <label class="signupbutton my-2"><input class="btn-re btn200-re phonewidth330-re" type="button" value="登出" onclick="location.href='re-logout.php'"></label> -->
             </ul>
+            <div id="onekey-p" class="onekey-p position-absolute"></div>
+            <div id="onekey-t" class="onekey-t position-absolute"></div>
+
         </div>
 <!-- 會員頭像----------------------------------------------------- -->
         <div id="pictureChange_re" class="pictureChange_re">
@@ -308,6 +311,7 @@ $pageName ='會員中心'; //頁面名稱
                     </div>
                     <div id="member_msgContainer" class="col-8 p-0"></div>
                     <div class="position-absolute fixedbtn_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
+                    <div id="onekey1" class="onekey position-absolute"></div>
                 </form>
             </div>
 <!-- p2-password------------------------------------------------------------------------------------ -->
@@ -352,24 +356,24 @@ $pageName ='會員中心'; //頁面名稱
 <!-- p3-like---------------------------------------------------------------------------------------- -->
             <div id="like-page-re" class="item_re">
                 <div>
-                    <ul class="tab-liketitle-re liketitle-all-re d-flax p-0">
-                        <li class="col-3 textphone-16-re d-inline-block liketitle-re text-center active-re">
+                    <ul class="tab-liketitle-re liketitle-all-re d-flex p-0">
+                        <li class="col textphone-16-re d-inline-block liketitle-re text-center active-re">
                             <a href="#tab01-re">收藏商品</a>
                         </li>
-                        <li class="col-3 textphone-16-re d-inline-block liketitle-re text-center ">
+                        <li class="col textphone-16-re d-inline-block liketitle-re text-center ">
                             <a href="#tab02-re">收藏行程</a>
                         </li>
-                        <li class="col-3 textphone-16-re d-inline-block liketitle-re text-center ">
+                        <li class="col textphone-16-re d-inline-block liketitle-re text-center ">
                             <a href="#tab03-re">收藏詩籤</a>
                         </li>
-                        <li class="col-3 textphone-16-re d-inline-block liketitle-re text-center ">
+                        <!-- <li class="col-3 textphone-16-re d-inline-block liketitle-re text-center">
                             <a href="#tab04-re">收藏運勢</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
     <!-- p3-P------------------------------------------------------------------ -->
                 <div id="tab01-re" class="tab-inner-re ">
-                    <div class="row mx-0 likehight-re">
+                    <div class="row mx-0 likehight-re mb-5 pb-3 mb-md-0 pb-md-0">
                     <?php foreach($p_rows as $r): ?>
                         <div class="col-12 col-md-3 px-4 px-md-2 pb-3">
                             <div class="card-re">
@@ -482,7 +486,7 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
     <!-- p3-T------------------------------------------------------------------ -->
                 <div id="tab02-re" class="tab-inner-re">
-                <div class="row mx-0 likehight-re">
+                <div class="row mx-0 likehight-re mb-5 pb-3 mb-md-0 pb-md-0">
                     <?php foreach($t_rows as $r): ?>
                         <div class="col-12 col-md-3 px-4 px-md-2 pb-3">
                             <div class="card-re">
@@ -566,12 +570,12 @@ $pageName ='會員中心'; //頁面名稱
                 </div>
     <!-- p3-D------------------------------------------------------------------ -->
                 <div id="tab03-re" class="tab-inner-re">
-                    <div class="row mb-3 mx-0 likehight-re">
+                    <div class="row mb-3 mx-0 likehight-re mb-5 pb-3 mb-md-0 pb-md-0">
                         <?php foreach($d_rows as $r): ?>
                         <div class="col-6 col-md-4 likecard-re position-relative pb-3">
                             <img class="w-100" src="./imgs/love/<?= $r['img'] ?>" alt="">
                             <div class="position-absolute likeicon2-re">
-                                <a data-name="<?= $r['travel_name'] ?>" onclick="hello_t(event)" data-sid="<?= $r['sid']?>" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                <a data-name="<?= $r['draw_name'] ?>" onclick="hello_f(event)" data-sid="<?= $r['sid']?>" data-onclick="event.currentTarget.closest('.card-re').remove()">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
                                     </svg>
@@ -627,7 +631,7 @@ $pageName ='會員中心'; //頁面名稱
                     </div> -->
                 </div>
     <!-- p3-F------------------------------------------------------------------ -->
-                <div id="tab04-re" class="tab-inner-re">
+                <div id="tab04-re" class="tab-inner-re d-none">
                     <div class="row mb-3 mx-0 likehight-re">
                     <?php foreach($f_rows as $r): ?>
                     <div class="col-6 col-md-4 likecard-re position-relative pb-3">
@@ -663,7 +667,7 @@ $pageName ='會員中心'; //頁面名稱
             </div>
 <!-- p4-orderlist----------------------------------------------------------------------------------- -->
             <div id="orderlist-page-re" class="item_re">
-                <ul class="ordertab-title-re liketitle-all-re d-flax p-0">
+                <ul class="ordertab-title-re liketitle-all-re d-flex p-0">
                     <li class="col-6 d-inline-block liketitle-re text-20-re text-center active-re"><a class="active activetext-re" href="#tab05-re">獨家商品</a></li><li class="col-6 d-inline-block liketitle-re text-20-re text-center "><a href="#tab06-re">旅遊行程</a></li>
                 </ul>
     <!-- p4-P------------------------------------------------------------------ -->
@@ -793,7 +797,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </svg>
                                 </div>
                             <p class="">請告訴我們您的想法</p>
-                            <textarea class="evaluation-textarea-re" cols="121" rows="3" name="content_p" maxlength="250" style="OVERFLOW:hidden"></textarea>
+                            <textarea id="comment-p" class="evaluation-textarea-re" cols="121" rows="3" name="content_p" maxlength="250" style="OVERFLOW:hidden"></textarea>
                             <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
                                 <label><input id="tag-re-1" type="checkbox" name="tag_re[]" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
                                 <label><input id="tag-re-2" type="checkbox" name="tag_re[]" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
@@ -960,7 +964,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </svg>
                                 </div>
                             <p class="">請告訴我們您的想法</p>
-                            <textarea class="evaluation-textarea-re" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
+                            <textarea id="comment-t" class="evaluation-textarea-re" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
                             <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
                                 <!-- <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">出貨超快速</div>
                                 <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">ＣＰ值超高</div>

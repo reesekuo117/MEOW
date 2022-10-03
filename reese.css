@@ -1413,3 +1413,27 @@ table .inside-orderlisttable-re {
     text-shadow: 0 0 transparent;
     box-shadow: 0 0 transparent;
 }
+
+.onekey{
+    /* border: 1px salmon solid; */
+    width: 500px;
+    height: 300px;
+    right: 200px;
+    top: 0;
+}
+
+.onekey-p{
+    /* border: 1px rgb(168, 114, 250) solid; */
+    width: 500px;
+    height: 300px;
+    right: 200px;
+    top: 0;
+}
+
+.onekey-t{
+    /* border: 1px rgb(148, 250, 114) solid; */
+    width: 500px;
+    height: 300px;
+    right: 200px;
+    bottom: 0;
+}
