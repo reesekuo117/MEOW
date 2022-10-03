@@ -539,7 +539,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                             </div>
                             <div class="cd">
                                 <!-- computer comment -->
-                                <div class="row d-none d-md-flex">
+                                <div class="row d-none d-md-flex minH">
                                     <div class="col col-md-3">
                                         <div class="profile_img">
                                             <img class="w-100" src="./imgs/member/picture01.png" alt="">
@@ -547,23 +547,23 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                     </div>
                                     <div class="col col-md-9">
                                         <div class="detail_comment">
-                                            <p class="name">黃八張</p>
+                                            <p class="name">楊威名</p>
                                             <div class="star_date d-flex align-items-center">
                                                 <div class="icon_fivestar">
                                                     <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 </div>
                                                 <small class="date">2020/11/31</small>
                                             </div>
-                                            <div class="c_tags py-1">
+                                            <!-- <div class="c_tags py-1">
                                                 <small class="tags">CP值超高</small>
-                                            </div>
+                                            </div> -->
                                             <div class="p_comment">
                                                 <p>超讚的旅遊經驗，到定點給予的時間也很剛好，整體來說很順暢</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row d-none d-md-flex">
+                                <div class="row d-none d-md-flex minH">
                                     <div class="col col-md-3">
                                         <div class="profile_img">
                                             <img class="w-100" src="./imgs/member/picture01.png" alt="">
@@ -571,24 +571,24 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                     </div>
                                     <div class="col col-md-9">
                                         <div class="detail_comment">
-                                            <p class="name">黃八張</p>
+                                            <p class="name">林子情</p>
                                             <div class="star_date d-flex align-items-center">
                                                 <div class="icon_fivestar">
                                                     <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 </div>
                                                 <small class="date">2022/8/31</small>
                                             </div>
-                                            <div class="c_tags py-1">
+                                            <!-- <div class="c_tags py-1">
                                                 <small class="tags">商品超可愛</small>
                                                 <small class="tags">CP值超高</small>
-                                            </div>
+                                            </div> -->
                                             <div class="p_comment">
-                                                <p>很可愛的商品！超讚的聯名企劃，替第一次參拜月老的人準備周全的商品，設計也很有質感，有保存的價值和意義。</p>
+                                                <p>很喜歡導遊的解說方法非常得好、活動很超值。</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row d-none d-md-flex">
+                                <div class="row d-none d-md-flex minH">
                                     <div class="col col-md-3">
                                         <div class="profile_img">
                                             <img class="w-100" src="./imgs/member/picture01.png" alt="">
@@ -596,19 +596,18 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                     </div>
                                     <div class="col col-md-9">
                                         <div class="detail_comment">
-                                            <p class="name">黃八張</p>
+                                            <p class="name">黃昱潔</p>
                                             <div class="star_date d-flex align-items-center">
                                                 <div class="icon_fivestar">
                                                     <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                                 </div>
-                                                <small class="date">2022/8/31</small>
+                                                <small class="date">2020/7/16</small>
                                             </div>
-                                            <div class="c_tags py-1">
-                                                <small class="tags">商品超可愛</small>
+                                            <!-- <div class="c_tags py-1">
                                                 <small class="tags">CP值超高</small>
-                                            </div>
+                                            </div> -->
                                             <div class="p_comment">
-                                                <p>很可愛的商品！超讚的聯名企劃，替第一次參拜月老的人準備周全的商品，設計也很有質感，有保存的價值和意義。</p>
+                                                <p>導覽解說非常詳細，行程規劃的順暢獲得不少知識，真的很值得！</p>
                                             </div>
                                         </div>
                                     </div>
@@ -623,25 +622,25 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                         </div>
                                     </div>
                                     <div class="col-9">
-                                        <p class="name">黃八張</p>
+                                        <p class="name">楊威名</p>
                                         <div class="star_date d-flex align-items-center ">
                                             <div class="icon_fivestar px-0">
                                                 <small class="date xs d-flex align-items-center">
                                                     <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                             </div>
-                                            2022/8/31
+                                            2020/11/31
                                             </small>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row pt-0">
                                     <div class="detail_comment">
-                                        <div class="c_tags py-1">
+                                        <!-- <div class="c_tags py-1">
                                             <small class="tags">商品超可愛</small>
                                             <small class="tags">CP值超高</small>
-                                        </div>
+                                        </div> -->
                                         <div class="p_comment">
-                                            <p>很可愛的商品！超讚的聯名企劃，替第一次參拜月老的人準備周全的商品，設計也很有質感，有保存的價值和意義。</p>
+                                            <p>超讚的旅遊經驗，到定點給予的時間也很剛好，整體來說很順暢獲得不少知識，真的很值得！。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -654,7 +653,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                         </div>
                                     </div>
                                     <div class="col-9">
-                                        <p class="name">黃八張</p>
+                                        <p class="name">林子情</p>
                                         <div class="star_date d-flex align-items-center ">
                                             <div class="icon_fivestar px-0">
                                                 <small class="date xs d-flex align-items-center">
@@ -667,12 +666,12 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                 </div>
                                 <div class="row pt-0">
                                     <div class="detail_comment">
-                                        <div class="c_tags py-1">
+                                        <!-- <div class="c_tags py-1">
                                             <small class="tags">商品超可愛</small>
                                             <small class="tags">CP值超高</small>
-                                        </div>
+                                        </div> -->
                                         <div class="p_comment">
-                                            <p>很可愛的商品！超讚的聯名企劃，替第一次參拜月老的人準備周全的商品，設計也很有質感，有保存的價值和意義。</p>
+                                            <p>很喜歡導遊的解說方法非常得好、活動很超值。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -685,25 +684,25 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                         </div>
                                     </div>
                                     <div class="col-9">
-                                        <p class="name">黃八張</p>
+                                        <p class="name">黃昱潔</p>
                                         <div class="star_date d-flex align-items-center ">
                                             <div class="icon_fivestar px-0">
                                                 <small class="date xs d-flex align-items-center">
                                                     <img class="w-75" src="imgs/star/<?= $r['travel_star'] ?>.png" alt="...">
                                             </div>
-                                            2022/8/31
+                                            2020/7/16
                                             </small>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row pt-0">
                                     <div class="detail_comment">
-                                        <div class="c_tags py-1">
+                                        <!-- <div class="c_tags py-1">
                                             <small class="tags">商品超可愛</small>
                                             <small class="tags">CP值超高</small>
-                                        </div>
+                                        </div> -->
                                         <div class="p_comment">
-                                            <p>很可愛的商品！超讚的聯名企劃，替第一次參拜月老的人準備周全的商品，設計也很有質感，有保存的價值和意義。</p>
+                                            <p>導覽解說非常詳細，行程規劃的順暢</p>
                                         </div>
                                     </div>
                                 </div>

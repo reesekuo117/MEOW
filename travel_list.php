@@ -131,7 +131,6 @@ if ($totalRows > 0) {
     // ]);
     // exit;
 
-
     // 取得address
     $sqlArea = sprintf("SELECT * FROM `address`");
     $areaRows = $pdo->query($sqlArea)->fetchAll();
