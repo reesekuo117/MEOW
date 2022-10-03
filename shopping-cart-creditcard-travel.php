@@ -1,6 +1,29 @@
 <?php
 require __DIR__. '/parts/meow_db.php';  // /開頭
 $pageName ='購物車'; //頁面名稱
+
+// 取得會員
+$member_id = $_SESSION['user']['id'];
+$sqlmember = "SELECT * FROM `member` WHERE id=$member_id";
+$tsm = $pdo->query($sqlmember)->fetch();
+
+$listsql = " SELECT 
+                td.*,
+                t.travel_name, 
+                t.travelcard_img
+            FROM travel_order td
+                JOIN travel t ON t.sid = td.travel_sid
+                WHERE member_id=$member_id 
+                ORDER BY td.created_at DESC 
+                LIMIT 1";
+$tlist_rows = $pdo->query($listsql)->fetch();
+
+
+// echo json_encode([ 
+//     '$tlist_rows' => $tlist_rows,
+// ]);
+// exit;
+
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -66,14 +89,14 @@ header("Refresh:180");
                 </h6>
                 <div class=" d-md-flex justify-content-center">
                     
-                    <a href="#" class="btn unique-nextbutton-yu">
+                    <a href="member.php#member-order" class="btn unique-nextbutton-yu">
                         <button class=" unique-btn-yu que-btn-yu me-md-2" type="button">
                             <p class="m-0 text-center">
                                 查詢訂單
                             </p>
                         </button>
                     </a>
-                    <a href="#" class="btn unique-nextbutton-yu">
+                    <a href="travel_list.php" class="btn unique-nextbutton-yu">
                         <button class=" unique-btn-yu que-btn-yu  me-md-2 " type="button">
                             <p class="m-0 text-center">
                                 繼續購物
@@ -99,21 +122,21 @@ header("Refresh:180");
                                         <li>
                                             訂購人姓名:
                                             <th>
-                                                皮卡丘
+                                            <?= $tlist_rows['name'] ?>
                                             </th>
                                         </li>
                                         <li>
                                             訂購人電話:
                                             <th>
-                                                0987654321
+                                                <?= $tlist_rows['phone'] ?>
                                             </th>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             訂購人地址:
                                             <th>
                                                 台北市大安區和平東路二段106號3樓
                                             </th>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -126,13 +149,13 @@ header("Refresh:180");
                                         <li>
                                             付款方式:
                                             <th>
-                                                信用卡付款
+                                                <?= $tlist_rows['payment'] ?>
                                             </th>
                                         </li>
                                         <li>
                                             付款狀態:
                                             <th>
-                                                已付款
+                                                <?= $tlist_rows['payment_state'] ?>
                                             </th>
                                         </li>
                                     </ul>
@@ -143,7 +166,7 @@ header("Refresh:180");
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h6 class="listinfo-number-yu">
-                                        訂單編號: <span>M20221234567</span>
+                                        訂單編號: <span>TO2022<?= $tlist_rows['sid'] ?></span>
                                     </h6>
                                     <h6 class="panel-title-yu">
                                         <a class="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
@@ -187,30 +210,32 @@ header("Refresh:180");
                                                         </th>
                                                     </tr>
                                                 </thead>
+                                                
                                                 <tbody class="tbody">
                                                     <tr class="">
                                                         <!-- 商品照片 -->
                                                         <td>
-                                                            <img src="imgs/購物車-行程(測試用).png" alt="" />
+                                                            <img class="" src="imgs/travel/cards/<?= $tlist_rows['travelcard_img'] ?>" alt="">
                                                         </td>
                                                         <!-- 商品名稱 -->
                                                         <td>
                                                             <h6 class="m-0">
-                                                                大稻埕霞海城廟深度漫步文化之旅
+                                                                <?= $tlist_rows['travel_name'] ?>
                                                             </h6>
                                                         </td>
                                                         <!-- 單價 -->
                                                         <td class="onepriceYu">
-                                                            1500
+                                                            <?= $tlist_rows['price'] ?>
                                                         </td>
                                                         <!-- 數量 -->
-                                                        <td>1</td>
+                                                        <td><?= $tlist_rows['quantity'] ?></td>
                                                         <!-- 小計 -->
                                                         <td class="allPriceYu">
-                                                            1500
+                                                            <?= $tlist_rows['price'] * $tlist_rows['quantity'] ?>
                                                         </td>
                                                     </tr>
                                                 </tbody>
+                                                
                                             </table>
                                         </div>
                                     </div>
@@ -220,7 +245,7 @@ header("Refresh:180");
                     </main>
                     <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
                         <h6 class="orderTotalPriceYu" >
-                            1500
+                            <?= $tlist_rows['total'] ?>
                         </h6>
                         <h6 id="total-price-yu" class="price-uniqui-yu">
                         </h6>

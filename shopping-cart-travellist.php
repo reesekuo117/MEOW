@@ -10,7 +10,8 @@ $temples = $pdo->query($sql)->fetchAll();
 // 取得會員
 $member_id = $_SESSION['user']['id'];
 $sqlmember = "SELECT * FROM `member` WHERE id=$member_id";
-$sm = $pdo->query($sqlmember)->fetch();
+$tsm = $pdo->query($sqlmember)->fetch();
+
 
 ?>
 
@@ -71,18 +72,18 @@ header("Refresh:180");
     <!-- 訂單明細 -->
 
     <!-- 記得這邊的action要連到另一隻php -->
-    <?php if(empty($_POST)):  ?> 
-        <form  name="desktop_form" action="next.php" method="post">
-            <div id="myTabContent-yu" class="container">
+    <?php //if(empty($_POST)):  ?> 
+        <!-- <form  name="desktop_form" action="next.php" method="post"> -->
+            <div id="TmyTabContent-yu" class="container">
                 <!-- 訂單明細 -->
                 <div class="listinfo-yu">
                     <main class="section-0-yu">
                         <h3 class="listinfo-title-yu m-0">
                             訂單明細
                         </h3>
-                        <h6 class="listinfo-number-yu">
+                        <!-- <h6 class="listinfo-number-yu">
                         訂單編號: <span>M20221234567</span>
-                        </h6>
+                        </h6> -->
                         
                         <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
                             <div class="panel panel-default">
@@ -167,284 +168,333 @@ header("Refresh:180");
                     </main>
                     <div class="h6 alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
                         <h6 id="total-price-yu" class="price-uniqui-yu">
-                        <?= $j['travel_price'] ?>
+                        <?= $j['travel_price'] * $j['qty'] ?>
                         </h6>
                         <h6 id="total-price"></h6>
                     </div>
                 </div>
                 <!-- 訂購人資料 -->
-                <div class="section-1-yu position-relative">
-                    <div class="section-1-title-yu">
-                        <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
-                    </div>
-                    <!-- 訂購人填寫資料 -->
-                    <div class="AllinputValueYu" id="clickme" onclick="clickme()"></div>
-                    <div id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu" method="post" action="">
-                        <div class="field order-name-yu p-3 ">
-                            <label for="name" class="">
-                                姓名
-                                <span style="color: #963c38">*</span>
-                            </label>
-                            <br/>
-                            <input class="ordername-yu requiredYu" type="text" placeholder="請輸入姓名 " id="name-yu" name="name" required data-value="<?=htmlentities($sm['name']) ?>"/>
-                            <i class="right fa-regular fa-circle-check"></i>
-                            <i class="wrong fa-solid fa-triangle-exclamation">
-                                <small>請輸入正確姓名</small>
-                            </i>
+                <form name="travel_form" method="post" onsubmit="checkFormTravel(); return false;">
+                    <div class="section-2-yu position-relative">
+                        <div class="section-2-title-yu">
+                            <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
                         </div>
-                        <div class="field order-phone-yu p-3">
-                            <label for="mobile" class="">
-                                聯絡電話
-                                <span style="color: #963c38">*</span>
-                            </label>
-                            <br/>
-                            <input class="orderphone-yu  requiredYu" type="text" placeholder="請輸入聯絡電話" id="mobile-yu" name="phone"  required  value="<?=htmlentities($sm['mobile']) ?>"/>
-                            <i class="right fa-regular fa-circle-check"></i>
-                            <i class="wrong fa-solid fa-triangle-exclamation">
-                                <small>請輸入正確的聯絡電話</small>
-                            </i>
-                        </div>
-                        <div class=" field order-address-yu p-3">
-                            <label for="address" class="">
-                                地址
-                                <span style="color: #963c38">*</span>
-                            </label>
-                            <br/>
-                            <div class="d-flex align-items-center">
-                                <div class="form-group m-0">
-                                    <select class="orderaddress1-yu" name="address" id="city1-yu" required value="<?=htmlentities($sm['address_city_re']) ?>">
-                                        <option class="" value="0">臺北市</option>
-                                        <option value="1">新北市</option>
-                                        <option value="2">基隆市</option>
-                                        <option value="3">宜蘭縣</option>
-                                        <option value="4">桃園市</option>
-                                        <option value="5">新竹市</option>
-                                        <option value="6">新竹縣</option>
-                                        <option value="7">苗栗縣</option>
-                                        <option value="8">彰化縣</option>
-                                        <option value="9">臺中市</option>
-                                        <option value="10">南投縣</option>
-                                        <option value="11">雲林縣</option>
-                                        <option value="12">嘉義市</option>
-                                        <option value="13">嘉義縣</option>
-                                        <option value="14">臺南市</option>
-                                        <option value="15">高雄市</option>
-                                        <option value="16">屏東縣</option>
-                                        <option value="17">花蓮縣</option>
-                                        <option value="18">臺東縣</option>
-                                    </select>
-                                </div>
-                                <div class="form-group m-0">
-                                    <select class="orderaddress2-yu"name="address"id="district1-yu" value="<?=htmlentities($sm['address_region_re']) ?>">
-                                        <option class="" value="0">中正區</option>
-                                        <option value="1">板橋區</option>
-                                        <option value="2">仁愛區</option>
-                                    </select>
-                                </div>
-                                <input class="orderaddress3-yu  requiredYu" name="address" placeholder=" 請輸入詳細地址" id="address-yu" name="address" value="<?=htmlentities($sm['address']) ?>"/>
+                        <!-- 訂購人填寫資料 -->
+                        <div class="AllinputValueYu" id="clickme" onclick="clickme()"></div>
+                        <div id="form2-yu" name="bajohn"  class=" form2-yu order-list-yu" method="post" action="">
+                            <div class="field order-name-yu p-3 ">
+                                <label for="name" class="">
+                                    姓名
+                                    <span style="color: #963c38">*</span>
+                                </label>
+                                <br/>
+                                <input class="ordername-yu requiredYu" type="text" placeholder="請輸入姓名 " id="tname-yu" name="name" required value="<?=htmlentities($tsm['name']) ?>"/>
                                 <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
-                                    <small>請輸入正確的地址</small>
+                                    <small>請輸入正確姓名</small>
                                 </i>
                             </div>
-                        </div>
-                        <div class="field order-email-yu p-3">
-                            <label for="email" class="">
-                                Email<span style="color: #963c38">*</span>
-                            </label>
-                            <br />
-                            <input type="email" class="email-yu  requiredYu"  id="email-yu" name="email"  value="<?=htmlentities($sm['email']) ?>"  />
-                            <i class="right fa-regular fa-circle-check"></i>
+                            <div class="field order-phone-yu p-3">
+                                <label for="mobile" class="">
+                                    聯絡電話
+                                    <span style="color: #963c38">*</span>
+                                </label>
+                                <br/>
+                                <input class="orderphone-yu  requiredYu" type="text" placeholder="請輸入聯絡電話" id="tmobile-yu" name="phone"  required  value="<?=htmlentities($tsm['mobile']) ?>"/>
+                                <i class="right fa-regular fa-circle-check"></i>
                                 <i class="wrong fa-solid fa-triangle-exclamation">
-                                    <small>請輸入正確的Email</small>
+                                    <small>請輸入正確的聯絡電話</small>
                                 </i>
+                            </div>
+                            <div class=" field order-address-yu p-3">
+                                <label for="address" class="">
+                                    地址
+                                    <span style="color: #963c38">*</span>
+                                </label>
+                                <br/>
+                                <div class="d-flex align-items-center">
+                                    <div class="form-group m-0">
+                                        <select class="orderaddress1-yu" name="address" id="city1-yu" required value="<?=htmlentities($tsm['address_city_re']) ?>">
+                                            <option class="" value="5">臺北市</option>
+                                            <option value="6">新北市</option>
+                                            <option value="7">基隆市</option>
+                                            <option value="8">宜蘭縣</option>
+                                            <option value="9">桃園市</option>
+                                            <option value="10">新竹市</option>
+                                            <option value="11">新竹縣</option>
+                                            <option value="12">苗栗縣</option>
+                                            <option value="13">彰化縣</option>
+                                            <option value="14">臺中市</option>
+                                            <option value="15">南投縣</option>
+                                            <option value="16">雲林縣</option>
+                                            <option value="17">嘉義市</option>
+                                            <option value="18">嘉義縣</option>
+                                            <option value="19">臺南市</option>
+                                            <option value="20">高雄市</option>
+                                            <option value="21">屏東縣</option>
+                                            <option value="22">花蓮縣</option>
+                                            <option value="23">臺東縣</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group m-0">
+                                        <select class="orderaddress2-yu"name="address"id="district1-yu" value="<?=htmlentities($tsm['address_region_re']) ?>">
+                                            <option class="" value="24">中正區</option>
+                                            <option value="25">大同區</option>
+                                            <option value="26">中山區</option>
+                                            <option value="27">萬華區</option>
+                                            <option value="28">信義區</option>
+                                            <option value="29">松山區</option>
+                                            <option value="30">大安區</option>
+                                            <option value="31">南港區</option>
+                                            <option value="32">北投區</option>
+                                            <option value="33">內湖區</option>
+                                            <option value="34">士林區</option>
+                                            <option value="35">文山區</option>
+                                            <option value="36">板橋區</option>
+                                            <option value="37">新莊區</option>
+                                            <option value="38">泰山區</option>
+                                            <option value="39">林口區</option>
+                                            <option value="40">淡水區</option>
+                                            <option value="41">金山區</option>
+                                            <option value="42">八里區</option>
+                                            <option value="43">萬里區</option>
+                                            <option value="44">石門區</option>
+                                            <option value="45">三芝區</option>
+                                            <option value="46">瑞芳區</option>
+                                            <option value="47">汐止區</option>
+                                            <option value="48">平溪區</option>
+                                            <option value="49">貢寮區</option>
+                                            <option value="50">雙溪區</option>
+                                            <option value="51">深坑區</option>
+                                            <option value="52">石碇區</option>
+                                            <option value="53">新店區</option>
+                                            <option value="54">坪林區</option>
+                                            <option value="55">烏來區</option>
+                                            <option value="56">中和區</option>
+                                            <option value="57">永和區</option>
+                                            <option value="58">土城區</option>
+                                            <option value="59">三峽區</option>
+                                            <option value="60">樹林區</option>
+                                            <option value="61">鶯歌區</option>
+                                            <option value="62">三重區</option>
+                                            <option value="63">蘆洲區</option>
+                                            <option value="64">五股區</option>
+                                            <option value="65">仁愛區</option>
+                                            <option value="66">中正區</option>
+                                            <option value="67">信義區</option>
+                                            <option value="68">中山區</option>
+                                            <option value="69">安樂區</option>
+                                            <option value="70">暖暖區</option>
+                                            <option value="71">七堵區</option>
+                                        </select>
+                                    </div>
+                                    <input class="orderaddress3-yu  requiredYu" name="address" placeholder=" 請輸入詳細地址" id="address-yu" name="address" value="<?=htmlentities($tsm['address']) ?>"/>
+                                    <i class="right fa-regular fa-circle-check"></i>
+                                    <i class="wrong fa-solid fa-triangle-exclamation">
+                                        <small>請輸入正確的地址</small>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="field order-email-yu p-3">
+                                <label for="email" class="">
+                                    Email<span style="color: #963c38">*</span>
+                                </label>
+                                <br />
+                                <input type="email" class="email-yu  requiredYu"  id="temail-yu" name="email"  value="<?=htmlentities($tsm['email']) ?>"  />
+                                <i class="right fa-regular fa-circle-check"></i>
+                                    <i class="wrong fa-solid fa-triangle-exclamation">
+                                        <small>請輸入正確的Email</small>
+                                    </i>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- 旅客代表人資料 -->
-                <section class="section-2-yu ">
-                    <div class="section-2-title-yu d-flex justify-content-between">
-                        <h3 class="listinfo-title-yu m-0">
-                            旅客代表人資料
-                        </h3>
-                        <label for="name" class=" m-0 mr-3">
-                            <input type="checkbox"name="listinfo-title-radio-yu"id="btnAutoInput-yu"/>
-                            同訂購人
-                        </label>
-                    </div>
-                    <div class="receiver-list-yu">
-                        <div class=" field2 receiver-name-yu p-3">
-                            <label for="name" class="">
-                                姓名
-                                <span style="color: #963c38">*</span>
+                    <!-- 旅客代表人資料 -->
+                    <section class="section-2-yu ">
+                        <div class="section-2-title-yu d-flex justify-content-between">
+                            <h3 class="listinfo-title-yu m-0">
+                                旅客代表人資料
+                            </h3>
+                            <label for="name" class=" m-0 mr-3">
+                                <input type="checkbox"name="listinfo-title-radio-yu"id="btnAutoInput-yu"/>
+                                同訂購人
                             </label>
-                            <br />
-                            <input class="receivername-yu  requiredYu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="receivername" required/>
-                            <i class="right fa-regular fa-circle-check"></i>
-                            <i class="wrong fa-solid fa-triangle-exclamation">
-                                <small>請輸入正確姓名</small>
-                            </i>
                         </div>
-                        <div class="field2 receiver-phone-yu p-3">
-                            <label for="mobile" class="">
-                                聯絡電話
-                                <span style="color: #963c38">*</span>
-                            </label>
-                            <br />
-                            <input class="receiverphone-yu  requiredYu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="receiverphone" required/>
-                            <i class="right fa-regular fa-circle-check"></i>
-                            <i class="wrong fa-solid fa-triangle-exclamation">
-                                <small>請輸入正確聯絡電話</small>
-                            </i>
+                        <div class="receiver-list-yu">
+                            <div class=" field2 receiver-name-yu p-3">
+                                <label for="name" class="">
+                                    姓名
+                                    <span style="color: #963c38">*</span>
+                                </label>
+                                <br />
+                                <input class="receivername-yu  requiredYu"type="text"placeholder=" 請輸入姓名"class=""id="username-yu"name="travelname" required/>
+                                <i class="right fa-regular fa-circle-check"></i>
+                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                    <small>請輸入正確姓名</small>
+                                </i>
+                            </div>
+                            <div class="field2 receiver-phone-yu p-3">
+                                <label for="mobile" class="">
+                                    聯絡電話
+                                    <span style="color: #963c38">*</span>
+                                </label>
+                                <br />
+                                <input class="receiverphone-yu  requiredYu"type="text"placeholder=" 請輸入聯絡電話"id="usermobile-yu" name="travelphone" required/>
+                                <i class="right fa-regular fa-circle-check"></i>
+                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                    <small>請輸入正確聯絡電話</small>
+                                </i>
+                            </div>
+                            <div class="field2 receiver-idnumber-yu p-3">
+                                <label for="idnumber" class="">
+                                    出生年月日
+                                    <span style="color: #963c38">*</span>
+                                </label>
+                                <br/>
+                                <input class="userBirthdayYu  requiredYu"  type="birthday" id="userbirthday-yu" name="receiverbirthday" placeholder="年 / 月 / 日" />
+                                <i class="right fa-regular fa-circle-check"></i>
+                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                    <small>請輸入出生年月日</small>
+                                </i>
+                            </div>
+                            <div class="field2 receiver-idnumber-yu p-3">
+                                <label for="idnumber" class="">
+                                    身份證字號
+                                    <span style="color: #963c38">*</span>
+                                </label>
+                                <br/>
+                                <input type="text" class="userIDyu  requiredYu" id="userid-yu" name="receiveridnumber" />
+                                <i class="right fa-regular fa-circle-check"></i>
+                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                    <small>請輸入身分證字號</small>
+                                </i>
+                            </div>
+                            <div class="field2 receiver-email-yu p-3">
+                                <label for="email">
+                                    Email
+                                    <span style="color: #963c38">*</span>
+                                </label>
+                                <br/>
+                                <input class="receiveremail-yu  requiredYu" type="email " id="useremail-yu" name="receiveremail" />
+                                <i class="right fa-regular fa-circle-check"></i>
+                                <i class="wrong fa-solid fa-triangle-exclamation">
+                                    <small>請輸入正確的email</small>
+                                </i>
+                            </div>
                         </div>
-                        <div class="field2 receiver-idnumber-yu p-3">
-                            <label for="idnumber" class="">
-                                出生年月日
-                                <span style="color: #963c38">*</span>
-                            </label>
-                            <br/>
-                            <input class="userBirthdayYu  requiredYu"  type="birthday" id="userbirthday-yu" name="receiverbirthday" placeholder="年 / 月 / 日" />
-                            <i class="right fa-regular fa-circle-check"></i>
-                            <i class="wrong fa-solid fa-triangle-exclamation">
-                                <small>請輸入出生年月日</small>
-                            </i>
+                    </section>
+                    <!-- 付款方式 -->
+                    <section id="section-3-yu" class="section-3-yu">
+                        <div class="section-3-title-yu">
+                            <h3 class="listinfo-title-yu m-0">付款方式</h3>
                         </div>
-                        <div class="field2 receiver-idnumber-yu p-3">
-                            <label for="idnumber" class="">
-                                身份證字號
-                                <span style="color: #963c38">*</span>
-                            </label>
-                            <br/>
-                            <input type="text" class="userIDyu  requiredYu" id="userid-yu" name="receiveridnumber" />
-                            <i class="right fa-regular fa-circle-check"></i>
-                            <i class="wrong fa-solid fa-triangle-exclamation">
-                                <small>請輸入身分證字號</small>
-                            </i>
-                        </div>
-                        <div class="field2 receiver-email-yu p-3">
-                            <label for="email">
-                                Email
-                                <span style="color: #963c38">*</span>
-                            </label>
-                            <br/>
-                            <input class="receiveremail-yu  requiredYu" type="email " id="useremail-yu" name="receiveremail" />
-                            <i class="right fa-regular fa-circle-check"></i>
-                            <i class="wrong fa-solid fa-triangle-exclamation">
-                                <small>請輸入正確的email</small>
-                            </i>
-                        </div>
-                    </div>
-                </section>
-                <!-- 付款方式 -->
-                <section id="section-3-yu" class="section-3-yu">
-                    <div class="section-3-title-yu">
-                        <h3 class="listinfo-title-yu m-0">付款方式</h3>
-                    </div>
-                    <div class="p-3">
-                        <div class="pt-2">
-                            <input type="radio" name="listinfo-title-radio-yu" id="creditcard-radio-yu" checked/>
-                            <label for="name" class="m-0"> 
-                                信用卡 
-                            </label>
-                            <div class=" visacard-yu d-flex justify-content-start my-4 mx-3">
-                                <div class="creditcard-style-yu">
-                                    <div class="creditcard-yu  position-relative">
-                                        <div class="frontcreditcard-yu">
-                                            <div class=" card-group-yu ">
-                                                <!-- 信用卡正面 -->
-                                                <div class="frontcreditcardsimg-yu d-flex justify-content-center filter1-yu">
-                                                    <img src="imgs/shopping-cart/信用卡的前面png.png" alt="">
+                        <div class="p-3">
+                            <div class="pt-2">
+                                <input type="radio" name="listinfo-title-radio-yu" id="creditcard-radio-yu" checked/>
+                                <label for="name" class="m-0"> 
+                                    信用卡 
+                                </label>
+                                <div class=" visacard-yu d-flex justify-content-start my-4 mx-3">
+                                    <div class="creditcard-style-yu">
+                                        <div class="creditcard-yu  position-relative">
+                                            <div class="frontcreditcard-yu">
+                                                <div class=" card-group-yu ">
+                                                    <!-- 信用卡正面 -->
+                                                    <div class="frontcreditcardsimg-yu d-flex justify-content-center filter1-yu">
+                                                        <img src="imgs/shopping-cart/信用卡的前面png.png" alt="">
+                                                    </div>
+                                                    <div class=" creditcardnumber-yu d-flex" id="creditcardnumber-yu">
+
+                                                        <input id="creditcardnumber1-yu" class=" text-center" type="text"name="" placeholder="0000" maxlength="4">
+
+                                                        <input id="creditcardnumber2-yu" class=" text-center"  type="text"name="" placeholder="0000" maxlength="4">
+
+                                                        <input id="creditcardnumber3-yu" class=" text-center"  type="text"name="" placeholder="0000" maxlength="4">
+
+                                                        <input id="creditcardnumber4-yu" class=" text-center"  type="text"name="" placeholder="0000" maxlength="4">
+                                                    </div>
+                                                    <div class="creditcarddate-yu d-flex" id="creditcarddate-yu">
+                                                        <input class="text-center"  type="text"name="" placeholder="月" maxlength="2" id="creditcardmonth-yu" >
+                                                        <h6>
+                                                            /
+                                                        </h6>
+                                                        <input class="text-center"  type="text" name=""placeholder="年" maxlength="2" id="creditcardyear-yu"  >
+                                                    </div>
+                                                    <!-- <div class="ring"></div> -->
                                                 </div>
-                                                <div class=" creditcardnumber-yu d-flex" id="creditcardnumber-yu">
-
-                                                    <input id="creditcardnumber1-yu" class=" text-center" type="text"name="test" placeholder="0000" maxlength="4">
-
-                                                    <input id="creditcardnumber2-yu" class=" text-center"  type="text"name="test" placeholder="0000" maxlength="4">
-
-                                                    <input id="creditcardnumber3-yu" class=" text-center"  type="text"name="test" placeholder="0000" maxlength="4">
-
-                                                    <input id="creditcardnumber4-yu" class=" text-center"  type="text"name="test" placeholder="0000" maxlength="4">
-                                                </div>
-                                                <div class="creditcarddate-yu d-flex" id="creditcarddate-yu">
-                                                    <input class="text-center"  type="text"name="test" placeholder="月" maxlength="2" id="creditcardmonth-yu" >
-                                                    <h6>
-                                                        /
-                                                    </h6>
-                                                    <input class="text-center"  type="text" name="test"placeholder="年" maxlength="2" id="creditcardyear-yu"  >
-                                                </div>
-                                                <!-- <div class="ring"></div> -->
                                             </div>
-                                        </div>
-                                        <div class="backcreadidcard-yu ">
-                                            <div class="backcreditcardsimg-yu d-flex justify-content-center filter2-yu">
-                                                <img src="imgs/shopping-cart/信用卡的背面png.png" alt="">
-                                                
-                                            </div>
-                                            <div class="creditcardcvc-yu" id="creditcardcvc-yu">
-                                                <input class="text-center"  type="text" placeholder="cvc" maxlength="3" id="creditcardid-yu">
+                                            <div class="backcreadidcard-yu ">
+                                                <div class="backcreditcardsimg-yu d-flex justify-content-center filter2-yu">
+                                                    <img src="imgs/shopping-cart/信用卡的背面png.png" alt="">
+                                                    
+                                                </div>
+                                                <div class="creditcardcvc-yu" id="creditcardcvc-yu">
+                                                    <input class="text-center"  type="text" placeholder="cvc" maxlength="3" id="creditcardid-yu">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- -------------信用卡輸入input----------- -->
-                                <div class="creadidcardform-yu py-2 col-6">
-                                    <div class="pt-1">
-                                        <div class=" usercreditcardinput-yu">
-                                            <label class="pt-1 m-0"  for="">
-                                                信用卡卡號
-                                            </label>
-                                            <br>
-                                            <div class=" usercdinputYu  d-flex justify-content-start align-items-start"> 
-                                                <div class=" field3 mx-1 ">
-                                                    <input class="usercdnumber3  usercdnumber4  requiredYu text-center m-0" type="" name="test"id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyPress="autoTab()" onkeyUp="autoTab()">
-                                                </div>
-                                                <div class=" field3 mx-1">
-                                                    <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
-                                                    <!-- onkeyup="value=value.replace(/[^\d]/g,'') " -->
-                                                </div>
-                                                <div class=" field3 mx-1">
-                                                    <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="test"placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" >
-                                                </div>
-                                                <div class=" field3 mx-1  d-flex align-items-center">
-                                                    <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="test" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu">
-                                                    <i class="right fa-regular fa-circle-check"></i>
-                                                    <i class="wrong fa-solid fa-triangle-exclamation">
-                                                        <small>請輸入正確的信用卡卡號</small>
-                                                    </i>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="usercreditcardinput-yu  mt-3">
-                                            <label class=" m-0"  for="" > 
-                                                有效 / 月年
-                                            </label>
-                                            <br>
-                                            <div class=" d-flex justify-content-start align-items-start "> 
-                                                <div class="field3 mx-1 ">
-                                                    <input class=" usercdMonthYu  requiredYu text-center m-0" type="" name="test" placeholder="月 " maxlength="2" id="usercreditcardmonth-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>12)value=12">
-                                                </div>
-                                                <div class="field3 mx-1">
-                                                    <input class=" usercdYearYu  requiredYu text-center m-0" type="" name="test"placeholder="年" maxlength="2" id="usercreditcardyear-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>29)value=29">
-                                                    <i class="right fa-regular fa-circle-check"></i>
-                                                    <i class="wrong fa-solid fa-triangle-exclamation">
-                                                        <small>請輸入正確的信用卡卡號</small>
-                                                    </i>
+                                    <!-- -------------信用卡輸入input----------- -->
+                                    <div class="creadidcardform-yu py-2 col-6">
+                                        <div class="pt-1">
+                                            <div class=" usercreditcardinput-yu">
+                                                <label class="pt-1 m-0"  for="">
+                                                    信用卡卡號
+                                                </label>
+                                                <br>
+                                                <div class=" usercdinputYu  d-flex justify-content-start align-items-start"> 
+                                                    <div class=" field3 mx-1 ">
+                                                        <input class="usercdnumber3  usercdnumber4  requiredYu text-center m-0" type="" name=""id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4">
+                                                        <!-- 註解錯誤卡住 -->
+                                                        <!-- <input class="usercdnumber3  usercdnumber4  requiredYu text-center m-0" type="" name=""id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyPress="autoTab()" onkeyUp="autoTab()"> -->
+                                                    </div>
+                                                    <div class=" field3 mx-1">
+                                                        <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
+                                                        <!-- onkeyup="value=value.replace(/[^\d]/g,'') " -->
+                                                    </div>
+                                                    <div class=" field3 mx-1">
+                                                        <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name=""placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" >
+                                                    </div>
+                                                    <div class=" field3 mx-1  d-flex align-items-center">
+                                                        <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu">
+                                                        <i class="right fa-regular fa-circle-check"></i>
+                                                        <i class="wrong fa-solid fa-triangle-exclamation">
+                                                            <small>請輸入正確的信用卡卡號</small>
+                                                        </i>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class=" usercreditcardinput-yu  mt-3">
-                                            <label class="m-0"  for="">
-                                                背面末三碼
-                                            </label>
-                                            <br>
-                                            <div class=" d-flex justify-content-start align-items-start "> 
-                                                <div class=" field3  mx-1 ">
-                                                    <input class=" cardCVC text-center  requiredYu m-0" type="" name="test" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
-                                                    <i class="right fa-regular fa-circle-check"></i>
-                                                    <i class="wrong fa-solid fa-triangle-exclamation">
-                                                        <small>請輸入正確的信用卡後三碼</small>
-                                                    </i>
+                                            <div class="usercreditcardinput-yu  mt-3">
+                                                <label class=" m-0"  for="" > 
+                                                    有效 / 月年
+                                                </label>
+                                                <br>
+                                                <div class=" d-flex justify-content-start align-items-start "> 
+                                                    <div class="field3 mx-1 ">
+                                                        <input class=" usercdMonthYu  requiredYu text-center m-0" type="" name="" placeholder="月 " maxlength="2" id="usercreditcardmonth-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>12)value=12">
+                                                    </div>
+                                                    <div class="field3 mx-1">
+                                                        <input class=" usercdYearYu  requiredYu text-center m-0" type="" name=""placeholder="年" maxlength="2" id="usercreditcardyear-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>29)value=29">
+                                                        <i class="right fa-regular fa-circle-check"></i>
+                                                        <i class="wrong fa-solid fa-triangle-exclamation">
+                                                            <small>請輸入正確的信用卡卡號</small>
+                                                        </i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=" usercreditcardinput-yu  mt-3">
+                                                <label class="m-0"  for="">
+                                                    背面末三碼
+                                                </label>
+                                                <br>
+                                                <div class=" d-flex justify-content-start align-items-start "> 
+                                                    <div class=" field3  mx-1 ">
+                                                        <input class=" cardCVC text-center  requiredYu m-0" type="" name="" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                        <i class="right fa-regular fa-circle-check"></i>
+                                                        <i class="wrong fa-solid fa-triangle-exclamation">
+                                                            <small>請輸入正確的信用卡後三碼</small>
+                                                        </i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -452,31 +502,35 @@ header("Refresh:180");
                                 </div>
                             </div>
                         </div>
+                        <div class="p-3">
+                            <input type="radio" name="listinfo-title-radio-yu"  />
+                            <label for="name" class="m-0"> ATM轉帳 </label>
+                        </div>
+                    </section>
+                    <input type="hidden" name="state" value="訂單完成">
+                    <input type="hidden" name="delivery" value="宅配">
+                    <input type="hidden" name="payment" value="信用卡">
+                    <input type="hidden" name="payment_state" value="已付款">
+                    <div class=" d-md-flex justify-content-md-end">
+                        <!-- a href="#buy1.php" -->
+                        <div href="" class="btn unique-nextbutton-yu p-0">
+                            <a href="shopping-cart-creditcard-travel.php">
+                                <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="submit"  name=ok value="送出">
+                                        <p class="m-0 text-center">
+                                            確認訂購
+                                        </p>
+                                    </button>
+                            </a>
+                        </div>
                     </div>
-                    <div class="p-3">
-                        <input type="radio" name="listinfo-title-radio-yu" id="" />
-                        <label for="name" class="m-0"> ATM轉帳 </label>
-                    </div>
-                </section>
-                <div class=" d-md-flex justify-content-md-end">
-                    <!-- a href="#buy1.php" -->
-                    <div href="" class="btn unique-nextbutton-yu p-0">
-                        <a href="shopping-cart-creditcard-travel.php">
-                            <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="button"  name=ok value="送出">
-                                    <p class="m-0 text-center">
-                                        確認訂購
-                                    </p>
-                                </button>
-                        </a>
-                    </div>
-                </div>
+                </form>
             </div>
-        </form>
-        <?php else: ?>
+        <!-- </form> -->
+        <?php //else: ?>
             <pre>
-                <?php print_r($_post); ?>
+                <?php //print_r($_post); ?>
             <pre>
-    <?php endif; ?>    
+    <?php //endif; ?>    
     </section>
 
     <!-- ------------------手機 ------------------------>
@@ -595,7 +649,7 @@ header("Refresh:180");
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="nameYU"required/>
+                        <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="mbname-yu" name="nameYU"required/>
                     </div>
                     <div class="mdorder-phone-yu p-3">
                         <label for="mobile" class="">
@@ -603,7 +657,7 @@ header("Refresh:180");
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="orderaddress3-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"required/>
+                        <input class="orderaddress3-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mbmobile-yu"name="mobile"required/>
                     </div>
                     <div class="mdorder-address-yu p-3">
                         <label for="address" class="">
@@ -644,7 +698,7 @@ header("Refresh:180");
                                     </select>
                                 </div>
                             </div>
-                            <input class="mdorderaddress3-yu mt-3" type="text"placeholder=" 請輸入詳細地址"class=""id="address-yu"name="address"/>
+                            <input class="mdorderaddress3-yu mt-3" type="text"placeholder=" 請輸入詳細地址"class=""id="mbaddress-yu"name="address"/>
                         </div>
                     </div>
                     <div class="mdorder-email-yu p-3">
@@ -652,7 +706,7 @@ header("Refresh:180");
                             >Email<span style="color: #963c38">*</span>
                         </label>
                         <br />
-                        <input class="" type="text" class="" id="email-yu" name="email" />
+                        <input class="" type="text" class="" id="mbemail-yu" name="email" />
                     </div>
                 </div>
             </section>
@@ -663,7 +717,7 @@ header("Refresh:180");
                             旅客代表人資料
                         </h6>
                         <label for="name" class="m-0">
-                            <input   type="checkbox"name="listinfo-title-radio-yu"id="btnAutoInput-yu"/>
+                            <input   type="checkbox" name="listinfo-title-radio-yu" id="mbbtnAutoInput-yu"/>
                             同訂購人
                         </label>
                     </div>
@@ -675,7 +729,7 @@ header("Refresh:180");
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="name-yu" name="nameYU"required/>
+                        <input class="mdordername-yu"type="text"placeholder="請輸入姓名 "class=""id="mbtname-yu" name="nameYU"required/>
                     </div>
                     <div class="mdorder-phone-yu p-3">
                         <label for="mobile" class="">
@@ -683,7 +737,7 @@ header("Refresh:180");
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="mdorderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mobile-yu"name="mobile"required/>
+                        <input class="mdorderphone-yu"type="text"placeholder="請輸入聯絡電話 "class=""id="mbtmobile-yu"name="mobile"required/>
                     </div>
                     <div class="mdorder-birthday-yu p-3">
                         <label  for="birthday" class="">
@@ -691,7 +745,7 @@ header("Refresh:180");
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class="receiver-idnumber-yu"type="birthday"placeholder="年/月/日 "class=""id="birthday-yu"name="birthday"required/>
+                        <input class="receiver-idnumber-yu"type="birthday"placeholder="年/月/日 "class=""id="mbtbirthday-yu"name="birthday"required/>
                     </div>
                     <div class="mdorder-phone-yu p-3">
                         <label for="birthday" class="">
@@ -699,14 +753,14 @@ header("Refresh:180");
                             <span style="color: #963c38">*</span>
                         </label>
                         <br/>
-                        <input class=""type="text"placeholder="年/月/日 "class=""id=""name="" required/>
+                        <input class=""type="text"placeholder="年/月/日 "class=""name="" required/>
                     </div>
                     <div class="mdorder-email-yu p-3">
                         <label for="email" class=""
                             >Email<span style="color: #963c38">*</span>
                         </label>
                         <br />
-                        <input class="" type="text" class="" id="email-yu" name="email" />
+                        <input class="" type="text" class="" id="mbtemail-yu" name="email" />
                     </div>
                 </div>
             </section>
@@ -716,7 +770,7 @@ header("Refresh:180");
                     <h6 class="listinfo-title-yu m-0">付款方式</h6>
                 </div>
                 <div class="p-3">
-                    <input type="checkbox" name="listinfo-title-checkbox-yu" id="" />
+                    <input type="checkbox" name="listinfo-title-checkbox-yu" />
                     <label for="name" class="m-0"> 
                         信用卡付款 
                     </label>
@@ -727,16 +781,16 @@ header("Refresh:180");
                         <br>
                         <div class=" mdcreditcard-number-yu d-flex justify-content-center align-items-center "> 
                             <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name="" placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                         </div>
                         <div class="mdcreditcard-numberbox "></div>
@@ -748,16 +802,16 @@ header("Refresh:180");
                         <br>
                         <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
                             <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor-yu">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor1-yu">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor2-yu">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                         </div>
                         <div class="mdcreditcard2-numberbox "></div>
@@ -769,20 +823,20 @@ header("Refresh:180");
                         <br>
                         <div class=" mdcreditcard-number-yu d-flex justify-content-start align-items-start "> 
                             <div class=" mdcreditcard-number-backgroundcolor-yu ">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor1-yu">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor2-yu">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="0000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="0000 ">
                             </div>
                             <div class=" mdcreditcard-number-backgroundcolor3-yu">
-                                <input class="text-center m-0" type="" name="" id="" placeholder="000 ">
+                                <input class="text-center m-0" type="" name=""  placeholder="000 ">
                             </div>
                         </div>
                     </div>
-                    <input type="checkbox" name="listinfo-title-checkbox-yu" id="" />
+                    <input type="checkbox" name="listinfo-title-checkbox-yu"  />
                     <label for="name" class="m-0 p-3"> 
                         ATM轉帳 
                     </label>
@@ -866,32 +920,5 @@ header("Refresh:180");
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 
 <script src="./shopping-cart-travellist.js"></script>
-<script>
-    // //行程
-    // function addToCart_T_Yu(event) {
-    //     const btn = $(event.currentTarget);
-    //     const qty = btn.closest("#travel-yu").find(".TqtyYu").text();
-    //     const t = btn.closest("#travel-yu").find("#AllTotal_T_Yu").text();
-    //     // const qty=1;
-    //     // console.log(btn);
-    //     console.log('hihi',  btn.closest("#travel-yu").find("#AllTotal_T_Yu").text());
-    //     const sid = btn.attr('data-t-sid');
-    //     console.log({
-    //         sid,
-    //         qty,
-    //         t
-    //     });
-    //     $.get(
-    //         're-cart-t-api.php', {
-    //             sid,
-    //             qty,
-    //             t
-    //         },
-    //         function(data) {
-    //             showCartCount(data);
-    //         },
-    //         'json');
-    // }
-</script>
 
 <?php include __DIR__ . '/parts/html-foot.php'; ?>

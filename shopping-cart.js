@@ -71,34 +71,34 @@ qtyplus.on("click", function () {
 
   $(this).closest("td").next().find("h6").text(total);
 
-  calTotal(); //呼叫
+  // calTotal(); //呼叫
   updatePrices();
   updataPItem(this);
 
 });
-//總價計算商品
-function calTotal() {
-  let total = 0;
-  //訂單總金額
-  $(".littlePriceYu").each(function () {
-    total += +$(this).text();
-    // console.log($(this).text());
-  });
-  $("#AllTotal_P_Yu").text(total);
-  // console.log({ total });
-}
+// //總價計算商品
+// function calTotal() {
+//   let total = 0;
+//   //訂單總金額
+//   $(".littlePriceYu").each(function () {
+//     total += +$(this).text();
+//     // console.log($(this).text());
+//   });
+//   $("#AllTotal_P_Yu").text(total);
+//   // console.log({ total });
+// }
 
-//總價計算行程
-function calTotal() {
-  let total = 0;
-  //訂單總金額
-  $(".littlePriceYu").each(function () {
-    total += +$(this).text();
-    // console.log($(this).text());
-  });
-  $("#AllTotal_T_Yu").text(total);
-  // console.log({ total });
-}
+// //總價計算行程
+// function calTotal() {
+//   let total = 0;
+//   //訂單總金額
+//   $(".littlePriceYu").each(function () {
+//     total += +$(this).text();
+//     // console.log($(this).text());
+//   });
+//   $("#AllTotal_T_Yu").text(total);
+//   // console.log({ total });
+// }
 
 
 qtyminus.on("click", function () {
@@ -265,7 +265,7 @@ Tqtyplus.on("click", function () {
 
   $(this).closest("td").next().find("h6").text(total);
 
-  calTotal(); //呼叫
+  // calTotal(); //呼叫
   updateTPrices();
   updataTItem(this);
 
@@ -290,7 +290,7 @@ Tqtyminus.on("click", function () {
       $(this).closest("td").prev().find("h6").text().trim() * (num - 1);
 
     $(this).closest("td").next().find("h6").text(total);
-      updatTePrices();
+      updateTPrices();
       updataTItem(this);
 
   }
@@ -333,26 +333,26 @@ function updataTItem(btn){
       'json');
 }
 function updateTPrices(){
-  let total = 0; // 總價
+  let t_total = 0; // 總價
 
   $('.tcart-item').each(function(){
       const tr = $(this);
-      const td_price = tr.find('.Tprice');
-      const td_sub = tr.find('.Tsub-total');
+      const td_pricet = tr.find('.Tprice');
+      const td_subt = tr.find('.Tsub-total');
       
-      const price = +td_price.attr('data-val'); // +轉換成數字
-      const qty = +tr.find('.Tqty-yu').text();
+      const pricet = +td_pricet.attr('data-val'); // +轉換成數字
+      const qtyt = +tr.find('.Tqty-yu').text();
 
-      console.log('price',price);
-      console.log('qty',qty);
+      console.log('price',pricet);
+      console.log('qty',qtyt);
 
-      td_price.html(price);
-      td_sub.html(price * qty);
-      total += price * qty;
+      td_pricet.html(pricet);
+      td_subt.html(pricet * qtyt);
+      t_total += pricet * qtyt;
 
-      console.log('TOTAL',total);
+      console.log('T_TOTAL',t_total);
   });
-  $('#Ttotal-price').html(total);
+  $('#total-price2').html(t_total);
 
 }
 updateTPrices(); //一進來就要先執行一次
