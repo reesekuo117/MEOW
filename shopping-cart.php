@@ -307,7 +307,7 @@ $pageName = 'cart'; //頁面名稱
                 <div class="h6 alert alert-succes totalprice-travel-yu " role="alert">
                     <span id="total-amount" class=" d-flex price-travel-yu">
                         <h6 id="AllTotal_T_Yu">
-                            <span id="Ttotal-price"></span> 元
+                            <span id="total-price2"></span> 元
                         </h6>
                     </span>
                 </div>

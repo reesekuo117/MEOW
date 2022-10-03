@@ -218,32 +218,77 @@ $sm = $pdo->query($sqlmember)->fetch();
                                         <select class="orderaddress1-yu" name="orderaddress1-yu" id="city1-yu" 
                                         type="address_city" 
                                         required value="<?=htmlentities($sm['address_city_re']) ?>">
-                                            <option class="" value="0">臺北市</option>
-                                            <option value="1">新北市</option>
-                                            <option value="2">基隆市</option>
-                                            <option value="3">宜蘭縣</option>
-                                            <option value="4">桃園市</option>
-                                            <option value="5">新竹市</option>
-                                            <option value="6">新竹縣</option>
-                                            <option value="7">苗栗縣</option>
-                                            <option value="8">彰化縣</option>
-                                            <option value="9">臺中市</option>
-                                            <option value="10">南投縣</option>
-                                            <option value="11">雲林縣</option>
-                                            <option value="12">嘉義市</option>
-                                            <option value="13">嘉義縣</option>
-                                            <option value="14">臺南市</option>
-                                            <option value="15">高雄市</option>
-                                            <option value="16">屏東縣</option>
-                                            <option value="17">花蓮縣</option>
-                                            <option value="18">臺東縣</option>
+                                            <option class="" value="5">臺北市</option>
+                                            <option value="6">新北市</option>
+                                            <option value="7">基隆市</option>
+                                            <option value="8">宜蘭縣</option>
+                                            <option value="9">桃園市</option>
+                                            <option value="10">新竹市</option>
+                                            <option value="11">新竹縣</option>
+                                            <option value="12">苗栗縣</option>
+                                            <option value="13">彰化縣</option>
+                                            <option value="14">臺中市</option>
+                                            <option value="15">南投縣</option>
+                                            <option value="16">雲林縣</option>
+                                            <option value="17">嘉義市</option>
+                                            <option value="18">嘉義縣</option>
+                                            <option value="19">臺南市</option>
+                                            <option value="20">高雄市</option>
+                                            <option value="21">屏東縣</option>
+                                            <option value="22">花蓮縣</option>
+                                            <option value="23">臺東縣</option>
                                         </select>
                                     </div>
                                     <div class="form-group m-0">
                                         <select class="orderaddress2-yu"name="orderaddress2-yu"id="district1-yu" type="address_region" value="<?=htmlentities($sm['address_region_re']) ?>" >
-                                            <option class="" value="0">中正區</option>
-                                            <option value="1">板橋區</option>
-                                            <option value="2">仁愛區</option>
+                                            <option class="" value="24">中正區</option>
+                                            <option value="25">大同區</option>
+                                            <option value="26">中山區</option>
+                                            <option value="27">萬華區</option>
+                                            <option value="28">信義區</option>
+                                            <option value="29">松山區</option>
+                                            <option value="30">大安區</option>
+                                            <option value="31">南港區</option>
+                                            <option value="32">北投區</option>
+                                            <option value="33">內湖區</option>
+                                            <option value="34">士林區</option>
+                                            <option value="35">文山區</option>
+                                            <option value="36">板橋區</option>
+                                            <option value="37">新莊區</option>
+                                            <option value="38">泰山區</option>
+                                            <option value="39">林口區</option>
+                                            <option value="40">淡水區</option>
+                                            <option value="41">金山區</option>
+                                            <option value="42">八里區</option>
+                                            <option value="43">萬里區</option>
+                                            <option value="44">石門區</option>
+                                            <option value="45">三芝區</option>
+                                            <option value="46">瑞芳區</option>
+                                            <option value="47">汐止區</option>
+                                            <option value="48">平溪區</option>
+                                            <option value="49">貢寮區</option>
+                                            <option value="50">雙溪區</option>
+                                            <option value="51">深坑區</option>
+                                            <option value="52">石碇區</option>
+                                            <option value="53">新店區</option>
+                                            <option value="54">坪林區</option>
+                                            <option value="55">烏來區</option>
+                                            <option value="56">中和區</option>
+                                            <option value="57">永和區</option>
+                                            <option value="58">土城區</option>
+                                            <option value="59">三峽區</option>
+                                            <option value="60">樹林區</option>
+                                            <option value="61">鶯歌區</option>
+                                            <option value="62">三重區</option>
+                                            <option value="63">蘆洲區</option>
+                                            <option value="64">五股區</option>
+                                            <option value="65">仁愛區</option>
+                                            <option value="66">中正區</option>
+                                            <option value="67">信義區</option>
+                                            <option value="68">中山區</option>
+                                            <option value="69">安樂區</option>
+                                            <option value="70">暖暖區</option>
+                                            <option value="71">七堵區</option>
                                         </select>
                                     </div>
                                     <input class="orderaddress3-yu  requiredYu" name="orderaddress3-yu" placeholder=" 請輸入詳細地址" id="address-yu" name="address" type="address" value="<?=htmlentities($sm['address']) ?>"/>
@@ -568,7 +613,7 @@ $sm = $pdo->query($sqlmember)->fetch();
                             </div>
                         </section>
                     </div>
-                    <input type="hidden" name="state" value="訂單未完成">
+                    <input type="hidden" name="state" value="處理中">
                     <input type="hidden" name="delivery" value="宅配">
                     <input type="hidden" name="payment" value="ATM轉帳">
                     <input type="hidden" name="payment_state" value="未付款">
@@ -1084,11 +1129,5 @@ $sm = $pdo->query($sqlmember)->fetch();
 <?php include __DIR__. '/parts/scripts.php'; ?>
 
 <script src="shopping-cart-productdetails.js" ></script>
-
-<script>
-
-
-</script>
-
 
 <?php include __DIR__. '/parts/html-foot.php'; ?>

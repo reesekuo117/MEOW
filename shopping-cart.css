@@ -455,7 +455,7 @@ h6.littlePriceYu::before {
 }
 /* -------------數量增加按鈕------------- */
 
-form input.qtyminus {
+form input.qtyminus, form input.tqtyminus {
   width: 30px;
   height: 30px;
   border-radius: 100%;
@@ -464,7 +464,7 @@ form input.qtyminus {
   background-color: rgba(67, 42, 15, 0.38);
 }
 
-form input.qtyplus {
+form input.qtyplus, form input.tqtyplus {
   width: 30px;
   height: 30px;
   border-radius: 100%;
@@ -473,7 +473,7 @@ form input.qtyplus {
   background-color: rgba(67, 42, 15, 0.87);
 }
 
-form span.numberTotalYu {
+form span.numberTotalYu, form span.tnumberTotalYu {
   margin: 0 20px;
 }
 /* -----------手機增加數量的數字框--------------- */

@@ -1,6 +1,13 @@
 <?php
 require __DIR__. '/parts/meow_db.php';
 
+$output = [
+    'success' => false,
+    'error' => '',
+    'code' => 0,
+    'postData' => $_POST,
+];
+
 if(empty($_SESSION['user']) or empty($_SESSION['tcart'])){
     // header('Location: product-list.php');
     // exit;
@@ -13,7 +20,7 @@ $member_id = $_SESSION['user']['id'];
 
 $total = 0;
 foreach($_SESSION['tcart'] as $i=>$j){
-    $total += $j['price']*$j['qty'];
+    $total += $j['travel_price']*$j['qty'];
 }
 
 $to_sql = "INSERT INTO `travel_order`(
@@ -22,17 +29,17 @@ $to_sql = "INSERT INTO `travel_order`(
             `state`, 
             `price`, 
             `quantity`, 
-            `totle`, 
+            `total`, 
             `name`, 
             `phone`, 
-            `address_city`, 
-            `address_region`, 
-            `address`, 
+            -- `address_city`, 
+            -- `address_region`, 
+            -- `address`, 
             `payment`, 
             `payment_state`,
             `created_at`
 ) VALUES(
-    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
         NOW()
     )";
 $stmt = $pdo->prepare($to_sql);
@@ -40,21 +47,21 @@ $stmt->execute([
     $_SESSION['user']['id'],
     $j['sid'],
     $_POST['state'],
-    $j['price'],
+    $j['travel_price'],
     $j['qty'],
     $total,
     $_POST['travelname'],
     $_POST['travelphone'],
-    $_POST['traveladdress1'],
-    $_POST['traveladdress2'],
-    $_POST['traveladdress3'],
+    // $_POST['traveladdress1'],
+    // $_POST['traveladdress2'],
+    // $_POST['traveladdress3'],
     $_POST['payment'],
     $_POST['payment_state']
 ]);
 
 
 //清除購物車內容
-unset($_SESSION['pcart']);
+unset($_SESSION['tcart']);
 
 if($stmt->rowCount()){
     $output['success'] = true;

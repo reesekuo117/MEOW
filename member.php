@@ -900,20 +900,20 @@ $pageName ='會員中心'; //頁面名稱
                                 <div class="col-12 col-md-6 px-2">
                                     <table class="w-100">
                                         <tr>
-                                            <th colspan="2" class="text-16-re text-center bgcolor-re">收件人資訊</th>
+                                            <th colspan="2" class="text-16-re text-center bgcolor-re">旅客代表人</th>
                                         </tr>
                                         <tr>
-                                            <th class="text-16-re py-1 widht30-re">訂購人姓名</th>
+                                            <th class="text-16-re py-1 widht30-re">旅客代表人姓名</th>
                                             <td class="text-16-re py-1"><?= $tList['name'] ?></td>
                                         </tr>
                                         <tr>
-                                            <th class="text-16-re py-1">訂購人電話</th>
+                                            <th class="text-16-re py-1">旅客代表人電話</th>
                                             <td class="text-16-re py-1"><?= $tList['phone'] ?></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <th class="text-16-re py-1">訂購人地址</th>
-                                            <td class="text-16-re py-1"><?= $tList['city'] ?><?= $tList['region'] ?><?= $tList['address'] ?></td>
-                                        </tr>
+                                            <td class="text-16-re py-1">< ?= $tList['city'] ?>< ?= $tList['region'] ?>< ?= $tList['address'] ?></td>
+                                        </tr> -->
                                     </table>
                                 </div>
                                 <div class="col-12 col-md-6 px-2">
