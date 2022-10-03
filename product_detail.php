@@ -62,32 +62,54 @@ $product_2 = $pdo->query($p2_sql)->fetchAll();
 // ]);
 // exit;
 
-// 取得會員
-$member_id = $_SESSION['user']['id'];
-$user_id = "SELECT * FROM `member` WHERE id=$member_id";
-$uId = $pdo->query($user_id)->fetch();
+// 取得當前網頁的商品
+$currentProductUrl = $_SERVER['QUERY_STRING'];
+$currentProductSid = substr($currentProductUrl, 4);
 
+// 取得會員
+// $member_id = $_SESSION['user']['id'];
+// $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+// $uId = $pdo->query($user_id)->fetch();
+
+// 取得所有會員資料
+$allMember = $pdo->query("SELECT * FROM `member` WHERE 1")->fetchAll();
 
 // 取得評論的全部
- $sqlReview = sprintf("SELECT * FROM `review`");
- $review = $pdo->query($sqlReview )->fetchAll();
+$sqlReview = sprintf("SELECT * FROM `review` WHERE `target_type`=1 AND  `collect_sid`=$currentProductSid");
+$review = $pdo->query($sqlReview)->fetchAll();
 
 
- // 取得評論的review_tags所有
- $reviewTags = $pdo->query("SELECT * FROM `review_tags`")->fetchAll();
- $sqlreviewTags =$pdo->query("SELECT *  FROM `review` JOIN `review_tags` ON `review` . `tags_sid` = `review_tags` . `sid`");
-//  $re = $pdo->query($sqlreviewTags)->fetchAll();
+$reviewTagsKen = $pdo->query("SELECT * FROM `review_tags_rel` WHERE 1")->fetchAll();
+// echo json_encode($reviewTagsKen);
+// exit;
 
 
- 
- echo json_encode([
-    'sqlreviewTags ' => $sqlreviewTags ,
-    'reviewTags' => $reviewTags,
-    'uId' => $uId,
-    'review' => $review,
-    // 're' => $re,
-]);
-exit;
+
+
+// $sql_r = $pdo->query($sqlReview)->fetch();
+// if (empty($sql_r)) {
+//     exit;
+// }
+// $ts = explode(',', $sql_r['tags_sid']);
+
+// 取得評論的review_tags所有
+$reviewTags = $pdo->query("SELECT * FROM `review_tags`")->fetchAll();
+
+
+$sqlreviewTags = "SELECT r.* , t.`tags` FROM `review_tags`t LEFT JOIN `review` r ON r.tags_sid = t.sid";
+$re = $pdo->query($sqlreviewTags)->fetchAll();
+
+
+
+//  echo json_encode([
+//     'sqlReview ' => $sqlReview ,
+//     'sqlreviewTags ' => $sqlreviewTags ,
+//     'reviewTags' => $reviewTags,
+//     'uId' => $uId,
+//     'review' => $review,
+//     're' => $re,
+// ]);
+// exit;
 
 ?>
 
@@ -106,7 +128,7 @@ exit;
                         <div class="img-demo d-flex justify-content-center">
                             <!-- <img class="p1" src="./imgs/product/big/P19_1_b.jpg" alt=""> -->
                             <?php
-                            $i=0;
+                            $i = 0;
                             // for ($i = 1; $i < 5; $i++) {
                             //     echo $i;
                             // };
@@ -146,11 +168,11 @@ exit;
                     <div class="col">
                         <div class="img-selector-area d-flex">
                             <?php
-                                foreach ($photos_s as $s) : 
+                            foreach ($photos_s as $s) :
                             ?>
                                 <div class="img-wrap">
-                                
-                                    <img src="imgs/product/small/<?= $s ?>"  alt="...">
+
+                                    <img src="imgs/product/small/<?= $s ?>" alt="...">
                                     <!-- < ?php endfor ?> -->
                                 </div>
                             <?php endforeach ?>
@@ -522,37 +544,51 @@ exit;
                             </div>
                             <div class="cd">
                                 <!-- computer comment -->
-                                <div class="row d-none d-md-flex" >
-                                    <?php foreach ($review as $w): ?>
-                                        <div class="col col-md-3">
-                                            <div class="profile_img" >
-                                                <img class="w-100" src="<?=htmlentities($uId['picture']) ?>"alt="">
+                                <div class="row d-none d-md-flex detail_comment">
+                                    <?php foreach ($review as $w) : ?>
+                                        <div class="col col-md-3 mt-2">
+                                            <div class="profile_img">
+                                                <img class="w-100" src="<?php $contentMember = $w['members_id'];
+                                                                        $memberiswho = $pdo->query("SELECT * FROM `member` WHERE `id` = $contentMember")->fetchAll();
+                                                                        echo $memberiswho[0]['picture']; ?>
+                                                                            " alt="">
                                             </div>
                                         </div>
-                                        <div class="col col-md-9">
+                                        <div class="col col-md-9 mt-2">
                                             <div class="detail_comment">
-                                                <p class="name" value=""><?=htmlentities($uId['name']) ?></p>
-                                                <div class="star_date d-flex align-items-center">
+                                                <h6 class="name" value=""><?php
+                                                                            echo $memberiswho[0]['name'];
+                                                                            ?></h6>
+                                                <div class="star_date d-flex align-items-center my-1">
                                                     <div class="icon_fivestar">
                                                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                                     </div>
-                                                    <small class="date"><?=$w['created_at']?></small>
-                                                
-                                                </div>
-                                                <div class="c_tags py-1">
-                                                    <?php foreach ($reviewTags as $Rt) : ?>
-                                                        <?php if ($Rt['sid'] === $w['tags_sid']) : ?>
+                                                    <small class="date"><?= $w['created_at'] ?></small>
 
-                                                            <?=$w['tags_tag']?>
-                                                        <?php endif ?>
-                                                    <?php endforeach ?>
                                                 </div>
-                                                <div class="p_comment">
-                                                    <p>很可愛的商品！超讚的聯名企劃，替第一次參拜月老的人準備周全的商品，設計也很有質感，有保存的價值和意義。</p>
+                                                <?php
+                                                $reviewsidken = $w['sid'];
+                                                $getreviewtagken = $pdo->query("SELECT * FROM `review_tags_rel` WHERE `review_sid` = $reviewsidken")->fetchAll();
+                                                ?>
+                                                    <?php foreach ($getreviewtagken as $ken) : ?>
+                                                        <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-5">
+                                                            <?php
+                                                            $getreview = $ken['tags_sid'];
+                                                            $tagiswhat = $pdo->query("SELECT * FROM `review_tags` WHERE `sid` = $getreview")->fetchAll();
+                                                            echo $tagiswhat[0]['tags'];
+                                                            ?>
+                                                        </span>
+                                                    <?php endforeach; ?>
+                                                <div class="p_comment ">
+
+                                                    <p class="mt-3">
+                                                        <?= $w['content'] ?>
+                                                    </p>
+
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php endforeach ?>    
+                                    <?php endforeach ?>
                                 </div>
                                 <!-- <div class="row d-none d-md-flex">
                                     <div class="col col-md-3">

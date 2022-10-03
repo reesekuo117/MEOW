@@ -333,7 +333,7 @@ button:hover{
 }
 .cd .row{
     margin-top: 12px;
-    border-bottom: 1px solid var(--color-text60);
+    /* border-bottom: 1px solid var(--color-text60); */
 }
 
 .profile_img{
@@ -353,9 +353,15 @@ button:hover{
     margin: 0 4px;
     padding: 8px 16px;
     border-radius: 50px;
-    background-color: #fff;
+    background-color: #E5A62A;
     border: 2px solid var(--color-text87);
 }
+
+.detail_comment{
+    min-height: 180px;
+    min-width: 60px;
+}
+
 .cd_mb i{
     color: var(--color-yellow);
 }
@@ -510,4 +516,12 @@ button:hover{
 
 footer.product-none{
     display: none !important;
+}
+
+
+
+.text-14-re {
+    font-family: 'gensen-R';
+    font-size: 14px;
+    line-height: 140%;
 }

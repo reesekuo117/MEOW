@@ -328,14 +328,19 @@ select {
 
 .cd .row {
   margin-top: 12px;
-  border-bottom: 1px solid var(--color-text60);
+  /* border-bottom: 1px solid var(--color-text60); */
 }
+
+.cd .minH{
+  min-height: 150px;
+}
+
 .cd_mb i {
   color: var(--color-yellow);
 }
 .cd_mb .detail_comment {
   margin-top: 12px;
-  border-bottom: 1px solid var(--color-text60);
+  /* border-bottom: 1px solid var(--color-text60); */
 }
 .profile_img {
   width: 100px;
@@ -352,9 +357,9 @@ select {
 }
 .tags {
   margin: 0 4px;
-  padding: 8px 16px;
+  padding: 4px 12px;
   border-radius: 50px;
-  background-color: #fff;
+  background-color: #E5A62A;
   border: 2px solid var(--color-text87);
 }
 .choiceandbuy_mb {

@@ -351,7 +351,7 @@ if ($totalRows > 0) {
                             <div class="filter-element-content">
                                 <div class="filter-range-values">
                                     <span class="range-1-value">NT$0</span>
-                                    <span class="range-2-value">NT$8000</span>
+                                    <span class="range-2-value">NT$2000</span>
                                 </div>
                                 <div class="filter-range-content">
                                     <div class="filter-range-track"></div>
