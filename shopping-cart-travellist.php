@@ -522,8 +522,8 @@ $tsm = $pdo->query($sqlmember)->fetch();
                             </a>
                         </div>
                     </div>
-                                    <!-- 光箱 -->
-                <div class="modal fade" id="SURE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <!-- 光箱 -->
+                <!-- <div class="modal fade" id="SURE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content position-relative">
                             <div class="modal-header">
@@ -552,7 +552,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>  -->
                 </form>
 
             </div>
