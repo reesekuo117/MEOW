@@ -95,9 +95,9 @@ $pageName ='會員中心'; //頁面名稱
 //     // '$prows' => $p_rows,
 //     // '$trows' => $t_rows,
 //     // '$po_rows' => $po_rows,
-//     '$polist_rows' => $polist_rows,
+//     // '$polist_rows' => $polist_rows,
 //     // '$to_rows' => $to_rows,
-//     // '$tolist_rows' => $tolist_rows,
+//     '$tolist_rows' => $tolist_rows,
 // ]);
 // exit;
 // ?>

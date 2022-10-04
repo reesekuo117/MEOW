@@ -522,8 +522,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
                             </a>
                         </div>
                     </div>
-                </form>
-                <!-- 光箱 -->
+                                    <!-- 光箱 -->
                 <div class="modal fade" id="SURE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content position-relative">
@@ -545,7 +544,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
                                     <img src="./imgs/errorMeow2.png" alt="">
                                 </div>
                                 <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
-                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
+                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="" >
                                     <a href="shopping-cart-creditcard-travel.php">
                                     沒錯喵
                                     </a>
@@ -554,6 +553,8 @@ $tsm = $pdo->query($sqlmember)->fetch();
                         </div>
                     </div>
                 </div> 
+                </form>
+
             </div>
         <!-- </form> -->
         <?php //else: ?>

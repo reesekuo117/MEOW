@@ -915,7 +915,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
         <!-- 加入最愛 -->
         <div class="modal fade" id="favModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content position-relative mx-auto">
+            <div class="modal-content-fav modal-content position-relative mx-auto">
                 <div class="modal-header-fav">
                     <div class="favOK mx-auto d-flex justify-content-center my-3">
                         <img class="w-100" src="./imgs/favOK.png" alt="">
@@ -1071,10 +1071,20 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
     })
 
-    $('.favorite ').click(function () {
+    $('#btnBuy2').click(function () {
         setTimeout(() => {
-            $("#favModal").modal("show");
+            $("#exampleModal").modal("show");
         }, 300);
+
+    })
+
+    $('.favorite').click(function () {
+        $("#favModal").modal("show");
+        setTimeout(()=>{
+            $("#favModal").fadeOut(600,function () {
+                $("#favModal").modal("hide")
+            });
+        }, 600);
 
     })
 </script>

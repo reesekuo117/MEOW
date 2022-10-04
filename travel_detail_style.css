@@ -564,6 +564,12 @@ select {
 .modal-content {
   border-radius: 16px;
   border: 0px salmon solid;
+  width: 100%;
+}
+
+.modal-content-fav {
+  border-radius: 16px;
+  border: 0px salmon solid;
   width: 60%;
 }
 
