@@ -508,11 +508,11 @@ $('#onekey1').click(function () {
 // 一鍵輸入(商品評論)
 $('#onekey-p').click(function () {
     // console.log('yoyo');
-    $("#comment-p").val("下單後不到三天就收到商品了超快速，配色很可愛又實用♡，希望可以幫我招來好桃花ヽ(●´∀`●)ﾉ♡");
+    $(".evaluation-textarea-re").val("下單後不到三天就收到商品了超快速，配色很可愛又實用♡，希望可以幫我招來好桃花ヽ(●´∀`●)ﾉ♡");
 })
 
 // 一鍵輸入(行程評論)
 $('#onekey-t').click(function () {
     // console.log('yoyo');
-    $("#comment-t").val("導遊宸宸很親切也很熱心介紹，風景非常美麗，整個安排非常順暢，希望可以有更多的行程可以參加。");
+    $(".evaluation-textarea-re2").val("導遊宸宸很親切也很熱心介紹，風景非常美麗，整個安排非常順暢，希望可以有更多的行程可以參加。");
 })
