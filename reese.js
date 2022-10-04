@@ -441,21 +441,21 @@ function hello_f(event) {
     const name = a.attr('data-name')
     const sid = a.attr('data-sid')
 
-    $("#DEL_T").modal("show");
-    $('.modal-body').html(`是否要刪除第 「 ${name} 」 籤？`);
+    $("#DEL_F").modal("show");
+    $('.modal-body').html(`是否要刪除第${name}籤？`);
     
     $('.del-ba').click(function() {
         console.log(sid,'被按了');
-        return removeItem_t(sid) 
+        return removeItem_f(sid) 
     })
     
 }
 
-function removeItem_t(sid){
+function removeItem_f(sid){
 
     console.log('刪了');
-    location.href = `re-del-t.php?sid=${sid}`;
-    window.location.href = "#tab02-re";
+    location.href = `re-del-d.php?sid=${sid}`;
+    window.location.href = "#tab03-re";
 
 }
 // 最愛 行程
@@ -479,18 +479,18 @@ function addToCartT_re(event) {
 //     //     location.href = `re-del-t.php?sid=${sid}`;
 //     // }
 // }
-function removeItem_d(sid){
-    console.log('hi D');
-    if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
-        location.href = `re-del-d.php?sid=${sid}`;
-    }
-}
-function removeItem_f(sid){
-    console.log('hi F');
-    if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
-        location.href = `re-del-f.php?sid=${sid}`;
-    }
-}
+// function removeItem_d(sid){
+//     console.log('hi D');
+//     if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
+//         location.href = `re-del-d.php?sid=${sid}`;
+//     }
+// }
+// function removeItem_f(sid){
+//     console.log('hi F');
+//     if(confirm(`是否要刪除編號為 ${sid} 的資料？`)){
+//         location.href = `re-del-f.php?sid=${sid}`;
+//     }
+// }
 console.log('帳號密碼','999@g.com/999');
 console.log('帳號密碼','888@g.com/888');
 console.log('帳號密碼','777@g.com/777');
@@ -516,3 +516,26 @@ $('#onekey-t').click(function () {
     // console.log('yoyo');
     $("#comment-t").val("導遊宸宸很親切也很熱心介紹，風景非常美麗，整個安排非常順暢，希望可以有更多的行程可以參加。");
 })
+
+// 加入購物車光箱
+$('.addToCart_ba').click(function () {
+    $("#cartModal").modal("show");
+    setTimeout(()=>{
+        $("#cartModal").fadeOut(600,function () {
+            $("#cartModal").modal("hide")
+        });
+    }, 600);
+
+})
+
+// 商品評論光箱
+$('.save_ba').click(function () {
+    $("#saveModal").modal("show");
+    setTimeout(()=>{
+        $("#saveModal").fadeOut(600,function () {
+            $("#saveModal").modal("hide")
+        });
+    }, 600);
+
+})
+

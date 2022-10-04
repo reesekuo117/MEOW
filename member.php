@@ -400,7 +400,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </a>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto"><?= $r['product_price'] ?></p>
-                                        <button class="btn-re btn200-re col-3 p-0"  data-sid="<?= $r['sid']?>" onclick="addToCartP_re(event)">
+                                        <button class="addToCart_ba btn-re btn200-re col-3 p-0"  data-sid="<?= $r['sid']?>" onclick="addToCartP_re(event)">
                                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
@@ -469,7 +469,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </a>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto"><?= $r['travel_price'] ?></p>
-                                        <button class="btn-re btn200-re col-3 p-0" data-sid="<?= $r['sid']?>" onclick="addToCartT_re(event)">
+                                        <button class="addToCart_ba btn-re btn200-re col-3 p-0" data-sid="<?= $r['sid']?>" onclick="addToCartT_re(event)">
                                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
@@ -501,7 +501,7 @@ $pageName ='會員中心'; //頁面名稱
                                                 </div>
                                                 <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
                                                 <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
-                                                    <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                                    <a href="javascript: removeItem_t(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
                                                     忍痛刪除嗚嗚
                                                     </a>
                                                 </button>
@@ -549,7 +549,7 @@ $pageName ='會員中心'; //頁面名稱
                                             </div>
                                             <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
                                             <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
-                                                <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                                <a href="javascript: removeItem_f(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.col-6').remove()">
                                                 忍痛刪除嗚嗚
                                                 </a>
                                             </button>
@@ -719,7 +719,7 @@ $pageName ='會員中心'; //頁面名稱
                                 <label><input id="tag-re-4" type="checkbox" name="tag_re[]" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
                                 <label><input id="tag-re-5" type="checkbox" name="tag_re[]" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                             </div>
-                            <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
+                            <div class="d-flex justify-content-end"><input class="save_ba btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
                         </form>
                     <?php endforeach ?>
                 </div>
@@ -887,6 +887,36 @@ $pageName ='會員中心'; //頁面名稱
                         忍痛刪除嗚嗚
                         </a>
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 加入購物車光箱 -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content-fav modal-content position-relative mx-auto">
+                <div class="modal-header-fav">
+                    <div class="favOK mx-auto d-flex justify-content-center my-3">
+                        <img class="w-100" src="./imgs/cartOK.png" alt="">
+                    </div>
+                </div>
+                <div class="modal-body-fav pt-0">
+                    已將商品加入購物車！
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 商品評論光箱 -->
+    <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content-fav modal-content position-relative mx-auto">
+                <div class="modal-header-fav">
+                    <div class="favOK mx-auto d-flex justify-content-center my-3">
+                        <img class="w-100" src="./imgs/favOK.png" alt="">
+                    </div>
+                </div>
+                <div class="modal-body-fav pt-0">
+                    已收到你的評論囉！
                 </div>
             </div>
         </div>

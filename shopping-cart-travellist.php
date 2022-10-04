@@ -86,7 +86,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
                         <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
-                                    <h6 class="panel-title-yu">
+                                    <h6 class="panel-title-yu mt-3">
                                         <a class="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
                                             訂單明細
                                             <svg width="24" height="24" viewBox="0 0 24 24"fill="none"xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +172,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
                     </div>
                 </div>
                 <!-- 訂購人資料 -->
-                <form name="travel_form" method="post" onsubmit="checkFormTravel(); return false;">
+                <form name="travel_form" method="post" onsubmit="return false;">
                     <div class="section-2-yu position-relative">
                         <div class="section-2-title-yu">
                             <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
@@ -497,7 +497,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="onekey position-absolute"></div>
+                                    <div class="onekey position-absolute d-none"></div>
                                 </div>
                             </div>
                         </div>
@@ -513,8 +513,8 @@ $tsm = $pdo->query($sqlmember)->fetch();
                     <div class=" d-md-flex justify-content-md-end">
                         <!-- a href="#buy1.php" -->
                         <div href="" class="btn unique-nextbutton-yu p-0">
-                            <a href="shopping-cart-creditcard-travel.php">
-                                <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="submit"  name=ok value="送出">
+                            <a href="#">
+                                <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="button"  name=ok value="送出" data-toggle="modal" data-target="#SURE">
                                         <p class="m-0 text-center">
                                             確認訂購
                                         </p>
@@ -523,7 +523,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
                         </div>
                     </div>
                 <!-- 光箱 -->
-                <!-- <div class="modal fade" id="SURE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="SURE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content position-relative">
                             <div class="modal-header">
@@ -544,15 +544,15 @@ $tsm = $pdo->query($sqlmember)->fetch();
                                     <img src="./imgs/errorMeow2.png" alt="">
                                 </div>
                                 <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
-                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="" >
-                                    <a href="shopping-cart-creditcard-travel.php">
+                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="" onclick="checkFormTravel()">
+                                    <a href="#">
                                     沒錯喵
                                     </a>
                                 </button>
                             </div>
                         </div>
                     </div>
-                </div>  -->
+                </div> 
                 </form>
 
             </div>
