@@ -17,9 +17,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./shopping-cart-travellist.css">
-<?php
-header("Refresh:180");
-?>
+
 
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 
@@ -393,7 +391,7 @@ header("Refresh:180");
                                 <label for="name" class="m-0"> 
                                     信用卡 
                                 </label>
-                                <div class=" visacard-yu d-flex justify-content-start my-4 mx-3">
+                                <div class=" visacard-yu d-flex justify-content-start my-4 mx-3 position-relative">
                                     <div class="creditcard-style-yu">
                                         <div class="creditcard-yu  position-relative">
                                             <div class="frontcreditcard-yu">
@@ -434,7 +432,7 @@ header("Refresh:180");
                                         </div>
                                     </div>
                                     <!-- -------------信用卡輸入input----------- -->
-                                    <div class="creadidcardform-yu py-2 col-6">
+                                    <div class="creadidcardform-yu py-2 col-6 ">
                                         <div class="pt-1">
                                             <div class=" usercreditcardinput-yu">
                                                 <label class="pt-1 m-0"  for="">
@@ -499,6 +497,7 @@ header("Refresh:180");
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="onekey position-absolute"></div>
                                 </div>
                             </div>
                         </div>
@@ -524,6 +523,37 @@ header("Refresh:180");
                         </div>
                     </div>
                 </form>
+                <!-- 光箱 -->
+                <div class="modal fade" id="SURE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content position-relative">
+                            <div class="modal-header">
+                                <div class="errorSign">
+                                    <img src="./imgs/Errorsign.png" alt="">
+                                </div>
+                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                確定送出嗎?
+                            </div>
+
+                            <div class="modal-footer">
+                                <div class="errorMeow position-absolute">
+                                    <img src="./imgs/errorMeow2.png" alt="">
+                                </div>
+                                <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
+                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
+                                    <a href="shopping-cart-creditcard-travel.php">
+                                    沒錯喵
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </div>
         <!-- </form> -->
         <?php //else: ?>

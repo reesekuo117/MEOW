@@ -1414,11 +1414,12 @@ table .inside-orderlisttable-re {
     box-shadow: 0 0 transparent;
 }
 
+/* 一鍵 */
 .onekey{
     /* border: 1px salmon solid; */
-    width: 500px;
+    width: 20%;
     height: 300px;
-    right: 200px;
+    right: 40%;
     top: 0;
 }
 

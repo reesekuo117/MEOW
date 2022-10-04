@@ -491,7 +491,13 @@ function removeItem_f(sid){
         location.href = `re-del-f.php?sid=${sid}`;
     }
 }
-console.log('帳號密碼','999@com/999');
+console.log('帳號密碼','999@g.com/999');
+console.log('帳號密碼','888@g.com/888');
+console.log('帳號密碼','777@g.com/777');
+console.log('帳號密碼','666@g.com/666');
+console.log('帳號密碼','555@g.com/555');
+console.log('帳號密碼','333@g.com/333');
+console.log('帳號密碼','222@g.com/222');
 
 // 一鍵輸入(名字+電話)
 $('#onekey1').click(function () {
@@ -501,12 +507,12 @@ $('#onekey1').click(function () {
 
 // 一鍵輸入(商品評論)
 $('#onekey-p').click(function () {
-    console.log('yoyo');
+    // console.log('yoyo');
     $("#comment-p").val("下單後不到三天就收到商品了超快速，配色很可愛又實用♡，希望可以幫我招來好桃花ヽ(●´∀`●)ﾉ♡");
 })
 
 // 一鍵輸入(行程評論)
 $('#onekey-t').click(function () {
-    console.log('yoyo');
+    // console.log('yoyo');
     $("#comment-t").val("導遊宸宸很親切也很熱心介紹，風景非常美麗，整個安排非常順暢，希望可以有更多的行程可以參加。");
 })

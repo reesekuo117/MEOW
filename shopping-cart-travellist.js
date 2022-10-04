@@ -1142,10 +1142,15 @@ $(".Allsubmit").click(function (event) {
   } else {
     console.log("fff");
     // 送
-    $("a").attr("href", "shopping-cart-creditcard-travel.php");
-    confirm("您確定送出嗎?");
 
-    document.travel_form.submit();
+    // $("a").attr("href", "shopping-cart-creditcard-travel.php");
+    $("#SURE").modal("show");
+    $('.del-ba').click(function() {
+      console.log('travel_form',travel_form);
+      document.travel_form.submit();
+  })
+    // confirm("確定送出嗎?");
+
     
     // document.desktop_form.submit();
   }
@@ -1167,3 +1172,15 @@ function checkFormPass() {
 }
 
 $(".requiredYu").on("input", checkFormPass);
+
+// 信用卡一鍵
+$('.onekey').click(function () {
+  // console.log('yoyo');
+  $("#usercreditcardnumber1-yu").val("1234");
+  $("#usercreditcardnumber2-yu").val("5678");
+  $("#usercreditcardnumber3-yu").val("1212");
+  $("#usercreditcardnumber4-yu").val("3434");
+  $("#usercreditcardmonth-yu").val("12");
+  $("#usercreditcardyear-yu").val("26");
+  $("#usercreditcardid-yu").val("888");
+})
