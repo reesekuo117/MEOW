@@ -1043,9 +1043,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                 qty,
                 tp
             },
-            function(data) {
-                showCartCount(data);
-            },
+            // function(data) {
+            //     showCartCount(data);
+            // },
             'json');
     }
 

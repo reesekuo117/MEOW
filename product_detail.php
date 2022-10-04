@@ -550,8 +550,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                             <div class="profile_img">
                                                 <img class="w-100" src="<?php $contentMember = $w['members_id'];
                                                                         $memberiswho = $pdo->query("SELECT * FROM `member` WHERE `id` = $contentMember")->fetchAll();
-                                                                        echo $memberiswho[0]['picture']; ?>
-                                                                            " alt="">
+                                                                        echo $memberiswho[0]['picture']; ?>" alt="">
                                             </div>
                                         </div>
                                         <div class="col col-md-9 mt-2">
