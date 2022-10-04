@@ -791,7 +791,7 @@ CREATE TABLE `travel_order` (
 -- 傾印資料表的資料 `travel_order`
 --
 
-INSERT INTO `travel_order` (`sid`, `member_id`, `travel_sid`, `state`, `price`, `quantity`, `total`, `name`, `phone`, `address_city`, `address_region`, `address`, `payment`, `payment_state`, `created_at`) VALUES
+INSERT INTO `travel_order` (`sid`, `member_id`, `travel_sid`, `state`, `price`, `quantity`, `totle`, `name`, `phone`, `address_city`, `address_region`, `address`, `payment`, `payment_state`, `created_at`) VALUES
 (1, 16, 3, '訂單完成', 1500, 1, 1500, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-16 12:50:00'),
 (2, 16, 6, '訂單完成', 6000, 1, 6000, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-17 12:50:00'),
 (3, 16, 9, '訂單完成', 6000, 2, 12000, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-18 12:50:00'),
