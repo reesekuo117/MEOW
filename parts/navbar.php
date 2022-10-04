@@ -1,6 +1,5 @@
 <?php
 
-
     $member_id = $_SESSION['user']['id'];
     $user_id = "SELECT * FROM `member` WHERE id=$member_id";
     $r_re = $pdo->query($user_id)->fetch();
