@@ -258,6 +258,21 @@
                         </form>
                     </div>
                 </div>
+                <!-- 註冊光箱 -->
+                <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content-fav modal-content position-relative mx-auto">
+                            <div class="modal-header-fav">
+                                <div class="favOK mx-auto d-flex justify-content-center my-3">
+                                    <img class="w-100" src="./imgs/favOK.png" alt="">
+                                </div>
+                            </div>
+                            <div class="modal-body-fav pt-0">
+                                歡迎加入月老喵！
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- 光箱 -->
                 <!-- <div class="modal fade" id="DEL_IN" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
