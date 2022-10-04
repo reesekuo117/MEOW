@@ -249,6 +249,50 @@
                         </form>
                     </div>
                 </div>
+                <!-- 註冊光箱 -->
+                <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content-fav modal-content position-relative mx-auto">
+                            <div class="modal-header-fav">
+                                <div class="favOK mx-auto d-flex justify-content-center my-3">
+                                    <img class="w-100" src="./imgs/favOK.png" alt="">
+                                </div>
+                            </div>
+                            <div class="modal-body-fav pt-0">
+                                歡迎加入月老喵！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 光箱 -->
+                <!-- <div class="modal fade" id="DEL_IN" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content position-relative">
+                            <div class="modal-header">
+                                <div class="errorSign">
+                                    <img src="./imgs/Errorsign.png" alt="">
+                                </div>
+                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                                <div class="errorMeow position-absolute">
+                                    <img src="./imgs/errorMeow3.png" alt="">
+                                </div>
+                                <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
+                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
+                                    <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                    忍痛刪除嗚嗚
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>  -->
 <!-- 註冊 ----------------------------------------------------------------------------------------->
                 <div id="tab02" class="tab-inner formcard-re formBx px-4">
                     <div class="form signup-form">

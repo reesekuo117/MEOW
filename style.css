@@ -401,3 +401,110 @@ button,
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(189, 189, 189);
 }
+
+/* ------------------------- 光箱-------------------- */
+
+.modal-header {
+  background-color: var(--color-yellow);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modal-footer {
+  border-top: 0;
+  padding-top: 10px;
+}
+
+/* .modal-footer .btn {
+  background-color: var(--color-yellow);
+} */
+
+.del-no{
+  color: #fff;
+  border-color: transparent;
+  background-color: var(--color-yellow);
+}
+
+.del-yes{
+  color: #fff;
+  border-color: transparent;
+  background-color: var(--color-yellow);
+}
+
+.del-yes a{
+  color: #fff;
+}
+
+.del-yes a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+.modal-content {
+  border-radius: 16px;
+  border: 0px salmon solid;
+}
+
+.errorMeow {
+  bottom: 0px;
+  left: 32px;
+}
+
+.del-no:hover {
+  color: #fff;
+  background-color: var(--color-orange);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+}
+
+.del-yes:hover{
+  color: #fff;
+  background-color: var(--color-orange);
+}
+
+.btn-primary:hover{
+  border-color: transparent;
+}
+
+.modal-body {
+  margin-left: 72px;
+  /* width: 300px; */
+  text-align: center;
+  height: 90px;
+  align-items: center;
+  padding-top: 24px;
+}
+
+.close {
+  text-shadow: 0 0 transparent;
+}
+
+.close:hover {
+  text-shadow: 0 0 transparent;
+  box-shadow: 0 0 transparent;
+}
+
+.modal-header-fav {
+  /* background-color: var(--color-yellow); */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom: 0px solid #e9ecef;
+}
+
+.modal-content-fav {
+  border-radius: 16px;
+  border: 0px salmon solid;
+  width: 60%;
+}
+
+.favOK {
+  width: 120px;
+  height: 120px;
+}
+
+.modal-body-fav {
+  text-align: center;
+  height: 20px;
+  align-items: center;
+  padding: 40px;
+}

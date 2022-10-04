@@ -10,7 +10,7 @@ button.carousel-control-next{
 .cloud1-yu svg{
     transform: translate(-3rem, 40rem);
     position: absolute;
-    z-index: 999999;
+    z-index: 0;
     animation: c-1move 4s infinite ease-in-out;
 }
 
@@ -32,7 +32,7 @@ button.carousel-control-next{
 .cloud2-yu{
     transform: translate(100rem, 4rem);
     position: absolute;
-    z-index: 999999;
+    z-index: 0;
     animation: c-2move 4s infinite ease-in-out;
 }
 
@@ -51,7 +51,7 @@ button.carousel-control-next{
 .cloud3-yu{
     transform: translate(95rem, 40rem);
     position: absolute;
-    z-index: 999999;
+    z-index: 0;
     animation: c-3move 4s infinite ease-in-out;
 }
 @keyframes c-3move {
@@ -68,7 +68,7 @@ button.carousel-control-next{
 .cloud4-yu{
     transform: translate(60rem, 23rem);
     position: absolute;
-    z-index: 999999;
+    z-index: 0;
     animation: c-4move 4s infinite ease-in-out;
 }
 @keyframes c-4move {
@@ -118,7 +118,7 @@ button.carousel-control-next{
     transform: translate(20rem, 13rem);
 }
 .cloud5-yu{
-    z-index: 999999;
+    z-index: 0;
     transform: translate(-8rem, 43rem);
     position: absolute;
     animation: c-5move 4s infinite ease-in-out;
@@ -135,9 +135,9 @@ button.carousel-control-next{
     }
 }
 .cloud6-yu{
-    z-index: 999999;
+    z-index: 0;
     transform: translate(75rem, 4rem);
-    z-index: 9999;
+    z-index: 0;
     position: absolute;
     animation: c-6move 4s infinite ease-in-out;
 }
@@ -166,7 +166,7 @@ button.carousel-control-next{
 /* ----------------------------------輪播牆-2----------------- */
 
 .cloud8-yu{
-    z-index: 999999;
+    z-index: 0;
     transform: translate(7rem, 12rem);
     position: absolute;
     animation: c-8move 4s infinite ease-in-out;
@@ -184,7 +184,7 @@ button.carousel-control-next{
 }
 
 .cloud9-yu{
-    z-index: 999999;
+    z-index: 0;
     transform: translate(100rem, 40rem);
     position: absolute;
     animation: c-9move 4s infinite ease-in-out;
@@ -201,7 +201,7 @@ button.carousel-control-next{
     }
 }
 .cat-photo-yu{
-    z-index: 9999;
+    z-index: 0;
     transform: translate(77rem, 28rem);
     position: absolute;
 }
