@@ -82,22 +82,48 @@ $pageName ='會員中心'; //頁面名稱
             ad2.city region
         FROM travel_order tod
             JOIN travel t ON t.sid = tod.travel_sid
-            JOIN address ad ON ad.sid = tod.address_city
-            JOIN address ad2 ON ad2.sid = tod.address_region
+            LEFT JOIN address ad ON ad.sid = tod.address_city
+            LEFT JOIN address ad2 ON ad2.sid = tod.address_region
             WHERE member_id=$member_id";
     $tolist_rows = $pdo->query($tolist_sql)->fetchAll();
 
-    // $po_rows = $pdo->query($sql)->fetchAll();
+
+    //會員 某訂單product_order的 某商品product_details 評論review
+    // $re_sql = "
+    //     SELECT 
+    //         pod.*, 
+    //         p.sid,
+
+    //     FROM product_order po
+    //         JOIN product_details pod ON po.sid = pod.order_sid
+    //         JOIN product p ON p.sid = pod.product_sid
+    //         JOIN review r ON p.sid = pod.product_sid
+    //         WHERE member_id=$member_id";
+    // $re_rows = $pdo->query($re_sql)->fetchAll();
+
+
+    $re_sql = "
+    SELECT 
+        p.sid
+    FROM product p 
+        JOIN review r ON p.sid = r.collect_sid
+        WHERE r.`target_type`=1 AND r.members_id=$member_id";
+$re_rows = $pdo->query($re_sql)->fetchAll();
+
+$reviewedPids = [];
+foreach($re_rows as $r){
+    $reviewedPids[] = $r['sid'];
+}
 
 
 // // json_encode判斷型別輸出JSON 數字型態
 // echo json_encode([ 
 //     // '$prows' => $p_rows,
 //     // '$trows' => $t_rows,
-//     // '$po_rows' => $po_rows,
+//     '$po_rows' => $po_rows,
 //     // '$polist_rows' => $polist_rows,
 //     // '$to_rows' => $to_rows,
-//     '$tolist_rows' => $tolist_rows,
+//     // '$tolist_rows' => $tolist_rows,
 // ]);
 // exit;
 // ?>
@@ -228,7 +254,7 @@ $pageName ='會員中心'; //頁面名稱
                         <label for="address" class="form-label-re text-18-re">通訊地址</label><br>
                         <div class="address-re d-flex flex-wrap">
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_city_re" id="member_city_re" value="<?=htmlentities($r_re['address_city_re']) ?>">
+                                <select class="select-re" name="address_city_re" id="member_city_re" data-val="<?= $r_re['address_city'] ?>">
                                     <!-- <option value="< ?=htmlentities($r_re['address_city_re']) ?>">< ?=htmlentities($r_re['address_city_re']) ?></option> -->
                                     <option class="option-re text-16-re" value="5">臺北市</option>
                                     <option value="6">新北市</option>
@@ -252,56 +278,7 @@ $pageName ='會員中心'; //頁面名稱
                                 </select>
                             </div>
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_region_re" id="member_district_re" value="<?=htmlentities($r_re['address_region_re']) ?>">
-                                    <!-- <option value="< ?=htmlentities($r_re['address_region_re']) ?>">< ?=htmlentities($r_re['address_region_re']) ?></option> -->
-                                    <option class="option-re text-16-re" value="24">中正區</option>
-                                    <option value="25">大同區</option>
-                                    <option value="26">中山區</option>
-                                    <option value="27">萬華區</option>
-                                    <option value="28">信義區</option>
-                                    <option value="29">松山區</option>
-                                    <option value="30">大安區</option>
-                                    <option value="31">南港區</option>
-                                    <option value="32">北投區</option>
-                                    <option value="33">內湖區</option>
-                                    <option value="34">士林區</option>
-                                    <option value="35">文山區</option>
-                                    <option value="36">板橋區</option>
-                                    <option value="37">新莊區</option>
-                                    <option value="38">泰山區</option>
-                                    <option value="39">林口區</option>
-                                    <option value="40">淡水區</option>
-                                    <option value="41">金山區</option>
-                                    <option value="42">八里區</option>
-                                    <option value="43">萬里區</option>
-                                    <option value="44">石門區</option>
-                                    <option value="45">三芝區</option>
-                                    <option value="46">瑞芳區</option>
-                                    <option value="47">汐止區</option>
-                                    <option value="48">平溪區</option>
-                                    <option value="49">貢寮區</option>
-                                    <option value="50">雙溪區</option>
-                                    <option value="51">深坑區</option>
-                                    <option value="52">石碇區</option>
-                                    <option value="53">新店區</option>
-                                    <option value="54">坪林區</option>
-                                    <option value="55">烏來區</option>
-                                    <option value="56">中和區</option>
-                                    <option value="57">永和區</option>
-                                    <option value="58">土城區</option>
-                                    <option value="59">三峽區</option>
-                                    <option value="60">樹林區</option>
-                                    <option value="61">鶯歌區</option>
-                                    <option value="62">三重區</option>
-                                    <option value="63">蘆洲區</option>
-                                    <option value="64">五股區</option>
-                                    <option value="65">仁愛區</option>
-                                    <option value="66">中正區</option>
-                                    <option value="67">信義區</option>
-                                    <option value="68">中山區</option>
-                                    <option value="69">安樂區</option>
-                                    <option value="70">暖暖區</option>
-                                    <option value="71">七堵區</option>
+                                <select class="select-re" name="address_region_re" id="member_district_re" data-val="<?= $r_re['address_region'] ?>">
                                 </select>
                             </div>
                             <div class="col-12 col-md-4 d-inline-block p-0">
@@ -319,7 +296,6 @@ $pageName ='會員中心'; //頁面名稱
                 </form>
             </div>
 <!-- p2-password------------------------------------------------------------------------------------ -->
-
             <div id="password-page-re" class="item_re">
                 <!-- phone -->
                 <div class="col-12 d-md-none">
@@ -400,7 +376,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </a>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto"><?= $r['product_price'] ?></p>
-                                        <button class="btn-re btn200-re col-3 p-0"  data-sid="<?= $r['sid']?>" onclick="addToCartP_re(event)">
+                                        <button class="addToCart_ba btn-re btn200-re col-3 p-0"  data-sid="<?= $r['sid']?>" onclick="addToCartP_re(event)">
                                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
@@ -469,7 +445,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </a>
                                     <div class="d-flex">
                                         <p class="text-20-re price-re col-9 p-0 my-auto"><?= $r['travel_price'] ?></p>
-                                        <button class="btn-re btn200-re col-3 p-0" data-sid="<?= $r['sid']?>" onclick="addToCartT_re(event)">
+                                        <button class="addToCart_ba btn-re btn200-re col-3 p-0" data-sid="<?= $r['sid']?>" onclick="addToCartT_re(event)">
                                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M5.53845 5.57208H8.09615L8.98424 9.40863M8.98424 9.40863L10.7604 19.6394H24.6146L26 9.40863H8.98424Z" stroke="#432A0F" stroke-width="2.5577" stroke-linecap="round" stroke-linejoin="round"/>
                                                 <path d="M24.7212 24.7548C25.4275 24.7548 26 24.1822 26 23.476C26 22.7697 25.4275 22.1971 24.7212 22.1971V24.7548ZM11.2933 22.1971C10.9401 22.1971 10.6538 21.9108 10.6538 21.5577H8.09615C8.09615 23.3234 9.52755 24.7548 11.2933 24.7548V22.1971ZM10.6538 21.5577C10.6538 21.2045 10.9401 20.9183 11.2933 20.9183V18.3606C9.52755 18.3606 8.09615 19.792 8.09615 21.5577H10.6538ZM11.2933 24.7548H24.7212V22.1971H11.2933V24.7548Z" fill="#432A0F"/>
@@ -501,7 +477,7 @@ $pageName ='會員中心'; //頁面名稱
                                                 </div>
                                                 <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
                                                 <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
-                                                    <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                                    <a href="javascript: removeItem_t(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
                                                     忍痛刪除嗚嗚
                                                     </a>
                                                 </button>
@@ -549,7 +525,7 @@ $pageName ='會員中心'; //頁面名稱
                                             </div>
                                             <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
                                             <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
-                                                <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                                <a href="javascript: removeItem_f(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.col-6').remove()">
                                                 忍痛刪除嗚嗚
                                                 </a>
                                             </button>
@@ -632,7 +608,10 @@ $pageName ='會員中心'; //頁面名稱
                                                 <td class="text-16-re text-center ordertitle-other-re"><?= $rList['quantity'] ?></td>
                                                 <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $rList['price'] * $rList['quantity'] ?></td>
                                                 <td class="text-center ordertitle-other2-re ">
-                                                    <button class="evaluation-btn-re btn-re phonewidth250-re text-16-re py-2" data-pid="<?= $rList['product_sid'] ?>" data-form="orderForm<?= $r['sid'] ?>">給予評價</button></td>
+                                                    <?php if(! in_array($rList['product_sid'], $reviewedPids)): ?>
+                                                    <button class="evaluation-btn-re btn-re phonewidth250-re text-16-re py-2" data-pid="<?= $rList['product_sid'] ?>" data-form="orderForm<?= $r['sid'] ?>">給予評價</button>
+                                                    <?php endif; ?>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -685,6 +664,7 @@ $pageName ='會員中心'; //頁面名稱
                             <input type="hidden" name="product_sid">
                             <input type="hidden" name="star_num" value="">
                             <input type="hidden" name="target_type" value="1">
+
                             <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
                             <div class="ordercross-re ordercross01-re d-inline-block position-absolute">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -711,15 +691,15 @@ $pageName ='會員中心'; //頁面名稱
                                     </svg>
                                 </div>
                             <p class="">請告訴我們您的想法</p>
-                            <textarea id="comment-p" class="evaluation-textarea-re" cols="121" rows="3" name="content_p" maxlength="250" style="OVERFLOW:hidden"></textarea>
+                            <textarea class="evaluation-textarea-re" cols="121" rows="3" name="content_p" maxlength="250" style="OVERFLOW:hidden"></textarea>
                             <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
-                                <label><input id="tag-re-1" type="checkbox" name="tag_re[]" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
-                                <label><input id="tag-re-2" type="checkbox" name="tag_re[]" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
-                                <label><input id="tag-re-3" type="checkbox" name="tag_re[]" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
-                                <label><input id="tag-re-4" type="checkbox" name="tag_re[]" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
-                                <label><input id="tag-re-5" type="checkbox" name="tag_re[]" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                             </div>
-                            <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
+                            <div class="d-flex justify-content-end"><input class="save_ba btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
                         </form>
                     <?php endforeach ?>
                 </div>
@@ -737,7 +717,7 @@ $pageName ='會員中心'; //頁面名稱
                         <div class="d-md-flex orderlist-re py-3">
                             <div class="col text-16-re text-center"><?= $t['created_at'] ?></div>
                             <div class="col text-16-re text-center">TO2022<?= $t['sid'] ?></div>
-                            <div class="col text-16-re text-center price-re"><?= $t['price'] ?></div>
+                            <div class="col text-16-re text-center price-re"><?= $t['total'] ?></div>
                             <div class="col text-16-re text-center"><?= $t['state'] ?></div>
                             <div class="col orderbtn-re orderbtnT-re text-center">
                                 查詢訂單
@@ -778,7 +758,7 @@ $pageName ='會員中心'; //頁面名稱
                                 <div class="col-12 col-md-6 px-2">
                                     <table class="w-100">
                                         <tr>
-                                            <th colspan="2" class="text-16-re text-center bgcolor-re">收件人資訊</th>
+                                            <th colspan="2" class="text-16-re text-center bgcolor-re">訂購人資訊</th>
                                         </tr>
                                         <tr>
                                             <th class="text-16-re py-1 widht30-re">訂購人姓名</th>
@@ -838,7 +818,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </svg>
                                 </div>
                             <p class="">請告訴我們您的想法</p>
-                            <textarea id="comment-t" class="evaluation-textarea-re" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
+                            <textarea class="evaluation-textarea-re evaluation-textarea-re2" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
                             <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
                                 <!-- <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">出貨超快速</div>
                                 <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">ＣＰ值超高</div>
@@ -846,11 +826,11 @@ $pageName ='會員中心'; //頁面名稱
                                 <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品品質爆表</div>
                                 <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div> -->
                                 
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
+                                <label><input type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                                <label><input type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                                <label><input type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                                <label><input type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                                <label><input type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                             </div>
                             <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存" data-sid="<? $t['travel_sid'] ?>"></div>
                         </form>
@@ -891,8 +871,42 @@ $pageName ='會員中心'; //頁面名稱
             </div>
         </div>
     </div>
+    <!-- 加入購物車光箱 -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content-fav modal-content position-relative mx-auto">
+                <div class="modal-header-fav">
+                    <div class="favOK mx-auto d-flex justify-content-center my-3">
+                        <img class="w-100" src="./imgs/cartOK.png" alt="">
+                    </div>
+                </div>
+                <div class="modal-body-fav pt-0">
+                    已將商品加入購物車！
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 商品評論光箱 -->
+    <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content-fav modal-content position-relative mx-auto">
+                <div class="modal-header-fav">
+                    <div class="favOK mx-auto d-flex justify-content-center my-3">
+                        <img class="w-100" src="./imgs/favOK.png" alt="">
+                    </div>
+                </div>
+                <div class="modal-body-fav pt-0">
+                    已收到你的評論囉！
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>
 <script src="./reese.js"></script>
+<script>
+    const $to_rows = <?= json_encode($to_rows) ?>;
+    const $tolist_rows = <?= json_encode($tolist_rows) ?>;
+</script>
 <?php include __DIR__. '/parts/html-foot.php'; ?>

@@ -72,11 +72,8 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
     <?php //foreach($rows as $r): 
     ?>
     <div class="travel_carousel container-fluid">
-    <div class=" mt-5 d-flex">
-        <!-- <img src="./imgs/travel/icon-back.png" alt=""> -->
-
-        <h6 id="backtoTravelList" onclick="backtoTravelList()" class="p-0"> ＜　商品列表頁 </h6>
-
+    <div class=" mt-md-5 mt-3 mb-n4 mb-md-0 d-flex">
+        <h6 id="backtoTravelList" onclick="backtoTravelList()" class="p-0"> ＜　行程列表頁 </h6>
     </div>
         <div id="carouselExampleIndicators" class="carousel slide m-0 px-0" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -914,19 +911,19 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
     </div>
         <!-- 加入最愛 -->
         <div class="modal fade" id="favModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content position-relative mx-auto">
-                <div class="modal-header-fav">
-                    <div class="favOK mx-auto d-flex justify-content-center my-3">
-                        <img class="w-100" src="./imgs/favOK.png" alt="">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content-fav modal-content position-relative mx-auto">
+                    <div class="modal-header-fav">
+                        <div class="favOK mx-auto d-flex justify-content-center my-3">
+                            <img class="w-100" src="./imgs/favOK.png" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="modal-body-fav pt-0">
-                    已將行程加入最愛！
+                    <div class="modal-body-fav pt-0">
+                        已將行程加入最愛！
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 <!-- 手機版下方列 -->
 <div class="choiceandbuy_mb d-md-none mb-5" id="MdBuyNowYu">
@@ -1071,10 +1068,20 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
     })
 
-    $('.favorite ').click(function () {
+    $('#btnBuy2').click(function () {
         setTimeout(() => {
-            $("#favModal").modal("show");
+            $("#exampleModal").modal("show");
         }, 300);
+
+    })
+
+    $('.favorite').click(function () {
+        $("#favModal").modal("show");
+        setTimeout(()=>{
+            $("#favModal").fadeOut(600,function () {
+                $("#favModal").modal("hide")
+            });
+        }, 600);
 
     })
 </script>

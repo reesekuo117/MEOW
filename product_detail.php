@@ -101,12 +101,12 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
 
 
 
-//  echo json_encode([
-//     'sqlReview ' => $sqlReview ,
-//     'sqlreviewTags ' => $sqlreviewTags ,
-//     'reviewTags' => $reviewTags,
-//     'uId' => $uId,
-//     'review' => $review,
+// echo json_encode([
+//     // 'sqlReview ' => $sqlReview ,
+//     // 'sqlreviewTags ' => $sqlreviewTags ,
+//     // 'reviewTags' => $reviewTags,
+//     // 'uId' => $uId,
+//     // 'review' => $review,
 //     're' => $re,
 // ]);
 // exit;
@@ -117,10 +117,18 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
 <link rel="stylesheet" href="./product_detail_style.css">
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 <div class="product_detail_07">
+
     <!-- computer head -->
     <!-- < ?php foreach ($rows as $r) : ?> -->
-    <div class="pd_head d-none d-md-block" id="pd_title">
+        <div class="container">
+            <div class="ml-md-3 mt-md-5 mt-3 d-flex">
+                <h6 id="backtoProductList" class="p-0"> ＜　商品列表頁 </h6>
+            </div>
+        </div>
+    <div class="pd_head d-none d-md-block mt-md-3" id="pd_title">
+
         <div class="container d-flex">
+
             <div class="product_carousel col">
                 <div class="row">
                     <div class="col">
@@ -287,9 +295,9 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
     <!-- mobile head 手機板輪播牆 -->
     <div class="pd_head_mb d-block d-md-none w-100">
         <div id="carouselExampleIndicators" class="carousel slide m-0 p-0 w-100" data-ride="carousel">
-            <div class="goback">
+            <!-- <div class="goback">
                 <a type="button" href="./product_list.php"><i class="fa-solid fa-chevron-left"></i></a>
-            </div>
+            </div> -->
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -543,6 +551,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                 </div> -->
                             </div>
                             <div class="cd">
+<!-- computer comment -->
                                 <!-- computer comment -->
                                 <div class="row d-none d-md-flex detail_comment">
                                     <?php foreach ($review as $w) : ?>
@@ -891,6 +900,36 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
             </div>
         </div>
     </div>
+        <!-- 加入最愛 -->
+        <div class="modal fade" id="favModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content-fav modal-content position-relative mx-auto">
+                    <div class="modal-header-fav">
+                        <div class="favOK mx-auto d-flex justify-content-center my-3">
+                            <img class="w-100" src="./imgs/favOK.png" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-body-fav pt-0">
+                        已將商品加入最愛！
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 加入購物車光箱 -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content-fav modal-content position-relative mx-auto">
+                    <div class="modal-header-fav">
+                        <div class="favOK mx-auto d-flex justify-content-center my-3">
+                            <img class="w-100" src="./imgs/cartOK.png" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-body-fav pt-0">
+                        已將商品加入購物車！
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- <div class="notlogin d-none" id="favnotlogin"> -->
     <!-- 1.背景用黑色半透明做光箱效果，視窗FIXED(原本就在用show，沒有要讓它出現用append) -->
     <!-- <div class="">
@@ -952,5 +991,37 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
             'json');
 
     };
+
+// 加入最愛光箱
+    $('.favorite').click(function () {
+        $("#favModal").modal("show");
+        setTimeout(()=>{
+            $("#favModal").fadeOut(600,function () {
+                $("#favModal").modal("hide")
+            });
+        }, 600);
+
+    })
+
+    $('.icon_heart').click(function () {
+        $("#favModal").modal("show");
+        setTimeout(()=>{
+            $("#favModal").fadeOut(600,function () {
+                $("#favModal").modal("hide")
+            });
+        }, 600);
+
+    })
+
+// 加入購物車光箱
+    $('.cart').click(function () {
+        $("#cartModal").modal("show");
+        setTimeout(()=>{
+            $("#cartModal").fadeOut(600,function () {
+                $("#cartModal").modal("hide")
+            });
+        }, 600);
+
+    })
 </script>
 <?php include __DIR__ . '/parts/html-foot.php'; ?>

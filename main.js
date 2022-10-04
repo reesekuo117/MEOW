@@ -194,3 +194,13 @@ $.get(
     //         showCartCount(data);
     //     },
     //     "json");
+// 註冊光箱
+// $('.signupbutton-re').click(function () {
+//     $("#signUpModal").modal("show");
+//     setTimeout(()=>{
+//         $("#signUpModal").fadeOut(600,function () {
+//             $("#signUpModal").modal("hide")
+//         });
+//     }, 600);
+
+// }) 
