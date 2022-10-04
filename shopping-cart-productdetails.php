@@ -621,7 +621,7 @@ $sm = $pdo->query($sqlmember)->fetch();
                         <!-- a href="#buy1.php" -->
                         <div class="btn unique-nextbutton-yu p-0">
                             <!-- <a href="shopping-cart-ATM-product.php"></a> -->
-                                <button class=" Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="submit"  name=ok value="送出">
+                                <button class="Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="submit"  name=ok value="送出">
                                     <p class="m-0 text-center">
                                         確認訂購
                                     </p>
@@ -1114,7 +1114,7 @@ $sm = $pdo->query($sqlmember)->fetch();
                     <!-- a href="#buy1.php" -->
                     <a href="shopping-cart-ATM-product.php" class="btn mdunique-nextbutton-yu">
                         <button class=" mdunique-btn-yu  me-md-2" type="button" type="submit"  name=ok value="送出"
-                        onclick="if(confirm('您確定送出嗎?')) return true;else return false">
+                        onclick="if(confirm('你確定送出嗎?')) return true;else return false">
                             <p class="m-0 text-center">
                                 確認訂購
                             </p>

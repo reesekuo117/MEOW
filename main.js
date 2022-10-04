@@ -148,7 +148,10 @@ function checkFormSignup(){
                 console.log(data);
                 if(data.success){
                     genAlert('註冊成功', 'success');
-                    location.href = './member.php';
+                    setTimeout(() => {
+                        location.href = './index_.php';
+                    }, 1500);
+                    
                 }else{
                     genAlert(data.error);
                 }
@@ -176,12 +179,12 @@ $.get(
     "json");
 
 // 註冊光箱
-// $('.signupbutton-re').click(function () {
-//     $("#signUpModal").modal("show");
-//     setTimeout(()=>{
-//         $("#signUpModal").fadeOut(600,function () {
-//             $("#signUpModal").modal("hide")
-//         });
-//     }, 600);
+$('.signupbutton-re').click(function () {
+    $("#signUpModal").modal("show");
+    setTimeout(()=>{
+        $("#signUpModal").fadeOut(1500,function () {
+            $("#signUpModal").modal("hide")
+        });
+    }, 1500);
 
-// }) 
+}) 

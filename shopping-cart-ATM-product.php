@@ -94,7 +94,7 @@ header("Refresh:180");
                     </svg>
                 </div>
                 <h6 class=" thanksYu text-center">
-                    感謝您的訂購，月老喵愛您
+                    感謝你的訂購，月老喵愛你
                 </h6>
                 <div class=" d-md-flex justify-content-center">
                     
@@ -124,7 +124,7 @@ header("Refresh:180");
                         <div class="note-yu">
                             <div class="note-time-yu ">
                                 <ul>
-                                    請您在 <span class="note-red-yu">2022/10/16 23:59</span> 以前，利用網路銀行或選擇任一金融行庫、郵局的ATM自動提款機轉帳繳款。您的繳費資訊如下:
+                                    請你在 <span class="note-red-yu">2022/10/16 23:59</span> 以前，利用網路銀行或選擇任一金融行庫、郵局的ATM自動提款機轉帳繳款。你的繳費資訊如下:
                                 </ul>
                                 <ul>
                                     銀行代碼: 812
@@ -353,7 +353,7 @@ header("Refresh:180");
                 <img class="" src="imgs/shopping-cart/mdshopping-cart-checkout.png" alt="">
             </div>
             <h6 class="mt-3 text-center">
-                感謝您的訂購，月老喵愛您
+                感謝你的訂購，月老喵愛你
             </h6>
             <div class=" d-flex justify-content-center">
                 

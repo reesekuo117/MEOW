@@ -1,9 +1,9 @@
 <?php
 
-    $member_id = $_SESSION['user']['id'];
-    $user_id = "SELECT * FROM `member` WHERE id=$member_id";
-    $r_re = $pdo->query($user_id)->fetch();
-*/
+    // $member_id = $_SESSION['user']['id'];
+    // $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+    // $r_re = $pdo->query($user_id)->fetch();
+
 ?>
 <style>
     .navbar .nav-link.active {
@@ -258,7 +258,8 @@
                                 </div>
                             </div>
                             <div class="modal-body-fav pt-0">
-                                歡迎加入月老喵！
+                                歡迎加入月老喵！<br>
+                                請重新登入會員
                             </div>
                         </div>
                     </div>
