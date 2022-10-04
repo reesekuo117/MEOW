@@ -101,12 +101,12 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
 
 
 
-//  echo json_encode([
-//     'sqlReview ' => $sqlReview ,
-//     'sqlreviewTags ' => $sqlreviewTags ,
-//     'reviewTags' => $reviewTags,
-//     'uId' => $uId,
-//     'review' => $review,
+// echo json_encode([
+//     // 'sqlReview ' => $sqlReview ,
+//     // 'sqlreviewTags ' => $sqlreviewTags ,
+//     // 'reviewTags' => $reviewTags,
+//     // 'uId' => $uId,
+//     // 'review' => $review,
 //     're' => $re,
 // ]);
 // exit;
@@ -543,6 +543,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                 </div> -->
                             </div>
                             <div class="cd">
+<!-- computer comment -->
                                 <!-- computer comment -->
                                 <div class="row d-none d-md-flex detail_comment">
                                     <?php foreach ($review as $w) : ?>

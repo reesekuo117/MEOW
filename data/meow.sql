@@ -2,9 +2,9 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- 主機： localhost
--- 產生時間： 2022 年 10 月 04 日 07:15
--- 伺服器版本： 10.4.21-MariaDB
+-- 主機： 127.0.0.1
+-- 產生時間： 2022-10-04 15:08:00
+-- 伺服器版本： 10.4.24-MariaDB
 -- PHP 版本： 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -248,8 +248,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `email`, `password`, `picture`, `name`, `mobile`, `birthday`, `address_city`, `address_region`, `address`, `created_at`) VALUES
-(16, '999@g.com', '$2y$10$hJac1zSHn48byz.MB5xbY.qaH5RDlEjVUIaS/NZVngMGxJg0n.Ul.', 'http://localhost/MEOW/MEOW/imgs/member/picture02.png', '橘胖', '0987654321', '2022-09-01', 5, 24, '16樓', '2022-09-20 17:18:00'),
-(19, '111@111.com', '$2y$10$Jh.j2bUn.UFvMdfUewORqOpuRyyOuMH79SULupiEvTjyB0Kq2n7yG', './imgs/member/picture01.png', '陳媛婷', '0912345678', '2022-10-07', 5, 24, '16樓', '2022-10-03 13:24:00'),
+(16, '999@g.com', '$2y$10$hJac1zSHn48byz.MB5xbY.qaH5RDlEjVUIaS/NZVngMGxJg0n.Ul.', 'http://localhost/MEOW/imgs/member/picture02.png', '橘胖', '0987654321', '2022-09-01', 5, 24, '16樓', '2022-09-20 17:18:00'),
+(19, '111@111.com', '$2y$10$Jh.j2bUn.UFvMdfUewORqOpuRyyOuMH79SULupiEvTjyB0Kq2n7yG', './imgs/member/picture01.png', '陳媛婷', '912345678', '2022-10-07', 5, 24, '16樓', '2022-10-03 13:24:00'),
 (20, '222@222.com', '$2y$10$46t8PBw1BKvMWf0mgZkExOjPhyCXGUUVM9a7l2qV6F7gtzqPilx.i', 'http://localhost/MEOW/MEOW/imgs/member/picture03.png', '黃昱潔', '0956456789', '1996-06-20', 5, 24, '230號', '2022-10-03 18:21:00'),
 (21, '333@333.com', '$2y$10$c1YA7X9fFlywCX2XhxlHZuNQL8tpSGX0C7omHxYXq0e4yhPvxriBq', 'http://localhost/MEOW/MEOW/imgs/member/picture03.png', '劉國良', '0965487567', '1986-07-13', 5, 24, '230號', '2022-10-03 19:11:00'),
 (22, '444@444.com', '$2y$10$a2yPj5lg.pnJB0uAndVTzOF/aQC9585Yp79W/MpHPyAj0CWSSkUjG', 'http://localhost/MEOW/MEOW/imgs/member/picture02.png', '王緯宸', '0987454785', '1996-10-25', 5, 24, '16樓', '2022-10-03 19:21:00'),
@@ -291,7 +291,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`sid`, `id`, `category_sid`, `product_name`, `product_card_img`, `product_card_smallimg`, `product_card_bigimg`, `product_price`, `product_subtitle`, `product_introfirst`, `product_introimgfirst`, `product_introsec`, `product_introimgsec`, `product_popular`, `product_comment`, `created_at`) VALUES
-(1, 'P01', 2, '月老系祈福戀人手繩', 'P01_1', 'P01_1_b.jpg,P01_2_b.jpg,P01_3_b.jpg,P01_4_b.jpg,P01_5_b.jpg', 'P01_1_s.jpg,P01_2_s.jpg,P01_3_s.jpg,P01_s_b.jpg,P01_5_s.jpg', 485, '月老系｜ 胭脂 喜糖 姻緣樹\n「 戀人的 守護幸福祈願力量♡ 」', '古文「系」字通「繫」。 <br> <br> 『赤繩子耳，以系夫婦之足，及其坐則潛用相繫。雖讐敵之家，貴賤懸隔，天涯從宦，吳楚異鄉，此繩一繫，終不可逭。』 <br> <br> 月下老人最早出自於唐朝李複言所著《續玄怪錄。定婚店》中的故事， <br> 故事中少年韋固因為老人的姻緣牽引， <br> 多年後最終娶得當初老人所言那賣菜婦人懷中女孩為妻。 <br> 這段話說被紅繩系住的男女不論是仇家、貧富懸殊、或相隔千里，最終都會成為夫妻。 <br> <br>', 'P01_4.jpg,P01_5.jpg', ':: 霞海城隍廟香爐加持 :: <br> 祝願每一位配戴手繩的你(妳)，都能平安自在♡ <br> <br> :: 兩顆珠子 :: <br> 月老系 就是藉月老傳說的美意， <br> 將兩顆聖木珠結在手繩頭尾兩端，繞一圈交會，相伴相扣， <br> 象徵牽引兩人那條看不見的姻緣線， <br> 繞過千山萬水，終得白頭不相離。', 'P01_6.jpg,P01_3.jpg', '4', '4', '2022-06-01'),
+(1, 'P01', 2, '月老系祈福戀人手繩', 'P01_1', 'P01_1_b.jpg,P01_2_b.jpg,P01_3_b.jpg,P01_4_b.jpg,P01_5_b.jpg', 'P01_1_s.jpg,P01_2_s.jpg,P01_3_s.jpg,P01_4_s.jpg,P01_5_s.jpg', 485, '月老系｜ 胭脂 喜糖 姻緣樹\n「 戀人的 守護幸福祈願力量♡ 」', '古文「系」字通「繫」。 <br> <br> 『赤繩子耳，以系夫婦之足，及其坐則潛用相繫。雖讐敵之家，貴賤懸隔，天涯從宦，吳楚異鄉，此繩一繫，終不可逭。』 <br> <br> 月下老人最早出自於唐朝李複言所著《續玄怪錄。定婚店》中的故事， <br> 故事中少年韋固因為老人的姻緣牽引， <br> 多年後最終娶得當初老人所言那賣菜婦人懷中女孩為妻。 <br> 這段話說被紅繩系住的男女不論是仇家、貧富懸殊、或相隔千里，最終都會成為夫妻。 <br> <br>', 'P01_4.jpg,P01_5.jpg', ':: 霞海城隍廟香爐加持 :: <br> 祝願每一位配戴手繩的你(妳)，都能平安自在♡ <br> <br> :: 兩顆珠子 :: <br> 月老系 就是藉月老傳說的美意， <br> 將兩顆聖木珠結在手繩頭尾兩端，繞一圈交會，相伴相扣， <br> 象徵牽引兩人那條看不見的姻緣線， <br> 繞過千山萬水，終得白頭不相離。', 'P01_6.jpg,P01_3.jpg', '4', '4', '2022-06-01'),
 (2, 'P02', 2, '月老牽引水晶手鏈', 'P02_1', '', '', 1880, '', '紅紋石 9 mm\n紅紋石有助舒緩激動的情緒及過濾負能量。 紅紋石可治療因失戀帶來的痛苦、失落、憂鬱，讓情緒穩定緩和。 紅紋石可助消解憂鬱，有助蜜運、亦可加強個人衝勁及行動力。\n\n月亮石7mm\n由於月亮石是愛情之石，所以月亮石的功效有助提升女性魅力，幫助吸引異性，以及增進男女朋友情侶之間了解對方，改善情緒上的偏執，所以很多人會認為月光石有助分手的情侶復合。 而對於個人有肋入眠、可調節飲食習慣，長期佩戴月光石可由改善氣質，更會護膚、明眸、護髮。\n', '', '\n關於產品:\n1. 天然石的顏色/內含物每顆不一樣，商品與實物未必一模一樣.\n2. 任何飾品不建議洗澡時配戴，汗水，香水也可能影響力 金屬氧化褪色', '', '10', '4', '2022-07-31'),
 (3, 'P03', 2, '一顆不變的心草莓晶手鍊', 'P03_1', '', '', 888, '▸桃花運☆增加異性緣、斬爛桃花，婚姻感情升溫。 \n▸貴人運☆提升人際關係、魅力，才能事半功倍。 \n\n', '一顆不變的心手鍊，花若盛開、蝴蝶自來， #提升戀愛運，草莓晶可幫助人緣、人際關係，增強正緣桃花運，同時可使思考更加清晰。給自己一條水晶手鍊，運用水晶能量，提升氣場。咕咕好運，陪您一起變好的朋友。\n草莓晶的能量及磁場偏強，有助於提升愛情運勢、吸引美好姻緣，及增進人際關係。', '', '', '', '15', '4', '2022-07-31'),
 (4, 'P04', 1, '霞海城隍廟 X 甜作之盒月老供品組', 'P04_1', 'P04_1_b.jpg,P04_2_b.jpg,P04_3_b.jpg,P04_4_b.jpg,P04_5_b.jpg', 'P04_1_s.jpg,P04_2_s.jpg,P04_3_s.jpg,P04_4_s.jpg,P04_5_s.jpg', 707, '台北霞海城隍廟加持認證，最甜最完整的月老供品組合，一盒在手，求愛無阻！', '【最甜最完整的參拜體驗！】 <br>\n幫你把月老參拜體驗濃縮在這一盒中！ <br>\n真命甜子小抄讓你 #釐清想要的愛情 <br>\n內附最甜供品，不用再煩惱要帶什麼供品參拜月老 <br>\n拜完還有時光棉布愛情御守與和紙膠帶，持續保佑你的愛情！ <br>\n希望在這個愛情的時節裡，每個人都能獲得月老的庇佑，擁抱滿滿的幸福 <br>\n<br>\n', 'P04_6.jpg\n', '除了保持「平常心」之外，我們為你整理了醞釀緣分的小技巧： <br>\n<br>\n● 時時配掛『加持愛情御守』，如果想念月老，也可以打開盒子，與紙雕月老說說話，不受時空限制，和藹的月老一直都在。 <br>\n● 收藏『真命甜子小抄』，將自己寫下的甜密哲學放在心上，提醒自己朝著對的方向前進，這點很重要，不要因為一時誘惑或心軟，做出違背本心的決定。 <br>\n', 'P04_7.jpg', '90', '5', '2022-08-01'),
@@ -488,7 +488,9 @@ INSERT INTO `review` (`sid`, `members_id`, `target_type`, `collect_sid`, `star`,
 (19, 20, 1, 4, 5, '很快就收到商品了\n出貨速度非常的快非常棒~~\n質感又耐看,細膩 包裝得很小心\nCP值很高！！推薦購入', '[\"2\"]', '2022-10-03 18:26:00'),
 (20, 21, 1, 19, 5, '包裝可愛，收到貨品開心', '[\"1\",\"2\",\"3\"]', '2022-10-03 19:18:00'),
 (21, 22, 1, 4, 5, '很有質感的設計，也很有保存價值和意義，很開心送了自己這麼好的禮物', '[\"2\",\"3\",\"4\"]', '2022-10-03 19:26:00'),
-(23, 23, 1, 1, 5, '好喜歡這條聖木，味道很好聞，好喜歡小吊牌喔，很可愛，我把吊牌裝在鑰匙圈裡，可愛', '[\"3\",\"5\"]', '2022-10-03 19:31:00');
+(23, 23, 1, 1, 5, '好喜歡這條聖木，味道很好聞，好喜歡小吊牌喔，很可愛，我把吊牌裝在鑰匙圈裡，可愛', '[\"3\",\"5\"]', '2022-10-03 19:31:00'),
+(32, 16, 1, 1, 4, '棒棒', '[\"1\"]', '2022-10-04 15:04:12'),
+(33, 16, 1, 1, 4, '棒棒', '[\"1\"]', '2022-10-04 15:04:14');
 
 -- --------------------------------------------------------
 
@@ -542,7 +544,32 @@ INSERT INTO `review_tags_rel` (`sid`, `review_sid`, `tags_sid`) VALUES
 (11, 21, 2),
 (12, 21, 3),
 (13, 23, 3),
-(14, 23, 5);
+(14, 23, 5),
+(15, 24, 1),
+(16, 24, 2),
+(17, 24, 3),
+(18, 24, NULL),
+(19, 25, 2),
+(20, 25, 3),
+(21, 25, 4),
+(22, 25, NULL),
+(23, 26, 2),
+(24, 26, 3),
+(25, 26, 4),
+(26, 27, 2),
+(27, 27, 3),
+(28, 27, 4),
+(29, 29, 2),
+(30, 29, 3),
+(31, 29, 5),
+(32, 30, 2),
+(33, 30, 3),
+(34, 30, 5),
+(35, 31, 2),
+(36, 31, 3),
+(37, 31, 5),
+(38, 32, 1),
+(39, 33, 1);
 
 -- --------------------------------------------------------
 
@@ -749,7 +776,7 @@ CREATE TABLE `travel_order` (
   `state` varchar(100) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
-  `totle` int(11) DEFAULT NULL,
+  `total` int(11) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `phone` varchar(100) DEFAULT NULL,
   `address_city` int(11) DEFAULT NULL,
@@ -767,7 +794,9 @@ CREATE TABLE `travel_order` (
 INSERT INTO `travel_order` (`sid`, `member_id`, `travel_sid`, `state`, `price`, `quantity`, `total`, `name`, `phone`, `address_city`, `address_region`, `address`, `payment`, `payment_state`, `created_at`) VALUES
 (1, 16, 3, '訂單完成', 1500, 1, 1500, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-16 12:50:00'),
 (2, 16, 6, '訂單完成', 6000, 1, 6000, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-17 12:50:00'),
-(3, 16, 9, '訂單完成', 6000, 2, 12000, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-18 12:50:00');
+(3, 16, 9, '訂單完成', 6000, 2, 12000, '橘胖', '0987654321', 5, 26, '18樓', '信用卡', '已付款', '2022-09-18 12:50:00'),
+(4, 16, 8, '訂單完成', 2000, 1, 3500, '橘胖', '0987654321', NULL, NULL, NULL, '信用卡', '已付款', '2022-10-04 12:48:13'),
+(5, 16, 7, '訂單完成', 6000, 1, 6000, '橘胖', '0987654321', NULL, NULL, NULL, '信用卡', '已付款', '2022-10-04 13:43:51');
 
 --
 -- 已傾印資料表的索引
@@ -962,7 +991,7 @@ ALTER TABLE `product_order`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `review`
 --
 ALTER TABLE `review`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `review_tags`
@@ -974,7 +1003,7 @@ ALTER TABLE `review_tags`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `review_tags_rel`
 --
 ALTER TABLE `review_tags_rel`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `temple`
@@ -1004,7 +1033,7 @@ ALTER TABLE `travel_kind`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `travel_order`
 --
 ALTER TABLE `travel_order`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- 已傾印資料表的限制式

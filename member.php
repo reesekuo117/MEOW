@@ -89,6 +89,18 @@ $pageName ='會員中心'; //頁面名稱
 
     // $po_rows = $pdo->query($sql)->fetchAll();
 
+    // 會員 某訂單product_order的 某商品product_details 評論review
+    // $re_sql = "
+    //     SELECT 
+    //         pod.*, 
+    //         p.sid,
+
+    //     FROM product_order po
+    //         JOIN product_details pod ON po.sid = pod.order_sid
+    //         JOIN product p ON p.sid = pod.product_sid
+    //         JOIN review r ON p.sid = pod.product_sid
+    //         WHERE member_id=$member_id";
+    // $re_rows = $pdo->query($re_sql)->fetchAll();
 
 // // json_encode判斷型別輸出JSON 數字型態
 // echo json_encode([ 
@@ -685,6 +697,13 @@ $pageName ='會員中心'; //頁面名稱
                             <input type="hidden" name="product_sid">
                             <input type="hidden" name="star_num" value="">
                             <input type="hidden" name="target_type" value="1">
+                            <!-- 寫入標籤 -->
+                            <!-- <input type="hidden" name="tag_re" value="">
+                            <input type="hidden" name="tag_re" value="">
+                            <input type="hidden" name="tag_re" value="">
+                            <input type="hidden" name="tag_re" value="">
+                            <input type="hidden" name="tag_re" value=""> -->
+
                             <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
                             <div class="ordercross-re ordercross01-re d-inline-block position-absolute">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -737,7 +756,7 @@ $pageName ='會員中心'; //頁面名稱
                         <div class="d-md-flex orderlist-re py-3">
                             <div class="col text-16-re text-center"><?= $t['created_at'] ?></div>
                             <div class="col text-16-re text-center">TO2022<?= $t['sid'] ?></div>
-                            <div class="col text-16-re text-center price-re"><?= $t['price'] ?></div>
+                            <div class="col text-16-re text-center price-re"><?= $t['total'] ?></div>
                             <div class="col text-16-re text-center"><?= $t['state'] ?></div>
                             <div class="col orderbtn-re orderbtnT-re text-center">
                                 查詢訂單
