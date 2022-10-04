@@ -54,6 +54,24 @@ $stmt->execute([
     $tag_re,
 ]);
 
+// 寫入標籤
+$review_sid = $pdo->lastInsertId();
+
+for ($i=0;$i < count($_POST['tag_re']); $i++) {
+    $retag_sql = "INSERT INTO `review_tags_rel`(`review_sid`, `tags_sid`) 
+    VALUES( ?, ? )";
+
+    $tagstmt = $pdo->prepare($retag_sql);
+    $tagstmt->execute([
+        $review_sid,
+        $_POST['tag_re'][$i]
+    ]);
+}
+
+
+
+
+
 if($stmt->rowCount()){
     $output['success'] = true;
 } else {
