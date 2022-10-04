@@ -12,8 +12,11 @@ if ($page < 1) {
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要指定哪個分類，intval($_GET['cate']是變成整數的意思，0表示所有產品
 // $newp = isset($_GET['newp']) ? intval($_GET['newp']) : 0; // 最新
 // $hotp = isset($_GET['hotp']) ? intval($_GET['hotp']) : 0; // 熱門
-// $lowerp = isset($_GET['lowp']) ? intval($_GET['lowp']) : 0; // 低價
-// $higherp = isset($_GET['highp']) ? intval($_GET['highp']) : 0; // 高價
+
+//$cate=用戶指定的分類
+$lowp = isset($_GET['lowp']) ? intval($_GET['lowp']):0;//低價
+$highp = isset($_GET['highp']) ? intval($_GET['highp']):0;//高價
+
 $sort = isset($_GET['sort']) ? $_GET['sort'] : ''; 
 $search = isset($_GET['search']) ? $_GET['search'] : '';   //搜尋關鍵字
 
@@ -41,7 +44,15 @@ if (!empty($search)) {
     $qsp['search'] = $search;
 }
 
+if ($lowp){
+    $where .=" AND price>=$lowp ";
+    $qsp["lowp"] = $lowp;
+}
 
+if ($highp){
+    $where .=" AND price>=$highp ";
+    $qsp["highp"] = $highp;
+}
 
 // 排序
 $dataSort = '';
@@ -348,16 +359,23 @@ if ($totalRows > 0) {
                             <div class="filter-element-heading">
                                 <h5>價格範圍</h5>
                             </div>
-                            <div class="filter-element-content">
-                                <div class="filter-range-values">
+                            <div class=" moneyYU ">
+                                 <!--價格範圍 全部的商品價格 沒有包含類只篩選價錢 -->
+                                <a type="button" class=" "
+                                    href="?highp=400">0~400</a>
+                                <a type="button" class=""
+                                    href="?lowp=400&highp=500">400~500</a>
+                                <a type="button" class=""
+                                    href="?lowp=500">500~1000</a>
+                                <!-- <div class="filter-range-values my-3">
                                     <span class="range-1-value">NT$0</span>
                                     <span class="range-2-value">NT$2000</span>
                                 </div>
                                 <div class="filter-range-content">
                                     <div class="filter-range-track"></div>
-                                    <input class="filter-range filter-range-1" type="range" min="0" max="8000" value="0" id="slider-1" step="100">
-                                    <input class="filter-range filter-range-2" type="range" min="0" max="8000" value="8000" id="slider-2" step="100">
-                                </div>
+                                    <input class="filter-range filter-range-1" type="range" min="0" max="2000" value="0" id="slider-1" step="100">
+                                    <input class="filter-range filter-range-2" type="range" min="0" max="2000" value="8000" id="slider-2" step="100">
+                                </div> -->
                             </div>
                         </div>
                     </div>

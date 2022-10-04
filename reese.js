@@ -491,7 +491,13 @@ function removeItem_f(sid){
         location.href = `re-del-f.php?sid=${sid}`;
     }
 }
-console.log('帳號密碼','999@com/999');
+console.log('帳號密碼','999@g.com/999');
+console.log('帳號密碼','888@g.com/888');
+console.log('帳號密碼','777@g.com/777');
+console.log('帳號密碼','666@g.com/666');
+console.log('帳號密碼','555@g.com/555');
+console.log('帳號密碼','333@g.com/333');
+console.log('帳號密碼','222@g.com/222');
 
 // 一鍵輸入(名字+電話)
 $('#onekey1').click(function () {

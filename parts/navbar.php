@@ -232,7 +232,7 @@
                         <li class="signoutBtn-re btntitle-re border-0 d-inline-block text-center pt-1 col-6"><a href="#tab02">註冊</a></li>
                     </ul>
                 </div>
-                <!-- 登入 ----------------------------------------------------------------------------------------->
+<!-- 登入 ----------------------------------------------------------------------------------------->
                 <div id="tab01" class="tab-inner formcard-re formBx px-4">
                     <div class="form signin-form">
                         <form name="login_form" class="m-0 mb-3" method="post" onsubmit="checkFormSignin(); return false;">
@@ -258,7 +258,36 @@
                         </form>
                     </div>
                 </div>
-                <!-- 註冊 ----------------------------------------------------------------------------------------->
+                <!-- 光箱 -->
+                <!-- <div class="modal fade" id="DEL_IN" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content position-relative">
+                            <div class="modal-header">
+                                <div class="errorSign">
+                                    <img src="./imgs/Errorsign.png" alt="">
+                                </div>
+                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                                <div class="errorMeow position-absolute">
+                                    <img src="./imgs/errorMeow3.png" alt="">
+                                </div>
+                                <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
+                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
+                                    <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                    忍痛刪除嗚嗚
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>  -->
+<!-- 註冊 ----------------------------------------------------------------------------------------->
                 <div id="tab02" class="tab-inner formcard-re formBx px-4">
                     <div class="form signup-form">
                         <form name="register_form" method="post" onsubmit="checkFormSignup(); return false;">
@@ -270,15 +299,45 @@
                                 <label for="account" class="form-label" required>密碼<span style="color:#963C38">*</span></label>
                                 <input id="signup_password" name="signup_password" class="logininput-re noline" type="password" placeholder=" 請輸入密碼">
                             </div>
-                            <div class="">
+                            <div class="mb-2">
                                 <label for="account" class="form-label" required>確認密碼<span style="color:#963C38">*</span></label>
                                 <input id="signup_again" name="signup_again" class="logininput-re noline" type="password" placeholder=" 請再次輸入密碼">
                             </div>
                             <div id="signup_msgContainer"></div>
-                            <div class="signupbutton-re"><input class="loginbtn-re" type="submit" value="註冊"></div>
+                            <div class="signupbutton-re"><input class="loginbtn-re" type="submit" value="註冊" onclick="document.getElementById ('loginCard_re').style.display='block'"></div>
                         </form>
                     </div>
                 </div>
+                <!-- 光箱 -->
+                <div class="modal fade" id="DEL_OUT" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content position-relative">
+                            <div class="modal-header">
+                                <div class="errorSign">
+                                    <img src="./imgs/Errorsign.png" alt="">
+                                </div>
+                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+
+                            <div class="modal-footer">
+                                <div class="errorMeow position-absolute">
+                                    <img src="./imgs/errorMeow3.png" alt="">
+                                </div>
+                                <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
+                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
+                                    <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
+                                    忍痛刪除嗚嗚
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>
     </div>
