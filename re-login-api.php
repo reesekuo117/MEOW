@@ -32,12 +32,12 @@ if(password_verify($_POST['signin_password'], $row['password'])){
     $output['user'] = [
         'id' => $row['id'],
         'email' => $row['email'],
-        'password' => $row['password'],
+        
     ];
     $_SESSION['user'] = [
         'id' => $row['id'],
         'email' => $row['email'],
-        'password' => $row['password'],
+        'picture' => $row['picture'],
     ];
 }else{
     // 密碼錯誤

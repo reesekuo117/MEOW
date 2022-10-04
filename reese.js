@@ -95,6 +95,7 @@ function readURL_re(input) {
 // 會員頭像
 const blah_re = $('#blah_re'); // selected avatar 被選擇的頭像
 const blah_md_re = $('#blah_md_re'); // selected avatar 被選擇的頭像
+const blah_md02_re = $('#blah_md02_re'); // selected avatar 被選擇的頭像
 const blah_xs01_re = $('#blah_xs01_re'); // selected avatar 被選擇的頭像
 const blah_xs02_re = $('#blah_xs02_re'); // selected avatar 被選擇的頭像
 
@@ -110,6 +111,7 @@ function saveAvatar() {
         document.getElementById('pictureChange_re').style.display='none';
         if(data.success){
             blah_md_re[0].src = picture_re;
+            blah_md02_re[0].src = picture_re;
             blah_xs01_re[0].src = picture_re;
             blah_xs02_re[0].src = picture_re;
         }
@@ -243,30 +245,106 @@ function checkFormReviewP(event){
     }
 }
 
-// 
+// 地址
 let districtArray = [
     ['中正區', '大同區', '中山區', '萬華區', '信義區', '松山區', '大安區', '南港區', '北投區', '內湖區', '士林區', '文山區'],
     ['板橋區', '新莊區', '泰山區', '林口區', '淡水區', '金山區', '八里區', '萬里區', '石門區', '三芝區', '瑞芳區', '汐止區', '平溪區', '貢寮區', '雙溪區', '深坑區', '石碇區', '新店區', '坪林區', '烏來區', '中和區', '永和區', '土城區', '三峽區', '樹林區', '鶯歌區', '三重區', '蘆洲區', '五股區'],
     ['仁愛區', '中正區', '信義區', '中山區', '安樂區', '暖暖區', '七堵區'],
 ];
-$('#member_city_re').change(function () {
+
+let districtArray2 = [
+    {"sid":"1","city":"北部","parent":"0"},
+    {"sid":"2","city":"中部","parent":"0"},
+    {"sid":"3","city":"南部","parent":"0"},
+    {"sid":"4","city":"東部","parent":"0"},
+    {"sid":"5","city":"臺北市","parent":"1"},
+    {"sid":"6","city":"新北市","parent":"1"},
+    {"sid":"7","city":"基隆市","parent":"1"},
+    {"sid":"8","city":"宜蘭縣","parent":"1"},
+    {"sid":"9","city":"桃園市","parent":"1"},
+    {"sid":"10","city":"新竹市","parent":"1"},
+    {"sid":"11","city":"新竹縣","parent":"1"},
+    {"sid":"12","city":"苗栗縣","parent":"2"},
+    {"sid":"13","city":"彰化縣","parent":"2"},
+    {"sid":"14","city":"臺中市","parent":"2"},
+    {"sid":"15","city":"南投縣","parent":"2"},
+    {"sid":"16","city":"雲林縣","parent":"2"},
+    {"sid":"17","city":"嘉義市","parent":"3"},
+    {"sid":"18","city":"嘉義縣","parent":"3"},
+    {"sid":"19","city":"臺南市","parent":"3"},
+    {"sid":"20","city":"高雄市","parent":"3"},
+    {"sid":"21","city":"屏東縣","parent":"3"},
+    {"sid":"22","city":"花蓮縣","parent":"4"},
+    {"sid":"23","city":"臺東縣","parent":"4"},
+    {"sid":"24","city":"中正區","parent":"5"},
+    {"sid":"25","city":"大同區","parent":"5"},
+    {"sid":"26","city":"中山區","parent":"5"},
+    {"sid":"27","city":"萬華區","parent":"5"},
+    {"sid":"28","city":"信義區","parent":"5"},
+    {"sid":"29","city":"松山區","parent":"5"},
+    {"sid":"30","city":"大安區","parent":"5"},
+    {"sid":"31","city":"南港區","parent":"5"},
+    {"sid":"32","city":"北投區","parent":"5"},
+    {"sid":"33","city":"內湖區","parent":"5"},
+    {"sid":"34","city":"士林區","parent":"5"},
+    {"sid":"35","city":"文山區","parent":"5"},
+    {"sid":"36","city":"板橋區","parent":"6"},
+    {"sid":"37","city":"新莊區","parent":"6"},
+    {"sid":"38","city":"泰山區","parent":"6"},
+    {"sid":"39","city":"林口區","parent":"6"},
+    {"sid":"40","city":"淡水區","parent":"6"},
+    {"sid":"41","city":"金山區","parent":"6"},
+    {"sid":"42","city":"八里區","parent":"6"},
+    {"sid":"43","city":"萬里區","parent":"6"},
+    {"sid":"44","city":"石門區","parent":"6"},
+    {"sid":"45","city":"三芝區","parent":"6"},
+    {"sid":"46","city":"瑞芳區","parent":"6"},
+    {"sid":"47","city":"汐止區","parent":"6"},
+    {"sid":"48","city":"平溪區","parent":"6"},
+    {"sid":"49","city":"貢寮區","parent":"6"},
+    {"sid":"50","city":"雙溪區","parent":"6"},
+    {"sid":"51","city":"深坑區","parent":"6"},
+    {"sid":"52","city":"石碇區","parent":"6"},
+    {"sid":"53","city":"新店區","parent":"6"},
+    {"sid":"54","city":"坪林區","parent":"6"},
+    {"sid":"55","city":"烏來區","parent":"6"},
+    {"sid":"56","city":"中和區","parent":"6"},
+    {"sid":"57","city":"永和區","parent":"6"},
+    {"sid":"58","city":"土城區","parent":"6"},
+    {"sid":"59","city":"三峽區","parent":"6"},
+    {"sid":"60","city":"樹林區","parent":"6"},
+    {"sid":"61","city":"鶯歌區","parent":"6"},
+    {"sid":"62","city":"三重區","parent":"6"},
+    {"sid":"63","city":"蘆洲區","parent":"6"},
+    {"sid":"64","city":"五股區","parent":"6"},
+    {"sid":"65","city":"仁愛區","parent":"7"},
+    {"sid":"66","city":"中正區","parent":"7"},
+    {"sid":"67","city":"信義區","parent":"7"},
+    {"sid":"68","city":"中山區","parent":"7"},
+    {"sid":"69","city":"安樂區","parent":"7"},
+    {"sid":"70","city":"暖暖區","parent":"7"},
+    {"sid":"71","city":"七堵區","parent":"7"}
+    ];
+
+const member_city_re = $('#member_city_re');
+const member_district_re = $('#member_district_re');
+member_city_re.change(function () {
     const cityNumber = $(this).val();
-    const districtData = districtArray[cityNumber-5];
-    // 用迴圈會更方便
-    // $('#district option').eq(0).text(districtData[0])
-    // $('#district option').eq(1).text(districtData[1])
-    // $('#district option').eq(2).text(districtData[2])
-    // 迴圈 一直要做重複的動作，裡面的索引值可能會改變
-    // 1.自己寫規則，for 迴圈，次數自己決定
-    // 2.用陣列的方法來寫迴圈，次數就是陣列的資料數量
-    //console.log('districtData:', districtData.length);
-    $('#member_district_re').empty();
-    $(districtData).each(function (index, item) {
+    const districtData2 = districtArray2.filter(function(el){
+        return el.parent==cityNumber;
+    })    
+    member_district_re.empty();
+    $(districtData2).each(function (index, item) {
         console.log('JQ item:', item);
         console.log('JQ index:', index);
-    $('#member_district_re').append(`<option value="${index}">${item}</option>`)
+        member_district_re.append(`<option value="${item.sid}">${item.city}</option>`)
     })
 });
+member_city_re.val( member_city_re.attr('data-val') );
+member_city_re.trigger('change');
+member_district_re.val( member_district_re.attr('data-val') );
+
+
 // 地址
 // var tArray = new Array(); //先宣告一維
 // for(var k=0;k<i;k  ){ //一維長度為i,i為變數，可以根據實際情況改變

@@ -254,7 +254,7 @@ foreach($re_rows as $r){
                         <label for="address" class="form-label-re text-18-re">通訊地址</label><br>
                         <div class="address-re d-flex flex-wrap">
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_city_re" id="member_city_re" value="<?=htmlentities($r_re['address_city_re']) ?>">
+                                <select class="select-re" name="address_city_re" id="member_city_re" data-val="<?= $r_re['address_city'] ?>">
                                     <!-- <option value="< ?=htmlentities($r_re['address_city_re']) ?>">< ?=htmlentities($r_re['address_city_re']) ?></option> -->
                                     <option class="option-re text-16-re" value="5">臺北市</option>
                                     <option value="6">新北市</option>
@@ -278,56 +278,7 @@ foreach($re_rows as $r){
                                 </select>
                             </div>
                             <div class="form-group d-inline-block col-6 col-md-2 p-0">
-                                <select class="select-re" name="address_region_re" id="member_district_re" value="<?=htmlentities($r_re['address_region_re']) ?>">
-                                    <!-- <option value="< ?=htmlentities($r_re['address_region_re']) ?>">< ?=htmlentities($r_re['address_region_re']) ?></option> -->
-                                    <option class="option-re text-16-re" value="24">中正區</option>
-                                    <option value="25">大同區</option>
-                                    <option value="26">中山區</option>
-                                    <option value="27">萬華區</option>
-                                    <option value="28">信義區</option>
-                                    <option value="29">松山區</option>
-                                    <option value="30">大安區</option>
-                                    <option value="31">南港區</option>
-                                    <option value="32">北投區</option>
-                                    <option value="33">內湖區</option>
-                                    <option value="34">士林區</option>
-                                    <option value="35">文山區</option>
-                                    <option value="36">板橋區</option>
-                                    <option value="37">新莊區</option>
-                                    <option value="38">泰山區</option>
-                                    <option value="39">林口區</option>
-                                    <option value="40">淡水區</option>
-                                    <option value="41">金山區</option>
-                                    <option value="42">八里區</option>
-                                    <option value="43">萬里區</option>
-                                    <option value="44">石門區</option>
-                                    <option value="45">三芝區</option>
-                                    <option value="46">瑞芳區</option>
-                                    <option value="47">汐止區</option>
-                                    <option value="48">平溪區</option>
-                                    <option value="49">貢寮區</option>
-                                    <option value="50">雙溪區</option>
-                                    <option value="51">深坑區</option>
-                                    <option value="52">石碇區</option>
-                                    <option value="53">新店區</option>
-                                    <option value="54">坪林區</option>
-                                    <option value="55">烏來區</option>
-                                    <option value="56">中和區</option>
-                                    <option value="57">永和區</option>
-                                    <option value="58">土城區</option>
-                                    <option value="59">三峽區</option>
-                                    <option value="60">樹林區</option>
-                                    <option value="61">鶯歌區</option>
-                                    <option value="62">三重區</option>
-                                    <option value="63">蘆洲區</option>
-                                    <option value="64">五股區</option>
-                                    <option value="65">仁愛區</option>
-                                    <option value="66">中正區</option>
-                                    <option value="67">信義區</option>
-                                    <option value="68">中山區</option>
-                                    <option value="69">安樂區</option>
-                                    <option value="70">暖暖區</option>
-                                    <option value="71">七堵區</option>
+                                <select class="select-re" name="address_region_re" id="member_district_re" data-val="<?= $r_re['address_region'] ?>">
                                 </select>
                             </div>
                             <div class="col-12 col-md-4 d-inline-block p-0">
@@ -345,7 +296,6 @@ foreach($re_rows as $r){
                 </form>
             </div>
 <!-- p2-password------------------------------------------------------------------------------------ -->
-
             <div id="password-page-re" class="item_re">
                 <!-- phone -->
                 <div class="col-12 d-md-none">
