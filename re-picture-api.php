@@ -26,6 +26,7 @@ $stmt->execute([
 
 if($stmt->rowCount()){
     $output['success'] = true;
+    $_SESSION['user']['picture'] = $_POST['picture_re'];
 } else {
     $output['error'] = '錯誤';
 }
