@@ -10,13 +10,10 @@ if ($page < 1) {
     exit;
 }
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要指定哪個分類，intval($_GET['cate']是變成整數的意思，0表示所有產品
-// $newp = isset($_GET['newp']) ? intval($_GET['newp']) : 0; // 最新
-// $hotp = isset($_GET['hotp']) ? intval($_GET['hotp']) : 0; // 熱門
 
 //$cate=用戶指定的分類
 $lowp = isset($_GET['lowp']) ? intval($_GET['lowp']):0;//低價
 $highp = isset($_GET['highp']) ? intval($_GET['highp']):0;//高價
-
 $sort = isset($_GET['sort']) ? $_GET['sort'] : ''; 
 $search = isset($_GET['search']) ? $_GET['search'] : '';   //搜尋關鍵字
 
@@ -45,14 +42,25 @@ if (!empty($search)) {
 }
 
 if ($lowp){
-    $where .=" AND price>=$lowp ";
+    $where .=" AND product_price>=$lowp ";
     $qsp["lowp"] = $lowp;
 }
 
+
 if ($highp){
-    $where .=" AND price>=$highp ";
+    $where .=" AND product_price<=$highp ";
     $qsp["highp"] = $highp;
 }
+
+// echo json_encode([
+//     'lowp' => $lowp,
+//     'highp' => $highp,
+
+// ]);
+// exit;
+
+
+
 
 // 排序
 $dataSort = '';
@@ -336,7 +344,12 @@ if ($totalRows > 0) {
                 <div class="col">
                     <div class="cate_filter">
                         <div class="product_cate <?php echo ($cate)? "btncolor_default" : "btncolor_active" ?>">
-                            <a type="button" href="?#desktopSort" >
+                            <a type="button" href="?<?php 
+                            $tmp = $qsp; //複製
+                            unset($tmp['cate']); //清空類別
+                            unset($tmp['lowp']); //清空低價
+                            unset($tmp['highp']);//清空高價
+                            echo http_build_query($tmp); ?>?#desktopSort">
                                 <h5>－全部商品</h5>
                             </a>
                         </div>
@@ -345,7 +358,7 @@ if ($totalRows > 0) {
                         foreach ($cates as $c): ?> 
                         <div class="product_cate <?php echo ($cate==$c['sid'])? "btncolor_active" : "btncolor_default" ?>">
                             <!-- 用a連結記得JQ要加e.preventDefault(); -->
-                            <a type="button" href="?cate=<?= $qsp2['cate']=$c['sid'] ?>#desktopSort">
+                            <a type="button" href="?cate=<?= $qsp2['cate']=$c['sid']; echo http_build_query($tmp);  ?>#desktopSort">
                                 <h5>－<?= $c['category_name'] ?></h5>
                             </a>
                         </div>
@@ -359,14 +372,32 @@ if ($totalRows > 0) {
                             <div class="filter-element-heading">
                                 <h5>價格範圍</h5>
                             </div>
-                            <div class=" moneyYU ">
-                                 <!--價格範圍 全部的商品價格 沒有包含類只篩選價錢 -->
-                                <a type="button" class=" "
+                            <div class=" moneyYU d-flex p">
+                                <?php $btnStyle = (!$lowp && $highp==500 ) ? "btncolor_active" : "btncolor_default"  ?>
+                                    <a type="button" class=" <?= $btnStyle ?>"
+                                    href="?<?php
+                                            $tmp = $qsp;  // 複製
+                                            unset($tmp['lowp']);  //unset() 刪除
+                                            $tmp['highp']=500;
+                                            echo http_build_query($tmp); ?>?#desktopSort">~NT$500</a>
+
+                                <?php $btnStyle = ($lowp==500 && $highp==1000) ? "btncolor_active" : "btncolor_default"  ?>
+                                    <a type="button" class=" <?= $btnStyle ?>"
+                                    href="?<?php $tmp['lowp']=500;  
+                                            $tmp['highp']=1000;
+                                            echo http_build_query($tmp); ?>?#desktopSort">NT$500~NT$1000</a>
+
+                                <?php $btnStyle = ($lowp==1000 && !$highp) ? "btncolor_active" : "btncolor_default"  ?>
+                                    <a type="button" class=" <?= $btnStyle ?>"
+                                    href="?<?php unset($tmp['highp']);  //unset() 刪除 
+                                            $tmp['lowp']=1000;
+                                            echo http_build_query($tmp); ?>?#desktopSort">NT$1000~</a>
+                                <!-- <a type="button" class=" "
                                     href="?highp=400">0~400</a>
                                 <a type="button" class=""
                                     href="?lowp=400&highp=500">400~500</a>
                                 <a type="button" class=""
-                                    href="?lowp=500">500~1000</a>
+                                    href="?lowp=500">500~1000</a> -->
                                 <!-- <div class="filter-range-values my-3">
                                     <span class="range-1-value">NT$0</span>
                                     <span class="range-2-value">NT$2000</span>

@@ -155,12 +155,12 @@
     
 }
 
-.product_cate.btncolor_default{
+/* .product_cate.btncolor_default{
     color: var(--color-text87);
 }
 .product_cate.btncolor_active{
     color: var(--color-orange);
-}
+} */
 
 .product_cate a {
     color: inherit;
@@ -168,7 +168,7 @@
 }
 
 .product_cate:hover a {
-    color: var(--color-orange);
+    color: var(--color-yellow);
 }
 .aside .col{
     width: 200px;
@@ -594,6 +594,22 @@
 
 /* 價錢篩選 */
 .moneyYU{
-    
+    flex-direction: column
+}
 
+.moneyYU a{
+    /* color: #432A0F; */
+    text-decoration: none;
+}
+
+.btncolor_default {
+    color: var(--color-text87) !important;
+}
+
+.btncolor_default:hover {
+    color: var(--color-yellow) !important;
+}
+
+.btncolor_active {
+    color: var(--color-yellow) !important;
 }

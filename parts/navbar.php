@@ -5,6 +5,7 @@
     // $r_re = $pdo->query($user_id)->fetch();
 
 ?>
+
 <style>
     .navbar .nav-link.active {
         text-decoration: underline white 2px;

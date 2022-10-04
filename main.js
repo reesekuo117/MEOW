@@ -172,12 +172,31 @@ function showCartCount(obj){
 }
 
 $.get(
-    "re-cart-t-api.php",
+    "re-cart-p-api.php",
     function(data){
         showCartCount(data);
     },
     "json");
 
+
+
+    // function showCartCount(obj){
+    //     let count = 0;
+        
+    //     for(let t in obj){
+    //         const item= obj[t];
+    //         count += +item.qty; //+是讓字串轉型態
+    
+    //     }
+    //     $("#cartCountYu").html(count);
+    // }
+    
+    // $.get(
+    //     "re-cart-t-api.php",
+    //     function(data){
+    //         showCartCount(data);
+    //     },
+    //     "json");
 // 註冊光箱
 $('.signupbutton-re').click(function () {
     $("#signUpModal").modal("show");
@@ -188,3 +207,4 @@ $('.signupbutton-re').click(function () {
     }, 1500);
 
 }) 
+
