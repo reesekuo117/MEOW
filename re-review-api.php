@@ -56,26 +56,30 @@ $stmt->execute([
 
 // 寫入標籤
 $review_sid = $pdo->lastInsertId();
+$retag_sql = "INSERT INTO `review_tags_rel` (`review_sid`, `tags_sid`) 
+VALUES( ?, ? )";
+$tagstmt = $pdo->prepare($retag_sql);
 
-for ($i=0;$i < count($_POST['tag_re']); $i++) {
-    $retag_sql = "INSERT INTO `review_tags_rel`(`review_sid`, `tags_sid`) 
-    VALUES( ?, ? )";
+if(! empty($_POST['tag_re'])){
+    foreach ($_POST['tag_re'] as $t) {
 
-    $tagstmt = $pdo->prepare($retag_sql);
-    $tagstmt->execute([
-        $review_sid,
-        $_POST['tag_re'][$i]
-    ]);
+        $tagstmt->execute([
+            $review_sid,
+            $t
+        ]);
+    }
 }
-
-
-
 
 
 if($stmt->rowCount()){
     $output['success'] = true;
 } else {
     $output['error'] = '錯誤';
+}
+if($tagstmt->rowCount()){
+    $output['success'] = true;
+} else {
+    $output['error'] = '錯誤2';
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);

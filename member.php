@@ -82,14 +82,13 @@ $pageName ='會員中心'; //頁面名稱
             ad2.city region
         FROM travel_order tod
             JOIN travel t ON t.sid = tod.travel_sid
-            JOIN address ad ON ad.sid = tod.address_city
-            JOIN address ad2 ON ad2.sid = tod.address_region
+            LEFT JOIN address ad ON ad.sid = tod.address_city
+            LEFT JOIN address ad2 ON ad2.sid = tod.address_region
             WHERE member_id=$member_id";
     $tolist_rows = $pdo->query($tolist_sql)->fetchAll();
 
-    // $po_rows = $pdo->query($sql)->fetchAll();
 
-    // 會員 某訂單product_order的 某商品product_details 評論review
+    //會員 某訂單product_order的 某商品product_details 評論review
     // $re_sql = "
     //     SELECT 
     //         pod.*, 
@@ -102,14 +101,29 @@ $pageName ='會員中心'; //頁面名稱
     //         WHERE member_id=$member_id";
     // $re_rows = $pdo->query($re_sql)->fetchAll();
 
+
+    $re_sql = "
+    SELECT 
+        p.sid
+    FROM product p 
+        JOIN review r ON p.sid = r.collect_sid
+        WHERE r.`target_type`=1 AND r.members_id=$member_id";
+$re_rows = $pdo->query($re_sql)->fetchAll();
+
+$reviewedPids = [];
+foreach($re_rows as $r){
+    $reviewedPids[] = $r['sid'];
+}
+
+
 // // json_encode判斷型別輸出JSON 數字型態
 // echo json_encode([ 
 //     // '$prows' => $p_rows,
 //     // '$trows' => $t_rows,
-//     // '$po_rows' => $po_rows,
+//     '$po_rows' => $po_rows,
 //     // '$polist_rows' => $polist_rows,
 //     // '$to_rows' => $to_rows,
-//     '$tolist_rows' => $tolist_rows,
+//     // '$tolist_rows' => $tolist_rows,
 // ]);
 // exit;
 // ?>
@@ -644,7 +658,10 @@ $pageName ='會員中心'; //頁面名稱
                                                 <td class="text-16-re text-center ordertitle-other-re"><?= $rList['quantity'] ?></td>
                                                 <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $rList['price'] * $rList['quantity'] ?></td>
                                                 <td class="text-center ordertitle-other2-re ">
-                                                    <button class="evaluation-btn-re btn-re phonewidth250-re text-16-re py-2" data-pid="<?= $rList['product_sid'] ?>" data-form="orderForm<?= $r['sid'] ?>">給予評價</button></td>
+                                                    <?php if(! in_array($rList['product_sid'], $reviewedPids)): ?>
+                                                    <button class="evaluation-btn-re btn-re phonewidth250-re text-16-re py-2" data-pid="<?= $rList['product_sid'] ?>" data-form="orderForm<?= $r['sid'] ?>">給予評價</button>
+                                                    <?php endif; ?>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -697,12 +714,6 @@ $pageName ='會員中心'; //頁面名稱
                             <input type="hidden" name="product_sid">
                             <input type="hidden" name="star_num" value="">
                             <input type="hidden" name="target_type" value="1">
-                            <!-- 寫入標籤 -->
-                            <!-- <input type="hidden" name="tag_re" value="">
-                            <input type="hidden" name="tag_re" value="">
-                            <input type="hidden" name="tag_re" value="">
-                            <input type="hidden" name="tag_re" value="">
-                            <input type="hidden" name="tag_re" value=""> -->
 
                             <h6 class="mb-3">請給這次的體驗打個分數吧！</h6>
                             <div class="ordercross-re ordercross01-re d-inline-block position-absolute">
@@ -730,13 +741,13 @@ $pageName ='會員中心'; //頁面名稱
                                     </svg>
                                 </div>
                             <p class="">請告訴我們您的想法</p>
-                            <textarea id="comment-p" class="evaluation-textarea-re" cols="121" rows="3" name="content_p" maxlength="250" style="OVERFLOW:hidden"></textarea>
+                            <textarea class="evaluation-textarea-re" cols="121" rows="3" name="content_p" maxlength="250" style="OVERFLOW:hidden"></textarea>
                             <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
-                                <label><input id="tag-re-1" type="checkbox" name="tag_re[]" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
-                                <label><input id="tag-re-2" type="checkbox" name="tag_re[]" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
-                                <label><input id="tag-re-3" type="checkbox" name="tag_re[]" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
-                                <label><input id="tag-re-4" type="checkbox" name="tag_re[]" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
-                                <label><input id="tag-re-5" type="checkbox" name="tag_re[]" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                                <label><input type="checkbox" name="tag_re[]" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                             </div>
                             <div class="d-flex justify-content-end"><input class="save_ba btn-re btn200-re phonewidth330-re" type="submit" value="儲存"></div>
                         </form>
@@ -797,7 +808,7 @@ $pageName ='會員中心'; //頁面名稱
                                 <div class="col-12 col-md-6 px-2">
                                     <table class="w-100">
                                         <tr>
-                                            <th colspan="2" class="text-16-re text-center bgcolor-re">收件人資訊</th>
+                                            <th colspan="2" class="text-16-re text-center bgcolor-re">訂購人資訊</th>
                                         </tr>
                                         <tr>
                                             <th class="text-16-re py-1 widht30-re">訂購人姓名</th>
@@ -857,7 +868,7 @@ $pageName ='會員中心'; //頁面名稱
                                     </svg>
                                 </div>
                             <p class="">請告訴我們您的想法</p>
-                            <textarea id="comment-t" class="evaluation-textarea-re" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
+                            <textarea class="evaluation-textarea-re evaluation-textarea-re2" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
                             <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
                                 <!-- <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">出貨超快速</div>
                                 <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">ＣＰ值超高</div>
@@ -865,11 +876,11 @@ $pageName ='會員中心'; //頁面名稱
                                 <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品品質爆表</div>
                                 <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div> -->
                                 
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
-                                <label><input id="tag-re" type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
+                                <label><input type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
+                                <label><input type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
+                                <label><input type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
+                                <label><input type="checkbox" name="tag-re" value="4" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品品質爆表</span></label>
+                                <label><input type="checkbox" name="tag-re" value="5" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">服務態度超好</span></label>
                             </div>
                             <div class="d-flex justify-content-end"><input class="btn-re btn200-re phonewidth330-re" type="submit" value="儲存" data-sid="<? $t['travel_sid'] ?>"></div>
                         </form>
@@ -944,4 +955,8 @@ $pageName ='會員中心'; //頁面名稱
 </div>
 <?php include __DIR__. '/parts/scripts.php'; ?>
 <script src="./reese.js"></script>
+<script>
+    const $to_rows = <?= json_encode($to_rows) ?>;
+    const $tolist_rows = <?= json_encode($tolist_rows) ?>;
+</script>
 <?php include __DIR__. '/parts/html-foot.php'; ?>
