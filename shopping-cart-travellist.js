@@ -1143,21 +1143,21 @@ $(".Allsubmit").click(function (event) {
     console.log("fff");
     // 送
 
-    $("a").attr("href", "shopping-cart-creditcard-travel.php");
+  //   $("a").attr("href", "shopping-cart-creditcard-travel.php");
   //   $("#SURE").modal("show");
   //   $('.del-ba').click(function() {
   //     console.log('travel_form',travel_form);
   //     // document.travel_form.submit();
   // })
-    confirm("確定送出嗎?");
+    // confirm("確定送出嗎?");
 
-    document.desktop_form.submit();
+    // document.desktop_form.submit();
     
   }
 });
 
 function checkFormPass() {
-  const Allsubmit = $(".Allsubmit ");
+  const Allsubmit = $(".Allsubmit");
   let isPass = true;
   $(".requiredYu").each(function () {
     if (!$(this).val()) {

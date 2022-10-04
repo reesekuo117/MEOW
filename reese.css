@@ -966,6 +966,7 @@ p {
 }
 
 .ordercross-re {
+    cursor: pointer;
     right: 10px;
     top: 10px;
 }
@@ -1414,6 +1415,30 @@ table .inside-orderlisttable-re {
     box-shadow: 0 0 transparent;
 }
 
+.modal-header-fav {
+    /* background-color: var(--color-yellow); */
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom: 0px solid #e9ecef;
+}
+
+.modal-content-fav {
+    border-radius: 16px;
+    border: 0px salmon solid;
+    width: 60%;
+}
+
+.favOK {
+    width: 120px;
+    height: 120px;
+}
+
+.modal-body-fav {
+    text-align: center;
+    height: 20px;
+    align-items: center;
+    padding: 40px;
+}
 /* 一鍵 */
 .onekey{
     /* border: 1px salmon solid; */
@@ -1437,4 +1462,9 @@ table .inside-orderlisttable-re {
     height: 300px;
     right: 200px;
     bottom: 0;
+}
+
+/* 新增頭貼的叉叉 */
+.picturePageClose-re{
+    cursor: pointer;
 }

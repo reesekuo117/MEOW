@@ -1,42 +1,56 @@
 /* *{
     outline: 1px solid #000;
 } */
-html{
+html {
     scroll-behavior: smooth;
 }
-.pd_head{
+
+.pd_head {
     margin: 80px;
 }
-.product_detail_07 h2,.product_detail_07 h4,.product_detail_07 h5,.product_detail_07 h6{
+
+.product_detail_07 h2,
+.product_detail_07 h4,
+.product_detail_07 h5,
+.product_detail_07 h6 {
     color: var(--color-text87);
 }
-.product_detail_07 p,.product_detail_07 small{
+
+.product_detail_07 p,
+.product_detail_07 small {
     color: var(--color-text100);
 }
-.product_detail_07 .xs{
+
+.product_detail_07 .xs {
     color: var(--color-text60);
 }
-.product_detail_07 button:focus{
+
+.product_detail_07 button:focus {
     outline-style: none;
 }
-.product_detail_07 a{
+
+.product_detail_07 a {
     text-decoration: none;
 }
-.product_detail_07 a .icon_buy{
+
+.product_detail_07 a .icon_buy {
     text-decoration: none;
     color: var(--color-text100);
 }
-.product_detail_07 button{
+
+.product_detail_07 button {
     cursor: pointer;
     transition: .3s;
 }
+
 /* ------------------------輪播------------------------ */
-.img-demo{
+.img-demo {
     position: relative;
     /* overflow: hidden; */
 
 }
-.p1{
+
+.p1 {
     position: absolute;
     /* left: 1050px; */
     left: 0;
@@ -44,7 +58,8 @@ html{
     opacity: 1;
     transition: .5s;
 }
-.p2{
+
+.p2 {
     position: absolute;
     /* left: 525px; */
     left: 0;
@@ -53,14 +68,16 @@ html{
     transition: .5s;
 
 }
-.p3{
+
+.p3 {
     left: 0;
     top: 0;
     opacity: 0;
     transition: .5s;
 
 }
-.p4{
+
+.p4 {
     left: 0;
     top: 0;
     position: absolute;
@@ -69,7 +86,8 @@ html{
     transition: .5s;
 
 }
-.p5{
+
+.p5 {
     left: 0;
     top: 0;
     position: absolute;
@@ -78,94 +96,115 @@ html{
     transition: .5s;
 
 }
+
 /* ------------------------大換小------------------------ */
-.product_carousel .row{
+.product_carousel .row {
     flex-direction: column;
 }
-.img-demo > img{
+
+.img-demo>img {
     width: 100%;
     /* position: relative; */
 }
-.img-wrap > img{
+
+.img-wrap>img {
     width: 100%;
 }
-.top_carousel .carousel-control-prev i,.top_carousel .carousel-control-next i{
+
+.top_carousel .carousel-control-prev i,
+.top_carousel .carousel-control-next i {
     color: #fff;
     margin: 0;
     font-size: 30px;
 }
-.icon_heart{
+
+.icon_heart {
     position: absolute;
     bottom: 10px;
     right: 10px;
     z-index: 2;
     cursor: pointer;
 }
-.color{
+
+.color {
     stroke: #432A0F;
     fill: #CD562F;
 }
-.icon_fivestar{
+
+.icon_fivestar {
     color: var(--color-yellow);
     padding: 0 8px;
 }
-.star .icon_fivestar{
+
+.star .icon_fivestar {
     color: var(--color-yellow);
-    padding-left:  0;
+    padding-left: 0;
 }
 
 /* 輪播結束 */
-.detail_title .row{
+.detail_title .row {
     flex-direction: column;
 }
-.evaluation{
+
+.evaluation {
     display: flex;
 
 }
-.price h2::before{
+
+.price h2::before {
     content: "NT$ ";
-    
+
 }
-.number{
+
+.number {
     margin-top: 16px;
 }
-.fire p{
+
+.fire p {
     line-height: 24px;
 }
-.product_detail_07 select{
+
+.product_detail_07 select {
     height: 48px;
     border-radius: 8px;
     border: 1px solid var(--color-text87);
 }
-.choice{
+
+.choice {
     padding-bottom: 16px;
 }
-.number input{
+
+.number input {
     width: 50px;
     text-align: center;
     border: none;
 }
-.quantity{
+
+.quantity {
     padding: 4 8px;
     margin: 0 8px;
 }
-.minus{
+
+.minus {
     background-color: var(--color-text87);
     border-radius: 50%;
     border: none;
     color: #fff;
 }
-.minus.disabled{
+
+.minus.disabled {
     background-color: var(--color-text38);
 }
-.plus{
+
+.plus {
     background-color: var(--color-text87);
     border-radius: 50%;
     border: none;
     color: #fff;
 
 }
-.pd_head .buy{
+
+.pd_head .buy {
     width: 400px;
     height: 45px;
     color: var(--color-text87);
@@ -175,7 +214,8 @@ html{
     border: 2px solid var(--color-text87);
     margin-bottom: 16px;
 }
-.pd_head .cart{
+
+.pd_head .cart {
     width: 400px;
     height: 45px;
     color: var(--color-text87);
@@ -184,18 +224,21 @@ html{
     background-color: var(--color-creamy-light);
     border: 2px solid var(--color-text87);
 }
+
 /* 小換大和商品標題結束 */
 /* 手機輪播牆 */
-.pd_head_mb .carousel{
+.pd_head_mb .carousel {
     position: relative;
 }
-.goback{
+
+.goback {
     position: absolute;
     z-index: 99;
     left: 3%;
     top: 1%;
 }
-.goback a{
+
+.goback a {
     height: 26px;
     text-decoration: none;
     color: #fff;
@@ -204,22 +247,25 @@ html{
     background-color: transparent;
 }
 
-.carousel-indicators{
-    bottom: 0!important;
+.carousel-indicators {
+    bottom: 0 !important;
 }
-.pb_headtitle_mb .icon_fivestar{
+
+.pb_headtitle_mb .icon_fivestar {
     padding: 0;
 }
-.pb_headtitle_mb .icon_fire{
+
+.pb_headtitle_mb .icon_fire {
     color: #CD562F;
 }
-.pb_headtitle_mb h4::before{
+
+.pb_headtitle_mb h4::before {
     content: "NT$ ";
 }
 
 /* 手機輪播牆結束 */
 /* 手機上方列 */
-.pdnav_mb{
+.pdnav_mb {
     height: 50px;
     background-color: var(--color-lightcreamy);
     position: sticky;
@@ -228,20 +274,24 @@ html{
     transition: .5s;
     line-height: 50px;
 }
-.pdnav_mb a{
+
+.pdnav_mb a {
     text-decoration: none;
 }
-.pdnav_mb a small{
+
+.pdnav_mb a small {
     line-height: 25px;
 }
-.pdnav_mb small:hover{
+
+.pdnav_mb small:hover {
     color: #CD562F;
-    
+
 }
+
 /* 桌機下方列 */
-.undernav{
+.undernav {
     width: 100%;
-    padding: 20px 0; 
+    padding: 20px 0;
     background-color: var(--color-lightcreamy);
     /* margin: 16px 0; */
     position: fixed;
@@ -251,60 +301,75 @@ html{
     transform: translateY(40px);
     opacity: 0;
 }
-.left_title h2::before{
+
+.left_title h2::before {
     content: "NT$";
 }
-.left_title h2{
+
+.left_title h2 {
     margin-bottom: 0;
 }
-button:hover{
+
+button:hover {
     box-shadow: 2px 2px 0px var(--color-brown-dark);
 }
-.undernav .btns button{
+
+.undernav .btns button {
     width: 200px;
     height: 40px;
     border-radius: 8px;
     border: 2px solid var(--color-text87);
 }
-.btns .favorite{
+
+.btns .favorite {
     background-color: var(--color-creamy-light);
 }
-.undernav .btns .cart{
+
+.undernav .btns .cart {
     background-color: var(--color-creamy-light);
 }
-.undernav .btns .buy{
+
+.undernav .btns .buy {
     margin: 0;
     background-color: var(--color-yellow);
 }
-.undernav button a{
+
+.undernav button a {
     text-decoration: none;
     color: var(--color-text87);
 }
+
 /* -----------------------下方列結束-------------------- */
-.links{
+.links {
     flex-direction: column;
     position: sticky;
     top: 10px;
 }
-.links a{
+
+.links a {
     padding: 4px 0;
     text-decoration: none;
     color: var(--color-text87);
 }
-.links a:hover, .links a:focus{
+
+.links a:hover,
+.links a:focus {
     color: var(--color-orange);
 }
+
 .intro_bg {
     margin: 40px auto 0;
     background-color: var(--color-creamy-light);
-    padding: 50px 24px 50px ;
+    padding: 50px 24px 50px;
 }
-.intro_bg h5{
+
+.intro_bg h5 {
     position: relative;
     border-bottom: 1.5px solid var(--color-text60);
     /* box-shadow: 0px 3px 0px var(--color-text87); */
 }
-.intro_bg h5::after{
+
+.intro_bg h5::after {
     content: "";
     border-bottom: 1.5px solid var(--color-text60);
     width: 100%;
@@ -312,44 +377,54 @@ button:hover{
     bottom: -6px;
     left: 0;
 }
-.intro_img{
+
+.intro_img {
     margin: 16px 0 0;
 }
-#intro p{
+
+#intro p {
     padding-top: 16px;
 }
+
 /* -----------------------商品介紹結束-------------------- */
-#comment .row{
+#comment .row {
     padding: 8px;
 }
-.c_star{
+
+.c_star {
     padding: 8px 0;
 }
-.c_star h3{
+
+.c_star h3 {
     color: #fff;
     padding: 16px 25px;
     background-color: var(--color-yellow);
     border-radius: 8px;
 }
-.cd .row{
+
+.cd .row {
     margin-top: 12px;
     /* border-bottom: 1px solid var(--color-text60); */
 }
 
-.profile_img{
+.profile_img {
     width: 100px;
     margin: 0 auto;
 }
-.name{
+
+.name {
     margin: 0px;
 }
-.star_date .icon_fivestar{
+
+.star_date .icon_fivestar {
     padding-left: 0;
 }
-.c_tags{
+
+.c_tags {
     margin: 8px 0;
 }
-.tags{
+
+.tags {
     margin: 0 4px;
     padding: 8px 16px;
     border-radius: 50px;
@@ -357,20 +432,22 @@ button:hover{
     border: 2px solid var(--color-text87);
 }
 
-.detail_comment{
+.detail_comment {
     min-height: 180px;
     min-width: 60px;
 }
 
-.cd_mb i{
+.cd_mb i {
     color: var(--color-yellow);
 }
-.cd_mb .detail_comment{
+
+.cd_mb .detail_comment {
     margin-top: 12px;
     border-bottom: 1px solid var(--color-text60);
 }
+
 /* -----------------------評價結束-------------------- */
-.pd_footer_mb{
+.pd_footer_mb {
     width: 100%;
     background-color: var(--color-orange);
     position: fixed;
@@ -378,7 +455,7 @@ button:hover{
     z-index: 5;
 }
 
-.pd_footer_mb .buy{
+.pd_footer_mb .buy {
     height: 45px;
     color: var(--color-text87);
     text-align: center;
@@ -387,7 +464,8 @@ button:hover{
     border: 2px solid var(--color-text87);
     margin-bottom: 16px;
 }
-.pd_footer_mb .cart{
+
+.pd_footer_mb .cart {
     height: 45px;
     color: var(--color-text87);
     text-align: center;
@@ -395,41 +473,50 @@ button:hover{
     background-color: var(--color-creamy-light);
     border: 2px solid var(--color-text87);
 }
-.footercolor{
+
+.footercolor {
     fill: var(--color-yellow);
 }
+
 /* 桌機板瀏覽其他商品卡片 */
-.otherp{
+.otherp {
     margin: 28px 0 120px;
 }
-.otherp h4{
+
+.otherp h4 {
     color: var(--color-text87);
 }
-.otherp .container{
+
+.otherp .container {
     background-color: var(--color-creamy-light);
     padding-top: 24px;
 }
-.otherp a{
+
+.otherp a {
     text-decoration: none;
     color: var(--color-text87);
 }
+
 .carousel {
-	margin: 24px auto 24px;
-	padding: 0 80px;
+    margin: 24px auto 24px;
+    padding: 0 80px;
 }
+
 .carousel .carousel-item {
-	text-align: center;
-	overflow: hidden;
+    text-align: center;
+    overflow: hidden;
 }
 
 .carousel .carousel-item img {
-	max-width: 100%;
-	display: inline-block;
+    max-width: 100%;
+    display: inline-block;
 }
-.img-box{
+
+.img-box {
     position: relative;
 }
-.img-box:hover::after{
+
+.img-box:hover::after {
     content: "";
     display: block;
     width: 100%;
@@ -439,6 +526,7 @@ button:hover{
     bottom: 0;
     /* 直接在div下陰影 */
 }
+
 /* .carousel .icon_heart{
     position: absolute;
     right: 10px;
@@ -446,75 +534,87 @@ button:hover{
 } */
 
 .carousel .thumb-wrapper {
-	margin: 5px;
-	text-align: left;
-	background: #fff;
-	box-shadow: 0px 2px 2px rgba(0,0,0,0.1); 
+    margin: 5px;
+    text-align: left;
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
 }
+
 .carousel .thumb-content {
-	padding: 10px;
-	font-size: 13px;
+    padding: 10px;
+    font-size: 13px;
 }
-.otherp .carousel-control-prev,.otherp .carousel-control-next {
-	height: 44px;
-	width: 44px;
-	background: none;	
-	margin: auto 0;
+
+.otherp .carousel-control-prev,
+.otherp .carousel-control-next {
+    height: 44px;
+    width: 44px;
+    background: none;
+    margin: auto 0;
 
 }
-.otherp .carousel-control-prev i,.otherp .carousel-control-next i {
-	font-size: 36px;
-	position: absolute;
-	top: 50%;
-	display: inline-block;
-	margin: -19px 0 0 0;
-	z-index: 1;
-	left: 0;
-	right: 0;
-	color: var(--color-orange);
-	text-shadow: none;
-	font-weight: bold;
-}
-.otherp .carousel-control-prev i {
-	margin-left: -3px;
-}
+
+.otherp .carousel-control-prev i,
 .otherp .carousel-control-next i {
-	margin-right: -3px;
+    font-size: 36px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -19px 0 0 0;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    color: var(--color-orange);
+    text-shadow: none;
+    font-weight: bold;
+}
+
+.otherp .carousel-control-prev i {
+    margin-left: -3px;
+}
+
+.otherp .carousel-control-next i {
+    margin-right: -3px;
 }
 
 
 .carousel-indicators {
-	bottom: -50px;
+    bottom: -50px;
 }
-.carousel-indicators li, .carousel-indicators li.active {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	margin: 4px;
-	border: none;
+
+.carousel-indicators li,
+.carousel-indicators li.active {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 4px;
+    border: none;
 }
+
 /* .carousel-indicators li {	
 	background: #ababab;
 }
 .carousel-indicators li.active {	
 	background: rgb(85, 85, 85);
 } */
-.card_under h5::before{
+.card_under h5::before {
     content: "NT$";
 }
-.card_under small{
+
+.card_under small {
     color: var(--color-text38);
 }
-.back-button{
+
+.back-button {
     bottom: 40px;
     z-index: 2;
 }
 
 /* 手機把 footer 關掉 */
 
-footer.product-none{
+footer.product-none {
     display: none !important;
 }
 
@@ -524,4 +624,92 @@ footer.product-none{
     font-family: 'gensen-R';
     font-size: 14px;
     line-height: 140%;
+}
+
+/* ------------------------- 光箱-------------------- */
+
+.modal-header {
+    background-color: var(--color-yellow);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    /* border-bottom: 0px solid #e9ecef; */
+}
+
+.modal-header-fav {
+    /* background-color: var(--color-yellow); */
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom: 0px solid #e9ecef;
+}
+
+.modal-footer {
+    border-top: 0;
+    padding-top: 10px;
+}
+
+.modal-footer .btn {
+    background-color: var(--color-yellow);
+}
+
+.modal-content {
+    border-radius: 16px;
+    border: 0px salmon solid;
+    width: 100%;
+}
+
+.modal-content-fav {
+    border-radius: 16px;
+    border: 0px salmon solid;
+    width: 60%;
+}
+
+.errorMeow {
+    bottom: 0px;
+    left: 32px;
+}
+
+.favOK {
+    width: 120px;
+    height: 120px;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: var(--color-orange);
+    border-color: transparent;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: var(--color-orange);
+    border-color: transparent;
+    box-shadow: 0 0 transparent;
+}
+
+.modal-body {
+    text-align: center;
+    height: 90px;
+    align-items: center;
+    padding-top: 36px;
+}
+
+.modal-body-fav {
+    text-align: center;
+    height: 20px;
+    align-items: center;
+    padding: 40px;
+}
+
+.close {
+    text-shadow: 0 0 transparent;
+}
+
+.close:hover {
+    text-shadow: 0 0 transparent;
+    box-shadow: 0 0 transparent;
+}
+
+/* 返回列表 */
+#backtoProductList {
+    cursor: pointer;
 }

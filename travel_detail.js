@@ -166,7 +166,7 @@ $(window).scroll(function () {
         // }
 
 
-
+// 回到上一頁
     $('#backtoTravelList').click(function () {
         history.back()
     })

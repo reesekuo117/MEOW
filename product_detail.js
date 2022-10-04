@@ -266,3 +266,8 @@ $(window).scroll(function () {
         // }
         // });
     // });
+
+// 回到上一頁
+    $('#backtoProductList').click(function () {
+        history.back()
+    })
