@@ -504,6 +504,13 @@ button,
 
 .modal-body-fav {
   text-align: center;
+  height: 72px;
+  align-items: center;
+  padding: 40px;
+}
+
+.modal-body-login {
+  text-align: center;
   height: 20px;
   align-items: center;
   padding: 40px;

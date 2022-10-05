@@ -3,7 +3,9 @@
     // $member_id = $_SESSION['user']['id'];
     // $user_id = "SELECT * FROM `member` WHERE id=$member_id";
     // $r_re = $pdo->query($user_id)->fetch();
-?> 
+
+?>
+
 <style>
     .navbar .nav-link.active {
         text-decoration: underline white 2px;
@@ -257,7 +259,23 @@
                                 </div>
                             </div>
                             <div class="modal-body-fav pt-0">
-                                歡迎加入月老喵！
+                                歡迎加入月老喵！<br>
+                                請重新登入會員
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 登入光箱 -->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content-fav modal-content position-relative mx-auto">
+                            <div class="modal-header-fav">
+                                <div class="favOK mx-auto d-flex justify-content-center my-3">
+                                    <img class="w-100" src="./imgs/favOK.png" alt="">
+                                </div>
+                            </div>
+                            <div class="modal-body-login  pt-0">
+                                歡迎回到月老喵！
                             </div>
                         </div>
                     </div>

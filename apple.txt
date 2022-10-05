@@ -46,7 +46,7 @@ TODO:詩籤的名字資料表 OK
 TODO:詩籤最後的音效
 TODO:信用卡自動下一格
 TODO:儲存評論光箱 OK
-TODO:註冊成功光箱
+TODO:註冊成功光箱 OK
 TODO:右上角頭貼
 TODO:商品結帳光箱
 
