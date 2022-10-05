@@ -508,3 +508,10 @@ button,
   align-items: center;
   padding: 40px;
 }
+
+.modal-body-login {
+  text-align: center;
+  height: 20px;
+  align-items: center;
+  padding: 40px;
+}

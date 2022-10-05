@@ -101,7 +101,9 @@ function checkFormSignin() {
         function(data) {
             console.log('data',data);
             if(data.success){
-                location.href = './member.php';
+                setTimeout(() => {
+                    location.href = './member.php';
+                }, 750);
             } else {
                 console.log(data);
                 // genAlert(data.error);
@@ -205,6 +207,18 @@ $('.signupbutton-re').click(function () {
             $("#signUpModal").modal("hide")
         });
     }, 1500);
+
+}) 
+
+// 登入光箱
+$('.loginbutton-re').click(function () {
+    console.log('OK');
+    $("#loginModal").modal("show");
+    setTimeout(()=>{
+        $("#loginModal").fadeOut(750,function () {
+            $("#loginModal").modal("hide")
+        });
+    }, 750);
 
 }) 
 
