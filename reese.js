@@ -98,6 +98,7 @@ const blah_md_re = $('#blah_md_re'); // selected avatar 被選擇的頭像
 const blah_md02_re = $('#blah_md02_re'); // selected avatar 被選擇的頭像
 const blah_xs01_re = $('#blah_xs01_re'); // selected avatar 被選擇的頭像
 const blah_xs02_re = $('#blah_xs02_re'); // selected avatar 被選擇的頭像
+const blah_xs03_re = $('#blah_xs03_re'); // selected avatar 被選擇的頭像
 
 $('.picturewarpChange-re').on('click', function(event){
     const src = $(this).find('img')[0].src;
@@ -114,6 +115,7 @@ function saveAvatar() {
             blah_md02_re[0].src = picture_re;
             blah_xs01_re[0].src = picture_re;
             blah_xs02_re[0].src = picture_re;
+            blah_xs03_re[0].src = picture_re;
         }
     }, 'json')
 }

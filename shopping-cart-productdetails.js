@@ -1250,4 +1250,3 @@ function checkFormPass() {
 $(".receiveraddress3-yu").on("input", checkFormPass);
 
 
-

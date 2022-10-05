@@ -253,7 +253,7 @@ foreach($re_rows as $r){
                     <div class="mb-3">
                         <label for="address" class="form-label-re text-18-re">通訊地址</label><br>
                         <div class="address-re d-flex flex-wrap">
-                            <div class="form-group d-inline-block col-6 col-md-2 p-0 m-0">
+                            <div class="form-group d-inline-block col-6 col-md-2 p-0 mb-3">
                                 <select class="select-re" name="address_city_re" id="member_city_re" data-val="<?= $r_re['address_city'] ?>">
                                     <!-- <option value="< ?=htmlentities($r_re['address_city_re']) ?>">< ?=htmlentities($r_re['address_city_re']) ?></option> -->
                                     <option class="option-re text-16-re" value="5">臺北市</option>
@@ -277,7 +277,7 @@ foreach($re_rows as $r){
                                     <option value="23">臺東縣</option>
                                 </select>
                             </div>
-                            <div class="form-group d-inline-block col-6 col-md-2 p-0 m-0">
+                            <div class="form-group d-inline-block col-6 col-md-2 p-0 mb-3">
                                 <select class="select-re" name="address_region_re" id="member_district_re" data-val="<?= $r_re['address_region'] ?>">
                                 </select>
                             </div>

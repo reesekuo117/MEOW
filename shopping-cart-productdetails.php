@@ -11,6 +11,11 @@ $member_id = $_SESSION['user']['id'];
 $sqlmember = "SELECT * FROM `member` WHERE id=$member_id";
 $sm = $pdo->query($sqlmember)->fetch();
 
+
+$ptotal = 0;
+foreach($_SESSION['pcart'] as $k=>$s){
+    $ptotal += $s['product_price']*$s['qty'];
+}
 ?>
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
@@ -169,7 +174,7 @@ $sm = $pdo->query($sqlmember)->fetch();
                     </main>
                     <div class=" h6 priceNT-yu alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
                         <h6 id="total-price-yu" class="price-uniqui-yu">
-                        <?= $v['product_price'] * $v['qty'] ?>
+                            <?= $ptotal ?>
                         </h6>
                     </div>
                 </div>
