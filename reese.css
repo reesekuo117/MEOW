@@ -39,6 +39,9 @@ header .navbar_ba {
         padding: 10px 0;
         min-height: calc(100vh - 72px);
     }
+    .xspandding-re {
+        margin-bottom: 50px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -54,7 +57,7 @@ header .navbar_ba {
 
     .allright-re {
         /* height: 733.55px; */
-        min-height: calc(100vh - 314px);
+        min-height: calc(100vh - 350px);
     }
 
     .fixedbtn_re {
@@ -553,7 +556,7 @@ p {
 
 .padding225-re {
     padding: 0 22.5px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 /* pagebtn-re --------------------------------- */
@@ -1163,6 +1166,9 @@ table .inside-orderlisttable-re {
     table.inside-orderlisttable-re thead {
         border: 0;
     }
+}
+.widht30-re {
+    width: 30%;
 }
 
 /* --------------------------------------------------------- */

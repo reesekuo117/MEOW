@@ -133,7 +133,7 @@ foreach($re_rows as $r){
 <!-- <link rel="stylesheet" href="./reese.js"> -->
 <?php include __DIR__. '/parts/navbar.php'; ?>
 <div class="background-re">
-<div class="container-re">
+<div class="container-re xspandding-re">
     <div class="tab row m-0">
         <div class=" d-none d-md-block col-md-3">
             <div class="picturewarp-re mx-auto my-4 position-relative">
@@ -250,10 +250,10 @@ foreach($re_rows as $r){
                         <label for="birthday" class="form-label-re text-18-re">出生日期</label><br>
                         <input id="member_birthday_re" name="member_birthday_re" class="input-re noline-re" type="date" placeholder=" 請輸入出生日期" class="form-control" value="<?=htmlentities($r_re['birthday']) ?>">
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label for="address" class="form-label-re text-18-re">通訊地址</label><br>
                         <div class="address-re d-flex flex-wrap">
-                            <div class="form-group d-inline-block col-6 col-md-2 p-0">
+                            <div class="form-group d-inline-block col-6 col-md-2 p-0 m-0">
                                 <select class="select-re" name="address_city_re" id="member_city_re" data-val="<?= $r_re['address_city'] ?>">
                                     <!-- <option value="< ?=htmlentities($r_re['address_city_re']) ?>">< ?=htmlentities($r_re['address_city_re']) ?></option> -->
                                     <option class="option-re text-16-re" value="5">臺北市</option>
@@ -277,7 +277,7 @@ foreach($re_rows as $r){
                                     <option value="23">臺東縣</option>
                                 </select>
                             </div>
-                            <div class="form-group d-inline-block col-6 col-md-2 p-0">
+                            <div class="form-group d-inline-block col-6 col-md-2 p-0 m-0">
                                 <select class="select-re" name="address_region_re" id="member_district_re" data-val="<?= $r_re['address_region'] ?>">
                                 </select>
                             </div>
@@ -286,7 +286,7 @@ foreach($re_rows as $r){
                             </div>
                         </div>
                     </div>
-                    <div class="mb-5">
+                    <div class="mb-3">
                         <label for="email" class="form-label-re text-18-re">信箱帳號<span style="color:#963C38">*</span></label><br>
                         <input id="member_email_re" class="inputdisabled-re col-8 noline-re" type="text" class="form-control" disabled="disabled" value="<?=htmlentities($r_re['email']) ?>">
                     </div>

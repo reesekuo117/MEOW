@@ -613,10 +613,10 @@ $sm = $pdo->query($sqlmember)->fetch();
                             </div>
                         </section>
                     </div>
-                    <input type="hidden" name="state" value="處理中">
+                    <input type="hidden" name="state" value="訂單完成">
                     <input type="hidden" name="delivery" value="宅配">
                     <input type="hidden" name="payment" value="ATM轉帳">
-                    <input type="hidden" name="payment_state" value="未付款">
+                    <input type="hidden" name="payment_state" value="已付款">
                     <div class=" d-md-flex justify-content-md-end">
                         <!-- a href="#buy1.php" -->
                         <div class="btn unique-nextbutton-yu p-0">

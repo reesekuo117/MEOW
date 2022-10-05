@@ -577,10 +577,11 @@ console.log('帳號密碼','555@g.com/555');
 console.log('帳號密碼','333@g.com/333');
 console.log('帳號密碼','222@g.com/222');
 
-// 一鍵輸入(名字+電話)
+// 一鍵輸入(名字+電話+地址)
 $('#onekey1').click(function () {
     $("#member_name_re").val("皮卡丘");
     $("#member_phone_re").val("0956456789");
+    $("#member_address_re").val("復興南路一段390號2樓");
 })
 
 // 一鍵輸入(商品評論)
