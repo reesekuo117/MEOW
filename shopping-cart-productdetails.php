@@ -141,7 +141,7 @@ foreach($_SESSION['pcart'] as $k=>$s){
                                                                 商品名稱
                                                             </h6>
                                                         </th>
-                                                        <!-- <th scope="col">
+                                                        <th scope="col">
                                                             <h6 class="mb-0">
                                                                 規格
                                                             </h6>
