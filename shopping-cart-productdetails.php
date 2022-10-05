@@ -11,6 +11,11 @@ $member_id = $_SESSION['user']['id'];
 $sqlmember = "SELECT * FROM `member` WHERE id=$member_id";
 $sm = $pdo->query($sqlmember)->fetch();
 
+
+$ptotal = 0;
+foreach($_SESSION['pcart'] as $k=>$s){
+    $ptotal += $s['product_price']*$s['qty'];
+}
 ?>
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
@@ -108,6 +113,35 @@ $sm = $pdo->query($sqlmember)->fetch();
                                                     </h6>
                                                 </th>
                                                 <!-- <th scope="col">
+                        <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h6 class="panel-title-yu">
+                                        <aclass="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
+                                        訂單明細
+                                            <svg class="panel-titlesvg-yu" width="24" height="24" viewBox="0 0 24 24"fill="none"xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 9L11.3415 15.4238C11.7185 15.7537 12.2815 15.7537 12.6585 15.4238L20 9"stroke="#432A0F"stroke-opacity="0.6"stroke-width="2"stroke-linecap="round" />
+                                            </svg>
+                                        </aclass=>
+                                    </h6>
+                                </div>
+                                <div id="listinfo-details-yu" class="collapse show panel-collapse collapse-yu">
+                                    <div class="panel-body-yu">
+                                        <div class="px-0 col-auto justify-content-around text-center">
+                                            <table class="table">
+                                                <thead class="thead">
+                                                    <tr>
+                                                        <th scope="col" src="" alt="">
+                                                            <h6 class="mb-0">
+                                                                商品照片
+                                                            </h6>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <h6 class="mb-0">
+                                                                商品名稱
+                                                            </h6>
+                                                        </th>
+                                                        <!-- <th scope="col">
                                                             <h6 class="mb-0">
                                                                 規格
                                                             </h6>
@@ -164,6 +198,7 @@ $sm = $pdo->query($sqlmember)->fetch();
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
                     </div>
                 </div>
             </main>
@@ -369,6 +404,29 @@ $sm = $pdo->query($sqlmember)->fetch();
                                             選擇取貨門市
                                         </a>
                                     </p>
+=======
+                    </main>
+                    <div class=" h6 priceNT-yu alert alert-succes listinfo-details-totalprice-yu m-0"role="alert">
+                        <h6 id="total-price-yu" class="price-uniqui-yu">
+                            <?= $ptotal ?>
+                        </h6>
+                    </div>
+                </div>
+                <!-- 訂購人資料 -->
+                <!-- 記得這邊的action要連到另一隻php -->
+                <form name="product_form" method="post" action="shopping-cart-ATM-product.php" onsubmit="checkFormProduct(); return false;">
+                    <div class="section-1-yu position-relative">
+                        <div class="section-1-title-yu">
+                            <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
+                        </div>
+                        <!-- 訂購人填寫資料 -->
+                        <div class="AllinputValueYu"></div>
+                        <div id="form1-yu" name="bajohn"  class=" form1-yu order-list-yu">
+                            <div class="field order-name-yu p-3 ">
+                                <label for="name" class="">
+                                    姓名
+                                    <span style="color: #963c38">*</span>
+>>>>>>> c2104999cf94cdf6e2878f68ef29dd513db8ba33
                                 </label>
                             </div>
                             <div class="d-flex align-items-center">
@@ -485,6 +543,191 @@ $sm = $pdo->query($sqlmember)->fetch();
                             </i>
                         </div>
                     </div>
+<<<<<<< HEAD
+=======
+                    <!-- 付款方式 -->
+                    <div class=" section-3-yu">
+                        <section class="section-3-yu">
+                            <div class="section-3-title-yu">
+                                <h3 class="listinfo-title-yu m-0">付款方式</h3>
+                            </div>
+                            <div class="p-3">
+                                <div class="pt-2">
+                                    <input type="radio" name="listinfo-title-radio-yu" id="creditcard-radio-yu"/>
+                                    <label for="name" class="m-0"> 
+                                        信用卡 
+                                    </label>
+                                    <div class=" visacard-yu d-flex justify-content-start my-4 mx-3">
+                                        <div class="creditcard-style-yu">
+                                            <div class="creditcard-yu  position-relative">
+                                                <div class="frontcreditcard-yu">
+                                                    <div class=" card-group-yu ">
+                                                        <!-- 信用卡正面 -->
+                                                        <div class="frontcreditcardsimg-yu d-flex justify-content-center filter1-yu">
+                                                            <img src="imgs/shopping-cart/信用卡的前面png.png" alt="">
+                                                        </div>
+                                                        <div class=" creditcardnumber-yu d-flex" id="creditcardnumber-yu">
+            
+                                                            <input id="creditcardnumber1-yu" class=" text-center" type="text" placeholder="0000" maxlength="4">
+            
+                                                            <input id="creditcardnumber2-yu" class=" text-center"  type="text" placeholder="0000" maxlength="4">
+            
+                                                            <input id="creditcardnumber3-yu" class=" text-center"  type="text" placeholder="0000" maxlength="4">
+            
+                                                            <input id="creditcardnumber4-yu" class=" text-center"  type="text" placeholder="0000" maxlength="4">
+                                                        </div>
+                                                        <div class="creditcarddate-yu d-flex" id="creditcarddate-yu">
+                                                            <input class="text-center"  type="text" placeholder="月" maxlength="2" id="creditcardmonth-yu" >
+                                                            <h6>
+                                                                /
+                                                            </h6>
+                                                            <input class="text-center"  type="text" placeholder="年" maxlength="2" id="creditcardyear-yu"  >
+                                                        </div>
+                                                        <!-- <div class="ring"></div> -->
+                                                    </div>
+                                                </div>
+                                                <div class="backcreadidcard-yu ">
+                                                    <div class="backcreditcardsimg-yu d-flex justify-content-center filter2-yu">
+                                                        <img src="imgs/shopping-cart/信用卡的背面png.png" alt="">
+                                                        
+                                                    </div>
+                                                    <div class="creditcardcvc-yu" id="creditcardcvc-yu">
+                                                        <input class="text-center"  type="text" placeholder="cvc" maxlength="3" id="creditcardid-yu">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- -------------信用卡輸入input----------- -->
+                                        <div class="creadidcardform-yu py-2 col-6">
+                                            <div class="pt-1">
+                                                <div class=" usercreditcardinput-yu">
+                                                    <label class="pt-1 m-0"  for="">
+                                                        信用卡卡號
+                                                    </label>
+                                                    <br>
+                                                    <div class=" usercdinputYu  d-flex justify-content-start align-items-start"> 
+                                                        <div class=" field3 mx-1 ">
+                                                            <input class="usercdnumber3  usercdnumber4 requiredYu text-center m-0" type="" id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyPress="autoTab()" onkeyUp="autoTab()">
+                                                        </div>
+                                                        <div class=" field3 mx-1">
+                                                            <input class=" usercdnumber3 usercdnumber4 requiredYu text-center m-0" type=""  placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
+                                                            <!-- onkeyup="value=value.replace(/[^\d]/g,'') " -->
+                                                        </div>
+                                                        <div class=" field3 mx-1">
+                                                            <input class=" usercdnumber3 usercdnumber4 requiredYu text-center m-0" type="" placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" >
+                                                        </div>
+                                                        <div class=" field3 mx-1  d-flex align-items-center">
+                                                            <input class=" usercdnumber3 usercdnumber4 requiredYu text-center m-0" type=""  placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu">
+                                                            <i class="right fa-regular fa-circle-check"></i>
+                                                            <i class="wrong fa-solid fa-triangle-exclamation">
+                                                                <small>請輸入正確的信用卡卡號</small>
+                                                            </i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="usercreditcardinput-yu  mt-3">
+                                                    <label class=" m-0"  for="" > 
+                                                        有效 / 月年
+                                                    </label>
+                                                    <br>
+                                                    <div class=" d-flex justify-content-start align-items-start "> 
+                                                        <div class="field3 mx-1 ">
+                                                            <input class=" usercdMonthYu  requiredYu text-center m-0" placeholder="月 " maxlength="2" id="usercreditcardmonth-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>12)value=12">
+                                                        </div>
+                                                        <div class="field3 mx-1">
+                                                            <input class=" usercdYearYu  requiredYu text-center m-0" placeholder="年" maxlength="2" id="usercreditcardyear-yu" onkeyup="value=value.replace(/[^\d]/g,'') ; if(value>29)value=29">
+                                                            <i class="right fa-regular fa-circle-check"></i>
+                                                            <i class="wrong fa-solid fa-triangle-exclamation">
+                                                                <small>請輸入正確的信用卡卡號</small>
+                                                            </i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=" usercreditcardinput-yu  mt-3">
+                                                    <label class="m-0"  for="">
+                                                        背面末三碼
+                                                    </label>
+                                                    <br>
+                                                    <div class=" d-flex justify-content-start align-items-start "> 
+                                                        <div class=" field3  mx-1 ">
+                                                            <input class=" cardCVC text-center requiredYu m-0" placeholder="000 " maxlength="3" id="usercreditcardid-yu" onkeyup="value=value.replace(/[^\d]/g,'') ">
+                                                            <i class="right fa-regular fa-circle-check"></i>
+                                                            <i class="wrong fa-solid fa-triangle-exclamation">
+                                                            requiredYu                                 <small>請輸入正確的信用卡後三碼</small>
+                                                            </i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 ATMradioYu " >
+                                <input class="ATMradioYu" type="radio" name="listinfo-title-radio-yu" checked/>
+                                <label for="name" class="m-0"> ATM轉帳 </label>
+                            </div>
+                        </section>
+                    </div>
+                    <input type="hidden" name="state" value="訂單完成">
+                    <input type="hidden" name="delivery" value="宅配">
+                    <input type="hidden" name="payment" value="ATM轉帳">
+                    <input type="hidden" name="payment_state" value="已付款">
+                    <div class=" d-md-flex justify-content-md-end">
+                        <!-- a href="#buy1.php" -->
+                        <div class="btn unique-nextbutton-yu p-0">
+                            <!-- <a href="shopping-cart-ATM-product.php"></a> -->
+                                <button class="Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="submit"  name=ok value="送出">
+                                    <p class="m-0 text-center">
+                                        確認訂購
+                                    </p>
+                                </button>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- ------------------手機 ------------------------>
+        <section class=" d-block d-md-none">
+            <!-- 購物車訂單的進度條progress-bar -->
+            <div class=" p-0">
+                <div class="mdprogress-bar-yu" >
+                    <div class=" mdjustify-yu ">
+                        <span class="mdcircle-yu ">
+                            <div class="circle m-auto">
+                                <h5 >1</h5>
+                            </div>
+                            <div class="page-yu ">
+                                <p class=" m-0 page-yu-one" >購物車訂單</p>
+                            </div>
+                            <div class=" pageline-yu "></div>
+                        </span>
+
+                        <span class="mdcircle-2-yu">
+                            <div class="circle-light m-auto">
+                                <h5 class="page-light-number">2</h5>
+                            </div>
+                            <div class="page-yu ">
+                                <p class="m-0 page-yu-two " >填寫資料</p>
+                            </div>
+                        </span>
+                        
+                        <span class="mdcircle-3-yu">
+                            <div class="circle m-auto">
+                                <h5>3</h5>
+                            </div>
+                            <div class="page-yu ">
+                                <p class="m-0 page-yu-three" >完成訂單</p>
+                            </div>
+                        </span>
+                    </div>
+>>>>>>> c2104999cf94cdf6e2878f68ef29dd513db8ba33
                 </div>
             </div>
             <!-- 付款方式 -->

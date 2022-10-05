@@ -67,12 +67,25 @@ $('.tab_list_re li.tablist-meowli04_re').click(function() {
 //     });
 
 //手機會員/修改頁面
-$(function(){
-    $(".tab_phonelist_re h5").click(function(){
-        $(this).addClass("current_re").siblings().removeClass("current_re");
-        var index = $(this).index();
-        $(".tab_con_re .item_re").eq(index).show().siblings().hide();
-    })
+// $(function(){
+//     $(".tab_phonelist_re h5").click(function(){
+//         $(this).addClass("current_re").siblings().removeClass("current_re");
+//         // var index = $(this).index();
+//         // $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+//     })
+// })
+// $(function(){
+//     $(".tab_phonelist_re h5").click(function(){
+//         // $(this).addClass("current_re").siblings().removeClass("current_re");
+//         var index = $(this).index();
+//         $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+//     })
+// })
+
+$(".tab_phonelist_re h5").click(function(){
+    $(this).addClass("current_re").siblings().removeClass("current_re");
+    var index = $(this).index();
+    $(".tab_con_re .item_re").eq(index).show().siblings().hide();
 })
 // 會員頭像
 let picture_re = document.getElementById('pictureChange_re');
@@ -98,6 +111,7 @@ const blah_md_re = $('#blah_md_re'); // selected avatar 被選擇的頭像
 const blah_md02_re = $('#blah_md02_re'); // selected avatar 被選擇的頭像
 const blah_xs01_re = $('#blah_xs01_re'); // selected avatar 被選擇的頭像
 const blah_xs02_re = $('#blah_xs02_re'); // selected avatar 被選擇的頭像
+const blah_xs03_re = $('#blah_xs03_re'); // selected avatar 被選擇的頭像
 
 $('.picturewarpChange-re').on('click', function(event){
     const src = $(this).find('img')[0].src;
@@ -114,6 +128,7 @@ function saveAvatar() {
             blah_md02_re[0].src = picture_re;
             blah_xs01_re[0].src = picture_re;
             blah_xs02_re[0].src = picture_re;
+            blah_xs03_re[0].src = picture_re;
         }
     }, 'json')
 }
