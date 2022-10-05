@@ -768,10 +768,10 @@ foreach($re_rows as $r){
                                             <th class="text-16-re py-1">訂購人電話</th>
                                             <td class="text-16-re py-1"><?= $tList['phone'] ?></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <th class="text-16-re py-1">訂購人地址</th>
-                                            <td class="text-16-re py-1"><?= $tList['city'] ?><?= $tList['region'] ?><?= $tList['address'] ?></td>
-                                        </tr>
+                                            <td class="text-16-re py-1">< ?= $tList['city'] ?>< ?= $tList['region'] ?>< ?= $tList['address'] ?></td>
+                                        </tr> -->
                                     </table>
                                 </div>
                                 <div class="col-12 col-md-6 px-2">
