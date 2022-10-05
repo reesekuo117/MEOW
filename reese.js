@@ -98,6 +98,7 @@ $('.tab_list_re li.tablist-meowli04_re').click(function() {
 $(".tab_phonelist_re h5").click(function(){
     var index = $(this).index();
     $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+    // $(this).css("background","#E5A62A").siblings().css("background","transparent");
     // $(this).addClass("current_re").siblings().removeClass("current_re");
 })
 
