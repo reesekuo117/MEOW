@@ -82,7 +82,7 @@ $sm = $pdo->query($sqlmember)->fetch();
                         <div class="panel-group-yu"id="accordion"role="tablist"aria-multiselectable="true">
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
-                                    <h6 class="panel-title-yu mt-3">
+                                    <h6 class="panel-title-yu">
                                         <aclass="panel-title-a-yu" data-toggle="collapse" href="#listinfo-details-yu" role="button">
                                         訂單明細
                                             <svg class="panel-titlesvg-yu" width="24" height="24" viewBox="0 0 24 24"fill="none"xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +175,7 @@ $sm = $pdo->query($sqlmember)->fetch();
                 </div>
                 <!-- 訂購人資料 -->
                 <!-- 記得這邊的action要連到另一隻php -->
-                <form name="product_form" method="post" action="shopping-cart-ATM-product.php" onsubmit="return false;">
+                <form name="product_form" method="post" action="shopping-cart-ATM-product.php" onsubmit="checkFormProduct(); return false;">
                     <div class="section-1-yu position-relative">
                         <div class="section-1-title-yu">
                             <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
@@ -621,7 +621,7 @@ $sm = $pdo->query($sqlmember)->fetch();
                         <!-- a href="#buy1.php" -->
                         <div class="btn unique-nextbutton-yu p-0">
                             <!-- <a href="shopping-cart-ATM-product.php"></a> -->
-                                <button class="Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="submit"  name=ok value="送出" data-toggle="modal" data-target="#SURE">
+                                <button class="Allsubmit unique-btn-yu  me-md-2 que-btn-yu  btn_disabled_ba" type="submit"  name=ok value="送出">
                                     <p class="m-0 text-center">
                                         確認訂購
                                     </p>
@@ -629,37 +629,6 @@ $sm = $pdo->query($sqlmember)->fetch();
                             
                         </div>
                     </div>
-                <!-- 光箱 -->
-                <div class="modal fade" id="SURE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content position-relative">
-                            <div class="modal-header">
-                                <div class="errorSign">
-                                    <img src="./imgs/Errorsign.png" alt="">
-                                </div>
-                                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                確定送出嗎?
-                            </div>
-
-                            <div class="modal-footer">
-                                <div class="errorMeow position-absolute">
-                                    <img src="./imgs/errorMeow2.png" alt="">
-                                </div>
-                                <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
-                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="" onclick="checkFormProduct()">
-                                    <a href="#">
-                                    沒錯喵
-                                    </a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
                 </form>
             </div>
         </section>
