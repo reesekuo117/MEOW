@@ -86,6 +86,21 @@ $('.tab_list_re li.tablist-meowli04_re').click(function() {
 //     $('#form_forget_re').show().siblings().hide();
 //     $('.avatar_ba').show()
 // })
+//     })
+// })
+// $(function(){
+//     $(".tab_phonelist_re h5").click(function(){
+//         // $(this).addClass("current_re").siblings().removeClass("current_re");
+//         var index = $(this).index();
+//         $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+//     })
+// })
+
+$(".tab_phonelist_re h5").click(function(){
+    $(this).addClass("current_re").siblings().removeClass("current_re");
+    var index = $(this).index();
+    $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+})
 // 會員頭像
 let picture_re = document.getElementById('pictureChange_re');
 window.onclick = function(event) {
@@ -110,6 +125,7 @@ const blah_md_re = $('#blah_md_re'); // selected avatar 被選擇的頭像
 const blah_md02_re = $('#blah_md02_re'); // selected avatar 被選擇的頭像
 const blah_xs01_re = $('#blah_xs01_re'); // selected avatar 被選擇的頭像
 const blah_xs02_re = $('#blah_xs02_re'); // selected avatar 被選擇的頭像
+const blah_xs03_re = $('#blah_xs03_re'); // selected avatar 被選擇的頭像
 
 $('.picturewarpChange-re').on('click', function(event){
     const src = $(this).find('img')[0].src;
@@ -126,6 +142,7 @@ function saveAvatar() {
             blah_md02_re[0].src = picture_re;
             blah_xs01_re[0].src = picture_re;
             blah_xs02_re[0].src = picture_re;
+            blah_xs03_re[0].src = picture_re;
         }
     }, 'json')
 }
@@ -589,10 +606,11 @@ console.log('帳號密碼','555@g.com/555');
 console.log('帳號密碼','333@g.com/333');
 console.log('帳號密碼','222@g.com/222');
 
-// 一鍵輸入(名字+電話)
+// 一鍵輸入(名字+電話+地址)
 $('#onekey1').click(function () {
     $("#member_name_re").val("皮卡丘");
     $("#member_phone_re").val("0956456789");
+    $("#member_address_re").val("復興南路一段390號2樓");
 })
 
 // 一鍵輸入(商品評論)

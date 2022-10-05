@@ -7,5 +7,8 @@ $comeFrom = 'login.php';
 if(! empty($_SERVER['HTTP_REFERER'])){
     $comeFrom = $_SERVER['HTTP_REFERER'];
 }
+
+session_destroy();
+
 header('Location: login.php');
 exit;
