@@ -496,7 +496,7 @@ p {
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 100px;
+    padding-top: 50px;
     /* display: inline-block; */
     position: absolute;
 }
@@ -955,17 +955,10 @@ p {
 .orderlist-re {
     transition: .2s;
     padding: 12.8px 0;
-    border-top: 0.5px solid var(--color-text38);
-    /* border-bottom: 0.5px solid var(--color-text38); */
 }
 
 .orderlist-re:hover {
-    /* background-color: var(--color-lightcreamy); */
     background-color: rgba(229, 167, 42, 0.5);
-}
-
-.ordertitle-other2-re {
-    /* border-top: 0.5px solid var(--color-text60); */
 }
 
 .ordercross-re {
@@ -1227,6 +1220,9 @@ table .inside-orderlisttable-re {
     scroll-snap-type: x mandatory;
     flex-wrap: nowrap;
     white-space: nowrap;
+}
+.scroll-snap-re::-webkit-scrollbar {
+    display: none;
 }
 
 /* 求籤-------------------------------------------------------------------------- */

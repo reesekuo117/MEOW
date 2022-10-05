@@ -202,7 +202,7 @@ foreach($re_rows as $r){
         <div class="allright-re col-12 col-md-9 p-0">
         <div class="tab_con_re">
 <!-- p1-member-------------------------------------------------------------------------------------- -->
-            <div id="member-page-re position-relative" class="item_re" style="display: block;">
+            <div id="member-page-re" class="item_re position-relative" style="display: block;">
                 <div class="divination-re d-none d-md-block">
                     <a href="draw01.php">
                         <svg width="187" height="218" viewBox="0 0 187 218" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

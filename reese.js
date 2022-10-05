@@ -70,23 +70,16 @@ $('.tab_list_re li.tablist-meowli04_re').click(function() {
 // $(function(){
 //     $(".tab_phonelist_re h5").click(function(){
 //         $(this).addClass("current_re").siblings().removeClass("current_re");
-//         // var index = $(this).index();
-//         // $(".tab_con_re .item_re").eq(index).show().siblings().hide();
-//     })
-// })
-// $(function(){
-//     $(".tab_phonelist_re h5").click(function(){
-//         // $(this).addClass("current_re").siblings().removeClass("current_re");
 //         var index = $(this).index();
 //         $(".tab_con_re .item_re").eq(index).show().siblings().hide();
 //     })
 // })
-
 $(".tab_phonelist_re h5").click(function(){
-    $(this).addClass("current_re").siblings().removeClass("current_re");
     var index = $(this).index();
     $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+    // $(this).addClass("current_re").siblings().removeClass("current_re");
 })
+
 // 會員頭像
 let picture_re = document.getElementById('pictureChange_re');
 window.onclick = function(event) {
