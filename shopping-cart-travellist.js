@@ -1115,16 +1115,16 @@ $("#btnAutoInput-yu").click(function () {
   const fields = [
     "username-yu",
     "usermobile-yu",
-    "userbirthday-yu",
-    "userid-yu",
+    // "userbirthday-yu",
+    // "userid-yu",
     "useremail-yu",
   ];
 
   $("#username-yu").val($("#tname-yu").val());
   $("#usermobile-yu").val($("#tmobile-yu").val());
   $("#useremail-yu").val($("#temail-yu").val());
-  $("#userbirthday-yu").val("82/05/23");
-  $("#userid-yu").val("A22145687");
+  // $("#userbirthday-yu").val("82/05/23");
+  // $("#userid-yu").val("A22145687");
 
   fields.forEach(function (el) {
     $("#" + el).trigger("input");
