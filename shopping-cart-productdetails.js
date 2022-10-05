@@ -1172,8 +1172,8 @@ $("#btnAutoInput-yu").click(function () {
   const fields = [
     "username-yu",
     "usermobile-yu",
-    // "userbirthday-yu",
-    // "userid-yu",
+    "userbirthday-yu",
+    "userid-yu",
     "useremail-yu",
     "useraddress-yu",
   ];
@@ -1181,8 +1181,8 @@ $("#btnAutoInput-yu").click(function () {
   $("#username-yu").val($("#name-yu").val());
   $("#usermobile-yu").val($("#mobile-yu").val());
   $("#useremail-yu").val($("#email-yu").val());
-  // $("#userbirthday-yu").val("82/05/23");
-  // $("#userid-yu").val("A22145687");
+  $("#userbirthday-yu").val("82/05/23");
+  $("#userid-yu").val("A22145687");
   $("#useraddress-yu").val($("#address-yu").val());
 
   fields.forEach(function (el) {

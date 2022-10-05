@@ -202,7 +202,7 @@ foreach($re_rows as $r){
         <div class="allright-re col-12 col-md-9 p-0">
         <div class="tab_con_re">
 <!-- p1-member-------------------------------------------------------------------------------------- -->
-            <div id="member-page-re position-relative" class="item_re" style="display: block;">
+            <div id="member-page-re" class="item_re position-relative" style="display: block;">
                 <div class="divination-re d-none d-md-block">
                     <a href="draw01.php">
                         <svg width="187" height="218" viewBox="0 0 187 218" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -217,7 +217,7 @@ foreach($re_rows as $r){
                     </a>
                 </div>
                 <!-- xs -->
-                <div class="col-12 d-md-none">
+                <div class="col-12 d-md-none avatar_ba">
                     <div class="picturewarp-re mx-auto my-4 position-relative">
                         <img id="blah_xs01_re" class="w-100" src="<?= $r_re['picture'] ?>" alt="">
                         <div class="pictureicon-re position-absolute" onclick="document.getElementById('pictureChange_re').style.display='block'" style="width:auto;">
@@ -230,8 +230,8 @@ foreach($re_rows as $r){
                     </div>
                 </div>
                 <div class="d-flex tab_phonelist_re">
-                    <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">會員資料</h5>
-                    <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">修改密碼</h5>
+                    <h5 class="membertitle_ba1 membertitle-re col-6 p-0 d-inline-block px-3">會員資料</h5>
+                    <h5 class="membertitle_ba2 membertitle-re col-6 d-md-none p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
                 <form id="form_member_re" name='form_member_re' class="padding225-re" method="post" onsubmit="checkFormMember(); return false;"> 
                 <input type="hidden" name="id" value="<?= $r_re['id'] ?>">
@@ -292,13 +292,13 @@ foreach($re_rows as $r){
                     </div>
                     <div id="member_msgContainer" class="col-8 p-0"></div>
                     <div class="position-absolute fixedbtn_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
-                    <div id="onekey1" class="onekey position-absolute"></div>
+                    <div id="onekey1" class="d-none d-md-block onekey position-absolute"></div>
                 </form>
             </div>
 <!-- p2-password------------------------------------------------------------------------------------ -->
             <div id="password-page-re" class="item_re">
                 <!-- phone -->
-                <div class="col-12 d-md-none">
+                <div class="col-12 d-md-none avatar_ba">
                     <div class="picturewarp-re mx-auto my-4 position-relative">
                         <img id="blah_xs02_re" class="w-100" src="<?= $r_re['picture'] ?>" alt="">
                         <div class="pictureicon-re position-absolute" onclick="document.getElementById('pictureChange_re').style.display='block'" style="width:auto;">
@@ -314,7 +314,7 @@ foreach($re_rows as $r){
                     <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">會員資料</h5>
                     <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">修改密碼</h5>
                 </div>
-                <form name='form_forget_re' class="padding225-re" method="post" onsubmit=" checkFormPassword(); return false;"> 
+                <form id="form_forget_re" name='form_forget_re' class="padding225-re" method="post" onsubmit=" checkFormPassword(); return false;"> 
                 <input type="hidden" name="id" value="<?= $r_re['id'] ?>">
                     <div class="mb-3">
                         <label for="account" class="form-label-re text-18-re">舊密碼<span style="color:#963C38">*</span></label><br>
