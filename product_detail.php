@@ -120,11 +120,11 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
 
     <!-- computer head -->
     <!-- < ?php foreach ($rows as $r) : ?> -->
-        <div class="container">
-            <div class="ml-md-3 mt-md-5 mt-3 d-flex">
-                <h6 id="backtoProductList" class="p-0"> ＜　商品列表頁 </h6>
-            </div>
+    <div class="container">
+        <div class="ml-md-3 mt-md-5 mt-3 d-flex">
+            <h6 id="backtoProductList" class="p-0"> ＜　商品列表頁 </h6>
         </div>
+    </div>
     <div class="pd_head d-none d-md-block mt-md-3" id="pd_title">
 
         <div class="container d-flex">
@@ -250,7 +250,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                     <div class="quantity">
                                         <button class="minus disabled">－</button>
                                     </div>
-                                    <div class="product_q px-2">
+                                    <div class="product_q  product_qq px-2">
                                         1
                                     </div>
                                     <div class="quantity">
@@ -392,7 +392,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
 
     <!-- 桌機下方列 -->
     <div class="undernav d-none d-md-block">
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="  container d-flex justify-content-between align-items-center">
             <div class="row justify-content-center">
                 <div class="left_title">
                     <div class="col">
@@ -415,7 +415,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                         </button>
                     </div>
                     <div class="col">
-                        <button class="cart d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
+                        <button class="cart d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_PF_Yu(event)">
                             <!-- 跳轉頁面所以button還要再包a連結? -->
                             <div class="icon_cart">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -426,8 +426,8 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                         </button>
                     </div>
                     <div class="col">
-                        <button class="buy d-flex justify-content-center align-items-center">
-                            <a class="d-flex" href="#shopping-cart.php" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
+                        <button class="buy d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_PF_Yu(event)">
+                            <a class="d-flex" href="shopping-cart.php">
                                 <div class="icon_buy">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <mask id="path-1-outside-1_1834_25020-499429" maskUnits="userSpaceOnUse" x="1.58203" y="3.25" width="20" height="17" fill="black">
@@ -551,7 +551,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                 </div> -->
                             </div>
                             <div class="cd">
-<!-- computer comment -->
+                                <!-- computer comment -->
                                 <!-- computer comment -->
                                 <div class="row d-none d-md-flex detail_comment">
                                     <?php foreach ($review as $w) : ?>
@@ -578,15 +578,15 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                                 $reviewsidken = $w['sid'];
                                                 $getreviewtagken = $pdo->query("SELECT * FROM `review_tags_rel` WHERE `review_sid` = $reviewsidken")->fetchAll();
                                                 ?>
-                                                    <?php foreach ($getreviewtagken as $ken) : ?>
-                                                        <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-5">
-                                                            <?php
-                                                            $getreview = $ken['tags_sid'];
-                                                            $tagiswhat = $pdo->query("SELECT * FROM `review_tags` WHERE `sid` = $getreview")->fetchAll();
-                                                            echo $tagiswhat[0]['tags'];
-                                                            ?>
-                                                        </span>
-                                                    <?php endforeach; ?>
+                                                <?php foreach ($getreviewtagken as $ken) : ?>
+                                                    <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-5">
+                                                        <?php
+                                                        $getreview = $ken['tags_sid'];
+                                                        $tagiswhat = $pdo->query("SELECT * FROM `review_tags` WHERE `sid` = $getreview")->fetchAll();
+                                                        echo $tagiswhat[0]['tags'];
+                                                        ?>
+                                                    </span>
+                                                <?php endforeach; ?>
                                                 <div class="p_comment ">
 
                                                     <p class="mt-3">
@@ -900,36 +900,36 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
             </div>
         </div>
     </div>
-        <!-- 加入最愛 -->
-        <div class="modal fade" id="favModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content-fav modal-content position-relative mx-auto">
-                    <div class="modal-header-fav">
-                        <div class="favOK mx-auto d-flex justify-content-center my-3">
-                            <img class="w-100" src="./imgs/favOK.png" alt="">
-                        </div>
+    <!-- 加入最愛 -->
+    <div class="modal fade" id="favModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content-fav modal-content position-relative mx-auto">
+                <div class="modal-header-fav">
+                    <div class="favOK mx-auto d-flex justify-content-center my-3">
+                        <img class="w-100" src="./imgs/favOK.png" alt="">
                     </div>
-                    <div class="modal-body-fav pt-0">
-                        已將商品加入最愛！
-                    </div>
+                </div>
+                <div class="modal-body-fav pt-0">
+                    已將商品加入最愛！
                 </div>
             </div>
         </div>
-        <!-- 加入購物車光箱 -->
-        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content-fav modal-content position-relative mx-auto">
-                    <div class="modal-header-fav">
-                        <div class="favOK mx-auto d-flex justify-content-center my-3">
-                            <img class="w-100" src="./imgs/cartOK.png" alt="">
-                        </div>
+    </div>
+    <!-- 加入購物車光箱 -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content-fav modal-content position-relative mx-auto">
+                <div class="modal-header-fav">
+                    <div class="favOK mx-auto d-flex justify-content-center my-3">
+                        <img class="w-100" src="./imgs/cartOK.png" alt="">
                     </div>
-                    <div class="modal-body-fav pt-0">
-                        已將商品加入購物車！
-                    </div>
+                </div>
+                <div class="modal-body-fav pt-0">
+                    已將商品加入購物車！
                 </div>
             </div>
         </div>
+    </div>
     <!-- <div class="notlogin d-none" id="favnotlogin"> -->
     <!-- 1.背景用黑色半透明做光箱效果，視窗FIXED(原本就在用show，沒有要讓它出現用append) -->
     <!-- <div class="">
@@ -978,6 +978,28 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
             'json');
     }
 
+    function addToCart_PF_Yu(event) {
+        const btnF = $(event.currentTarget);
+        const qty = btnF.closest(".product_detail_07").find(".product_qq").text().trim();
+        // const qty=1;
+        // console.log(btnF);
+        console.log('hihi', qty);
+        const sid = btnF.attr('data-sid');
+        // console.log({
+        //     sid,
+        //     qty
+        // });
+        $.get(
+            're-cart-p-api.php', {
+                sid,
+                qty
+            },
+            function(data) {
+                showCartCount(data);
+            },
+            'json');
+    }
+
     function addToFav_P_07(event) {
         const heartbtn = $(event.currentTarget); // 監聽
         const collect_sid = heartbtn.attr('data-sid');
@@ -992,32 +1014,32 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
 
     };
 
-// 加入最愛光箱
-    $('.favorite').click(function () {
+    // 加入最愛光箱
+    $('.favorite').click(function() {
         $("#favModal").modal("show");
-        setTimeout(()=>{
-            $("#favModal").fadeOut(600,function () {
+        setTimeout(() => {
+            $("#favModal").fadeOut(600, function() {
                 $("#favModal").modal("hide")
             });
         }, 600);
 
     })
 
-    $('.icon_heart').click(function () {
+    $('.icon_heart').click(function() {
         $("#favModal").modal("show");
-        setTimeout(()=>{
-            $("#favModal").fadeOut(600,function () {
+        setTimeout(() => {
+            $("#favModal").fadeOut(600, function() {
                 $("#favModal").modal("hide")
             });
         }, 600);
 
     })
 
-// 加入購物車光箱
-    $('.cart').click(function () {
+    // 加入購物車光箱
+    $('.cart').click(function() {
         $("#cartModal").modal("show");
-        setTimeout(()=>{
-            $("#cartModal").fadeOut(600,function () {
+        setTimeout(() => {
+            $("#cartModal").fadeOut(600, function() {
                 $("#cartModal").modal("hide")
             });
         }, 600);

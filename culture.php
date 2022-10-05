@@ -144,7 +144,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                 <img class="w-100" src="./imgs/culture/section1-1.png" alt="">
             </div>
             <div class="position-absolute section1-cat1_lb">
-                <img class="w-100" src="./imgs/culture/section1-cat1.png" alt="">
+                <img class="w-100" src="./imgs/draw/29.png" alt="">
             </div>
             <div class="col-4 top-content_lb">
                 <h6 class="cul-text87">

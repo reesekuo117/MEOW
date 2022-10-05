@@ -1,24 +1,26 @@
 // product
-function checkFormProduct(){
-  console.log('checkFormProduct');
+function checkFormProduct() {
+  console.log("checkFormProduct");
   let isPass = true;
   // if (!$('#oldpassword_re').val()) {
   //     genAlert4('請填寫正確資料');
   //     return;
   // }
-  if(isPass){
-      $.post(
-          're-productorder-api.php', 
-          $(document.product_form).serialize(),
-          function(data){
-              console.log('product_form data',data);
-              if(data.success){
-                  genAlert('購買成功', 'success');
-                  location.href = './shopping-cart-ATM-product.php';
-              }else{
-                  genAlert(data.error);
-              }
-      }, 'json');
+  if (isPass) {
+    $.post(
+      "re-productorder-api.php",
+      $(document.product_form).serialize(),
+      function (data) {
+        console.log("product_form data", data);
+        if (data.success) {
+          genAlert("購買成功", "success");
+          location.href = "./shopping-cart-ATM-product.php";
+        } else {
+          genAlert(data.error);
+        }
+      },
+      "json"
+    );
   }
 }
 
@@ -73,7 +75,7 @@ let districtArray1 = [
 ];
 $("#usercity-yu").change(function () {
   const cityNumber1 = $(this).val();
-  const districtData1 = districtArray1[cityNumber1-5];
+  const districtData1 = districtArray1[cityNumber1 - 5];
   // 用迴圈會更方便
   // $('#district option').eq(0).text(districtData[0])
   // $('#district option').eq(1).text(districtData[1])
@@ -143,7 +145,7 @@ let districtArray2 = [
 ];
 $("#usercity-yu").change(function () {
   const cityNumber2 = $(this).val();
-  const districtData2 = districtArray2[cityNumber2-5];
+  const districtData2 = districtArray2[cityNumber2 - 5];
   // 用迴圈會更方便
   // $('#district option').eq(0).text(districtData[0])
   // $('#district option').eq(1).text(districtData[1])
@@ -505,7 +507,6 @@ receivername_yu.on("focus", function () {
   }
 });
 
-
 //-------電話--------------
 const receiverphone_yu = $(".receiverphone-yu");
 
@@ -543,7 +544,7 @@ receiverphone_yu.on("blur", function () {
   const field = $(this).closest(".field2"); //定義field
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
-  if  (!/^09\d{8}$/.test(this.value)) {
+  if (!/^09\d{8}$/.test(this.value)) {
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
 
@@ -572,7 +573,6 @@ receiverphone_yu.on("focus", function () {
     });
   }
 });
-
 
 //-------------email-----------------
 const receiveremail_yu = $(".receiveremail-yu");
@@ -628,7 +628,6 @@ receiveremail_yu.on("blur", function () {
       outline: "2px solid #963C38",
       border: "0px solid transparent",
     });
-
   } else {
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
@@ -640,7 +639,6 @@ receiveremail_yu.on("blur", function () {
   }
 });
 
-
 receiveremail_yu.on("focus", function () {
   // console.log("this.value", this.value);
   // console.log("this.value", !this.value);
@@ -651,8 +649,6 @@ receiveremail_yu.on("focus", function () {
     });
   }
 });
-
-
 
 //-------------地址-------------------
 const receiveraddress3_yu = $(".receiveraddress3-yu");
@@ -718,10 +714,6 @@ receiveraddress3_yu.on("focus", function () {
     });
   }
 });
-
-
-
-
 
 //測試
 
@@ -811,15 +803,15 @@ usercdnumber3.on("input", function () {
   const ri = field.find("i.right");
   console.log({ field, wi, ri });
   console.log(!this.value);
-  if (!/^\d$/.test(this.value) || this.value.length >= 4  ) {
+  if (!/^\d$/.test(this.value) || this.value.length >= 4) {
     // wrong
-    $(cusercdnumber3 ).css({
+    $(cusercdnumber3).css({
       outline: "2px solid #963C38",
       border: "0px solid transparent",
     });
   } else {
     // right
-    $(usercdnumber3 ).css({
+    $(usercdnumber3).css({
       outline: "2px solid #e5a62a",
       border: "0px solid transparent",
     });
@@ -830,13 +822,13 @@ usercdnumber3.on("blur", function () {
   const field = $(this).closest(".field3"); //定義field
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
-  if (!/^\d$/.test(this.value) || this.value.length >= 4  ) {
-    $(usercdnumber3 ).css({
+  if (!/^\d$/.test(this.value) || this.value.length >= 4) {
+    $(usercdnumber3).css({
       outline: "2px solid #963C38",
       border: "0px solid transparent",
     });
   } else {
-    $(usercdnumber3 ).css({
+    $(usercdnumber3).css({
       outline: "2px solid #e5a62a",
       border: "0px solid transparent",
     });
@@ -851,7 +843,6 @@ usercdnumber3.on("focus", function () {
     });
   }
 });
-
 
 //------------4信用卡輸入欄位驗證--------------
 const usercdnumber4 = $(".usercdnumber4");
@@ -868,7 +859,7 @@ usercdnumber4.on("input", function () {
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
 
-    $(cusercdnumber4 ).css({
+    $(cusercdnumber4).css({
       outline: "2px solid #963C38",
       border: "0px solid transparent",
     });
@@ -877,7 +868,7 @@ usercdnumber4.on("input", function () {
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
 
-    $(usercdnumber4 ).css({
+    $(usercdnumber4).css({
       outline: "2px solid #e5a62a",
       border: "0px solid transparent",
     });
@@ -892,7 +883,7 @@ usercdnumber4.on("blur", function () {
     wi.css("visibility", "visible");
     ri.css("visibility", "hidden");
 
-    $(usercdnumber4 ).css({
+    $(usercdnumber4).css({
       outline: "2px solid #963C38",
       border: "0px solid transparent",
     });
@@ -900,7 +891,7 @@ usercdnumber4.on("blur", function () {
     ri.css("visibility", "visible");
     wi.css("visibility", "hidden");
 
-    $(usercdnumber4 ).css({
+    $(usercdnumber4).css({
       outline: "2px solid #e5a62a",
       border: "0px solid transparent",
     });
@@ -915,7 +906,6 @@ usercdnumber4.on("focus", function () {
     });
   }
 });
-
 
 // -----有效年月---------
 // 月
@@ -1096,9 +1086,6 @@ cardCVC.on("focus", function () {
   }
 });
 
-
-
-
 //----------信用卡動態--------
 
 $(".creditcard-yu").mouseenter(function () {
@@ -1172,8 +1159,8 @@ $("#btnAutoInput-yu").click(function () {
   const fields = [
     "username-yu",
     "usermobile-yu",
-    // "userbirthday-yu",
-    // "userid-yu",
+    "userbirthday-yu",
+    "userid-yu",
     "useremail-yu",
     "useraddress-yu",
   ];
@@ -1181,8 +1168,8 @@ $("#btnAutoInput-yu").click(function () {
   $("#username-yu").val($("#name-yu").val());
   $("#usermobile-yu").val($("#mobile-yu").val());
   $("#useremail-yu").val($("#email-yu").val());
-  // $("#userbirthday-yu").val("82/05/23");
-  // $("#userid-yu").val("A22145687");
+  $("#userbirthday-yu").val("82/05/23");
+  $("#userid-yu").val("A22145687");
   $("#useraddress-yu").val($("#address-yu").val());
 
   fields.forEach(function (el) {
@@ -1211,7 +1198,6 @@ $("#btnAutoInput-yu").click(function () {
 //   }
 // });
 
-
 function checkFormPass() {
   const Allsubmit = $(".Allsubmit");
   let isPass = true;
@@ -1228,9 +1214,6 @@ function checkFormPass() {
 }
 
 $(".requiredYu").on("input", checkFormPass);
-
-
-
 
 function checkFormPass() {
   const Allsubmit = $(".Allsubmit");
@@ -1249,4 +1232,64 @@ function checkFormPass() {
 
 $(".receiveraddress3-yu").on("input", checkFormPass);
 
+// ---------------算總金額-------------
+// $(".price-uniqui-yu").prev();
+// // .text(num + 1);
 
+// let LittlePriceKenArr = [];
+// let totalKen = 0;
+// let aaa = "tr:nth-child(i)";
+
+// for (let i = 1; i <= $(".LittlePriceYu").length; i++) {
+//   let LittlePriceKen = $(".LittlePriceYu")
+//     .parent()
+//     .parent()
+//     .find(aaa)
+//     .find("td.LittlePriceYu")
+//     .attr("data-val");
+
+//     console.log(LittlePriceKen)
+//   LittlePriceKenArr.push(LittlePriceKen);
+// }
+// console.log(LittlePriceKenArr);
+
+// let aaa = $(".LittlePriceYu")
+//   .parent()
+//   .parent()
+//   .find("td.LittlePriceYu")
+//   .attr("data-val");
+
+// $(".LittlePriceYu")
+//   .parent()
+//   .parent()
+//   .find("tr:nth-child(2)")
+//   .find("td.LittlePriceYu")
+//   .attr("data-val");
+
+// console.log(
+//   "要修改的h6",
+//   $(".price-uniqui-yu")
+//     .closest(".listinfo-yu")
+//     .find(".LittlePriceYu")
+//     .text()
+//     .trim()
+// );
+// const LittlePriceYu = $(".price-uniqui-yu")
+//   .closest(".listinfo-yu")
+//   .find(".LittlePriceYu")
+//   .text()
+//   .trim();
+
+const LittlePriceYu = $(".LittlePriceYu").text().trim();
+// $(".price-uniqui-yu").closest(".listinfo-yu").find(".LittlePriceYu").text(total);
+
+// calTotal(); //呼叫
+// updatePrices();
+// updataPItem(this);
+
+// const total = 0;
+// for (i = 0; i < LittlePriceYu.lenth; i++) {
+//   total += LittlePriceYu;
+//   console.log("total:", total);
+// }
+// console.log("total:", total);
