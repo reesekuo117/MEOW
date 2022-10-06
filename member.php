@@ -329,7 +329,7 @@ foreach($re_rows as $r){
                         <input id="againpassword_re" name="againpassword_re" class="input-re noline-re" type="password" placeholder=" 請輸入新密碼" required>
                     </div>
                     <div id="password_msgContainer" style="width: 330px;"></div>
-                    <div class="position-absolute fixedbtn_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存" ></div>
+                    <div class="position-absolute fixedbtn2_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存" ></div>
                 </form>
             </div>
 

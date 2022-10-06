@@ -796,7 +796,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
             </div>
             <div type="button" class="position-absolute btn btn-xl h4 btn05_ba">
-                <a href="member.php">
+                <a href="#" onclick="document.getElementById('loginCard_re').style.display='block'; return false;" style="width:auto;">
                     馬上成為月老喵的一員！
                 </a>
             </div>

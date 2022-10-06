@@ -60,11 +60,11 @@ $(window).scroll(function () {
     });
   }
 });
-//TODO:
+//關於月老貓咪進場
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".section1-content_lb").offset().top - ($(window).height() * 2/ 3)
+    $(".section1-cat1_lb").offset().top - ($(window).height() * 5/ 6)
   ) {
     $(".section1-cat1_lb").css({
       transform: "translateX(0px)",
@@ -72,7 +72,23 @@ $(window).scroll(function () {
     });
   } else {
     $(".section1-cat1_lb").css({
-      transform: "translateX(-100px)",
+      transform: "translateX(-50px)",
+      opacity: 0,
+    });
+  }
+});
+$(window).scroll(function () {
+  if (
+    $(window).scrollTop() >=
+    $(".section1-cat2_lb").offset().top - ($(window).height() * 5/ 6)
+  ) {
+    $(".section1-cat2_lb").css({
+      transform: "translateX(0px)",
+      opacity: 1,
+    });
+  } else {
+    $(".section1-cat2_lb").css({
+      transform: "translateX(50px)",
       opacity: 0,
     });
   }
