@@ -420,15 +420,15 @@ $pageName = 'cart'; //頁面名稱
                         </form>
                     </div>
                 </div>
+            <?php endforeach; ?>  
                 <div>
-                    <!-- <h6 class=" MDtotalItemsYu text-center px-5">
-                        1
+                        <!-- <h6 class=" MDtotalItemsYu text-center px-5">
+                            1
                     </h6> -->
-                    <h6 class=" MDtatalpriceYu text-center px-5">
+                    <h5 class=" MDtatalpriceYu text-center px-5 pt-4 ">
                         <?= $total ?>
-                    </h6>
+                    </h5>
                 </div>
-            <?php endforeach; ?>    
                 <!-- 未登入 -->
                 <?php if (empty($_SESSION["user"])) : ?>
                     <!-- 跳出提示框提醒用戶先登入會員 -->
@@ -449,16 +449,16 @@ $pageName = 'cart'; //頁面名稱
                 <?php endif; ?>
                 
             </div>
-            <div>
+            <!-- <div>
                 <h6 class=" MDtotalItemsYu text-center px-5">
-                <?= $v['qty'] ?>
+                < ?= $v['qty'] ?>
                 </h6>
                 <h6 class=" MDtatalpriceYu text-center px-5">
-                    <?= $v['product_price'] * $v['qty'] ?>
+                    < ?= $v['product_price'] * $v['qty'] ?>
                 </h6>
-            </div>
+            </div> -->
             <!-- 未登入 -->
-            <div class=" d-flex justify-content-center">
+            <!-- <div class=" d-flex justify-content-center">
                 <a href="./shopping-cart-productdetails.php" class="btn mdunique-nextbutton-yu">
                     <button class=" mdunique-btn-yu " type="button">
                         <p class="m-0 text-center">
@@ -466,7 +466,7 @@ $pageName = 'cart'; //頁面名稱
                         </p>
                     </button>
                 </a>
-            </div>
+            </div> -->
         </div>
         <?php endif; ?>
     </div>
@@ -485,11 +485,11 @@ $pageName = 'cart'; //頁面名稱
                     $total += $j['travel_price'] * $j['qty']; ?>
                     <div class="d-flex tcard">
                         <!-- flex-nowrap -->
-                        <div class=" d-flex">
+                        <div class=" d-flex" style="justify-content: center">
                             <img class=" w-75" src="imgs/travel/cards/<?= $j['travelcard_img'] ?>" alt="...">
                         </div>
                         <div class="px-1">
-                            <div class="mdcardlist-yu">
+                            <div class="mdcardlist-yu  Tmdcardlist-yu">
                                 <p class="m-0 " >
                                     <?= $j['travel_name'] ?>
                                 </p>
@@ -511,13 +511,13 @@ $pageName = 'cart'; //頁面名稱
                         </div>
                     </div>
                 <?php endforeach; ?>
-                <div>
+                <div class="">
                     <!-- <h6 class=" MDtotalItemsYu text-center px-5">
                         1
                     </h6> -->
-                    <h6 class=" MDtatalpriceYu text-center px-5">
+                    <h5 class=" MDtatalpriceYu text-center px-5">
                         <?= $j["travel_price"] ?>
-                    </h6>
+                    </h5>
                 </div>
                 <!-- 未登入 -->
                 <!-- 如果使用者還未登入 -->

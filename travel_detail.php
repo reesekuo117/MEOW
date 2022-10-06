@@ -256,7 +256,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                 </h2>
                             </div>
                             <div class="buy_btn">
-                                <a href="#BuyNowYu" style="text-decoration:none;">
+                                <!-- <a href="#" style="text-decoration:none;"> -->
                                     <button id="btnBuy2" class="buy btn_t_Yu d-flex justify-content-center align-items-center">
                                         <div class="icon_buy">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -269,7 +269,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                         </div>
                                         立即購買
                                     </button>
-                                </a>
+                                <!-- </a> -->
                                 <button class="favorite d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToFav_T_07(event)">
                                     <div class="icon_heart_nav">
                                         <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -432,8 +432,8 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                         </button>
                     </div>
                     <div class="col">
-                        <a id="btnBuy" href="#BuyNowYu" style="text-decoration:none;">
-                            <button class="buy d-flex justify-content-center align-items-center">
+                        <!-- <a id="btnBuy" href="#" style="text-decoration:none;"> -->
+                            <button id="btnBuy" class="buy d-flex justify-content-center align-items-center">
                                 <div class="icon_buy">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <mask id="path-1-outside-1_1834_25020-499429" maskUnits="userSpaceOnUse" x="1.58203" y="3.25" width="20" height="17" fill="black">
@@ -445,7 +445,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                 </div>
                                 立即購買
                             </button>
-                        </a>
+                        <!-- </a> -->
                     </div>
                 </div>
             </div>
@@ -986,9 +986,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
     </div>
 </div>
 <!-- 手機版footer -->
-<div class="td_footer_mb d-block d-md-none">
+<div class="td_footer_mb d-block d-md-none container-fluid">
     <div class="row justify-content-center align-items-center">
-        <div class="col ml-2">
+        <div class="col ml-2 pr-0">
             <button class="favorite d-flex justify-content-center align-items-center w-100">
                 <div class="icon_heart_nav" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                     <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -139,6 +139,11 @@
   border-radius: 8px;
 }
 
+/* 行程卡片文字的寬度 */
+.Tmdcardlist-yu{
+  width: 134px;
+}
+
 /* .mdpagination-yu .btn-group> .mdpagination-yu.btn.active, .mdpagination-yu.btn-group>.mdpagination-yu.btn:active, .mdpagination-yu.btn-group>.mdpagination-yu.btn:focus, .btn-group>.mdpagination-yu.btn.active, .btn-group>.mdpagination-yu.btn:active, .btn-group>.mdpagination-yu.btn:focus {
     z-index: -1;
 } */
@@ -388,6 +393,7 @@ thead.thWidth {
   -webkit-box-orient: vertical;
 }
 
+
 /*----手機購物車商品清單卡片checkbox-----  */
 .card-yu {
   padding: 12px 0;
@@ -554,11 +560,10 @@ form span.spanqty-yu {
 }
 
 /* --------手機商品合計 ----------- */
-h6.MDtotalItemsYu::after {
-  content: "件商品合計 ";
+h5.MDtatalpriceYu{
+  color: var(--color-red);
 }
-
-h6.MDtatalpriceYu::before {
+h5.MDtatalpriceYu::before {
   content: "總金額: ";
 }
 /* ------------手機一步按鈕-------------- */
@@ -644,7 +649,7 @@ h6.MDtatalpriceYu::before {
 
 /* 手機i商品mg */
 .mdP-img {
-  width: 130px;
+  max-width: 135px;
 }
 
 

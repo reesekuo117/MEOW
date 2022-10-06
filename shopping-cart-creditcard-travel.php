@@ -19,10 +19,10 @@ $listsql = " SELECT
 $tlist_rows = $pdo->query($listsql)->fetch();
 
 
-// echo json_encode([ 
-//     '$tlist_rows' => $tlist_rows,
-// ]);
-// exit;
+echo json_encode([ 
+    '$tlist_rows' => $tlist_rows,
+]);
+exit;
 
 ?>
 

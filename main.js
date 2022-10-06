@@ -220,5 +220,4 @@ $('.loginbutton-re').click(function () {
         });
     }, 750);
 
-}) 
-
+})

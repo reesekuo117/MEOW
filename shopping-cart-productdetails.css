@@ -917,3 +917,13 @@ input.receiverphone-yu {
   box-shadow: none;
   background-color: #e5a62a;
 }
+
+
+
+/* 信用卡 atm */
+.section-3-yu input#creditcard-radio-yu{
+  height: 12px;
+}
+.section-3-yu input.ATMradioYu{
+  height: 12px;
+}
