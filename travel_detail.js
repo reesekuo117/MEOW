@@ -170,3 +170,15 @@ $(window).scroll(function () {
     $('#backtoTravelList').click(function () {
         history.back()
     })
+
+// 往下滑
+    $('#btnBuy2').click(function () {
+        $('html, body').animate({
+            scrollTop: 1200
+        },100)
+    })
+    $('#btnBuy').click(function () {
+        $('html, body').animate({
+            scrollTop: 1200
+        },100)
+    })
