@@ -262,6 +262,10 @@ p {
     .paddingtop-0-re {
         padding: 0px;
     }
+    .current_re {
+        background-color: #E5A62A;
+        border-radius: 8px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -318,13 +322,6 @@ p {
 
 .active-re {
     background-color: #E5A62A;
-}
-
-.current_re {
-    background-color: #E5A62A;
-    border-radius: 8px;
-    /* color: #E5A62A; */
-
 }
 
 /* --------------------------------------------- */
@@ -496,7 +493,7 @@ p {
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 100px;
+    padding-top: 50px;
     /* display: inline-block; */
     position: absolute;
 }
@@ -939,6 +936,29 @@ p {
     }
 }
 
+/* 卡片浮動 */
+.lovecard_re {
+    /* background-color: #ffffff; */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px var(--color-text38);
+}
+
+
+@media screen and (min-width:768px) {
+    .lovecard_re {
+        transition: .3s;
+        justify-content: flex-start;
+        border-radius: 8px;
+        /* background-color: #FFF6E9; */
+        overflow: hidden;
+        box-shadow: none;
+    }
+}
+
+.lovecard_re:hover{
+    box-shadow:0px 4px 12px  rgba(67, 42, 15, 0.2);
+}
 /* -------------------------------------------------------------------- */
 .orderbtn-re,
 .orderbtn02-re {
@@ -955,17 +975,10 @@ p {
 .orderlist-re {
     transition: .2s;
     padding: 12.8px 0;
-    border-top: 0.5px solid var(--color-text38);
-    /* border-bottom: 0.5px solid var(--color-text38); */
 }
 
 .orderlist-re:hover {
-    /* background-color: var(--color-lightcreamy); */
     background-color: rgba(229, 167, 42, 0.5);
-}
-
-.ordertitle-other2-re {
-    /* border-top: 0.5px solid var(--color-text60); */
 }
 
 .ordercross-re {
@@ -1227,6 +1240,9 @@ table .inside-orderlisttable-re {
     scroll-snap-type: x mandatory;
     flex-wrap: nowrap;
     white-space: nowrap;
+}
+.scroll-snap-re::-webkit-scrollbar {
+    display: none;
 }
 
 /* 求籤-------------------------------------------------------------------------- */

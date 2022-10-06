@@ -159,6 +159,10 @@ button {
     scroll-snap-type: x mandatory;
     margin-bottom: 12px;
 }
+/* 關滑動滾輪 */
+.scroll-snap_07::-webkit-scrollbar{
+    display: none;;
+}
 .brand_1_mb>img, .brand_2_mb>img, .brand_3_mb>img{
     padding: 0 16px;
     border-radius: 8px;

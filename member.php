@@ -230,8 +230,8 @@ foreach($re_rows as $r){
                     </div>
                 </div>
                 <div class="d-flex tab_phonelist_re">
-                    <h5 class="membertitle_ba1 membertitle-re col-6 p-0 d-inline-block px-3">會員資料</h5>
-                    <h5 class="membertitle_ba2 membertitle-re col-6 d-md-none p-0 d-inline-block px-3">修改密碼</h5>
+                    <h5 class="membertitle_ba1 membertitle-re col-6 p-0 d-inline-block px-3 py-1 current_re">會員資料</h5>
+                    <h5 class="membertitle_ba2 membertitle-re col-6 d-md-none p-0 d-inline-block px-3 py-1">修改密碼</h5>
                 </div>
                 <form id="form_member_re" name='form_member_re' class="padding225-re" method="post" onsubmit="checkFormMember(); return false;"> 
                 <input type="hidden" name="id" value="<?= $r_re['id'] ?>">
@@ -311,8 +311,8 @@ foreach($re_rows as $r){
                     </div>
                 </div>
                 <div class="d-flex tab_phonelist_re">
-                    <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3">會員資料</h5>
-                    <h5 class="membertitle-re col-6 p-0 d-inline-block px-3">修改密碼</h5>
+                    <h5 class="membertitle-re col-6 d-md-none p-0 d-inline-block px-3 py-1">會員資料</h5>
+                    <h5 class="membertitle-re col-6 p-0 d-inline-block px-3 py-1 current_re">修改密碼</h5>
                 </div>
                 <form id="form_forget_re" name='form_forget_re' class="padding225-re" method="post" onsubmit=" checkFormPassword(); return false;"> 
                 <input type="hidden" name="id" value="<?= $r_re['id'] ?>">
@@ -356,7 +356,7 @@ foreach($re_rows as $r){
                     <div class="row mx-0 likehight-re mb-5 pb-3 mb-md-0 pb-md-0">
                     <?php foreach($p_rows as $r): ?>
                         <div class="col-12 col-md-3 px-4 px-md-2 pb-3">
-                            <div class="card-re">
+                            <div class="card-re lovecard_re">
                                 <div class="position-relative ">
                                     <div class="cardimg-re">
                                         <img class="w-100" src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" alt="">
@@ -426,7 +426,7 @@ foreach($re_rows as $r){
                 <div class="row mx-0 likehight-re mb-5 pb-3 mb-md-0 pb-md-0">
                     <?php foreach($t_rows as $r): ?>
                         <div class="col-12 col-md-3 px-4 px-md-2 pb-3">
-                            <div class="card-re">
+                            <div class="card-re lovecard_re ">
                                 <div class="position-relative">
                                     <div class="cardimg-re">
                                     <img class="h-100" src="./imgs/travel/cards/<?= $r['travelcard_img'] ?>" alt="">
@@ -495,7 +495,7 @@ foreach($re_rows as $r){
                     <div class="row mb-3 mx-0 likehight-re mb-5 pb-3 mb-md-0 pb-md-0">
                         <?php foreach($d_rows as $r): ?>
                         <div class="col-6 col-md-4 likecard-re position-relative pb-3">
-                            <img class="w-100" src="./imgs/love/<?= $r['img'] ?>" alt="">
+                            <img class="w-100 lovecard_re" src="./imgs/love/<?= $r['img'] ?>" alt="">
                             <div class="position-absolute likeicon2-re">
                                 <a data-name="<?= $r['draw_name'] ?>" onclick="hello_f(event)" data-sid="<?= $r['sid']?>" data-onclick="event.currentTarget.closest('.card-re').remove()">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

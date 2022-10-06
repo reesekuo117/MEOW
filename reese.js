@@ -53,11 +53,24 @@ $('.tab_list_re li.tablist-meowli03_re').click(function() {
     $('.tablist-meowsvg03_re').removeClass('d-none');
     $('.tablist-meowsvg04_re').addClass('d-none');
     })
+
+if(location.hash=='#my-favorites'){
+    $('.tablist-meowsvg01_re').addClass('d-none');
+    $('.tablist-meowsvg02_re').addClass('d-none');
+    $('.tablist-meowsvg03_re').removeClass('d-none');
+    $('.tablist-meowsvg04_re').addClass('d-none');
+}
 $('.tab_list_re li.tablist-meowli04_re').click(function() {
     $('.tablist-meowsvg01_re').addClass('d-none');
     $('.tablist-meowsvg02_re').addClass('d-none');
     $('.tablist-meowsvg03_re').addClass('d-none');
     $('.tablist-meowsvg04_re').removeClass('d-none');
+    })
+$('a.navloveicon-re').click(function() {
+    $('.tablist-meowsvg01_re').addClass('d-none');
+    $('.tablist-meowsvg02_re').addClass('d-none');
+    $('.tablist-meowsvg03_re').removeClass('d-none');
+    $('.tablist-meowsvg04_re').addClass('d-none');
     })
 // $(".tab_list_re li").click(function(){
 //         $(this).addClass("current_re").siblings().removeClass("current_re");
@@ -95,12 +108,13 @@ $('.tab_list_re li.tablist-meowli04_re').click(function() {
 //         $(".tab_con_re .item_re").eq(index).show().siblings().hide();
 //     })
 // })
-
 $(".tab_phonelist_re h5").click(function(){
-    $(this).addClass("current_re").siblings().removeClass("current_re");
     var index = $(this).index();
     $(".tab_con_re .item_re").eq(index).show().siblings().hide();
+    // $(this).css("background","#E5A62A").siblings().css("background","transparent");
+    // $(this).addClass("current_re").siblings().removeClass("current_re");
 })
+
 // 會員頭像
 let picture_re = document.getElementById('pictureChange_re');
 window.onclick = function(event) {
