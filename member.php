@@ -33,23 +33,6 @@ $pageName ='會員中心'; //頁面名稱
     $d_rows = $pdo->query($d_sql)->fetchAll();
     $f_rows = $pdo->query($f_sql)->fetchAll();
 
-    // $polist_sql = "SELECT product.*, product_list.product_sid FROM  WHERE member_id=$member_id";
-
-    // 錯誤
-    // $polist_sql = "SELECT o.*, od.price, od.quantity, p.bookname FROM `orders` o
-    // JOIN order_details od ON o.sid = od.order_sid
-    // JOIN products p ON p.sid = od.product_sid
-    // WHERE o.sid = 11";
-
-    // $polist_sql = "SELECT po.*, pod.total, pod.quantity, p.product_name, p.product_card_img, ad.city FROM `product_order` po
-    // JOIN product_details pod ON po.sid = pod.order_sid
-    // JOIN product p ON p.sid = pod.product_sid
-    // JOIN address ad ON ad.sid = po.address_city
-    // JOIN address ad ON ad.sid = ad.parent AND ad.city = po.address_region
-    // -- JOIN (
-    // --     SELECT * FROM address join product_order on address_parent = address_sid WHERE po.address_region
-    // --     )
-    // WHERE member_id=$member_id";
     // 商品
     $po_sql = "SELECT * FROM `product_order`WHERE member_id=$member_id";
     $po_rows = $pdo->query($po_sql)->fetchAll();
@@ -87,40 +70,25 @@ $pageName ='會員中心'; //頁面名稱
             WHERE member_id=$member_id";
     $tolist_rows = $pdo->query($tolist_sql)->fetchAll();
 
-
-    //會員 某訂單product_order的 某商品product_details 評論review
-    // $re_sql = "
-    //     SELECT 
-    //         pod.*, 
-    //         p.sid,
-
-    //     FROM product_order po
-    //         JOIN product_details pod ON po.sid = pod.order_sid
-    //         JOIN product p ON p.sid = pod.product_sid
-    //         JOIN review r ON p.sid = pod.product_sid
-    //         WHERE member_id=$member_id";
-    // $re_rows = $pdo->query($re_sql)->fetchAll();
-
-
     $re_sql = "
     SELECT 
         p.sid
     FROM product p 
         JOIN review r ON p.sid = r.collect_sid
         WHERE r.`target_type`=1 AND r.members_id=$member_id";
-$re_rows = $pdo->query($re_sql)->fetchAll();
+    $re_rows = $pdo->query($re_sql)->fetchAll();
 
-$reviewedPids = [];
-foreach($re_rows as $r){
-    $reviewedPids[] = $r['sid'];
-}
+    $reviewedPids = [];
+    foreach($re_rows as $r){
+        $reviewedPids[] = $r['sid'];
+    }
 
 
 // // json_encode判斷型別輸出JSON 數字型態
 // echo json_encode([ 
 //     // '$prows' => $p_rows,
 //     // '$trows' => $t_rows,
-//     '$po_rows' => $po_rows,
+//     // '$po_rows' => $po_rows,
 //     // '$polist_rows' => $polist_rows,
 //     // '$to_rows' => $to_rows,
 //     // '$tolist_rows' => $tolist_rows,
@@ -367,7 +335,6 @@ foreach($re_rows as $r){
                                                 <path  fill="#CD562F" stroke="#432A0F" d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667"/>
                                             </svg>
                                         </a>
-                                        
                                     </div>
                                 </div>
                                 <div class="card-body-re">
@@ -601,7 +568,11 @@ foreach($re_rows as $r){
                                         </thead>
                                         <tbody class="col-9 p-0">
                                             <tr class="orderlist-re col-12 p-0">
-                                                <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_img'] ?>.jpg" alt=""></td>
+                                                <td class="orderimgwarp-re text-center px-3">
+                                                    <a href="./product_detail.php?sid=<?= $rList['product_sid'] ?>">
+                                                        <img class="w-100" src="./imgs/product/cards/<?= $rList['product_card_img'] ?>.jpg" alt="">
+                                                    </a>
+                                                </td>
                                                 <td class="productname-re text-16-re text-center m-0"><?= $rList['product_name'] ?></td>
                                                 <!-- <td class="text-16-re text-center ordertitle-other-re">< ?= $rList['product_name'] ?></td> -->
                                                 <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $rList['price'] ?></td>
@@ -743,7 +714,11 @@ foreach($re_rows as $r){
                                 </thead>
                                 <tbody class="col-9 p-0">
                                     <tr class="orderlist-re col-12 p-0">
-                                        <td class="orderimgwarp-re text-center px-3"><img class="w-100" src="./imgs/travel/cards/<?= $tList['travelcard_img'] ?>" alt=""></td>
+                                        <td class="orderimgwarp-re text-center px-3">
+                                            <a class="" href="./travel_detail.php?sid=<?= $t['travel_sid'] ?>">
+                                                <img class="w-100" src="./imgs/travel/cards/<?= $tList['travelcard_img'] ?>" alt="">
+                                            </a>
+                                        </td>
                                         <td class="productname-re text-16-re text-center m-0"><?= $tList['travel_name'] ?></td>
                                         <td class="ext-16-re text-center ordertitle-other-re price-re"><?= $t['price'] ?></td>
                                         <td class="text-16-re text-center ordertitle-other-re"><?= $tList['quantity'] ?></td>
@@ -768,10 +743,6 @@ foreach($re_rows as $r){
                                             <th class="text-16-re py-1">訂購人電話</th>
                                             <td class="text-16-re py-1"><?= $tList['phone'] ?></td>
                                         </tr>
-                                        <!-- <tr>
-                                            <th class="text-16-re py-1">訂購人地址</th>
-                                            <td class="text-16-re py-1">< ?= $tList['city'] ?>< ?= $tList['region'] ?>< ?= $tList['address'] ?></td>
-                                        </tr> -->
                                     </table>
                                 </div>
                                 <div class="col-12 col-md-6 px-2">
@@ -820,12 +791,6 @@ foreach($re_rows as $r){
                             <p class="">請告訴我們您的想法</p>
                             <textarea class="evaluation-textarea-re evaluation-textarea-re2" cols="121" rows="3" maxlength="250" style="OVERFLOW:hidden"></textarea>
                             <div id="tagall-re" class="d-flex py-2 scroll-snap-re">
-                                <!-- <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">出貨超快速</div>
-                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2" type="checkbox">ＣＰ值超高</div>
-                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品超可愛</div>
-                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">商品品質爆表</div>
-                                <div id="tag-re" class="tag-re text-14-re px-2 mr-2">服務態度超好</div> -->
-                                
                                 <label><input type="checkbox" name="tag-re" value="1" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">出貨超快速</span></label>
                                 <label><input type="checkbox" name="tag-re" value="2" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">ＣＰ值超高</span></label>
                                 <label><input type="checkbox" name="tag-re" value="3" /><span class="tagbutton-re tag-re text-14-re px-2 mr-2">商品超可愛</span></label>
@@ -840,7 +805,7 @@ foreach($re_rows as $r){
         </div>
         </div>
     </div>
-    <!-- 錯誤訊息 -->
+    <!-- 最愛刪除訊息 -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content position-relative">
