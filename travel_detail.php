@@ -986,9 +986,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
     </div>
 </div>
 <!-- 手機版footer -->
-<div class="td_footer_mb d-block d-md-none">
+<div class="td_footer_mb d-block d-md-none container-fluid">
     <div class="row justify-content-center align-items-center">
-        <div class="col ml-2">
+        <div class="col ml-2 pr-0">
             <button class="favorite d-flex justify-content-center align-items-center w-100">
                 <div class="icon_heart_nav" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                     <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

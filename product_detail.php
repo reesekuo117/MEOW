@@ -864,7 +864,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
     </div>
 
     <!-- 手機版footer -->
-    <div class="pd_footer_mb d-block d-md-none">
+    <div class="pd_footer_mb d-block d-md-none container-fluid">
         <div class="row justify-content-center align-items-center">
             <div class="col-2">
                 <div class="icon_heart_mb ml-3">
@@ -884,7 +884,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                 </button>
 
             </div>
-            <div class="col mr-3">
+            <div class="col pl-0">
                 <button class="buy btn-l d-flex justify-content-center align-items-center w-100 my-3" data-sid="<?= $r["sid"] ?>" onclick="addToCart_P_Yu(event)">
                     <div class="icon_buy pr-1">
                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">

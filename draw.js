@@ -40,6 +40,12 @@ window.onload = function () {
         return bgm.paused ? bgm.play() : bgm.pause();
     })
 
+    $('.musicSwitch').click(function () {
+        console.log('music');
+        $('.musicOn_ba').toggleClass('d-none');
+        $('.musicOff_ba').toggleClass('d-none')
+    })
+
 
     if (localStorage.getItem('bgm_gds') != null) {
         bgm.setAttribute('value', localstorage.getItem('bgm_gds'))
