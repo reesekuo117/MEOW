@@ -34,7 +34,7 @@ $pageName ='會員中心'; //頁面名稱
     $f_rows = $pdo->query($f_sql)->fetchAll();
 
     // 商品
-    $po_sql = "SELECT * FROM `product_order`WHERE member_id=$member_id";
+    $po_sql = "SELECT * FROM `product_order`WHERE member_id=$member_id ORDER BY `product_order`.created_at DESC";
     $po_rows = $pdo->query($po_sql)->fetchAll();
     $polist_sql = "
         SELECT 
@@ -54,7 +54,7 @@ $pageName ='會員中心'; //頁面名稱
             WHERE member_id=$member_id";
     $polist_rows = $pdo->query($polist_sql)->fetchAll();
     // 旅遊行程
-    $to_sql = "SELECT * FROM `travel_order` WHERE member_id=$member_id";
+    $to_sql = "SELECT * FROM `travel_order` WHERE member_id=$member_id ORDER BY `travel_order`.created_at DESC";
     $to_rows = $pdo->query($to_sql)->fetchAll();
     $tolist_sql = "
         SELECT 
@@ -88,7 +88,7 @@ $pageName ='會員中心'; //頁面名稱
 // echo json_encode([ 
 //     // '$prows' => $p_rows,
 //     // '$trows' => $t_rows,
-//     // '$po_rows' => $po_rows,
+//     '$po_rows' => $po_rows,
 //     // '$polist_rows' => $polist_rows,
 //     // '$to_rows' => $to_rows,
 //     // '$tolist_rows' => $tolist_rows,
