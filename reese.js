@@ -169,6 +169,7 @@ let $li = $('ul.tab-liketitle-re li');
     $li.click(function(){
         $($(this).find('a'). attr ('href')).show().siblings ('.tab-inner-re').hide();
         $(this).addClass('active-re'). siblings ('.active-re').removeClass('active-re');
+        $('html, body').animate({scrollTop:0},1000)
     });
 });
 // order標籤切換

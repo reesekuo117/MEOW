@@ -6,7 +6,6 @@ header .navbar {
 }
 
 .bgc_ba {
-
     background-color: #f7d9b5;
 }
 
@@ -62,7 +61,11 @@ header .navbar_ba {
 
     .fixedbtn_re {
         right: 10%;
-        bottom: 10px;
+        bottom: -100px;
+    }
+    .fixedbtn2_re {
+        right: 10%;
+        bottom: 24px;
     }
 }
 

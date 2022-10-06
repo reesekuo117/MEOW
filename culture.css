@@ -119,6 +119,7 @@ scroll-behavior: smooth;
   width: 100px;
   bottom: 5px;
   left: 150px;
+  transition: 1s;
 }
 
 .cloud_left_lb {
@@ -209,6 +210,7 @@ scroll-behavior: smooth;
   width: 150px;
   right: 300px;
   bottom: -20px;
+  transition: 1s;
 }
 
 /* 參拜流程 */
