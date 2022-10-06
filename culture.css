@@ -60,16 +60,13 @@ scroll-behavior: smooth;
   color: #cd562f;
 }
 .mbnavbar_lb {
-  /* height: 40px; */
   background-color: #fffcf7;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  /* box-shadow: 2px 2px 2px #432A0F; */
-}
-.mbnavbar_fixed {
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 999;
 }
+
 
 .body_lb {
   background-color: var(--color-lightcreamy);
