@@ -644,10 +644,10 @@ $('#onekey-t').click(function () {
 $('.addToCart_ba').click(function () {
     $("#cartModal").modal("show");
     setTimeout(()=>{
-        $("#cartModal").fadeOut(600,function () {
+        $("#cartModal").fadeOut(2000,function () {
             $("#cartModal").modal("hide")
         });
-    }, 600);
+    }, 1000);
 
 })
 
@@ -655,10 +655,10 @@ $('.addToCart_ba').click(function () {
 $('.save_ba').click(function () {
     $("#saveModal").modal("show");
     setTimeout(()=>{
-        $("#saveModal").fadeOut(600,function () {
+        $("#saveModal").fadeOut(2000,function () {
             $("#saveModal").modal("hide")
         });
-    }, 600);
+    }, 1000);
 
 })
 
