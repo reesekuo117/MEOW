@@ -110,7 +110,7 @@
                 </div>
                 <!-- nav-right -->
                 <div class="d-flex align-items-center">
-                    <a class="nav-icon pr-3" href="member.php#my-favorites">
+                    <a class="nav-icon navloveicon-re pr-3" href="member.php#my-favorites">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.73421 10.0174C5.97687 11.7747 5.97687 14.6239 7.73421 16.3813L13.9805 22.6273C15.0219 23.6687 16.7104 23.6687 17.7518 22.6273L23.9979 16.3813C25.7553 14.6239 25.7553 11.7747 23.9979 10.0174C22.2406 8.26005 19.3914 8.26005 17.634 10.0174L15.8662 11.7852L14.0981 10.0174C12.3408 8.26005 9.49156 8.26005 7.73421 10.0174ZM15.8647 8.01538C13.0577 5.33358 8.60799 5.37238 5.8486 8.13177C3.04986 10.9305 3.04986 15.4682 5.8486 18.2669L12.0949 24.5129C14.1777 26.5957 17.5546 26.5957 19.6374 24.5129L25.8835 18.2669C28.6823 15.4682 28.6823 10.9305 25.8835 8.13177C23.1242 5.37241 18.6745 5.33359 15.8675 8.01531L15.8661 8.0139L15.8647 8.01538Z" fill="white" />
                         </svg>
@@ -275,35 +275,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- 光箱 -->
-                <!-- <div class="modal fade" id="DEL_IN" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content position-relative">
-                            <div class="modal-header">
-                                <div class="errorSign">
-                                    <img src="./imgs/Errorsign.png" alt="">
-                                </div>
-                                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                            </div>
-                            <div class="modal-footer">
-                                <div class="errorMeow position-absolute">
-                                    <img src="./imgs/errorMeow3.png" alt="">
-                                </div>
-                                <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
-                                <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal" >
-                                    <a href="javascript: removeItem_p(<?= $r['sid'] ?>)" data-onclick="event.currentTarget.closest('.card-re').remove()">
-                                    忍痛刪除嗚嗚
-                                    </a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>  -->
 <!-- 註冊 ----------------------------------------------------------------------------------------->
                 <div id="tab02" class="tab-inner formcard-re formBx px-4">
                     <div class="form signup-form">
