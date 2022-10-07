@@ -17,6 +17,11 @@ button:focus {
     display: none !important;
 }
 
+svg:hover path{
+    /* -webkit-filter: drop-shadow(0px 0px 0px red); */
+    fill: red;
+}
+
 .youcantseeme {
     top: 0;
     left: 0;

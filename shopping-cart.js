@@ -232,19 +232,19 @@ function removePItem(sid, a_el){
 //     'json');
 // }
 
-// function updataPItem(btn){
-//   const sid = $(btn).closest('tr').attr('data-sid');
-//   const qty = $(btn).parent().find('.qty-yu').text();
-//   $.get(
-//       're-cart-p-api.php',
-//       {sid,qty},
-//       function(data){
-//           console.log(data);
-//           // showCartCount(data);
-//           // updatePrices();
-//       },
-//       'json');
-// }
+function updataPItem(btn){
+  const sid = $(btn).closest('tr').attr('data-sid');
+  const qty = $(btn).parent().find('.qty-yu').text();
+  $.get(
+      're-cart-p-api.php',
+      {sid,qty},
+      function(data){
+          console.log(data);
+          // showCartCount(data);
+          // updatePrices();
+      },
+      'json');
+}
 function updatePrices(){
   let total = 0; // 總價
 
