@@ -2,6 +2,12 @@
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./reese.css">
+<!-- <style>
+    header .divination_re {
+    background-color: transparent !important;
+    /* width: 100%; */
+}
+</style> -->
 <?php include __DIR__. '/parts/navbar.php'; ?>
 <div class="bg-divination-re">
 <div class="hight-divination-re">

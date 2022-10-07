@@ -75,7 +75,7 @@ $currentProductSid = substr($currentProductUrl, 4);
 $allMember = $pdo->query("SELECT * FROM `member` WHERE 1")->fetchAll();
 
 // 取得評論的全部
-$sqlReview = sprintf("SELECT * FROM `review` WHERE `target_type`=1 AND  `collect_sid`=$currentProductSid");
+$sqlReview = sprintf("SELECT * FROM `review` WHERE `target_type`=1 AND  `collect_sid`=$currentProductSid ORDER BY `review`.created_at DESC");
 $review = $pdo->query($sqlReview)->fetchAll();
 
 

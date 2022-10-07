@@ -203,7 +203,7 @@ $.get(
 $('.signupbutton-re').click(function () {
     $("#signUpModal").modal("show");
     setTimeout(()=>{
-        $("#signUpModal").fadeOut(1500,function () {
+        $("#signUpModal").fadeOut(2500,function () {
             $("#signUpModal").modal("hide")
         });
     }, 1500);
@@ -215,7 +215,7 @@ $('.loginbutton-re').click(function () {
     console.log('OK');
     $("#loginModal").modal("show");
     setTimeout(()=>{
-        $("#loginModal").fadeOut(750,function () {
+        $("#loginModal").fadeOut(2500,function () {
             $("#loginModal").modal("hide")
         });
     }, 750);

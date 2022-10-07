@@ -621,10 +621,13 @@ console.log('帳號密碼','555@g.com/555');
 console.log('帳號密碼','333@g.com/333');
 console.log('帳號密碼','222@g.com/222');
 
-// 一鍵輸入(名字+電話+地址)
+// 一鍵輸入(名字+電話)
 $('#onekey1').click(function () {
     $("#member_name_re").val("皮卡丘");
     $("#member_phone_re").val("0956456789");
+})
+// 一鍵輸入(地址)
+$('#onekey2').click(function () {
     $("#member_address_re").val("復興南路一段390號2樓");
 })
 
@@ -644,10 +647,10 @@ $('#onekey-t').click(function () {
 $('.addToCart_ba').click(function () {
     $("#cartModal").modal("show");
     setTimeout(()=>{
-        $("#cartModal").fadeOut(600,function () {
+        $("#cartModal").fadeOut(2000,function () {
             $("#cartModal").modal("hide")
         });
-    }, 600);
+    }, 1000);
 
 })
 
@@ -655,10 +658,10 @@ $('.addToCart_ba').click(function () {
 $('.save_ba').click(function () {
     $("#saveModal").modal("show");
     setTimeout(()=>{
-        $("#saveModal").fadeOut(600,function () {
+        $("#saveModal").fadeOut(2000,function () {
             $("#saveModal").modal("hide")
         });
-    }, 600);
+    }, 1000);
 
 })
 

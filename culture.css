@@ -3,9 +3,9 @@
 } */
 
 
-/* html{
+html{
 scroll-behavior: smooth;
-} */
+}
 
 /* 文字顏色 */
 .cul-text100 {
@@ -60,16 +60,13 @@ scroll-behavior: smooth;
   color: #cd562f;
 }
 .mbnavbar_lb {
-  /* height: 40px; */
   background-color: #fffcf7;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  /* box-shadow: 2px 2px 2px #432A0F; */
-}
-.mbnavbar_fixed {
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 999;
 }
+
 
 .body_lb {
   background-color: var(--color-lightcreamy);
@@ -123,7 +120,8 @@ scroll-behavior: smooth;
 }
 
 .cloud_left_lb {
-  bottom: -20px;
+  left: 0;
+ top: 15%;
 }
 .cloud_right_lb {
   right: 0;
@@ -327,6 +325,7 @@ scroll-behavior: smooth;
   left: -100px;
   top: 800px;
 }
+
 
 .s2-rightcloud_lb {
   width: 600px;

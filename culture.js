@@ -29,33 +29,33 @@ $(window).scroll(function () {
 
 //關於月老
 //桌機
-// $(window).scroll(function () {
-//   if ($(window).scrollTop() >=
-//     ($(".section1_lb").offset().top - window.screen.height * 2 / 3)) {
-//     $(".section1-content_lb").css({
-//       transform: "translateY(0px)",
-//       opacity: 1,
-//     });
-//   } 
-//   else {
-//     $(".section1-content_lb").css({
-//       transform: "translateY(100px)",
-//       opacity: 0,
-//     });
-//   }
-// });
+$(window).scroll(function () {
+  if ($(window).scrollTop() >=
+    ($(".section1-content_lb").offset().top - window.screen.height * 2 / 3)) {
+    $(".section1-content_lb").css({
+      transform: "translateX(0px)",
+      opacity: 1,
+    });
+  } 
+  else {
+    $(".section1-content_lb").css({
+      transform: "translateX(100px)",
+      opacity: 0,
+    });
+  }
+});
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".section1-content_lb").offset().top - ($(window).height() * 1/ 12)
+    $(".section1-content2_lb").offset().top - ($(window).height() * 2/ 3)
   ) {
     $(".section1-content2_lb").css({
-      transform: "translateY(0px)",
+      transform: "translateX(0px)",
       opacity: 1,
     });
   } else {
     $(".section1-content2_lb").css({
-      transform: "translateY(50px)",
+      transform:"translateX(-100px)",
       opacity: 0,
     });
   }
