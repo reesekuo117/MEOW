@@ -8,42 +8,28 @@ $title = '商品詳情';
 //     exit;
 // }
 $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
-$sql = "SELECT * FROM product WHERE sid=$sid";
+$sql = "SELECT * FROM product  WHERE sid=$sid";
 // $sql = "SELECT * FROM product WHERE sid=localstorage的變數";
 
 
 
-//大圖
 
-$b = $pdo->query($sql)->fetch();
-if (empty($b)) {
+
+$p_item = $pdo->query($sql)->fetch();
+$r = $p_item;
+if (empty($p_item)) {
+    header("Location: product_list.php");
     exit;
 }
-$photos_b = explode(',', $b['product_card_smallimg']);
+//大圖
+$photos_b = explode(',', $p_item['product_card_smallimg']);
 
 //小圖
+$photos_s = explode(',', $p_item['product_card_bigimg']);
 
-$s = $pdo->query($sql)->fetch();
-if (empty($s)) {
-    exit;
-}
-$photos_s = explode(',', $s['product_card_bigimg']);
+$photos = explode(',', $p_item['product_introimgfirst']);
 
-
-
-
-$r = $pdo->query($sql)->fetch();
-if (empty($r)) {
-    exit;
-}
-$photos = explode(',', $r['product_introimgfirst']);
-
-
-$s = $pdo->query($sql)->fetch();
-if (empty($s)) {
-    exit;
-}
-$photos_sec = explode(',', $s['product_introimgsec']);
+$photos_sec = explode(',', $p_item['product_introimgsec']);
 
 
 
@@ -99,6 +85,23 @@ $reviewTags = $pdo->query("SELECT * FROM `review_tags`")->fetchAll();
 $sqlreviewTags = "SELECT r.* , t.`tags` FROM `review_tags`t LEFT JOIN `review` r ON r.tags_sid = t.sid";
 $re = $pdo->query($sqlreviewTags)->fetchAll();
 
+$member_id = $_SESSION['user']['id'];
+$user_id = "SELECT * FROM `member` WHERE id=$member_id";
+$r_re = $pdo->query($user_id)->fetch();
+
+
+
+$plove_sql = "
+    SELECT 
+        collect_sid         
+    FROM love
+        WHERE target_type=1 AND member_id=$member_id";
+        //echo $plove_sql; exit;
+$plove_rows = $pdo->query($plove_sql)->fetchAll();
+$plove_dict = [];
+foreach($plove_rows as $p){
+    $plove_dict[$p['collect_sid']] = 1;
+}
 
 
 // echo json_encode([
@@ -158,8 +161,8 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                             <img src="imgs/travel/wall/< ?= $p ?>" class="d-block w-100" alt="...">
                                         </div>
                                     < ?php endforeach ?> -->
-                            <div class="icon_heart" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
-                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                            <div class="icon_heart <?= !empty($plove_dict[$sid]) ? 'color' : '' ?>" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
+                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" stroke="#432A0F" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                 </svg>
                             </div>
@@ -405,10 +408,12 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
             <div class="btns">
                 <div class="row align-items-center">
                     <div class="col">
-                        <button class="favorite d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
-                            <div class="icon_heart_nav">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
+                        <button class="favorite d-flex justify-content-center align-items-center" >
+                            <div class="icon_heart <?= !empty($plove_dict[$sid]) ? 'color' : '' ?>" 
+                            data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)"
+                            >
+                                <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" stroke="#432A0F" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke-width="2" />
                                 </svg>
                             </div>
                             加入最愛
@@ -779,8 +784,10 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                                 <div class="thumb-wrapper mx-3">
                                                     <div class="img-box">
                                                         <img src="./imgs/product/cards/<?= $p['product_card_img'] ?>.jpg" class="img-fluid" alt="">
-                                                        <div class="icon_heart">
-                                                            <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                        <div class="icon_heart <?= !empty($plove_dict[$p['sid']]) ? 'color' : '' ?>"
+                                                        data-sid="<?= $p["sid"] ?>" onclick="addToFav_P_07(event)"
+                                                        >
+                                                            <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#432A0F" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                             </svg>
                                                         </div>
@@ -818,7 +825,9 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                                 <div class="thumb-wrapper mx-3">
                                                     <div class="img-box">
                                                         <img src="./imgs/product/cards/<?= $p['product_card_img'] ?>.jpg" class="img-fluid" alt="">
-                                                        <div class="icon_heart">
+                                                        <div class="icon_heart <?= !empty($plove_dict[$p['sid']]) ? 'color' : '' ?>"
+                                                        data-sid="<?= $p["sid"] ?>" onclick="addToFav_P_07(event)"
+                                                        >
                                                             <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                             </svg>
@@ -1009,6 +1018,9 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
             'favorite_api.php', {
                 collect_sid,
                 target_type: 1,
+            },
+            function(){
+                heartbtn.toggleClass('color');
             },
             'json');
 
