@@ -309,21 +309,20 @@ foreach($plove_rows as $p){
                 <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./imgs/product/big/P19_1_b.jpg" class="d-block w-100" alt="...">
+                <!-- <div class="carousel-item active"> -->
+            <?php
+                            $i = 0;
+                            // for ($i = 1; $i < 5; $i++) {
+                            //     echo $i;
+                            // };
+                            foreach ($photos_b as $b) : 
+                                $i++
+                            ?>
+                <div class="carousel-item <?= $i==1 ? 'active' : '' ?>">
+                                <img src="imgs/product/big/<?= $b ?>" class="d-block w-100 " alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="./imgs/product/big/P19_2_b.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imgs/product/big/P19_3_b.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imgs/product/big/P19_4_b.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imgs/product/big/P19_5_b.jpg" class="d-block w-100" alt="...">
-                </div>
+                <?php endforeach ?>
+                <!-- </div> -->
             </div>
             </a>
         </div>
@@ -407,9 +406,9 @@ foreach($plove_rows as $p){
             </div>
             <div class="btns">
                 <div class="row align-items-center">
-                    <div class="col">
+                    <!-- <div class="col">
                         <button class="favorite d-flex justify-content-center align-items-center" >
-                            <div class="icon_heart <?= !empty($plove_dict[$sid]) ? 'color' : '' ?>" 
+                            <div class="icon_heart 
                             data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)"
                             >
                                 <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" stroke="#432A0F" xmlns="http://www.w3.org/2000/svg">
@@ -418,7 +417,7 @@ foreach($plove_rows as $p){
                             </div>
                             加入最愛
                         </button>
-                    </div>
+                    </div> -->
                     <div class="col">
                         <button class="cart d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_PF_Yu(event)">
                             <!-- 跳轉頁面所以button還要再包a連結? -->
