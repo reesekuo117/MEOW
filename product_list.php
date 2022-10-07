@@ -366,7 +366,7 @@ foreach($plove_rows as $p){
     </div>
 
     <div class="product_section">
-        <div class="container d-flex">
+        <div class="container d-flex product_section_bottom">
             <!-- <div class="col-1"></div> -->
             <div class="aside d-none d-md-block pr-3">
                 <div class="col">
@@ -443,59 +443,112 @@ foreach($plove_rows as $p){
 
 
             <div class="product_list w-100">
-                <!-- --------------------卡片---------------------- -->
-                <div class="row">
-                    <?php
-                    foreach ($rows as $r) : ?>
-                        <div class="col-12 col-md-4">
-                            <div class="card" data-sid="<?= $r['id'] ?>">
-                            <!-- 要用localstorage -->
-                                <a href="./product_detail.php?sid=<?= $r['sid'] ?>">
-                                    <div class="p_img">
-                                        <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" class="card-img-top" alt="...">
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <a href="./product_detail.php?sid=<?= $r['sid'] ?>">
-                                        <div class="card_title pb-1">
-                                            <h5 class="card-text" style="height: 56px;">
-                                                <?= $r['product_name'] ?>
-                                            </h5>
-                                        </div>
+                <?php if (empty($rows)) : ?>
+                        <!-- 桌機 -->
+                        <div class="notfind_yu text-center d-none d-md-block">
+                            <div>
+                                <img src="./imgs/18.png" alt="">
+                            </div>
+                            <div class=" h6">
+                                找不到相關結果
+                                <br>
+                                請嘗試其它關鍵字喵！
+                                <br>
+                                <div class="search_btn">
+                                    <a href="product_list.php?search=手鍊#desktopSort">
+                                        <button onclick="">#手鍊</button>
                                     </a>
-                                    <div class="icon_heart  <?= !empty($plove_dict[$r['sid']]) ? 'color' : '' ?>" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
-                                        
-                                        <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" stroke="#432A0F" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
-                                        </svg>
-                                    </div>
-                                    <div class="d-flex card_under justify-content-between align-items-baseline">
-                                        <small class="xs card-text d-flex align-items-center pr-0">
-                                            <div class="icon_star pr-1">
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <span><?= $r['product_comment'] ?></span>
-                                        </small>
-                                        <small class="xs card-text d-flex align-items-center">
-                                            <div class="icon_fire pr-1">
-                                                <i class="fa-solid fa-fire"></i>
-                                            </div>
-                                            <span><?= $r['product_popular'] ?>個已訂購</span>
-                                        </small>
-                                        <h4 class="card-text price">
-                                            <?= $r['product_price'] ?>
-                                        </h4>
-                                    </div>
+                                    <a href="product_list.php?search=霞海#desktopSort">
+                                        <button onclick="">#霞海</button>
+                                    </a>
+                                    <a href="product_list.php?search=祈願#desktopSort">
+                                        <button onclick="">#祈願</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
-
-                </div>
+                        <!-- 手機 -->
+                        <div class="notfindmb_yu text-center d-block d-md-none">
+                            <div>
+                                <img src="./imgs/18s.png" alt="">
+                            </div>
+                            <div class=" h6">
+                                找不到相關結果
+                                <br>
+                                請嘗試其它關鍵字喵！
+                                <br>
+                                <div class="search_btn">
+                                    <a href="product_list.php?search=手鍊#desktopSort">
+                                        <button onclick="">#手鍊</button>
+                                    </a>
+                                    <a href="product_list.php?search=霞海#desktopSort">
+                                        <button onclick="">#霞海</button>
+                                    </a>
+                                    <a href="product_list.php?search=祈願#desktopSort">
+                                        <button onclick="">#祈願</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                <?php else : ?>
+                <!-- --------------------卡片---------------------- -->
+                    <div class="row">
+                        <?php
+                        foreach ($rows as $r) : ?>
+                            <div class="col-12 col-md-4">
+                                <div class="card" data-sid="<?= $r['id'] ?>">
+                                <!-- 要用localstorage -->
+                                    <a href="./product_detail.php?sid=<?= $r['sid'] ?>">
+                                        <div class="p_img">
+                                            <img src="./imgs/product/cards/<?= $r['product_card_img'] ?>.jpg" class="card-img-top" alt="...">
+                                        </div>
+                                    </a>
+                                    <div class="card-body">
+                                        <a href="./product_detail.php?sid=<?= $r['sid'] ?>">
+                                            <div class="card_title pb-1">
+                                                <h5 class="card-text" style="height: 56px;">
+                                                    <?= $r['product_name'] ?>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                        <div class="icon_heart  <?= !empty($plove_dict[$r['sid']]) ? 'color' : '' ?>" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
+                                            
+                                            <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" stroke="#432A0F" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
+                                            </svg>
+                                        </div>
+                                        <div class="d-flex card_under justify-content-between align-items-baseline">
+                                            <small class="xs card-text d-flex align-items-center pr-0">
+                                                <div class="icon_star pr-1">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <span><?= $r['product_comment'] ?></span>
+                                            </small>
+                                            <small class="xs card-text d-flex align-items-center">
+                                                <div class="icon_fire pr-1">
+                                                    <i class="fa-solid fa-fire"></i>
+                                                </div>
+                                                <span><?= $r['product_popular'] ?>個已訂購</span>
+                                            </small>
+                                            <h4 class="card-text price">
+                                                <?= $r['product_price'] ?>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif ?>
             </div>
         </div>
     </div>
 
+
+
+<?php if (empty($rows)) : ?>
+
+<?php else : ?>
     <div class="pages">
         <div class="container">
             <div class="row">
@@ -530,7 +583,7 @@ foreach($plove_rows as $p){
             </div>
         </div>
     </div>
-
+<?php endif ?>
     <!-- <div class="notlogin d-none"> -->
         <!-- 1.背景用黑色半透明做光箱效果，視窗FIXED(原本就在用show，沒有要讓它出現用append) -->
         <!-- <div class="">

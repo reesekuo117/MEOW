@@ -154,6 +154,11 @@
     display: flex;
     
 }
+.product_section_bottom{
+    margin-bottom: 80px;
+}
+
+
 
 /* .product_cate.btncolor_default{
     color: var(--color-text87);
@@ -304,6 +309,10 @@
     /* margin: 0 auto; */
 
 /* } */
+
+.product_list {
+    position: relative;
+}
 @media screen and (max-width:768px){
     .product_list .col-12{
         padding: 24px 32px;
@@ -615,4 +624,16 @@
 
 .btncolor_active {
     color: var(--color-yellow) !important;
+}
+
+
+/* ------------找不到相關結果---------- */
+.notfind_yu{
+    top: 38px;
+    position: absolute;
+    right: 318px;
+}
+
+.notfind_yu .h6{
+    color: #432A0F;
 }
