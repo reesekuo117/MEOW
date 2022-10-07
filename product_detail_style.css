@@ -137,11 +137,14 @@ html {
     /* stroke: #432A0F; */
     fill: #CD562F;
 }
+.icon_heart_mb.footercolor .heart_line{
+    fill: var(--color-yellow);
 
-.color {
+}
+/* .color {
     stroke: #432A0F;
     fill: #CD562F;
-}
+} */
 
 .icon_fivestar {
     color: var(--color-yellow);
@@ -495,9 +498,9 @@ button:hover {
     border: 2px solid var(--color-text87);
 }
 
-.footercolor {
+/* .footercolor {
     fill: var(--color-yellow);
-}
+} */
 
 /* 桌機板瀏覽其他商品卡片 */
 .otherp {

@@ -132,13 +132,13 @@ $('.icon_heart').click(function(e){
 });
 
 //下方列愛心變色
-$('.favorite').click(function(){
-    $('.icon_heart_nav > svg').toggleClass('color')
-});
+// $('.favorite').click(function(){
+//     $('.icon_heart_nav > svg').toggleClass('color')
+// });
 // 手機footer愛心變色
-$('.icon_heart_mb').click(function(){
-    $('.heart_line').toggleClass('footercolor')
-});
+// $('.icon_heart_mb').click(function(){
+//     $('.heart_line').toggleClass('footercolor')
+// });
         // ----------------愛心變色結束-------------------
 
 // ??按收藏後真的進入收藏頁面&沒登入會跳出提示窗
