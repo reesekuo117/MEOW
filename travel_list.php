@@ -139,23 +139,29 @@ if ($totalRows > 0) {
 
 
     // 愛心
-    $member_id = $_SESSION['user']['id'];
-    $user_id = "SELECT * FROM `member` WHERE id=$member_id";
-    $r_re = $pdo->query($user_id)->fetch();
-
-    $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
-    $sql = "SELECT * FROM travel  WHERE sid=$sid";
-    $plove_sql = "
-        SELECT 
-            collect_sid         
-        FROM love
-            WHERE target_type=2 AND member_id=$member_id";
-            // echo $plove_sql; exit;
-    $plove_rows = $pdo->query($plove_sql)->fetchAll();
-    $plove_dict = [];
-    foreach($plove_rows as $t){
-        $plove_dict[$t['collect_sid']] = 1;
+    $isLogin = false;
+    if(! empty($_SESSION['user']['id'])){
+        $isLogin = true;
+        $member_id = $_SESSION['user']['id'];
+        $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+        $r_re = $pdo->query($user_id)->fetch();
+    
+        $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
+        $sql = "SELECT * FROM travel  WHERE sid=$sid";
+        $plove_sql = "
+            SELECT 
+                collect_sid         
+            FROM love
+                WHERE target_type=2 AND member_id=$member_id";
+                // echo $plove_sql; exit;
+        $plove_rows = $pdo->query($plove_sql)->fetchAll();
+        $plove_dict = [];
+        foreach($plove_rows as $t){
+            $plove_dict[$t['collect_sid']] = 1;
+        }
     }
+
+
 
 
 
@@ -694,7 +700,13 @@ if ($totalRows > 0) {
 <?php include __DIR__ . '/parts/scripts.php'; ?>
 
 <script>
+    const isLogin = <?= json_encode($isLogin) ?>;
+
     function addToFav_T_07(event) {
+        if(! isLogin){
+            alert(' login first !!')
+            return;
+        }
         const heartbtn = $(event.currentTarget); // 監聽
         const collect_sid = heartbtn.attr('data-sid');
         console.log('hiheart', heartbtn);

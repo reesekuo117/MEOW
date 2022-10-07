@@ -209,7 +209,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
     </div>
     <!-- 關於月老-mb -->
     <div class="container d-md-none pt-4 mbtargetScrollSection mb-section1_lb" id="mbmoonold_lb">
-        <h1 class="text-center mb-title_lb pt-4">關於月老</h1>
+        <h1 class="text-center mb-title_lb py-4">關於月老</h1>
         <div class="mb-section1-top_lb">
             <p class="mt-3 mb-p_lb px-2">
                 月下老人，簡稱月老，是道教的神祇之一，為掌管男女姻緣之神。形象常被塑造成白鬍長鬚，臉泛紅光的慈祥老者；左持姻緣簿，右拄拐杖。
@@ -482,8 +482,8 @@ $temples = $pdo->query($temple_sql)->fetchAll();
     </section>
 
     <!-- 參拜月老禁忌-mb -->
-    <div class="mbnotice_lb py-5 d-md-none mbtargetScrollSection " id="mbnotice_lb">
-        <h1 class="text-center mb-title_lb pt-5">參拜月老禁忌</h1>
+    <div class="mbnotice_lb py-4 d-md-none mbtargetScrollSection " id="mbnotice_lb">
+        <h1 class="text-center mb-title_lb py-4">參拜月老禁忌</h1>
         <div class="scroll-snap_lb mt-4">
             <div class="col">
                 <div class="mb-ban-card text-center px-3 py-2">
