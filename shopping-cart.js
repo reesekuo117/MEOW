@@ -174,7 +174,7 @@ qtyminus.on("click", function () {
 
 //----------刪除商品清單()--------------
 
-// 移除最愛確認(商品)
+// 移除確認(商品)
 function delete_p(event) {
   const a = $(event.currentTarget);
   const name = a.attr('data-name')
@@ -366,6 +366,47 @@ Tqtyminus.on("click", function () {
 // }
 
 //----------刪除旅遊清單()--------------
+// 移除確認(商品)
+function delete_t(event) {
+  const a = $(event.currentTarget);
+  const name = a.attr('data-name')
+  const sid = a.attr('data-sid')
+
+  $("#DEL_T").modal("show");
+  $('.modal-body').html(`是否要刪除<br> 「 ${name} 」？`);
+  
+  $('.del-ba').click(function() {
+      console.log(sid,'被按了');
+      return removePItem(sid, a) 
+  })
+  
+}
+
+function removePItem(sid, a_el){
+  // const tr = $(event.currentTarget).closest("tr");
+  // console.log(event);
+  // console.log('tr',tr);
+  $.get(
+    "re-cart-t-api.php",
+    { sid },
+    function (data) {
+      console.log(data);
+      const modal_backdrop = $('.modal-backdrop');
+      if(modal_backdrop.length){
+        modal_backdrop.remove();
+      }
+
+      // modal-backdrop
+      // $("#DEL_P").modal("hide");
+      // showCartCount(data); // 購物車總數量
+      // tr.remove();
+      a_el.closest('tr').remove();
+      updatePrices(); //刪除後要呼叫函式
+    },
+    "json"
+  );
+
+}
 // function removeTItem(event) {
 //   const tr = $(event.currentTarget).closest("tr");
 //   const sid = tr.attr("data-sid");

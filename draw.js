@@ -1,10 +1,3 @@
-// $('.backto').mouseenter(function () {
-//     $(this).find('svg').attr('fill','white')
-// })
-// $('.backto').mouseenter(function () {
-//     $(this).find('svg').attr('fill','#432A0F')
-// })
-
 // 擲筊聲
 const moon = new Audio();
 moon.src = "/MEOW/music/moon.mp3"
@@ -106,9 +99,9 @@ window.onload = function () {
             bgm.volume = 0.2;
             v = 0.2;
             var t = setInterval(function () {
-                v -= 0.005;
+                v -= 0.0001;
                 if (v > 0) {
-                    v -= 0.005;
+                    v -= 0.0001;
                     // console.log(v);
                     bgm.volume = v;
                 } else if(v = 0) {
