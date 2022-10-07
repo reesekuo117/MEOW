@@ -525,6 +525,13 @@ select {
   z-index: 2;
   cursor: pointer;
 }
+.icon_heart .heart_line {
+  fill: none;
+}
+.icon_heart.color .heart_line {
+  /* stroke: #432A0F; */
+  fill: #CD562F;
+}
 .card_under h5::before {
   content: "NT$";
 }

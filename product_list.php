@@ -199,14 +199,6 @@ $member_id = $_SESSION['user']['id'];
 $user_id = "SELECT * FROM `member` WHERE id=$member_id";
 $r_re = $pdo->query($user_id)->fetch();
 
-// $plove_sql = "
-//     SELECT 
-//         love.*, 
-//         p.sid
-//     FROM love
-//         JOIN product p ON p.sid = love.collect_sid
-//         WHERE target_type=1 AND member_id=$member_id";
-// $plove_rows = $pdo->query($plove_sql)->fetchAll();
 $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
 $sql = "SELECT * FROM product  WHERE sid=$sid";
 $plove_sql = "
@@ -266,7 +258,7 @@ foreach($plove_rows as $p){
                 </div>
             </form>
             <div class="search_btn">
-                <button onclick="$('#search').val('手鍊')">#手鍊</button>
+                <button onclick="$('#search').val('月老喵')">#月老喵</button>
                 <button onclick="$('#search').val('霞海')">#霞海</button>
                 <button  onclick="$('#search').val('祈願')">#祈願</button>
             </div>
@@ -393,7 +385,6 @@ foreach($plove_rows as $p){
                         <?php endforeach ?>
                         
                     </div>
-                    <!-- TODO:價格篩選PHP怎麼寫 -->
                     <!-- https://codepen.io/AlexM91/pen/BaYoaWY -->
                     <div class="price_filter">
                         <div class="filter-content__element">
@@ -407,19 +398,19 @@ foreach($plove_rows as $p){
                                             $tmp = $qsp;  // 複製
                                             unset($tmp['lowp']);  //unset() 刪除
                                             $tmp['highp']=500;
-                                            echo http_build_query($tmp); ?>?#desktopSort">~NT$500</a>
+                                            echo http_build_query($tmp); ?>?#desktopSort">NT$500以下</a>
 
                                 <?php $btnStyle = ($lowp==500 && $highp==1000) ? "btncolor_active" : "btncolor_default"  ?>
                                     <a type="button" class=" <?= $btnStyle ?>"
                                     href="?<?php $tmp['lowp']=500;  
                                             $tmp['highp']=1000;
-                                            echo http_build_query($tmp); ?>?#desktopSort">NT$500~NT$1000</a>
+                                            echo http_build_query($tmp); ?>?#desktopSort">NT$500 ~ NT$1000</a>
 
                                 <?php $btnStyle = ($lowp==1000 && !$highp) ? "btncolor_active" : "btncolor_default"  ?>
                                     <a type="button" class=" <?= $btnStyle ?>"
                                     href="?<?php unset($tmp['highp']);  //unset() 刪除 
                                             $tmp['lowp']=1000;
-                                            echo http_build_query($tmp); ?>?#desktopSort">NT$1000~</a>
+                                            echo http_build_query($tmp); ?>?#desktopSort">NT$1000以上</a>
                                 <!-- <a type="button" class=" "
                                     href="?highp=400">0~400</a>
                                 <a type="button" class=""
@@ -455,8 +446,8 @@ foreach($plove_rows as $p){
                                 請嘗試其它關鍵字喵！
                                 <br>
                                 <div class="search_btn">
-                                    <a href="product_list.php?search=手鍊#desktopSort">
-                                        <button onclick="">#手鍊</button>
+                                    <a href="product_list.php?search=月老喵#desktopSort">
+                                        <button onclick="">#月老喵</button>
                                     </a>
                                     <a href="product_list.php?search=霞海#desktopSort">
                                         <button onclick="">#霞海</button>
@@ -478,8 +469,8 @@ foreach($plove_rows as $p){
                                 請嘗試其它關鍵字喵！
                                 <br>
                                 <div class="search_btn">
-                                    <a href="product_list.php?search=手鍊#desktopSort">
-                                        <button onclick="">#手鍊</button>
+                                    <a href="product_list.php?search=月老喵#desktopSort">
+                                        <button onclick="">#月老喵</button>
                                     </a>
                                     <a href="product_list.php?search=霞海#desktopSort">
                                         <button onclick="">#霞海</button>
