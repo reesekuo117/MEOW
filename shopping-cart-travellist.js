@@ -825,6 +825,28 @@ usercdnumber4.on("blur", function () {
   }
 });
 
+
+
+// 信用卡跳下一格
+usercdnumber4 = document.querySelectorAll('input');
+
+// 得到 nodeList 一個動態的集合
+// 使用 forEach 進行迭代  監聽每個 input 元素
+for(let i=0; i < usercdnumber4.length; i++){
+  usercdnumber4[i].addEventListener('input', dochange)
+}
+function dochange(e){
+  // 當 input 元素的字符長度等於 maxLength 時
+  // 對下一個 input 元素進行 focus 的動作
+  if (e.target.value.length == e.target.getAttribute('maxLength')){
+      console.log(e)
+      e.target.nextElementSibling.focus();
+  }
+}
+function getForm(event){
+  event.preventDefault();
+  console.log(event)
+}
 usercdnumber4.on("focus", function () {
   if (!this.value) {
     $(usercdnumber4).css({
@@ -1174,13 +1196,16 @@ function checkFormPass() {
 $(".requiredYu").on("input", checkFormPass);
 
 // 信用卡一鍵
-$('.onekey').click(function () {
-  // console.log('yoyo');
-  $("#usercreditcardnumber1-yu").val("1234");
-  $("#usercreditcardnumber2-yu").val("5678");
-  $("#usercreditcardnumber3-yu").val("1212");
-  $("#usercreditcardnumber4-yu").val("3434");
-  $("#usercreditcardmonth-yu").val("12");
-  $("#usercreditcardyear-yu").val("26");
-  $("#usercreditcardid-yu").val("888");
-})
+// $('.onekey').click(function () {
+//   // console.log('yoyo');
+//   $("#usercreditcardnumber1-yu").val("1234");
+//   $("#usercreditcardnumber2-yu").val("5678");
+//   $("#usercreditcardnumber3-yu").val("1212");
+//   $("#usercreditcardnumber4-yu").val("3434");
+//   $("#usercreditcardmonth-yu").val("12");
+//   $("#usercreditcardyear-yu").val("26");
+//   $("#usercreditcardid-yu").val("888");
+// })
+
+
+

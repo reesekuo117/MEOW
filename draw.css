@@ -17,9 +17,14 @@ button:focus {
     display: none !important;
 }
 
-svg:hover path{
-    /* -webkit-filter: drop-shadow(0px 0px 0px red); */
-    fill: red;
+.musicOff_ba:hover path{
+    transition: .3s;
+    fill-opacity:0.8
+}
+
+.musicOn_ba:hover path{
+    transition: .3s;
+    fill-opacity:0.8
 }
 
 .youcantseeme {
@@ -294,9 +299,10 @@ svg:hover path{
     left: 384px;
 }
 
-/* .backto:hover svg{
-    fill: var(--color-brown-dark);
-} */
+.backto:hover path {
+    transition: .3s;
+    fill-opacity:0.8
+}
 
 .musicSwitch {
     z-index: 10;

@@ -282,7 +282,7 @@ $pageName = 'cart'; //頁面名稱
                                 $total = 0;
                                 foreach ($_SESSION["tcart"] as $i => $j) : 
                                 $total += $j['travel_price'] * $j['qty']; ?>
-                                    <tr data-sid="<?= $i ?>" class="tcart-item">
+                                    <tr data-sid="<?= $j['sid'] ?>" class="tcart-item">
                                         <!-- <th scope="col ">
                                                 <div class="row m-auto p-1 checkbox-yu ">
                                                     <input class=" mx-2 " type="checkbox" name="oneCheck2Yu" aria-label="Checkbox for following text input" checked>
@@ -323,9 +323,39 @@ $pageName = 'cart'; //頁面名稱
                                         </td>
                                         <!-- 刪除 -->
                                         <th scope="col" class="form-delete-yu">
-                                        <a href="javascript:" onclick="removeTItem(event)">
-                                                <i id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
+                                            <a data-name="<?= $j["travel_name"] ?>" onclick="delete_t(event)" data-sid="<?= $j['sid']?>" data-onclick="event.currentTarget.closest('tr').remove()">
+                                                <i id="deleteIYu" class="fa-solid fa-trash-can"></i>
                                             </a>
+                                            <!-- 光箱 -->
+                                            <div class="modal fade" id="DEL_T" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content position-relative">
+                                                        <div class="modal-header">
+                                                            <div class="errorSign">
+                                                                <img src="./imgs/Errorsign.png" alt="">
+                                                            </div>
+                                                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                        </div>
+                                                        
+                                                        <div class="modal-footer">
+                                                            <div class="errorMeow position-absolute">
+                                                                <img src="./imgs/errorMeow.png" alt="">
+                                                            </div>
+                                                            <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
+                                                            <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal">
+                                                                <a href="javascript:">
+                                                                忍痛刪除嗚嗚
+                                                                </a>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
                                         </th>
                                     </tr>
                                 <?php endforeach; ?>

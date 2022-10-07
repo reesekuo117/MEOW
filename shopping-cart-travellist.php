@@ -441,19 +441,19 @@ $tsm = $pdo->query($sqlmember)->fetch();
                                                 <br>
                                                 <div class=" usercdinputYu  d-flex justify-content-start align-items-start"> 
                                                     <div class=" field3 mx-1 ">
-                                                        <input class="usercdnumber3  usercdnumber4  requiredYu text-center m-0" type="" name=""id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4">
+                                                        <input class="usercdnumber3  usercdnumber4  requiredYu text-center m-0" type="text" name=""id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4">
                                                         <!-- 註解錯誤卡住 -->
                                                         <!-- <input class="usercdnumber3  usercdnumber4  requiredYu text-center m-0" type="" name=""id="usercreditcardnumber1-yu" placeholder="0000 " maxlength="4" onkeyPress="autoTab()" onkeyUp="autoTab()"> -->
                                                     </div>
                                                     <div class=" field3 mx-1">
-                                                        <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="" placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
+                                                        <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="text" name=""  placeholder="0000 " maxlength="4" id="usercreditcardnumber2-yu" >
                                                         <!-- onkeyup="value=value.replace(/[^\d]/g,'') " -->
                                                     </div>
                                                     <div class=" field3 mx-1">
-                                                        <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name=""placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu" >
+                                                        <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="text" name=""placeholder="0000 " maxlength="4" id="usercreditcardnumber3-yu">
                                                     </div>
                                                     <div class=" field3 mx-1  d-flex align-items-center">
-                                                        <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="" name="" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu">
+                                                        <input class=" usercdnumber3 usercdnumber4  requiredYu text-center m-0" type="text" name="" placeholder="0000 " maxlength="4" id="usercreditcardnumber4-yu" >
                                                         <i class="right fa-regular fa-circle-check"></i>
                                                         <i class="wrong fa-solid fa-triangle-exclamation">
                                                             <small>請輸入正確的信用卡卡號</small>
