@@ -199,14 +199,6 @@ $member_id = $_SESSION['user']['id'];
 $user_id = "SELECT * FROM `member` WHERE id=$member_id";
 $r_re = $pdo->query($user_id)->fetch();
 
-// $plove_sql = "
-//     SELECT 
-//         love.*, 
-//         p.sid
-//     FROM love
-//         JOIN product p ON p.sid = love.collect_sid
-//         WHERE target_type=1 AND member_id=$member_id";
-// $plove_rows = $pdo->query($plove_sql)->fetchAll();
 $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
 $sql = "SELECT * FROM product  WHERE sid=$sid";
 $plove_sql = "
