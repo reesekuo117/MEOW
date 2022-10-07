@@ -261,6 +261,7 @@ $pageName ='會員中心'; //頁面名稱
                     <div id="member_msgContainer" class="col-8 p-0"></div>
                     <div class="position-absolute fixedbtn_re"><input class="btn-re btn200-re phonewidth330-re mb-3" type="submit" value="儲存"></div>
                     <div id="onekey1" class="d-none d-md-block onekey position-absolute"></div>
+                    <div id="onekey2" class="d-none d-md-block onekey2 position-absolute"></div>
                 </form>
             </div>
 <!-- p2-password------------------------------------------------------------------------------------ -->
