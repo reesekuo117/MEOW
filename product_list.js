@@ -186,7 +186,7 @@ $('.psort_mb').click(function(){
 
 
 // 愛心
-
+/*
 $('.icon_heart').click(function(){
     // $('.heart_line').eq(0).toggleClass('color')
     // $(this).find('.heart_line').toggleClass('color')
@@ -196,3 +196,4 @@ $('.icon_heart_mb').click(function(){
     $(this).find('.heart_line').toggleClass('color')
 });
 // 按收藏後真的進入收藏頁面&沒登入會跳出提示窗
+*/

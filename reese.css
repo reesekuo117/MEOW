@@ -1,6 +1,7 @@
 *{
     /* outline: 1px solid #000; */
 }
+
 header .navbar {
     /* background-color: transparent!important; */
 }
@@ -1469,7 +1470,7 @@ table .inside-orderlisttable-re {
 .onekey{
     /* border: 1px salmon solid; */
     width: 20%;
-    height: 200px;
+    height: 300px;
     right: 40%;
     top: 0;
 }
@@ -1483,19 +1484,19 @@ table .inside-orderlisttable-re {
 
 .onekey-p{
     /* border: 1px rgb(168, 114, 250) solid; */
-    width: 500px;
+    width: 300px;
     height: 300px;
-    right: 200px;
+    right: 300px;
     top: 0;
 }
 
-.onekey-t{
-    /* border: 1px rgb(148, 250, 114) solid; */
-    width: 500px;
+/* .onekey-t{
+    border: 1px rgb(148, 250, 114) solid;
+    width: 300px;
     height: 300px;
-    right: 200px;
+    right: 300px;
     bottom: 0;
-}
+} */
 
 /* 新增頭貼的叉叉 */
 .picturePageClose-re{

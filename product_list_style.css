@@ -390,8 +390,11 @@
 .icon_heart.color {
     opacity: 1;
 }
+.icon_heart .heart_line {
+    fill: none;
+}
 .icon_heart.color .heart_line {
-    stroke: #432A0F;
+    /* stroke: #432A0F; */
     fill: #CD562F;
 }
 .p_img_mb{
@@ -408,7 +411,7 @@
     fill: #CD562F;
 } */
 .color{
-    stroke: #432A0F;
+    /* stroke: #432A0F; */
     fill: #CD562F;
 }
 .icon_fivestar i{

@@ -282,7 +282,7 @@ td .total_price_yu {
   margin: 0 auto;
   text-align: center;
 }
-h6.total_price_yu::before {
+td.total_price_yu::before {
   content: "NT$";
 }
 
@@ -615,7 +615,7 @@ h5.MDtatalpriceYu::before {
   content: "訂單金額: NT$";
 }
 .price-uniqui-yu::before {
-  content: "總金額:NT";
+  content: "總金額:NT$";
 }
 #minus-yu .disabled {
   background-color: var(--color-text38);
