@@ -68,15 +68,15 @@
         // // 一進來就計算人數*金額
 
         // ----------------愛心變色(輪播牆+卡片)----------------
-        $('.icon_heart').click(function(e){
-            e.preventDefault();
-            $(this).find('.heart_line').toggleClass('color')
-        });
+        // $('.icon_heart').click(function(e){
+        //     e.preventDefault();
+        //     $(this).find('.heart_line').toggleClass('color')
+        // });
 
         //下方列+卡片輪播愛心變色
-        $('.favorite').click(function(){
-            $(this).find('.icon_heart_nav > svg').toggleClass('color')
-        });
+        // $('.favorite').click(function(){
+        //     $(this).find('.icon_heart_nav > svg').toggleClass('color')
+        // });
         // ----------------愛心變色結束-------------------
 
 // ??按收藏後真的進入收藏頁面&沒登入會跳出提示窗→包PHP用session判斷

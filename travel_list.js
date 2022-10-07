@@ -51,9 +51,9 @@ function slideTwo() {
 
 // 愛心
 
-$('.icon_heart').click(function(){
-    $(this).find('.heart_line').toggleClass('color')
-});
+// $('.icon_heart').click(function(){
+//     $(this).find('.heart_line').toggleClass('color')
+// });
 // $('.icon_heart_mb').click(function(){
 //     $(this).find('.heart_line').toggleClass('color')
 // });

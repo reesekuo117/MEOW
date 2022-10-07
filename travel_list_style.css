@@ -493,6 +493,13 @@ a.sort_active {
     stroke: white;
 }
 
+.icon_heart .heart_line {
+    fill: none;
+}
+.icon_heart.color .heart_line {
+    /* stroke: #432A0F; */
+    fill: #CD562F;
+}
 .card-body .row {
     flex-direction: column;
 }

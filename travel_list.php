@@ -136,6 +136,29 @@ if ($totalRows > 0) {
     $areaRows = $pdo->query($sqlArea)->fetchAll();
 
 
+
+
+    // 愛心
+    $member_id = $_SESSION['user']['id'];
+    $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+    $r_re = $pdo->query($user_id)->fetch();
+
+    $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
+    $sql = "SELECT * FROM travel  WHERE sid=$sid";
+    $plove_sql = "
+        SELECT 
+            collect_sid         
+        FROM love
+            WHERE target_type=2 AND member_id=$member_id";
+            // echo $plove_sql; exit;
+    $plove_rows = $pdo->query($plove_sql)->fetchAll();
+    $plove_dict = [];
+    foreach($plove_rows as $t){
+        $plove_dict[$t['collect_sid']] = 1;
+    }
+
+
+
     // if(empty($rows)){
     //     header('Location: travel_list.php');
     //     exit;
@@ -572,8 +595,8 @@ if ($totalRows > 0) {
                             </div>
 
                         </a>
-                        <div class="icon_heart position-absolute" data-sid="<?= $r["sid"] ?>" onclick="addToFav_T_07(event)">
-                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="" xmlns="http://www.w3.org/2000/svg">
+                        <div class="icon_heart position-absolute <?= !empty($plove_dict[$r['sid']]) ? 'color' : '' ?>" data-sid="<?= $r["sid"] ?>" onclick="addToFav_T_07(event)">
+                                <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32"  stroke="" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                 </svg>
                             </div>
@@ -680,6 +703,9 @@ if ($totalRows > 0) {
             'favorite_api.php', {
                 collect_sid,
                 target_type: 2,
+            },
+            function(){
+                heartbtn.toggleClass('color');
             },
             'json');
 

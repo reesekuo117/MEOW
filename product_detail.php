@@ -309,21 +309,20 @@ foreach($plove_rows as $p){
                 <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./imgs/product/big/P19_1_b.jpg" class="d-block w-100" alt="...">
+                <!-- <div class="carousel-item active"> -->
+            <?php
+                            $i = 0;
+                            // for ($i = 1; $i < 5; $i++) {
+                            //     echo $i;
+                            // };
+                            foreach ($photos_b as $b) : 
+                                $i++
+                            ?>
+                <div class="carousel-item <?= $i==1 ? 'active' : '' ?>">
+                                <img src="imgs/product/big/<?= $b ?>" class="d-block w-100 " alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="./imgs/product/big/P19_2_b.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imgs/product/big/P19_3_b.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imgs/product/big/P19_4_b.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imgs/product/big/P19_5_b.jpg" class="d-block w-100" alt="...">
-                </div>
+                <?php endforeach ?>
+                <!-- </div> -->
             </div>
             </a>
         </div>
@@ -407,9 +406,9 @@ foreach($plove_rows as $p){
             </div>
             <div class="btns">
                 <div class="row align-items-center">
-                    <div class="col">
+                    <!-- <div class="col">
                         <button class="favorite d-flex justify-content-center align-items-center" >
-                            <div class="icon_heart <?= !empty($plove_dict[$sid]) ? 'color' : '' ?>" 
+                            <div class="icon_heart 
                             data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)"
                             >
                                 <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" stroke="#432A0F" xmlns="http://www.w3.org/2000/svg">
@@ -418,7 +417,7 @@ foreach($plove_rows as $p){
                             </div>
                             加入最愛
                         </button>
-                    </div>
+                    </div> -->
                     <div class="col">
                         <button class="cart d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToCart_PF_Yu(event)">
                             <!-- 跳轉頁面所以button還要再包a連結? -->
@@ -785,9 +784,8 @@ foreach($plove_rows as $p){
                                                     <div class="img-box">
                                                         <img src="./imgs/product/cards/<?= $p['product_card_img'] ?>.jpg" class="img-fluid" alt="">
                                                         <div class="icon_heart <?= !empty($plove_dict[$p['sid']]) ? 'color' : '' ?>"
-                                                        data-sid="<?= $p["sid"] ?>" onclick="addToFav_P_07(event)"
-                                                        >
-                                                            <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#432A0F" xmlns="http://www.w3.org/2000/svg">
+                                                        data-sid="<?= $p["sid"] ?>" onclick="addToFav_P_07(event)">
+                                                            <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#fff" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                                                             </svg>
                                                         </div>
@@ -876,7 +874,7 @@ foreach($plove_rows as $p){
     <div class="pd_footer_mb d-block d-md-none container-fluid">
         <div class="row justify-content-center align-items-center">
             <div class="col-2">
-                <div class="icon_heart_mb ml-3">
+                <div class="icon_heart_mb ml-3 <?= !empty($plove_dict[$sid]) ? 'color' : '' ?>" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
                     <svg class="heart_line" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="var(--color-text87)" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.2855 9.22197C12.9704 6.90689 9.21692 6.90689 6.90184 9.22197C4.58676 11.537 4.58676 15.2905 6.90184 17.6056L13.2503 23.9532C14.8378 25.5407 17.4116 25.5407 18.9991 23.9532L24.5083 18.444L24.5074 18.4431L25.3449 17.6056C27.66 15.2905 27.66 11.5371 25.3449 9.22197C23.0298 6.90689 19.2763 6.90689 16.9612 9.22197L16.1234 10.0598L15.2855 9.22197Z" stroke-width="2.66667" />
                     </svg>

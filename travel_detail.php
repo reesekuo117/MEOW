@@ -35,6 +35,25 @@ $travel_1 = $pdo->query($t1_sql )->fetchAll();
 $t2_sql ="SELECT * FROM `travel` WHERE  sid IN(73,39,65)";
 $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
+// 愛心
+$member_id = $_SESSION['user']['id'];
+$user_id = "SELECT * FROM `member` WHERE id=$member_id";
+$r_re = $pdo->query($user_id)->fetch();
+
+$sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
+$sql = "SELECT * FROM travel  WHERE sid=$sid";
+$tlove_sql = "
+    SELECT 
+        collect_sid         
+    FROM love
+        WHERE target_type=2 AND member_id=$member_id";
+        // echo $plove_sql; exit;
+$tlove_rows = $pdo->query($tlove_sql)->fetchAll();
+$tlove_dict = [];
+foreach($tlove_rows as $t){
+    $tlove_dict[$t['collect_sid']] = 1;
+}
+
 
 
 
@@ -270,9 +289,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                                         立即購買
                                     </button>
                                 <!-- </a> -->
-                                <button class="favorite d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToFav_T_07(event)">
-                                    <div class="icon_heart_nav">
-                                        <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <button class="favorite d-flex justify-content-center align-items-center" >
+                                    <div class="icon_heart <?= !empty($tlove_dict[$sid]) ? 'color' : '' ?>" data-sid="<?= $r["sid"] ?>" onclick="addToFav_T_07(event)">
+                                        <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
                                         </svg>
                                     </div>
@@ -423,11 +442,11 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                 <div class="row align-items-center">
                     <div class="col">
                         <button class="favorite d-flex justify-content-center align-items-center" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
-                            <div class="icon_heart_nav">
+                            <!-- <div class="icon_heart_nav">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
                                 </svg>
-                            </div>
+                            </div> -->
                             加入最愛
                         </button>
                     </div>
@@ -990,7 +1009,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
     <div class="row justify-content-center align-items-center">
         <div class="col ml-2 pr-0">
             <button class="favorite d-flex justify-content-center align-items-center w-100">
-                <div class="icon_heart_nav" data-sid="<?= $r["sid"] ?>" onclick="addToFav_P_07(event)">
+                <div class="icon_heart <?= !empty($tlove_dict[$sid]) ? 'color' : '' ?>" data-sid="<?= $r["sid"] ?>" onclick="addToFav_T_07(event)">
                     <svg class="heart_line" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.2746 6.4197C9.38169 4.52677 6.31264 4.52677 4.4197 6.4197C2.52677 8.31264 2.52677 11.3817 4.4197 13.2746L9.61052 18.4648C10.9085 19.7628 13.0131 19.7628 14.3111 18.4648L18.8157 13.9601L18.815 13.9594L19.4997 13.2746C21.3927 11.3817 21.3927 8.31264 19.4997 6.4197C17.6068 4.52677 14.5377 4.52677 12.6448 6.4197L11.9597 7.10479L11.2746 6.4197Z" stroke="#432A0F" stroke-width="2" />
                     </svg>
@@ -1055,6 +1074,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
             'favorite_api.php', {
                 collect_sid,
                 target_type: 2,
+            },
+            function(){
+                heartbtn.toggleClass('color');
             },
             'json');
         
