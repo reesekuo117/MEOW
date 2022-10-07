@@ -1,24 +1,26 @@
 // travel
-function checkFormTravel(){
-  console.log('checkFormTravel');
+function checkFormTravel() {
+  console.log("checkFormTravel");
   let isPass = true;
   // if (!$('#oldpassword_re').val()) {
   //     genAlert4('請填寫正確資料');
   //     return;
   // }
-  if(isPass){
-      $.post(
-          're-travelorder-api.php', 
-          $(document.travel_form).serialize(),
-          function(data){
-              console.log('travel_form data',data);
-              if(data.success){
-                  genAlert('購買成功', 'success');
-                  location.href = './shopping-cart-creditcard-travel.php';
-              }else{
-                  genAlert(data.error);
-              }
-      }, 'json');
+  if (isPass) {
+    $.post(
+      "re-travelorder-api.php",
+      $(document.travel_form).serialize(),
+      function (data) {
+        console.log("travel_form data", data);
+        if (data.success) {
+          genAlert("購買成功", "success");
+          location.href = "./shopping-cart-creditcard-travel.php";
+        } else {
+          genAlert(data.error);
+        }
+      },
+      "json"
+    );
   }
 }
 
@@ -73,7 +75,7 @@ let districtArray1 = [
 ];
 $("#city1-yu").change(function () {
   const cityNumber1 = $(this).val();
-  const districtData1 = districtArray1[cityNumber1-5];
+  const districtData1 = districtArray1[cityNumber1 - 5];
   // 用迴圈會更方便
   // $('#district option').eq(0).text(districtData[0])
   // $('#district option').eq(1).text(districtData[1])
@@ -825,34 +827,49 @@ usercdnumber4.on("blur", function () {
   }
 });
 
-
-
 // 信用卡跳下一格
-usercdnumber4 = document.querySelectorAll('input');
+// $input = document.querySelectorAll('input');
 
-// 得到 nodeList 一個動態的集合
-// 使用 forEach 進行迭代  監聽每個 input 元素
-for(let i=0; i < usercdnumber4.length; i++){
-  usercdnumber4[i].addEventListener('input', dochange)
-}
-function dochange(e){
-  // 當 input 元素的字符長度等於 maxLength 時
-  // 對下一個 input 元素進行 focus 的動作
-  if (e.target.value.length == e.target.getAttribute('maxLength')){
-      console.log(e)
-      e.target.nextElementSibling.focus();
-  }
-}
-function getForm(event){
+// // 得到 nodeList 一個動態的集合
+// // 使用 forEach 進行迭代  監聽每個 input 元素
+// for(let i=0; i < usercdnumber4.length; i++){
+//   usercdnumber4[i].addEventListener('input', dochange)
+// }
+// function dochange(e){
+//   // 當 input 元素的字符長度等於 maxLength 時
+//   // 對下一個 input 元素進行 focus 的動作
+//   if (e.target.value.length == e.target.getAttribute('maxLength')){
+//       console.log(e)
+//       e.target.nextElementSibling.focus();
+//   }
+//}
+// var tablist = ["autotab"];
+
+// tablist.forEach(function (element) {
+//   if ($(this).attr("maxlenth") == $(this).val().length) {
+//     $(this)
+//       .nextAll("." + element)
+//       .first()
+//       .focus();
+//   }
+// });
+
+function getForm(event) {
   event.preventDefault();
-  console.log(event)
+  console.log(event);
 }
+
 usercdnumber4.on("focus", function () {
   if (!this.value) {
     $(usercdnumber4).css({
       outline: "2px solid #e5a62a",
       border: "0px solid transparent",
     });
+  }
+});
+usercdnumber4.on("input", function () {
+  if ($(this).val().length == 4) {
+    $(this).parent().next().find("input").focus();
   }
 });
 
@@ -970,6 +987,7 @@ usercdYearYu.on("focus", function () {
     });
   }
 });
+
 
 //CVC
 const cardCVC = $(".cardCVC");
@@ -1090,7 +1108,6 @@ $('input[type="radio"]').click(function () {
 // 一健帶入 要用迴圈
 //#字號是因為回圈內的是id名稱
 
-
 // $(".AllinputValueYu").click(function () {
 //   const fields = ["name-yu", "mobile-yu", "email-yu", "address-yu"];
 
@@ -1108,7 +1125,6 @@ $('input[type="radio"]').click(function () {
 
 // $("#clickme").click();
 
-
 // 先註解 錯誤卡住
 // $(window).scroll(function() {
 //   if ($(window).scrollTop() >= ($('.listinfo-yu').offset().top - window.screen.height * 1 / 2)) {
@@ -1118,18 +1134,17 @@ $('input[type="radio"]').click(function () {
 //     const atr = $(this);
 //       const td_price = atr.find(".price");
 //       const td_sub = tr.find(".sub-total");
-//     const name = tr.attr('data-sid'); 
-
+//     const name = tr.attr('data-sid');
 
 //     $("#name-yu").val("皮卡丘");
 //     $("#mobile-yu").val("0924568756");
 //     $("#email-yu").val("elena456@gmail.com");
 //     $("#address-yu").val(" 復興南路一段390號2樓");
-  
+
 //     fields.forEach(function (el) {
 //       $("#" + el).trigger("input");
 //     });
-//   } 
+//   }
 // });
 
 //同訂購人帶入
@@ -1165,16 +1180,15 @@ $(".Allsubmit").click(function (event) {
     console.log("fff");
     // 送
 
-  //   $("a").attr("href", "shopping-cart-creditcard-travel.php");
-  //   $("#SURE").modal("show");
-  //   $('.del-ba').click(function() {
-  //     console.log('travel_form',travel_form);
-  //     // document.travel_form.submit();
-  // })
+    //   $("a").attr("href", "shopping-cart-creditcard-travel.php");
+    //   $("#SURE").modal("show");
+    //   $('.del-ba').click(function() {
+    //     console.log('travel_form',travel_form);
+    //     // document.travel_form.submit();
+    // })
     // confirm("確定送出嗎?");
 
     // document.desktop_form.submit();
-    
   }
 });
 
@@ -1206,6 +1220,3 @@ $(".requiredYu").on("input", checkFormPass);
 //   $("#usercreditcardyear-yu").val("26");
 //   $("#usercreditcardid-yu").val("888");
 // })
-
-
-
