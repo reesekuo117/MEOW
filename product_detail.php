@@ -570,7 +570,7 @@ foreach ($plove_rows as $p) {
                                                 <h6 class="name" value=""><?php
                                                                             echo $memberiswho[0]['name'];
                                                                             ?></h6>
-                                                <div class="star_date d-flex align-items-center my-1">
+                                                <div class="star_date d-md-flex align-items-center my-1">
                                                     <div class="icon_fivestar d-none d-md-block">
                                                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                                     </div>
@@ -585,7 +585,7 @@ foreach ($plove_rows as $p) {
                                                 $getreviewtagken = $pdo->query("SELECT * FROM `review_tags_rel` WHERE `review_sid` = $reviewsidken")->fetchAll();
                                                 ?>
                                                 <?php foreach ($getreviewtagken as $ken) : ?>
-                                                    <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-5">
+                                                    <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-1 mt-md-5 d-flex d-md-inline">
                                                         <?php
                                                         $getreview = $ken['tags_sid'];
                                                         $tagiswhat = $pdo->query("SELECT * FROM `review_tags` WHERE `sid` = $getreview")->fetchAll();
