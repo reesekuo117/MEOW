@@ -701,7 +701,6 @@ if ($totalRows > 0) {
 
 <script>
     const isLogin = <?= json_encode($isLogin) ?>;
-
     function addToFav_T_07(event) {
         if(! isLogin){
             alert(' login first !!')
@@ -720,7 +719,6 @@ if ($totalRows > 0) {
                 heartbtn.toggleClass('color');
             },
             'json');
-
     };
 </script>
 
