@@ -195,22 +195,28 @@ if ($totalRows > 0) {
 //         $rows = $pdo->query($sqlSearchStr)->fetchAll();
 //     }
 // }
-$member_id = $_SESSION['user']['id'];
-$user_id = "SELECT * FROM `member` WHERE id=$member_id";
-$r_re = $pdo->query($user_id)->fetch();
 
-$sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
-$sql = "SELECT * FROM product  WHERE sid=$sid";
-$plove_sql = "
-    SELECT 
-        collect_sid         
-    FROM love
-        WHERE target_type=1 AND member_id=$member_id";
-        // echo $plove_sql; exit;
-$plove_rows = $pdo->query($plove_sql)->fetchAll();
-$plove_dict = [];
-foreach($plove_rows as $p){
-    $plove_dict[$p['collect_sid']] = 1;
+// 愛心
+$isLogin = false;
+if(! empty($_SESSION['user']['id'])){
+    $isLogin = true;
+    $member_id = $_SESSION['user']['id'];
+    $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+    $r_re = $pdo->query($user_id)->fetch();
+
+    $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
+    $sql = "SELECT * FROM product  WHERE sid=$sid";
+    $plove_sql = "
+        SELECT 
+            collect_sid         
+        FROM love
+            WHERE target_type=1 AND member_id=$member_id";
+            // echo $plove_sql; exit;
+    $plove_rows = $pdo->query($plove_sql)->fetchAll();
+    $plove_dict = [];
+    foreach($plove_rows as $p){
+        $plove_dict[$p['collect_sid']] = 1;
+    }
 }
 
 
@@ -597,10 +603,12 @@ foreach($plove_rows as $p){
 <script>
     // const productData = < ?php echo json_encode($rows); ?>;
         // console.log('productData',productData);
-
+    const isLogin = <?= json_encode($isLogin) ?>;
     function addToFav_P_07(event) {
-  
-
+        if(! isLogin){
+            alert(' login first !!')
+            return;
+        }
         const heartbtn = $(event.currentTarget); // 監聽
         const collect_sid = heartbtn.attr('data-sid');
         console.log('hiheart', heartbtn);

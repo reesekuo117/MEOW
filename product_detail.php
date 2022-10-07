@@ -85,23 +85,30 @@ $reviewTags = $pdo->query("SELECT * FROM `review_tags`")->fetchAll();
 $sqlreviewTags = "SELECT r.* , t.`tags` FROM `review_tags`t LEFT JOIN `review` r ON r.tags_sid = t.sid";
 $re = $pdo->query($sqlreviewTags)->fetchAll();
 
-$member_id = $_SESSION['user']['id'];
-$user_id = "SELECT * FROM `member` WHERE id=$member_id";
-$r_re = $pdo->query($user_id)->fetch();
+
+
+    // 愛心
+    $isLogin = false;
+    if(! empty($_SESSION['user']['id'])){
+        $isLogin = true;
+        $member_id = $_SESSION['user']['id'];
+        $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+        $r_re = $pdo->query($user_id)->fetch();
 
 
 
-$plove_sql = "
-    SELECT 
-        collect_sid         
-    FROM love
-        WHERE target_type=1 AND member_id=$member_id";
-//echo $plove_sql; exit;
-$plove_rows = $pdo->query($plove_sql)->fetchAll();
-$plove_dict = [];
-foreach ($plove_rows as $p) {
-    $plove_dict[$p['collect_sid']] = 1;
-}
+        $plove_sql = "
+            SELECT 
+                collect_sid         
+            FROM love
+                WHERE target_type=1 AND member_id=$member_id";
+                //echo $plove_sql; exit;
+        $plove_rows = $pdo->query($plove_sql)->fetchAll();
+        $plove_dict = [];
+        foreach($plove_rows as $p){
+            $plove_dict[$p['collect_sid']] = 1;
+        }
+    }
 
 
 // echo json_encode([
@@ -570,7 +577,7 @@ foreach ($plove_rows as $p) {
                                                 <h6 class="name" value=""><?php
                                                                             echo $memberiswho[0]['name'];
                                                                             ?></h6>
-                                                <div class="star_date d-flex align-items-center my-1">
+                                                <div class="star_date d-md-flex align-items-center my-1">
                                                     <div class="icon_fivestar d-none d-md-block">
                                                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                                     </div>
@@ -585,7 +592,7 @@ foreach ($plove_rows as $p) {
                                                 $getreviewtagken = $pdo->query("SELECT * FROM `review_tags_rel` WHERE `review_sid` = $reviewsidken")->fetchAll();
                                                 ?>
                                                 <?php foreach ($getreviewtagken as $ken) : ?>
-                                                    <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-5">
+                                                    <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-1 mt-md-5 d-flex d-md-inline">
                                                         <?php
                                                         $getreview = $ken['tags_sid'];
                                                         $tagiswhat = $pdo->query("SELECT * FROM `review_tags` WHERE `sid` = $getreview")->fetchAll();
@@ -1015,7 +1022,12 @@ foreach ($plove_rows as $p) {
             'json');
     }
 
+    const isLogin = <?= json_encode($isLogin) ?>;
     function addToFav_P_07(event) {
+        if(! isLogin){
+            alert(' login first !!')
+            return;
+        }
         const heartbtn = $(event.currentTarget); // 監聽
         const collect_sid = heartbtn.attr('data-sid');
         console.log('hiheart', heartbtn);
