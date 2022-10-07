@@ -130,6 +130,14 @@ html {
     cursor: pointer;
 }
 
+.icon_heart .heart_line {
+    fill: none;
+}
+.icon_heart.color .heart_line {
+    /* stroke: #432A0F; */
+    fill: #CD562F;
+}
+
 .color {
     stroke: #432A0F;
     fill: #CD562F;

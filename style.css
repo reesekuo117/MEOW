@@ -197,6 +197,7 @@ header .navbar {
   list-style-type: none;
   transform: translate(-200%, 0);
   transition: transform 1s cubic-bezier(0.77, 0.2, 0.05, 1);
+  z-index: 1000;
 }
 
 #menu li {

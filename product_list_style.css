@@ -154,6 +154,11 @@
     display: flex;
     
 }
+.product_section_bottom{
+    margin-bottom: 80px;
+}
+
+
 
 /* .product_cate.btncolor_default{
     color: var(--color-text87);
@@ -304,6 +309,10 @@
     /* margin: 0 auto; */
 
 /* } */
+
+.product_list {
+    position: relative;
+}
 @media screen and (max-width:768px){
     .product_list .col-12{
         padding: 24px 32px;
@@ -390,8 +399,11 @@
 .icon_heart.color {
     opacity: 1;
 }
+.icon_heart .heart_line {
+    fill: none;
+}
 .icon_heart.color .heart_line {
-    stroke: #432A0F;
+    /* stroke: #432A0F; */
     fill: #CD562F;
 }
 .p_img_mb{
@@ -408,7 +420,7 @@
     fill: #CD562F;
 } */
 .color{
-    stroke: #432A0F;
+    /* stroke: #432A0F; */
     fill: #CD562F;
 }
 .icon_fivestar i{
@@ -612,4 +624,16 @@
 
 .btncolor_active {
     color: var(--color-yellow) !important;
+}
+
+
+/* ------------找不到相關結果---------- */
+.notfind_yu{
+    top: 38px;
+    position: absolute;
+    right: 318px;
+}
+
+.notfind_yu .h6{
+    color: #432A0F;
 }
