@@ -477,12 +477,13 @@ p {
     border-radius: 50%;
     right: 10px;
     bottom: 10px;
-    background-color: var(--color-creamy);
-
+    background-color: white;
+    cursor: pointer;
 }
 
 .pictureicon-re>svg {
-    margin: 3px 0 0 4px;
+    margin:4px;
+    /* padding: 3px; */
 }
 
 /* 變更頭像 --------------------------------------*/
