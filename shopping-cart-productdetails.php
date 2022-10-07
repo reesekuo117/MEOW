@@ -20,9 +20,7 @@ foreach ($_SESSION['pcart'] as $k => $s) {
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./shopping-cart-productdetails.css">
-<?php
-// header("Refresh:180");
-?>
+
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 
 

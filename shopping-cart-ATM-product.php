@@ -35,9 +35,7 @@ $list_rows = $pdo->query($listsql)->fetchAll();
 
 <?php include __DIR__. '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="shopping-cart-ATM-product.css">
-<?php
-header("Refresh:180");
-?>
+
 <?php include __DIR__. '/parts/navbar.php'; ?>
 
 

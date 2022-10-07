@@ -7,9 +7,7 @@ $title = '旅遊行程'
 
 <?php include __DIR__ . '/parts/html-head.php'; ?>
 <link rel="stylesheet" href="./travel_index_style.css">
-<?php
-header("Refresh:180");
-?>
+
 <?php include __DIR__ . '/parts/navbar.php'; ?>
 
 
