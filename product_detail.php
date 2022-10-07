@@ -563,7 +563,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                             </div>
                             <div class="cd">
                                 <!-- computer comment -->
-                                <div class="row d-flex detail_comment">
+                                <div class="row d-flex detail_comment mb-4">
                                     <?php foreach ($review as $w) : ?>
                                         <div class="col-4 col-md-2 mt-2">
                                             <div class="profile_img w-100">
@@ -592,7 +592,7 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                                 $getreviewtagken = $pdo->query("SELECT * FROM `review_tags_rel` WHERE `review_sid` = $reviewsidken")->fetchAll();
                                                 ?>
                                                 <?php foreach ($getreviewtagken as $ken) : ?>
-                                                    <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-1 mt-md-5 d-flex d-md-inline">
+                                                    <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-1 mt-md-5 d-none d-md-inline">
                                                         <?php
                                                         $getreview = $ken['tags_sid'];
                                                         $tagiswhat = $pdo->query("SELECT * FROM `review_tags` WHERE `sid` = $getreview")->fetchAll();
@@ -601,16 +601,26 @@ $re = $pdo->query($sqlreviewTags)->fetchAll();
                                                     </span>
                                                 <?php endforeach; ?>
                                                 <div class="p_comment d-none d-md-block">
-
                                                     <p class="mt-3">
                                                         <?= $w['content'] ?>
                                                     </p>
-
                                                 </div>
                                             </div>
-
                                         </div>
-                                        <div class="col-12">
+                                        <?php
+                                                $reviewsidken = $w['sid'];
+                                                $getreviewtagken = $pdo->query("SELECT * FROM `review_tags_rel` WHERE `review_sid` = $reviewsidken")->fetchAll();
+                                                ?>
+                                                <?php foreach ($getreviewtagken as $ken) : ?>
+                                                    <span class="c_tags tags tagbutton-re tag-re text-14-re py-1 mt-1 mt-md-5 d-flex d-md-none">
+                                                        <?php
+                                                        $getreview = $ken['tags_sid'];
+                                                        $tagiswhat = $pdo->query("SELECT * FROM `review_tags` WHERE `sid` = $getreview")->fetchAll();
+                                                        echo $tagiswhat[0]['tags'];
+                                                        ?>
+                                                    </span>
+                                                <?php endforeach; ?>
+                                        <div class="col-12 mb-3">
                                             <div class="p_comment d-block d-md-none">
                                                 <p class="mt-3">
                                                     <?= $w['content'] ?>
