@@ -36,24 +36,27 @@ $t2_sql ="SELECT * FROM `travel` WHERE  sid IN(73,39,65)";
 $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
 // 愛心
-$member_id = $_SESSION['user']['id'];
-$user_id = "SELECT * FROM `member` WHERE id=$member_id";
-$r_re = $pdo->query($user_id)->fetch();
+$isLogin = false;
+if(! empty($_SESSION['user']['id'])){
+    $isLogin = true;
+    $member_id = $_SESSION['user']['id'];
+    $user_id = "SELECT * FROM `member` WHERE id=$member_id";
+    $r_re = $pdo->query($user_id)->fetch();
 
-$sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
-$sql = "SELECT * FROM travel  WHERE sid=$sid";
-$tlove_sql = "
-    SELECT 
-        collect_sid         
-    FROM love
-        WHERE target_type=2 AND member_id=$member_id";
-        // echo $plove_sql; exit;
-$tlove_rows = $pdo->query($tlove_sql)->fetchAll();
-$tlove_dict = [];
-foreach($tlove_rows as $t){
-    $tlove_dict[$t['collect_sid']] = 1;
+    $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
+    $sql = "SELECT * FROM travel  WHERE sid=$sid";
+    $tlove_sql = "
+        SELECT 
+            collect_sid         
+        FROM love
+            WHERE target_type=2 AND member_id=$member_id";
+            // echo $plove_sql; exit;
+    $tlove_rows = $pdo->query($tlove_sql)->fetchAll();
+    $tlove_dict = [];
+    foreach($tlove_rows as $t){
+        $tlove_dict[$t['collect_sid']] = 1;
+    }
 }
-
 
 
 
@@ -1064,8 +1067,12 @@ foreach($tlove_rows as $t){
             // },
             'json');
     }
-
-        function addToFav_T_07(event) {
+    const isLogin = <?= json_encode($isLogin) ?>;
+    function addToFav_T_07(event) {
+            if(! isLogin){
+            alert(' login first !!')
+            return;
+        }
         const heartbtn = $(event.currentTarget); // 監聽
         const collect_sid = heartbtn.attr('data-sid');
         console.log('hiheart', heartbtn);
