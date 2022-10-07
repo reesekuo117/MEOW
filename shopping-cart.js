@@ -174,27 +174,63 @@ qtyminus.on("click", function () {
 
 //----------刪除商品清單()--------------
 
-function removePItem(event) {
-  const tr = $(event.currentTarget).closest("tr");
-  const sid = tr.attr("data-sid");
-  console.log('pcart', sid);
+// 移除最愛確認(商品)
+function delete_p(event) {
+  const a = $(event.currentTarget);
+  const name = a.attr('data-name')
+  const sid = a.attr('data-sid')
 
+  $("#DEL_P").modal("show");
+  $('.modal-body').html(`是否要刪除<br> 「 ${name} 」？`);
+  
+  $('.del-ba').click(function() {
+      console.log(sid,'被按了');
+      return removePItem(sid, a) 
+  })
+  
+}
+
+function removePItem(sid, a_el){
+  // const tr = $(event.currentTarget).closest("tr");
+  // console.log(event);
+  // console.log('tr',tr);
   $.get(
     "re-cart-p-api.php",
     { sid },
     function (data) {
       console.log(data);
-      showCartCount(data); // 購物車總數量
-      tr.remove();
+      const modal_backdrop = $('.modal-backdrop');
+      if(modal_backdrop.length){
+        modal_backdrop.remove();
+      }
 
-      // TODO: 更新小計, 總計,
-      //TODO:總計,
-
+      // modal-backdrop
+      // $("#DEL_P").modal("hide");
+      // showCartCount(data); // 購物車總數量
+      // tr.remove();
+      a_el.closest('tr').remove();
       updatePrices(); //刪除後要呼叫函式
     },
     "json"
   );
+
 }
+
+// function removePItem(event) {
+//   const tr = $(event.currentTarget).closest("tr");
+//   const sid = tr.attr("data-sid");
+//   console.log('pcart', sid);
+
+//   $.get(
+//     're-cart-p-api.php',
+//     {sid,qty},
+//     function(data){
+//         console.log(data);
+//         // showCartCount(data);
+//         // updatePrices();
+//     },
+//     'json');
+// }
 
 function updataPItem(btn){
   const sid = $(btn).closest('tr').attr('data-sid');
@@ -306,28 +342,51 @@ Tqtyminus.on("click", function () {
   }
 });
 
+
+
+// function removeTItem(sid){
+
+//   console.log('刪了');
+//   $.get(
+//     "re-cart-t-api.php",
+//     { sid },
+//     function (data) {
+//       console.log(data);
+//       // showCartCount(data); // 購物車總數量
+//       tr.remove();
+
+//       // TODO: 更新小計, 總計,
+//       //TODO:總計,
+
+//       updateTPrices(); //刪除後要呼叫函式
+//     },
+//     "json"
+//   );
+
+// }
+
 //----------刪除旅遊清單()--------------
-function removeTItem(event) {
-  const tr = $(event.currentTarget).closest("tr");
-  const sid = tr.attr("data-sid");
+// function removeTItem(event) {
+//   const tr = $(event.currentTarget).closest("tr");
+//   const sid = tr.attr("data-sid");
 
 
-  $.get(
-    "re-cart-t-api.php",
-    { sid },
-    function (data) {
-      console.log(data);
-      // showCartCount(data); // 購物車總數量
-      tr.remove();
+//   $.get(
+//     "re-cart-t-api.php",
+//     { sid },
+//     function (data) {
+//       console.log(data);
+//       // showCartCount(data); // 購物車總數量
+//       tr.remove();
 
-      // TODO: 更新小計, 總計,
-      //TODO:總計,
+//       // TODO: 更新小計, 總計,
+//       //TODO:總計,
 
-      updateTPrices(); //刪除後要呼叫函式
-    },
-    "json"
-  );
-}
+//       updateTPrices(); //刪除後要呼叫函式
+//     },
+//     "json"
+//   );
+// }
 function updataTItem(btn){
   console.log('hihihi');
   const sid = $(btn).closest('tr').attr('data-sid');

@@ -120,7 +120,8 @@ scroll-behavior: smooth;
 }
 
 .cloud_left_lb {
-  bottom: -20px;
+  left: 0;
+ top: 15%;
 }
 .cloud_right_lb {
   right: 0;
@@ -324,6 +325,7 @@ scroll-behavior: smooth;
   left: -100px;
   top: 800px;
 }
+
 
 .s2-rightcloud_lb {
   width: 600px;

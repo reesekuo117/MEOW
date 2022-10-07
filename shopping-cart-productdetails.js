@@ -775,10 +775,12 @@ $(rdbtn_yu).click(function () {
     $(".familyinput-yu").css("height", "60px");
     $(rdbtn_yu).toggleClass("familyinputFocus-yu");
     $(".tohomebtn").removeClass("familyinputFocus-yu");
+    $('.receiver-address-yu').hide()
   } else {
     $(".familyinput-yu").css("height", "0px");
     $(rdbtn_yu).toggleClass("familyinputFocus-yu");
     $(".tohomebtn").toggleClass("familyinputFocus-yu");
+    $('.receiver-address-yu').show()
   }
 });
 
@@ -787,9 +789,11 @@ $(".tohomebtn").click(function () {
     $(".familyinput-yu").css("height", "0px");
     $(rdbtn_yu).toggleClass("familyinputFocus-yu");
     $(".tohomebtn").toggleClass("familyinputFocus-yu");
+    $('.receiver-address-yu').show()
   } else {
     $(rdbtn_yu).toggleClass("familyinputFocus-yu");
     $(".tohomebtn").toggleClass("familyinputFocus-yu");
+    $('.receiver-address-yu').hide()
   }
 });
 

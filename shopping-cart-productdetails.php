@@ -397,7 +397,7 @@ foreach ($_SESSION['pcart'] as $k => $s) {
                                     <small>請輸入正確姓名</small>
                                 </i>
                             </div> -->
-                    <div class="field2 receiver-address-yu p-3">
+                    <div class="field2 receiver-address-yu px-3 pb-4">
                         <label for="address" class="">
                             地址
                             <span style="color: #963c38">*</span>
