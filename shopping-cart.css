@@ -471,15 +471,16 @@ form input.qtyminus {
   border-radius: 100%;
   color: #fff;
   border: none;
-  background-color: rgba(67, 42, 15, 0.38);
+  background-color: rgba(67, 42, 15, 0.87);
 }
 form input.tqtyminus {
+  cursor: pointer;
   width: 30px;
   height: 30px;
   border-radius: 100%;
   color: #fff;
   border: none;
-  background-color: rgba(67, 42, 15, 0.38);
+  background-color: rgba(67, 42, 15, 0.87);
 }
 
 form input.qtyplus {
@@ -491,6 +492,7 @@ form input.qtyplus {
   background-color: rgba(67, 42, 15, 0.87);
 }
 form input.tqtyplus {
+  cursor: pointer;
   width: 30px;
   height: 30px;
   border-radius: 100%;
@@ -651,4 +653,16 @@ h6.MDtatalpriceYu::before {
 /*手機版高度 */
 .mdH_yu{
   padding-bottom: 80px;
+}
+
+/* 加減按鈕 */
+.qtyplus, .qtyminus {
+  cursor: pointer;
+}
+.qtyplus:hover, .qtyminus:hover{
+  background-color:#e5a62a ;
+}
+
+.fa-trash-can{
+  cursor: pointer;
 }

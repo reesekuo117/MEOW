@@ -107,7 +107,7 @@ $pageName = 'cart'; //頁面名稱
                                 <?php
                                 $total = 0;
                                 foreach ($_SESSION["pcart"] as $k => $v) :  $total += $v['product_price'] * $v['qty']; ?>
-                                    <tr data-sid="<?= $k ?>" class="pcart-item">
+                                    <tr data-sid="<?= $v['sid'] ?>" class="pcart-item">
                                         <!-- <th scope="col m-auto ">
                                             <div class=" m-auto p-1 checkbox-yu d-none">
                                                 <input id="checkboxInputYu" class=" mx-2" type="checkbox" name="oneCheck1Yu" aria-label="Checkbox for following text input" checked>
@@ -142,11 +142,11 @@ $pageName = 'cart'; //頁面名稱
                                         <!-- 數量 -->
                                         <td class="PqtyYU">
                                             <form method='POST' action='#'>
-                                                <input name="btnleft" type='button' value='-' class='qtyminus disabled' field='quantity'  />
+                                                <input name="btnleft" type='button' value='-' class='qtyminus' field='quantity'/>
                                                 <span type='text' name='txt' class=' PqtyYu px-1 qty-yu numberTotalYu'>
                                                     <?= $v['qty'] ?>
                                                 </span>
-                                                <input name="btnright" type='button' value='+' class='qtyplus' field='quantity' />
+                                                <input name="btnright" type='button' value='+' class='qtyplus' field='quantity'/>
                                             </form>
                                         </td>
                                         <!-- 小計 -->
@@ -155,9 +155,39 @@ $pageName = 'cart'; //頁面名稱
                                         </td>
                                         <!-- 刪除 -->
                                         <th scope="col" class="form-delete-yu">
-                                            <a href="javascript:" onclick="removePItem(event)">
-                                                <i id="deleteIYu" class="fa-solid fa-trash-can confirmAct()"></i>
+                                            <a data-name="<?= $v["product_name"] ?>" onclick="delete_p(event)" data-sid="<?= $v['sid']?>" data-onclick="event.currentTarget.closest('tr').remove()">
+                                                <i id="deleteIYu" class="fa-solid fa-trash-can"></i>
                                             </a>
+                                            <!-- 光箱 -->
+                                            <div class="modal fade" id="DEL_P" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content position-relative">
+                                                        <div class="modal-header">
+                                                            <div class="errorSign">
+                                                                <img src="./imgs/Errorsign.png" alt="">
+                                                            </div>
+                                                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                        </div>
+                                                        
+                                                        <div class="modal-footer">
+                                                            <div class="errorMeow position-absolute">
+                                                                <img src="./imgs/errorMeow.png" alt="">
+                                                            </div>
+                                                            <button type="button" class="btn ml-auto del-no" data-dismiss="modal">再想想</button>
+                                                            <button type="button" class="btn-del btn ml-3 del-yes del-ba" data-dismiss="modal">
+                                                                <a href="javascript:">
+                                                                忍痛刪除嗚嗚
+                                                                </a>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
                                         </th>
                                     </tr>
                                 <?php endforeach; ?>
@@ -192,7 +222,7 @@ $pageName = 'cart'; //頁面名稱
                         <!-- a href="#buy1.php" -->
                     <?php else : ?>
                         <a href="./shopping-cart-productdetails.php" class="btn unique-nextbutton-yu">
-                            <button class=" unique-btn-yu  me-md-2" type="button" data-sid="<?= $v["sid"] ?>">
+                            <button class=" unique-btn-yu  mb-md-5" type="button" data-sid="<?= $v["sid"] ?>">
                                 <p class="m-0 text-center">
                                     下一步
                                 </p>

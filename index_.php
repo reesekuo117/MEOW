@@ -784,11 +784,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
                     <h1 class="m-auto welfare position-absolute">會員獨享福利</h1>
                 </div>
                 <div class="memberContent text-align">
-                    <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊每日運勢占卜＊</h4>
+                    <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊全館免運中＊</h4>
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊商品、行程不定期優惠＊</h4>
                     <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊生日好禮大放送＊</h4>
-                    <h4 class="m-auto" data-aos="fade-right" data-aos-anchor-placement="top-bottom">＊全館免運中＊</h4>
-
                 </div>
             </div>
 
@@ -1204,10 +1202,9 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
 
         <div class="msection5Content mx-auto mt-3" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <p>
-                ＊每日運勢占卜＊<br>
+                ＊全館免運中＊<br>
                 ＊商品、行程不定期優惠＊<br>
                 ＊生日好禮大放送＊<br>
-                ＊全館免運中＊
             </p>
         </div>
 
