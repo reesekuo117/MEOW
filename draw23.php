@@ -318,7 +318,7 @@ $travel_2 = $pdo->query($t2_sql )->fetchAll();
             <div class="grain_ba position-absolute"></div>
 
             <div class="drawCard d-flex align-items-center position-absolute">
-                <img class="w-100 " src="./imgs/draw/draw64.png" alt="">
+                <img class="w-100 " src="./imgs/draw/<?= $draw['img'] ?>" alt="">
             </div>
 
             <div class="jadeSaym mx-auto">
