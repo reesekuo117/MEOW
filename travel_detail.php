@@ -919,7 +919,7 @@ if(! empty($_SESSION['user']['id'])){
                     </button>
                 </div>
                 <div class="modal-body">
-                    請選擇數量再購買喵
+                    請選擇數量以及場次再購買喵
                 </div>
 
                 <div class="modal-footer">
