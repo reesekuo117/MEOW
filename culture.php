@@ -1258,7 +1258,7 @@ $temples = $pdo->query($temple_sql)->fetchAll();
                             </div>
                             <div class="fire justify-content-center align-items-center mx-2">
                                 <small class="xs d-flex">
-                                    <div class="icon_fire xs">
+                                    <div class="icon_fire xs" style="color: var(--color-orange);">
                                         <i class="fa-solid fa-fire pr-1"></i>
                                     </div>
                                     已賣出<?= $t['travel_popular'] ?>個
