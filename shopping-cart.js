@@ -377,12 +377,12 @@ function delete_t(event) {
   
   $('.del-ba').click(function() {
       console.log(sid,'被按了');
-      return removePItem(sid, a) 
+      return removeTItem(sid, a) 
   })
   
 }
 
-function removePItem(sid, a_el){
+function removeTItem(sid, a_el){
   // const tr = $(event.currentTarget).closest("tr");
   // console.log(event);
   // console.log('tr',tr);
@@ -401,7 +401,7 @@ function removePItem(sid, a_el){
       // showCartCount(data); // 購物車總數量
       // tr.remove();
       a_el.closest('tr').remove();
-      updatePrices(); //刪除後要呼叫函式
+      updateTPrices(); //刪除後要呼叫函式
     },
     "json"
   );
