@@ -178,7 +178,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
                             <h3 class="listinfo-title-yu m-0">訂購人資料</h3>
                         </div>
                         <!-- 訂購人填寫資料 -->
-                        <div class="AllinputValueYu" id="clickme" onclick="clickme()"></div>
+                       
                         <div id="form2-yu" name="bajohn"  class=" form2-yu order-list-yu" method="post" action="">
                             <div class="field order-name-yu p-3 ">
                                 <label for="name" class="">
@@ -317,6 +317,7 @@ $tsm = $pdo->query($sqlmember)->fetch();
                                 同訂購人
                             </label>
                         </div>
+                        <div class="AllinputValueYu" id="clickme" onclick="clickme()"></div>
                         <div class="receiver-list-yu">
                             <div class=" field2 receiver-name-yu p-3">
                                 <label for="name" class="">
