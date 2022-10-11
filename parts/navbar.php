@@ -56,6 +56,21 @@
         /* bottom: 20px; */
         }
 
+    /* 一鍵帶入 */
+    .onekey3{
+        /* border: 1px solid #000; */
+        width: 50%;
+        height: 300px;
+        right: -55%;
+        top: 0;
+    }
+    .onekey4{
+        /* border: 1px solid #fff; */
+        width: 50%;
+        height: 300px;
+        left: -55%;
+        top: 0;
+    }
     /* 注意權重 */
 </style>
 <!-- header-md ----------------------------------->
@@ -216,6 +231,8 @@
                     <ul class="buttonbox-re tab-title d-flex p-0 m-0 position-relative">
                         <li class="signinBtn-re btntitle-re border-0 d-inline-block text-center pt-1 active-re col-6"><a href="#tab01">登入</a></li>
                         <li class="signoutBtn-re btntitle-re border-0 d-inline-block text-center pt-1 col-6"><a href="#tab02">註冊</a></li>
+                        <div id="onekey3" class="d-none d-md-block onekey3 position-absolute"></div>
+                        <div id="onekey4" class="d-none d-md-block onekey4 position-absolute"></div>
                     </ul>
                 </div>
 <!-- 登入 ----------------------------------------------------------------------------------------->
