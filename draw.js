@@ -40,16 +40,16 @@ window.onload = function () {
     })
 
 
-    if (localStorage.getItem('bgm_gds') != null) {
-        bgm.setAttribute('value', localstorage.getItem('bgm_gds'))
-        // bgm.setAttribute('value',localstorage.getItem('bgm_gds'));
-        bgm.innerHTML = ' <source src="bgm/' + localStorage.getItem('bgm_gds') + '.mp3" type="audio/mpeg">';
-        // bgm_text.innerHTML='当前播放第'+localStorage.getItem('bgm_gds')+'首歌曲';
-    } else {
-        bgm.setAttribute('value', 1);
-        bgm.innerHTML = '<source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">';
-        // bgm_text.innerHTML='当前播放第1首歌曲';
-    }
+    // if (localStorage.getItem('bgm_gds') != null) {
+    //     bgm.setAttribute('value', localstorage.getItem('bgm_gds'))
+    //     // bgm.setAttribute('value',localstorage.getItem('bgm_gds'));
+    //     bgm.innerHTML = ' <source src="bgm/' + localStorage.getItem('bgm_gds') + '.mp3" type="audio/mpeg">';
+    //     // bgm_text.innerHTML='当前播放第'+localStorage.getItem('bgm_gds')+'首歌曲';
+    // } else {
+    //     bgm.setAttribute('value', 1);
+    //     bgm.innerHTML = '<source src="/MEOW/music/Kawaii.mp3" type="audio/mpeg">';
+    //     // bgm_text.innerHTML='当前播放第1首歌曲';
+    // }
 
     setTimeout(function () {
         if (localStorage.getItem('bgm_time') != null) {
@@ -99,10 +99,10 @@ window.onload = function () {
             bgm.volume = 0.2;
             v = 0.2;
             var t = setInterval(function () {
-                v -= 0.0001;
+                v -= 0.005;
                 if (v > 0) {
-                    v -= 0.0001;
-                    // console.log(v);
+                    v -= 0.005;
+                    console.log(v);
                     bgm.volume = v;
                 } else if(v = 0) {
                     bgm.pause();
