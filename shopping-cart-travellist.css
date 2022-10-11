@@ -17,7 +17,7 @@ select:-webkit-autofill:focus {
 
 /* 一建帶入 */
 .AllinputValueYu{
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     position: absolute;
     width: 300px;
     height: 300px;
