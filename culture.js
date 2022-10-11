@@ -261,7 +261,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step1_lb").offset().top - ($(window).height() * 1 / 3)
+    $(".step2_lb").offset().top - ($(window).height() * 2 / 3)
   ) {
     $(".step2_lb").css({
         transform: "translateY(0px)",
@@ -269,7 +269,7 @@ $(window).scroll(function () {
     });
   } else {
     $(".step2_lb").css({
-        transform: "translateY(50px)",
+        transform: "translateY(100px)",
       opacity: 0,
     });
   }
@@ -278,7 +278,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step2_lb").offset().top - ($(window).height() * 1 / 3)
+    $(".step3_lb").offset().top - ($(window).height() * 2 / 3)
   ) {
     $(".step3_lb").css({
         transform: "translateY(0px)",
@@ -286,7 +286,7 @@ $(window).scroll(function () {
     });
   } else {
     $(".step3_lb").css({
-        transform: "translateY(50px)",
+        transform: "translateY(100px)",
       opacity: 0,
     });
   }
@@ -295,7 +295,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step3_lb").offset().top - ($(window).height() * 1 / 3)
+    $(".step4_lb").offset().top - ($(window).height() * 2 / 3)
   ) {
     $(".step4_lb").css({
         transform: "translateY(0px)",
@@ -303,7 +303,7 @@ $(window).scroll(function () {
     });
   } else {
     $(".step4_lb").css({
-        transform: "translateY(50px)",
+        transform: "translateY(100px)",
       opacity: 0,
     });
   }
@@ -312,7 +312,7 @@ $(window).scroll(function () {
 $(window).scroll(function () {
   if (
     $(window).scrollTop() >=
-    $(".step4_lb").offset().top - ($(window).height() * 1 / 3)
+    $(".step5_lb").offset().top - ($(window).height() * 2 / 3)
   ) {
     $(".step5_lb").css({
         transform: "translateY(0px)",
@@ -320,7 +320,7 @@ $(window).scroll(function () {
     });
   } else {
     $(".step5_lb").css({
-        transform: "translateY(50px)",
+        transform: "translateY(100px)",
       opacity: 0,
     });
   }
