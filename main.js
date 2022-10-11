@@ -224,9 +224,9 @@ $('.loginbutton-re').click(function () {
 
 // 一鍵輸入(註冊信箱)
 $('#onekey3').click(function () {
-    $("#signup_email").val("pikachu@gmail.com");
+    $("#signup_email").val("pikachu1212@gmail.com");
 })
 // 一鍵輸入(登入信箱)
 $('#onekey4').click(function () {
-    $("#signin_email").val("pikachu@gmail.com");
+    $("#signin_email").val("pikachu1212@gmail.com");
 })
