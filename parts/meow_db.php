@@ -7,6 +7,7 @@ session_start();
 $db_host = 'localhost';
 $db_user = 'root';
 $db_pass = 'admin';
+// $db_pass = '';
 $db_name = 'meow';
 
 $dsn = "mysql:host={$db_host};dbname={$db_name};charset=utf8"; //data source name
