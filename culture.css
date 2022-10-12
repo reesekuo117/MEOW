@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid black;
-} */
+}
 
 
 html{
@@ -73,7 +73,7 @@ scroll-behavior: smooth;
   /* background-image: url(./imgs/culture/REVISED_BG_PC-2.jpg); */
   /* background-size:cover;
   background-repeat: no-repeat; */
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* 關於月老 */
