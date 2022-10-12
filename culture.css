@@ -73,7 +73,7 @@ scroll-behavior: smooth;
   /* background-image: url(./imgs/culture/REVISED_BG_PC-2.jpg); */
   /* background-size:cover;
   background-repeat: no-repeat; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* 關於月老 */
@@ -203,7 +203,9 @@ scroll-behavior: smooth;
     transform: scale(0.9);
   }
 }
-
+.section1_lb{
+  overflow: hidden;
+}
 .section1-cat2_lb {
   width: 150px;
   right: 300px;
