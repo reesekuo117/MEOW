@@ -808,6 +808,7 @@ usercdnumber4.on("blur", function () {
   }
 });
 
+
 // 信用卡跳下一格
 // $input = document.querySelectorAll('input');
 
@@ -848,11 +849,11 @@ usercdnumber4.on("focus", function () {
     });
   }
 });
-usercdnumber4.on("input", function () {
-  if ($(this).val().length >= 5) {
+usercdnumber4.on("keyup", function () {
+  if ($(this).val().length === 4 ) {
     $(this).parent().next().find("input").focus();
   }
-});
+})
 
 // -----有效年月---------
 // 月
