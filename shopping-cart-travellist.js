@@ -721,59 +721,23 @@ userIDyu.on("focus", function () {
   }
 });
 
-//------------3信用卡輸入欄位驗證--------------
-// 先註解 錯誤卡住
-// const usercdnumber3 = $(".usercdnumber3");
 
-// usercdnumber3.on("input", function () {
-//   console.log(this.value);
-//   const field = $(this).closest(".field3");
-//   const wi = field.find("i.wrong");
-//   const ri = field.find("i.right");
-//   console.log({ field, wi, ri });
-//   console.log(!this.value);
-//   if (!/^\d$/.test(this.value) || this.value.length >= 4) {
-//     // wrong
-//     $(cusercdnumber3).css({
-//       outline: "2px solid #963C38",
-//       border: "0px solid transparent",
-//     });
-//   } else {
-//     // right
-//     $(usercdnumber3).css({
-//       outline: "2px solid #e5a62a",
-//       border: "0px solid transparent",
-//     });
-//   }
-// });
-// usercdnumber3.on("blur", function () {
-//   console.log(this.value);
-//   const field = $(this).closest(".field3"); //定義field
-//   const wi = field.find("i.wrong");
-//   const ri = field.find("i.right");
-//   if (!/^\d$/.test(this.value) || this.value.length >= 4) {
-//     $(usercdnumber3).css({
-//       outline: "2px solid #963C38",
-//       border: "0px solid transparent",
-//     });
-//   } else {
-//     $(usercdnumber3).css({
-//       outline: "2px solid #e5a62a",
-//       border: "0px solid transparent",
-//     });
-//   }
-// });
-
-// usercdnumber3.on("focus", function () {
-//   if (!this.value) {
-//     $(usercdnumber3).css({
-//       outline: "2px solid #e5a62a",
-//       border: "0px solid transparent",
-//     });
-//   }
-// });
 
 //------------4信用卡輸入欄位驗證--------------
+//keyup paste 印在另一邊
+$("#usercreditcardnumber1-yu").bind("keyup paste", function () {
+  $("#creditcardnumber1-yu").val($(this).val());
+});
+$("#usercreditcardnumber2-yu").bind("keyup paste", function () {
+  $("#creditcardnumber2-yu").val($(this).val());
+});
+$("#usercreditcardnumber3-yu").bind("keyup paste", function () {
+  $("#creditcardnumber3-yu").val($(this).val());
+});
+$("#usercreditcardnumber4-yu").bind("keyup paste", function () {
+  $("#creditcardnumber4-yu").val($(this).val());
+});
+
 const usercdnumber4 = $(".usercdnumber4");
 
 usercdnumber4.on("input", function () {
@@ -782,7 +746,6 @@ usercdnumber4.on("input", function () {
   const wi = field.find("i.wrong");
   const ri = field.find("i.right");
   console.log({ field, wi, ri });
-  console.log(!this.value);
   if (!this.value) {
     // wrong
     wi.css("visibility", "visible");
@@ -803,6 +766,24 @@ usercdnumber4.on("input", function () {
     });
   }
 });
+
+
+
+function getForm(event) {
+  event.preventDefault();
+  console.log(event);
+}
+
+usercdnumber4.on("focus", function () {
+  if (!this.value) {
+    $(usercdnumber4).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+
+
 usercdnumber4.on("blur", function () {
   console.log(this.value);
   const field = $(this).closest(".field3"); //定義field
@@ -854,24 +835,6 @@ usercdnumber4.on("blur", function () {
 //   }
 // });
 
-function getForm(event) {
-  event.preventDefault();
-  console.log(event);
-}
-
-usercdnumber4.on("focus", function () {
-  if (!this.value) {
-    $(usercdnumber4).css({
-      outline: "2px solid #e5a62a",
-      border: "0px solid transparent",
-    });
-  }
-});
-usercdnumber4.on("input", function () {
-  if ($(this).val().length >= 5) {
-    $(this).parent().next().find("input").focus();
-  }
-});
 
 // -----有效年月---------
 // 月
@@ -1067,20 +1030,6 @@ $(".creditcard-yu").mouseleave(function () {
   );
 });
 
-//-------------信用卡number--------------
-//keyup paste 印在另一邊
-$("#usercreditcardnumber1-yu").bind("keyup paste", function () {
-  $("#creditcardnumber1-yu").val($(this).val());
-});
-$("#usercreditcardnumber2-yu").bind("keyup paste", function () {
-  $("#creditcardnumber2-yu").val($(this).val());
-});
-$("#usercreditcardnumber3-yu").bind("keyup paste", function () {
-  $("#creditcardnumber3-yu").val($(this).val());
-});
-$("#usercreditcardnumber4-yu").bind("keyup paste", function () {
-  $("#creditcardnumber4-yu").val($(this).val());
-});
 
 //信用卡年月
 $("#usercreditcardmonth-yu").bind("keyup paste", function () {
