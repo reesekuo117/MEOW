@@ -1262,6 +1262,7 @@ header .navbar_ba {
 }
 
 .back-button {
+    cursor: pointer;
     bottom: 40px;
     z-index: 2;
 }
@@ -1600,4 +1601,13 @@ header .navbar_ba {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 1);
+}
+
+/* 回到最上 */
+.back-button{
+    cursor: pointer;
+}
+
+.back-button-xs{
+    z-index: 99;
 }

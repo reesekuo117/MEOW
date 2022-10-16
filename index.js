@@ -188,3 +188,16 @@ $(window).scroll(function () {
     }
 
 })
+
+// 回到最上
+$('.back-button').click(function () {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 800)
+})
+
+$('.back-button-xs').click(function () {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 800)
+})

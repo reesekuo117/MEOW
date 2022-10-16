@@ -835,6 +835,24 @@ usercdnumber4.on("blur", function () {
 //   }
 // });
 
+function getForm(event) {
+  event.preventDefault();
+  console.log(event);
+}
+
+usercdnumber4.on("focus", function () {
+  if (!this.value) {
+    $(usercdnumber4).css({
+      outline: "2px solid #e5a62a",
+      border: "0px solid transparent",
+    });
+  }
+});
+usercdnumber4.on("input", function () {
+  if ($(this).val().length >= 5) {
+    $(this).parent().next().find("input").focus();
+  }
+});
 
 // -----有效年月---------
 // 月
@@ -1056,14 +1074,26 @@ $('input[type="radio"]').click(function () {
 
 // 一健帶入 要用迴圈
 //#字號是因為回圈內的是id名稱
+$(".AllinputValueYu").click(function () {
+  const fields = [ "userbirthday-yu", "userid-yu"];
+
+$("#userbirthday-yu").val("80/05/12");
+$("#userid-yu").val("A22569874");
+//   // $("#email-yu").val("elena456@gmail.com");
+//   // $("#address-yu").val(" 復興南路一段390號2樓");
+
+fields.forEach(function (el) {
+  $("#" + el).trigger("input");
+});
+});
 
 // $(".AllinputValueYu").click(function () {
-//   const fields = ["name-yu", "mobile-yu", "email-yu", "address-yu"];
+//   const fields = ["tname-yu", "tmobile-yu", "temail-yu", "address-yu"];
 
-//   $("#name-yu").val("皮卡丘");
-//   $("#mobile-yu").val("0924568756");
-//   $("#email-yu").val("elena456@gmail.com");
-//   $("#address-yu").val(" 復興南路一段390號2樓");
+  // $("#name-yu").val("皮卡丘");
+  // $("#mobile-yu").val("0924568756");
+  // $("#email-yu").val("elena456@gmail.com");
+  // $("#address-yu").val(" 復興南路一段390號2樓");
 
 //   fields.forEach(function (el) {
 //     $("#" + el).trigger("input");

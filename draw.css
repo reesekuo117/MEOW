@@ -2408,6 +2408,10 @@ button[disabled]:hover {
     height: 40px;
 }
 
+.fa-fire{
+    color: var(--color-orange);
+}
+
 /* 最愛 */
 
 .addToFav{
