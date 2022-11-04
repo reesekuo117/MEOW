@@ -138,3 +138,5 @@
 ![member](https://github.com/reesekuo117/MEOW/blob/0dbcc6c73aadf20b944a96d62d6b8174cf4fc60a/README.img/member/08.png)
 ## 網站聲明
 本作品目前尚屬開發階段，商品圖片、內容等，不做任何商業用途。
+
+<h1 align="center">Copyright © 2022 月老喵 版權所有</h1>
