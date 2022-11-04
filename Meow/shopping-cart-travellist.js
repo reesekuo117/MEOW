@@ -1148,6 +1148,8 @@ $("#btnAutoInput-yu").click(function () {
   });
 });
 
+
+
 // 確認訂購按鈕
 $(".Allsubmit").click(function (event) {
   let isPass = true;
