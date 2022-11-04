@@ -15,7 +15,7 @@
 * [網站建置](#網站建置)
 * [網站功能](#網站功能)
 * [網站視覺](#網站視覺)
-* [企劃書](https://issuu.com/yeh-tzu-yu/docs/meow.pdf)
+* [企劃書傳送門](https://issuu.com/yeh-tzu-yu/docs/meow.pdf)
 
 ## 網站特色
 ### 品牌風格
