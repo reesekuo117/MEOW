@@ -85,5 +85,5 @@
 ![member](https://github.com/reesekuo117/MEOW/blob/b3b8dadae5e334951d4fe71b6d7256c664a78eda/README.img/member/04.png)
 ![member](https://github.com/reesekuo117/MEOW/blob/b3b8dadae5e334951d4fe71b6d7256c664a78eda/README.img/member/05.png)
 ![member](https://github.com/reesekuo117/MEOW/blob/b3b8dadae5e334951d4fe71b6d7256c664a78eda/README.img/member/06.png)
-![member](https://github.com/reesekuo117/MEOW/blob/b3b8dadae5e334951d4fe71b6d7256c664a78eda/README.img/member/07.png)
-![member](https://github.com/reesekuo117/MEOW/blob/b3b8dadae5e334951d4fe71b6d7256c664a78eda/README.img/member/08.png)
+![member](https://github.com/reesekuo117/MEOW/blob/0dbcc6c73aadf20b944a96d62d6b8174cf4fc60a/README.img/member/07.png)
+![member](https://github.com/reesekuo117/MEOW/blob/0dbcc6c73aadf20b944a96d62d6b8174cf4fc60a/README.img/member/08.png)
