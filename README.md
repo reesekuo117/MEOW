@@ -139,4 +139,5 @@
 ## 網站聲明
 本作品目前尚屬開發階段，商品圖片、內容等，不做任何商業用途。
 
-<div align="center">Copyright © 2022 月老喵 版權所有</div>
+Copyright © 2022 月老喵 版權所有
+<!-- <div align="center">Copyright © 2022 月老喵 版權所有</div> -->
