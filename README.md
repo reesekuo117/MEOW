@@ -1,5 +1,12 @@
-# 月老喵
-![LOGO](https://github.com/reesekuo117/MEOW/blob/ee72f1ed2babd736253ed571c29165b6df60baa1/README.img/MeowLOGO.png)
+<!-- # 月老喵 -->
+<h1 align="center">月老喵</h1>
+<div align="center">
+  <img src="https://github.com/reesekuo117/MEOW/blob/ee72f1ed2babd736253ed571c29165b6df60baa1/README.img/MeowLOGO.png">
+</div>
+ <br>
+
+<!-- ![LOGO](https://github.com/reesekuo117/MEOW/blob/ee72f1ed2babd736253ed571c29165b6df60baa1/README.img/MeowLOGO.png) -->
+
 ## 品牌介紹
 「月老喵 」以月老廟的諧音作為發想，我們整合月老文化資訊、求籤、旅遊行程及獨家商品，致力提供使用者一個全台月老文化最完整的服務平台，由療癒的品牌代表-小玉、小黑、金寶引領大家進到月老喵，與我們一起享受沈浸式體驗。
 
