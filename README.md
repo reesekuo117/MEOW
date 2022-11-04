@@ -120,8 +120,7 @@
 ![travel](https://github.com/reesekuo117/MEOW/blob/bbb834383bf4177b7065a43a595fbd1017bbcb03/README.img/travel/travel_05.jpg)
 ![travel](https://github.com/reesekuo117/MEOW/blob/bbb834383bf4177b7065a43a595fbd1017bbcb03/README.img/travel/travel_06.jpg)
 ![travel](https://github.com/reesekuo117/MEOW/blob/bbb834383bf4177b7065a43a595fbd1017bbcb03/README.img/travel/travel_07.jpg)
-![travel](https://github.com/reesekuo117/MEOW/blob/bbb834383bf4177b7065a43a595fbd1017bbcb03/README.img/travel/travel_08.jpg)
-![travel](https://github.com/reesekuo117/MEOW/blob/bbb834383bf4177b7065a43a595fbd1017bbcb03/README.img/travel/travel_09.jpg)
+<!-- ![travel](https://github.com/reesekuo117/MEOW/blob/bbb834383bf4177b7065a43a595fbd1017bbcb03/README.img/travel/travel_08.jpg) -->
 ### 購物車系統
 ![cart]()
 ### 會員系統
